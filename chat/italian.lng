@@ -1,0 +1,130 @@
+#
+#         This java file is a part of the
+#
+#          -  Plouf's Java IRC Client  -
+#
+#      Copyright (C) 2002 Philippe Detournay
+#
+#   This file is licensed under the GPL license
+#
+#        All contacts : theplouf@yahoo.com
+#
+#
+#  Syntax :
+#    Comments begin with the # character. This character must be the first character of the line.
+#    A data line has three parts : the data id, the data id description, the data string.
+#      - Data id : An hexadecimal figure identifying the string.
+#      - Data description : Begins by [ and ends by ]. The description is not parsed and
+#                           can be any string.
+#      - Data string : The string itself. Parameters are specified using the %i syntax.
+#
+#  Trailing spaces can be added using the \s escape character.
+#
+#  This file is provided to you by Devis Lucato and Red Spider
+#
+
+0001 [INTERPRETOR_NOT_ON_CHANNEL] Nessun canale attivo
+0002 [INTERPRETOR_UNKNOWN_DCC] %1 : comando DCC sconosciuto
+0003 [INTERPRETOR_INSUFFICIENT_PARAMETERS] %1 : parametri insufficienti
+0004 [INTERPRETOR_BAD_CONTEXT] %1 : impossibile eseguire nel contesto attuale
+0005 [INTERPRETOR_CANNOT_CTCP_IN_DCCCHAT] Impossibile inviare CTCP dentro una DCC chat
+0006 [INTERPRETOR_UNKNOWN_CONFIG] %1 : comando di configurazione sconosciuto
+0007 [INTERPRETOR_TIMESTAMP_ON] Data e Ora attivate
+0008 [INTERPRETOR_TIMESTAMP_OFF] Data e Ora disattivate
+0009 [INTERPRETOR_SMILEYS_ON] Emoticons attivati
+000a [INTERPRETOR_SMILEYS_OFF] Emoticons disattivati
+000b [INTERPRETOR_IGNORE_ON] Stai ignorando %1
+000c [INTERPRETOR_IGNORE_OFF] Non verrà più ignorato %1
+  
+0101 [DCC_WAITING_INCOMING] Aspetta una connessione...
+0102 [DCC_UNABLE_TO_OPEN_CONNECTION] Impossibile aprire la connessione : %1
+0103 [DCC_CONNECTION_ESTABLISHED] Connessione DCC stabilita
+0104 [DCC_CONNECTION_CLOSED] Connessione chiusa
+0105 [DCC_ERROR] Errore : %1
+0106 [DCC_UNABLE_TO_SEND_TO] %1 : impossibile inviare a %2
+0107 [DCC_BAD_CONTEXT] Impossibile eseguire il comando nel contesto attuale
+0108 [DCC_NOT_CONNECTED] Non connesso
+0109 [DCC_UNABLE_PASSIVE_MODE] Non connesso
+010a [CTCP_PING_REPLY] [%1 PING reply] : %2 secondi
+010b [DCC_STREAM_CLOSED] Connessione chiusa
+      
+0201 [IDENT_FAILED_LAUNCH] Avvio del server IDENT non riuscito : %1
+0202 [IDENT_REQUEST] Richiesta IDENT proveniente da %1
+0203 [IDENT_ERROR] Si è verificato un errore
+0204 [IDENT_REPLIED] Risposto %1
+0205 [IDENT_DEFAULT_USER] Utente di default
+0206 [IDENT_NO_USER] Nessun utente per questa richiesta
+0207 [IDENT_RUNNING_ON_PORT] Il server IDENT è in esecuzione sulla porta %1
+0208 [IDENT_LEAVING] Chiusura del server IDENT : %1
+0209 [IDENT_NONE] nessun
+020a [IDENT_UNKNOWN] sconosciuto
+020b [IDENT_UNDEFINED] Risultato indeterminato
+      
+0301 [FILE_SAVEAS] Salva il file su
+      
+0401 [ABOUT_ABOUT] Informazioni
+0402 [ABOUT_PROGRAMMING] Programmazione
+0403 [ABOUT_DESIGN] Design
+0404 [ABOUT_THANKS] Ringraziamenti
+0405 [ABOUT_SUPPORT] per supporto, idee e prove
+0406 [ABOUT_GPL] Questo programma è sotto licenza GPL
+      
+0501 [SERVER_UNABLE_TO_CONNECT] Impossibile connettersi a : %1
+0502 [SERVER_UNABLE_TO_CONNECT_STILL] Impossibile connettersi a %1 : provando di connettersi a %2
+0503 [SERVER_DISCONNECTING] connettersi a %1
+0504 [SERVER_CONNECTING] Connessione...
+0505 [SERVER_NOT_CONNECTED] Non connesso
+0506 [SERVER_LOGIN] Registrazione...
+0507 [SERVER_DISCONNECTED] Disconnesso da %1
+0508 [SERVER_ERROR] Errore : %1
+      
+0601 [SOURCE_YOU_KICKED] Sei stato cacciato da %1 da %2
+0602 [SOURCE_STATUS] Stato
+0603 [SOURCE_CHANLIST] Canali del server %1
+0604 [SOURCE_CHANLIST_RETREIVING] Ricerca dei canali...
+0605 [SOURCE_HAS_JOINED] %1 è entrato in %2
+0606 [SOURCE_HAS_LEFT] %1 è uscito da %2
+0607 [SOURCE_HAS_BEEN_KICKED_BY] %1 è stato cacciato da %2
+0608 [SOURCE_HAS_QUIT] %1 è uscito
+0609 [SOURCE_TOPIC_IS] L'argomento è %1
+060a [SOURCE_CHANGED_TOPIC] %1 ha cambiato argomento in %2
+060b [SOURCE_CHANNEL_MODE] %1 cambia le impostazioni del canale : %2
+060c [SOURCE_CHANNEL_MODE_IS] Le impostazioni del canale sono %1
+060d [SOURCE_USER_MODE] %1 imposta l'opzione %2 su %3
+060e [SOURCE_KNOWN_AS] %1 ha cambiato nick in %2
+060f [SOURCE_YOUR_MODE] Le tue impostazioni irc : %1
+0610 [SOURCE_YOUR_NICK] Il tuo nick è %1
+0611 [SOURCE_INFO] Infos
+      
+0701 [GUI_WHOIS] Informazioni Whois
+0702 [GUI_QUERY] Chiama in privato
+0703 [GUI_KICK] Kick
+0704 [GUI_BAN] Banna
+0705 [GUI_KICKBAN] Kickban
+0706 [GUI_OP] Dai OP
+0707 [GUI_DEOP] Togli OP
+0708 [GUI_VOICE] Dai Voice
+0709 [GUI_DEVOICE] Togli Voice
+070a [GUI_PING] Ping
+070b [GUI_VERSION] Versione
+070c [GUI_TIME] Ora
+070d [GUI_FINGER] Info
+070e [GUI_RETREIVING_FILE] Ricezione del file (%1 bytes)
+070f [GUI_SENDING_FILE] Invio del file (%1 bytes)
+0710 [GUI_TERMINATED] %1 terminato
+0711 [GUI_FAILED] %1 fallito
+0712 [GUI_CLOSE] Chiudi
+0713 [GUI_DISCONNECT] Disconnetti
+0714 [GUI_CHANNELS] Canali
+0715 [GUI_HELP] Aiuto
+0716 [GUI_PRIVATE] privato
+0717 [GUI_PUBLIC] pubblico
+0718 [GUI_CONNECT] Connetti
+0719 [GUI_ABOUT] Informazioni
+071a [GUI_CHANGE_NICK] Cambia il nick in
+071b [GUI_COPY_WINDOW] Copia il testo
+
+0801 [ASL_MALE] Ragazzo, %1 anni, %2
+0802 [ASL_FEMALE] Ragazza, %1 anni, %2
+
+ffff [ERROR_NOT_DEFINED] Testo non definito

@@ -1,0 +1,196 @@
+<html><!-- #BeginTemplate "/Templates/Info.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Informazioni aggiuntive sulle modalità di avvio di un progetto</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Informazioni aggiuntive <!-- #BeginEditable "TITOLO" -->sulle 
+    modalit&agrave; di avvio di un progetto<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/infos.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p>In situazioni normali un progetto, nel momento in cui viene eseguito, 
+        si avvia con il caricamento di un form principale che fornisce l'accesso 
+        a quasi tutte le funzioni principali. L'inizializzazione delle <a href="../glossary/v.htm#VARIABILE">variabili</a> 
+        globali e l'<a href="../glossary/i.htm#ISTANZA">istanza</a> delle <a href="../glossary/c.htm#CLASSE">classi</a> 
+        <img src="../images/ide/classe.gif" width="16" height="16" align="absmiddle"> 
+        vengono eseguite al caricamento del form principale, tipicamente inserite 
+        nell'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><i>Load</i> 
+        del Form.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>In altre situazioni, invece, &egrave; possibile definire una funzione 
+        particolare che sar&agrave; eseguita all'avvio del progetto, prima del 
+        caricamento di ogni form. Tale routine &egrave; la Sub Main e deve essere 
+        inserita necessariamente all'interno di un <a href="../glossary/m.htm#MODULO">modulo</a> 
+        <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+        standard; questo perch&eacute; deve essere una funzione normale e non 
+        un <a href="../glossary/m.htm#METODO">metodo</a> <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        di classe legato all'istanza.</p>
+      <p>Vediamo con calma i due casi e i loro metodi di applicazione.</p>
+      <p>Immaginiamo un certo progetto, formato da un imprecisato numero di forms, 
+        ognuno con le sue funzioni. Se abbiamo disegnato i forms in ordine logico, 
+        cio&eacute; partendo dal principale e procedendo poi con tutti gli altri, 
+        quello che &egrave; stato creato per primo sar&agrave; il form che sar&agrave; 
+        caricato all'avvio.</p>
+      <p>Per&ograve;, se ad un certo momento, decidessimo di cambiare il form 
+        che debba essere caricato all'avvio del programma? Magari per aggiungerne 
+        un'altro che richieda una parola d'ordine per utilizzare il programma, 
+        ma che abbiamo creato solo dopo il funzionamento del progetto. Come fare?</p>
+      <p>Baster&agrave; selezionare l'ultima voce del menu <b>Progetto</b> ovvero 
+        Propriet&agrave; <i>nomeprogetto</i>. Apparir&agrave; la finestra di dialogo 
+        delle propriet&agrave; del progetto mostrata nella Figura 1.</p>
+      <p align="center"><img src="../images/info/info11_01.jpg" width="334" height="283" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <p>Sulla destra troviamo una <i>ComboBox</i> per la scelta dell'oggetto 
+        di avvio. Un click sopra di essa mostrer&agrave; tutte le possibilit&agrave; 
+        di avvio per il tipo di progetto scelto.</p>
+      <p>Nel nostro caso abbiamo tre form e la Sub Main. Supponiamo che il Form1 
+        sia il form principale, quello che contiene tutte le funzionalit&agrave; 
+        principali del nostro programma. Il Form3 invece conterr&agrave; alcune 
+        caselle di testo per la richiesta ed il controllo della parola di accesso. 
+        Per fare in modo che il progetto venga avviato caricando il Form3 baster&agrave; 
+        scegliere dalla lista di oggetti di avvio il nostro Form3.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il caricamento di tutti gli altri forms dipender&agrave; da questo form 
+        e cos&igrave; pure l'accesso al programma vero e proprio.</p>
+      <p>In altri casi, invece pu&ograve; essere pi&ugrave; comodo avviare il 
+        programma tramite la Sub Main. Possiamo infatti definire una funzione 
+        Sub di tipo Public o Private non importa per definire le operazioni da 
+        eseguire all'avvio del progetto. Vedi anche le <a href="info_05.htm">informazioni 
+        aggiuntive sulle funzioni</a> sugli argomenti Public e Private.</p>
+      <p>L'utilit&agrave; della Sub Main si rivela nel caso di progetti senza 
+        forms, ovvero che non richiedono intervento da parte dell'utente oppure 
+        in quei progetti il cui form principale &egrave; dinamico, e le sue funzionalit&agrave; 
+        vengono attivate/disattivate in base a determinati parametri, file di 
+        configurazione o altro. Infatti &egrave; parecchio sgradevole vedere un 
+        programma caricare e, seppure per mezzo secondo, vedere i suoi controlli 
+        attivarsi o spostarsi per lo schermo.</p>
+      <p>In operazioni di questo genere la Sub Main si occuper&agrave; di caricare 
+        il form principale in memoria, spostare o attivare i controlli e solo 
+        in seguito di mostrare il form principale.</p>
+      <p>Come gi&agrave; detto, la Sub Main deve stare all'interno di un modulo 
+        <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+        standard ed il suo nome deve essere univoco. Non &egrave; possibile definire 
+        due Sub Main in due differenti moduli.</p>
+      <p>Vediamo un esempio di applicazione di una Sub Main.</p>
+      <ol class="codicevb" start="1">
+        <li>Sub Main()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Select Case UCase(Command)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case &quot;CONTI&quot;: 
+          Load frmConti</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case &quot;CALCOLA&quot;: 
+          Load frmCalcola</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case &quot;STAMPA&quot;: 
+          Load frmStampa</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case Else: Load frmMenu</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End Select</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Questo esempio carica un form in base alla <a href="../howto/ht_018.htm">riga 
+        di comando</a> utilizzata per caricare il programma. Se viene passata 
+        come riga di comando una parola tra CONTI, CALCOLA o STAMPA viene caricato 
+        il form corrispondente. In tutti gli altri casi viene caricato il form 
+        di default ovvero frmMenu che presenta all'utente le scelte possibili.</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --><!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI </a><br>
+        20 Gennaio 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

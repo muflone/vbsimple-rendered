@@ -1,0 +1,437 @@
+<html><!-- #BeginTemplate "/Templates/Database2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Introduzione ai Database</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Introduzione ai Database<!-- #EndEditable --><br>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/database.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --> 
+        1<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Il termine <b>Database</b> significa letteralmente Base (di) dati ed 
+        in linea generale indica una soluzione di memorizzazione e consultazione 
+        di dati di natura eterogenea. Un database in sintesi consiste in un archivio 
+        organizzato di dati; l'organizzazione avviene tipicamente in <b>Tabelle</b> 
+        ciascuna contenente una serie di dati omogenei. Le tabelle possono quindi 
+        essere collegate tra loro stabilendo una <b>relazione</b>; questo genere 
+        di database &egrave; infatti detto Database relazionale (RDB) poich&eacute; 
+        le tabelle in esso contenute possono essere collegate tra loro mediante 
+        Relazioni.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/notes.gif" width="56" height="57" align="left">Esistono 
+        due differenti definizioni di database relazionale: la prima, pi&ugrave; 
+        accademica, li definisce relazionali perch&eacute; composti da tabelle 
+        che, secondo la teoria di <i>Codd</i>, prendono il nome di <i><b>relazioni</b></i>. 
+        Il termine relazionale quindi non ha nulla a che vedere con i legami tra 
+        tabelle, che vengono invece chiamati <i><b>associazioni</b></i>. L'altra 
+        definizione fa invece riferimento alle relazioni viste come legami tra 
+        tabelle.</p>
+      <p>Chiaramente tra le due definizioni &egrave; pi&ugrave; corretta la prima, 
+        quella accademica, ma &egrave; usanza ed ignoranza comune applicare la 
+        seconda. Si mantenga ben chiara questa differenza e si ricordi che, definire 
+        un Database relazionale perch&eacute; composto da legami tra tabelle, 
+        &egrave; errato, non basato su alcuna teoria e si tratta di una pura e 
+        semplice forzatura della definizione originale, che verr&agrave; applicata 
+        anche in queste pagine, per semplificare al massimo la comprensione degli 
+        argomenti trattati.</p>
+      <hr>
+      <p class="size3" align="center">La Struttura di una Tabella</p>
+      <p>La pi&ugrave; semplice forma di database relazionale si compone di sole 
+        tabelle, ognuna delle quali composta da righe e colonne. Ogni riga orizzontale 
+        corrisponde ad un'entit&agrave; detta <b>Record</b> e contiene un'unit&agrave; 
+        di informazione, suddivisa in una o pi&ugrave; colonne (verticali) dette 
+        <b>Campi</b>.</p>
+      <p align="center"><img src="../images/database/db001_01.png" width="241" height="100" align="absmiddle" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <p>Sin da subito &egrave; fondamentale non confondere le righe con le colonne. 
+        Le righe (Record) si presentano in direzione orizzontale mentre le colonne 
+        (Campi) in direzione verticale. </p>
+      <p>Quando si costituisce una tabella viene prima definita la sua struttura 
+        con il numero, il tipo ed il nome di ciascun campo. Solo in seguito verranno 
+        aggiunti i Record; ecco perch&eacute; ogni record si compone di uno o 
+        pi&ugrave; campi e non viceversa. Se ne evince che, in linea generale, 
+        il numero di campi &egrave; fisso mentre il numero di record non lo &egrave;; 
+        &egrave; sempre possibile aggiungere nuove righe o eliminare alcune righe 
+        precedenti.</p>
+      <hr>
+      <p align="center" class="size3">Le Tipologie di Campo</p>
+      <p>Come abbiamo gi&agrave; detto, nella progettazione di una tabella, prima 
+        di poter inserire i dati, &egrave; necessario definire quali campi dovranno 
+        esistere al suo interno. Per alcuni campi la lunghezza &egrave; fissa, 
+        mentre per altri &egrave; variabile e/o deve essere definita nella struttura. 
+      </p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Esistono cinque tipologie di Campo:</p>
+      <ol>
+        <li>Numerici: contengolo solo numeri interi o numeri decimali</li>
+        <li>Carattere: contengono testo a larghezza fissa o variabile</li>
+        <li>Data / Ora: contengono date, ore od entrambe le cose</li>
+        <li>Binari: contengono altri dati quali immagini, oggetti o testi di grandi 
+          dimensioni</li>
+        <li>Particolari: contengono dati di altro tipo, ad esempio numeri complessi, 
+          <a href="../glossary/g.htm#GUID">GUID</a>, o altro</li>
+      </ol>
+      <p>Per la loro natura tutti i <b>campi numerici</b> sono a lunghezza fissa; 
+        esiste infatti un valore minimo ed un valore massimo che &egrave; possibile 
+        inserire in essi. Il superamente di tale valore genera un errore. Naturalmente 
+        un campo con un intervallo dati minore occupa meno spazio di uno di dimensione 
+        maggiore. Ecco che esistono ad esempio:</p>
+      <ul>
+        <li> campi numerici interi a 8 bit che contengono soltanto i numeri compresi 
+          tra 0 e 255</li>
+        <li>i campi interi a 16 bit che contengono i numeri compresi tra 0 e 65535 
+          oppure tra -32768 e +32767</li>
+        <li>campi interi a 32 bit</li>
+        <li>campi decimali a precisione fissa, singola, doppia</li>
+        <li>etc..</li>
+      </ul>
+      <p>I <b>campi carattere</b> possono essere a lunghezza fissa o variabile, 
+        che deve essere definita a priori e non deve mai essere superata. Nei 
+        campi a lunghezza fissa, se viene inserito un numero di caratteri inferiore 
+        alla lunghezza massima, il resto dei dati sar&agrave; riempito con spazi 
+        sulla destra dell'ultimo carattere. Nei campi a lunghezza variabile viene 
+        memorizzata esattamente il testo che vi &egrave; stato immesso senza aggiungere 
+        alla fine caratteri aggiuntivi.</p>
+      <p>L'inserimento di una quantit&agrave; di dati superiore all'ampiezza massima 
+        del campo, solitamente genera un errore e viene impedita, in altri casi 
+        invece viene semplicemente inserito il testo fino alla lunghezza massima 
+        concessa dal campo.</p>
+      <p>I <b>campi data / ora</b> contengono unicamente date, orari oppure entrambe 
+        le cose, alcuni con precisione al millesimo di secondo, altri con precisione 
+        al minuto.</p>
+      <p>I <b>campi binari</b> sono una tipologia di campo particolare non disponibile 
+        in tutti i database, solitamente senza un limite massimo di capienza se 
+        non dettato dalla dimensione massima consentita per ogni tabella. I dati 
+        all'interno possono essere testi (che ad esempio non entrerebbero nella 
+        dimensione massima di un campo carattere), immagini o altro genere di 
+        dati, quali oggetti <a href="../glossary/o.htm#OLE">OLE</a>. </p>
+      <p>I <b>campi particolari</b>, anch'essi non disponibili per tutti i database, 
+        sono solitamente studiati per contenere un tipo di dati particolare, ad 
+        esempio per contenere strutture dati, GUID oppure ultima data di modifica. 
+        Corrispondono anche ai campi il cui tipo sia stato creato appositamente 
+        per quel database.</p>
+      <hr>
+      <p align="center" class="size3">Gli Indici</p>
+      <p>Poich&eacute; ogni tabella pu&ograve; contenere un numero indefinito 
+        di records, la ricerca di uno o pi&ugrave; righe interessate potrebbe 
+        diventare molto problematica e richiedere minuti o addirittura ore in 
+        database di grandi dimensioni.</p>
+      <p>Per prevenire tali situazioni quasi tutti i database relazionali provvedono 
+        una sorta di segnalibro, un indicatore alla posizione della riga contenente 
+        un particolare dato. Tali oggetti sono detti <b>Indici</b> e sono organizzati 
+        in strutture particolari per ciascun database.</p>
+      <p>Gli indici possono essere pensati come una sorta di tabella di puntatori 
+        ai record corrispondenti. Solitamente un indice punta ad un unico campo 
+        della tabella ma &egrave; anche possibile definire indici multicampo.</p>
+      <p>L'uso di indici in una tabella naturalmente velocizza i processi di ricerca 
+        perch&eacute; il motore di ricerca non sar&agrave; obbligato a leggere 
+        una per una le righe della tabella ma gli baster&agrave; cercare i valori 
+        nella struttura-tabella degli indici per ottenere automaticamente un riferimento 
+        alla posizione della riga interessata.</p>
+      <p>Dal lato opposto, l'uso di indici rallenta le operazioni di modifica 
+        delle tabelle poich&eacute; ad ogni scrittura di dati corrisponde una 
+        modifica nella struttura degli indici.</p>
+      <p>Gli indici consentono anche la definizione di vincoli di unicit&agrave; 
+        per certi valori, ovvero un vincolo che impedisca l'inserimento di un 
+        valore duplicato all'interno della colonna indicizzata. Anche questo controllo 
+        determina ulteriori ritardi nelle operazioni di modifica dei dati in una 
+        tabella.</p>
+      <hr>
+      <p align="center" class="size3">Le Relazioni</p>
+      <p>Un database pu&ograve; contenere al suo interno pi&ugrave; tabelle ed 
+        &egrave; spesso necessario collegare i dati di una tabella con un'altra. 
+        L'operazione avviene tramite le <b>relazioni</b> (dette prima associazioni).</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il principio base delle relazioni stabilisce che tra un minimo di due 
+        tabelle vi sia un fattore comune, uno o pi&ugrave; campi presenti in entrambe 
+        le tabelle, non necessariamente con lo stesso nome, ma naturalmente con 
+        lo stesso valore.</p>
+      <p>La relazione &egrave; applicata su tali campi mediante la definizione 
+        di una regola di comportamento tramite l'uso di <b>Chiavi primarie</b> 
+        (<i>Primary Keys</i>) e <b>Chiavi esterne</b> (<i>Foreign Keys</i>). La 
+        tabella primaria (nella relazione) avr&agrave; la chiave primaria, mentre 
+        la tabella correlata (sempre nella relazione) avr&agrave; la chiave esterna. 
+        Quasi sempre la relazione &egrave; effettuata tramite gli indici delle 
+        tabelle ma pu&ograve; anche non essere cos&igrave;.</p>
+      <p>La corrispondenza tra i valori della chiave primaria nella prima tabella 
+        con quelli della chiave esterna nella seconda tabella stabilisce una delle 
+        tre relazioni possibili:</p>
+      <ul>
+        <li><b><i>Uno a uno</i></b><br>
+          Si verifica quando ad ogni valore della chiave primaria corrisponde 
+          uno ed un solo valore nella chiave secondaria; in altre parole quando 
+          la relazione tra le due tabelle d&agrave; sempre vita ad un collegamento 
+          univoco tra le chiavi indicate nelle stesse. Da questo si deduce che 
+          entrambe le chiavi non possono contenere valori duplicati, che il numero 
+          di record tra le due tabelle &egrave; assolutamente identico e che tale 
+          relazione avviene per entrambe le tabelle.<br>
+          <br>
+          &Egrave; in genere utilizzata per ripartire dati su pi&ugrave; tabelle 
+          e non esistono duplicati, ad esempio il codice di un cliente esiste 
+          nell'anagrafica clienti e nella tabella dei saldi dei clienti.<br>
+          <br>
+        </li>
+        <li><b><i>Uno a molti</i></b><br>
+          Stabilita quando ad ogni valore della chiave primaria corrispondono 
+          numerosi valori nella chiave secondaria e, viceversa, a tutti i record 
+          nella tabella correlata contenenti un certo valore nella chiave corrispondente 
+          sempre un solo record nella tabella primaria.<br>
+          <br>
+          &Egrave; utilizzata per ripartire dati comuni su una tabella ed i dati 
+          individuali su un'altra, ad esempio il codice di un cliente avr&agrave; 
+          un numero imprecisato di corrispondenze nella contablit&agrave; delle 
+          vendite di un'azienda e - dall'altro capo - ogni operazione di vendita 
+          &egrave; associata ad uno dei codici nell'anagrafica clienti.<br>
+          <br>
+        </li>
+        <li><b><i>Molti a molti</i></b><br>
+          Si verifica quando esistono corrispondenze multiple in entrambe le tabelle 
+          della relazione; nella tabella primaria possono esistere record con 
+          il valore della chiave primaria duplicati ed altres&igrave; possono 
+          esistere pi&ugrave; record con lo stesso valore nella chiave esterna 
+          della tabella correlata.<br>
+          <br>
+          &Egrave; utilizzata per mantenere operazioni storiche su pi&ugrave; 
+          tabelle, ad esempio le operazioni di vendita dei prodotti di un'azienda 
+          hanno molteplici corrispondenze nelle operazioni di acquisto degli stessi 
+          prodotti.</li>
+      </ul>
+      <hr>
+      <p align="center" class="size3">L'Integrit&agrave; referenziale</p>
+      <p>Nelle relazioni uno a uno ed uno a molti &egrave; possibile definire 
+        un vincolo detto <b>Integrit&agrave; referenziale</b> che assicura la 
+        corretta relazione tra due o pi&ugrave; tabelle.</p>
+      <p>L'integrit&agrave; referenziale assicura che non possano essere inseriti 
+        in una chiave esterna records orfani che non hanno un record corrispondente 
+        nella chiave primaria. Altres&igrave; non sar&agrave; possibile modificare 
+        o eliminare uno o pi&ugrave; records nella tabella correlata se non esiste 
+        un corrispondente valore nella chiave primaria della tabella primaria.</p>
+      <p>I vincoli di integrit&agrave; referenziale non sono possibili su tutti 
+        i database e solitamente utilizzano gli indici per rinforzarne l'integrit&agrave;.</p>
+      <hr>
+      <p align="center" class="size3">Le query, le Viste e l'SQL</p>
+      <p>Nessun senso avrebbero i dati contenuti nelle tabelle se non fosse possibile 
+        interrogarli per eseguire filtri e calcolarne valori medi, massimi, etc.. 
+        Le interrogazioni sono possibili mediante le <b>Query</b>, eseguite solitamente 
+        mediante il linguaggio <b>SQL</b> (Structured Query Language), un linguaggio 
+        studiato per la manipolazione di database e dei dati in essi contenuti.</p>
+      <p>Le istruzioni <a href="../glossary/s.htm#SQL">SQL</a> si dividono in 
+        due tipologie:</p>
+      <ol>
+        <li>Istruzioni DML (<a href="../glossary/d.htm#DATAMANIPULATIONLANGUAGE">Data 
+          Manipulation Language</a>)<br>
+          Istruzioni per la manipolazione dei dati contenuti all'interno del database 
+          al fine di eseguire operazioni di estrazione, inserimento, modifica 
+          e cancellazione dei dati.<br>
+          <br>
+        </li>
+        <li>Istruzioni DDL (<a href="../glossary/d.htm#DATADEFINITIONLANGUAGE">Data 
+          Definition Language</a>)<br>
+          Istruzioni per la definizione delle struttura costituenti il database 
+          al fine di creare, modificare ed eliminare strutture dati, tabelle, 
+          <a href="../glossary/q.htm#QUERY">query</a>, indici e cos&igrave; via.</li>
+      </ol>
+      <p>Mediante l'SQL &egrave; possibile ad esempio estrarre i dati di vendita 
+        dell'ultimo trimestre e lavorare esclusivamente su quelli, senza dover 
+        scorrere tutti i record della tabella per trovare quelli riguardanti l'ultimo 
+        trimestre. Oltre a velocizzare il processo questo riduce le risorse utilizzate 
+        da un'applicazione e l'ammontare dei dati in transito durante l'operazione.</p>
+      <p>Le query consentono anche l'utilizzo di relazioni specificando le clausole 
+        di associazione (Primary Key e Foreign Key) e restituiscono l'unione (orizzontale 
+        o verticale) di tutte le tabelle implicate nella relazione.</p>
+      <p>Molti database consentono anche di salvare le query (la definizione, 
+        non i dati estratti) in un oggetto chiamato <b>Vista</b>. Le viste sono 
+        query SQL salvate all'interno del database e possono generalmente essere 
+        utilizzate come fossero delle tabelle. Le operazioni eseguite sopra una 
+        vista (selezione, aggiunta, modifica ed eliminazione dei dati) si rifletteranno 
+        automaticamente sul database, in quei records selezionati. In breve le 
+        viste sono subset di una o pi&ugrave; tabelle e consentono un richiamo 
+        rapido dei subset dati, nonch&eacute; l'applicazione di altre query sulla 
+        query salvata come vista.</p>
+      <p>Poich&eacute; esistono numerosi database con differenti caratteristiche, 
+        la sintassi dei loro linguaggi SQL pu&ograve; differire da un database 
+        all'altro. Esistono tuttavia due standard del linguaggio definiti dall'istituto 
+        <i> ISO</i> (International Standardization Organization) e denominati 
+        <b>SQL-89</b> ed <b>SQL-92</b>. L'ultimo &egrave; lo standard utilizzato 
+        dalla maggior parte dei database relazionali. Alle istruzioni standard 
+        sono, per&ograve;, quasi sempre affiancate le istruzioni proprie del database 
+        utilizzato.</p>
+      <hr>
+      <p align="center" class="size3">Modelli di database</p>
+      <p>Prima di concludere vale la pena citare l'esistenza di quattro modelli 
+        di database relazionali:</p>
+      <ol>
+        <li>Database autoconsistenti, in cui tutto il necessario per la sua gestione 
+          &egrave; mantenuto all'interno di un sistema locale e non consente l'accesso 
+          a pi&ugrave; utenti contemporanei.<br>
+          <br>
+        </li>
+        <li>Database a condivisione di file, in maniera analoga al database autoconsistente, 
+          contiene tuto il sistema di gestione all'interno del database stesso, 
+          compreso un minimo sistema per la gestione della multiutenza.<br>
+          <br>
+        </li>
+        <li>Database Client/Server, in cui i dati, gli oggetti del database e 
+          gli accessi sono gestiti da un altro sistema esterno che recupera i 
+          dati e li restituisce al richiedente. Consente una buona gestione della 
+          multiutenza e solitamente prende il nome di <i>Relational DataBase Management 
+          System</i> (<b>RDBMS</b>).<br>
+          <br>
+        </li>
+        <li>Database multistrato, sfruttano contemporaneamente un server di database 
+          (come il modello precedente) ed un server di applicazioni per tener 
+          conto e gestire autonomamente le operazioni non riuscite, i blocchi 
+          e le replicazioni dei dati.</li>
+      </ol>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Concludiamo questa introduzione molto generica ai database ricordando 
+        la complessit&agrave; e vastit&agrave; dell'argomento che non pu&ograve; 
+        esaurirsi in una semplice pagina. Ogni database possiede le sue peculiarit&agrave; 
+        e quelli accennati sopra sono solo i principali concetti che compongono 
+        un database relazionale.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        20 Ottobre 2002<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice della sezione Database</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

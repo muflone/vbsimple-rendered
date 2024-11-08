@@ -1,0 +1,332 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Disabilitare il pulsante di chiusura di un form</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Disabilitare il pulsante 
+    di chiusura di un form<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>In alcuni programmi si pu&ograve; rendere necessario disabilitare il 
+        pulsante di chiusura <img src="../images/icons/wndclose.gif" width="16" height="14" align="absmiddle"> 
+        di un form. Esistono due soluzioni: la prima consiste nello sfruttare 
+        l'evento Unload di un form, presentata in un altro HowTo; la seconda soluzione 
+        consiste nel disabilitare il pulsante attraverso alcune funzioni API.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/howto/howto010_01.png" width="139" height="70" alt="Figura 1" align="right">Una 
+        volta disabilitato il pulsante esso apparir&agrave; ombreggiato, risultando, 
+        di fatto, inutilizzabile.</p>
+      <p>Per disabilitare il pulsante di chiusura rimuoveremo la voce <b>Chiudi</b> 
+        dal menu di sistema<img src="../images/controls/form.gif" width="25" height="25" align="absmiddle">del 
+        form. Prima di iniziare con il codice, inseriamo sopra un form un pulsante<img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>Chiudi</b> che effettuer&agrave; la chiusura del form al posto 
+        del normale pulsante di chiusura.</p>
+      <p>Passiamo subito alla dichiarazione delle funzioni API:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Declare Function GetSystemMenu Lib &quot;user32&quot; (ByVal 
+          hwnd As Long, ByVal bRevert As Long) As Long</li>
+        <li>Private Declare Function GetMenuItemCount Lib &quot;user32&quot; (ByVal 
+          hMenu As Long) As Long</li>
+        <li>Private Declare Function RemoveMenu Lib &quot;user32&quot; (ByVal 
+          hMenu As Long, ByVal nPosition As Long, ByVal wFlags As Long) As Long</li>
+        <li>Private Declare Function DrawMenuBar Lib &quot;user32&quot; (ByVal 
+          hwnd As Long) As Long</li>
+        <li>Private Const MF_BYPOSITION = &amp;H400&amp;</li>
+      </ol>
+      <p>Abbiamo dichiarato 4 funzioni <a href="../glossary/a.htm#API">API</a> 
+        ed una costante.<br>
+        La prima funzione &egrave; la <i>GetSystemMenu</i> che ci restituisce 
+        l'<a href="../glossary/h.htm#HANDLE">handle</a> della barra dei menu di 
+        una finestra.<br>
+        La seconda funzione API &egrave; <i>GetMenuItemCount</i> che, partendo 
+        da un handle di menu, ci riporta il numero di voci contenute in tale menu.<br>
+        La terza funzione &egrave; <i>RemoveMenu</i> che elimina una voce di menu.<br>
+        L'ultima funzione &egrave; la <i>DrawMenuBar</i> che ridisegna completamente 
+        un menu. Quando vengono apportate modifiche ad un menu &egrave; necessario 
+        comunicare al programma di ridisegnare la barra dei menu tramite questa 
+        funzione.</p>
+      <p>Alla riga 7 abbiamo dichiarato una costante <b>MF_BYPOSITION</b> che 
+        servir&agrave; da parametro per la funzione <i>RemoveMenu</i>.</p>
+      <p>Nel nostro progetto effettueremo la disabilitazione del menu al caricamento 
+        del form, identificato dall'evento <i>Load</i> del form. Vediamo le istruzioni: 
+      </p>
+      <ol class="codicevb" start="9">
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim HandleMenu As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim VociMenu As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;HandleMenu = GetSystemMenu(Me.hwnd, 0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;VociMenu = GetMenuItemCount(HandleMenu)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call RemoveMenu(HandleMenu, VociMenu - 1, 
+          MF_BYPOSITION)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call RemoveMenu(HandleMenu, VociMenu - 2, 
+          MF_BYPOSITION)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DrawMenuBar Me.hwnd</li>
+        <li>End Sub</li>
+      </ol>
+      <p>La riga 10 definisce una variabile di nome <b>HandleMenu</b> che utilizzeremo 
+        per memorizzare l'<a href="../glossary/h.htm#HANDLE">handle</a> del menu 
+        di sistema. Come quasi tutte le variabili utilizzate dalle funzioni API, 
+        anche questa &egrave; dichiarata come Long.<br>
+        Alla riga 11 dichiariamo un'altra variabile: <b>VociMenu</b>. Essa conterr&agrave; 
+        il numero di voci contenute all'interno del menu di sistema. Fra poco 
+        vedremo a che serve.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Come prima operazione otterremo l'handle del menu di sistema del form. 
+        La funzione <i>GetSystemMenu</i> richiede come parametro l'handle della 
+        finestra contenente il menu. Il valore restituito da questa funzione verr&agrave; 
+        memorizzato all'interno di <b>HandleMenu</b>. D'ora in poi utilizzeremo 
+        questa variabile per indicare alle altre funzioni API il menu di sistema.</p>
+      <p>Alla riga 13 utilizzeremo la funzione <i>GetMenuItemCount</i> passandogli 
+        come parametro l'handle contenuto all'interno della variabile HandleMenu. 
+        Questa funzione ci restituisce un numero intero rappresentante il numero 
+        di voci contenute all'interno del menu, valore che memorizzeremo nella 
+        variabile <b>VociMenu</b>.</p>
+      <p>Quest'operazione &egrave; necessaria poich&eacute; la funzione che rimuove 
+        una voce di menu richiede la sua posizione ordinale all'interno del menu. 
+        Ebbene, analizziamo queste tre situazioni:</p>
+      <table width="100%" border="1" cellspacing="2" cellpadding="2">
+        <tr> 
+          <td align="center" width="31%" valign="top"><img src="../images/howto/howto010_02.jpg" width="138" height="108" alt="Figura 2"></td>
+          <td align="center" width="31%" valign="top"><img src="../images/howto/howto010_03.jpg" width="138" height="92" alt="Figura 3"></td>
+          <td align="center" valign="top" width="37%"><img src="../images/howto/howto010_04.jpg" width="112" height="44" alt="Figura 4"></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center" width="31%"><b>BorderStyle = Sizable<br>
+            MinButton = True<br>
+            MaxButton = True</b></td>
+          <td valign="top" align="center" width="31%"><b>BorderStyle = Sizable<br>
+            MinButton = True<br>
+            MaxButton = False</b></td>
+          <td valign="top" align="center" width="37%"><b>BorderStyle = Fixed Single<br>
+            MinButton = False<br>
+            MaxButton = False</b></td>
+        </tr>
+      </table>
+      <p>Se in fase di progettazione cambiamo alcune propriet&agrave; del form, 
+        viene alterato il menu di sistema del form. Ragion per cui non possiamo 
+        decidere a priori quale elemento eliminare. Per&ograve; abbiamo una situazione 
+        utile dal nostro lato: in tutti i casi la voce <b>Chiudi</b> &egrave; 
+        sempre l'ultima ed il separatore &egrave; sempre prima di essa.</p>
+      <p>Ecco il perch&eacute; utilizzeremo la funzione <i>GetMenuItemCount</i>: 
+        essa ci dir&agrave; di quanti elementi &egrave; composto il menu di sistema. 
+        Conoscendo questo provvederemo ad eliminare gli ultimi due elementi.</p>
+      <ol class="codicevb" start="14">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call RemoveMenu(HandleMenu, VociMenu - 1, 
+          MF_BYPOSITION)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call RemoveMenu(HandleMenu, VociMenu - 2, 
+          MF_BYPOSITION)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DrawMenuBar Me.hwnd</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Quando si effettua l'eliminazione di pi&ugrave; voci di menu &egrave; 
+        bene tenere a mente due cose: i menu iniziano il loro conteggio da 0 e 
+        subito dopo l'eliminazione di una voce da un menu, il numero complessivo 
+        diminuisce di 1. Questo significa che se, inizialmente, le voci di menu 
+        sono 7 e vogliamo eliminare le ultime due voci, dobbiamo comunicare all'API 
+        di cancellare dal menu le voci 6 e 7, ma poich&eacute; le voci sono a 
+        base 0, i numeri da passare per eliminare sono 5 e 6. Ma, ricordiamo questa 
+        cosa importante: se eliminiamo la voce 5 del menu, tutte le successive 
+        diminuiscono di una posizione. L'originaria 6 diventa 5.<br>
+        Questo significa che dopo aver eliminato la voce 5 dovremmo eliminare 
+        nuovamente la 5, che in realt&agrave; &egrave; la 6 precedente all'eliminazione. 
+        Per evitare spiacevoli inconvenienti &egrave; fondamentale effettuare 
+        il conteggio partendo dal numero pi&ugrave; alto.</p>
+      <p>Ecco perch&eacute; alla riga 14, eliminiamo l'ultima riga (VociMenu - 
+        1) ed in seguito eliminiamo la penultima (VociMenu - 2).</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>In seguito alla modifica, alla riga 17, comunichiamo all'API di ridisegnare 
+        la barra dei menu tramite la funzione <i>DrawMenuBar</i>.</p>
+      <ol class="codicevb" start="19">
+        <li>Private Sub Chiudi_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Unload Me</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Prima di provare il programma &egrave; necessario scrivere una funzione 
+        sostitutiva al pulsante di chiusura, che abbiamo disabilitato. Al click 
+        sopra il pulsante <b>Chiudi</b> abbiamo comunicato al form di chiudere 
+        se stesso.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Naturalmente si consiglia di non abusare di comandi del genere. Lo standard 
+        Windows stabilisce che il metodo pi&ugrave; naturale per chiudere un form 
+        &egrave; il pulsante di chiusura <img src="../images/icons/wndclose.gif" width="16" height="14" align="absmiddle"> 
+        ed &egrave; naturale che un utente, per prima cosa andr&agrave; a cercarsi 
+        tale pulsante.</p>
+      <p>Inoltre, una volta disabilitato il pulsante di chisura, non sar&agrave; 
+        possibile riabilitarlo.</p>
+      <p>Prima di chiudere questo argomento voglio rivelarvi un piccolo segreto: 
+        esiste un modo pi&ugrave; semplice per elimininare la voce <b>Chiudi</b> 
+        di un form. Abbiamo voluto utilizzare questa soluzione per stimolare il 
+        calcolo e permettere l'estensione del codice.<br>
+        Per effettuare la medesima operazione basteranno queste semplici righe:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Declare Function GetSystemMenu Lib &quot;user32&quot; (ByVal 
+          hwnd As Long, ByVal bRevert As Long) As Long</li>
+        <li>Private Declare Function RemoveMenu Lib &quot;user32&quot; (ByVal 
+          hMenu As Long, ByVal nPosition As Long, ByVal wFlags As Long) As Long</li>
+        <li>Private Declare Function DrawMenuBar Lib &quot;user32&quot; (ByVal 
+          hwnd As Long) As Long</li>
+        <li>Private Const MF_REMOVE = &amp;H100&amp;</li>
+        <li>Private Const SC_CLOSE = &amp;HF060&amp;</li>
+        <li></li>
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim HandleMenu As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;HandleMenu = GetSystemMenu(Me.hwnd, 0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call RemoveMenu(HandleMenu, SC_CLOSE, MF_REMOVE)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DrawMenuBar Me.hwnd</li>
+        <li>End Sub</li>
+      </ol>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        9 Dicembre 2000<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

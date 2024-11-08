@@ -1,0 +1,318 @@
+<html><!-- #BeginTemplate "/Templates/Richieste.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Recuperare il percorso delle cartelle di sistema</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Recuperare il percorso delle 
+    cartelle di sistema<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/activity.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Richiesta di: <!-- #BeginEditable "RICHIEDENTE" -->Blisset<!-- #EndEditable --> 
+        - <!-- #BeginEditable "DATARICHIESTA" -->13 Maggio 2002<!-- #EndEditable --><br>
+        Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5 </p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p><i>Come faccio da VB ad accedere alla cartella di sistema di Windows 
+        o alla cartella del menu Avvio veloce (in Win98 o XP differiscono)?</i></p>
+      <hr>
+      <p>In tutti i sistemi operativi Windows sono presenti alcune variabili di 
+        ambiente, recuperabili tramite l'istruzione <i>Environ</i>. Tuttavia queste 
+        indicano soltanto alcune cartelle di sistema e cambiano da versione a 
+        versione.</p>
+      <p>Esistono invece alcune funzioni <a href="../glossary/a.htm#API">API</a> 
+        dedicate al recupero delle cartelle di sistema. La principale di queste 
+        funzioni &egrave; <b>SHGetSpecialFolderPath</b> ma, poich&eacute; su alcuni 
+        sistemi operativi non riesce a recuperare alcune cartelle, abbiamo preferito 
+        farla appoggiare da altre tre funzioni: <b>GetWindowsDirectory</b>, <b>GetSystemDirectory</b>, 
+        <b>GetTempPath</b> per recuperare rispettivamente la cartella in cui &egrave; 
+        installato Windows (in genere Windows o WinNT), la cartella di sistema 
+        (System o System32) e la cartella per i files temporanei.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il nostro progetto di esempio si compone di un modulo standard <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+        e di un form. Iniziamo con lo studio del codice presente all'interno del 
+        modulo:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Declare Function SHGetSpecialFolderPath Lib &quot;shell32.dll&quot; 
+          Alias &quot;SHGetSpecialFolderPathA&quot; (ByVal hwnd As Long, ByVal 
+          pszPath As String, ByVal csidl As Long, ByVal fCreate As Long) As Long</li>
+        <li>Private Declare Function GetWindowsDirectory Lib &quot;kernel32&quot; 
+          Alias &quot;GetWindowsDirectoryA&quot; (ByVal lpBuffer As String, ByVal 
+          nSize As Long) As Long</li>
+        <li>Private Declare Function GetSystemDirectory Lib &quot;kernel32&quot; 
+          Alias &quot;GetSystemDirectoryA&quot; (ByVal lpBuffer As String, ByVal 
+          nSize As Long) As Long</li>
+        <li>Private Declare Function GetTempPath Lib &quot;kernel32&quot; Alias 
+          &quot;GetTempPathA&quot; (ByVal nBufferLength As Long, ByVal lpBuffer 
+          As String) As Long</li>
+        <li></li>
+        <li>Private Const MAX_PATH = 260</li>
+        <li></li>
+      </ol>
+      <p>La prima funzione <b>SHGetSpecialFolderPath</b> richiede la specifica 
+        di un <i> <b>IDL</b></i> (IDentifier List) ovvero un identificatore della 
+        cartella di cui recuperare il percorso. I vari IDL delle cartelle di sistema 
+        sono riportati in seguito.</p>
+      <p>Le altre 3 funzioni API richiedono soltanto il passaggio del <a href="../glossary/b.htm#BUFFER">buffer</a> 
+        dati <a href="../glossary/a.htm#ALLOCARE">allocato</a> e la sua ampiezza. 
+        La costante alla riga 8 indicher&agrave; la lunghezza massima in caratteri 
+        di un percorso.</p>
+      <ol class="codicevb" start="10">
+        <li>Public Enum CSIDL_Cartelle</li>
+        <li>&nbsp;&nbsp;[_CSIDL_PRIMO] = &amp;H0</li>
+        <li>&nbsp;&nbsp;CSIDL_DESKTOP = &amp;H0</li>
+        <li>&nbsp;&nbsp;CSIDL_INTERNET = &amp;H1</li>
+        <li>&nbsp;&nbsp;CSIDL_PROGRAMS = &amp;H2</li>
+        <li>&nbsp;&nbsp;...</li>
+      </ol>
+      <p>Alla riga 10 &egrave; definita un'<a href="../glossary/e.htm#ENUMERAZIONE">enumerazione</a> 
+        <img src="../images/ide/enumeraz.gif" width="16" height="16" align="absmiddle"> 
+        di nome <b>CSIDL_Cartelle</b> e conterr&agrave; al suo interno tutti gli 
+        IDL standard pi&ugrave; alcuni nuovi aggiunti. Il primo valore di quest'enumerazione 
+        sar&agrave; <i><b>[_CSIDL_PRIMO]</b></i> ed indicher&agrave; il primo 
+        valore dell'enumerazione.</p>
+      <ol class="codicevb" start="59">
+        <li>&nbsp;&nbsp;[_CSIDL_ULTIMO] = &ampH31</li>
+        <li>End Enum</li>
+        <li></li>
+      </ol>
+      <p>Alla stessa maniera l'ultimo valore della lunga enumerazione sar&agrave; 
+        <i><b>[_CSIDL_ULTIMO]</b></i> ed indicher&agrave; l'ultimo valore dell'elenco.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Questi due valori speciali saranno utilizzati per limitare l'enumerazione 
+        ed effettuare un ciclo di tutti i suoi elementi. Il nome di questi due 
+        valori che &egrave; stato dato &egrave; circondato da parentesi quadre 
+        perch&eacute; il loro primo carattere &egrave; un trattino di sottolineatura.</p>
+      <p>L'aver dato un nome con un carattere di sottolineature all'inizio determiner&agrave; 
+        che il valore venga nascosto all'utente che usufruisce dell'enumerazione. 
+        In particolare il sistema <a href="../glossary/i.htm#INTELLISENSE">Intellisense</a> 
+        non ne rilever&agrave; la presenza.</p>
+      <ol class="codicevb" start="62">
+        <li>Public Function TrovaCartella(ByVal IDLCartella As CSIDL_Cartelle) 
+          As String</li>
+        <li>&nbsp;&nbsp;TrovaCartella = String$(MAX_PATH, 0)</li>
+        <li>&nbsp;&nbsp;Select Case IDLCartella</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case CSIDL_TEMP</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call GetTempPath(MAX_PATH - 1, 
+          TrovaCartella)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case CSIDL_WINDOWS</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call GetWindowsDirectory(TrovaCartella, 
+          MAX_PATH - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case CSIDL_SYSTEM</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call GetSystemDirectory(TrovaCartella, 
+          MAX_PATH - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call SHGetSpecialFolderPath(ByVal 
+          0&amp;, TrovaCartella, IDLCartella, ByVal 0&amp;)</li>
+        <li>&nbsp;&nbsp;End Select</li>
+        <li>&nbsp;&nbsp;TrovaCartella = Left$(TrovaCartella, InStr(1, TrovaCartella, 
+          Chr$(0)) - 1)</li>
+        <li>&nbsp;&nbsp;If Len(TrovaCartella) &gt; 0 And Right$(TrovaCartella, 
+          1) &lt;&gt; &quot;\&quot; Then TrovaCartella = TrovaCartella &amp &quot;\&quot;</li>
+        <li>End Function</li>
+      </ol>
+      <p>Alla riga 62 &egrave; definita la funzione principale di questo modulo 
+        che prende il nome di <b>TrovaCartella</b>; essa richiede soltanto il 
+        passaggio di un valore dell'enumerazione appena vista e restituisce il 
+        percorso della cartella recuperata.</p>
+      <p>Alla riga 63 &egrave; allocato il buffer utilizzato dalle varie funzioni 
+        API. In base all'argomento <b>IDLCartella</b> fornito sar&agrave; richiamata 
+        una delle quattro funzioni API: <i>GetTempPath</i> per <i><b>CSIDL_TEMP</b></i>, 
+        <i>GetWindowsDirectory</i> per <i><b>CSIDL_WINDOWS</b></i>, <i>GetSystemDirectory</i> 
+        per <i><b>CSIDL_SYSTEM</b></i> ed infine SHGetSpecialFolderPath per tutti 
+        gli altri valori.</p>
+      <p>Al termine del recupero del percorso, alla riga 74, dovr&agrave; essere 
+        ripulito il buffer dai caratteri aggiuntivi. Sar&agrave; quindi estratto 
+        tutto ci&ograve; che si trova prima del primo carattere <a href="../glossary/n.htm#NULL">NULL</a>. 
+        Solo in seguito sar&agrave; aggiunta la barra rovesciata al percorso estratto 
+        nel caso essa non dovesse essere presente. Questo al fine di assicurare 
+        che tutti i percorsi terminino con un backslash e non solo quelli che 
+        puntano alla radice del disco.</p>
+      <p><img src="../images/activity/att22_01.png" width="278" height="62" align="right" alt="Figura 1">Possiamo 
+        quindi passare al semplice form dimostrativo del funzionamento: si compone 
+        di soli quattro controlli: una <i>Label</i> di nome <b>lblPercorso</b> 
+        e la corrispondente <i>TextBox</i> <img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>txtPercorso</b>; l'altra <i>Label</i> <b>lblCSIDL</b> e la 
+        corrispondente <i>HScrollBar</i> <img src="../images/controls/hscrollbar.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>hsbCSIDL</b>.</p>
+      <p>Ad ogni cambio di valore del controllo HScrollBar corrisponder&agrave; 
+        un IDL e la corrispondente cartella estratta e riportata nella TextBox. 
+        Il codice si compone di due sole routine:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;hsbCSIDL.Min = [_CSIDL_PRIMO]</li>
+        <li>&nbsp;&nbsp;hsbCSIDL.Max = [_CSIDL_ULTIMO]</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>All'avvio del form sar&agrave; inizializzata la HScrollBar con i valori 
+        limite e nascosti dell'enumerazione <b>CSIDL_Cartelle</b>.</p>
+      <ol class="codicevb" start="8">
+        <li>Private Sub hsbCSIDL_Change()</li>
+        <li>&nbsp;&nbsp;lblCSIDL.Caption = &quot;CSIDL &quot; &amp; CStr(hsbCSIDL.Value)</li>
+        <li>&nbsp;&nbsp;txtPercorso.Text = TrovaCartella(hsbCSIDL.Value)</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Cos&igrave; allo cambiamento del valore della barra di scorrimento sar&agrave; 
+        aggiornata la Label <b>lblCSIDL</b> con il numero dell'IDL indicato (riga 
+        9). Alla riga 10 invece sar&agrave; recuperata la cartella di sistema 
+        tramite la funzione <b>TrovaCartella</b> e l'IDL indicato dalla barra 
+        di scorrimento.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/activity/att22_02.png" width="278" height="62" align="right" alt="Figura 2">Il 
+        progetto &egrave; davvero semplicissimo: baster&agrave; spostare la barra 
+        per scorrere tutte le cartelle di sistema.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>La soluzione proposta &egrave; davvero molto semplice e consente il recupero 
+        di molte cartelle di sistema. Tuttavia il funzionamento pu&ograve; cambiare 
+        da un sistema operativo all'altro.</p>
+      <!-- #EndEditable --><!-- #BeginEditable "CREDITS" --> 
+      <p align="right" class="credits2"><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        15 Maggio 2002</p>
+      <!-- #EndEditable --><!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'introduzione delle Richieste dei lettori</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

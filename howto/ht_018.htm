@@ -1,0 +1,322 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Lettura ed utilizzo dei parametri passati nella riga di comando del programma</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Lettura ed utilizzo dei 
+    parametri passati nella riga di comando del programma<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Da quando &egrave; nato il sistema a finestre Windows le righe di comando 
+        di un programma hanno cominciato a perdere senso, ma sono ancora molto 
+        utilizzate.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Infatti, nel momento in cui clicchiamo due volte sopra un documento, 
+        viene caricato il programma associato all'estensione del documento e viene 
+        passato come parametro al programma il nome del documento che si desidera 
+        aprire.</p>
+      <p>Altres&igrave;, ogni volta che utilizziamo il Prompt di MS-DOS o la voce 
+        Esegui del menu <b>Start</b> (<b>Avvio</b>) &egrave; possibile fornire 
+        al programma che stiamo per caricare, una serie di comandi o parametri, 
+        per indicare ad esso di effettuare una serie di operazioni.</p>
+      <p>In questo semplice esempio vedremo come analizzare la riga di comando 
+        ed estrarre i parametri passati ad un nostro programma.</p>
+      <p><img src="../images/howto/howto018_01.jpg" width="187" height="83" align="right" alt="Figura 1">Inseriamo 
+        sopra un form una <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>Label1</b> ed una <i>ListBox</i><img src="../images/controls/listbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>ListaOpzioni</b>.</p>
+      <p>Il programma, al caricamento, estrarr&agrave; i parametri dalla riga 
+        di comando e li scriver&agrave; nella <i>ListBox</i> <b>ListaOpzioni</b>.</p>
+      <p>Il codice in questione &egrave; stato posto in una Sub che, partendo 
+        da una stringa, inserisce nella <i>ListBox</i> i singoli <a href="../glossary/t.htm#TOKEN">token</a> 
+        (elementi). Il codice &egrave; il seguente:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub LeggiParametri(ByVal Riga As String)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim LungSez As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim LungRiga As Integer</li>
+      </ol>
+      <p>La Sub in questione si chiama <b>LeggiParametri</b> e richiede un parametro 
+        stringa di nome <b>Riga</b>. Esso sar&agrave; trattato <a href="../info/info_05.htm">per 
+        valore</a>, per cui tutte le modifiche apportate sulla stringa non si 
+        rifletteranno all'esterno della funzione.</p>
+      <p>Infatti, abbiamo intenzione di estrarre i singoli token dalla riga ed 
+        eliminarli da essa subito dopo la loro estrazione. Questo far&agrave; 
+        si che la riga diventi sempre pi&ugrave; corta, velocizzando e semplificando 
+        il processo. I token che possiamo estrarre dalla riga sono di due tipologie: 
+        quelli semplici, delimitati da uno spazio, e quelli a parole multiple, 
+        delimitati da una coppia di virgolette a sinistra ed una a destra.</p>
+      <p>All'interno della Sub abbiamo dichiarato due variabili, entrambe di tipo 
+        Integer: <b><i>LungSez</i></b> indica la lunghezza di una sezione, ovvero 
+        la posizione all'interno di una stringa dove finisce un token; <b><i>LungRiga</i></b> 
+        indica semplicemente la lunghezza della stringa.</p>
+      <ol class="codicevb" start="6">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Do While LungSez &lt; LungRiga</li>
+      </ol>
+      <p>Alla riga 6 inizia un ciclo che dura fintanto che la lunghezza della 
+        riga non &egrave; maggiore della sezione; ovvero la sezione &egrave; minore 
+        della lunghezza della riga.</p>
+      <p>Poich&eacute;, ogni volta, la riga contenente i vari parametri, viene 
+        accorciata mediante eliminazione dell'ultimo parametro utilizzato, essa 
+        diviene sempre pi&ugrave; corta. Nel momento in cui l'ultima sezione estratta 
+        (LungSez) &egrave; uguale (quindi non &egrave; minore) alla lunghezza 
+        della riga, il ciclo finisce.</p>
+      <ol class="codicevb" start="7">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Riga = Trim(Right(Riga, 
+          LungRiga - LungSez))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LungRiga = Len(Riga)</li>
+      </ol>
+      <p>Alla riga 7 viene effettuata l'eliminazione da Riga dell'ultimo parametro 
+        trovato, estraendo LungRiga - LungSez caratteri partendo dalla destra. 
+        In ogni caso gli spazi all'inizio ed alla fine saranno eliminati poich&eacute; 
+        essi fungono da separatori dei vari parametri.</p>
+      <p>Alla riga 8 viene effettuato ogni volta il ricalcolo della lunghezza 
+        della riga.</p>
+      <ol class="codicevb" start="9">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Left(Riga, 1) = 
+          &quot;&quot;&quot;&quot; Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LungSez 
+          = InStr(2, Riga, &quot;&quot;&quot;&quot;, 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          LungSez = 0 Then LungSez = LungRiga</li>
+      </ol>
+      <p>Se il primo carattere della riga &egrave; un &quot; ci troviamo davanti 
+        un parametro a parole multiple. Abbiamo per cui la necessit&agrave; di 
+        trovare il secondo &quot; che delimita la fine di tale token.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alla riga 10 abbiamo, per cui, la ricerca del secondo delimitatore, partendo 
+        ovviamente dal secondo carattere, poich&eacute; il primo, come gi&agrave; 
+        detto, contiene il primo delimitatore.</p>
+      <p>Se il delimitatore viene trovato, LungSez conterr&agrave; la sua posizione, 
+        altrimenti conterr&agrave; 0. Alla riga 11 viene verificato se LungSez 
+        contiene 0. In tal caso ci troviamo davanti un parametro a parole multiple 
+        senza delimitatore finale. Non conoscendo la posizione dove tale token 
+        dovrebbe terminare, facciamo in modo che esso contenga tutta la rimanente 
+        riga, ponendo uguali LungSez e LungRiga.</p>
+      <p>Questo far&agrave; si che il token venga estratto alla riga 20.</p>
+      <ol class="codicevb" start="12">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LungSez 
+          = InStr(2, Riga, &quot; &quot;, 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          LungSez = 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LungSez 
+          = LungRiga</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LungSez 
+          = LungSez - 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End 
+          If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+      </ol>
+      <p>Se, invece il token non inizia per &quot; abbiamo davanti un token semplice, 
+        delimitato da uno spazio.</p>
+      <p>Alla riga 13 ricerchiamo la posizione del delimitatore e la memorizziamo 
+        all'interno di <b>LungSez</b>. Infatti la posizione del delimitatore indica 
+        anche la lunghezza della sezione.</p>
+      <p>Se la ricerca del delimitatore ha dato risultato 0, abbiamo trovato l'ultimo 
+        parametro, al cui seguito non appare uno spazio. Per tale ragione il nostro 
+        token sar&agrave; uguale alla stringa rimanente (riga 15).</p>
+      <p>Se, invece, abbiamo un delimitatore, escludiamo lo spazio, che non far&agrave; 
+        parte del token stesso, ma lo delimiter&agrave; soltanto (riga 17).</p>
+      <ol class="codicevb" start="20">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListaOpzioni.AddItem 
+          Left(Riga, LungSez)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Loop</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Cos&igrave;, ad ogni passaggio, pu&ograve; essere estratto un token ed 
+        inserito nella <i>ListBox</i> <b>ListaOpzioni</b>.</p>
+      <p>Al ciclo successivo il token appena trovato sar&agrave; cancellato dalla 
+        riga ed il processo reinizier&agrave; da capo.</p>
+      <p>Per provare il programma abbiamo due possibilit&agrave;: <a href="../glossary/c.htm#COMPILAZIONE">compilare</a> 
+        il progetto in un file eseguibile e caricare esso tramite finestra DOS 
+        oppure inserire i parametri direttamente all'interno dell'<a href="../glossary/i.htm#IDE">IDE</a>. 
+        Per semplificare la cosa abbiamo scelto proprio quest'ultima possibilit&agrave;.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Apriamo il menu <b>Progetto</b> di Visual Basic, scegliamo la voce <i>&quot;Propriet&agrave; 
+        di .....&quot;</i> (l'ultima voce) ed apparir&agrave; la finestra mostrata 
+        nella figura 2.</p>
+      <p align="center"><img src="../images/howto/howto018_02.jpg" width="334" height="283" alt="Figura 2"><br>
+        <b>Figura 2</b></p>
+      <p>Fatto questo baster&agrave; cliccare sulla voce <b><i>Crea</i></b> in 
+        alto ed apparir&agrave; un'altra finestra.</p>
+      <p align="center"><img src="../images/howto/howto018_03.jpg" width="334" height="283" alt="Figura 3"><br>
+        <b>Figura 3</b></p>
+      <p>In questa finestra sar&agrave; possibile definire alcuni parametri di 
+        esecuzione.<br>
+        In basso abbiamo una casella di testo, alla cui sinistra c'&egrave; scritto 
+        <b><i>&quot;Argomenti della riga di comando&quot;</i></b>, in cui &egrave; 
+        possibile inserire alcuni parametri, come se eseguissimo il progetto da 
+        una finestra DOS.</p>
+      <p>Inseriamo questi 5 parametri, separandoli da uno spazio:</p>
+      <ul>
+        <li><b>1</b></li>
+        <li><b>2</b></li>
+        <li><b>ciao</b></li>
+        <li><b>&quot;un saluto&quot;</b></li>
+        <li><b>buongiorno</b></li>
+      </ul>
+      <p><img src="../images/howto/howto018_04.jpg" width="187" height="83" align="right" alt="Figura 4">Fatto 
+        questo, baster&agrave; premere il pulsante OK e provare il progetto.</p>
+      <p>Appariranno nella <i>ListBox</i> i parametri poco prima inseriti.</p>
+      <p>Ovviamente in questo caso abbiamo semplicemente voluto elencarli, ma 
+        avremmo potuto pure svolgere operazioni particolari per ogni parametro.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Si consiglia di concedere all'utente quasi sempre l'utilizzo della riga 
+        di comando, per permettere di eseguire alcune operazioni, per esempio 
+        aprire un documento semplicemente trascinando l'icona del documento sopra 
+        il nostro programma, oppure l'utilizzo di procedure automatiche tramite 
+        l'impostazione di determinati parametri sulla riga di comando.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=3">Giuseppe 
+        Della Bianca</a><br>
+        11 Gennaio 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,496 @@
+<html><!-- #BeginTemplate "/Templates/Richieste.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Invio dati ad un'applicazione esterna</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Invio dati ad un'applicazione 
+    esterna<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/activity.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Richiesta di: <!-- #BeginEditable "RICHIEDENTE" -->LoneFlier<!-- #EndEditable --> 
+        - <!-- #BeginEditable "DATARICHIESTA" -->2 Settembre 2002<!-- #EndEditable --><br>
+        Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"> 
+        4<!-- #EndEditable --> / 5 </p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p><i>Ho scritto un programma in VB [...] non riesco per&ograve; a fare 
+        in modo che, dopo essere ridotto ad icona, mi invii i dati all'applicazione 
+        attiva, che non dovrebbe essere definita dal programma.</i></p>
+      <hr>
+      <p>La questione non &egrave; molto semplice come appare in realt&agrave;. 
+        Infatti se l'utente va a richiamare un programma esterno, l'applicazione 
+        scritta con VB, ridotta ad icona, non &egrave; pi&ugrave; la finestra 
+        attiva.<br>
+        &Egrave; pertanto necessario che scatti qualche evento che dica al programma 
+        <b><i>&quot;ok, ho scelto questa applicazione, mandami i dati&quot;</i></b>. 
+        Non si potr&agrave; naturalmente cliccare un pulsante sul programma VB, 
+        altrimenti quest'ultimo diverr&agrave; l'applicazione attiva ed i dati 
+        saranno inviati nuovamente al suddetto programma.</p>
+      <p>Assumiamo che il punto precedente si superi impostando un certo ritardo 
+        prima dell'invio di dati (ad esempio 5 secondi), poich&eacute; una finestra 
+        di Windows <a href="../info/info_17.htm">si compone di tantissime finestre 
+        client</a> (le caselle di testo, i pulsanti) &egrave; naturale che l'utente, 
+        nella scelta dell'applicazione attiva debba scegliere <b>esattamente</b> 
+        il controllo in cui andranno inviati questi dati. Un'applicazione spartana 
+        come il <i>Notepad</i> ha due sole finestre, la parent (Application Window) 
+        che contiene tutto (compresi i menu) e la grande casella di testo. Un'applicazione 
+        pi&ugrave; complessa come <i>MS Word</i> contiene centinaia di finestre 
+        (l'area grande in cui scrivere il testo, i pulsanti per grassetto, corsivo, 
+        le caselle combo in cui si seleziona la dimensione o lo stile del carattere, 
+        etcc..) e ci&ograve; obbliga l'utente ad una scelta precisa.<br>
+        <i><b>[In risposta a LoneFlier il 5 Settembre 2002]</b></i></p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>In questo articolo faremo uso di <i>Notepad</i>, una semplicissima applicazione 
+        esterna che si compone di due sole finestre. &Egrave; fondamentale che 
+        l'utente o il programma sappiano esattamente a quale <a href="../glossary/f.htm#FINESTRA">finestra</a> 
+        dovranno essere inviati i dati. Esiste un'altra soluzione un po' pi&ugrave; 
+        precisa per la decisione della finestra che ricever&agrave; i dati e sar&agrave; 
+        trattata nella seconda parte di quest'articolo.</p>
+      <p>Nella soluzione sviluppata in quest'articolo sar&agrave; quindi compito 
+        dell'utente cliccare sopra la finestra che ricever&agrave; i dati, entro 
+        un certo limite di tempo, deciso in 2 secondi.</p>
+      <p>Il punto chiave del problema sta nel recupero della finestra attiva in 
+        cui si trova il cosiddetto focus di tastiera ovvero quella finestra che 
+        riceverebbe dati se l'utente premesse uno o pi&ugrave; tasti sulla tastiera; 
+        si tratta in fondo del controllo che ha lo stato attivo. Purtroppo non 
+        esiste alcuna funzione nativa in grado di recuperare tale informazione; 
+        utilizzeremo pertanto una funzione di nome <i><b>GetFocusEx</b></i> ma 
+        attenzione che nonostante il nome <b>non si tratta di una funzione API</b>, 
+        ma di una nuova funzione definita all'interno del nostro form; l'autore 
+        della funzione &egrave; Fabio Zanetta (Zanna) il quale ne ha concesso 
+        l'utilizzo in questo tutorial.</p>
+      <p><img src="../images/activity/att23_01.png" width="247" height="44" align="right" alt="Figura 1">Il 
+        progetto si compone di un unico form con due soli controlli: una <i>TextBox</i> 
+        di nome <b>txtTesto</b> ed un <i>CommandButton</i> di nome <b>cmdInvia</b>. 
+        Il pulsante naturalmente servir&agrave; per inviare i dati all'applicazione 
+        esterna Notepad.<br>
+        Il codice si presenta ricco di funzioni <a href="../glossary/a.htm#API">API</a>:</p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Declare Function GetForegroundWindow Lib &quot;user32&quot; 
+          () As Long</li>
+        <li>Private Declare Function SetForegroundWindow Lib &quot;user32&quot; 
+          (ByVal hwnd As Long) As Long</li>
+        <li>Private Declare Function GetFocus Lib &quot;user32&quot; () As Long</li>
+        <li>Private Declare Function AttachThreadInput Lib &quot;user32&quot; 
+          (ByVal idAttach As Long, ByVal idAttachTo As Long, ByVal fAttach As 
+          Long) As Long</li>
+        <li>Private Declare Function GetWindowThreadProcessId Lib &quot;user32&quot; 
+          (ByVal hwnd As Long, lpdwProcessId As Long) As Long</li>
+        <li></li>
+      </ol>
+      <p>Questa prima serie di funzioni API riguardano il recupero della finestra 
+        attiva: le funzioni <b>GetForegroundWindow</b> e <b>SetForegroundWindow</b> 
+        servono rispettivamente per recuperare l'<a href="../glossary/h.htm#HANDLE">handle</a> 
+        della finestra <b>Parent</b> in primo piano e per cambiare la finestra 
+        in primo piano.</p>
+      <p>La funzione <b>GetFocus</b> restituisce l'handle della finestra con il 
+        focus di tastiera attivo, ma soltanto all'interno del <a href="../glossary/t.htm#THREAD">thread</a> 
+        da cui si richiama la funzione. Sarebbe perfetta se recuperasse l'handle 
+        della finestra attiva da qualsiasi thread, ma purtroppo cos&igrave; non 
+        fa; riporta soltanto la finestra con il focus di tastiera all'interno 
+        del thread da cui si richiama; &egrave; per&ograve; possibile <i>ingannare</i> 
+        la funzione collegando i due thread in uno solo; GetFocus quindi riconoscerebbe 
+        la finestra attiva (la casella di testo all'interno di Notepad) come parte 
+        del thread del programma VB.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il collegamento dei due thread &egrave; possibile mediante la funzione 
+        <b>AttachThreadInput</b> che richiede l'identificativo dei due thread 
+        da collegare. &Egrave; possibile recuperare i due thread mediante la funzione 
+        <b>GetWindowThreadProcessId</b> che restituisce <a href="../info/info_14.htm">il 
+        thread dentro al quale &egrave; stata creata la finestra</a> specificata. 
+        Queste funzioni interconnesse tra loro saranno richiamate all'interno 
+        della funzione <i><b>GetFocusEx</b></i> che vedremo pi&ugrave; avanti.</p>
+      <ol start="9" class="codicevb">
+        <li>Private Declare Sub Sleep Lib &quot;kernel32&quot; (ByVal dwMilliseconds 
+          As Long)</li>
+        <li>Private Declare Function SendMessage Lib &quot;user32&quot; Alias 
+          &quot;SendMessageA&quot; (ByVal hwnd As Long, ByVal wMsg As Long, ByVal 
+          wParam As Long, lParam As Any) As Long</li>
+        <li></li>
+        <li>Private Const WM_CHAR = &amp;H102</li>
+        <li>Private Const WM_SETTEXT = &amp;HC</li>
+        <li>Private Const EM_SETSEL = &amp;HB1</li>
+        <li></li>
+      </ol>
+      <p>La Sub <b>Sleep</b>, <a href="../howto/ht_034.htm">descritta in altro 
+        articolo</a>, serve esclusivamente per forzare un'attesa del codice di 
+        un certo tempo. Nel nostro caso servir&agrave; per permettere all'utente 
+        la scelta della finesta a cui inviare i dati.</p>
+      <p>Infine la funzione <b>SendMessage</b>, anche questa vista in tanti altri 
+        articoli, consente di inviare un <a href="../glossary/m.htm#MESSAGGIO">messaggio</a> 
+        ad una funzione specifica. Il messaggio sar&agrave; quindi elaborato dalla 
+        relativa <a href="../glossary/w.htm#WINDOWPROCEDURE">Window Procedure</a> 
+        che reagir&agrave; di conseguenza.</p>
+      <p>I messaggi che invieremo alla finestra scelta sono quelli definiti alle 
+        righe 12-14 e servono rispettivamente ad inviare un carattere, ad inviare 
+        un testo ed a modificare la posizione del cursorse della finestra indicata.</p>
+      <ol start="16" class="codicevb">
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call Shell(&quot;NOTEPAD.EXE&quot;, vbNormalNoFocus)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Il progetto si apre con il richiamo del <a href="../glossary/p.htm#PROCESSO">processo</a> 
+        esterno NOTEPAD.EXE, che avvier&agrave; un'istanza del gi&agrave; noto 
+        Blocco Note di Windows. Il parametro <b><i>vbNormalNoFocus</i></b> far&agrave; 
+        s&igrave; che il processo venga avviato in secondo piano e la nuova finestra 
+        non prenda il sopravvento sul nostro progetto VB.</p>
+      <p>Seguitiamo vedendo il codice della funzione <i><b>GetFocusEx</b></i>, 
+        di cui abbiamo gi&agrave; accennato il funzionamento:</p>
+      <ol start="20" class="codicevb">
+        <li>Private Function GetFocusEx(ByVal Child As Boolean) As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim t_id As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim c_t_id As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Child Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t_id = App.ThreadID</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c_t_id = GetWindowThreadProcessId(GetForegroundWindow, 
+          0&amp;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call AttachThreadInput(c_t_id, 
+          t_id, True)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GetFocusEx = GetFocus()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call AttachThreadInput(c_t_id, 
+          t_id, False)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GetFocusEx = GetForegroundWindow()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>La funzione richiede il passaggio di un argomento: Child di tipo Booleano 
+        specifica se &egrave; richiesto il recupero della finestra Client o di 
+        quella <a href="../glossary/p.htm#PARENT">Parent</a> attiva. Nel nostro 
+        caso &egrave; chiaro che ci interessa sapere quale controllo ha lo stato 
+        attivo, ovvero quale finestra <a href="../glossary/c.htm#CHILD">child</a> 
+        ha il focus di tastiera.</p>
+      <p>Alle righe 21 e 22 sono dichiarate due variabili di tipo Long: <b>t_id</b> 
+        specificher&agrave; il thread della nostra applicazione, mentre <b>c_t_id</b> 
+        conterr&agrave; il thread dell'applicazione esterna da collegare alla 
+        prima.<br>
+        I due valori sono infatti recuperati alle righe 24 e 25: <i>App.ThreadID</i> 
+        specifica il thread della nostra applicazione Visual Basic; il secondo 
+        thread &egrave; recuperato mediante <b>GetWindowThreadProcessId</b>, fornendogli 
+        l'handle della finesta in primo piano (recuperato a sua volta tramite 
+        <b>GetForegroundWindow</b>). Invece di <i>App.ThreadID</i> avremmo potuto 
+        richiamare la stessa funzione, fornendogli l'handle del form da cui parte 
+        l'elaborazione.</p>
+      <p>Ottenuti i due thread sar&agrave; quindi possibile collegarli tra loro 
+        mediante <b>AttachThreadInput</b>; il primo argomento della funzione specifica 
+        il thread da collegare, mentre il secondo argomento specifica il thread 
+        a cui collegare il primo; l'ultimo argomento infine determine se la funzione 
+        dovr&agrave; collegare o scollegare i due thread.</p>
+      <p>Le due operazioni saranno infatti eseguite alle righe 26 e 28. Subito 
+        dopo aver collegato i due thread sar&agrave; possibile utilizzare la succitata 
+        funzione <b>GetFocus</b> che, non pi&ugrave; dolente del difetto di partenza 
+        legato al thread da cui si esegue, sar&agrave; in grado di dirci quale 
+        finestra child ha il focus di tastiera. Recuperato tale valore i due thread 
+        saranno quindi scollegati.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Nel caso che la funzione <i><b>GetFocusEx</b></i> venga richiamata con 
+        il parametro <i> Child</i> False, sar&agrave; recuperata la finestra Parent 
+        attiva mediante <b>GetForegroundWindow</b> (riga 30).</p>
+      <p><img src="../images/notes.gif" width="56" height="57" align="left"><b class="colorerosso">Attenzione!</b><br>
+        La funzione <i><b>GetFocusEx</b></i> nei sistemi Windows 9x (soprattutto 
+        in Windows 98), per ragioni ignote, a volte fallisce il suo scopo e restituisce 
+        valore 0.<br>
+        A tal scopo, vedremo in seguito, verr&agrave; aggiunto un controllo sul 
+        valore restituito dalla funzione e l'operazione sar&agrave; ritentata 
+        in caso di valore 0.</p>
+      <p>Il resto del progetto riguarda la gestione dell'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"> 
+        Click sopra il pulsante <b>cmdInvia</b>.</p>
+      <ol start="34" class="codicevb">
+        <li>Private Sub cmdInvia_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim lnghWnd As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim lnghWndParent As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim intConta As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim bytBuffer() As Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim intRetries As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Const intMaxRetries = 5</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Const lngTypeDelay = 0</li>
+        <li></li>
+      </ol>
+      <p>La routine utilizza parecchie funzioni per avere il massimo controllo 
+        possibile sulla finesta a cui inviare i dati. La variabile <b>lnghWnd</b> 
+        conterr&agrave; l'handle della finestra child con il focus di tastiera 
+        attivo, restituito dalla funzione <i><b>GetFocusEx</b></i>; <b>lnghWndParent</b> 
+        conterr&agrave; invece l'handle della finesta Parent attiva, ovvero di 
+        Notepad. Quindi lnghWnd sar&agrave; una finestra contenuta all'interno 
+        della finesta indicata da lnghWndParent.</p>
+      <p>La variabile <b>intConta</b> sar&agrave; utilizzata per alcuni cicli 
+        che vedremo in seguito; <b>bytBuffer</b> &egrave; una <a href="../glossary/m.htm#MATRICE">matrice</a> 
+        che conterr&agrave; invece i dati da inviare all'applicazione; infine 
+        <b>intRetries</b> conter&agrave; il numero di tentativi in caso di fallimento 
+        della funzione <i><b>GetFocusEx</b></i> e <b>lngTypeDelay</b> determina 
+        il ritardo tra l'invio di ogni carattere.</p>
+      <p>Le due <a href="../glossary/c.htm#COSTANTE">costanti</a> definite alle 
+        righe 40 e 41 indicano rispettivamente il numero massimo di tentativi 
+        per la funzione <i><b>GetFocusEx</b></i> da eseguire prima di dichiarare 
+        fallita l'operazione, e la velocit&agrave; di digitazione del testo nella 
+        finestra esterna. Sar&agrave; tutto pi&ugrave; chiaro fra qualche riga.</p>
+      <ol start="43" class="codicevb">
+        <li> &nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Premi OK e clicca su Notepad! 
+          (2 Secondi)&quot;, vbExclamation</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call Sleep(2000)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lnghWndParent = GetForegroundWindow()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Do While (lnghWnd = 0) And (intRetries &lt; 
+          intMaxRetries)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lnghWnd = GetFocusEx(True)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;intRetries = intRetries 
+          + 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call SetForegroundWindow(lnghWndParent)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Loop</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If lnghWnd = 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Impossibile 
+          attivare la finestra&quot;, vbCritical</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit Sub</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li></li>
+      </ol>
+      <p>Le righe 43 e 44 informano l'utente che &egrave; giunto il momento di 
+        scegliere la finesta a cui inviare i dati e nel nostro caso sar&agrave; 
+        la finestra di Notepad. Concederemo all'utente fino a 2 secondi (ovvero 
+        2000 millisecondi) per scegliere la finestra ed in questo tempo il nostro 
+        programma rimarr&agrave; in attesa (riga 44).</p>
+      <p>Superato questo momento si proceder&agrave; innanzitutto a recuperare 
+        l'handle della finestra Parent attiva (riga 45) e quindi a recuperare 
+        l'hande della finestra Child in essa contenuta.<br>
+        Come abbiamo gi&agrave; detto, poich&eacute; la funzione in alcune situazioni 
+        restituisce valore 0, alle righe 46-50 sar&agrave; eseguito un ciclo che 
+        si ripeter&agrave; fino a quando non verr&agrave; recuperato l'handle 
+        della finestra, fino ad un massimo di 5 volte (come specificato dalla 
+        costante <b>intMaxRetries</b> vista alla riga 40.</p>
+      <p>All'interno del ciclo sar&agrave; innanzitutto recuperata la finestra 
+        Child mediante GetFocusEx e, giusto per sicurezza, riportata la finestra 
+        Parent in primo piano. Infatti a volte la funzione <i><b>GetFocusEx</b></i>, 
+        nel tentativo di recuperare l'handle della finestra disattiva o addirittura 
+        porta in secondo piano la finestra su cui lavora.</p>
+      <p>Se al termine del ciclo di controllo, il valore di <b>lnghWnd</b> sar&agrave; 
+        ancora 0, l'elaborazione sar&agrave; interrotta con un avviso per l'utente 
+        (righe 51-54).</p>
+      <p>Con l'handle della finestra di destinazione contenuto nella variabile 
+        <i> <b>lnghWnd</b></i> possiamo finalmente passare al succo del problema: 
+        inviare il testo contenuto nella casella di testo alla finestra appena 
+        individuata.</p>
+      <ol start="56" class="codicevb">
+        <li> &nbsp;&nbsp;&nbsp;&nbsp;bytBuffer = StrConv(txtTesto.Text &amp; vbCrLf 
+          &amp; vbNullChar, vbFromUnicode)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call SendMessage(lnghWnd, WM_SETTEXT, ByVal 
+          0&amp;, bytBuffer(0))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call SendMessage(lnghWnd, EM_SETSEL, UBound(bytBuffer, 
+          1), 0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For intConta = 0 To UBound(bytBuffer, 1) - 
+          2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call SendMessage(lnghWnd, 
+          WM_CHAR, bytBuffer(intConta), ByVal 0&amp;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If lngTypeDelay &gt; 
+          0 Then Call Sleep(lngTypeDelay)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next intConta</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call SetForegroundWindow(lnghWndParent)</li>
+        <li>End Sub</li>
+      </ol>
+      <p>La prima operazione &egrave; la conversione in matrice di bytes della 
+        stringa da inviare ed &egrave; effettuata alla riga 56. Durante la conversione 
+        &egrave; stato aggiunto un ritorno a capo (giusto per l'estetica) ed un 
+        carattere <a href="../glossary/n.htm#NULL">NULL</a> che indica la fine 
+        della stringa. La ragione &egrave; spiegata nell'articolo di approfondimento 
+        sullo <a href="../news/news_10.htm">studio delle stringhe API</a>.</p>
+      <p>Finalmente alla riga 57 invieremo i dati alla finestra di destinazione, 
+        sotto forma di array di bytes, tramite la funzione <b>SendMessage</b> 
+        ed il messaggio <i> <b>EM_SETTEXT</b></i>, che corrisponde a ci&ograve; 
+        che in VB otterremmo con <span class="fixed">Text1.Text = Stringa</span> 
+        ovvero tutto il testo precedente verr&agrave; eliminato e sostituito da 
+        quello inviato. Ma non &egrave; finita qui: con l'occasione abbiamo voluto 
+        mostrare anche una seconda soluzione ovvero quella di inviare la stringa 
+        carattere per carattere, come se i caratteri fossero battuti da tastiera 
+        e senza eliminare il testo precedente.</p>
+      <p>Alla riga 58 riposizioniamo il cursore alla fine del testo, in modo da 
+        poter inviare altri dati senza sovrascrivere o spostare quelli precedenti. 
+        Anche per questa funzione ci viene incontro <b>SendMessage</b> con il 
+        messaggio <i> <b>EM_SETSEL</b></i>.</p>
+      <p>Sar&agrave; infine eseguito un ciclo per tutti i caratteri contenuti 
+        nella matrice di bytes (ad eccezione del NULL) all'interno del quale sar&agrave; 
+        inviato l'ultimo messaggio <i><b>WM_CHAR</b></i> che corrisponde alla 
+        pressione del tasto da tastiera; il codice del tasto sar&agrave; specificato 
+        nel terzo argomento alla funzione. Per simulare ancora meglio l'azione 
+        &egrave; stata aggiunta (riga 61) la possibilit&agrave; di effettuare 
+        un piccolo ritardo tra ogni battuta e ci&ograve; &egrave; determinato 
+        dal valore della costante <b>lngTypeDelay</b>.</p>
+      <p>Per simulare un effetto gradevole si consiglia di impostare il valore 
+        della costante lngTypeDelay ad un valore compreso tra 100 e 500.</p>
+      <p><img src="../images/activity/att23_01.png" width="247" height="44" align="right" alt="Figura 2">Possiamo 
+        quindi passare alla dimostrazione del progetto fino a qui sviluppato: 
+        all'avvio del progetto sar&agrave; eseguito anche Notepad che rimarr&agrave; 
+        in secondo piano. Inserire del testo nella casella di testo del form e 
+        premere il pulsante <i><b>Invia</b></i>.</p>
+      <table width="95%" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr> 
+          <td align="center" width="50%" valign="top"><img src="../images/activity/att23_02.png" width="222" height="95" alt="Figura 3"><br>
+            <b>Figura 3</b></td>
+          <td align="center" width="50%" valign="top"><img src="../images/activity/att23_03.png" width="217" height="110" alt="Figura 4"><br>
+            <b>Figura 4</b></td>
+        </tr>
+      </table>
+      <p>Sar&agrave; mostrato un avviso come quello presentato nella Figura 3 
+        e l'utente avr&agrave; il limite di 2 secondi per attivare la finestra 
+        del Blocco Note a cui verranno inviati i dati (vedi Figura 4).<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Il problema &egrave; alquanto complesso e la soluzione proposta non &egrave; 
+        delle ottimali perch&eacute; troppo sofferente delle scelte dell'utente 
+        o dell'incapacit&agrave; dell'utente o del sistema di attivare la finestra 
+        di destinazione nel tempo limite. In caso di una scelta errata i risultati 
+        possono essere imprevedibili.</p>
+      <p>Per ovviare a queste chiare difficolt&agrave; sar&agrave; proposta una 
+        seconda soluzione, molto pi&ugrave; armoniosa e pulita di quella appena 
+        presentata. Si raccomanda pertanto la consultazione della seconda parte 
+        di questo articolo.</p>
+      <p>La presente soluzione &egrave; stata comunque sviluppata un po' per pretesto 
+        per entrare nel merito della complessit&agrave; del problema e per comprendere 
+        i meccanismi che regolano le comunicazioni tra processi esterni.</p>
+      <p align="center"><a href="act_23_2.htm">Seconda Parte &gt;&gt;</a></p>
+      <!-- #EndEditable --><!-- #BeginEditable "CREDITS" --> 
+      <p align="right" class="credits2"><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        5 Settembre 2002</p>
+      <!-- #EndEditable --><!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'introduzione delle Richieste dei lettori</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

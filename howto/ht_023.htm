@@ -1,0 +1,320 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Ordinare i dati di una Collection</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Ordinare i dati di una Collection<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Vi sar&agrave; capitato spesso di dover ordinare una serie di dati.<br>
+        In questo HowTo vedremo come applicare il metodo di ordinamento a bolle 
+        (Bubble Sort), studiato pi&ugrave; approfonditamente nella sezione <a href="../info/info_12.htm">Informazioni 
+        aggiuntive</a>.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Partendo dal presupposto che conosciamo gi&agrave; il funzionamento di 
+        tale metodo di ordinamento, spiegato nell'altra sezione, trasformiamo 
+        l'algoritmo in un semplicissimo codice Visual Basic.</p>
+      <p>Ma prima vogliamo precisare che non &egrave; possibile modificare direttamente 
+        i dati contenuti in una <a href="../glossary/c.htm#COLLECTION">Collection</a>. 
+        Pertanto, al fine di ordinare la Collection, utilizzeremo un array provvisorio, 
+        che utilizzeremo per effettuare l'ordinamento. Finito l'ordinamento azzeriamo 
+        e ricostruiamo la Collection in maniera ordinata.</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Public Sub OrdinaCollection(ByRef COLLDAORDINARE As Collection)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim ARRAYDAORDINARE() As Variant</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim SCAMBIO As Variant</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim INDICE1 As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim INDICE2 As Integer</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ReDim ARRAYDAORDINARE(COLLDAORDINARE.Count)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For INDICE1 = 1 To COLLDAORDINARE.Count</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ARRAYDAORDINARE(INDICE1) 
+          = COLLDAORDINARE.Item(INDICE1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next INDICE1</li>
+        <li></li>
+      </ol>
+      <p>La funzione che effettua quest'operazione si chiamer&agrave; <i><b>OrdinaCollection</b></i> 
+        e richiede che sia passato come parametro una <i>Collection</i> di nome 
+        <b>COLLDAORDINARE</b>. Il parametro richiesto viene passato <a href="../info/info_05.htm">per 
+        riferimento</a>, pertanto ogni modifica della <i>Collection</i> all'interno 
+        della Sub si rifletter&agrave; all'esterno della Sub stessa.</p>
+      <p>Alla riga 4 definiamo una matrice di <a href="../info/info_04.htm">Variant</a> 
+        di nome <b>ARRAYDAORDINARE</b>, senza specificarne la dimensione, poich&eacute; 
+        essa sar&agrave; definita in maniera dinamica in base alla dimensione 
+        della Collection.</p>
+      <p>Alla riga 5 abbiamo dichiarato una variabile di nome SCAMBIO per effettuare 
+        l'inversione di due elementi dell'array. Alle righe 6 e 7 invece abbamo 
+        le due variabili indice necessarie per effettuare i confronti tra gli 
+        elementi.</p>
+      <p>La riga 9 effettua il dimensionamento dinamico dell'array <b>ARRAYDAORDINARE</b>, 
+        definendo l'ampiezza della matrice in base al numero di elementi contenuti 
+        nella <i>Collection</i>.</p>
+      <p>Prima di entrare nel ciclo di ordinamento effettueremo la copia dei dati 
+        della Collection <b>COLLDAORDINARE</b> all'interno dell'array <b>ARRAYDAORDINARE</b> 
+        (righe 10-12).</p>
+      <ol class="codicevb" start="14">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For INDICE1 = 1 To UBound(ARRAYDAORDINARE) 
+          - 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For INDICE2 = INDICE1 
+          + 1 To UBound(ARRAYDAORDINARE)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          ARRAYDAORDINARE(INDICE2) &lt; ARRAYDAORDINARE(INDICE1) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SCAMBIO 
+          = ARRAYDAORDINARE(INDICE1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ARRAYDAORDINARE(INDICE1) 
+          = ARRAYDAORDINARE(INDICE2)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ARRAYDAORDINARE(INDICE2) 
+          = SCAMBIO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End 
+          If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next INDICE2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next INDICE1</li>
+        <li></li>
+      </ol>
+      <p>Il ciclo che vediamo sopra &egrave; il classico algoritmo per l'ordinamento 
+        a bolle; i due indici di controllo sono <b>INDICE1</b> e <b>INDICE2</b>. 
+        Alla riga 16 viene effettuato il controllo degli elementi puntati: se 
+        il secondo elemento &egrave; minore del primo elemento, sar&agrave; necessario 
+        invertire i due valori, mediante l'utilizzo di una variabile di scambio 
+        (righe 17-19).</p>
+      <ol class="codicevb" start="24">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For INDICE1 = 1 To UBound(ARRAYDAORDINARE)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COLLDAORDINARE.Remove 
+          1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;COLLDAORDINARE.Add 
+          ARRAYDAORDINARE(INDICE1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next INDICE1</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Terminato l'ordinamento effettuiamo l'azzeramento e il nuovo riempimento 
+        della <i>Collection</i> con i dati della matrice ordinata.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/howto/howto023_01.jpg" width="189" height="143" align="right" alt="Figura 1">Per 
+        provare questa funzione utilizzeremo una <i>ListBox</i><img src="../images/controls/listbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>ListaNumeri</b> per contenere i numeri da ordinare e due <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>GeneraNumeri</b> e <b>OrdinaDati</b>: il primo generer&agrave; 
+        10 numeri in maniera casuale e li inserir&agrave; nella <i>ListBox</i>, 
+        mentre il secondo effettua l'ordinamento dei numeri e rigenera la <i>ListBox</i> 
+        con i numeri ordinati.</p>
+      <p>Ricordiamo che l'oggetto <i>ListBox</i><img src="../images/controls/listbox.gif" width="25" height="25" align="absmiddle">possiede 
+        una <a href="../glossary/p.htm#PROPRIETA">propriet&agrave;</a> <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        di nome <i><b>Sorted</b></i> che permette l'auto-ordinamento dei valori 
+        all'interno della ListBox, ma per i nostri scopi terremo questa propriet&agrave; 
+        disattivata, impostandola a False.</p>
+      <p>Oltre al codice della funzione di ordinamento, abbiamo anche il codice 
+        degli <a href="../glossary/e.htm#EVENTO">eventi</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle">dei 
+        due pulsanti:</p>
+      <ol class="codicevb" start="30">
+        <li>Private Sub GeneraNumeri_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim CONTA As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ListaNumeri.Clear</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Randomize</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For CONTA = 1 To 10</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListaNumeri.AddItem 
+          Int(Rnd * 10)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next CONTA</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Il click sopra il pulsante <b>GeneraNumeri</b> riempie la <i>ListBox</i> 
+        <b><i>ListaNumeri</i></b> con 10 numeri casuali, compresi tra 0 e 10.</p>
+      <p>La routine &egrave; semplicissima: viene azzerata la ListBox, viene inzializzato 
+        il generatore di numeri casuali e vengono generati ed inseriti nella ListBox 
+        10 numeri casuali.</p>
+      <ol class="codicevb" start="39">
+        <li>Private Sub OrdinaDati_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim NUMERI As New Collection</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim CONTA As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For CONTA = 0 To ListaNumeri.ListCount - 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NUMERI.Add ListaNumeri.List(CONTA)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next CONTA</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;OrdinaCollection NUMERI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ListaNumeri.Clear</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For CONTA = 1 To NUMERI.Count</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListaNumeri.AddItem 
+          NUMERI.Item(CONTA)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next CONTA</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set NUMERI = Nothing</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Mentre, il click sopra il pulsante <b>OrdinaDati</b>, inizialmente <a href="../glossary/a.htm#ALLOCARE">alloca</a> 
+        una <i>Collection</i> di nome <b>NUMERI</b> e la riempie con i valori 
+        della <i>ListBox</i> <b>ListaNumeri</b> (righe 40-44).</p>
+      <p>Alla riga 45 viene richiamata la funzione <i>OrdinaCollection</i> che 
+        effettua l'ordinamento.</p>
+      <p>Ordinata la Collection, possiamo azzerare la ListBox e riempirla con 
+        i nuovi valori gi&agrave; ordinati (righe 46-49).</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Terminato questo possiamo tranquillamente <a href="../glossary/d.htm#DEALLOCARE">deallocare</a> 
+        la <i>Collection</i> <b>NUMERI</b> (riga 50).</p>
+      <p>Il codice termina qui e possiamo passare alla sua prova.</p>
+      <p align="center"><img src="../images/howto/howto023_02.jpg" width="189" height="143" alt="Figura 2" align="left"><img src="../images/howto/howto023_03.jpg" width="189" height="143" align="right" alt="Figura 3">Il 
+        click sopra il pulsante <i><b>&quot;Numeri Casuali&quot;</b></i> riempie 
+        la nostra ListBox con dei valori casuali.<br>
+        Il click sul pulsante <i><b>&quot;Ordina dati&quot;</b></i> effettua l'ordinamento 
+        di tali valori.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>L'algoritmo <a href="../info/info_12.htm">Bubble sort</a> &egrave; uno 
+        dei pi&ugrave; semplici metodi di ordinamento e non presenta rischi particolari.</p>
+      <p>Naturalmente, dove possibile, cercare di sfruttare le propriet&agrave; 
+        built-in, gi&agrave; esistenti, dei controlli, invece che effettuare l'ordinamento 
+        tramite questo algoritmo. Altres&igrave;. nel trattamento di dati da un 
+        database si consiglia di sfruttare le istruzioni SQL provvedute dai motori 
+        di database.</p>
+      <p>In caso di ordinamento di altro tipo dati, la funzione che abbiamo visto 
+        pu&ograve; essere utilizzata tranquillamente, senza presentare problemi 
+        di alcuna sorta.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        31 Gennaio 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

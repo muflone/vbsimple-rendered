@@ -1,0 +1,197 @@
+<html><!-- #BeginTemplate "/Templates/Info.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Informazioni aggiuntive sulla Registrazione delle Estensioni in Windows</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Informazioni aggiuntive <!-- #BeginEditable "TITOLO" -->sulla<br>
+    Registrazione delle Estensioni in Windows<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/infos.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p>I sistemi Windows associano a ciascuna <a href="../glossary/e.htm#ESTENSIONEFILES">estensione</a> 
+        registrata nel sistema uno o pi&ugrave; programmi, assegnati ciascuno 
+        ad un determinato <b>verbo</b>. Tutte le registrazioni sono memorizzate 
+        nel <a href="../glossary/r.htm#REGISTRO">registro di Windows</a> alla 
+        chiave <i> HKEY_CLASSES_ROOT</i> (formata dall'insieme di altre due chiavi). 
+        Cos&igrave; ad esempio i files con <a href="../glossary/e.htm#ESTENSIONIVB">estensione 
+        VBP</a> solitamente contengono tre verbi:</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <ul>
+        <li>Apri (open)<br>
+          Il verbo standard associato a quasi tutte le estensioni.<br>
+          Richiama: <b class="fixed">&quot;C:\Programmi\.....\vb5.exe&quot; &quot;%1&quot;</b><br>
+          <br>
+        </li>
+        <li>Esegui (Run Project)<br>
+          Apre ed esegue automaticamente il progetto selezionato.<br>
+          Richiama: <b class="fixed">&quot;C:\Programmi\.....\vb5.exe&quot; &quot;%1&quot; 
+          /run</b><br>
+          <br>
+        </li>
+        <li>Crea (Make)<br>
+          Apre, compila e chiude il progetto selezionato.<br>
+          Richiama: <b class="fixed">&quot;C:\Programmi\.....\vb5.exe&quot; &quot;%1&quot; 
+          /make</b></li>
+      </ul>
+      <p>I verbi tra parentesi (open, Run Project e Make) sono quelli registrati 
+        nel sistema ma a ciascuno d'essi pu&ograve; essere associata una descrizione 
+        che apparir&agrave; nel menu popup. Tale descrizione &egrave; inserita 
+        nel valore predefinito della chiave del verbo. Il verbo open &egrave; 
+        sempre e comunque tradotto in Apri a livello di sistema, dipendentemente 
+        dalla lingua del sistema operativo. Altri verbi possono essere tradotti 
+        automaticamente.</p>
+      <p><img src="../images/info/info19_01.gif" width="159" height="30" align="right" alt="Figura 1">Riprendendo 
+        l'esempio dell'estensione .VBP &egrave; interessante notare come la maggior 
+        parte delle estensioni registrate presentino una sorta di <i>deferring</i> 
+        (reinvio) ad un'altra chiave, come mostrato nella figura a fianco. Nel 
+        nostro esempio la chiave .vbp presenta il valore <i>VisualBasic.Project</i> 
+        e pertanto tutte le definizioni saranno reinviate ad una chiave con questo 
+        nome. </p>
+      <p><img src="../images/info/info19_02.gif" width="162" height="199" align="right" alt="Figura 2">Questo 
+        sistema consente di associare pi&ugrave; estensioni ad un'unica registrazione, 
+        facendo puntare ciascuna estensione alla registrazione reinviata.</p>
+      <p>La figura a fianco mostra la gerarchia completa dell'estensione .VBP 
+        la quale, come gi&agrave; detto, contiene un deferring alla chiave <i><b>VisualBasic.Project</b></i> 
+        che a sua volta conterr&agrave; le varie impostazioni ed i tre verbi registrati.</p>
+      <p>L'utilizzo del deferring non &egrave; obbligatorio: infatti tutte le 
+        sottochiavi della chiave <i>VisualBasic.Project</i> avrebbero potuto essere 
+        all'interno della chiave .vbp.</p>
+      <p>La sottochiave <i><b>DefaultIcon</b></i> consente di assegnare un'icona 
+        all'estensione specifica. Tale icona pu&ograve; essere sia un file di 
+        icona (.ico) sia un programma al cui interno sono contenute una o pi&ugrave; 
+        icone. Tutti i programmi VB ad esempio solitamente contano almeno un'icona, 
+        quella mostrata nel menu di sistema del form.<br>
+        Per assegnare un'icona all'estensione utilizzata baster&agrave; specificare 
+        il percorso completo dell'icona nel valore predefinito della chiave <i>DefaultIcon</i>.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Nel nostro esempio corrisponde a <b class="fixed">C:\Programmi\.....\vb5.exe,16</b> 
+        e ci&ograve; indica al sistema di utilizzare la diciassettesima icona 
+        (16 con base 0) del programma <i><b>vb5.exe</b></i>.</p>
+      <p>La sottochiave <i><b>shell</b></i> contiene i verbi che appariranno nel 
+        menu contestuale associato all'estensione. Al suo interno possono essere 
+        presenti pi&ugrave; sottochiavi (open, Make, Run Project) e specificando 
+        il nome di un verbo nel valore predefinito della chiave <i>shell</i> si 
+        rende tale verbo come il predefinito. In caso contrario il verbo predefinito 
+        sar&agrave; <b>open</b>.</p>
+      <p> Ciascun verbo si compone di almeno due chiavi: la prima &egrave; il 
+        nome del verbo stesso e la seconda &egrave; <i><b>command</b></i> che 
+        conterr&agrave; il percorso dell'applicazione da richiamare alla scelta 
+        del verbo. A ciascun verbo pu&ograve; essere assegnata una descrizione 
+        migliore che verr&agrave; mostrato nel menu contestuale al posto del nome 
+        del verbo; questa descrizione sar&agrave; specificata nel valore predefinito 
+        della chiave del verbo. Il valore della chiave <i>command</i> conterr&agrave; 
+        invece il percorso completo dell'applicazione da richiamare.</p>
+      <p>Nel nostro esempio il comando per il verbo open &egrave; <b class="fixed">&quot;C:\Programmi\.....\vb5.exe&quot; 
+        &quot;%1&quot;</b>. Al posto del <b>%1</b> sar&agrave; fornito il <a href="info_07.htm">nome 
+        DOS</a> del file richiamato e sar&agrave; passato come riga di comando 
+        al programma specificato. Se il programma &egrave; in grado di maneggiare 
+        nomi di file lunghi al posto del %1 potremo utilizzare <i><b>%L</b></i>. 
+        Naturalmente il programma utilizzato dovr&agrave; essere in grado di leggere 
+        la <a href="../howto/ht_018.htm">riga di comando</a> ed operare in funzione 
+        d'essa.</p>
+      <p>Alcuni programmi appoggiano alla chiave <i>command</i> altre chiavi per 
+        stabilre comunicazioni <a href="../glossary/d.htm#DDE">DDE</a>.</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --><!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI </a><br>
+        22 Dicembre 2002<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

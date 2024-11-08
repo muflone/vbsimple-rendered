@@ -1,0 +1,133 @@
+#
+#         This java file is a part of the
+#
+#          -  Plouf's Java IRC Client  -
+#
+#      Copyright (C) 2002 Philippe Detournay
+#
+#   This file is licensed under the GPL license
+#
+#        All contacts : theplouf@yahoo.com
+#
+#
+#  Syntax :
+#    Comments begin with the # character. This character must be the first character of the line.
+#    A data line has three parts : the data id, the data id description, the data string.
+#      - Data id : An hexadecimal figure identifying the string.
+#      - Data description : Begins by [ and ends by ]. The description is not parsed and
+#                           can be any string.
+#      - Data string : The string itself. Parameters are specified using the %i syntax.
+#
+#  Trailing spaces can be added using the \s escape character.
+#
+# prepared by Adam Stojanowski adam@stojanowski.com
+
+0001 [INTERPRETOR_NOT_ON_CHANNEL] Nie jesteœ na kanale
+0002 [INTERPRETOR_UNKNOWN_DCC] %1 : nieznane podpolecenie dcc
+0003 [INTERPRETOR_INSUFFICIENT_PARAMETERS] %1 : niewystarczaj¹ce parametry
+0004 [INTERPRETOR_BAD_CONTEXT] %1 : nie mo¿na wykonaæ w bie¿¹cym kontekœcie
+0005 [INTERPRETOR_CANNOT_CTCP_IN_DCCCHAT] Nie mo¿na wys³aæ kodów CTCP przez DCC Chat
+0006 [INTERPRETOR_UNKNOWN_CONFIG] %1 : nieznane podpolecenie konfiguracji
+0007 [INTERPRETOR_TIMESTAMP_ON] Timestamp w³¹czony
+0008 [INTERPRETOR_TIMESTAMP_OFF] Timestamp wy³¹czony
+0009 [INTERPRETOR_SMILEYS_ON] Graficzne smileys'y w³¹czone
+000a [INTERPRETOR_SMILEYS_OFF] Graficzne smileys wy³¹czone
+000b [INTERPRETOR_IGNORE_ON] W³¹czone igrorowanie %1
+000c [INTERPRETOR_IGNORE_OFF] Wy³¹czone ignorowanie %1
+  
+0101 [DCC_WAITING_INCOMING] Oczekiwanie na po³¹czenie przychodz¹ce...
+0102 [DCC_UNABLE_TO_OPEN_CONNECTION] Nie mo¿na otworzyæ po³¹czenia : %1
+0103 [DCC_CONNECTION_ESTABLISHED] Po³¹czenie DCC ustanowione
+0104 [DCC_CONNECTION_CLOSED] Po³¹czenie zamkniête
+0105 [DCC_ERROR] B³¹d : %1
+0106 [DCC_UNABLE_TO_SEND_TO] %1 : nie mogê wys³aæ do %2
+0107 [DCC_BAD_CONTEXT] nie mo¿na wykonaæ komendy w bie¿¹cym kontekœcie
+0108 [DCC_NOT_CONNECTED] Brak po³¹cznia
+0109 [DCC_UNABLE_PASSIVE_MODE] Nie mo¿na zainicjowaæ "trybu pasywnego"
+010a [CTCP_PING_REPLY] [%1 PING odpowiedŸ] : %2 sekund
+010b [DCC_STREAM_CLOSED] Strumieñ zamkniêty
+      
+0201 [IDENT_FAILED_LAUNCH] Problem z odpaleniem Ident serwer : %1
+0202 [IDENT_REQUEST] ¯¹danie ident z %1
+0203 [IDENT_ERROR] Wyst¹pi³ b³¹d
+0204 [IDENT_REPLIED] Powtórzenie %1
+0205 [IDENT_DEFAULT_USER] u¿ytkownik domyœlny
+0206 [IDENT_NO_USER] Brak ¿¹danego u¿ytkownika
+0207 [IDENT_RUNNING_ON_PORT] Ident serwer uruchomiony na porcie %1
+0208 [IDENT_LEAVING] Ident server opuszcza : %1
+0209 [IDENT_NONE] nic
+020a [IDENT_UNKNOWN] nieznany
+020b [IDENT_UNDEFINED] Niezdefiniowany wynik
+      
+0301 [FILE_SAVEAS] Zapisz plik jako
+      
+0401 [ABOUT_ABOUT] O programie
+0402 [ABOUT_PROGRAMMING] Programowanie
+0403 [ABOUT_DESIGN] Projekt
+0404 [ABOUT_THANKS] Podziêkowania
+0405 [ABOUT_SUPPORT] za wsparcie, pomys³y i testowanie
+0406 [ABOUT_GPL] Ten program jest na licencji GPL
+      
+0501 [SERVER_UNABLE_TO_CONNECT] Problem z po³¹czeniem do : %1
+0502 [SERVER_UNABLE_TO_CONNECT_STILL] Nie mo¿na po³¹czyæ z %1 : teraz próbujê po³¹czyæ z %2
+0503 [SERVER_DISCONNECTING] Roz³¹czanie z %1
+0504 [SERVER_CONNECTING] £¹czenie...
+0505 [SERVER_NOT_CONNECTED] Brak po³¹czenia
+0506 [SERVER_LOGIN] Logowanie ...
+0507 [SERVER_DISCONNECTED] Roz³¹czony z %1
+0508 [SERVER_ERROR] B³¹d : %1
+      
+0601 [SOURCE_YOU_KICKED] Zosta³eœ wykopany z %1 przez %2
+0602 [SOURCE_STATUS] Status
+0603 [SOURCE_CHANLIST] Kana³y %1
+0604 [SOURCE_CHANLIST_RETREIVING] Pobieranie kana³ów...
+0605 [SOURCE_HAS_JOINED] %1 do³¹czy³ %2
+0606 [SOURCE_HAS_LEFT] %1 opuœci³ %2
+0607 [SOURCE_HAS_BEEN_KICKED_BY] %1 zosta³ wykopany przez %2
+0608 [SOURCE_HAS_QUIT] %1 wyszed³
+0609 [SOURCE_TOPIC_IS] Temat: %1
+060a [SOURCE_CHANGED_TOPIC] %1 zmieni³ temat na %2
+060b [SOURCE_CHANNEL_MODE] %1 ustawi³ tryb kana³u na %2
+060c [SOURCE_CHANNEL_MODE_IS] Tryb kana³u: %1
+060d [SOURCE_USER_MODE] %1 ustawi³ tryb %2 na %3
+060e [SOURCE_KNOWN_AS] %1 zmieni³ nicka na %2
+060f [SOURCE_YOUR_MODE] Zminiono tryb na %1
+0610 [SOURCE_YOUR_NICK] Twój nick to %1
+0611 [SOURCE_INFO] Infos
+      
+
+0701 [GUI_WHOIS] Whois
+0702 [GUI_QUERY] Zapytaj
+0703 [GUI_KICK] Kopniêcie
+0704 [GUI_BAN] Zabanuj
+0705 [GUI_KICKBAN] Kopniêcie + zabanuj
+0706 [GUI_OP] Op
+0707 [GUI_DEOP] DeOp
+0708 [GUI_VOICE] G³os
+0709 [GUI_DEVOICE] DeVoice
+070a [GUI_PING] Ping
+070b [GUI_VERSION] Version
+070c [GUI_TIME] Czas
+070d [GUI_FINGER] Finger
+070e [GUI_RETREIVING_FILE] Odbieranie pliku (%1 bytes)
+070f [GUI_SENDING_FILE] Wysy³anie pliku (%1 bytes)
+0710 [GUI_TERMINATED] %1 zakoñczone
+0711 [GUI_FAILED] %1 nie udane
+0712 [GUI_CLOSE] Zamknij
+0713 [GUI_DISCONNECT] Roz³¹cz
+0714 [GUI_CHANNELS] Kana³y
+0715 [GUI_HELP] Pomoc
+0716 [GUI_PRIVATE] prywatne
+0717 [GUI_PUBLIC] publiczne
+0718 [GUI_CONNECT] Po³¹cz
+0719 [GUI_ABOUT] O programie
+071a [GUI_CHANGE_NICK] Zmieñ nicka na
+071b [GUI_COPY_WINDOW] Kopiuj tekst
+071c [GUI_FONT] Czcionka
+071d [GUI_FONT_WINDOW] Wybierz czcionkê
+071e [GUI_FONT_WINDOW_OK] Ok
+
+0801 [ASL_MALE] Ch³opak, %1 lat, %2
+0802 [ASL_FEMALE] Dziewczyna, %1 lat, %2
+
+ffff [ERROR_NOT_DEFINED] Niezdefiniowany ³añcuch znaków

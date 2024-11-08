@@ -1,0 +1,275 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Riprodurre un'immagine in maniera affiancata</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Riprodurre un'immagine in 
+    maniera affiancata<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --> 
+        1<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Attraverso la finestra di dialogo Propriet&agrave; dello schermo &egrave; 
+        possibile modificare lo sfondo del Desktop di Windows. Abbiamo visto in 
+        un <a href="ht_021.htm">altro HowTo come effettuare questa modifica tramite 
+        Visual Basic</a>. Vedremo invece in questo articolo come simulare sulla 
+        superficie di un form l'effetto &quot;Affianca&quot; di quella finestra 
+        di dialogo, effetto che prende il nome di <i><b>Tiling</b></i> (dall'inglese 
+        <i>Tile</i>, pavimentare).</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p align="center"><img src="../images/howto/howto045_01.png" width="327" height="169" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <p>Il nostro progetto si comporr&agrave; di un solo form, un <i>Frame</i> 
+        <img src="../images/controls/frame.gif" width="25" height="25" align="absmiddle">e 
+        4 controlli <i>Image</i><img src="../images/controls/image.gif" width="25" height="25" align="absmiddle"> 
+        con le immagini mostrate qui sotto e liberamente scaricabili cliccando 
+        sopra una di esse.</p>
+      <blockquote> 
+        <blockquote> 
+          <blockquote> 
+            <p><a href="../dativari/ht_045dat.zip"><img src="../images/howto/howto045_02.gif" width="32" height="32" align="absmiddle" alt="Figura 2" border="0"> 
+              Stampanti.BMP<br>
+              <img src="../images/howto/howto045_03.gif" width="32" height="32" align="absmiddle" alt="Figura 3" border="0"> 
+              Accesso remoto.BMP<br>
+              <img src="../images/howto/howto045_04.gif" width="32" height="32" align="absmiddle" alt="Figura 4" border="0"> 
+              Operazioni pianificate.BMP<br>
+              <img src="../images/howto/howto045_05.gif" width="32" height="31" align="absmiddle" alt="Figura 5" border="0"> 
+              Pannello di controllo.BMP</a></p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      <p><img src="../images/howto/howto045_06.png" width="258" height="179" align="right" alt="Figura 6">Il 
+        controllo <i>Frame</i>, di nome <b>fraTiles</b>, servir&agrave; per contenere 
+        le quattro immagini poste in una <a href="../glossary/m.htm#MATRICE">matrice</a> 
+        di controlli, di nome <b>imgTile</b> e con indice da 0 a 3.</p>
+      <p>Il funzionamento del progetto &egrave; semplicissimo: l'utente dovr&agrave; 
+        cliccare sopra una delle 4 immagini per vedere il motivo riprodotto su 
+        tutta la superficie del form.<br>
+        Il contenitore <i>Frame</i>, oltre a contenere le immagini, le preserver&agrave; 
+        dalla copertura del motivo riprodotto.</p>
+      <p>Il codice si compone di una sola routine, posta ad intercettare il click 
+        sopra una delle quattro immagini:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub imgTile_Click(Index As Integer)</li>
+        <li>&nbsp;&nbsp;Dim sngX As Single</li>
+        <li>&nbsp;&nbsp;Dim sngY As Single</li>
+        <li>&nbsp;&nbsp;Const sngDistanza As Single = 200</li>
+        <li></li>
+        <li>&nbsp;&nbsp;Me.Cls</li>
+        <li>&nbsp;&nbsp;Me.AutoRedraw = True</li>
+        <li>&nbsp;&nbsp;With imgTile(Index)</li>
+      </ol>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Qualunque sia l'immagine cliccata, sar&agrave; comunque generato l'evento<img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><i>Click</i> 
+        dell'oggetto <b>imgTile</b>. Sar&agrave; fornito l'indice del controllo 
+        cliccato.</p>
+      <p>La routine utilizza due variabili di nome <b>sngX</b> e <b>sngY</b> per 
+        calcolare la posizione di ogni <i>tessera</i> della superficie da ricoprrire 
+        ed una <a href="../glossary/c.htm#COSTANTE">costante</a> <img src="../images/ide/costante.gif" width="16" height="16" align="absmiddle"> 
+        di nome <b>sngDistanza</b> che consentir&agrave; di distanziare ogni tessera 
+        dalla successiva, al fine di evitare un effetto grafico sgradevole che 
+        pu&ograve; essere comunque riprodotto ponendo la costante a 0.</p>
+      <p>La riga 8 cancella ogni modifica grafica apportata in precedenza alla 
+        superficie, lasciando qundi solo i controlli del form. La riga 9 rende 
+        le modifiche grafiche alla superficie del form persistenti perch&eacute; 
+        altrimenti se una finestra venisse sovrapposta al nostro form, il motivo 
+        grafico sarebbe cancellato.</p>
+      <p>L'istruzione alla riga 10 rende predefinito l'oggetto <b>imgTitle</b> 
+        con indice uguale ad <i><b>Index</b></i> ovvero l'immagine che &egrave; 
+        stata selezionata dall'utente. &Egrave; stata utilizzata soltanto per 
+        abbreviare il codice e semplificarne la scrittura.</p>
+      <ol class="codicevb" start="11">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For sngX = 0 To Me.Width Step .Width + sngDistanza</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For sngY = 0 To Me.Height Step 
+          .Height + sngDistanza</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Me.PaintPicture .Picture, 
+          sngX, sngY</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next sngY</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next sngX</li>
+        <li>&nbsp;&nbsp;End With</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Seguono due cicli iterativi, uno per l'asse X e l'altro per l'asse Y. 
+        Essi si occuperanno di ricopiare l'immagine selezionata ad intervalli 
+        regolari su tutta la superficie del form.</p>
+      <p>Entrambi i cicli iniziano da 0 e continuano fino al raggiungimento della 
+        dimensione (larghezza e altezza) del form, ad incrementi pari alla dimensione 
+        dell'immagine selezionata pi&ugrave; la distanza tra un'immagine e l'altra. 
+        Questo assicura che un'immagine non venga sovrascritta da un'altra e distanza 
+        le immagini tra loro.</p>
+      <p>Cos&igrave; il form viene scomposto in varie sezioni, ognuna delle quali 
+        viene riempita con l'immagine selezionata. La copia grafica dell'immagine 
+        &egrave; eseguita alla riga 13 tramite il metodo <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        <i><b>PaintPicture</b></i> del form fornendogli semplicemente l'immagine 
+        da copiare e le coordinate in cui essa dovr&agrave; essere copiata.</p>
+      <p>L'esecuzione del progetto dimostra subito la semplicit&agrave; d'utilizzo. 
+        Ogni volta che l'utente clicca sopra una delle quattro immagini viene 
+        riprodotto il motivo affiancando tale immagine.</p>
+      <p align="center"><img src="../images/howto/howto045_07.png" width="258" height="179" alt="Figura 7"><br>
+        <b>Figura 7</b><br>
+        <br>
+      </p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Lo sviluppo del progetto si rivela davvero molto semplice e senza rischi 
+        per l'integrit&agrave; del progetto. &Egrave; tuttavia presente una pesante 
+        limitazione: le immagini da riprodurre hanno sempre e comunque un colore 
+        di sfondo, nel nostro caso il fucsia. Non &egrave; possibile quindi ricopiare 
+        delle immagini trasparenti, senza sfondo.</p>
+      <p>Quasi sempre il colore di sfondo della superficie del form &egrave; il 
+        grigio di sistema, e quindi ci si potrebbe aspettare che riproducendo 
+        un'immagine con lo sfondo grigio si ottenga un effetto di trasparenza, 
+        ma non &egrave; sempre cos&igrave;!<br>
+        L'utente del prodotto finale potrebbe utilizzare un colore di sistema 
+        differente dal solito grigio, annullando cos&igrave; l'effetto trasparenza. 
+        Ecco perch&eacute; nelle nostre immagini abbiamo deciso di evidenziare 
+        il colore di sfondo.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        14 Aprile 2002<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

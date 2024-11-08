@@ -1,0 +1,128 @@
+#
+#	Tämä tiedosto on osa Plouf's Java IRC Clienttiä
+#   Copyright (C) 2002 Philippe Detournay
+#   Lisenssi: GPL
+#	Yhteystiedot : theplouf@yahoo.com
+#
+#	Suomenkielisen kielitiedoston toteutus : enyone / design.wdgroup@phnet.fi
+#	Finnish lang-pack by : enyone / design.wdgroup@phnet.fi
+#
+#  Kohdat :
+#    Kommentit alkavat # merkillä. Merkki # täytyy olla ensimmäisenä kommenttirivillä.
+#    Datariveissä on kolme osaa : ID-numero, selitys ja arvo.
+#      - ID-numero : Rivin "järjestelmäluku".
+#      - Selitys : Alkaa merkillä [ ja loppuu merkkiin ]. Tarkoituksena on kertoa ohjelmalle
+#                  mikä rivi on mikäkin.
+#      - Arvo : Muutettava alue. Muuttujat ovat %i syntakseja. Muokkaa vain näitä kohtia,
+#			    jos haluat tehdä muutoksia tai uuden kielitiedoston.
+#
+#            0001 [INTERPRETOR_NOT_ON_CHANNEL] Tekstiä skajdskjas
+#            -ID- -----------Selitys---------- --------Arvo------
+#
+#  Välejä voidaan asettaa \s merkinnällä.
+
+0001 [INTERPRETOR_NOT_ON_CHANNEL] Ei avointa kanavaa
+0002 [INTERPRETOR_UNKNOWN_DCC] %1 : Virheellinen DCC alikomento
+0003 [INTERPRETOR_INSUFFICIENT_PARAMETERS] %1 : Vajaa komento
+0004 [INTERPRETOR_BAD_CONTEXT] %1 : Virhe: BAD CONTEXT
+0005 [INTERPRETOR_CANNOT_CTCP_IN_DCCCHAT] CTCP komentoja ei voida lähettää DCC:n kautta
+0006 [INTERPRETOR_UNKNOWN_CONFIG] %1 : Virheellinen komento
+0007 [INTERPRETOR_TIMESTAMP_ON] Ajan näyttö rivillä päällä
+0008 [INTERPRETOR_TIMESTAMP_OFF] Ajan näyttö rivillä pois päältä
+0009 [INTERPRETOR_SMILEYS_ON] Graaffiset hymiöt päällä
+000a [INTERPRETOR_SMILEYS_OFF] Graaffiset hymiöt pois päältä
+000b [INTERPRETOR_IGNORE_ON] Viestien saapuminen käyttäjältä %1 estetty
+000c [INTERPRETOR_IGNORE_OFF] Poistettu käyttäjä %1 viestien saapumisen estolistalta
+  
+0101 [DCC_WAITING_INCOMING] Odota hetki...
+0102 [DCC_UNABLE_TO_OPEN_CONNECTION] Ei voida avata yhteyttä : %1
+0103 [DCC_CONNECTION_ESTABLISHED] DCC Yhteys hyväksytty
+0104 [DCC_CONNECTION_CLOSED] Yhteys katkaistu
+0105 [DCC_ERROR] Virhe : %1
+0106 [DCC_UNABLE_TO_SEND_TO] %1 : ei voida lähettää %2 :lle
+0107 [DCC_BAD_CONTEXT] Virhe: BAD CONTEXT
+0108 [DCC_NOT_CONNECTED] Ei yhteyttä
+0109 [DCC_UNABLE_PASSIVE_MODE] Virhe käynnistettäessä passiivista moodia
+010a [CTCP_PING_REPLY] [%1 PING reply] : %2 sekuntia
+010b [DCC_STREAM_CLOSED] Ketju suljettu
+      
+0201 [IDENT_FAILED_LAUNCH] Virhe käynnistettäessä tunnistuspalvelinta : %1
+0202 [IDENT_REQUEST] Tunnistuspyyntö palvelimelta: %1
+0203 [IDENT_ERROR] Virhe
+0204 [IDENT_REPLIED] Vastattu %1
+0205 [IDENT_DEFAULT_USER] normaali käyttäjä
+0206 [IDENT_NO_USER] Ei käyttäjää jolta hakea
+0207 [IDENT_RUNNING_ON_PORT] Tunnistuspalvelin käynnissä portissa %1
+0208 [IDENT_LEAVING] Tunnistuspalvelin suljettu : %1
+0209 [IDENT_NONE] tyhjä
+020a [IDENT_UNKNOWN] tuntematon
+020b [IDENT_UNDEFINED] tuntematon tulos
+      
+0301 [FILE_SAVEAS] Tallenna nimellä
+      
+0401 [ABOUT_ABOUT] Tietoja
+0402 [ABOUT_PROGRAMMING] Ohjelmointi
+0403 [ABOUT_DESIGN] Suunnittelu
+0404 [ABOUT_THANKS] Kiitokset
+0405 [ABOUT_SUPPORT] ...mukana myös...
+0406 [ABOUT_GPL] Lisenssi: GPL
+      
+0501 [SERVER_UNABLE_TO_CONNECT] Ei voida yhdistää : %1
+0502 [SERVER_UNABLE_TO_CONNECT_STILL] Ei voida yhdistää %1 : yritetään yhdistää %2
+0503 [SERVER_DISCONNECTING] Katkaistaan yhteyttä : %1
+0504 [SERVER_CONNECTING] Yhdistetään...
+0505 [SERVER_NOT_CONNECTED] Ei yhteyttä
+0506 [SERVER_LOGIN] Kirjaudutaan...
+0507 [SERVER_DISCONNECTED] Yhteys katkaistu : %1
+0508 [SERVER_ERROR] Virhe : %1
+      
+0601 [SOURCE_YOU_KICKED] You've been kicked out of %1 by %2
+0602 [SOURCE_STATUS] Palvelin
+0603 [SOURCE_CHANLIST] Kanavat %1
+0604 [SOURCE_CHANLIST_RETREIVING] Etsitään kanavia...
+0605 [SOURCE_HAS_JOINED] %1 liittyi : %2
+0606 [SOURCE_HAS_LEFT] %1 poistui : %2
+0607 [SOURCE_HAS_BEEN_KICKED_BY] %1 potkittiin : %2
+0608 [SOURCE_HAS_QUIT] %1 poistui
+0609 [SOURCE_TOPIC_IS] Otsikko : %1
+060a [SOURCE_CHANGED_TOPIC] %1 vaihtoi otsikon : %2
+060b [SOURCE_CHANNEL_MODE] %1 asetti : %2
+060c [SOURCE_CHANNEL_MODE_IS] Kanavan asetukset : %1
+060d [SOURCE_USER_MODE] %1 asetti: %2 kanavalla %3
+060e [SOURCE_KNOWN_AS] %1 vaihtoi nimensä : %2
+060f [SOURCE_YOUR_MODE] Asetukset vaihdettu : %1
+0610 [SOURCE_YOUR_NICK] Nimesi on nyt %1
+0611 [SOURCE_INFO] Palvelin
+      
+0701 [GUI_WHOIS] Tiedot
+0702 [GUI_QUERY] Viesti
+0703 [GUI_KICK] Potki
+0704 [GUI_BAN] Banni
+0705 [GUI_KICKBAN] Potki ja Banni
+0706 [GUI_OP] Oppaa
+0707 [GUI_DEOP] DeOppaa
+0708 [GUI_VOICE] Voiceta
+0709 [GUI_DEVOICE] DeVoiceta
+070a [GUI_PING] Pingaa
+070b [GUI_VERSION] Versio
+070c [GUI_TIME] Aika
+070d [GUI_FINGER] Sormi
+070e [GUI_RETREIVING_FILE] Vastaanotetaan tiedostoa (%1 bytes)
+070f [GUI_SENDING_FILE] Lähetetään tiedostoa (%1 bytes)
+0710 [GUI_TERMINATED] %1 -- Suoritettu
+0711 [GUI_FAILED] %1 epäonnistui
+0712 [GUI_CLOSE] Sulje
+0713 [GUI_DISCONNECT] Sulje
+0714 [GUI_CHANNELS] Kanavat
+0715 [GUI_HELP] Ohje
+0716 [GUI_PRIVATE] Omat >>>
+0717 [GUI_PUBLIC] Kanavat >>>
+0718 [GUI_CONNECT] Yhdistä
+0719 [GUI_ABOUT] Tietoja
+071a [GUI_CHANGE_NICK] Vaihda nimi
+071b [GUI_COPY_WINDOW] Kopioi teksti
+
+0801 [ASL_MALE] Poika, %1 vuotta vanha, %2
+0802 [ASL_FEMALE] Tyttö, %1 vuotta vanha, %2
+
+ffff [ERROR_NOT_DEFINED] Virheellinen ketju

@@ -1,0 +1,680 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Inviare un'email con allegati</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Inviare un'email con allegati<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Nell'<a href="ht_020.htm">articolo precedente</a> abbiamo visto com'&egrave; 
+        semplice inviare un'e-mail utilizzando il protocollo mailto; il limite 
+        maggiore di quella soluzione &egrave; quello di non poter allegare uno 
+        o pi&ugrave; files al messaggio. Viste le numerosissime richieste sull'argomento 
+        abbiamo preferito affrontare anche una seconda soluzione che superasse 
+        questo limite. Quest'articolo espone una soluzione leggermente pi&ugrave; 
+        complessa ma che consente di allegare files all'e-mail.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La soluzione &egrave; basata sull'uso delle funzioni Simple-MAPI (Messaging 
+        <a href="../glossary/a.htm#API">API</a>) e pertanto richiede l'uso di 
+        un client di posta elettronica MAPI, come Outlook Express, correttamente 
+        configurato. L'insieme delle istruzioni &egrave; stato raggruppato in 
+        un modulo di classe <img src="../images/ide/classe.gif" width="16" height="16" align="absmiddle"> 
+        semplicemente riutilizzabile.<br>
+        Il codice si apre con la dichiarazione di una serie di enumerazioni, costanti 
+        e funzioni API: non saranno mostrate tutte per intero perch&eacute; richiederebbero 
+        una lunga parte di quest'articolo; il loro utilizzo, tuttavia, &egrave; 
+        molto semplice ed intuitivo.</p>
+      <ol class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Public Enum eMAPIRecipient</li>
+        <li> &nbsp;&nbsp;&nbsp;&nbsp;MAPI_TO = 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MAPI_CC = 2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MAPI_BCC = 3</li>
+        <li>End Enum</li>
+        <li></li>
+        <li>Private Enum eMAPIErrors</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SUCCESS_SUCCESS</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MAPI_USER_ABORT</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;...</li>
+        <li value="36">End Enum</li>
+        <li></li>
+      </ol>
+      <p>La prima delle due <a href="../glossary/e.htm#ENUMERAZIONE">enumerazioni</a> 
+        <img src="../images/ide/enumeraz.gif" width="16" height="16" align="absmiddle"> 
+        specifica il tipo di <i>Recipient</i> (ricevente) ammesso dal metodo <b>AddRecipient</b> 
+        trattato successivamente; l'enumerazione <i><b>eMAPIErrors</b></i> specifica 
+        gli errori conosciuti restituiti dalle funzioni MAPI.</p>
+      <ol start="38" class="codicevb">
+        <li>Private Type MAPIRecip</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Reserved As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;RecipClass As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Name As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Address As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;EIDSize As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;EntryID As String</li>
+        <li>End Type</li>
+        <li></li>
+        <li>Private Type MAPIFile</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Reserved As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;flags As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Position As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;PathName As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FileName As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FileType As Long</li>
+        <li>End Type</li>
+        <li></li>
+        <li>Private Type MAPIMessage</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Reserved As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Subject As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;NoteText As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MessageType As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DateReceived As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ConversationID As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Originator As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;flags As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;RecipCount As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Recipients As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FileCount As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Files As Long</li>
+        <li>End Type</li>
+        <li></li>
+      </ol>
+      <p>I tre tipi di dati UDT <img src="../images/ide/tipoudt.gif" width="16" height="16" align="absmiddle"> 
+        saranno utilizzati per specificare, rispettivamente le informazioni sul 
+        Recipient, sul file allegato e sul messaggio da inviare. Ad un livello 
+        logico in realt&agrave; il tipo <i><b>MAPIMessage</b></i> conterr&agrave; 
+        un riferimento ad un <a href="../glossary/a.htm#ARRAY">array</a> di recipients 
+        (campo <b>Recipients</b>) ed ad un array di files (campo <b>Files</b>) 
+        da allegare.</p>
+      <p>Prima di procedere &egrave; opportuno approfondire il meccanismo con 
+        il quale operano le funzioni di messaggistica MAPI: prima di poter accedere 
+        al sistema di ricezione, invio o memorizzazione del programma client MAPI 
+        &egrave; necessario creare o recuperare una sessione, che dovr&agrave; 
+        essere specificata durante le operazioni di recupero o di invio di messaggi 
+        di posta elettronica.</p>
+      <ol start="71" class="codicevb">
+        <li>Private Const MAPI_DIALOG = &amp;H8</li>
+        <li>Private Const MAPI_LOGON_UI = &amp;H1</li>
+        <li>Private Const MAPI_PASSWORD_UI = &amp;H20000</li>
+        <li></li>
+        <li>Private Declare Function MAPILogon Lib &quot;MAPI32.DLL&quot; (ByVal 
+          UIParam As Long, ByVal User As String, ByVal Password As String, ByVal 
+          flags As Long, ByVal Reserved As Long, ByRef Session As Long) As Long</li>
+        <li>Private Declare Function MAPILogoff Lib &quot;MAPI32.DLL&quot; (ByVal 
+          Session As Long, ByVal UIParam As Long, ByVal flags As Long, ByVal Reserved 
+          As Long) As Long</li>
+        <li>Private Declare Function MAPISendMail Lib &quot;MAPI32.DLL&quot; (ByVal 
+          Session As Long, ByVal UIParam As Long, ByRef message As MAPIMessage, 
+          ByVal flags As Long, ByVal Reserved As Long) As Long</li>
+        <li></li>
+      </ol>
+      <p>La costante <b>MAPI_DIALOG</b> consente di confermare il messaggio prima 
+        del suo invio e verr&agrave; utilizzata su richiesta dell'utente del nostro 
+        esempio. Le due costanti <b>MAPI_LOGON_UI</b> e <b>MAPI_PASSWORD_UI</b> 
+        sono utilizzate per richiedere esplicitamente di mostrare le finestre 
+        di dialogo di accesso, se il cliente di posta lo permette e se si rende 
+        necessario.</p>
+      <p>La prima delle funzioni API dichiarate &egrave; <i>MAPILogon</i> e consente 
+        di recuperare un numero di sessione nuovo o preesistente, con il quale 
+        accedere al sistema di messaggistica. Nel nostro esempio proveremo a recuperare 
+        un ID di sessione esistente e se non esistente, la medesima funzione ne 
+        creer&agrave; uno nuovo. &Egrave; comunque possibile richiedere forzatamente 
+        la creazione di un nuovo ID di sessione, senza recuperare quello preesistente, 
+        specificando il flag <b>MAPI_NEW_SESSION </b>(corrispondente al valore 
+        2) nel richiamo della funzione <i>MAPILogon</i>.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La funzione <i>MAPILogoff</i>, com'&egrave; intuibile, effettua l'operazione 
+        di disconnessione dal sistema di posta elettronica liberando l'ID di sessione 
+        utilizzato. La funzione <i>MAPISendMail</i> della riga 77 si occuper&agrave; 
+        quindi di comporre il messaggio di posta elettronica ed eventualmente 
+        spedirlo.</p>
+      <ol start="79" class="codicevb">
+        <li>Private m_Attachments() As MAPIFile</li>
+        <li>Private m_AttachmentsCount As Long</li>
+        <li>Private m_Message As MAPIMessage</li>
+        <li>Private m_Recipients() As MAPIRecip</li>
+        <li>Private m_RecipientsCount As Long</li>
+        <li>Private m_SendImmediately As Boolean</li>
+        <li>Private m_SessionID As Long</li>
+        <li></li>
+      </ol>
+      <p>La funzione <i>MAPISendMail</i> utilizza una variabile di tipo <i><b>MAPIMessage</b></i> 
+        di nome <b>m_Message</b>; questa utilizzer&agrave; anche due array di 
+        nome <b>m_Attachments</b> e <b>m_Recipients</b>, rispettivamente per i 
+        files da allegare e per i destinatari del messaggio; le due variabili 
+        membro <b>m_AttachmentsCount</b> e <b>m_RecipientsCount</b> rifletteranno 
+        semplicemente il numero di allegati e di destinatari.</p>
+      <p>La variabile <b>m_SendImmediately</b> della riga 84 manterr&agrave; il 
+        valore della propriet&agrave; <b>SendImmediately</b>, che determiner&agrave; 
+        in fase di invio se dovr&agrave; essere mostrato il messaggio prima di 
+        inviarlo oppure l'invio sar&agrave; immediato. L'ultima variabile membro 
+        <b>m_SessionID</b> conterr&agrave; l'ID di sessione recuperato dalla funzione 
+        <i>MAPILogon</i> ed utilizzato per inviare il messaggio.</p>
+      <ol start="87" class="codicevb">
+        <li>Public Property Get AttachmentsCount() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;AttachmentsCount = m_AttachmentsCount</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get RecipientsCount() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;RecipientsCount = m_RecipientsCount</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get SendImmediately() As Boolean</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SendImmediately = m_SendImmediately</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Let SendImmediately(ByVal newValue As Boolean)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_SendImmediately = newValue</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get SessionID() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SessionID = m_SessionID</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>Le due propriet&agrave; in sola lettura <b>AttachmentsCount</b> e <b>RecipientsCount</b> 
+        restituiranno rispettivamente il numero di allegati e di recipients al 
+        momento associati al messaggio di posta. La prpriet&agrave; <b>SendImmediately</b> 
+        regoler&agrave; il comportamento di invio del messaggio come gi&agrave; 
+        spiegato in precedenza. La propriet&agrave; <b>SessionID</b> restituir&agrave; 
+        invece l'ID di sessione recuperato dalla funzione <i>MAPILogon</i> in 
+        occasione del primo messaggio inviato.</p>
+      <ol start="107" class="codicevb">
+        <li>Public Property Get Body() As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Body = m_Message.NoteText</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Let Body(ByVal newValue As String)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_Message.NoteText = newValue</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get Subject() As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Subject = m_Message.Subject</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Let Subject(ByVal newValue As String)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_Message.Subject = newValue</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>Le ultime due propriet&agrave; <b>Body</b> e <b>Subject</b> assegnano 
+        e restituiscono il corpo e l'oggetto del messaggio lavorando direttamente 
+        sui campi <i><b>NoteText</b></i> e <i><b>Subject</b></i> della variabile 
+        <b>m_Message</b>.</p>
+      <ol start="123" class="codicevb">
+        <li>Public Sub AddRecipient(ByVal RecipType As eMAPIRecipient, ByVal Name 
+          As String, ByVal Address As String)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim udtRecip As MAPIRecip</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;With udtRecip</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.RecipClass = RecipType</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Len(Name) &gt; 
+          0 Then .Name = StrConv(Name, vbFromUnicode)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Len(Address) &gt; 
+          0 Then .Address = StrConv(Address, vbFromUnicode)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ReDim Preserve m_Recipients(m_RecipientsCount)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_Recipients(m_RecipientsCount) = udtRecip</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_RecipientsCount = m_RecipientsCount + 1</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La routine <b>AddRecipient</b> &egrave; utilizzata per aggiungere un 
+        destinatario al messaggio, composto di nome (<i><b>Name</b></i>), indirizzo 
+        (<i><b>Address</b></i>) e tipo di recipient (<i><b>RecipType</b></i>). 
+        Sar&agrave; utilizzata una variabile di nome <b>udtRecip</b> e di tipo 
+        <i> <b>MAPIRecip</b></i>, che al termine dell'operazione verr&agrave; 
+        aggiunta all'array di destinatari.</p>
+      <p>Poich&eacute; la funzione <i>MAPISendMail</i> si aspetta che nome ed 
+        indirizzo del destinatario siano forniti in formato <a href="../glossary/a.htm#ANSI">ANSI</a>, 
+        &egrave; necessario convertirli in questo formato mediante la funzione 
+        StrConv (righe 127 e 128).</p>
+      <p>Dalla riga 130 viene aggiunto un elemento alla matrice <b>m_Recipients</b>, 
+        cui viene assegnata la variabile <b>udtRecip</b> appena riempita, e viene 
+        incrementato il numero di recipients finora assegnati.</p>
+      <ol start="135" class="codicevb">
+        <li>Public Sub AddTo(ByVal Name As String, ByVal Address As String)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call AddRecipient(MAPI_TO, Name, Address)</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Public Sub AddCC(ByVal Name As String, ByVal Address As String)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call AddRecipient(MAPI_CC, Name, Address)</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Public Sub AddBCC(ByVal Name As String, ByVal Address As String)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call AddRecipient(MAPI_BCC, Name, Address)</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Public Sub Clear()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Erase m_Recipients</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Erase m_Attachments</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_RecipientsCount = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_AttachmentsCount = 0</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>I tre metodi <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        <b>AddTo</b>, <b>AddCC</b> e <b>AddBCC</b> dichiarati alle righe 135-145 
+        costituiscono delle mere semplificazioni del metodo <b>AddRecipient</b> 
+        dichiarato in precedenza; le stesse infatti non fanno altro che richiamare 
+        la routine precedente, aggiungendovi soltanto il tipo di destinatario.</p>
+      <p>La routine <b>Clear</b> azzera semplicemente gli array <b>m_Recipients</b> 
+        e <b>m_Attachments</b> ed i due rispettivi contatori. Va utilizzata in 
+        occasione della creazione di un nuovo messaggio.</p>
+      <ol start="154" class="codicevb">
+        <li>Public Sub FileAdd(ByVal PathName As String)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim udtFile As MAPIFile</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;udtFile.PathName = StrConv(PathName, vbFromUnicode)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ReDim Preserve m_Attachments(m_AttachmentsCount)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_Attachments(m_AttachmentsCount) = udtFile</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_AttachmentsCount = m_AttachmentsCount + 
+          1</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>In maniera analoga alla routine AddRecipient, la <b>FileAdd</b> crea 
+        una nuova variabile di tipo <i><b>MAPIFile</b></i>, vi assegna il nome 
+        del file specificato in <i><b>PathName</b></i> dopo averlo convertito 
+        dal formato <a href="../glossary/u.htm#UNICODE">Unicode</a>. La stessa 
+        sar&agrave; quindi aggiunta alla matrice <b>m_Attachments</b> ed il contatore 
+        <b>m_AttachmentsCount</b> verr&agrave; incrementato.</p>
+      <ol start="162" class="codicevb">
+        <li>Public Function Send() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim lngFlags As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Send = MAPI_E_INVALID_RECIPS</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;With m_Message</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If m_AttachmentsCount 
+          &gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.FileCount 
+          = m_AttachmentsCount</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Files 
+          = VarPtr(m_Attachments(0))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If m_RecipientsCount 
+          &gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.RecipCount 
+          = m_RecipientsCount</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Recipients 
+          = VarPtr(m_Recipients(0))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          m_SessionID = 0 Then Call MAPILogon(ByVal 0&amp;, vbNullChar, vbNullChar, 
+          MAPI_LOGON_UI Or MAPI_PASSWORD_UI, ByVal 0&amp;, m_SessionID)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          Not m_SendImmediately Then lngFlags = MAPI_DIALOG</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Send 
+          = MAPISendMail(ByVal 0&amp;, ByVal 0&amp;, m_Message, lngFlags, ByVal 
+          0&amp;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>La funzione <b>Send</b> recupera tutti i dati forniti ed invia il messaggio 
+        mediante le funzioni MAPI. Il valore di ritorno della funzione &egrave; 
+        inizializzato su <i><b>MAPI_E_INVALID_RECIPS</b></i> ovvero &quot;Destinatari 
+        non validi&quot;; questo perch&eacute; il messaggio sar&agrave; inviato 
+        soltanto se esiste almeno un destinatario.</p>
+      <p>Alle righe 166-169 &egrave; verificata la presenza di almeno un file 
+        allegato; in tal caso i membri <i><b>FileCount</b></i> e <i><b>Files</b></i> 
+        della variabile <b>m_Message</b> sono riempiti con il numero di files 
+        allegati e con l'indirizzo dell'array contentente l'elenco dei files.</p>
+      <p>Alle righe 170-176 se esiste almeno un destinatario, viene completo il 
+        riempimento della struttura <b>m_Message</b> ed il messaggio viene inviato. 
+        Il numero di destinatari viene assegnato al membro <i><b>RecipCount</b></i>, 
+        mentre l'array contenente i recipients &egrave; assegnato al membro <i><b>Recipients</b></i>.</p>
+      <p>Alla riga 173, se non esiste gi&agrave; un ID di sessione per l'istanza 
+        della classe, viene recuperato mediante la funzione <i>MAPILogon</i>. 
+        Tale ID &egrave; memorizzato nella variabile <b>m_SessionID</b> e verr&agrave; 
+        conservato ed utilizzato dalla funzione <i>MAPISendMail</i> successivamente. 
+        Anche all'uscita della funzione l'ID di sessione sar&agrave; mantenuto, 
+        per velocizzare l'eventuale invio di un ulteriore messaggio.</p>
+      <p>Alla riga 174 &egrave; verificato il valore della variabile <b>m_SendImmediately</b> 
+        e se il suo valore &egrave; False, il messaggio non sar&agrave; spedito 
+        immediatamente ma verr&agrave; mostrato all'utente prima di eseguire l'operazione 
+        di spedizione. L'opzione &egrave; specificata nella variabile <b>lngFlags</b> 
+        che sar&agrave; quindi passata alla funzione successiva.</p>
+      <p>L'ultima istruzione della funzione richiamer&agrave; la funzione <i>MAPISendMail</i>, 
+        fornendogli la variabile di tipo <i><b>MAPIMessage</b></i> e le opzioni 
+        per l'invio, specificati in <b>m_Message</b> e <b>lngFlags</b>. Il valore 
+        di ritorno sar&agrave; assegnato come valore di ritorno del metodo Send.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Prima di concludere la visione del codice della classe si vuole specificare 
+        che il codice da scaricare per questo articolo conterr&agrave; anche altre 
+        due routine qui non presentate: si tratta di <b>NewMail</b> che in una 
+        sola chiamata genera un nuovo messaggio, completo di destinatari multipli, 
+        oggetto, corpo ed allegati e provvede anche al suo invio, utilizzando 
+        le funzioni sin qui presentate. L'altra funzione non specificata &egrave; 
+        <b>MAPIError</b> che, ricevendo il numero di errore restituito dalle funzioni 
+        <b>Send</b> e <b>NewMail</b> (quindi da <i>MAPISendMessage</i>) restituisce 
+        una descrizione del tipo di errore. Costituisce in realt&agrave; un lungo 
+        elenco di assegnazioni condizionali.</p>
+      <p>La classe si conclude con la routine <b>Class_Terminate</b> che provveder&agrave; 
+        a disconnettersi dal client MAPI e liberare l'ID di sessione:</p>
+      <ol start="180" class="codicevb">
+        <li>Private Sub Class_Terminate()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If m_SessionID &lt;&gt; 0 Then Call MAPILogoff(m_SessionID, 
+          ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_SessionID = 0</li>
+        <li>End Sub</li>
+      </ol>
+      <p>La disconnessione &egrave; effettuata semplicemente richiamando la funzione 
+        <i>MAPILogoff</i> fornendogli l'ID di sessione utilizzato.</p>
+      <hr>
+      <p><img src="../images/howto/howto020_03.png" alt="Figura 1" width="313" height="205" align="right">La 
+        dimostrazione d'uso della classe <i>clsMAPISendMail</i> sin qui affrontata 
+        passa per la costruzione di uno spartano client di posta elettronica che 
+        consenta la specifica di destinatari, oggetto, corpo e files allegati.</p>
+      <p>Per necessit&agrave; di spazio non sar&agrave; trattata la disposizione 
+        dei controlli sopra il form, ma il solo codice che, fra l'altro, far&agrave; 
+        uso del modulo <b>modCommonDialog</b> trattato nell'<a href="ht_055.htm">HowTo 
+        dedicato alla scelta di un file</a>.</p>
+      <p>Il codice si compone di tre sole routine legate alla pressione sui pulsanti 
+        per l'aggiunta di un destinatario (<b>-&gt; A:</b>, <b>-&gt; Cc:</b>, 
+        <b>-&gt;Ccn:</b>), di un file allegato (<b>Aggiungi allegato</b>) e per 
+        l'invio del messaggio composto (<b>Invia email</b>):</p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub cmdAddRecipient_Click(Index As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Len(Trim$(txtNewRecipient.Text)) &gt; 0 
+          Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lbRecipients.AddItem 
+          Choose(Index + 1, &quot;To&quot;, &quot;Cc&quot;, &quot;Bcc&quot;) &amp; 
+          &quot;: &quot; &amp; txtNewRecipient.Text</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtNewRecipient.Text 
+          = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Se &egrave; presente un indirizzo nella casella <b>txtNewRecipient</b> 
+        esso sar&agrave; accodato alla ListBox <b>lbRecipients</b>; l'operazione 
+        &egrave; svolta utilizzando la funzione <i>Choose</i> che, lo ricordiamo, 
+        &egrave; a base 1; pertanto l'indice del pulsante premuto (<b>Index</b>) 
+        dovr&agrave; essere incrementato di 1. Al termine dell'operazione la casella 
+        di testo &egrave; svuotata (riga 6).</p>
+      <ol start="10" class="codicevb">
+        <li>Private Sub cmdNewAttachment_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim strFileName As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;strFileName = ShowOpen(Me, &quot;Tutti i files 
+          (*.*)&quot; &amp; vbNullChar &amp; &quot;*.*&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Len(strFileName) &gt; 0 Then lbAttachments.AddItem 
+          strFileName</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La pressione del pulsante <b>cmdNewAttachments</b> richiamer&agrave; 
+        la funzione <b>ShowOpen</b> del modulo <i>modCommonDialog</i> per richiedere 
+        il nome di un file da allegare. Se il risultato di quest'operazione &egrave; 
+        un nome di file (ovvero l'utente non ha premuto il pulsante <i><b>Annulla</b></i>) 
+        esso sar&agrave; aggiunto alla ListBox <b>lbAttachments</b>.</p>
+      <ol start="16" class="codicevb">
+        <li>Private Sub cmdSendEmail_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim SendMail As clsMAPISendMail</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim lngLoop As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim strRecipient As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim lngResult As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set SendMail = New clsMAPISendMail</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;With SendMail</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Clear</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For lngLoop = 0 To 
+          lbRecipients.ListCount - 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strRecipient 
+          = lbRecipients.List(lngLoop)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select 
+          Case Left$(strRecipient, InStr(1, strRecipient, &quot;:&quot;) - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          &quot;To&quot;: Call .AddTo(&quot;&quot;, Mid$(strRecipient, 5))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          &quot;Cc&quot;: Call .AddCC(&quot;&quot;, Mid$(strRecipient, 5))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          &quot;Bcc&quot;: Call .AddBCC(&quot;&quot;, Mid$(strRecipient, 6))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End 
+          Select</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next lngLoop</li>
+      </ol>
+      <p>La pressione del pulsante <b>cmdSendMail</b> dovr&agrave; raccogliere 
+        le informazioni da tutti i controlli e formare con esse un nuovo messaggio 
+        nell'<a href="../glossary/i.htm#ISTANZA">istanza</a> SendMail <a href="../glossary/a.htm#ALLOCARE">allocata</a> 
+        alla riga 21.</p>
+      <p>Il messaggio verr&agrave; inizialmente svuotato mediante il metodo <b>Clear</b> 
+        (anche se non &egrave; strettamente necessario) ed in seguito (righe 24-31) 
+        dovranno essere recuperati tutti i destinatari, suddividendoli per tipo 
+        di recipient, dalla ListBox. Leggendo infatti il prefisso <i><b>To</b></i>, 
+        <i> <b>Cc</b></i> o <i><b>Bcc</b></i> dall'elenco &egrave; possibile assegnare 
+        l'indirizzo al gruppo corretto, mediante i metodi <b>AddTo</b>, <b>AddCC</b> 
+        e <b>AddBCC</b> (righe 27-29).</p>
+      <ol start="32" class="codicevb">
+        <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Subject = txtSubject.Text</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Body = txtBody.Text</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For lngLoop = 0 To 
+          lbAttachments.ListCount - 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call 
+          .FileAdd(lbAttachments.List(lngLoop))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next lngLoop</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.SendImmediately = 
+          (chkSendNow.Value = vbChecked)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lngResult = .Send</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If lngResult &gt; 
+          0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox 
+          .MAPIError(lngResult), vbCritical Or vbOKOnly, &quot;Errore nell'invio 
+          del messaggio&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox 
+          &quot;Messaggio inviato con successo&quot;, vbInformation Or vbOKOnly, 
+          &quot;Invio del messaggio riuscito&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set SendMail = Nothing</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Alle righe 32 e 33 sono riempite le propriet&agrave; <b>Subject</b> e 
+        <b>Body</b> del messaggio; successivamente saranno recuperati tutti i 
+        files dall'elenco <b>lbAttachments</b> ed aggiunti al messaggio mediante 
+        il metodo <b>FileAdd</b>. La CheckBox <b>chkSendNow</b> determiner&agrave; 
+        il valore della propriet&agrave; <b>SendImmediately</b>.</p>
+      <p>Raccolte tutte queste informazioni, sar&agrave; possibile inviare il 
+        messaggio con il metodo <b>Send</b>. Il valore restituito sar&agrave; 
+        quindi discriminante del messaggio mostrato a seguito dell'invio (righe 
+        39-43). Completata l'operazione sar&agrave; possibile <a href="../glossary/d.htm#DEALLOCARE">deallocare</a> 
+        la variabile <b>SendMail</b>.</p>
+      <hr>
+      <p><img src="../images/howto/howto020_04.png" alt="Figura 2" width="313" height="205" align="right">L'esecuzione 
+        del progetto con la compilazione di tutti i campi, al momento della pressione 
+        del pulsante <i><b>Invia email </b></i>richiamer&agrave; il client MAPI 
+        di posta predefinito (spesso assegnato ad <i>Outlook Express</i>).</p>
+      <p>Nell'esempio mostrato a fianco i destinatari del messaggio sono 3, uno 
+        per ciascun tipo di recipient (Diiretto a, Copia carbone e Copia carbone 
+        nascosta). Gli stessi sono mostrati sulla destra con i loro rispettivi 
+        prefissi To, Cc e Bcc.</p>
+      <p>In fondo sono mostrati i nomi di due files allegati di cui uno eseguibile 
+        (<i><b>WC2.EXE</b></i>). Il client di posta si occuper&agrave; infatti 
+        di codificare ove necessario i files in Base64.</p>
+      <p>La spunta sul flag <i><b>Immediatamente</b></i> far&agrave; si che il 
+        messaggio venga inviato direttamente senza una necessaria revisione dello 
+        stesso. Senza la spunta invece il messaggio apparir&agrave; a video e 
+        sar&agrave; richiesto l'intervento dell'utente (come per <a href="ht_020.htm">l'articolo 
+        precedente</a>).</p>
+      <p><span class="sottolineato"><b>IMPORTANTE!</b></span><br>
+        Il messaggio che apparir&agrave; in seguito all'invio del messaggio si 
+        riferisce al recapito verso il programma di posta elettronica, che si 
+        occuper&agrave; per i fatti suoi di inviare il messaggio. Il messaggio 
+        restituito infatti non pu&ograve; essere considerato come una conferma 
+        dell'avvenuto invio del messaggio, ma piuttosto della consegna a buon 
+        fine verso il programma di posta.</p>
+      <table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td align="center" valign="top"><img src="../images/howto/howto020_05.png" alt="Figura 3" width="182" height="95"><br>
+            <b>Figura 3</b> </td>
+          <td align="center" valign="top"><img src="../images/howto/howto020_06.png" alt="Figura 4" width="172" height="95"><br>
+            <b>Figura 4</b></td>
+        </tr>
+      </table>
+      <p><img src="../images/howto/howto020_07.png" alt="Figura 5" width="269" height="174" align="right">Alcune 
+        versioni recenti di Outlook Express presentano una finestra di conferma 
+        simile a quella mostrata a fianco.</p>
+      <p>Ci&ograve; rende pi&ugrave; sicuro l'uso del programma client, in modo 
+        da evitare che lo stesso venga usato a sproposito e senza che l'utente 
+        ne venga a conoscenza.</p>
+      <p>Sia che l'utente risponda <i><b>Invia</b></i> o <i><b>Non inviare</b></i>, 
+        la funzione <b>Send</b> restituir&agrave; comunque il risultato 0 e nessun 
+        errore verr&agrave; riportato al nostro programma.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Come la precedente, anche questa soluzione necessita di un account di 
+        posta correttamente configurato presso il client di posta; inoltre lo 
+        stesso client deve rispondere alle specifiche MAPI.</p>
+      <p>Nonostante le numerose limitazioni di questa soluzione, viste le svariate 
+        richieste sull'argomento, abbiamo comunque preferito riportarla ed evidenziarne 
+        i punti deboli.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a> e <a href="../vbmail.htm?id=4">Andrea Barchetti</a><br>
+        25 Aprile 2003<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

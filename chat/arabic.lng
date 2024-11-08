@@ -1,0 +1,131 @@
+#
+#                      This java file is a part of the
+#
+#                       -  Plouf's Java IRC Client  -
+#
+#                   Copyright (C) 2002 Philippe Detournay
+#
+#               This file is licensed under the GPL license
+#
+#                    All contacts: theplouf@yahoo.com
+#
+#                Arabic Translation by: Youcef Rabah Rahal
+#
+#  Syntax:
+#    Comments begin with the # character. This character must be the
+#    first character of the line. A data line has three parts,
+#      - Data id          : An hexadecimal figure identifying the string.
+#      - Data description : Begins by [ and ends by ]. The description
+#                           is not parsed and can be any string.
+#      - Data string      : The string itself. Parameters are specified
+#                           using the %i syntax.
+#
+#  Trailing spaces can be added using the \s escape character.
+
+0001 [INTERPRETOR_NOT_ON_CHANNEL] ليس على قناة
+0002 [INTERPRETOR_UNKNOWN_DCC] %1 : أمر dcc فرعي غير معروف
+0003 [INTERPRETOR_INSUFFICIENT_PARAMETERS] %1 : وسائط غير كافية
+0004 [INTERPRETOR_BAD_CONTEXT] %1 : غير قادر على اﻷلأداء في السّياق الحالي
+0005 [INTERPRETOR_CANNOT_CTCP_IN_DCCCHAT] غير قادر على إرسال رموز CTCP عن طريق دردشة DCC
+0006 [INTERPRETOR_UNKNOWN_CONFIG] %1 : أمر config فرعي غير معروف
+0007 [INTERPRETOR_TIMESTAMP_ON] الطّابع الزّمني ممكّن
+0008 [INTERPRETOR_TIMESTAMP_OFF] الطّابع الزّمني معطّل
+0009 [INTERPRETOR_SMILEYS_ON] التّبسيمات التّخطيطية ممكّنة
+000a [INTERPRETOR_SMILEYS_OFF] التّبسيمات التّخطيطية معطّلة
+000b [INTERPRETOR_IGNORE_ON] يُجهل %1 الآن
+000c [INTERPRETOR_IGNORE_OFF] لا يُجهل %1 بعد الآن
+
+0101 [DCC_WAITING_INCOMING] إنتظار الإتّصال الوارد...
+0102 [DCC_UNABLE_TO_OPEN_CONNECTION] غير قادر على فتح الإتّصال : %1
+0103 [DCC_CONNECTION_ESTABLISHED] اُسّس إتّصال DCC
+0104 [DCC_CONNECTION_CLOSED] اُغلق الإتّصال
+0105 [DCC_ERROR] خطأ : %1
+0106 [DCC_UNABLE_TO_SEND_TO] %1 : غير قادر على الإرسال إلى %2
+0107 [DCC_BAD_CONTEXT] غير قادر على تنفيذ الأمر من السّياق الحالي
+0108 [DCC_NOT_CONNECTED] غير متّصل
+0109 [DCC_UNABLE_PASSIVE_MODE] غير قادر على تمهيد النّمط السّلبي
+010a [CTCP_PING_REPLY] [%1 PING reply] : %2 ثواني
+010b [DCC_STREAM_CLOSED] اُ غلق الدّفق
+
+0201 [IDENT_FAILED_LAUNCH] إخفاق في إطلاق خادم Ident: %1
+0202 [IDENT_REQUEST] طلب Ident من %1
+0203 [IDENT_ERROR] حدث خطأ
+0204 [IDENT_REPLIED] %1 أجاب
+0205 [IDENT_DEFAULT_USER] المستعمل الإفتراضي
+0206 [IDENT_NO_USER] لا مستعمل للطّلب
+0207 [IDENT_RUNNING_ON_PORT] خادم Ident يشتغل على المنفذ 
+%1
+0208 [IDENT_LEAVING] خادم Ident يَترك: %1
+0209 [IDENT_NONE] لا شيء
+020a [IDENT_UNKNOWN] مجهول
+020b [IDENT_UNDEFINED] نتيجة غير معرّفة
+
+0301 [FILE_SAVEAS] إحفظ الملفّ تحت
+
+0401 [ABOUT_ABOUT] حول
+0402 [ABOUT_PROGRAMMING] البرمجة
+0403 [ABOUT_DESIGN] التّصميم
+0404 [ABOUT_THANKS] الشّكر إلى
+0405 [ABOUT_SUPPORT] للدّعم، للأفكار و للإختبار
+0406 [ABOUT_GPL] هذا البرنامج مجاز تحت إجازة GPL
+
+0501 [SERVER_UNABLE_TO_CONNECT] غير قادر على الإتّصال : %1
+0502 [SERVER_UNABLE_TO_CONNECT_STILL] غير قادر على الإتّصال بـ %1 : يحاول حاليا الإتّصال بـ %2
+0503 [SERVER_DISCONNECTING] إنفصال من %1
+0504 [SERVER_CONNECTING] إتّصال...
+0505 [SERVER_NOT_CONNECTED] غير متّصل
+0506 [SERVER_LOGIN] تسجيل في...
+0507 [SERVER_DISCONNECTED] منفصل من %1
+0508 [SERVER_ERROR] خطأ : %1
+
+0601 [SOURCE_YOU_KICKED] طُردت من %1 من طرف %2
+0602 [SOURCE_STATUS] الحالة
+0603 [SOURCE_CHANLIST] القنوات لـ %1
+0604 [SOURCE_CHANLIST_RETREIVING] إسترجاع القنوات...
+0605 [SOURCE_HAS_JOINED] %1 إنضمّ لـ %2
+0606 [SOURCE_HAS_LEFT] %1 ترك %2
+0607 [SOURCE_HAS_BEEN_KICKED_BY] %1 رُفس من طرف %2
+0608 [SOURCE_HAS_QUIT] %1 توقّف
+0609 [SOURCE_TOPIC_IS] الموضوع هو %1
+060a [SOURCE_CHANGED_TOPIC] %1 غيّر الموضوع إلى %2
+060b [SOURCE_CHANNEL_MODE] %1 يضع نمط القناة إلى %2
+060c [SOURCE_CHANNEL_MODE_IS] نمط القناة هو %1
+060d [SOURCE_USER_MODE] %1 يضع نمطا %2 على %3
+060e [SOURCE_KNOWN_AS] %1 معروف الآن بـ %2
+060f [SOURCE_YOUR_MODE] غيّر النّمط إلى %1
+0610 [SOURCE_YOUR_NICK] فرضك الآن هو %1
+0611 [SOURCE_INFO] المعلومات
+
+0701 [GUI_WHOIS] الهويّة
+0702 [GUI_QUERY] محادثة خاصّة
+0703 [GUI_KICK] إرفس
+0704 [GUI_BAN] إمنع
+0705 [GUI_KICKBAN] إرفس + إمنع
+0706 [GUI_OP] إعطي حقّ التّشغيل
+0707 [GUI_DEOP] إنزع حقّ التّشغيل
+0708 [GUI_VOICE] إعطي الصّوت
+0709 [GUI_DEVOICE] إنزع الصّوت
+070a [GUI_PING] بينغ
+070b [GUI_VERSION] النّسخة
+070c [GUI_TIME] الوقت
+070d [GUI_FINGER] معلومات
+070e [GUI_RETREIVING_FILE] إستلام الملفّ (%1 بايتات)
+070f [GUI_SENDING_FILE] إرسال الملفّ (%1 بايتات)
+0710 [GUI_TERMINATED] %1 أنهى
+0711 [GUI_FAILED] فشل %1
+0712 [GUI_CLOSE] إغلق
+0713 [GUI_DISCONNECT] إنفصل
+0714 [GUI_CHANNELS] القنوات
+0715 [GUI_HELP] مساعدة
+0716 [GUI_PRIVATE] خاصّ
+0717 [GUI_PUBLIC] عامّ
+0718 [GUI_CONNECT] إتّصل
+0719 [GUI_ABOUT] حول
+071a [GUI_CHANGE_NICK] غيّر الفرض إلى
+071b [GUI_COPY_WINDOW] إنسخ النّصّ
+
+0801 [ASL_MALE] ولد، %1 سنة، %2
+0802 [ASL_FEMALE] بنت، %1 سنة، %2
+
+ffff [ERROR_NOT_DEFINED] سلسلة غير معرّفة
+

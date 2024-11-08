@@ -1,0 +1,361 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Aprire e chiudere un programma eseguibile (prima parte)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Aprire e chiudere un programma 
+    eseguibile<br>
+    (prima parte)<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level5.gif" width="17" height="18" align="absmiddle"> 
+        5<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>In svariate situazioni pu&ograve; essere necessario eseguire un programma 
+        esterno che effettui determinate operazioni. Quasi sempre non &egrave; 
+        necessario occuparsi della sua chiusura, ma talvolt&agrave; si rende necessario 
+        farlo. Come fare allora a chiudere un processo esterno chiamato dalla 
+        nostra applicazione?<br>
+        Prima di vedere il funzionamento di questo codice si raccomanda di leggere 
+        attentamente la sezione dedicata alle <a href="../info/info_14.htm">informazioni 
+        aggiuntive su Processi e Threads</a>.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/howto/howto032_01.jpg" width="226" height="97" align="right" alt="Figura 1">Il 
+        progetto si comporr&agrave; di un solo form con pochi controlli.<br>
+        Inseriamo allora una <i>TextBox</i> <img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>NomeProgramma</b>, una <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>LabelStato</b> e due <i>CommandButton</i> <img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>PulsanteApri</b> e <b>PulsanteChiudi</b>.</p>
+      <p>Il funzionamento &egrave; semplice quanto banale: l'utente immette il 
+        percorso del programma da eseguire nella casella di testo, preme il pulsante 
+        <b> <i>Apri programma</i></b> e questo si avvia. Quando arriva il momento 
+        di chiudere il programma, l'utente potr&agrave; premere il pulsante <i><b>Chiudi 
+        programma</b></i> sul form. Se il programma richiamato si chiuder&agrave; 
+        normalmente tutto filer&agrave; tranquillo, ma se il programma ritarda 
+        la chiusura apparir&agrave; una finestra di richiesta di terminazione 
+        dello stesso. Se l'utente risponder&agrave; SI a tale finestra, il programma 
+        sar&agrave; terminato senza alcuna richiesta di salvataggio o conferma.</p>
+      <p>Vediamo il codice, peraltro alquanto complesso:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Const WM_CLOSE = &amp;H10</li>
+        <li>Private Const DETACHED_PROCESS = &amp;H8</li>
+        <li></li>
+      </ol>
+      <p>Alla riga 3 vediamo una prima <a href="../glossary/c.htm#COSTANTE">costante</a> 
+        <img src="../images/ide/costante.gif" width="16" height="16" align="absmiddle"> 
+        <a href="../glossary/a.htm#API">API</a> di nome WM_CLOSE. Esso &egrave; 
+        un <a href="../glossary/m.htm#MESSAGGIO">messaggio</a> che verr&agrave; 
+        inviato alla finestra per richiederne la chiusura. Alla riga 4 abbiamo 
+        un'altra costante API per indicare il tipo di processo da aprire.</p>
+      <ol class="codicevb" start="6">
+        <li>Private Type STARTUPINFO</li>
+        <li>&nbsp;&nbsp;cb As Long</li>
+        <li>&nbsp;&nbsp;lpReserved As String</li>
+        <li>&nbsp;&nbsp;lpDesktop As String</li>
+        <li>&nbsp;&nbsp;lpTitle As String</li>
+        <li>&nbsp;&nbsp;dwX As Long</li>
+        <li>&nbsp;&nbsp;dwY As Long</li>
+        <li>&nbsp;&nbsp;dwXSize As Long</li>
+        <li>&nbsp;&nbsp;dwYSize As Long</li>
+        <li>&nbsp;&nbsp;dwXCountChars As Long</li>
+        <li>&nbsp;&nbsp;dwYCountChars As Long</li>
+        <li>&nbsp;&nbsp;dwFillAttribute As Long</li>
+        <li>&nbsp;&nbsp;dwFlags As Long</li>
+        <li>&nbsp;&nbsp;wShowWindow As Integer</li>
+        <li>&nbsp;&nbsp;cbReserved2 As Integer</li>
+        <li>&nbsp;&nbsp;lpReserved2 As Byte</li>
+        <li>&nbsp;&nbsp;hStdInput As Long</li>
+        <li>&nbsp;&nbsp;hStdOutput As Long</li>
+        <li>&nbsp;&nbsp;hStdError As Long</li>
+        <li>End Type</li>
+        <li></li>
+        <li>Private Type PROCESS_INFORMATION</li>
+        <li>&nbsp;&nbsp;hProcess As Long</li>
+        <li>&nbsp;&nbsp;hThread As Long</li>
+        <li>&nbsp;&nbsp;dwProcessId As Long</li>
+        <li>&nbsp;&nbsp;dwThreadId As Long</li>
+        <li>End Type</li>
+        <li></li>
+        <li>Private StartProc As STARTUPINFO</li>
+        <li>Private InfProc As PROCESS_INFORMATION</li>
+        <li></li>
+      </ol>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alle righe 6-25 viene dichiarato un nuovo tipo di dati <img src="../images/ide/tipoudt.gif" width="16" height="16" align="absmiddle"> 
+        definito dall'utente di nome <b>STARTUPINFO</b>. Alle righe 27 sar&agrave; 
+        dichiarato un altro tipo di dati di nome <b>PROCESS_INFORMATION</b>.<br>
+        Entrambi i tipi di dati saranno utilizzati dalla funzione API CreateProcess 
+        che vedremo subito sotto.</p>
+      <ol class="codicevb" start="37">
+        <li>Private Declare Function CreateProcess Lib &quot;kernel32&quot; Alias 
+          &quot;CreateProcessA&quot; (ByVal lpApplicationName As String, ByVal 
+          lpCommandLine As String, ByVal lpProcessAttributes As Any, ByVal lpThreadAttributes 
+          As Any, ByVal bInheritHandles As Long, ByVal dwCreationFlags As Long, 
+          lpEnvironment As Any, ByVal lpCurrentDriectory As String, lpStartupInfo 
+          As STARTUPINFO, lpProcessInformation As PROCESS_INFORMATION) As Long</li>
+        <li>Private Declare Function TerminateThread Lib &quot;kernel32&quot; 
+          (ByVal hThread As Long, ByVal dwExitCode As Long) As Long</li>
+        <li>Private Declare Function TerminateProcess Lib &quot;kernel32&quot; 
+          (ByVal hProcess As Long, ByVal uExitCode As Long) As Long</li>
+        <li>Private Declare Function GetExitCodeThread Lib &quot;kernel32&quot; 
+          (ByVal hThread As Long, lpExitCode As Long) As Long</li>
+        <li>Private Declare Function GetExitCodeProcess Lib &quot;kernel32&quot; 
+          (ByVal hProcess As Long, lpExitCode As Long) As Long</li>
+        <li>Private Declare Function CloseHandle Lib &quot;kernel32&quot; (ByVal 
+          hObject As Long) As Long</li>
+        <li>Private Declare Function GetWindowThreadProcessId Lib &quot;user32&quot; 
+          (ByVal hwnd As Long, lpdwProcessId As Long) As Long</li>
+        <li>Private Declare Function GetForegroundWindow Lib &quot;user32&quot; 
+          () As Long</li>
+        <li>Private Declare Function IsWindow Lib &quot;user32&quot; (ByVal hwnd 
+          As Long) As Long</li>
+        <li>Private Declare Function SendMessage Lib &quot;user32&quot; Alias 
+          &quot;SendMessageA&quot; (ByVal hwnd As Long, ByVal wMsg As Long, ByVal 
+          wParam As Long, lParam As Any) As Long</li>
+        <li>Private Declare Sub Sleep Lib &quot;kernel32&quot; (ByVal dwMilliseconds 
+          As Long)</li>
+        <li></li>
+      </ol>
+      <p>Alla riga 37 viene dichiarata la funzione API <b>CreateProcess</b> che 
+        consente di avviare un nuovo <a href="../glossary/p.htm#PROCESSO">processo</a> 
+        esterno definendo parametri quali la priorit&agrave; ed il tipo di processo 
+        da avviare e riceverne i descrittori del processo in uscita, quali l'<a href="../glossary/h.htm#HANDLE">handle</a> 
+        del processo, l'handle del thread ed altri dati.</p>
+      <p>Alla riga 38 dichiariamo la funzione API <b>TerminateThread</b> che consente 
+        la chiusura immediata di un <a href="../glossary/t.htm#THREAD">thread</a>. 
+        Analogamente, alla riga 39, dichiariamo la funzione API <b>TerminateProcess</b> 
+        che termina un <a href="../glossary/p.htm#PROCESSO">processo</a> di cui 
+        si conosce l'handle.</p>
+      <p>Segue alla riga 40 la dichiarazione della funzione <b>GetExitCodeThread</b> 
+        che restituisce il codice di uscita di un thread. Essa verr&agrave; utilizzata 
+        per comprendere se il thread lanciato &egrave; terminato. Alla riga 41 
+        abbiamo la dichiarazione della funzione <b>GetExitCodeProcess</b> che 
+        restituisce il codice di uscita di un processo e verr&agrave; utilizzata 
+        anche questa per comprendere se il processo &egrave; terminato.</p>
+      <p>Una funzione fondamentale si trova alla riga 42. La funzione in questione 
+        &egrave; la <b>CloseHandle</b> che libera la memoria dagli <a href="../glossary/h.htm#HANDLE">handle</a> 
+        <a href="../glossary/a.htm#ALLOCARE">allocati</a> e li rende nuovamente 
+        disponibili al sistema.</p>
+      <p>La funzione alla riga 43 &egrave; la <b>GetWindowThreadProcessId</b> 
+        e consente di risalire al thread ed al processo che ha generato una certa 
+        finestra. La funzione API successiva &egrave; la <b>GetForegroundWindow</b> 
+        che restituisce l'handle della finesta attualmente in primo piano. Verr&agrave; 
+        utilizzata per determinare la finesta da chiudere.<br>
+        Alla riga 45 abbiamo dichiarato la funzione <b>IsWindow</b> che verifica 
+        che l'handle passato sia effettivamente l'handle di una finestra.<br>
+        La funzione alla riga 46 &egrave; la classica funzione <b>SendMessage</b> 
+        utilizzata per inviare <a href="../glossary/m.htm#MESSAGGIO">messaggi</a> 
+        alle finestre. Il messaggio da inviare l'abbiamo dichiarato alla riga 
+        3.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>L'ultima funzione dichiarata si trova alla riga 47. La funzione in questione 
+        &egrave; la <b>Sleep</b> e consente di effettuare delle pause all'interno 
+        del programma in esecuzione.</p>
+      <p>Prima di vedere il codice di apertura e chiusura del programma vediamo 
+        alcune funzioni utili che verranno utilizzate pi&ugrave; avanti:</p>
+      <ol class="codicevb" start="49">
+        <li>Private Function IsThread(hThread As Long) As Boolean</li>
+        <li>&nbsp;&nbsp;Dim lpExitCode As Long</li>
+        <li>&nbsp;&nbsp;If GetExitCodeThread(hThread, lpExitCode) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If lpExitCode &gt; 0 Then IsThread = True</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>La prima funzione &egrave; la <b>IsThread</b>, che verifica che il thread 
+        richiesto sia in esecuzione.<br>
+        Essa utilizza la funzione <i><b>GetExitCodeThread</b></i> per richiedere 
+        lo stato di chiusura del thread. Se esso &egrave; ancora in esecuzione 
+        restituir&agrave; il valore API <b>STILL_ACTIVE</b> (259). Per cui se 
+        il codice di uscita del thread &egrave; maggiore di 0, il codice sar&agrave; 
+        in esecuzione o in pausa, ma esiste. Pertanto il valore di uscita della 
+        funzione viene settato a <i><b>True</b></i> (riga 52).</p>
+      <ol class="codicevb" start="56">
+        <li>Private Function IsProcess(hProcess As Long) As Boolean</li>
+        <li>&nbsp;&nbsp;Dim lpExitCode As Long</li>
+        <li>&nbsp;&nbsp;If GetExitCodeProcess(hProcess, lpExitCode) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If lpExitCode &gt; 0 Then IsProcess = True</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>In maniera del tutto analoga alla funzione precedente, la funzione IsProcess 
+        verifica che il processo richiesto esista. Viene controllato lo stato 
+        di chiusura tramite la funzione <i><b>GetExitCodeProcess</b></i> e soltanto 
+        se il valore restituito &egrave; maggiore di 0 (quindi il processo esiste) 
+        la funzione restituir&agrave; il valore <i><b>True</b></i> (riga 59).</p>
+      <ol class="codicevb" start="63">
+        <li>Private Function CloseAllHandle() As Boolean</li>
+        <li>&nbsp;&nbsp;If InfProc.hThread &gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call CloseHandle(InfProc.hThread)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;InfProc.hThread = 0</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;If InfProc.hProcess &gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call CloseHandle(InfProc.hProcess)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;InfProc.hProcess = 0</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;CloseAllHandle = True</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>La funzione <b>CloseAllHandle</b> &egrave; estremamente semplice. Essa 
+        verifica se il campo hThread della struttura InfProc &egrave; maggiore 
+        di 0. Il verificarsi di tale condizione significa che c'&egrave; un handle 
+        di thread aperto. Sar&agrave; pertanto necessario chiuderlo e questo viene 
+        fatto tramite la funzione <b><i>CloseHandle</i></b> (riga 65). Fatto questo 
+        viene azzerato tale valore.<br>
+        La stessa operazione viene effettuata con il valore di hProcess.</p>
+      <p>Tale funzione serve soltanto per liberare completamente le risorse bloccate 
+        da altre funzioni ed evitare i blocchi o rallentamenti della macchina.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p align="center"><a href="ht_032_2.htm">Segue parte 2 &gt;&gt;</a></p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=3">Giuseppe 
+        Della Bianca</a><br>
+        23 Aprile 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

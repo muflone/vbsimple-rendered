@@ -1,0 +1,491 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Utilizzo di un tasto per lo spostamento di campo</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Utilizzo di un tasto per 
+    lo spostamento di campo<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Nei programmi Visual Basic, dove sono presenti vari controlli, &egrave; 
+        possibile spostare il cursore da un controllo ad un altro mediante la 
+        pressione del tasto TAB.</p>
+      <p>Il programma intercetta la pressione del tasto TAB e passa il <a href="../glossary/f.htm#FOCUS">focus</a> 
+        all'oggetto la cui propriet&agrave; <i>TabIndex</i> sia successiva a quella 
+        dell'oggetto corrente. Se l'oggetto successivo &egrave; una Label <img src="../images/controls/label.gif" width="25" height="25" align="absmiddle"> 
+        il focus sar&agrave; passato all'oggetto successivo in ordine di <i>TabIndex</i>.<br>
+        Se un oggetto ha la propriet&agrave; <i>TabStop</i> impostata su False, 
+        non sar&agrave; possibile trasferire il focus mediante il tasto TAB.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Vedremo in questo esempio come utilizzare un altro tasto, invece del 
+        TAB, per passare da un oggetto ad un altro, da un campo all'altro. In 
+        questo esempio utilizzeremo il tasto <b>&sect;</b> per tale operazione, 
+        poich&eacute; in molte tastiere &egrave; il tasto pi&ugrave; vicino al 
+        tasto INVIO e ci&ograve; si rivela particolarmente utile in programmi 
+        dove &egrave; necessario immettere molti dati in varie caselle di testo 
+        come i programmi di contabilit&agrave;.</p>
+      <p><img src="../images/howto/howto004_01.jpg" width="232" height="108" alt="Figura 1" align="right">Inseriamo 
+        all'interno di un form:</p>
+      <ol>
+        <li>Una casella di testo di nome <b>Casella1</b> con propriet&agrave; 
+          <i>TabIndex</i> 0.</li>
+        <li>Una label con <i>TabIndex</i> 1.</li>
+        <li>Una casella di testo di nome <b>Casella2</b> con propriet&agrave; 
+          <i>TabIndex</i> 2 e propriet&agrave; <i>Enabled</i> False.</li>
+        <li>Una casella di testo di nome <b>Casella3</b> con <i>TabIndex</i> 3.</li>
+        <li>Un pulsante di nome <b>Command1</b>.</li>
+      </ol>
+      <p>In <a href="../glossary/f.htm#FASEDIESECUZIONE">fase di esecuzione</a> 
+        quando l'utente preme il tasto TAB si passa dalla <b>Casella1</b> alla 
+        <b>Casella3</b> poich&eacute; non &egrave; possibile impostare il focus 
+        sopra una label o sopra un oggetto nascosto o disattivato come la <b>Casella2</b>.</p>
+      <p>Il pulsante <b>Command1</b> servir&agrave; per attivare e disattivare 
+        la <b>Casella2</b>. Scriviamo subito questo codice:</p>
+      <ol class="codicevb" start="1">
+        <li>Private Sub Command1_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Casella2.Enabled = Not Casella2.Enabled</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Al click sopra il pulsante <b>Command1</b> la propriet&agrave; booleana 
+        <i>Enabled</i> della <b>Casella2</b> sar&agrave; invertita. Passer&agrave; 
+        da True a False e viceversa.<br>
+        Questo provocher&agrave; l'attivazione o la disattivazione della <b>Casella2</b>.</p>
+      <p>Passiamo subito al codice vero e proprio. &Egrave; leggermente complicato 
+        come struttura, per cui lo analizzeremo passo dopo passo.</p>
+      <ol class="codicevb" start="5">
+        <li>Private Sub Form_KeyPress(KeyAscii As Integer)</li>
+      </ol>
+      <p>L'evento che sfrutteremo &egrave; la pressione di un tasto ricevuta dall'oggetto 
+        Form, valido per cui in ogni momento. Altrimenti dovremmo gestirci i singoli 
+        oggetti del form.</p>
+      <ol class="codicevb" start="6">
+        <li>&nbsp;&nbsp;Dim ProssimoTabIndex As Integer</li>
+      </ol>
+      <p>La variabile <b>ProssimoTabIndex</b> indica il TabIndex successivo a 
+        quello del controllo attuale. Qualunque controllo con TabIndex minore 
+        a <b>ProssimoTabIndex</b> pu&ograve; essere scartato con sicurezza.</p>
+      <ol class="codicevb" start="7">
+        <li>&nbsp;&nbsp;Dim ControlloNR As Integer</li>
+      </ol>
+      <p>La variabile <b>ControlloNR</b> serve soltanto per eseguire il ciclo 
+        FOR...NEXT che controller&agrave; tutti gli elementi del form.</p>
+      <ol class="codicevb" start="8">
+        <li>&nbsp;&nbsp;Dim ControlloPrimoTab As Integer</li>
+      </ol>
+      <p>Questa variabile indica qual'&egrave; il controllo adatto con il TabIndex 
+        inferiore.<br>
+        Questo controllo servir&agrave; nel caso che si sia raggiunta la fine 
+        dei controlli. Ad un'ulteriore pressione del tasto &sect; il focus si 
+        dovr&agrave; spostare sul primo controllo, ovvero quello con il TabIndex 
+        inferiore. </p>
+      <ol class="codicevb" start="9">
+        <li>&nbsp;&nbsp;Dim ControlloEsatto As Integer</li>
+      </ol>
+      <p>La variabile <b>ControlloEsatto</b> indicher&agrave; il numero del controllo 
+        che ricever&agrave; il focus.<br>
+        Questo &egrave; il numero che cerchiamo all'interno di questo progetto.</p>
+      <ol class="codicevb" start="10">
+        <li>&nbsp;&nbsp;Dim CercaProssimoTabIndex As Integer</li>
+        <li></li>
+      </ol>
+      <p>La variabile <b>CercaProssimoTabIndex</b> contiene il TabIndex pi&ugrave; 
+        basso, ma sempre maggiore del TabIndex del controllo attuale. Ogni volta 
+        che sar&agrave; controllato un elemento verr&agrave; paragonato il suo 
+        TabIndex con la variabile <b>CercaProssimoTabIndex</b>. Se il TabIndex 
+        &egrave; superiore alla variabile, l'elemento potr&agrave; essere scartato, 
+        altrimenti sar&agrave; aggiornato il contenuto di <b>CercaProssimoTabIndex</b> 
+        con il valore di TabIndex.</p>
+      <ol class="codicevb" start="12">
+        <li>&nbsp;&nbsp;If KeyAscii = Asc(&quot;§&quot;) Then</li>
+      </ol>
+      <p>Innanzitutto sar&agrave; necessario controllare se il tasto premuto &egrave; 
+        il <b>&sect;</b>. Se non lo &egrave;, il flusso del programma salter&agrave; 
+        alla riga 40, ovvero alla chiusura della sub.</p>
+      <ol class="codicevb" start="13">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ProssimoTabIndex = ActiveControl.TabIndex 
+          + 1</li>
+      </ol>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Viene subito memorizzato il valore del TabIndex successivo a quello del 
+        controllo attuale all'interno della variabile <b>ProssimoTabIndex</b>. 
+        Tutti i controlli con TabIndex minore di quello contenuto in tale variabile 
+        potranno essere scartati.</p>
+      <ol class="codicevb" start="14">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;CercaProssimoTabIndex = -1</li>
+      </ol>
+      <p>Inizializza la variabile <b>CercaProssimoTabIndex</b>.</p>
+      <ol class="codicevb" start="15">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ControlloEsatto = -1</li>
+      </ol>
+      <p>Inizializza la variabile <b>ControlloEsatto</b>.</p>
+      <ol class="codicevb" start="16">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For ControlloNR = 0 To Controls.Count - 1</li>
+      </ol>
+      <p>Qui inizia il programma vero e proprio.<br>
+        Viene utilizzata la variabile <b>ControlloNR</b> per elencare tutti i 
+        controlli all'interno del form.<br>
+        Ricordiamo che la matrice Controls &egrave; a base 0, per cui il conteggio 
+        dovr&agrave; precedere fino a Controls.Count - 1.</p>
+      <ol class="codicevb" start="17">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Not TypeOf Controls(ControlloNR) 
+          Is Label Then</li>
+      </ol>
+      <p>Se il controllo in analisi &egrave; una Label esso dovr&agrave; essere 
+        saltato.<br>
+        Questo perch&eacute; le Label, pur avendo propriet&agrave; <i>TabIndex</i>, 
+        non possono ricevere il focus.</p>
+      <ol class="codicevb" start="18">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With Controls(ControlloNR)</li>
+      </ol>
+      <p>Quest'istruzione With serve soltanto per facilitare la scrittura del 
+        codice.<br>
+        Dalla riga successiva fino alla riga 34 dove sta l'End With, si potr&agrave; 
+        accedere alle propriet&agrave; del controllo in analisi - <i>Controls(ControlloNR)</i> 
+        - omettendo il nome dell'oggetto.</p>
+      <ol class="codicevb" start="19">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If .TabStop 
+          And .Enabled And .Visible Then</li>
+      </ol>
+      <p>Se il controllo ha la propriet&agrave; <i>TabStop</i> impostata a True, 
+        &egrave; attivato ed anche visibile si potr&agrave; continuare, altrimenti 
+        il controllo in esame sar&agrave; evitato.</p>
+      <ol class="codicevb" start="20">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          .TabIndex = ProssimoTabIndex Then</li>
+      </ol>
+      <p>Questo &egrave; il primo controllo degli elementi.<br>
+        Se il controllo in esame ha il TabIndex uguale a <b>ProssimoTabIndex</b> 
+        (ovvero subito successivo a quello del controllo sopra il quale si &egrave; 
+        premuto TAB) abbiamo trovato l'oggetto della nostra ricerca.</p>
+      <ol class="codicevb" start="21">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ControlloEsatto 
+          = ControlloNR</li>
+      </ol>
+      <p>Avendo trovato il nostro controllo, aggiorniamo il contenuto della variabile 
+        <b>ControlloEsatto</b> poich&eacute; essa all'uscita del ciclo FOR...NEXT 
+        dovr&agrave; contenere il numero dell'oggetto a cui donare il focus.</p>
+      <ol class="codicevb" start="22">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit 
+          For</li>
+      </ol>
+      <p>A questo punto &egrave; inutile continuare l'analisi.<br>
+        Abbiamo gi&agrave; trovato il controllo che ci serviva. Possiamo forzare 
+        l'uscita dal ciclo e saltare alla riga 33.</p>
+      <ol class="codicevb" start="23">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf 
+          .TabIndex &gt; ProssimoTabIndex Then</li>
+      </ol>
+      <p>Questa riga viene eseguita soltanto se il TabIndex del controllo in analisi 
+        &egrave; diverso da <b>ProssimoTabIndex</b>. Se il controllo in esame 
+        ha un TabIndex inferiore a quello della variabile potr&agrave; essere 
+        saltato tranquillamente, poich&eacute; stiamo eseguendo un passaggio di 
+        campo in avanti e non all'indietro, per cui il TabIndex, per essere ritenuto 
+        adatto dovr&agrave; essere maggiore di <b>ProssimoTabIndex</b>.</p>
+      <ol class="codicevb" start="24">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          .TabIndex &lt; CercaProssimoTabIndex Then</li>
+      </ol>
+      <p>La variabile <b>CercaProssimoTabIndex</b> conterr&agrave; il TabIndex 
+        pi&ugrave; basso trovato durante l'esecuzione del ciclo FOR...NEXT. Si 
+        andr&agrave; per tentativi. Si vaglieranno tutti i controlli fino a trovare 
+        quello con il TabIndex pi&ugrave; basso, ma consecutivo a <b>ProssimoTabIndex</b>.<br>
+        Se si dovesse trovare un controllo con TabIndex inferiore a quello contenuto 
+        nella variabile <b>CercaProssimoTabIndex</b>, abbiamo trovato un possibile 
+        candidato ad essere il controllo che ricever&agrave; il focus.</p>
+      <ol class="codicevb" start="25">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CercaProssimoTabIndex 
+          = .TabIndex</li>
+      </ol>
+      <p>Trovato questo candidato, cambiamo il contenuto della variabile <b>CercaProssimoTabIndex</b> 
+        con il valore dela propriet&agrave; TabIndex del controllo in esame.</p>
+      <p>Nei cicli successivi, se dovesse esserci un controllo con TabIndex inferiore, 
+        verr&agrave; diminuito questo valore, cos&igrave; alla fine di tutti i 
+        cicli, il valore contenuto nella variabile <b>CercaProssimoTabIndex</b> 
+        sar&agrave; con sicurezza il TabIndex del controllo che ricever&agrave; 
+        il focus.</p>
+      <ol class="codicevb" start="26">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ControlloEsatto 
+          = ControlloNR</li>
+      </ol>
+      <p>Man mano che <b>CercaProssimoTabIndex</b> diminuisce di valore, viene 
+        aggiornata anche la variabile <b>ControlloEsatto</b>. Essa servir&agrave; 
+        per indicare il numero del controllo con il TabIndex pi&ugrave; basso.</p>
+      <ol class="codicevb" start="27">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf 
+          CercaProssimoTabIndex &lt; 0 Then</li>
+      </ol>
+      <p>Un caso a parte &egrave; la prima esecuzione del ciclo FOR...NEXT.<br>
+        Infatti prima di iniziare tale ciclo, la variabile <b>CercaProssimoTabIndex</b> 
+        viene inizializzata a -1. In questa strana iniziale situazione, qualunque 
+        sia il controllo in esame, viene reputato come valido candidato per ricevere 
+        il focus.</p>
+      <p>Sar&agrave; la riga 24 che controller&agrave; se gli altri controlli 
+        avranno un TabIndex inferiore a quello analizzato per primo.</p>
+      <ol class="codicevb" start="28">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CercaProssimoTabIndex 
+          = .TabIndex</li>
+      </ol>
+      <p>Ed ecco che il primo controllo (ovvero quando la variabile <b>CercaProssimoTabIndex</b> 
+        &egrave; inferiore a 0) viene ritenuto valido per ricevere il focus.</p>
+      <ol class="codicevb" start="29">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ControlloEsatto 
+          = ControlloNR</li>
+      </ol>
+      <p>E con questa riga viene pure memorizzato il numero del controllo, che 
+        per primo, potrebbe essere il controllo che ricever&agrave; il focus.</p>
+      <ol class="codicevb" start="30">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End 
+          If</li>
+      </ol>
+      <p>Questa riga chiude i due controlli: quello della riga 24, con TabIndex 
+        inferiore a <b>CercaProssimoTabIndex</b> e quello del primo ciclo, ovvero 
+        con <b>CercaProssimoTabIndex</b> inferiore a 0 (riga 27).</p>
+      <ol class="codicevb" start="31">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End 
+          If</li>
+      </ol>
+      <p>Questa chiusura si riferisce all'uscita del controllo effettuato alla 
+        riga 20 o alla riga 23.</p>
+      <ol class="codicevb" start="32">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          .TabIndex &lt; Controls(ControlloPrimoTab).TabIndex Then ControlloPrimoTab 
+          = ControlloNR</li>
+      </ol>
+      <p>Con questa riga, eseguita ogni volta, memorizziamo nella variabile <b>ControlloPrimoTab</b> 
+        il numero del controllo con il TabIndex pi&ugrave; basso in assoluto, 
+        anche pi&ugrave; basso di quello su cui &egrave; stato premuto il tasto 
+        TAB.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Questo valore ci servir&agrave; nel caso ci trovassimo sull'ultimo controllo 
+        ed un'ulteriore pressione del tasto TAB richiederebbe che il focus passasse 
+        al primo oggetto attivo.</p>
+      <ol class="codicevb" start="33">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+      </ol>
+      <p>Questa riga chiude il controllo effettuato alla riga 19, ovvero quello 
+        della validit&agrave; del controllo in esame. Un controllo disabilitato, 
+        nascosto, o con TabStop impostato a False non viene neanche analizzato.</p>
+      <ol class="codicevb" start="34">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+      </ol>
+      <p>Da qui in poi non verr&agrave; utilizzato il controllo preso in esame 
+        come oggetto predefinito nei riferimenti. Questa riga chiude quella aperta 
+        alla riga 18.</p>
+      <ol class="codicevb" start="35">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+      </ol>
+      <p>Questa riga chiude la riga 17 di controllo del tipo di oggetto. Se l'oggetto 
+        in esame fosse stato una Label, il flusso sarebbe passato direttamente 
+        in questa riga, evitando tutti i controlli visti in precedenza.</p>
+      <p>Ricordiamo che le Label non possono ricevere il focus.</p>
+      <ol class="codicevb" start="36">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next ControlloNR</li>
+      </ol>
+      <p>Qui si chiude il ciclo FOR...NEXT.<br>
+        Questa riga aggiorna il contenuto di <b>ControlloNR</b> e riporta il flusso 
+        delle istruzioni alla riga 16, fino a che <b>ControlloNR</b> non contenga 
+        un valore maggiore o uguale al numero dei controlli presenti nel form.</p>
+      <ol class="codicevb" start="37">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If ControlloEsatto &lt; 0 Then ControlloEsatto 
+          = ControlloPrimoTab</li>
+      </ol>
+      <p>Questa riga controlla se la variabile <b>ControlloEsatto</b> contiene 
+        ancora il valore -1 dato nell'inizializzazione.</p>
+      <p>La presenza di tale valore indica che non si &egrave; trovato nessun 
+        candidato a ricevere il focus, quindi ci troviamo sull'ultimo controllo 
+        del form.<br>
+        Quest'istruzione imposter&agrave; <b>ControlloEsatto</b> uguale al controllo 
+        con il TabIndex pi&ugrave; basso, indicato da <b>ControlloPrimoTab</b> 
+        e impostato alla riga 32.</p>
+      <p>Qui abbiamo finito tutti i controlli del caso. Adesso abbiamo con sicurezza 
+        trovato il numero del controllo con il TabIndex successivo a quello del 
+        controllo corrente, oppure abbiamo il numero del controllo con TabIndex 
+        pi&ugrave; basso.<br>
+        In ogni caso la variabile <b>ControlloEsatto</b> conterr&agrave; il numero 
+        ordinale del controllo che dovr&agrave; ricevere il focus.</p>
+      <ol class="codicevb" start="38">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Controls(ControlloEsatto).SetFocus</li>
+      </ol>
+      <p>Ed ecco finalmente la promozione!<br>
+        Il controllo con numero uguale a quello contenuto in <b>ControlloEsatto</b> 
+        pu&ograve; ricevere il focus, mediante l'istruzione <i>SetFocus</i>.</p>
+      <ol class="codicevb" start="39">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;KeyAscii = 0</li>
+      </ol>
+      <p>Prima di uscire dalla funzione ricordiamoci di azzerare il tasto premuto, 
+        altrimenti se il controllo attivo fosse una casella di testo, essa riceverebbe 
+        il carattere &sect; e lo scriverebbe nel suo testo.</p>
+      <p>Quest'ultima istruzione assicura che il tasto premuto non venga scritto. 
+      </p>
+      <ol class="codicevb" start="40">
+        <li>&nbsp;&nbsp;End If</li>
+      </ol>
+      <p>Qui si chiude il primo controllo fatto all'inizio della funzione (riga 
+        12), ovvero il controllo del tasto premuto.</p>
+      <ol class="codicevb" start="41">
+        <li>End Sub</li>
+      </ol>
+      <p>E qui finalmente si chiude la nostra Sub. All'uscita d'essa sicuramente 
+        il controllo attivo sar&agrave; quello successivo a quello sopra il quale 
+        &egrave; stato premuto il tasto TAB.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Abbiamo adottato questa soluzione perch&eacute;, anche se un po' complessa, 
+        comprende tutti i controlli del caso.<br>
+        Avremmo potuto adottare soluzioni pi&ugrave; semplici ma non avremmo avuto 
+        la sicurezza che abbiamo con questa. In questo modo il programmatore pu&ograve; 
+        in ogni momento attivare, disattivare, nascondere, creare e distruggere 
+        oggetti sopra il form. La funzione appena vista, infatti, analizza <b>ogni 
+        volta tutti</b> i controlli presenti sul form e sceglie quello con il 
+        TabIndex successivo, oppure ritorna al primo dei controlli.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=3">Giuseppe 
+        Della Bianca</a><br>
+        27 Novembre 2000<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

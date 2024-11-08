@@ -1,0 +1,219 @@
+<html><!-- #BeginTemplate "/Templates/Database2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Il linguaggio SQL (la clausola ORDER BY)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Il linguaggio SQL<br>
+    La clausola ORDER BY<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/database.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --> 
+        1<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Uno tra i pi&ugrave; semplici operatori del linguaggio SQL, <b>ORDER 
+        BY</b> consente di ordinare i risultati secondo certi criteri. La sua 
+        sintassi generale &egrave;:</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p class="codicevb2">ORDER BY &lt;campo&gt; [ ASC | DESC ]</p>
+      <p>Si applica generalmente alle selezioni, per ottenere un elenco di righe 
+        gi&agrave; ordinato per ciascuno dei campi indicati. L'ordinamento &egrave; 
+        possibile sia in maniera ascendente (ASC), cio&egrave; dalla A alla Z, 
+        che rappresenta il valore di default, se omesso, che in maniera discendente 
+        (DESC) che rappresenta l'ordine contrario, cio&egrave; da Z verso A.</p>
+      <p><!-- #BeginLibraryItem "/Library/Notes2.lbi" --><img src="../images/notes2.gif" width="31" height="32" align="left"><!-- #EndLibraryItem -->L'ordine 
+        dei numeri rispetto i caratteri alfabetici dipende dall'implementazione 
+        del singolo driver; solitamente su ambiente Windows i numeri vengono prima 
+        delle lettere. I database pi&ugrave; importanti consentono anche la scelta 
+        di un criterio di ordinamento (<i>collation</i>) durante la creazione 
+        della tabella.</p>
+      <p>L'utilizzo dell'operatore ORDER BY &egrave; molto semplice:</p>
+      <p class="codicevb2">SELECT * FROM dipendenti ORDER BY id</p>
+      <p>Ordiner&agrave; le righe restituite in ordine crescente (ascendente) 
+        del campo ID.</p>
+      <p class="codicevb2">SELECT nome, cognome FROM dipendenti ORDER BY nome</p>
+      <p>Tutti i nomi saranno ordinati in maniera ascendente, mentre i cognomi 
+        saranno lasciati nel loro ordine casuale. &Egrave; possibile ordinare 
+        i risultati anche per pi&ugrave; campi, al fine di ottenere un insieme 
+        di righe correttamente ordinato.</p>
+      <p class="codicevb2">SELECT nome, cognome FROM dipendenti ORDER BY nome, 
+        cognome</p>
+      <p>Istruzione assolutamente equivalente a:</p>
+      <p class="codicevb2">SELECT nome, cognome FROM dipendenti ORDER BY nome 
+        ASC, cognome ASC</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>In quanto, come gi&agrave; detto, il criterio di ordinamento predefinito 
+        &egrave; quello ascendente. &Egrave; per&ograve; possibile invertire l'ordine 
+        di uno o di entrambi i campi:</p>
+      <p class="codicevb2">SELECT nome, cognome FROM dipendenti ORDER BY nome 
+        ASC, cognome DESC</p>
+      <p>Riporter&agrave; i campi nome e cognome di tutte le righe della tabella 
+        dipendenti, ordinate per nome (dalla A alla Z) e quindi per ordine inverso 
+        di cognome (dalla Z alla A).</p>
+      <p>Nei casi di omonimia fra due campi di due tabelle, in maniera analoga 
+        a quanto visto in precedenza, &egrave; possibile specificare il nome della 
+        tabella a cui il campo da ordinare appartiene, come segue:</p>
+      <p class="codicevb2">SELECT dip.id, dip.nome, dip.cognome, saldi.totale<br>
+        FROM dipendenti dip, saldi<br>
+        WHERE an.id=saldi.id<br>
+        ORDER BY saldi.totale DESC, an.id ASC</p>
+      <p>Estrarr&agrave; ID, Nome, Cognome e Totale di tutte quelle persone che 
+        compaiono sia nella tabella dipendenti che in quella dei saldi; il risultato 
+        verr&agrave; ordinato in maniera decrescente per totale del saldo (dal 
+        maggiore al minore) e quindi per ID in ordine crescente. Se due nominativi 
+        presentano lo stesso totale, saranno a loro volta ordinati per ID.</p>
+      <hr class="hrseparator">
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>I valori <b>Null</b> nell'ordinamento sono considerati come il valore 
+        pi&ugrave; basso, cio&egrave; in caso di ordinamento ascendente sono presentati 
+        per primi, mentre in caso di ordinamento discendente sono ordinati per 
+        ultimi.</p>
+      <p><!-- #BeginLibraryItem "/Library/Notes1.lbi" --><img src="../images/notes.gif" width="56" height="57" align="left"><!-- #EndLibraryItem -->Alcuni 
+        database consentono l'ordinamento anche per valori non inclusi nell'elenco 
+        dei campi da restituire, mentre altri pretendono che ogni campo presente 
+        all'interno della definizione ORDER BY sia presente anche nell'elenco 
+        dei campi scelti a fianco dell'istruzione SELECT.</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --><!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        14 Marzo 2004<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice della sezione Database</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

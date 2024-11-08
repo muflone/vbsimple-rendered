@@ -1,0 +1,340 @@
+<html><!-- #BeginTemplate "/Templates/Database2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>L'interfacciamento</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->L'interfacciamento<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/database.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>L'utilizzo di una fonte dati suppone sempre un accesso diretto o indiretto 
+        al database da cui recuperare i dati. L'accesso diretto consiste nel leggere 
+        direttamente i files fisici con le istruzioni per la manipolazione di 
+        dati binari e lavorare <i>alla cieca</i>; si tratta di un'operazione nella 
+        maggior parte dei casi inapplicabile, complessa ed in generale insulsa. 
+        Per evitare che il programmatore maneggi complessi archivi, delle pi&ugrave; 
+        disparate tipologie, si utilizza l'accesso indiretto alla fonte dati.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>L'accesso indiretto si basa sull'utilizzo di una o pi&ugrave; <a href="../glossary/l.htm#LIBRERIA">librerie</a> 
+        esterne, che si occuperanno autonomamente di effettuare l'accesso diretto 
+        alla fonte dati. Il programmatore Visual Basic dovr&agrave; limitarsi 
+        a stabilire una connessione tra il programma in sviluppo e la fonte dati 
+        mediante un'<a href="../glossary/i.htm#INTERFACCIA">interfaccia</a> dati.</p>
+      <p>Si definisce <b>interfaccia dati</b> un meccanismo, solitamente una libreria, 
+        che consente di stabilire una connessione ad una fonte dati esterna e 
+        di maneggiare i dati in essa esistenti. Spesso si utilizza interporre 
+        un ulteriore livello tra il programma utilizzatore dei dati e l'interfaccia 
+        dati; questo ulteriore livello &egrave; detto <b>modello dati</b>.</p>
+      <p>Il diagramma mostrato nella Figura 1 rappresenta le quattro forme pi&ugrave; 
+        semplici di interfacciamento con una fonte dati.</p>
+      <p align="center"><img src="../images/database/db005_01.png" width="266" height="250" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <ol>
+        <li><b>Applicazione - Driver - Fonte Dati</b><br>
+          La modalit&agrave; pi&ugrave; semplice e leggera consiste nel far utilizzare 
+          all'applicazione finale, un driver progettato appositamente per la fonte 
+          dati cui si tenta di accedere. Si tratta di una soluzione difficilmente 
+          applicabile in Visual Basic e richiede la conoscenza del funzionamento 
+          del driver che acceder&agrave; al database.<br>
+          <br>
+        </li>
+        <li><b>Applicazione - Interfaccia Dati - Fonte Dati</b><br>
+          Per molti versi simile alla modalit&agrave; precedente ma l'accesso 
+          alla fonte dati &egrave; effettuato da un'interfaccia dati, molto pi&ugrave; 
+          generale e flessibile di un driver progettato per il database di destinazione. 
+          Anche questa soluzione &egrave; generalmente complessa da utilizzare 
+          all'interno di Visual Basic.<br>
+          <br>
+        </li>
+        <li><b>Applicazione - Modello Dati - Interfaccia Dati - Fonte Dati</b><br>
+          Il modello di accesso pi&ugrave; funzionale, si basa sull'uso di un 
+          modello dati in grado di comunicare con un'interfaccia dati risolvendo 
+          quindi le difficolt&agrave; date dalla soluzione precedente. In ambito 
+          Visal Basic si tratta quasi sempre della migliore soluzione, combinando 
+          semplicit&agrave; d'uso e velocit&agrave;.<br>
+          <br>
+        </li>
+        <li><b>Applicazione - Modello Dati - Interfaccia Dati - Driver - Fonte 
+          Dati</b><br>
+          La forma primitiva pi&ugrave; complessa, basata sull'uso di tre differenti 
+          strati per accedere alla fonte dati di destinazione. Utilizzata per 
+          lo pi&ugrave; quando non &egrave; possibile utizzare il modello precedente 
+          oppure &egrave; necessario mantenere un elevato grado di scalabilit&agrave; 
+          del prodotto.</li>
+      </ol>
+      <p>Modalit&agrave; di interfacciamento pi&ugrave; complesse implicano l'uso 
+        di differenti sistemi e quindi ulteriori strati di trasporto e conversione 
+        di dati. Si tratta generalmente di combinazioni delle precedenti modalit&agrave; 
+        ma sono utilizzate in progetti di elevata importanza e non saranno quindi 
+        trattate in quest'articolo.</p>
+      <hr>
+      <p align="center" class="size3">I Modelli di Dati</p>
+      <p>L'utilizzo di una fonte dati esterna in progetti Visual Basic implica 
+        quasi sempre l'utilizzo di un <b>modello di dati </b>che consenta di dare 
+        una conformazione ad oggetti, basata su propriet&agrave;, metodi <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        ed eventi<img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"> 
+        conosciuti e quanto pi&ugrave; possibilmente indipendenti dalla fonte 
+        dati cui si accede.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>I modelli di dati consentono quindi di interrogare la fonte dati, senza 
+        dover conoscere i meccanismi interni che ne regolano lettura e scrittura; 
+        sar&agrave; il modello di dati ad esporre una serie di membri per effettuare 
+        tutte le operazioni possibili.</p>
+      <p>I modelli di dati pi&ugrave; conosciuti in ambito Visual Basic sono tre:</p>
+      <ol>
+        <li><b>Data Access Object</b> (<i>DAO</i>)<br>
+          Il modello di dati pi&ugrave; vecchio e quasi del tutto abbandonato. 
+          Nonostante questo continua ad essere il modello di dati preferito da 
+          principanti e nei piccoli progetti.<br>
+          <br>
+        </li>
+        <li><b>Remote Data Object</b> (<i>RDO</i>)<br>
+          Leggermente pi&ugrave; avanzato di DAO, consente anche l'accesso a fonti 
+          dati remote, quali database in Internet. In ragione del basso interesse, 
+          questo modello di dati non sar&agrave; trattato all'interno di questo 
+          corso.<br>
+          <br>
+        </li>
+        <li><b>ActiveX Data Objects</b> (<i>ADO</i>)<br>
+          Il pi&ugrave; moderno dei modelli di dati, cos&igrave; piatto da sembrare 
+          inutile, si rivela invece il modello pi&ugrave; avanzato. Il suo elevato 
+          grado di generalizzazione consente l'accesso a fonti dati sia locali 
+          che remote, di qualsiasi tipologia.</li>
+      </ol>
+      <p>La scelta del modello di dati dipende gran parte dalla velocit&agrave; 
+        necessaria o dal tipo di database da gestire. Nella maggior parte dei 
+        casi si raccomanda l'uso di <i>ADO</i> perch&eacute; sempre idoneo a qualsiasi 
+        fonte dati, veloce ed aggiornato. L'uso dei modelli di dati <i>DAO</i> 
+        ed <i>ADO</i> sar&agrave; trattato pi&ugrave; avanti in questa sezione.</p>
+      <hr>
+      <p align="center" class="size3">Le Interfacce Dati</p>
+      <p>I modelli dati si basano sempre su un'<b>interfaccia dati</b> che consenta 
+        il recupero dei dati dal database, al fine di modellarli secondo la struttura 
+        del modello scelto.</p>
+      <p>Il modello <b><i>DAO</i></b> &egrave; in grado di utilizzare due differenti 
+        interfacce dati:</p>
+      <ol>
+        <li><b>Microsoft Jet</b><br>
+          Progettato l'accesso a database di tipo <a href="db_03_01.htm">Microsoft 
+          Access</a>, &egrave; in grado di accedere a tante altre fonti dati basate 
+          su files <a href="../glossary/i.htm#ISAM">ISAM</a> quali <a href="db_03_10.htm">dBase</a>, 
+          <a href="db_03_09.htm">Paradox</a>, <a href="db_03_08.htm">FoxPro</a> 
+          ed altre.<br>
+          <br>
+        </li>
+        <li><b>ODBCDirect</b><br>
+          Consente l'accesso a fonti dati mediante <a href="../glossary/o.htm#ODBC">ODBC</a> 
+          (Open DataBase Connectivity).</li>
+      </ol>
+      <p>Il modello <i><b>ADO</b></i> basa invece tutta la sua attivit&agrave; 
+        su un'interfaccia dati chiamata <b>Provider OLE&nbsp;DB</b>; tali <a href="../glossary/p.htm#PROVIDER">Provider</a> 
+        possono essere suddivisi in due tipologie:</p>
+      <ol>
+        <li><b>Provider OLE DB</b> normali<br>
+          Si defiisconono cos&igrave; tutte quelle interfacce dati che effettuano 
+          l'accesso alla fonte dati finale senza passare per ulteriori livelli. 
+          <br>
+          <br>
+        </li>
+        <li><b>Provider ODBC</b><br>
+          Un Provider OLE&nbsp;DB particolare, che non effettua l'accesso alla 
+          fonte dati direttamente ma richiama i Driver ODBC, i quali svolgono 
+          le operazioni sulla fonte dati e restituiscono i risultati al suddetto 
+          Provider, il quale li restituisce a sua volta al modello dati ADO.</li>
+      </ol>
+      <p>In linea generale l'accesso mediante provider OLE&nbsp;DB &egrave; pi&ugrave; 
+        veloce dell'accesso tramite ODBC per via di un livello di comunicazione 
+        in meno. Tuttavia a causa di alcune problematiche di certi provider OLE 
+        DB, la scelta di ODBC a volte si rivela la scelta migliore. In sintesi 
+        &egrave; bene non fidarsi della pubblicit&agrave; intorno ad un certo 
+        prodotto ma si raccomanda di provare con mano la velocit&agrave; di entrambi 
+        gli accessi e scegliere quello che si rivela pi&ugrave; veloce. ODBC tuttavia 
+        manca di tantissime caratteristiche presenti nell'interfaccia dati OLE&nbsp;DB.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>&Egrave; anche possibile accedere direttamente all'interfaccia dati senza 
+        passare da un modello specifico; si tratta per&ograve; di un'operazione 
+        relativamente complessa e che necessita l'uso dell'<a href="../glossary/a.htm#API">API</a> 
+        oppure di una <a href="../glossary/t.htm#TYPELIBRARY">Type Library</a> 
+        in grado di comunicare con l'interfaccia dati.</p>
+      <hr>
+      <p align="center" class="size3">I Driver</p>
+      <p>Il livello di comunicazione con la fonte dati pi&ugrave; basso e diretto. 
+        In ambiente Visual Basic i driver vengono impiegati nelle comunicazioni 
+        <i>ODBC</i>. L'interfaccia ODBC infatti non consente l'accesso a nessuna 
+        fonte dati senza l'utilizzo di una libreria che effettui le comunicazioni 
+        necessarie.</p>
+      <p>ODBC infatti espone soltanto una serie di funzioni e tipi di dati standard 
+        per tutti i database; i singoli driver si occuperanno quindi di effettuare 
+        le dovute conversioni e gli accessi alla fonte dati in maniera corretta.</p>
+      <p>Naturalmente queste operazioni avvengono in maniera invisibile all'utente 
+        e spesso in maniera altrettanto invisbile allo sviluppatore del prodotto.</p>
+      <hr>
+      <p align="center" class="size3">Fonti Dati</p>
+      <p>Un piccolo appunto prima di concludere: sono stati utilizzati indifferente 
+        i termini fonte dati e database. In linea generale i due concetti si equivalgono 
+        ma il primo dei due pu&ograve; indicare qualsiasi gruppo di dati come 
+        ad esempio <a href="../glossary/m.htm#MATRICE">matrici</a> di numeri, 
+        caselle di posta elettronica e tanto altro ancora.</p>
+      <p>Il modello di dati ADO si basa proprio su questo concetto; la fonte dati 
+        non deve necessariamente essere un database relazionale, ovvero un gruppo 
+        di dati relazionati, ma pu&ograve; avere qualsiasi forma e caratteristica; 
+        sar&agrave; compito del Provider OLE&nbsp;DB riportare queste informazioni 
+        in maniera tabellare.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>La strada ai database si apre proprio in questo punto.<br>
+        La migliore soluzione per un progetto non &egrave; data soltanto dal database 
+        scelto ma dal modello di dati utilizzato, dal tipo di interfaccia scelta 
+        e dal numero di strati che si sovrappongono per effettuare l'interfacciamento 
+        dell'applicazione con la fonte dati.</p>
+      <p>Nei capitoli successivi saranno trattati i due modelli pi&ugrave; utilizzati 
+        (DAO ed ADO) e le succitate interfacce dati per lo sviluppo di un semplice 
+        programma di catalogazione di CD-ROM.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        1 Dicembre 2002<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice della sezione Database</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,500 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Estrarre le icone da un file</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Estrarre le icone da un 
+    file<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Abbiamo visto in <a href="ht_016.htm">un altro progetto</a> come creare 
+        un <a href="../info/info_10.htm">file di risorse</a> <img src="../images/ide/risorse.gif" width="16" height="16" align="absmiddle"> 
+        contenente testi ed immagini da compilare assieme al resto di un programma. 
+        Vedremo in questo articolo invece come estrarre le icone da un file gi&agrave; 
+        compilato, ad esempio un eseguibile oppure una <a href="../glossary/d.htm#DLL">DLL</a>.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Per eseguire quest'operazione svilupperemo un semplicissimo progetto 
+        con un unico form che utilizza tre funzioni <a href="../glossary/a.htm#API">API</a> 
+        complementari: la prima &egrave; <i>ExtractIconEx</i> che si occuper&agrave; 
+        di estrarre una o pi&ugrave; icone da un file; la seconda &egrave; <i>DrawIconEx</i> 
+        che consente di disegnare - riprodurre - un'icona sopra un <a href="../glossary/d.htm#DEVICECONTEXT">Device 
+        Context</a>; l'ultima funzione &egrave; <i>DestroyIcon</i> che <a href="../glossary/d.htm#DEALLOCARE">deallocher&agrave;</a> 
+        la memoria utilizzata dall'icona estratta e da rappresentare. Passiamo 
+        direttamente allo sviluppo del form che costituisce l'interfaccia utente 
+        del nostro progetto:</p>
+      <p><img src="../images/howto/howto049_01.png" width="231" height="192" align="left" alt="Figura 1">Il 
+        form si compone di cinque semplici controlli pi&ugrave; due menu, non 
+        obbligatori ma utilizzati per pura comodit&agrave;.</p>
+      <p>La parte superiore della superficie del form &egrave; occupata da tre 
+        controlli: un <i>DriveListBox</i><img src="../images/controls/drivelistbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>drvDrive</b>, un <i>DirListBox</i><img src="../images/controls/dirlistbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>dirCartelle</b> ed un <i>FileListBox</i><img src="../images/controls/filelistbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>filFiles</b>. Naturalmente i tre controlli sono sincronizzati 
+        per indicare rispettivamente un'unit&agrave; disco, la struttura di cartelle 
+        ed i corrispondenti files contenuti nella cartella attuale.</p>
+      <p>Nella parte inferiore del form sono presenti una barra di scorrimento 
+        orizzontale <img src="../images/controls/hscrollbar.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>hsbIcona</b> ed una <i>PictureBox</i> <img src="../images/controls/picturebox.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>picIcone</b>.</p>
+      <p><img src="../images/howto/howto049_02.png" width="293" height="269" align="right" alt="Figura 2">La 
+        barra dei menu invece conterr&agrave; due semplici menu costruiti con 
+        l'Editor di Menu <img src="../images/ide/editmenu.gif" width="16" height="16" align="absmiddle"> 
+        posto sulla barra degli strumenti standard.</p>
+      <p>Il menu <i><b>File</b></i> di nome <b>mnuFile</b> conterr&agrave; al 
+        suo interno una voce di nome <b>mnuFile_Chiudi</b> con il testo <i><b>Chiudi</b></i> 
+        (anzi <i>&amp;Chiudi</i>). Il menu Icone invece prende il nome di mnuIcone 
+        e contiene due voci di menu: <i><b>Indietro</b></i> ed <i><b>Avanti</b></i>, 
+        entrambi associati al nome <b>mnuIcone_Sposta</b> ma differenziati per 
+        il loro indice. Ad entrambe le voci &egrave; associato un tasti scorciatoia: 
+        F1 per Indietro ed F2 per Avanti.</p>
+      <p>I due menu in realt&agrave; non sono obbligatori nello sviluppo della 
+        nostra applicazioncina ma sono utilizzati per semplificare la visualizzazione 
+        delle icone estratte consentendo l'uso di tasti scorciatoia.</p>
+      <p>Il codice si presenta altrettanto semplice:</p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Const DI_MASK = &amp;H1</li>
+        <li>Private Const DI_IMAGE = &amp;H2</li>
+        <li>Private Const DI_NORMAL = DI_MASK Or DI_IMAGE</li>
+        <li></li>
+        <li>Private Declare Function ExtractIconEx Lib &quot;SHELL32&quot; Alias 
+          &quot;ExtractIconExA&quot; (ByVal lpszFile As String, ByVal nIconIndex 
+          As Long, phiconLarge As Long, phiconSmall As Long, ByVal nIcons As Long) 
+          As Long</li>
+        <li>Private Declare Function DrawIconEx Lib &quot;USER32&quot; (ByVal 
+          hdc As Long, ByVal xLeft As Long, ByVal yTop As Long, ByVal hIcon As 
+          Long, ByVal cxWidth As Long, ByVal cyWidth As Long, ByVal istepIfAniCur 
+          As Long, ByVal hbrFlickerFreeDraw As Long, ByVal diFlags As Long) As 
+          Long</li>
+        <li>Private Declare Function DestroyIcon Lib &quot;USER32&quot; (ByVal 
+          hIcon As Long) As Long </li>
+        <li></li>
+      </ol>
+      <p>La <a href="../glossary/c.htm#COSTANTE">costante</a> <img src="../images/ide/costante.gif" width="16" height="16" align="absmiddle"> 
+        <b>DI_NORMAL</b> alla riga 3 si compone della somma delle altre due costanti 
+        API dichiarate in precedenza. La prima di queste costanti (<b>DI_MASK</b>) 
+        indica, nel'operazione di disegno dell'icona, di riprodurre la sola maschera 
+        che produrr&agrave; quindi la trasparenza dell'icona stessa. La seconda 
+        costante (<b>DI_IMAGE</b>) indica di riprodurre l'immagine vera e propria. 
+        Pertanto la somma delle due costanti (<b>DI_NORMAL</b>) indica la riproduzione 
+        dell'icona comprensiva di immagine e maschera di trasparenza.</p>
+      <p>Alla riga 7 &egrave; dichiarata la funzione API <i>ExtractIconEx</i> 
+        che, partendo dal nome del file specificato nell'argomento <b><i>lpszFile</i></b> 
+        restituisce il numero di icone contenute nello stesso oppure restituisce 
+        una coppia di icone (grande e piccola) contenute all'interno del file. 
+        Il differente comportamento &egrave; regolato dall'argomento <i><b>nIconIndex</b></i>: 
+        nel caso esso sia -1, la funzione restituir&agrave; il numero di icone 
+        presenti nel file; per tutti gli altri valori maggiori o uguali a 0 sar&agrave; 
+        restituit&agrave; l'icona corrispondente all'indice scelto.</p>
+      <p>La funzione <i>DrawIconEx</i> dichiarata alla riga 8 disegna l'icona 
+        specificata nell'argomento <i><b>hIcon</b></i> sul <a href="../glossary/d.htm#DEVICECONTEXT">Device 
+        Context</a> indicato da <i><b>hdc</b></i>, alle coordinate e grandezze 
+        indicate. Utilizza le costanti API viste in precedenza per determinare 
+        se disegnare la sola immagine, la sola maschera oppure la combinazione 
+        di entrambe.</p>
+      <p>L'ultima funzione API dichiarata alla riga 9 &egrave; <i>DestroyIcon</i> 
+        che consente di deallocare la memoria dall'icona caricata e liberare l'<a href="../glossary/h.htm#HANDLE">handle</a> 
+        ad essa assegnato.</p>
+      <p>Definiamo una nuova funzione che si rivela molto utile in svariate situazioni 
+        in cui si devono maneggiare percorsi di files o cartelle. Il suo nome 
+        &egrave; <b>LastBSlash</b>, ad indicare Last Back Slask ovvero Ultima 
+        barra rovesciata.</p>
+      <ol start="11" class="codicevb">
+        <li>Private Function LastBSlash(ByVal Path As String, ByVal Slash As Boolean) 
+          As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Slash And (Right$(Path, 1) &lt;&gt; &quot;\&quot;) 
+          Then Path = Path &amp; &quot;\&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Not Slash And (Right$(Path, 1) = &quot;\&quot;) 
+          Then Path = Left$(Path, Len(Path) - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;LastBSlash = Path</li>
+        <li>End Function </li>
+        <li></li>
+      </ol>
+      <p>La funzione consente di aggiungere o rimuovere l'ultima barra rovesciata 
+        (&nbsp;\&nbsp;) al percorso <i><b>Path</b></i> indicato, in base al valore 
+        dell'argomento <i><b>Slash</b></i>. Se viene richiesta l'aggiunta della 
+        barra rovesciata (<i><b>Slash</b></i> impostato su True) verr&agrave; 
+        verificato che quel percorso non termini gi&agrave; con una barra del 
+        genere ed in tal caso verr&agrave; aggiunta con una semplice concatenazione 
+        mostrata alla riga 12.<br>
+        Viceversa se viene richiesta la rimozione della barra rovesciata verr&agrave; 
+        verificata prima la presenza di quest'ultima e nel caso essa esiste verr&agrave; 
+        rimossa alla riga 13.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La funzione risulta utile quando si maneggiano nomi di cartelle per le 
+        quali &egrave; necessario avere o meno la barra rovesciata finale. L'esempio 
+        pi&ugrave; comune &egrave; quello di concatenare il nome di una cartella 
+        al nome di un file per ottenere qundi il percorso completo del suddetto 
+        file. In tal situazione il nome della cartella deve necessariamente terminare 
+        con una barra rovesciata. Potrebbe sembrare scontato che basti concatenare 
+        una barra rovesciata ed il nome del file al nome della cartella ma non 
+        &egrave; sempre cos&igrave;. Difatti se il nome della cartella termina 
+        gi&agrave; con una barra rovesciata si verificher&agrave; un errore in 
+        quanto il nome della cartella conterr&agrave; due barre rovesciate. Ad 
+        esempio:</p>
+      <p align="center" class="codicevb">Cartella = &quot;C:\MiaCartella&quot;<br>
+        File = &quot;documento.txt&quot;<br>
+        Percorso = Cartella &amp; &quot;\&quot; &amp; File</p>
+      <p align="center">Produrr&agrave; il risultato voluto, ovvero <b>Percorso</b> 
+        = &quot;C:\MiaCartella\documento.txt&quot;...<br>
+        ...ma se..</p>
+      <p align="center" class="codicevb">Cartella = &quot;C:\&quot;<br>
+        File = &quot;documento.txt&quot;<br>
+        Percorso = Cartella &amp; &quot;\&quot; &amp; File</p>
+      <p align="center">Produrr&agrave; invece un percorso errato, corrispondente 
+        a &quot;C:\\documento.txt&quot;<br>
+        La funzione LastBSlash consentir&agrave; invece di evitare errori di questo 
+        genere.</p>
+      <p align="center" class="codicevb"> Percorso = LastBSlash(Cartella, True) 
+        &amp; File</p>
+      <p>La barra rovesciata al termine della stringa <b>Cartella</b> sar&agrave; 
+        comunque presente e potr&agrave; essere concatenata al nome del file che 
+        segue.</p>
+      <p>Seguono quindi le tre funzioni che regolano l'<a href="../glossary/e.htm#EVENTO">evento</a> 
+        <img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"> 
+        Click sopra i controlli di tipo <i>DriveListBox</i>, <i>DirListBox</i> 
+        e <i>FileListBox</i>. I tre controlli infatti dovranno essere sincronizzati 
+        tra loro poich&eacute; se l'utente decide di utilizzare un'unit&agrave; 
+        disco differente, la struttura delle cartelle dovr&agrave; rispecchiare 
+        la nuova unit&agrave; disco selezionata e lo stesso dovr&agrave; fare 
+        l'elenco con i files.</p>
+      <ol start="17" class="codicevb">
+        <li>Private Sub drvDrive_Change()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim strOldPath As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;strOldPath = filFiles.Path</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;On Error Resume Next</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;dirCartelle.Path = Left$(drvDrive.Drive, 2)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Err.Number &lt;&gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Err.Clear</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drvDrive.Drive = strOldPath</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dirCartelle.Path = 
+          strOldPath</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La prima routine gestir&agrave; il comportamento dell'evento Click sul 
+        controllo <b>drvDrive</b> per la scelta di un'unit&agrave; disco. In questa 
+        routine &egrave; fondamentale non sottovalutare il caso che l'utente scelga, 
+        anche involontariamente, un'unit&agrave; disco non pronta ovvero che non 
+        possa essere letta perch&eacute; non disponibile o pi&ugrave; semplicemente 
+        perch&eacute; non &egrave; presente un disco in tale unit&agrave;. Un 
+        errore comunissimo &egrave; quello di lasciare che l'utente scelga l'unit&agrave; 
+        a dischetti A: ma non vi sia alcun disco all'interno del drive da leggere. 
+        Se tale situazione non viene gestita correttamente il programma termina 
+        con un errore.</p>
+      <p>Alla riga 18 &egrave; dichiarata la variabile <b>strOldPath</b> che andr&agrave; 
+        a contenere il percorso attuale indicato dalla propriet&agrave; <i>Path</i> 
+        dell'elenco dei files (riga 19). Infatti in caso di un errore, quale un 
+        disco non pronto, verr&agrave; ripristinato il percorso precedente.</p>
+      <p>Alla riga 20 &egrave; aggiunta un'istruzione di gestione di errori; il 
+        verificarsi di uno di questi comporter&agrave; il salto all'istruzione 
+        successiva. Con questa minima gestione possiamo quindi modificare il percorso 
+        del controllo <b>dirCartelle</b> per uniformarlo all'unit&agrave; disco 
+        scelta nel controllo <b>drvDrive</b>. Non sar&agrave; necessario modificare 
+        il percorso del controllo <b>filFiles</b> poich&eacute; di questo si occuper&agrave; 
+        la corrispondente routine di gestione dell'evento Click del controllo 
+        <b>dirCartelle</b>.</p>
+      <p>Pertanto, sia che si verifichi un errore nella scelta dell'unit&agrave; 
+        disco, sia che non si verifichi, il flusso del programma arriver&agrave; 
+        alla riga 22 nella quale esiste un controllo del codice di errore generato. 
+        Nel caso non fosse stato generato alcun errore, il codice corrisponder&agrave; 
+        a 0 e le righe 23-25 non verranno eseguite. In caso contrario sar&agrave; 
+        innanzituto cancellato quell'errore (riga 23) per non propagarlo ad altre 
+        routine e poi verranno ripristinati i percorsi precedenti dei controlli 
+        <b>drvDrive</b> e <b>dirCartelle</b>, salvati nella variabile <b>strOldPath</b>.</p>
+      <ol start="29" class="codicevb">
+        <li>Private Sub dirCartelle_Change()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;filFiles.Path = dirCartelle.Path</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La sincronizzazione del controlli <b>dirCartelle</b> e <b>filFiles</b> 
+        si presenta molto pi&ugrave; semplice. A differenza del controllo <b>drvDrive</b>, 
+        non sar&agrave; possibile scegliere un percorso inaccessibile (quei salvo 
+        rari casi di malfunzionamento dell'unit&agrave; disco o sistemi di protezione 
+        contro l'accesso non autorizzato, ma non ci occuperemo di questi casi).</p>
+      <p>Ci baster&agrave; pertanto impostare il percorso del controllo <b>filFiles</b> 
+        al percorso del controllo <b>dirCartelle</b>, in seguito al quale sar&agrave; 
+        aggiornato automaticamente l'elenco dei files. Questa procedura scatta 
+        automaticamente anche quando &egrave; modificata l'unit&agrave; disco, 
+        poich&eacute; abbiamo visto che la routine precedente a questa modifica 
+        anche il percorso del controllo <b>dirCartelle</b>, in seguito alla quale 
+        (riga&nbsp;25) scatter&agrave; l'aggiornamento del controllo <b>filFiles</b>.</p>
+      <ol class="codicevb" start="33">
+        <li>Private Sub filFiles_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hsbIcona.Enabled = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hsbIcona.Value = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hsbIcona.Max = ExtractIconEx(LastBSlash(filFiles.Path, 
+          True) &amp; filFiles.filename, -1, ByVal 0&amp;, ByVal 0&amp;, ByVal 
+          0&amp;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If hsbIcona.Max &gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hsbIcona.Max = hsbIcona.Max 
+          - 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hsbIcona.Enabled = 
+          True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hsbIcona_Change</li>
+        <li>End Sub </li>
+        <li></li>
+      </ol>
+      <p>Nel momento in cui l'utente seleziona un elemento dal controllo <b>filFiles</b> 
+        il file dovr&agrave; essere analizzato per verificare se contiene al suo 
+        interno una o pi&ugrave; icone al suo interno. L'operazione &egrave; eseguita 
+        alla riga 36 utilizzando la funzione <i>ExtractIconEx</i> fornendo ad 
+        essa il nome del file da cui estrarre le icone e specificando il valore 
+        -1 come argomento <b>nIconIndex</b>. La funzione restituir&agrave; il 
+        numero di icone presenti nel file che sar&agrave; impostato nella propriet&agrave; 
+        <i> <b>Max</b></i> del controllo <b>hsbIcona</b>, disabilitato alla riga 
+        34.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Se &egrave; presente almeno un'icona nel file, il numero di icone sar&agrave; 
+        decrementato di 1 per riadattarlo alla base 0 del controllo <b>hsbIcona</b> 
+        e seguir&agrave; la riabilitazione alla riga 39.</p>
+      <p>Alla riga 41 &egrave; richiamata la funzione hsbIcona_Change, corrispondente 
+        all'evento Change del controllo HScrollBar che vedremo subito dopo. Questo 
+        servir&agrave; per mostrare la prima icona estratta dal file.</p>
+      <ol start="44" class="codicevb">
+        <li>Private Sub hsbIcona_Change()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim hLargeIcon As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim hSmallIcon As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set picIcone.Picture = Nothing</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If ExtractIconEx(LastBSlash(filFiles.Path, 
+          True) &amp; filFiles.filename, hsbIcona.Value, hLargeIcon, hSmallIcon, 
+          1) &gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call DrawIconEx(picIcone.hdc, 
+          0, 0, hLargeIcon, ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, 
+          DI_NORMAL)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call DrawIconEx(picIcone.hdc, 
+          35, 0, hSmallIcon, ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, 
+          DI_NORMAL)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DestroyIcon hSmallIcon</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DestroyIcon hLargeIcon</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Nel momento in cui il valore della barra di scorrimento cambia perch&eacute; 
+        l'utente sceglie una nuova icona oppure perch&eacute; viene recuperata 
+        la prima icona dal file (vedi riga 41), l'icona corrispondente al valore 
+        del controllo <b>hsbIcona</b> dovr&agrave; essere estratta dal file e 
+        visualizzata nel controllo <b>picIcone</b>.</p>
+      <p>Alle righe 45 e 46 sono dichiarate due variabili di tipo Long per contenere 
+        l'<a href="../glossary/h.htm#HANDLE">handle</a> delle due icone da estrarre 
+        (quella grande e quella piccola).</p>
+      <p>La prima operazione da eseguire &egrave; la cancellazione dell'eventuale 
+        immagine precedente nella casella picIcone (riga 47) e quindi potranno 
+        essere estrarre le due icone dal file specificando l'indice dell'icona 
+        da estrarre, corrispondente al valore della barra di scorrimento (riga 
+        46). Le icone estratte saranno mantenute in memoria e sono riportati gli 
+        handle alla rispettive nei valori hLargeIcon e hSmallIcon. Se le icone 
+        sono estratte con successo la funzione <i>ExtractIconEx</i> restituisce 
+        valore maggiore di zero.</p>
+      <p>Sar&agrave; quindi necessario visualizzare le due icone estratte e l'operazione 
+        &egrave; effettuata mediante la funzione DrawIconEx che consente di incollare 
+        un'icona o una parte di essa sopra un <a href="../glossary/d.htm#DEVICECONTEXT">Device 
+        Context</a>. L'operazione &egrave; effettuata alle righe 49 e 50 sopra 
+        il DC della casella <b>picIcone</b>. La prima icona sar&agrave; incollata 
+        alle coordinate 0,0 mentre la seconda leggermente pi&ugrave; avanti, alle 
+        coordinate 35,0. L'operazione, abbiamo gi&agrave; detto, utilizzer&agrave; 
+        la costante DI_NORMAL che comprende l'immagine dell'icona e la sua maschera 
+        di trasparenza.</p>
+      <p>Non appena riprodotte le due icone sar&agrave; nostro compito distruggerle 
+        e deallocare la memoria ad esse riservata e l'operazione &egrave; eseguita 
+        mediante la funzione DestroyIcon alle righe 51 e 52.</p>
+      <ol start="56" class="codicevb">
+        <li>Private Sub mnuFile_Chiudi_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Unload Me</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub mnuIcone_Sposta_Click(Index As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim intIcona As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;intIcona = hsbIcona.Value</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Index = 0 Then intIcona = intIcona - 1 
+          Else intIcona = intIcona + 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If intIcona &lt; 0 Then intIcona = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If intIcona &gt; hsbIcona.Max Then intIcona 
+          = hsbIcona.Max</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If intIcona = hsbIcona.Value Then hsbIcona_Change 
+          Else hsbIcona.Value = intIcona</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Le ultime due routine serviranno per gestire il comportamento dei due 
+        menu: il primo &egrave; mnuFile_Chiudi e si occuper&agrave; soltanto di 
+        chiudere l'applicazione (riga 57); il secondo di questi menu &egrave; 
+        mnuIcone_Sposta e consente di scegliere l'icona precedente o quella successiva 
+        al valore specificato dalla barra di scorrimento.</p>
+      <p>Si ocuper&agrave; di modificare il valore della barra di scorrimento 
+        in avanti o indietro a seconda dell'indice passato all'evento. Index&nbsp;=&nbsp;0 
+        riguarda l'icona precedente mentre Index&nbsp;=&nbsp;1 riguarda l'icona 
+        successiva. Saranno effettuati una serie di controlli per mantenere l'icona 
+        entro il limite massimo di icone presenti nel file e sar&agrave; quindi 
+        mostrata l'icona corrispondente (riga 66).</p>
+      <p><img src="../images/howto/howto049_03.png" width="231" height="192" align="right" alt="Figura 3">La 
+        dimostrazione del progetto &egrave; davvero molto semplice: baster&agrave; 
+        selezionare un file dal controllo FileListBox per vedere apparire la prima 
+        delle icone presenti nel file.</p>
+      <p>Utilizzando la barra di scorrimento in basso sar&agrave; possibile scorrere 
+        le singole icone nel file.</p>
+      <p>Per ogni icona sar&agrave; mostrata l'immagine grande e quella piccola. 
+        Utilizzando i tasti funzione F1 e F2 (purch&eacute; siano stati assegnati 
+        in fase di progettazione nell'editor di Menu) sar&agrave; possibile scorrere 
+        le icone nel file con estrema semplicit&agrave;.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Il progetto si presenta abbastanza semplice e scorrevole e non presenta 
+        difetti o rischi di funzionamento insiti nel codice. L'unica possibile 
+        limitazione riguarda la struttura di Windows 9x; in particolare si potrebbe 
+        assistere allo sgradevole effetto di esaurimento delle risorse grafiche 
+        dovuto all'eccessivo uso di icone.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        18 Agosto 2002<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

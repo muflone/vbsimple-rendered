@@ -1,0 +1,340 @@
+<html><!-- #BeginTemplate "/Templates/Richieste.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Accedere ad un database protetto da password</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Accedere ad un database 
+    protetto da password<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/activity.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Richiesta di: <!-- #BeginEditable "RICHIEDENTE" -->Francesca 
+        Mugnani<!-- #EndEditable --> 
+        - <!-- #BeginEditable "DATARICHIESTA" -->9 
+        Luglio 2001<!-- #EndEditable --><br>
+        Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5 </p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p><i>Ho creato un database Access che ho protetto con una password, vorrei 
+        creare un form per poter accedere al database attraverso una password. 
+        Come posso fare?<br>
+        Mi serve proteggere il database e far in modo che l'utente possa aprire 
+        il form in VB solo con una password.</i></p>
+      <hr>
+      <p>Il problema &egrave; abbastanza semplice e sar&agrave; sviluppato per 
+        entrambe le <a href="../glossary/i.htm#INTERFACCIA">interfacce</a> dati 
+        <a href="../glossary/a.htm#ADO">ADO</a> e <a href="../glossary/d.htm#DAO">DAO</a>. 
+        Per una spiegazione pi&ugrave; approfondita sulle interfacce dati vedi 
+        la richiesta per <a href="act_04.htm">Effettuare una connessione ad un 
+        database attraverso ADO</a>.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/activity/att17_01.png" width="258" height="130" align="right" alt="Figura 1">Il 
+        primo esempio utilizzer&agrave; ADO mentre il secondo far&agrave; uso 
+        di DAO.<br>
+        Per semplificare il problema utilizzeremo un solo form per svolgere la 
+        connessione al database protetto da password e mostrarne i dati.</p>
+      <p>Esso si compone di una <i>Label</i> descrittiva, una casella di testo 
+        di nome <b>txtPassword</b> con la propriet&agrave; <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        <i>PasswordChar</i> impostata a <b>&quot;*&quot;</b>, un <i>CommandButton</i> 
+        <img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>btnApri</b> ed una <i>ListBox</i> <img src="../images/controls/listbox.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>lstLibri</b>.</p>
+      <p>Il funzionamento &egrave; molto semplice: il nostro database &egrave; 
+        protetto da una password ed &egrave; possibile leggerne i dati soltanto 
+        immettendo la password corretta nella casella di testo e premendo il pulsante 
+        <i> <b>Apri</b></i>. Prima di vedere il codice &egrave; necessario aggiungere 
+        un riferimento a <i>Microsoft ActiveX Data Objects 2.x Library</i> tramite 
+        la voce Riferimenti <img src="../images/ide/riferime.gif" width="16" height="16" align="absmiddle"> 
+        del <a href="../base/bas_13.htm#PROGETTOOPT11">menu Progetto</a>. Il codice 
+        &egrave; alquanto semplice:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub btnApri_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim Conn As ADODB.Connection</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim RS As ADODB.Recordset</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set Conn = New ADODB.Connection</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set RS = New ADODB.Recordset</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;On Error GoTo Err_Handler</li>
+      </ol>
+      <p>Alla riga 4 viene dichiarata la variabile <b>Conn</b> di tipo <i>Connection</i>, 
+        che sar&agrave; utilizzata per stabilire una connessione con il database. 
+        Alla riga 5 viene dichiarata la variabile <b>RS</b> di tipo <a href="../glossary/r.htm#RECORDSET"><i>Recordset</i></a> 
+        che servir&agrave; per estrarre i dati da una tabella del database.<br>
+        Di seguito vengono <a href="../glossary/i.htm#ISTANZA">istanziate</a> 
+        le due variabili.</p>
+      <p>Alla riga 8 viene aggiunta una istruzione di gestione degli errori. In 
+        caso di un errore sar&agrave; mostrata una finestra di avviso con il messaggio 
+        di errore. Questa istruzione &egrave; necessaria perch&eacute; in caso 
+        di password errata sar&agrave; generato un errore da intercettare.</p>
+      <ol class="codicevb" start="9">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Conn.Provider = &quot;Microsoft.Jet.OLEDB.4.0&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Conn.Properties(&quot;Jet OLEDB:Database Password&quot;).Value 
+          = txtPassword.Text</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Conn.Open &quot;Data Source=libri.mdb&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;RS.Open &quot;SELECT * FROM LIBRI&quot;, Conn, 
+          adOpenStatic, adLockPessimistic</li>
+      </ol>
+      <p>Alla riga 9 viene scelto il tipo di <a href="../glossary/p.htm#PROVIDER">provider</a> 
+        da utilizzare per aprire la connessione al database; l'utilizzo del provider 
+        <i> <b>OLEDB</b></i> migliora la velocit&agrave; di accesso al database. 
+        Il provider scelto &egrave; quello Jet per accedere ai database di tipo 
+        Access 97 e 2000.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alla riga 10 impostiamo la password per il database da aprire mediante 
+        la propriet&agrave; <b><i>Jet&nbsp;OLEDB:Database Password</i></b>. Assegniamo 
+        ad essa il valore della casella di testo <b>txtPassword</b>.</p>
+      <p>Impostati tali dati sar&agrave; possibile aprire la connessione al database 
+        &quot;libri.mdb&quot; ed in seguito aprire la tabella <i><b>LIBRI</b></i>. 
+        Se la password che ha fornito l'utente &egrave; corretta il <a href="../glossary/r.htm#RECORDSET">Recordset</a> 
+        <b>RS</b> sar&agrave; aperto; in caso contrario sar&agrave; generato un 
+        errore che sar&agrave; gestito dalla funzione <i><b>Err_Handler</b></i>.</p>
+      <ol class="codicevb" start="13">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lstLibri.Clear</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Do While Not RS.EOF</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstLibri.AddItem RS.Fields(0).Value</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RS.MoveNext</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Loop</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;RS.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Conn.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set RS = Nothing</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set Conn = Nothing</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Exit Sub</li>
+      </ol>
+      <p>Aperta la tabella sar&agrave; elencato il suo contenuto ed inseriti i 
+        dati nella ListBox <b>lstLibri</b>. In seguito saranno chiuse e deallocati 
+        Recordset e Connessione. Fatto questo alla riga 22 terminer&agrave; la 
+        Sub. </p>
+      <ol class="codicevb" start="24">
+        <li>Err_Handler:</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox Err.Description, vbCritical + vbOKOnly, 
+          Err.Source</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set RS = Nothing</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set Conn = Nothing</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>In caso di un errore sar&agrave; mostrata una finestra di messaggio con 
+        l'errore generato e saranno deallocati Recordset e Connessione.</p>
+      <ol class="codicevb" start="30">
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;La password di questo database 
+          &egrave; &quot;&quot;ciccio&quot;&quot;&quot;</li>
+        <li>End Sub</li>
+      </ol>
+      <p><img src="../images/activity/att17_02.jpg" width="150" height="95" align="right" alt="Figura 2">Prima 
+        di lanciare il programma &egrave; bene indicare qual'&egrave; la password 
+        del database.</p>
+      <p> Eseguiamo il programma e proviamo ad inserire una password errata. Sar&agrave; 
+        mostato un messaggio di errore esplicativo.<br>
+        Senza la funzione di gestione degli errori il nostro programma avrebbe 
+        generato un errore e si sarebbe chiuso inesorabilmente.</p>
+      <p><img src="../images/activity/att17_03.png" width="258" height="130" align="right" alt="Figura 3">Se 
+        invece la password inserita &egrave; quella corretta saranno mostrati 
+        i titoli dei libri presenti nel database.</p>
+      <p>Poich&eacute; abbiamo impostato la propriet&agrave; PasswordChar la password 
+        non sar&agrave; leggibile ma appariranno degli asterischi al posto delle 
+        singole lettere.</p>
+      <hr>
+      <p>Viene affrontato lo stesso problema utilizzando DAO invece di ADO. &Egrave; 
+        pertanto necessario specificare un riferimento <img src="../images/ide/riferime.gif" width="16" height="16" align="absmiddle"> 
+        a <i>Microsoft DAO 3.x Object Library</i> dal <a href="../base/bas_13.htm#PROGETTOOPT11">menu 
+        Progetto</a>.</p>
+      <ol class="codicevb" start="1">
+        <li>Private Sub btnApri_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim DBProtetto As DAO.Database</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim RS As DAO.Recordset</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;On Error GoTo Err_Handler</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set DBProtetto = OpenDatabase(&quot;libri.mdb&quot;, 
+          True, False, &quot;MS Access; pwd=&quot; &amp; txtPassword.Text)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set RS = DBProtetto.OpenRecordset(&quot;SELECT 
+          * FROM LIBRI&quot;)</li>
+      </ol>
+      <p>Alla riga 2 viene dichiarata una variabile di tipo <i>Database</i> di 
+        nome <b>DBProtetto</b>, mentre alla riga 3 viene dichiarata una variabile 
+        di nome <b>RS</b> di tipo Recordset.<br>
+        Anche in questo caso viene installata una funzionalit&agrave; di gestione 
+        degli errori (riga 4).<br>
+        Alla riga 5 viene aperto il database mediante il metodo <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        OpenDatabase; viene specificato il database da aprire, i due parametri 
+        successivi (apertura esclusiva e apertura in sola lettura) sono di tipo 
+        booleano ed obbligatori se si specifica una password.<br>
+        La password - specificata nella casella di testo <i>txtPassword</i> - 
+        viene indicata mediante parametro <b>pwd</b> specificato nella stringa 
+        di connessione.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alla riga 6 viene aperto il Recordset.</p>
+      <ol class="codicevb" start="7">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lstLibri.Clear</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Do While Not RS.EOF</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstLibri.AddItem RS.Fields(0).Value</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RS.MoveNext</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Loop</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;RS.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DBProtetto.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set RS = Nothing</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set DBProtetto = Nothing</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Exit Sub</li>
+        <li>Err_Handler:</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox Err.Description, vbCritical + vbOKOnly, 
+          Err.Source</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set RS = Nothing</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set DBProtetto = Nothing</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Il resto del codice &egrave; identico al precedente. Sar&agrave; riempita 
+        la ListBox lstLibri con i dati estratti dalla tabella LIBRI; in seguito 
+        vengono chiusi e deallocati Recordset e Database.</p>
+      <p>Alle righe 18-20 segue la funzione di gestione degli errori obbligatoria 
+        per rintracciare l'errore generato in caso di password errata.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>DAO sta diventando sempre pi&ugrave; raro lasciando il posto al suo <i>&quot;avversario&quot;</i> 
+        ADO pi&ugrave; standard ed in grado di supportare quasi ogni tipo di database.<br>
+        Ecco perch&eacute; sono state specificate entrambe le soluzioni di accesso 
+        ai dati.</p>
+      <!-- #EndEditable --><!-- #BeginEditable "CREDITS" --> 
+      <p align="right" class="credits2"><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        15 Luglio 2001</p>
+      <!-- #EndEditable --><!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'introduzione delle Richieste dei lettori</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

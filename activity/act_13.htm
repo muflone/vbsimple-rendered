@@ -1,0 +1,394 @@
+<html><!-- #BeginTemplate "/Templates/Richieste.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Creare un DSN via codice o con una Wizard</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Creare un DSN via codice 
+    o con una Wizard<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/activity.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Richiesta di: <!-- #BeginEditable "RICHIEDENTE" -->Gianni 
+        Rondinini<!-- #EndEditable --> 
+        - <!-- #BeginEditable "DATARICHIESTA" -->23 
+        Marzo 2000<!-- #EndEditable --><br>
+        Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5 </p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p><i>Come si crea un DSN mediante codice Visual Basic?</i></p>
+      <hr>
+      <p>In un altra richiesta &egrave; stato visto come <a href="act_03.htm">configurare 
+        manualmente un DSN</a> mediante il pannello di controllo. A volte pu&ograve; 
+        essere molto utile creare un <a href="../glossary/d.htm#DSN">DSN</a> all'interno 
+        di un programma, evitando all'amministatore della rete di effettuare quest'operazione.</p>
+      <p>In questa richiesta saranno mostrate due soluzioni, sebbene ne esista 
+        anche una terza, leggermente pi&ugrave; complessa, che consiste nel manipolare 
+        i valori del <a href="../glossary/r.htm#REGISTRO">registro</a> di Windows.</p>
+      <p>Per effettuare l'operazione utilizzeremo due funzioni <a href="../glossary/a.htm#API">API</a> 
+        della <a href="../glossary/l.htm#LIBRERIA">libreria</a> ODBCCP32 ovvero 
+        la libreria del Pannello di Controllo <a href="../glossary/o.htm#ODBC">ODBC</a>. 
+        Le due funzioni in questione sono <b>SQLConfigDataSource</b> (per creare 
+        il DSN via codice) e <b>SQLCreateDataSource</b> (per richiamare la finestra 
+        Wizard guidata).</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/activity/att13_01.png" width="266" height="224" align="right" alt="Figura 1">Cominciamo 
+        a definire il nostro form che permetter&agrave; di creare il DSN voluto.</p>
+      <p>Inseriremo una serie di coppie di <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">e 
+        <i>TextBox</i><img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle"> 
+        come mostrato nella figura. Ad ogni Label corrisponde a fianco una TextBox.</p>
+      <p>Abbiamo inserito anche un <i>Frame</i><img src="../images/controls/frame.gif" width="25" height="25" align="absmiddle">per 
+        raggruppare visivamente i parametri del DSN.<br>
+        Al suo interno, oltre le <i>Label</i> e le <i>TextBox</i> abbiamo anche 
+        un <a href="../glossary/a.htm#ARRAY">array</a> (vettore) di due <i>OptionButton</i><img src="../images/controls/optionbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>TipoDSN</b>, con indici 0 e 1. Essi serviranno per specificare 
+        il tipo di DSN da creare.</p>
+      <p>In fondo al form abbiamo una <i>CheckBox</i><img src="../images/controls/checkbox.gif" width="25" height="25" align="absmiddle">di 
+        nome WizardCheck. Per ultimo inseriamo un <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>PulsanteOK</b>.</p>
+      <p>Prima di vedere il codice cambiamo le <a href="../glossary/p.htm#PROPRIETA">propriet&agrave;</a> 
+        <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        Caption e Text corrispondenti nella maniera visibile nella figura sotto.</p>
+      <p align="center"><img src="../images/activity/att13_02.png" width="266" height="224" alt="Figura 2"><br>
+        <b>Figura 2</b></p>
+      <p>La CheckBox in basso determina la modalit&agrave; di creazione del DSN.<br>
+        Quando essa &egrave; attivata (checked) il DSN sar&agrave; creato mediante 
+        finestra Wizard guidata, provveduta dal Pannello di Controllo.</p>
+      <p>Pertanto, l'attivazione della CheckBox andr&agrave; a bloccare tutti 
+        i controlli riguardanti i parametri del DSN.</p>
+      <p>Se invece la CheckBox &egrave; disattivata il DSN sar&agrave; creato 
+        mediante codice, leggendo i valori dalle TextBox.</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li>Private Declare Function SQLConfigDataSource Lib &quot;ODBCCP32.DLL&quot; 
+          (ByVal hwndParent As Long, ByVal fRequest As Integer, ByVal lpszDriver 
+          As String, ByVal lpszAttributes As String) As Long</li>
+        <li>Private Declare Function SQLCreateDataSource Lib &quot;ODBCCP32.DLL&quot; 
+          (ByVal hwndParent As Long, ByVal lpszDSN As String) As Long</li>
+        <li></li>
+        <li>Private Const ODBC_ADD_DSN = 1</li>
+        <li>Private Const ODBC_ADD_SYS_DSN = 4</li>
+        <li></li>
+      </ol>
+      <p>Alla riga 2 vediamo la dichiarazione della funzione <b>SQLConfigDataSource</b> 
+        che richiede il passaggio di quattro parametri. Il primo parametro (<i><b>hwndParent</b></i>) 
+        identifica l'<a href="../glossary/h.htm#HANDLE">handle</a> di una finestra: 
+        esso servir&agrave; se volessimo richiamare la finestra di dialogo di 
+        configurazione del DSN; il secondo parametro (<i><b>fRequest</b></i>) 
+        &egrave; un numero indicante l'operazione da svolgere: in questo nostro 
+        esempio indicher&agrave; se aggiungere un DSN utente oppure di sistema; 
+        il terzo parametro (<b><i>lpszDriver</i></b>) indica la stringa contenente 
+        il Driver da utilizzare; l'ultimo parametro (<i><b>lpszAttributes</b></i>) 
+        &egrave; una stringa contenente la lista degli attributi da assegnare 
+        al DSN, quale il nome utente, la password ed altri.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La dichiarazione della riga 3 identifica la funzione <b>SQLCreateDataSource</b> 
+        che verr&agrave; utilizzata per richiamare la finestra di dialogo di creazione 
+        di un DSN.</p>
+      <p>La differenza tra le due finestre di dialogo che &egrave; possibile richiamare 
+        mediante le due funzioni &egrave; che la seconda permette di definire 
+        in maniera grafica il tipo di DSN da creare ed il driver da utilizzare. 
+        In sostanza, la SQLCreateDataSource, dopo aver richiesto tali dati, richiama 
+        la funzione SQLConfigDataSource con il driver corrispondente.</p>
+      <p>Alle righe 4 e 5 abbiamo definito due <a href="../glossary/c.htm#COSTANTE">costanti</a> 
+        <img src="../images/ide/costante.gif" width="16" height="16" align="absmiddle"> 
+        API, di nome <b>ODBC_ADD_DSN</b> e <b>ODBC_ADD_SYS_DSN</b>, che verranno 
+        utilizzate per identificare il tipo di operazione da effettuare. Esse 
+        saranno utilizzate nella chiamata alla funzione SQLConfigDataSource.</p>
+      <ol class="codicevb" start="8">
+        <li>Private Sub WizardCheck_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim STATO As Boolean</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;STATO = (WizardCheck.Value = vbUnchecked)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ParametriFrame.Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;NomeDriverLabel.Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;NomeDriver.Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;PathDBLabel.Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;PathDB.Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DescrizioneLabel.Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Descrizione.Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;UtenteLabel.Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Utente.Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;PasswordLabel.Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Password.Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DatabasePredLabel.Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DatabasePred.Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TipoDSN(0).Enabled = STATO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TipoDSN(1).Enabled = STATO</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Vediamo subito la semplicissima funzione che regola l'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle">Click 
+        sulla CheckBox<img src="../images/controls/checkbox.gif" width="25" height="25" align="absmiddle"><b>WizardCheck</b>. 
+        Alla riga 10 otteniamo lo stato che assegneremo alle varie Label e TextBox 
+        in base alla CheckBox. Se il valore &egrave; vbUnchecked, ovvero non &egrave; 
+        attivata, la variabile STATO avr&agrave; il valore True, altrimenti sar&agrave; 
+        False.<br>
+        Ottenuto tale valore cambiamo lo stato delle propriet&agrave; <i>Enabled</i> 
+        dei vari controlli, in modo da attivarli o disattivarli in maniera relativa 
+        alla CheckBox.</p>
+      <p>L'ultima funzione riguarda la pressione del pulsante OK.</p>
+      <ol class="codicevb" start="28">
+        <li>Private Sub PulsanteOK_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim ODBCSTRING As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim RISULTATO As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If WizardCheck.Value = vbChecked Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ODBCSTRING = NomeDSN.Text</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RISULTATO = SQLCreateDataSource(Me.hWnd, 
+          ODBCSTRING)</li>
+      </ol>
+      <p>Alla riga 31 viene verificato lo stato della CheckBox <b>WizardCheck</b>. 
+        Se essa &egrave; attivata dovr&agrave; essere richiamata la funzione mediante 
+        interfaccia guidata, altrimenti la creazione avverr&agrave; esclusivamente 
+        tramite codice.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Se la CheckBox &egrave; attivata verr&agrave; letto il nome del DSN dalla 
+        casella <b>NomeDSN</b>. Tale valore sar&agrave; passato alla funzione 
+        SQLCreateDataSource. L'<a href="../glossary/h.htm#HANDLE">handle</a> richiesto 
+        dalla funzione sar&agrave; quello del nostro form, in modo che la finestra 
+        sia richiamata in maniera modale, ovvero essa bloccher&agrave; l'esecuzione 
+        del codice fintanto che l'operazione non si sar&agrave; conclusa.</p>
+      <p>Il risultato dell'operazione sar&agrave; memorizzato nella variabile 
+        <b>RISULTATO</b>. </p>
+      <ol class="codicevb" start="33">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ODBCSTRING = &quot;DSN=&quot; 
+          &amp; NomeDSN.Text &amp; vbNullChar</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ODBCSTRING = ODBCSTRING 
+          &amp; &quot;DBQ=&quot; &amp; PathDB.Text &amp; vbNullChar</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ODBCSTRING = ODBCSTRING 
+          &amp; &quot;DESCRIPTION=&quot; &amp; Descrizione.Text &amp; vbNullChar</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ODBCSTRING = ODBCSTRING 
+          &amp; &quot;UID=&quot; &amp; Utente.Text &amp; vbNullChar</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ODBCSTRING = ODBCSTRING 
+          &amp; &quot;PWD=&quot; &amp; Password.Text &amp; vbNullChar</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ODBCSTRING = ODBCSTRING 
+          &amp; &quot;DATABASE=&quot; &amp; DatabasePred.Text &amp; vbNullChar</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ODBCSTRING = ODBCSTRING 
+          &amp; vbNullChar</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If TipoDSN(0).Value 
+          = True Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RISULTATO 
+          = SQLConfigDataSource(ByVal 0&amp;, ODBC_ADD_DSN, NomeDriver.Text, ODBCSTRING)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RISULTATO 
+          = SQLConfigDataSource(ByVal 0&amp;, ODBC_ADD_SYS_DSN, NomeDriver.Text, 
+          ODBCSTRING)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li></li>
+      </ol>
+      <p>Se la CheckBox &egrave; disattivata il DSN verr&agrave; creato mediante 
+        codice. Sar&agrave; pertanto creata una stringa di connessione, del tutto 
+        simile a quella da utilizzare per <a href="act_04.htm">richiamare il DSN 
+        al fine di utilizzare il database cui punta il DSN</a>.</p>
+      <p>La stringa di connessione si compone di una serie di coppie di valori. 
+        Ogni coppia contiene il proprio nome ed il valore. Una coppia &egrave; 
+        separata dalla successiva mediante un carattere terminatore (il carattere 
+        il cui codice ASCII &egrave; 0) corrispondente alla costante <b>vbNullChar</b>.</p>
+      <p>La stringa conterr&agrave; il nome del DSN, l'origine dati cui punta, 
+        la descrizione, il nome utente, la password e il database predefinito 
+        in case di database multipli (righe 34-39).<br>
+        La stringa deve concludersi con un carattere terminatore aggiuntivo (riga 
+        40). </p>
+      <p>Creata la stringa sar&agrave; possibile richiamare la funzione di creazione 
+        del DSN. In questo esempio abbiamo inserito due OptionButton per determinare 
+        se il DSN deve essere di sistema oppure utente. Pertanto, alla riga 41, 
+        viene controllato se il primo <i>OptionButton</i> &egrave; attivato.</p>
+      <p>In base a tale controllo viene richiamata la funzione API <b>SQLConfigDataSource</b> 
+        e le verr&agrave; passata la costante corrispondente al tipo di DSN da 
+        creare. Oltre a tale valore sar&agrave; passato anche il nome del driver 
+        (letto dalla casella di testo <b>NomeDriver</b>) e la stringa di connessione 
+        <b>ODBCSTRING</b> (righe 42 e 44). Il valore restituito dalla chiamata 
+        alla funzione API sar&agrave; memorizzato nella variabile <b>RISULTATO</b>.</p>
+      <ol class="codicevb" start="49">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If RISULTATO &lt;&gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Creazione 
+          DSN riuscita!&quot;, vbInformation + vbOKOnly, &quot;Crea DSN&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Creazione 
+          DSN fallita!&quot;, vbCritical + vbOKOnly, &quot;Crea DSN&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+      </ol>
+      <p>&Egrave; giunto il momento di controllare se la chiamata alla funzione 
+        di creazione del DSN ha avuto effetto. Sar&agrave; controllato il valore 
+        della variabile RISULTATO.</p>
+      <p>Se il risultato &egrave; diverso da 0 la creazione &egrave; riuscita 
+        e sar&agrave; mostrato un messaggio informativo (riga 50). Nel caso contrario 
+        sar&agrave; mostrato un messaggio di errore (riga 52).</p>
+      <hr>
+      <p>Possiamo passare alla prova del programma. Eseguiamo il progetto, riempiamo 
+        i campi con i dati in maniera corretta.</p>
+      <p align="center"><img src="../images/activity/att13_03.png" width="266" height="224" alt="Figura 3"><br>
+        <b>Figura 3</b></p>
+      <p>&Egrave; fondamentale impostare il nome del DSN e il nome del driver.<br>
+        In caso di mancato riempimento degli altri campi il DSN sar&agrave; comunque 
+        creato, ma il suo funzionamento dipende dalla corretta specificazione 
+        degli altri dati.</p>
+      <p>L'elenco dei driver utilizzabili &egrave; reperibile nel gestore dei 
+        DSN <img src="../images/icons/odbcico.gif" width="32" height="32" align="absbottom">nel 
+        Pannello di Controllo alla voce <b>Drivers</b>.</p>
+      <p><img src="../images/activity/att13_04.png" width="266" height="224" align="right" alt="Figura 4">L'attivazione 
+        della CheckBox<img src="../images/controls/checkbox.gif" width="25" height="25" align="absmiddle"> 
+        WizardCheck comporta la disattivazione delle varie Label e TextBox insieme 
+        al Frame<img src="../images/controls/frame.gif" width="25" height="25" align="absmiddle"> 
+        che le contiene.</p>
+      <p>La pressione del pulsante OK in questa situazione non creer&agrave; il 
+        DSN direttamente ma porr&agrave; una serie di domande e richieste all'utente.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <table width="100%">
+        <tr> 
+          <td width="143" align="center"> <img src="../images/activity/att13_05.png" width="150" height="95" alt="Figura 5"><br>
+            <b>Figura 5</b></td>
+          <td align="center">In ogni caso, mediante utilizzo di interfaccia guidata 
+            o no, al termine del tentativo di creazione sar&agrave; mostrata una 
+            finestra di messaggio.</td>
+          <td width="150" align="center"> <img src="../images/activity/att13_06.png" width="143" height="95" alt="Figura 6"><br>
+            <b>Figura 6</b> </td>
+        </tr>
+      </table>
+      <!-- #EndEditable --><!-- #BeginEditable "CREDITS" -->
+<p align="right" class="credits2"><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        25 Marzo 2001</p>
+      <!-- #EndEditable --><!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'introduzione delle Richieste dei lettori</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

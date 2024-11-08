@@ -1,0 +1,402 @@
+<html><!-- #BeginTemplate "/Templates/Weird.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Doppia vita dei Forms</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Doppia vita dei Forms<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/weird.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5</p>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Caricare e scaricare un form dalla memoria potrebbe sembrare un'operazione 
+        molto semplice ma nasconde pi&ugrave; di un'insidia. &Egrave; fondamentale 
+        ricordarsi che esistono sei operazioni fondamentali legate all'apertura 
+        e chiusura di un form; le sei operazioni sono:</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <ol>
+        <li>Inizializzazione<br>
+          Corrisponde all'operazione di generazione, ovvero l'<a href="../glossary/i.htm#ISTANZA">istanza</a>, 
+          di una nuova copia della <a href="../glossary/c.htm#CLASSE">classe</a>&nbsp;<img src="../images/ide/classe.gif" width="16" height="16" align="absmiddle">base 
+          da cui il form nasce. &Egrave; identificata dall'evento&nbsp;<img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"> 
+          <i><b>Initialize</b></i> e costituisce parte dell'operazione di <a href="../glossary/a.htm#ALLOCARE">allocazione</a>.<br>
+          <br>
+        </li>
+        <li>Caricamento<br>
+          Corrisponde all'effettivo caricamento di tutti i dati in memoria, in 
+          particolare dell'interfaccia grafica del form. &Egrave; identificato 
+          dall'<a href="../glossary/e.htm#EVENTO">evento</a> <i><b>Load</b></i>.<br>
+          <br>
+        </li>
+        <li>Visualizzazione<br>
+          Avviene nel momento in cui l'interfaccia grafica &egrave; mostrata sullo 
+          schermo ed in situazioni normali segue automaticamente l'operazione 
+          di caricamento.<br>
+          <br>
+        </li>
+        <li>Celazione<br>
+          Non &egrave; regolata da alcun evento. &Egrave; tuttavia possibile da 
+          codice nascondere un form senza tuttavia per questo scaricarlo dalla 
+          memoria. Nei forms <a href="../glossary/m.htm#MODALE">modali</a> determina 
+          il ritorno alla procedura che ha richiesto la visualizzazione modale.<br>
+          <br>
+        </li>
+        <li>Scaricamento<br>
+          Corrisponde alla chiusura del form tramite casella di controllo, pulsante 
+          di chiusura oppure mediante istruzione Unload. &Egrave; identificato 
+          dagli eventi <b><i>QueryUnload</i></b> e <b><i>Unload</i></b>.<br>
+          <br>
+        </li>
+        <li>Terminazione<br>
+          L'ultima operazione prima dell'effettiva distruzione del form in memoria. 
+          &Egrave; invocata quando tutti i riferimenti ad un'istanza sono <a href="../glossary/d.htm#DEALLOCARE">deallocati</a>.</li>
+      </ol>
+      <p>Tenendo a mente queste sei operazioni possiamo vedere che esistono tre 
+        differenti modalit&agrave; di istanza di un form:</p>
+      <ol>
+        <li>Riferimento alla classe base<br>
+          &Egrave; possibile fare riferimento al nome della classe del form per 
+          istanziare automaticamente una copia del form con il nome della classe 
+          che l'ha generato.<br>
+          Ad esempio &egrave; possibile fare riferimento alla classe Form2 trattandola 
+          come una normale istanza di tale classe.<br>
+          <br>
+        </li>
+        <li>Dichiarazione di un <a href="../glossary/o.htm#OGGETTO">oggetto</a> 
+          e successiva istanza esplicita<br>
+          Dichiarando una variabile oggetto della classe del form &egrave; possibile 
+          quindi creare (istanziare) pi&ugrave; copie dello stesso form e scaricarle 
+          dalla memoria quando non servono pi&ugrave;.<br>
+          Differentemente a ci&ograve; che si potrebbe pensare i forms non si 
+          distruggono automaticamente quando la variabile oggetto termina la sua 
+          vita uscendo dalla porzione di codice in cui essa &egrave; dichiarata. 
+          La ragione &egrave; data dalla <b class="sottolineato">duplice vita 
+          dei forms</b>, argomento affrontato pi&ugrave; avanti.<br>
+          <br>
+        </li>
+        <li>Dichiarazione di un oggetto ed istanza in maniera implicita<br>
+          &Egrave; possibile istanziare automaticamente una copia della classe 
+          del form nella stessa dichiarazione. In tal modo l'oggetto non sar&agrave; 
+          allocato nel momento in cui viene dichiarato ma solo quando viene richiesto 
+          un <a href="../glossary/m.htm#METODO">metodo</a>&nbsp;<img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+          o un <a href="../glossary/m.htm#MEMBRO">membro</a> dell'oggetto.</li>
+      </ol>
+      <p>Queste due differenti argomentazioni danno vita a tantissime combinazioni 
+        di funzionamento e malfunzionamento.</p>
+      <hr>
+      <p><img src="../images/weird/weird01_01.png" width="125" height="198" align="right" alt="Figura 1">A 
+        tal scopo &egrave; stato sviluppato un progetto dimostrativo che a scelta 
+        dell'utente carica un form secondario e opzionalmente lo carica, lo scarica 
+        e lo dealloca dalla memoria.</p>
+      <p>L'interfaccia si presenta molto semplice ed intuitiva: sono presenti 
+        tre pulsanti di nome <b>cmdCaso</b> (con indici da 0 a 3) in grado di 
+        generare un riferimento al form da utilizzare nelle tre differenti maniere 
+        viste in precedenza.</p>
+      <p>Al di sotto dei pulsanti sono presenti 3 caselle di controllo per la 
+        scelta di tre operazioni possibili: caricamento, scaricamento e deallocazione.<br>
+        In fondo al form &egrave; presente invece una semplice etichetta che mostrer&agrave; 
+        sulo schermo il numero di forms caricati in memoria. Il numero pi&ugrave; 
+        corretto, se tutto funziona a dovere &egrave; 1 e corrisponde al form 
+        che stiamo utilizzando. Un valore di 2 o superiore indicher&agrave; che 
+        uno o pi&ugrave; form non sono stati scaricati dalla memoria e continuano 
+        a vivere vita propria, pur se al di fuori delle nostre possibilit&agrave;.</p>
+      <p><img src="../images/weird/weird01_02.png" width="96" height="51" align="left" alt="Figura 2">Il 
+        form che verr&agrave; caricato &egrave; straordinariamente semplice: consta 
+        infatti di un unico pulsante in grado di nascondere il form modale aperto. 
+        Questo comporter&agrave; quindi il ritorno alla procedura che ne ha richiesto 
+        l'apertura.<br>
+        Nello stesso form &egrave; presente il pulsante di chiusura&nbsp;<img src="../images/icons/wndclose.gif" width="16" height="14" align="absmiddle"> 
+        di Windows per permettere anche lo scaricamento del form piuttosto che 
+        la semplice celazione.</p>
+      <p>Il secondo form, di nome <b>Form2</b>, contiene al suo interno una variabile 
+        pubblica di nome <b>intVar</b> che servir&agrave; per analizzare il comportamento 
+        del form in funzione delle operazioni richieste e verr&agrave; inizializzata 
+        a 0 nell'evento Initialize del form.<br>
+        I quattro eventi <i>Initialize</i>, <i>Load</i>, <i>Unload</i> e <i>Terminate</i> 
+        del form sono regolate dall'apparizione di una finestra di messaggio informativa 
+        sul valore della variabile <b>intVar</b> oppure sul numero di forms caricati 
+        in memoria.</p>
+      <hr>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Ritorniamo al primo form: la sua vita si compone dell'unico evento Click 
+        per tutti e tre i pulsanti, differenziati dal valore del loro Indice. 
+        La routine di gestione dell'evento verificher&agrave; quale pulsante &egrave; 
+        stato premuto ed in base a questo aprir&agrave; il form nella maniera 
+        richiesta: tramite riferimento alla classe base, con dichiarazione di 
+        un oggetto e successiva istanza oppure con istanza automatica.</p>
+      <p>Per tutti e tre i casi, comunque saranno eseguite due operazioni: incremento 
+        della variabile membro intVar e visualizzazione in maniera modale del 
+        secondo form.<br>
+        In aggiunta a questo l'utente potr&agrave; scegliere se eseguire altre 
+        tre operazioni: caricamento del form prima dell'incremento della variabile, 
+        scaricamento del form dopo la celazione e deallocazione dell'istanza del 
+        form al termine dell'uso.</p>
+      <p>Si raccomanda un test di sperimentazione con tutte le soluzioni possibili, 
+        caricando il form pi&ugrave; di una volta e vedere quindi qual'&egrave; 
+        la procedura pi&ugrave; corretta per il risultato che si vuole ottenere.<br>
+        In questa sede verranno presentato solo un paio di casi, i pi&ugrave; 
+        lampanti e strani.</p>
+      <hr>
+      <p><img src="../images/weird/weird01_03.png" width="125" height="198" align="right" alt="Figura 3">Il 
+        primo di questi utilizza il primo dei tre pulsanti senza selezionare alcuna 
+        delle caselle di controllo in basso.</p>
+      <p>Alla prima pressione del pulsante possiamo notare che sono eseguire nell'ordine 
+        le seguenti operazioni:</p>
+      <ol>
+        <li>Evento Initialize ed intVar vale 0</li>
+        <li>Incremento della variabile intVar a 1</li>
+        <li>Evento Load ed intVar continua a valere 1</li>
+        <li>Visualizzazione del secondo form e seguono due scelte: 
+          <ol type="a">
+            <li>Celazione del form mediante il pulsante Nascondi</li>
+            <li>Chiusura del form mediante il pulsante di chiusura <img src="../images/icons/wndclose.gif" width="16" height="14" align="absmiddle"><br>
+              Comporta lo scaricamento del form dalla memoria</li>
+          </ol>
+        </li>
+        <li>Ritorno al form principale</li>
+      </ol>
+      <p>In questo primo caso possiamo analizzare due comportamenti strani: il 
+        primo riguarda la celazione del form mediante il pulsante nascondi. Il 
+        form non viene scaricato dalla memoria ed il numero di forms risulta essere 
+        2.<br>
+        Premendo nuovamente il primo pulsante il form viene nuovamente mostrato, 
+        il valore di <b>intVar</b> viene incrementato ma non scatta alcun evento 
+        poich&eacute; il form era ancora in memoria ed il nuovo valore di <b>intVar</b> 
+        non &egrave; mostrato.<br>
+        Qualcuno dir&agrave;: &quot;fin qui nulla di strano&quot;, infatti il 
+        form era in memoria, non &egrave; stato scaricato e quindi &egrave; giusto 
+        che non venga n&eacute; ricaricato n&eacute; scaricato; il valore di <b>intVar</b> 
+        pu&ograve; tranquillamente incrementare a 2 o numeri successivi.</p>
+      <p>Riapriamo nuovamente il secondo form premendo il primo dei tre pulsanti 
+        e stavolta, invece di nasconderlo semplicemente chiudiamolo mediante il 
+        pulsante di chiusura sulla barra del titolo.<br>
+        Qui iniziano le faccende preoccupanti: il form &egrave; scaricato regolarmente, 
+        scatta l'evento Unload e l'etichetta sul primo form torna a segnare il 
+        numero 1; il secondo form infatti non &egrave; pi&ugrave; in memoria. 
+        Un ulteriore riapertura del secondo form ci mostrer&agrave; quindi qualcosa 
+        di sconvolgente: l'evento Initialize non scatta pi&ugrave;, ma scatta 
+        soltanto l'evento Load. E non finisce qui: il secondo form, pur essendo 
+        stato scaricato dalla memoria continua a mantenere il suo valore nella 
+        variabile <b>intVar</b>, che sembra essere diventata di tipo <b><i>Static</i></b>, 
+        cio&egrave; in grado di mantenere il suo valore anche tra differenti chiamate.</p>
+      <p>Esiste tuttavia una spiegazione logica al problema ed &egrave; legata 
+        alla doppia vita dei forms accennata in precedenza. Abbiamo infatti visto 
+        che il riferimento al secondo form &egrave; istanziato (evento <i>Initialize</i>) 
+        in occasione della prima apertura dello stesso e seguono quindi normali 
+        caricamenti (evento <i>Load</i>) e scaricamenti (evento <i>Unload</i>).<br>
+        Il nodo mancante &egrave; quindi la distruzione (evento <i>Terminate</i>) 
+        dell'istanza creata automaticamente.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La doppia vita dei form &egrave; quindi determinata da Initialize/Terminate 
+        e da Load/Unload. Nonostante sembri normale pensare che lo scaricamento 
+        del form dalla memoria ne rimuova tutti i riferimenti non &egrave; cos&igrave;. 
+        Tale doppia vita &egrave; dimostrata anche dal fatto che, se viene incrementato 
+        il valore di una variabile quale <b>intVar</b>, il form non viene caricato 
+        in memoria, ma soltanto istanziato se non &egrave; gi&agrave; avvenuto. 
+        Possiamo forzare il caricamento con l'istruzione <i><b>Load</b></i> oppure 
+        facendo uso di una propriet&agrave; o di un metodo intrinseco del form. 
+        Il richiamo di un metodo non nativo di un form non forza comunque il caricamento 
+        dello stesso, a meno che il metodo non faccia uso di elementi nativi del 
+        form. Si pu&ograve; quindi sintetizzare che tutti gli elementi nativi 
+        del form fanno parte della vita regolata da Load/Unload, mentre tutti 
+        i membri aggiuntivi fanno parte della prima vita del form, regolata da 
+        Initialize/Terminate. </p>
+      <p>Per scaricare l'istanza automatica &egrave; necessario chiudere il form 
+        che l'ha generata ovvero il primo form.<br>
+        Altra cosa buffa: l'evento Terminate dell'istanza automatica scatta solo 
+        dopo lo stesso evento del primo form ovvero &egrave; deallocato prima 
+        il primo form e poi il secondo, nonostanza quest'ultimo sia stato generato 
+        dal primo dei due form.</p>
+      <hr>
+      <p>Il secondo caso strano che analizzeremo riguarda anch'esso la doppia 
+        vita dei forms ed &egrave; in un certo senso l'opposto del caso visto 
+        in precedenza.</p>
+      <p><img src="../images/weird/weird01_04.png" width="125" height="198" align="left" alt="Figura 4">Dopo 
+        aver selezionato la casella di controllo <i><b>Set ... = Nothing</b></i>, 
+        che si occupa di deallocare l'istanza del form in memoria, utilizziamo 
+        nuovamente il primo pulsante per richiedere l'istanza automatica del secondo 
+        form.</p>
+      <p>In maniera analoga alla precedente possiano notare che scatta il primo 
+        evento Initialize e la variabile <b>intVar</b> vale 0; in seguito scatta 
+        l'evento Load e la variabile <b>intVar</b> vale 1. Il form &egrave; quindi 
+        mostrato sullo schermo.</p>
+      <p>Se chiudiamo tale form mediante il pulsante di chiusura sulla barra del 
+        titolo possiamo osservare lo scaricamento del form (evento Unload), seguito 
+        dalla deallocazione dell'istanza automatica. Il numero di form in memoria 
+        &egrave; quindi l'inziale 0. Il programma &egrave; stato ripristinato 
+        allo stato iniziale; se rilanciamo l'apertura del secondo form in maniera 
+        analoga gli eventi sono scatenati nella stessa sequenza della precedenza.</p>
+      <p><img src="../images/weird/weird01_02.png" width="96" height="51" alt="Figura 5" align="right">Proviamo 
+        invece a non chiudere il secondo form dal suo pulsante di chiusura ma 
+        nascondiamolo semplicemente con il pulsante Nascondi.<br>
+        Il numero di forms in memoria &egrave; 2, come nel caso precedente; il 
+        form infatti non &egrave; stato scaricato e non &egrave; scattato l'evento 
+        Unload. Un'ulteriore pressione del primo pulsante far&agrave; sussultare 
+        pi&ugrave; di un cuore...</p>
+      <p>Scatta infatti nuovamente l'evento Initialize nonostante il secondo form 
+        sia ancora in memoria e non siano scattati in precedenza n&eacute; l'evento 
+        Unload n&eacute; quello Terminate.<br>
+        Ed ancora il valore della variabile intVar &egrave; ripristinato a zero 
+        dall'evento Initialize.<br>
+        Proviamo a nascondere anche questo secondo form e notiamo che il contatore 
+        dei forms caricati in memoria continua ad aumentare; adesso segna il numero 
+        3.</p>
+      <p>Questa &egrave; una bruttissima situazione di instabilit&agrave;: &egrave; 
+        caricato in memoria almeno un form secondario ma non &egrave; possibile 
+        avere un riferimento diretto. L'uso dell'istanza automatica con il nome 
+        della classe genera infatti un'ulteriore form in memoria.</p>
+      <p>Anche per questa stranezza esiste una spiegazione. Selezionando la casella 
+        <b><i>Set ... = Nothing</i></b> abbiamo fatto s&igrave; che venga deallocata 
+        la variabile oggetto ad istanza automatica, ovvero abbiamo distrutto la 
+        prima delle due vite del form. Si attende la fine della seconda vita, 
+        quella regolata da Load/Unload per distruggere completamente il form e 
+        lanciare l'ultimo evento (Terminate) della prima vita.</p>
+      <p><img src="../images/weird/weird01_05.png" width="171" height="43" align="right" alt="Figura 6">&Egrave; 
+        possibile ristabilizzare la situazione chiudendo il programma oppure facendo 
+        doppio click sull'etichetta in fondo al primo form. Funziona anche con 
+        il caso precedente ma non era stato accennato per sottolineare l'aspetto 
+        dello scaricamento delle istanze disordinato.</p>
+      <hr>
+      <p><img src="../images/weird/weird01_06.png" width="123" height="196" align="right" alt="Figura 7">L'ultimo 
+        caso non &egrave; per nulla strano ma lo si vuole sottolineare per evitare 
+        possibili errori durante lo sviluppo.</p>
+      <p>Dopo aver selezionato la casella di controllo <i><b>Load</b></i>, premere 
+        un pulsante qualsiasi tra i tre disponibili.</p>
+      <p><img src="../images/weird/weird01_07.png" width="110" height="80" alt="Figura 8" align="left">Saranno 
+        generati in sequenza gli eventi Initialize e Load ma stavolta, a differenza 
+        delle situazioni precedenti il valore di <b>intVar</b> sar&agrave; 0.</p>
+      <p>La spiegazione &egrave; molto semplice. L'istruzione Load forza il caricamento 
+        del form cui segue quindi l'evento Load che nel nostro caso mostrer&agrave; 
+        il valore della variabile <b>intVar</b>, prima ancora che le venga assegnato 
+        il nuovo valore.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Si raccomanda un'analisi del codice per chiarire le sequenze di esecuzioni 
+        delle istruzioni e comprendere come evitare situazioni poco piacevoli 
+        ristabilizzando quindi l'armonia delle due vite separate degli oggetti 
+        Form.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        1 Settembre 2002<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice delle Stranezze</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

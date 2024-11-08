@@ -1,0 +1,505 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Creare dei threads con Visual Basic</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Creare dei threads con Visual 
+    Basic<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"> 
+        4<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Nello sviluppo di programmi di medie dimensioni si pu&ograve; rendere 
+        necessario lanciare una funzione che lavori <i>&quot;per i fatti suoi&quot;</i> 
+        e non blocchi l'esecuzione del codice fintanto che essa non &egrave; terminata.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Esistono due soluzioni per effettuare quest'operazione: la prima consiste 
+        nell'utilizzare un <a href="../thunder/thnd_12.htm"><b>Timer</b></a><img src="../images/controls/timer.gif" width="25" height="25" align="absmiddle">insieme 
+        all'istruzione <b>DoEvents</b>. Il timer si dovrebbe occupare di lanciare 
+        la funzione ad intervalli regolari e l'istruzione DoEvents serve per permettere 
+        l'esecuzione di altri eventi mentre la funzione &egrave; in esecuzione.<br>
+        Tuttavia questa soluzione, oltre ad essere molto scomoda, pu&ograve; generare 
+        svariati errori e risulta difficile da controllare.</p>
+      <p>L'altra soluzione consiste nel creare, come avviene in altri linguaggi, 
+        dei <a href="../glossary/t.htm#THREAD">threads</a> che si occupino di 
+        eseguire la funzione in maniera <a href="../glossary/a.htm#ASINCRONO">asincrona</a>, 
+        non dipendente dal resto del programma. Sar&agrave; il sistema operativo 
+        che si occuper&agrave; di controllare il thread e il programmatore non 
+        si dovr&agrave; pi&ugrave; occupare d'esso fino a quando non intende modificarlo, 
+        rallentarlo, velocizzarlo o terminarlo.<br>
+        Si raccomanda di leggere la sezione dedicata alle <a href="../info/info_14.htm">Informazioni 
+        aggiuntive su Processi e Threads</a> prima di approfondire la visione 
+        di questo codice.</p>
+      <p>Tuttavia, Visual Basic non permette nativamente l'utilizzo dei threads; 
+        sar&agrave; pertanto necessario utilizzare alcune funzioni <a href="../glossary/a.htm#API">API</a> 
+        per creare e controllare il thread.<br>
+        In questo esempio faremo utilizzo di un modulo di <a href="../glossary/c.htm#CLASSE">classe</a> 
+        <img src="../images/ide/classe.gif" width="16" height="16" align="absmiddle"> 
+        che permette l'<a href="../glossary/i.htm#ISTANZA">istanza</a> di nuovi 
+        threads e il pieno controllo d'essi mediante alcune <a href="../glossary/p.htm#PROPRIETA">propriet&agrave;</a> 
+        <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        e <a href="../glossary/m.htm#METODO">metodi</a> <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        della classe.</p>
+      <p>Pertanto, prima di vedere un esempio specifico, daremo uno sguardo alla 
+        classe <img src="../images/ide/classe.gif" width="16" height="16" align="absmiddle"> 
+        <b><i>clsThreads</i></b>.</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Type udtThread</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Handle As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Enabled As Boolean</li>
+        <li>End Type</li>
+        <li></li>
+        <li>Private uThread As udtThread</li>
+        <li></li>
+      </ol>
+      <p>Alla riga 3 definiamo un nuovo tipo di dati <img src="../images/ide/tipoudt.gif" width="16" height="16" align="absmiddle">definito 
+        dall'utente denominato <b>udtThread</b>. Al suo interno abbiamo due campi: 
+        <i>Handle</i> di tipo Long che conterr&agrave; l'<a href="../glossary/h.htm#HANDLE">handle</a> 
+        del thread comandato dalla classe ed <i>Enabled</i> che indicher&agrave; 
+        se il thread &egrave; in esecuzione.</p>
+      <p>Alla riga 8 dichiariamo la variabile uThread di tipo udtThread. Tale 
+        variabile servir&agrave; per contenere i dati relativi al thread legato 
+        all'istanza. </p>
+      <ol class="codicevb" start="10">
+        <li>Private Const CREATE_SUSPENDED As Long = &amp;H4</li>
+        <li>Private Const THREAD_BASE_PRIORITY_IDLE As Long = -15</li>
+        <li>Private Const THREAD_BASE_PRIORITY_LOWRT As Long = 15</li>
+        <li>Private Const THREAD_BASE_PRIORITY_MAX As Long = 2</li>
+        <li>Private Const THREAD_BASE_PRIORITY_MIN As Long = -2</li>
+        <li>Private Const THREAD_PRIORITY_HIGHEST As Long = THREAD_BASE_PRIORITY_MAX</li>
+        <li>Private Const THREAD_PRIORITY_LOWEST As Long = THREAD_BASE_PRIORITY_MIN</li>
+        <li>Private Const THREAD_PRIORITY_ABOVE_NORMAL As Long = (THREAD_PRIORITY_HIGHEST 
+          - 1)</li>
+        <li>Private Const THREAD_PRIORITY_BELOW_NORMAL As Long = (THREAD_PRIORITY_LOWEST 
+          + 1)</li>
+        <li>Private Const THREAD_PRIORITY_IDLE As Long = THREAD_BASE_PRIORITY_IDLE</li>
+        <li>Private Const THREAD_PRIORITY_NORMAL As Long = 0</li>
+        <li>Private Const THREAD_PRIORITY_TIME_CRITICAL As Long = THREAD_BASE_PRIORITY_LOWRT</li>
+        <li></li>
+      </ol>
+      <p>La riga 10 definisce la <a href="../glossary/c.htm#COSTANTE">costante</a> 
+        <img src="../images/ide/costante.gif" width="16" height="16" align="absmiddle">CREATE_SUSPENDED 
+        che verr&agrave; utilizzata per creare un thread inizialmente fermo, non 
+        in esecuzione.<br>
+        Le costanti definite alle righe 11-21 indicano le priorit&agrave; assegnabili 
+        al thread in esecuzione.</p>
+      <ol class="codicevb" start="23">
+        <li>Private Declare Function CreateThread Lib &quot;kernel32&quot; (ByVal 
+          lpThreadAttributes As Any, ByVal dwStackSize As Long, ByVal lpStartAddress 
+          As Long, lpParameter As Any, ByVal dwCreationFlags As Long, lpThreadID 
+          As Long) As Long</li>
+        <li>Private Declare Function SetThreadPriority Lib &quot;kernel32&quot; 
+          (ByVal hThread As Long, ByVal nPriority As Long) As Long</li>
+        <li>Private Declare Function GetThreadPriority Lib &quot;kernel32&quot; 
+          (ByVal hThread As Long) As Long</li>
+        <li>Private Declare Function SuspendThread Lib &quot;kernel32&quot; (ByVal 
+          hThread As Long) As Long</li>
+        <li>Private Declare Function ResumeThread Lib &quot;kernel32&quot; (ByVal 
+          hThread As Long) As Long</li>
+        <li>Private Declare Function TerminateThread Lib &quot;kernel32&quot; 
+          (ByVal hThread As Long, ByVal dwExitCode As Long) As Long</li>
+        <li></li>
+      </ol>
+      <p>Le funzioni API definite qui, servono per creare, cambiare la priorit&agrave;, 
+        sospendere, ripristinare e terminare threads.</p>
+      <p>La prima funzione &egrave; la <b>CreateThread</b> e crea un nuovo thread 
+        che esegua il codice indicato dal <a href="../glossary/p.htm#PUNTATORE">puntatore</a> 
+        alla funzione <i>lpStartAddress</i>. Le caratteristiche del thread saranno 
+        definite dal parametro <i>dwCreationFlags</i>. All'uscita la funzione 
+        riporta l'<a href="../glossary/h.htm#HANDLE">hande</a> del thread creato.</p>
+      <p>La funzione <b>SetThreadPriority</b> permette di cambiare la priorit&agrave; 
+        di un thread, mentre la <b>GetThreadPriority</b> viene utilizzata per 
+        ottenere la priorit&agrave; del thread specificato.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La funzione <b>SuspendThread</b> serve per interrompere - ma non terminare 
+        - l'esecuzione di un thread. Analogamente, la <b>ResumeThread</b> ripristina 
+        la normale esecuzione del thread dopo la sua sospensione. In ultima analisi, 
+        la funzione <b>TerminateThread</b> termina l'esecuzione di un thread e 
+        ne distrugge l'handle. </p>
+      <ol class="codicevb" start="30">
+        <li>Public Sub Initialize(ByVal lpfnBasFunc As Long)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim lStackSize As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim lCreationFlags As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim lpThreadID As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lStackSize = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lCreationFlags = CREATE_SUSPENDED</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;uThread.Handle = CreateThread(ByVal 0&amp;, 
+          lStackSize, lpfnBasFunc, ByVal 0&amp;, lCreationFlags, lpThreadID)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If uThread.Handle = 0 Then MsgBox &quot;Creazione 
+          del thread fallita!&quot;</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Il metodo <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        principale di questa classe <img src="../images/ide/classe.gif" width="16" height="16" align="absmiddle"> 
+        &egrave; <b>Initialize</b>. Esso richiede un puntatore a funzione come 
+        parametro. Esso verr&agrave; utilizzato per creare il thread corrispondente.</p>
+      <p>Il cuore di questa funzione si trova alle righe 35 e 36. Inizialmente 
+        definiamo le modalit&agrave; di creazione del thread. Nel nostro caso 
+        il thread verr&agrave; creato in maniera sospesa.</p>
+      <p>Alla riga 36 avviene la creazione del thread mediante chiamata alla funzione 
+        <a href="../glossary/a.htm#API">API</a> <i>CreateThread</i>. Ad essa verranno 
+        passati vari parametri, molti dei quali impostati a 0. Il parametro principale 
+        &egrave; il puntatore alla funzione ricevuto dalla chiamata del metodo 
+        <b>Initialize</b>.</p>
+      <p>Se la creazione del thread &egrave; avvenuta in maniera corretta, il 
+        campo Handle della struttura uThread conterr&agrave; l'handle del thread 
+        creato. Se esso dovesse essere 0, il thread non sar&agrave; stato creato 
+        e sar&agrave; mostrato un messaggio di errore (riga 37).</p>
+      <p>Seguono un paio di propriet&agrave; <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        che consentono di controllare l'esecuzione del thread creato dall'istanza 
+        della classe.</p>
+      <ol class="codicevb" start="40">
+        <li>Public Property Get Enabled() As Boolean</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Enabled = uThread.Enabled</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Let Enabled(ByVal vNewValue As Boolean)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If vNewValue = True Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ResumeThread uThread.Handle</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SuspendThread uThread.Handle</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;uThread.Enabled = vNewValue</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>La propriet&agrave; Enabled &egrave; utilizzabile in lettura ed in scrittura 
+        (Get e Let).<br>
+        Essa determina se il thread &egrave; in esecuzione o meno.</p>
+      <p>La lettura della propriet&agrave; avviene semplicemente leggendo il valore 
+        dal campo <i>Enabled</i> della struttura <b>uThread</b>. La scrittura 
+        della propriet&agrave; comporta invece l'attivazione o la sospensione 
+        del thread. Dopo quest'operazione sar&agrave; necessario aggiornare il 
+        contenuto del campo Enabled di uThread.</p>
+      <ol class="codicevb" start="53">
+        <li>Public Property Get Priority() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Priority = GetThreadPriority(uThread.Handle)</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Let Priority(ByVal vNewValue As Long)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Select Case vNewValue</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case -2: Call SetThreadPriority(uThread.Handle, 
+          THREAD_PRIORITY_LOWEST)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case -1: Call SetThreadPriority(uThread.Handle, 
+          THREAD_PRIORITY_BELOW_NORMAL)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 0: Call SetThreadPriority(uThread.Handle, 
+          THREAD_PRIORITY_NORMAL)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 1: Call SetThreadPriority(uThread.Handle, 
+          THREAD_PRIORITY_ABOVE_NORMAL)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 2: Call SetThreadPriority(uThread.Handle, 
+          THREAD_PRIORITY_HIGHEST)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End Select</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>Anche la propriet&agrave; Priority &egrave; in lettura e scrittura. La 
+        lettura utilizza la chiamata alla funzione <i>GetThreadPriority</i>; la 
+        scrittura invece utilizza la funzione <i>SetThreadPriority</i> per cambiare 
+        la priorit&agrave; del thread in esecuzione.</p>
+      <ol class="codicevb" start="67">
+        <li>Private Sub Class_Terminate()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call TerminateThread(uThread.Handle, 0)</li>
+        <li>End Sub</li>
+      </ol>
+      <p>La <a href="../glossary/d.htm#DEALLOCARE">deallocazione</a> dell'istanza 
+        comporta la sua distruzione e l'esecuzione dell'evento <b>Terminate</b>. 
+        Pertanto all'esecuzione di tale evento sar&agrave; necessario distruggere 
+        il thread creato e questo viene effettuato mediante la funzione <i>TerminateThread</i>.</p>
+      <hr>
+      <p><img src="../images/howto/howto030_01.jpg" width="253" height="140" align="right" alt="Figura 1">Possiamo 
+        vedere l'implementazione della classe appena sviluppata. Inseriamo all'interno 
+        di un form due <i><a href="../thunder/thnd_05.htm">PictureBox</a></i> 
+        <img src="../images/controls/picturebox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>Picture1</b> e <b>Picture2</b>, settando per esse due colori differenti 
+        nella propriet&agrave; <i>BackColor</i>.</p>
+      <p>Inseriamo anche un <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>AvviaThreads</b>. Abbiamo inserito anche una Label descrittiva 
+        ma essa non &egrave; effettivamente necessaria.</p>
+      <p>Il codice si compone esclusivamente di una routine: il click sul pulsante 
+        <b>AvviaThreads</b>.</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub AvviaThreads_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim myThreadTop As New clsThreads</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim myThreadBottom As New clsThreads</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;myThreadTop.Initialize AddressOf FlickerTop</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;myThreadTop.Enabled = True</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;myThreadBottom.Initialize AddressOf FlickerBottom</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;myThreadBottom.Enabled = True</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;I thread lanciati non sono bloccati...&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set myThreadTop = Nothing</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set myThreadBottom = Nothing</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Alla righe 4 e 5 definiamo ed istanziamo due oggetti di classe clsThreads. 
+        Alla riga 7 creiamo il primo thread richiamando il metodo <b>Initialize</b>. 
+        Passeremo alla funzione il puntatore alla funzione <i><b>FlickerTop</b></i> 
+        (che per forza di cose deve risiedere all'interno di un modulo <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+        standard), che vedremo a breve. Creato il thread lo avviamo impostando 
+        la propriet&agrave; <i>Enabled</i> dell'istanza <b>myThreadTop</b>.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Operazione simile viene eseguita per la seconda istanza, <b>myThreadBottom</b>. 
+        Inizializziamo il thread con il metodo <b>Initialize</b> e il puntatore 
+        alla funzione <i><b>FlickerBottom</b></i> e lo avviamo impostando la propriet&agrave; 
+        <i>Enabled</i>.</p>
+      <p>Per dimostrare l'effettiva attivit&agrave; dei threads richiamiamo una 
+        MessageBox (riga 13) che in situazioni normali blocca l'intera esecuzione 
+        del programma.<br>
+        Ma, poich&eacute; abbiamo creato dei threads e lanciati, la visualizzazione 
+        della MessageBox blocca s&igrave; il programma, ma soltanto il codice 
+        che viene eseguito nel thread principale, ovvero viene interrotta l'esecuzione 
+        della routine AvviaThreads_Click. Gli altri due thread saranno eseguiti 
+        regolarmente.</p>
+      <p>Alle righe 14 e 15 vengono <a href="../glossary/d.htm#DEALLOCARE">deallocate</a> 
+        e distrutte le due istanze. Cos&igrave; facendo saranno terminati i thread 
+        lanciati.</p>
+      <hr>
+      <p>Prima di provare il programma dobbiamo definire le due funzioni da eseguire 
+        all'interno dei threads. Le due funzioni devono stare necessariamente 
+        all'interno di un modulo <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+        standard poich&eacute; l'operatore <i>AddressOf</i> che recupera l'indirizzo 
+        di una funzione richiede che la funzione risieda all'interno di un modulo 
+        standard.<br>
+        Il codice &egrave; il seguente:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li>Private Declare Function GetTickCount Lib &quot;kernel32&quot; () 
+          As Long</li>
+        <li></li>
+        <li>Public Sub FlickerTop()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Static BgColor As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim lTick As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;While 1 &gt; 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If BgColor &lt;&gt; 
+          &amp;HFF&amp; Then BgColor = &amp;HFF&amp; Else BgColor = &amp;HFF00&amp;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frmThread.Picture1.BackColor 
+          = BgColor</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frmThread.Picture1.Refresh</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lTick = GetTickCount</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While GetTickCount 
+          - lTick &lt; 1250</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wend</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Wend</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Le due funzioni utilizzano la funzione API <i>GetTickCount</i>, vista 
+        peraltro in un <a href="ht_019.htm">altro HowTo</a>, per effettuare un'attesa.</p>
+      <p>La prima funzione &egrave; la FlickerTop e provvede a cambiare il colore 
+        di sfondo di <b>Picture1</b> del form. Utilizzeremo una variabile <a href="../glossary/s.htm#STATIC">statica</a>, 
+        in maniera che all'uscita della funzione non venga azzerato il suo contenuto, 
+        di nome <b>BgColor</b>.</p>
+      <p>Alla riga 7 inizia un ciclo che non terminer&agrave; mai, ovvero sar&agrave; 
+        eseguito fintanto che 1 &egrave; maggiore di 0, ovvero a tempo indeterminato.</p>
+      <p>Alla riga 8 viene verificato il valore di BgColor: se esso &egrave; diverso 
+        da &amp;HFF&amp; (colore Rosso), sar&agrave; posto uguale a &amp;HFF&amp;, 
+        altrimenti sar&agrave; posto uguale a &amp;HFF00&amp; (verde).<br>
+        Adesso sar&agrave; possibile cambiare il colore della Picture1.<br>
+        Alla riga 10 viene forzato l'aggiornamento grafico della Picture1; senza 
+        di esso il programma una volta <a href="../glossary/c.htm#COMPILAZIONE">compilato</a> 
+        non mostrerebbe i colori in maniera corretta. </p>
+      <p>Alla riga 11 viene ottenuto il numero di millisecondi dall'avvio di Windows. 
+        Segue un ciclo che si ripete fintanto che non siano passati 1250 millisecondi 
+        dall'ultimo cambio di colore; rappresenta una maniera alternativa per 
+        effettuare un'attesa.</p>
+      <p>Il ciclo si ripete infinitamente e prima di cambiare il colore attende 
+        1250 millisecondi. Ad ogni fase imposta il colore in Rosso o Verde.</p>
+      <ol class="codicevb" start="17">
+        <li>Public Sub FlickerBottom()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Static BgColor As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim lTick As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;On Error Resume Next</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;While 1 &gt; 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If BgColor &lt;&gt; 
+          &amp;HFFFF&amp; Then BgColor = &amp;HFFFF&amp; Else BgColor = &amp;HFF0000&amp;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frmThread.Picture2.BackColor 
+          = BgColor</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frmThread.Picture2.Refresh</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lTick = GetTickCount</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While GetTickCount 
+          - lTick &lt; 500</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wend</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Wend</li>
+        <li>End Sub</li>
+      </ol>
+      <p>La funzione FlickerBottom esegue un'operazione del tutto identica alla 
+        precedente, eccetto per il fatto che i colori saranno &amp;HFFFF&amp; 
+        (Giallo) e &amp;HFF0000&amp; (Blu). Il colore sar&agrave; impostato nella 
+        <b>Picture2</b> ogni 500 millisecondi.</p>
+      <hr>
+      <p><img src="../images/howto/howto030_02.gif" width="253" height="148" align="right" alt="Figura 2">Sar&agrave; 
+        adesso possibile eseguire il programma, premere il pulsante e vedere i 
+        due threads lavorare, senza essere interrotti dalla MessageBox con il 
+        messaggio.</p>
+      <p>Ad intervalli regolari il colore delle due PictureBox sar&agrave; cambiato. 
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>La soluzione proposta &egrave; molto geniale, ma non molto robusta. In 
+        altri linguaggi quali il Java l'operazione sarebbe notevolmente pi&ugrave; 
+        semplice; purtroppo Visual Basic non contiene alcuna istruzione per permettere 
+        il richiamo o la gestione di threads multipli.</p>
+      <p><b class="smallerrore">Attenzione!</b><br>
+        &Egrave; stato verificato che questo codice funziona correttamente con 
+        Visual Basic 5 ma per qualche ragione ancora sconosciuta, non funziona 
+        in progetti compilati con <i><b>Visual Basic 6</b></i>. Se il progetto 
+        viene eseguito all'interno dell'<a href="../glossary/i.htm#IDE">IDE</a> 
+        di VB6 funziona correttamente, ma una volta trasformato il progetto in 
+        file EXE autonomo, si generano errori di <a href="../glossary/r.htm#RUNTIME">runtime</a> 
+        non gestibili che forzano l'immediata terminazione del programma.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" -->Codice 
+        originale di Peter Larsson<br>
+        Modificato ed adattato da <a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        12 Marzo 2001<br>
+        Rivisto e modificato il 7 Giugno 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

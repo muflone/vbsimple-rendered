@@ -1,0 +1,192 @@
+a:hover {
+  text-decoration: none;
+}
+
+i {
+  font-family: Times New Roman, Verdana, Arial;
+  font-size: 10pt;
+}
+
+p, table, body {
+  font-family: Tahoma;
+  font-size: 9pt;
+}
+
+.capitolo {
+  font-size : 18pt;
+  font-family : Tahoma;
+  font-weight : bold;
+  font-style : italic;
+  color : #00008B;
+  text-justify : inter-word;
+}
+
+.codicevb {
+  font-family : "Courier New";
+  font-size : 9pt;
+}
+
+.codicevbc {
+  background-color : #FFFFDC;
+  color : Blue;
+}
+
+.codicevb2 {
+  font-family : "Courier New";
+  font-size : 9pt;
+  margin-left : 30px;
+}
+
+.credits {
+  font-family : Tahoma;
+  font-size: 8pt;
+}
+
+.credits2 {
+  font-family : Tahoma;
+  font-size: 8pt;
+  text-align : right;
+  right : 30pt;
+  position : relative;
+}
+
+.dataaggiornamento {
+  font-family : Tahoma;
+  font-size: 8pt;
+  text-align : right;
+}
+
+.destra {
+  text-align : right;
+}
+
+.elenco {
+  font-family: Tahoma;
+  font-size: 9pt;
+  layout-grid-mode : both;
+  layout-grid-line : 40px;
+  left : 40px;
+  position : relative;
+  layout-grid-type : fixed;
+}
+
+.fixed, code {
+  font-family : "Courier New", Courier, monospace;
+  font-size : 9pt;
+}
+
+.imglink {
+  background-color : White;
+}
+
+.intestazioni {
+  font-weight : bold;
+  font-style : italic;
+}
+
+.justify {
+  text-align : justify;
+}
+
+.nascosto {
+  font-family : Tahoma;
+  font-size : 2pt;
+  visibility : hidden;
+}
+
+.nascosto2 {
+  visibility: hidden;
+}
+
+.nomepagina {
+  font-size : 8pt;
+}
+
+.seminascosto {
+  color: #009966;
+}
+
+.size0 {
+  font-family: Tahoma;
+  font-size : 7pt;
+}
+
+.size1 {
+  font-family: Tahoma;
+  font-size : 8pt;
+}
+
+.size2 {
+  font-family : Tahoma;
+  font-size : 9pt;
+}
+
+.size3 {
+  font-family: Tahoma;
+  font-size: 11pt;
+  font-weight : bold;
+}
+
+.size4 {
+  font-family: Tahoma;
+  font-size: 16pt;
+}
+
+.smallerrore {
+  font-family : Tahoma;
+  font-size : 9pt;
+  font-weight : bold;
+  color : #CC3300;
+}
+
+.sottolineato {
+  text-decoration : underline;
+}
+
+.striked {
+  text-decoration : line-through;
+}
+
+.textboxblue {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight : bold;
+  color: Yellow;
+  background-color: #0099CC;
+  border: #000000;
+  border-style : solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+.titolo {
+  font-family: Tahoma;
+  font-size: 16pt;
+  font-style : italic;
+  text-decoration : underline;
+}
+
+.dontprint {
+  visibility: visible;
+}
+
+.hrseparator {
+  width: 60%;
+}
+
+.scrollitem {
+  text-align:center;
+}
+
+.scrolldivs {
+  display:none;
+  font-size:smaller;
+  font-weight:bold;
+}
+
+.gotopage {
+  color:#cc3333;
+  text-decoration:none;
+}

@@ -1,0 +1,350 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Creare controlli in fase di esecuzione</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Creare controlli in fase 
+    di esecuzione<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Per taluni progetti pu&ograve; essere molto utile creare una serie di 
+        controlli; in questi casi basta creare una matrice di controlli in <a href="../glossary/f.htm#FASEDIPROGETTAZIONE">fase 
+        di progettazione</a>.<br>
+        Ma se in fase di progettazione fosse impossibile determinare il numero 
+        di controlli necessari all'utente in un determinato momento?</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Ipotizziamo un semplice programmino: un'agenda legge dei dati da un database. 
+        Il programma apre la tabella apposita e, per ogni campo contenuto in essa, 
+        mostra il contenuto in una casella di testo. In fase di progettazione 
+        il programmatore potrebbe contare il numero di campi della tabella e creare 
+        le caselle di testo, ma li progetto finirebbe l&igrave;, non potendo essere 
+        migliorato senza modificare il programma in questione.</p>
+      <p>Invece si potrebbe lasciare all'utente una scelta in pi&ugrave;: il programma, 
+        in fase di esecuzione, effettua il conteggio dei campi presenti all'interno 
+        della tabella, ed in base al numero, crea i controlli (le caselle di testo) 
+        necessari.</p>
+      <p>Per effettuare quest'operazione sar&agrave; necessario utilizzare le 
+        matrici di controlli: baster&agrave; inserire almeno un controllo e dargli 
+        indice (propriet&agrave; <i>Index</i>) 0.<br>
+        Ci penser&agrave; un'altra funzione a fare la clonazione di tale controllo 
+        per tanti elementi richiesti.</p>
+      <p><img src="../images/howto/howto015_01.jpg" width="200" height="174" align="right" alt="Figura 1">Vediamo 
+        come effettuare queste operazioni.</p>
+      <p>Inseriamo all'interno di un form una <i>TextBox</i><img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>CasellaTesto</b> ed impostiamo per essa la propriet&agrave; <i>Index</i> 
+        a 0 e la propriet&agrave; <i>Visible</i> a False.</p>
+      <p>Un po' pi&ugrave; a destra inseriamo una <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>LabelNumero</b> conenente il testo <b><i>&quot;Numero controlli&quot;</i></b>.</p>
+      <p>Subito sotto essa aggiungiamo un'altra <i>TextBox</i><img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>NumeroControlli</b>.<br>
+        Aggiungiamo, infine, un semplice <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>PulsanteCrea</b>.</p>
+      <p>L'utilizzo del programma &egrave; molto semplice: l'utente deve inserire 
+        un numero nella casella <b>NumeroControlli</b> e premere il pulsante <b>PulsanteCrea</b> 
+        per vedere apparire la serie di controlli, la cui base &egrave; <b>CasellaTesto</b>.</p>
+      <hr>
+      <p>Apriamo la finestra del codice ed inseriamo questa semplice funzione 
+        di nome <b>Clona</b>:</p>
+      <ol class="codicevb" start="1">
+        <li>Private Sub Clona(NumContr As Integer)</li>
+        <li>&nbsp;&nbsp;Dim FirstContr As Integer</li>
+        <li>&nbsp;&nbsp;Dim LastContr As Integer</li>
+        <li>&nbsp;&nbsp;Dim ContrNum As Integer</li>
+      </ol>
+      <p>La funzione richiede un parametro di nome NumContr; esso determina il 
+        numero di elementi da creare.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>All'interno della funzione utilizziamo tre variabili:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<b>FirstContr</b> che indica l'indice del primo 
+        elemento, ovvero 0<br>
+        <b>&nbsp;&nbsp;&nbsp;&nbsp;LastContr</b> che indica l'indice dell'ultimo 
+        controllo<br>
+        <b>&nbsp;&nbsp;&nbsp;&nbsp;ContrNum</b> utilizzata per effettuare i calcoli 
+        ed i cicli</p>
+      <ol class="codicevb" start="5">
+        <li>With CasellaTesto</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FirstContr = .LBound</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;LastContr = .UBound</li>
+        <li></li>
+      </ol>
+      <p>Poich&eacute; all'interno del codice &egrave; necessario effettuare calcoli 
+        prendendo come oggetto la matrice di controlli CasellaTesto, abbiamo inserito 
+        alla riga 5 un'istruzione <i>With</i> che assume come oggetto predefinito 
+        la matrice CasellaTesto. Per accedere ad un <a href="../glossary/m.htm#MEMBRO">membro</a> 
+        di essa sar&agrave; sufficiente scrivere il nome del membro, precedendolo 
+        con un punto.</p>
+      <p>Alla riga 6 troviamo l'indice del primo elemento della matrice e lo memorizziamo 
+        nella variabile <b>FirstContr</b>. Lo ricordiamo, il primo elemento &egrave; 
+        0. Questa scrittura serve soltanto per mostrare come ricavare il primo 
+        elemento di una matrice.</p>
+      <p>Alla riga 7 effettuiamo il calcolo degli elementi. La variabile <b>LastContr</b> 
+        conterr&agrave; l'indice dell'ultimo elemento della matrice.</p>
+      <ol class="codicevb" start="9">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For ContrNum = LastContr To NumContr + FirstContr 
+          Step -1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If ContrNum = FirstContr Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Item(ContrNum).Visible 
+          = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unload .Item(ContrNum)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next ContrNum</li>
+      </ol>
+      <p>Alla riga 9 inizia un ciclo per scaricare i controlli inutilizzati (riga 
+        13), qualora ne esistessero, e per nascondere il primo elemento (riga 
+        11).</p>
+      <p>Nota che questo ciclo non elimina tutti gli oggetti, per ricostruirli 
+        in seguito, ma scarica soltanto quelli superflui alla richiesta. Se esistessero 
+        10 elementi ed il parametro <i><b>NumContr</b></i> contenesse il valore 
+        4, sarebbero scaricati soltanto i 6 controlli superflui.</p>
+      <ol class="codicevb" start="16">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If NumContr &gt; 0 Then .Item(FirstContr).Visible 
+          = True</li>
+      </ol>
+      <p>Se il parametro <b>NumContr</b> &egrave; maggiore di 0 (riga 16), ci&ograve; 
+        significa che vogliamo creare almeno un elemento. Poich&eacute; il ciclo 
+        precedente non scarica tutti gli elementi, ma lascia in memoria il primo 
+        elemento, sar&agrave; necessario renderlo visibile perch&eacute; nascosto 
+        dalla riga 11.</p>
+      <ol class="codicevb" start="17">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For ContrNum = LastContr To FirstContr + NumContr 
+          - 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If ContrNum &gt; LastContr Then 
+          Load .Item(ContrNum)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next ContrNum</li>
+      </ol>
+      <p>Questo piccolissimo ciclo carica nella matrice uno per uno i controlli 
+        mancanti, fino a quando il numero di controlli <b>ContrNum</b> non raggiunge 
+        il numero richiesto con <b>NumContr</b>.<br>
+        Essendo gli elementi a base variabile, sar&agrave; necessario contare 
+        fino a <i>FirstContr + NumContr - 1</i>.</p>
+      <ol class="codicevb" start="20">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If NumContr &gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For ContrNum = FirstContr To .UBound</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Item(ContrNum).Text 
+          = &quot;Controllo N° &quot; &amp; ContrNum</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If ContrNum &gt; FirstContr 
+          Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Item(ContrNum).Visible 
+          = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Item(ContrNum).Top 
+          = .Item(ContrNum - 1).Top + .Item(ContrNum - 1).Height</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Item(ContrNum).TabIndex 
+          = .Item(ContrNum - 1).TabIndex + 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next ContrNum</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;End With</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Alla riga 20 viene controllato se esiste almeno un elemento; in caso 
+        negativo il ciclo salta alla riga 29 ed la funzione termina.</p>
+      <p>Quando esiste almeno un elemento della matrice, inizia un ciclo che imposta 
+        i singoli controlli (riga 21).</p>
+      <p>Il ciclo innanzitutto imposta la propriet&agrave; <i>Text</i> di ogni 
+        controllo con la scritta <b><i>&quot;Controllo N&deg;&quot;</i></b>, seguita 
+        dal numero dell'indice.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>A questo punto (riga 23) per tutti gli elementi il cui indice sia successivo 
+        al primo, vengono impostate tre propriet&agrave;. Alla riga 24 viene reso 
+        il controllo visibile mediante la propriet&agrave; <i>Visible</i> impostata 
+        a True; alla riga 25 viene calcolata la posizione (<i>Top</i>) prendendo 
+        come riferimento l'elemento precedente ed incrementando quella coordinata 
+        dell'altezza (<i>Height</i>) dell'elemento precedente. Questo assicura 
+        che tutte le caselle di testo siano in colonna, una sotto l'altra.<br>
+        Infine alla riga 26 viene calcolato il valore <i>TabIndex</i> della casella 
+        di testo, prendendo come riferimento il valore della casella precedente. 
+        Per cui, quando utilizzeremo il tasto TAB per spostarci da un controllo 
+        all'altro, le caselle di testo saranno consecutive.</p>
+      <p>La funzione finisce qui. Viene ovviamente chiusa l'istruzione <i>With</i> 
+        con un <i>End With</i>.</p>
+      <p>Prima di provare il programma dovremmo scrivere un piccola funzioncina 
+        che richiama la funzione Clona.</p>
+      <ol class="codicevb" start="33">
+        <li>Private Sub PulsanteCrea_Click()</li>
+        <li>&nbsp;&nbsp;If Val(NumeroControlli.Text) &gt;= 0 Then Clona NumeroControlli.Text</li>
+        <li>End Sub</li>
+      </ol>
+      <p>All'interno dell'evento <i>Click</i> del pulsante <b>PulsanteCrea</b> 
+        abbiamo inserito tale funzione.<br>
+        Se il valore impostato nella casella <b>NumeroControlli</b> &egrave; maggiore 
+        o uguale a 0, verr&agrave; richiamata la funzione Clona e passato come 
+        parametro tale numero.<br>
+        Questo controllo &egrave; necessario poich&eacute; non ha senso tentare 
+        di creare un numero di elementi negativo e la funzione genererebbe un 
+        errore. </p>
+      <hr>
+      <p><img src="../images/howto/howto015_02.jpg" width="200" height="174" align="right">Possiamo 
+        ora provare il programma.</p>
+      <p>Basta inserire un numero nella casella apposita e premere il pulsante 
+        <b><i>&quot;Crea controlli&quot;</i></b> per vedere apparire i controlli 
+        richiesti.</p>
+      <p>Naturalmente &egrave; estremamente importante non esagerare nell'impostare 
+        il numero di controlli. Un numero grande (1000-5000) pu&ograve; occupare 
+        tutte le risorse del sistema, rendendo il computer instabile.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>La funzione &egrave; molto comoda, ma la limitazione principale riguarda 
+        l'impossibilit&agrave; di conoscere a priori le richieste minime per il 
+        programma, in quanto gli oggetti vengono allocati e deallocati nel momento 
+        in cui viene effettuata la richiesta.</p>
+      <p>L'altro grosso limite &egrave; legato alla struttura di Windows 95/98/ME. 
+        La memoria &egrave; strutturata in aree. Per cui, anche se abbiamo una 
+        grossissima quantit&agrave; di memoria, ad esempio 128 o 256 MB, la funzione 
+        che crea i controlli sar&agrave; comunque limitata ad una piccola area 
+        di questa memoria.</p>
+      <p>In questo esempio abbiamo impostato il primo elemento con indice 0, ma 
+        la funzione &egrave; progettata per funzionare anche con indici superiori. 
+        Per esempio se il primo elemento ha indice 2 e viene richiesta creazione 
+        di 5 controlli, il primo elemento verr&agrave; nuovamente mostrato e verranno 
+        creati altri 4 elementi, con indice dal 3 al 6.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=3">Giuseppe 
+        Della Bianca</a><br>
+        6 Gennaio 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

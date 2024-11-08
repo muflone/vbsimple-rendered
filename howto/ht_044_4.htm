@@ -1,0 +1,461 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Utilizzare il registro di Windows (quarta parte)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Utilizzare il registro di 
+    Windows<br>
+    (quarta parte)<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level5.gif" width="17" height="18" align="absmiddle"> 
+        5<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+<p align="center"><a href="ht_044_3.htm">&lt;&lt; Continua dalla parte 3</a></p>
+      <p>Ci avviciniamo alla fine di questo lungo tutorial. Saranno trattate le 
+        ultime quattro funzioni della nostra classe <i>FBIRegistry</i> relative 
+        ai processi di esportazione ed importazione dei dati del registro in file.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <ol class="codicevb" start="323">
+        <li>Public Function Esporta(ByVal ChiavePrincipale As ChiaviPrincipali, 
+          ByVal SottoChiave As String, ByVal NomeFile As String, ByVal SottoChiavi 
+          As Boolean, ByVal Aggiunge As Boolean) As Boolean</li>
+        <li>&nbsp;&nbsp;Dim FileNR As Integer</li>
+        <li>&nbsp;&nbsp;Dim oldKey As Long</li>
+        <li>&nbsp;&nbsp;Dim NomeChiave As String</li>
+        <li></li>
+        <li>&nbsp;&nbsp;If ChiavePrincipale = CHIAVE_APERTA Then ChiavePrincipale 
+          = lngKeyValue</li>
+        <li>&nbsp;&nbsp;Select Case ChiavePrincipale</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case HKEY_CLASSES_ROOT: NomeChiave = &quot;HKEY_CLASSES_ROOT&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case HKEY_CURRENT_CONFIG: NomeChiave = &quot;HKEY_CURRENT_CONFIG&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case HKEY_CURRENT_USER: NomeChiave = &quot;HKEY_CURRENT_USER&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case HKEY_DYN_DATA: NomeChiave = &quot;HKEY_DYN_DATA&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case HKEY_LOCAL_MACHINE: NomeChiave = &quot;HKEY_LOCAL_MACHINE&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case HKEY_PERF_ROOT: NomeChiave = &quot;HKEY_PERF_ROOT&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case HKEY_PERFORMANCE_DATA: NomeChiave = &quot;HKEY_PERFORMANCE_DATA&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case HKEY_USERS: NomeChiave = &quot;HKEY_USERS&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Per salvare una chiave 
+          &egrave; necessario che la chiave principale sia una chiave di sistema.&quot;, 
+          vbCritical + vbOKOnly, &quot;FBIRegistry&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Esporta = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit Function</li>
+        <li>&nbsp;&nbsp;End Select</li>
+      </ol><p>La funzione <b>Esporta</b> consente il salvataggio di una chiave, delle 
+        sue sottochiavi e dei loro valori in un file di testo compatibile con 
+        Regedit. La funzione richiede tre argomenti fondamentali: la chiave di 
+        sistema in cui si trova la sottochiave, il percorso logico della sottochiave 
+        rispetto alla chiave di sistema ed il nome del file in cui salvare tali 
+        dati.</p>
+      <p>Gli altri due argomenti consentono di salvare soltanto la chiave specificata 
+        o anche tutte le sue sottochiavi. L'ultimo argomento specifica se creare 
+        un nuovo file di testo oppure aggiungere i dati a quelli gi&agrave; esistenti 
+        nel file.</p>
+      <p>Il controllo alle righe 329-342 assicura che la chiave specificata sia 
+        una chiave di sistema nell'enumerazione <b>ChiavePrincipali</b> ed in 
+        tal caso ne registra il nome nella variabile <b>NomeChiave</b>. Se la 
+        chiave specificata non &egrave; una chiave di sistema verr&agrave; generato 
+        un avviso e l'esportazione verr&agrave; interrotta.</p>
+      <ol class="codicevb" start="343">
+        <li>&nbsp;&nbsp;FileNR = FreeFile</li>
+        <li>&nbsp;&nbsp;If Aggiunge Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Open NomeFile For Append As FileNR</li>
+        <li>&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Open NomeFile For Output As FileNR</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;If LOF(FileNR) = 0 Then Print #FileNR, &quot;REGEDIT4&quot; 
+          &amp; vbNewLine</li>
+        <li>&nbsp;&nbsp;oldKey = lngKeyValue</li>
+        <li>&nbsp;&nbsp;lngKeyValue = 0</li>
+        <li>&nbsp;&nbsp;Call RegOpenKeyEx(ChiavePrincipale, SottoChiave, ByVal 
+          0&amp;, lngKeySecurity, lngKeyValue)</li>
+        <li>&nbsp;&nbsp;If Left$(SottoChiave, 1) &lt;&gt; &quot;\&quot; Then SottoChiave 
+          = &quot;\&quot; &amp; SottoChiave</li>
+        <li>&nbsp;&nbsp;If SottoChiave = &quot;\&quot; Then SottoChiave = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;SalvaRamo CHIAVE_APERTA, NomeChiave &amp; SottoChiave, 
+          FileNR, SottoChiavi</li>
+        <li>&nbsp;&nbsp;Print #FileNR, vbNullString</li>
+        <li>&nbsp;&nbsp;Close FileNR</li>
+        <li>&nbsp;&nbsp;FileNR = 0</li>
+        <li>&nbsp;&nbsp;Call RegCloseKey(lngKeyValue)</li>
+        <li>&nbsp;&nbsp;lngKeyValue = oldKey</li>
+        <li>&nbsp;&nbsp;Esporta = True</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>In funzione dell'argomento <i><b>Aggiungi</b></i> verr&agrave; creato 
+        un nuovo file di testo sovrascrivendo i dati precedenti oppure il file 
+        sar&agrave; aperto in modalit&agrave; di <i>Append</i> per inserire nuovi 
+        dati (righe 344-348). Inoltre se la dimensione del file aperto &egrave; 
+        di zero bytes (ovvero il file &egrave; nuovo oppure vengono aggiunti dati 
+        su un file vuoto) verr&agrave; inserita una breve intestazione per rendere 
+        il file riconoscibile da Regedit (riga 349).</p>
+      <p>Solo in seguito a questi necessari controlli verr&agrave; aperta la chiave 
+        richiesta per l'esportazione e passata con altri dati alla funzione <b>SalvaRamo</b> 
+        che vedremo tra poco. In sostanza la funzione SalvaRamo effettua l'operazione 
+        di esportazione dei dati vera e propria utilizzando l'handle di file passatole 
+        come argomento della funzione.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La nostra funzione <b>Esporta</b> infatti si occuper&agrave; soltanto 
+        dei controlli iniziali, dell'apertura del file, del richiamo della funzione 
+        <b>SalvaRamo</b> e della chiusura di file e chiave. Questo per dare completa 
+        flessibilit&agrave; alla funzione <b>SalvaRamo</b> che non dovr&agrave; 
+        occuparsi di tutti questi noiosi compiti.</p>
+      <ol class="codicevb" start="364">
+        <li>Private Sub SalvaRamo(ByVal Chiave As ChiaviPrincipali, ByVal Percorso 
+          As String, ByVal FileNR As Integer, ByVal SottoChiavi As Boolean)</li>
+        <li>&nbsp;&nbsp;Dim Conta As Integer</li>
+        <li>&nbsp;&nbsp;Dim Conta2 As Long</li>
+        <li>&nbsp;&nbsp;Dim Elementi As Variant</li>
+        <li>&nbsp;&nbsp;Dim ValoreElemento As Variant</li>
+        <li>&nbsp;&nbsp;Dim TipoDati As TipoValoriRegistro</li>
+        <li>&nbsp;&nbsp;Dim Buffer As String</li>
+        <li>&nbsp;&nbsp;Dim Buffer2 As String</li>
+        <li>&nbsp;&nbsp;If Chiave = CHIAVE_APERTA Then Chiave = lngKeyValue</li>
+        <li>&nbsp;&nbsp;Print #FileNR, &quot;[&quot; &amp; Percorso &amp; &quot;]&quot;</li>
+        <li>&nbsp;&nbsp;Elementi = Me.ElencaValori(CHIAVE_APERTA)</li>
+        <li>&nbsp;&nbsp;If Not IsNull(Elementi) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For Conta = LBound(Elementi) To UBound(Elementi)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ValoreElemento = Me.Valore(Elementi(Conta), 
+          TipoDati)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer2 = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elementi(Conta) = Replace(Elementi(Conta), 
+          &quot;\&quot;, &quot;\\&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elementi(Conta) = Replace(Elementi(Conta), 
+          vbCr, &quot;\r&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elementi(Conta) = Replace(Elementi(Conta), 
+          vbLf, &quot;\n&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elementi(Conta) = Replace(Elementi(Conta), 
+          &quot;&quot;&quot;&quot;, &quot;\&quot;&quot;&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer = &quot;&quot;&quot;&quot; 
+          &amp; Elementi(Conta) &amp; &quot;&quot;&quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Elementi(Conta) = &quot;&quot; 
+          Then Buffer = &quot;@&quot;</li>
+      </ol><p>La funzione SalvaRamo, la pi&ugrave; complessa dell'intero progetto, 
+        effettua il salvataggio del contenuto di una chiave su un file gi&agrave; 
+        aperto, mantenendo naturalmente il formato dei dati originali. La funzione 
+        richiede quattro parametri: <i><b>Chiave</b></i> &egrave; la chiave che 
+        si intende salvare, <i><b>Percorso</b></i> &egrave; il percorso logico 
+        della chiave nella struttura ad albero, <i><b>FileNR</b></i> &egrave; 
+        l'handle del file gi&agrave; aperto in cui scrivere i dati ed infine <i><b>Sottochiavi</b></i> 
+        determina se effettuare il salvataggio anche delle sottochiavi e dei valori 
+        in esse contenuti.</p>
+      <p>La funzione si apre con il salvataggio su file del percoso (riga 373) 
+        ed il recupero di tutti i valori presenti nella chiave specificata (riga 
+        374). Per ogni valore recuperato sar&agrave; ottenuto anche il suo contenuto 
+        (riga 377) ed effettuate alcune semplici conversioni per rendere l'esportazione 
+        coerente con il formato REGEDIT4 (righe 379-384). Il valore predefinito 
+        della chiave deve essere salvato come <code>&quot;@&quot;</code>.</p>
+      <ol class="codicevb" start="385">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select Case TipoDati</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case REG_SZ</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ValoreElemento 
+          = Replace(ValoreElemento, &quot;\&quot;, &quot;\\&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ValoreElemento 
+          = Replace(ValoreElemento, vbCr, &quot;\r&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ValoreElemento 
+          = Replace(ValoreElemento, vbLf, &quot;\n&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ValoreElemento 
+          = Replace(ValoreElemento, &quot;&quot;&quot;&quot;, &quot;\&quot;&quot;&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer2 
+          = Buffer &amp; &quot;=&quot;&quot;&quot; &amp; ValoreElemento &amp; 
+          &quot;&quot;&quot;&quot;</li>
+      </ol><p>Per fortuna o purtroppo il registro contiene una variet&agrave; di tipologie 
+        di dati presenti e soprattutto non tutti questi dati sono scritti nella 
+        maniera corretta. Per ogni tipo di dato trattato sar&agrave; necessario 
+        effettuare alcuni aggiustamenti in esportazione.</p>
+      <p>L'esempio pi&ugrave; semplice &egrave; il formato stringa <b>REG_SZ</b> 
+        che richiede soltanto la sostituzione di alcuni caratteri speciali (&quot;\&quot;, 
+        Enter, a capo, virgolette) nelle corrispondenti sequenze escape e ci&ograve; 
+        viene effettuato utilizzando la funzione <b>Replace</b>.</p>
+      <p>Purtroppo il caso degli altri tipi di dati non &egrave; altrettanto semplice. 
+        Esistono infatti alcuni dati che, pur essendo ad esempio valori <b>REG_DWORD</b> 
+        non contengono un valore corretto ma soltanto una matrice di bytes, quasi 
+        che si trattasse di dati <b>REG_BINARY</b>.</p>
+      <ol class="codicevb" start="392">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case REG_BINARY, REG_NONE, 
+          REG_EXPAND_SZ, _</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REG_DWORD_LITTLE_ENDIAN, 
+          REG_DWORD, _</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REG_MULTI_SZ</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If IsArray(ValoreElemento) 
+          Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer 
+          = Buffer &amp; &quot;=hex&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          TipoDati = REG_NONE Then Buffer = Buffer &amp; &quot;(0)&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          TipoDati = REG_EXPAND_SZ Then Buffer = Buffer &amp; &quot;(2)&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          TipoDati = REG_DWORD Then Buffer = Buffer &amp; &quot;(4)&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          TipoDati = REG_MULTI_SZ Then Buffer = Buffer &amp; &quot;(7)&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer 
+          = Buffer &amp; &quot;:&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          Not IsNull(ValoreElemento) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For 
+          Conta2 = LBound(ValoreElemento) To UBound(ValoreElemento)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer 
+          = Buffer &amp; Right$(&quot;00&quot; &amp; LCase$(Hex$(ValoreElemento(Conta2))), 
+          2)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          Conta2 &lt; UBound(ValoreElemento) Then Buffer = Buffer &amp; &quot;,&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          (Len(Buffer) &gt; 76) And (Conta2 &lt; UBound(ValoreElemento)) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer2 
+          = Buffer2 &amp; Buffer &amp; &quot;\&quot; &amp; vbNewLine</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer 
+          = &quot; &quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End 
+          If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next 
+          Conta2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End 
+          If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer2 
+          = Buffer2 &amp; Buffer</li>
+      </ol>
+      <p>Nel caso del tipo di dati binario o DWORD dovr&agrave; quindi esser fatta 
+        un'investigazione pi&ugrave; profonda. Il primo di questi controlli consiste 
+        nel verificare se i dati sono in forma di array ed in tal caso dovranno 
+        essere trattati come dati binari, pur manentendo il formato di dati originale. 
+        Tutti i dati binari devono essere salvati nel formato <code>&quot;hex(x): 
+        XX, YY&quot;</code>. dove x indica il tipo di dati e XX, YY sono i dati 
+        in forma binaria esadecimale. L'unica eccezione sta nel caso dei dati 
+        <b>REG_BINARY</b>, che non richiedono le parentesi che racchiudono il 
+        tipo di dati. Tale formattazione di dati &egrave; fatta alle righe 396-401.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Soltanto adesso sar&agrave; possibile convertire i singoli bytes della 
+        matrice in stringhe esadecimali utilizzando l'istruzione <i>Hex$</i>. 
+        Ma, ahinoi, non ancora finito qui: ogni riga da salvare che superi la 
+        lunghezza di 76 caratteri dovr&agrave; essere spezzata in altre righe 
+        (righe 406-409).</p>
+      <ol class="codicevb" start="413">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf 
+          TipoDati = REG_DWORD Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer 
+          = Buffer &amp; &quot;=dword:&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer2 
+          = Buffer &amp; LCase$(HexDouble(ValoreElemento, 8))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer 
+          = Buffer &amp; &quot;=hex&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          TipoDati &lt;&gt; REG_BINARY Then Buffer = Buffer &amp; &quot;(&quot; 
+          &amp; CStr(TipoDati) &amp; &quot;)&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer 
+          = Buffer &amp; &quot;:&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          Not IsNull(ValoreElemento) Then Buffer = Buffer &amp; CStr(ValoreElemento)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer2 
+          = Buffer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case REG_DWORD_BIG_ENDIAN, 
+          REG_LINK, _</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REG_RESOURCE_LIST</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox 
+          &quot;Tipo di dati non implementato!&quot;, vbCritical + vbOKOnly, &quot;FBIRegistry&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End Select</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Print #FileNR, Buffer2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next Conta</li>
+        <li>&nbsp;&nbsp;End If</li>
+      </ol>
+      <p>Se invece i dati recuperati non sono in forma di matrice, sar&agrave; 
+        verificato che il tipo di dati sia DWORD perch&eacute; anche questo tipo 
+        richiede una sua particolare formattazione come <code>&quot;dword: XX&quot;</code> 
+        dove XX &egrave; il valore DWORD convertito in stringa esadecimale (righe 
+        413-415).</p>
+      <p>Se i dati non sono n&eacute; una matrice di bytes n&eacute; un valore 
+        DWORD allora saranno semplicemente scritti come numero decimale (se i 
+        dati esistono) oppure non verranno scritti affatto. Sar&agrave; cio&egrave; 
+        scritto soltanto il tipo di dati trattato come <code>&quot;hex(x):&quot;</code> 
+        ma non il loro contenuto. Non si tratta infatti di una possibilit&agrave; 
+        remota ma di una consuetudine nell'universo del registro di Windows.</p>
+      <p>I tipi di dati <b>REG_DWORD_BIG_ENDIAN</b>, <b>REG_LINK</b> e <b>REG_RESOURCE_LIST</b> 
+        non saranno affatto trattati e quindi esclusi dal processo di esportazione.</p>
+      <p>Alla riga 427 verr&agrave; infine scritto il buffer di dati preparato 
+        mediante i controlli e le conversioni appena fatti.</p>
+      <ol class="codicevb" start="430">
+        <li>&nbsp;&nbsp;If (SottoChiavi = True) And (Me.NumeroSottoChiavi &gt; 
+          0) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Elementi = ElencaChiavi(CHIAVE_APERTA)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If IsNull(Elementi) Then Exit Sub</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For Conta = LBound(Elementi) To UBound(Elementi)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Print #FileNR, vbNullString</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Conta2 = lngKeyValue</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call RegOpenKeyEx(Chiave, Elementi(Conta), 
+          ByVal 0&amp;, lngKeySecurity, lngKeyValue)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SalvaRamo CHIAVE_APERTA, Percorso 
+          &amp; &quot;\&quot; &amp; Elementi(Conta), FileNR, SottoChiavi</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call RegCloseKey(lngKeyValue)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lngKeyValue = Conta2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next Conta</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Un'intera chiave &egrave; stata salvata su file. Resta pertanto l'ultima 
+        possibilit&agrave; ovvero quella di dover salvare ogni singola sottochiave 
+        della nostra chiave e cos&igrave; le sottochiavi delle sottochiavi, etc... 
+        Quest'operazione &egrave; svolta nel ciclo descritto alle righe 433-440.</p>
+      <p>Sar&agrave; quindi aperta una sottochiave per volta, ricreato il percorso 
+        e richiamata <a href="../glossary/r.htm#RICORSIVO">ricorsivamente</a> 
+        la funzione <b>SalvaRamo</b> con i nuovi dati. La ricorsivit&agrave; assicurer&agrave; 
+        il salvataggio di tutti i valori presenti in ogni sottochiave di ogni 
+        sottochiave della prima chiave.</p>
+      <p>Questa &egrave; la ragione principale per cui abbiamo preferito separare 
+        la routine <b>Esporta</b> da quella <b>SalvaRamo</b>.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p align="center"><a href="ht_044_5.htm">Segue parte 5 &gt;&gt;</a></p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        1 Aprile 2002<br>
+        Corretto il 20 Settembre 2002<br>
+        Rivisitato il 24 Maggio 2003<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

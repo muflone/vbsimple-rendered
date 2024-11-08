@@ -1,0 +1,376 @@
+<html><!-- #BeginTemplate "/Templates/Corso Base2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 16 del Corso Base</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso base - Lezione <!-- #BeginEditable "LEZIONE" -->16<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/base.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="bas_16.htm#STEP1">Alla scoperta dei menu di Visual Basic (quinta 
+    parte)</a>.</li>
+  <li><a href="bas_16.htm#STEP2">Menu Strumenti</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><a name="STEP1"></a>Il Corso Base si conclude con la visione di tutti 
+        i menu dell'IDE di Visual Basic. Alcune voci sono semplicissime da comprendere 
+        e presenti in quasi tutti i programmi per Windows, ma alcune sono realmente 
+        complesse e talvolta ostiche da utilizzare. Nelle lezioni 12-17 vedremo 
+        uno per uno tutti i menu ed approfondiremo le loro opzioni.</p>
+      <hr>
+      <p align="center" class="size3"><a name="STEP2"></a>Menu Strumenti <map name="MapStrumenti"> 
+          <area shape="rect" coords="2,21,143,39" href="#STRUMENTIOPT1" alt="Inserisci routine..." title="Inserisci routine..."> 
+          <area shape="rect" coords="2,38,143,56" href="#STRUMENTIOPT2" alt="Attributi routine..." title="Attributi routine..."> 
+          <area shape="rect" coords="2,64,143,82" href="#STRUMENTIOPT3" alt="Editor di menu..." title="Editor di menu..."> 
+          <area shape="rect" coords="2,90,143,108" href="#STRUMENTIOPT4" alt="Opzioni..." title="Opzioni..."> 
+        </map></p>
+      <p><img src="../images/lezioni/bas16_01.jpg" width="146" height="110" align="right" alt="Figura 1" usemap="#MapStrumenti" border="0">Include 
+        alcuni comandi per svolgere operazioni di diverso genere mediante finestre 
+        di dialogo.</p>
+      <p>Le prime due operazioni consentono di lavorare con funzioni personalizzate 
+        nel nostro form, modulo <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+        standard o di classe <img src="../images/ide/classe.gif" width="16" height="16" align="absmiddle"> 
+        o altro genere di pezzo di codice.</p>
+      <p>&Egrave; presente anche un Editor di menu (visibile anche sulla Barra 
+        degli strumenti).</p>
+      <ol>
+        <li><a name="STRUMENTIOPT1"></a><img src="../images/ide/agroutin.gif" width="16" height="16" align="absmiddle"> 
+          <b>Inserisci routine...</b><br>
+          <img src="../images/lezioni/bas16_02.jpg" width="227" height="182" align="right" alt="Figura 2">Apre 
+          una finestra di dialogo per la creazione di una nuova routine.<br>
+          <br>
+          Include una serie di pulsanti di opzione per decidere il tipo di routine 
+          da creare che pu&ograve; essere:<br>
+          <ul type="disc">
+            <li><b>Sub</b> - Routine che non restituisce alcun valore in uscita 
+              (detta in altri linguaggi Procedura o funzione di tipo Void).<br>
+            </li>
+            <li><b>Function</b> - Routine che restituisce un dato in uscita.<br>
+            </li>
+            <li><b>Property</b> - <a href="../glossary/p.htm#PROPRIETA">Propriet&agrave;</a> 
+              <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+              di lettura e scrittura (Get e Let).<br>
+            </li>
+            <li><b>Event</b> - <a href="../glossary/e.htm#EVENTO">Evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"> 
+              sempre pubblico; non esiste infatti un evento non pubblico.<br>
+              <br>
+            </li>
+          </ul>
+          &Egrave; possibile anche decidere l'area di validit&agrave; della routine 
+          da creare, che pu&ograve; essere:<br>
+          <ul type="disc">
+            <li><b>Public</b> - Pubblica, cio&egrave; accessibile a tutte le parti 
+              del codice. </li>
+            <li><b>Private</b> - Privata, accessibile quindi soltanto alla sezione 
+              del codice in cui &egrave; inserita la funzione.</li>
+          </ul>
+          <br>
+          In ultimo &egrave; possibile anche definire se la routine sar&agrave; 
+          <a href="../glossary/s.htm#STATIC">Static</a> ovvero tutte le varibili 
+          locali in essa contenute saranno di tipo Static ed il loro valore sar&agrave; 
+          mantenuto tra le varie chiamate alla routine.<br>
+          <br>
+          Il comando Inserisci routine &egrave; uno dei comandi meno utilizzati 
+          dagli sviluppatori, sia per la relativa noia di utilizzo (anche se non 
+          &egrave; poi cos&igrave; complessa) sia perch&eacute; &egrave; molto 
+          pi&ugrave; rapido andare a scrivere la dichiarazione della funzione.<br>
+          <br>
+        </li>
+        <li><a name="STRUMENTIOPT2"></a><b>Attributi routine...</b><br>
+          <img src="../images/lezioni/bas16_03.jpg" width="292" height="130" align="right" alt="Figura 3">Mostra 
+          una finestra di dialogo - probabilmente la pi&ugrave; complessa di Visual 
+          Basic - per la definizione degli attributi di una routine.<br>
+          <br>
+          Esistono due modalit&agrave; di visualizzazione di questa finestra di 
+          dialogo: quella ridotta (come quella qui a fianco) e quellla dettagliata 
+          a cui si accedere premendo il pulsante <i><b>Opzioni</b></i>. Sono in 
+          ogni caso mostrate soltanto le routine aggiunte e non quelle standard.<br>
+          <br>
+          &Egrave; presente il nome della routine di cui stiamo variandone gli 
+          attributi. Segue la descrizione della routine che come tale apparir&agrave; 
+          nel <a href="../glossary/v.htm#VISUALIZZATOREDIOGGETTI">Visualizzatore 
+          di oggetti</a> <img src="../images/ide/visogget.gif" width="16" height="16" align="absmiddle"> 
+          quando lo sviluppatore andr&agrave; ad interrogare la routine in questione.<br>
+          <br>
+          Il campo <i>ID contesto Guida</i> serve per associare una sezione della 
+          guida del progetto alla routine in questione. Se lo sviluppatore premesse 
+          il tasto F1 sul nome della funzione nel Visualizzatore di oggetti apparirebbe 
+          la pagina dedicata.<br>
+          <br>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+          <img src="../images/lezioni/bas16_04.jpg" width="292" height="310" align="right" alt="Figura 4">Nella 
+          parte avanzata della finestra di dialogo sono presenti alcuni comandi 
+          particolari che consentono di estendere la funzionalit&agrave; della 
+          funzione a migliorarne il funzionamento. Si raccomanda di non modificare 
+          tali valori fino a quando non si ha una discreta conoscenza del loro 
+          funzionamento.<br>
+          <br>
+          In Visual Basic tutte le routine hanno un loro numero identificativo 
+          detto ID Routine o <b>Dispatch ID</b> (<i><b><a href="../glossary/d.htm#DISPID">DISPID</a></b></i>). 
+          Il programmatore utilizza regolarmente il nome della routine da eseguire, 
+          ma in altri linguaggi quale il C++ &egrave; possibile richiamare la 
+          routine tramite il suo numero identificativo. La casella <i>ID Routine</i> 
+          pu&ograve; essere utilizzata per assegnare un DISPID alla routine. Ci&ograve; 
+          fa s&igrave; che la routine in questione sia legata alle azioni effettuate 
+          sul controllo. Ad esempio se assegnassimo ad una nostra routine il DISPID 
+          relativo alla propriet&agrave; Caption, ogni volta che la Caption del 
+          nostro controllo viene modificata la nostra routine viene eseguita automaticamente. 
+          I DISPID sono definiti come <a href="../glossary/c.htm#COSTANTE">costanti</a> 
+          <a href="../glossary/a.htm#API">API</a> del protocollo <a href="../glossary/a.htm#ACTIVEX">ActiveX</a>.<br>
+          La voce <i>Scheda nella finestra propriet&agrave;</i> serve per indicare 
+          quale pagina delle propriet&agrave; identifica la routine propriet&agrave; 
+          e sar&agrave; richiamata all'utilizzo del comando <b><a href="bas_13.htm#VISUALIZZAOPT13">Pagine 
+          propriet&agrave;</a></b>.<br>
+          La <i>Categoria propriet&agrave;</i> serve per decidere a quale gruppo 
+          di propriet&agrave; la nostra routine sar&agrave; inserita.<br>
+          <br>
+          La casella <i>Nascondi questo membro</i> fa s&igrave; che la routine 
+          sia invisibile nel <a href="../glossary/v.htm#VISUALIZZATOREDIOGGETTI">visualizzatore 
+          di oggetti</a> e nel sistema <a href="../glossary/i.htm#INTELLISENSE">Intellisense</a>. 
+          Il membro sar&agrave; comunque utilizzabile via codice.<br>
+          La casella <i>Predefinita nell'interfaccia utente</i> imposta la nostra 
+          routine propriet&agrave; come propriet&agrave; predefinita; sar&agrave; 
+          pertanto possibile utilizzare il nome dell'oggetto per richiamare automaticamente 
+          la propriet&agrave; in questione.<br>
+          L'attributo <i>Non visualizzare nella finestra Propriet&agrave;</i> 
+          nasconde la propriet&agrave; dalla finestra delle propriet&agrave; ma 
+          non dal visualizzatore di oggetti o nel sistema Intellisense.<br>
+          <br>
+          Segue la sezione dedicata all'Associazione dati (binding); essa consente 
+          ad propriet&agrave; di essere direttamente collegata con i dati di un 
+          database, senza che sia richiesto un codice per la lettura e la scrittura 
+          del database. I dati associati sono gestiti automaticamente da VB ma 
+          affinch&eacute; una propriet&agrave; sia associata ai dati &egrave; 
+          necessario scegliere una o due opzioni di binding.<br>
+          <br>
+          La casella <i>Propriet&agrave; associata a DataField</i> collega i dati 
+          del campo indicato nella propriet&agrave; DataField del database associato 
+          alla propriet&agrave; in esame cui si riferisce questa casella.<br>
+          La casella <i>Mostra nell'insieme DataBindings in fase di progettazione</i> 
+          aggiunge la propriet&agrave; all'insieme DataBindings in modo da poterla 
+          associare ad un campo specifico del database collegato.<br>
+          La casella <i>Chiamata di CanPropertyChange prima della modifica</i> 
+          effettua una chiamata alla funzione CanPropertyChange che si occuper&agrave; 
+          di controllare se &egrave; possibile cambiare i dati della propriet&agrave; 
+          (e quindi della tabella associata).<br>
+          <br>
+        </li>
+        <li><a name="STRUMENTIOPT3"></a><img src="../images/ide/editmenu.gif" width="16" height="16" align="absmiddle"> 
+          <b> Editor di menu...</b><br>
+          <img src="../images/lezioni/bas16_05.jpg" width="293" height="293" align="right" alt="Figura 5">L'editor 
+          dei menu &egrave; uno strumento molto comodo per creare ed organizzare 
+          i menu di un progetto.<br>
+          <br>
+          Nella parte superiore della finestra sono presenti i comandi per definire 
+          il testo del menu, il suo nome come oggetto, l'indice nel caso esso 
+          componga una matrice di menu con lo stesso nome. &Egrave; possibile 
+          anche assegnare dei tasti scorciatoia (Shortcut) ad ogni voce del menu 
+          ed una pagina del sistema guida assegnato.<br>
+          <br>
+          Interessante un breve discorso riguardante la Caption del menu: per 
+          assegnare un tasto di scelta rapida al menu o ad una sua voce far precedere 
+          la lettera da sottolineare come tasto di rapida con <i><b>&amp;</b></i>.<br>
+          Per creare invece una linea di separazione tra le varie voci la Caption 
+          deve essere un semplice trattino orizzontale, come mostrato nella figura 
+          subito sotto la voce <b>Chiudi</b>.<br>
+          <br>
+          Un discorso separato lo merita la voce <i>NegotiatePosition</i>. In 
+          VB infatti &egrave; possibile incorporare degli ambienti di comunicazione 
+          <a href="../glossary/o.htm#OLE">OLE</a>. Ci&ograve; fa si che l'ambiente 
+          stesso, con la sua barra di menu venga inserito all'interno del form. 
+          La barra dei menu del programma ospite prender&agrave; il posto della 
+          barra del nostro progetto.<br>
+          Tuttavia, in taluni casi &egrave; necessario che la nostra barra dei 
+          menu non sparisca. La voce NegotiatePosition permette di determinare 
+          se una voce di menu primaria con tutte le sue sottovoci rimanga presente 
+          anche quando l'oggetto incorporato viene attivato e, se attivato, in 
+          quale posizione debba stare (sinistra, centro, destra). Tale opzione 
+          pu&ograve; essere utilizzata soltanto con voci di menu primarie.<br>
+          <br>
+          Seguono quattro piccole CheckBox per determinare lo stato della voce 
+          di menu attuale: <i>Checked</i> indica se debba apparire un segno di 
+          spunta accanto alla voce; pu&ograve; essere utilizzata per determinare 
+          lo stato di uno voce di menu; <i>Enabled</i> determina se il menu e 
+          le sue sottovoci sono attivati e rispondono agli eventi; <i>Visible</i> 
+          indica se il menu &egrave; visibile; <i>WindowList</i> indica se il 
+          menu conterr&agrave; l'elenco di tutte le finestra MDI Child di un form 
+          <a href="../glossary/m.htm#MDI">MDI</a><img src="../images/controls/mdiform.gif" width="25" height="25" align="absmiddle">primario.<br>
+          <br>
+          Nella parte inferiore della finestra sono presenti alcuni pulsanti ed 
+          una lista di voci di menu. Il menu &egrave; organizzato a gerarchie; 
+          un menu primario potr&agrave; contenere tante voci al suo interno. Ogni 
+          voce si distingue dalla rientranza verso destra rispetto al menu primario. 
+          Nella schermata di esempio possiamo vedere due menu principali di nome 
+          File e Visualizza i quali hanno rispettivamente 4 e 2 voci. <br>
+          &Egrave; possibile riconoscere la posizione gerarchica di ogni voce 
+          di menu in base alla sua rientranza rispetto ai membri precedenti.<br>
+          <br>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+          Sono presenti anche 4 pulsanti a forma di freccia, ognuna indicante 
+          una direzione: la freccia verso <b>sinistra</b> serve per spostare una 
+          voce di menu verso sinistra facendola quindi salire di livello gerarchico; 
+          la freccia verso <b>destra</b> rientra il menu verso destra creando 
+          quindi una voce di secondo, terzo o quarto livello.<br>
+          La freccetta verso l'<b>alto</b> serve semplicemente a spostare la voce 
+          di menu nella posizione precedente ed invertire con la voce che la precede. 
+          Viceversa la freccia verso il <b>basso</b> sposta una voce di menu in 
+          basso e porta la voce successiva al posto di quella che viene abbassata.<br>
+          <br>
+          Il pulsante <i>Successivo</i> permette di spostare l'azione da una voce 
+          di menu alla successiva; il pulsante <i>Inserisci</i> consente di inserire 
+          una nuova voce di menu; il pulsante <i>Elimina</i>, invece elimina la 
+          voce corrente.<br>
+          <br>
+          Questo strumento si presenta come uno dei pi&ugrave; complessi ma il 
+          funzionamento &egrave; abbastanza istintivo e semplice. Probabilmente 
+          il miglior modo per impararne il funzionamento consiste proprio nel 
+          provare le varie funzioni in esso presenti.<br>
+          <br>
+        </li>
+        <li><a name="STRUMENTIOPT4"></a><b>Opzioni...</b><br>
+          Permette la personalizzazione dell'ambiente di sviluppo di Visual Basic. 
+          Consente di attivare o disattivare le caratteristiche del codice, quali 
+          il sistema <a href="../glossary/i.htm#INTELLISENSE">Intellisense</a>, 
+          il controllo sintattico durante la scrittura ed una serie di suggerimenti 
+          aggiuntivi.<br>
+          Consente anche di impostare i colori della scrittura e vari stili; determinare 
+          se salvare automaticamente o su richiesta, il tipo di compilazione, 
+          etc...<br>
+          <br>
+          Si tratta in generale di caratteristiche da impostare una volta ed in 
+          linea generale da non toccare pi&ugrave;. Esse vengono automaticamente 
+          salvate e ripristinate al successivo riavvio di VB.<br>
+          <br>
+        </li>
+      </ol>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->Questo menu, seppur piccolo, si presenta 
+      come il pi&ugrave; complesso a causa delle numerose caratteristiche di ogni 
+      sua voce. In linea generale comunque &egrave; un menu che viene evitato 
+      se non per ottimizzare al meglio il funzionamento di un progetto.<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        19 Luglio 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="bas_15.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna alla quindicesima lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="bas_17.htm">Vai 
+      alla diciassettesima lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

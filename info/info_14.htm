@@ -1,0 +1,248 @@
+<html><!-- #BeginTemplate "/Templates/Info.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Informazioni aggiuntive su Processi e Threads</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Informazioni aggiuntive <!-- #BeginEditable "TITOLO" -->su 
+    Processi e Threads<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/infos.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p>Negli ambienti <i><b>Win32</b></i> (Windows 9x/NT/2000) &egrave; possibile 
+        eseguire pi&ugrave; programmi comtemporaneamente. Il sistema dispone infatti 
+        di un sistema di <a href="../glossary/m.htm#MULTITASKING"><i>multitasking</i></a><i> 
+        preemptive</i>, per il quale il tempo di esecuzione della CPU viene diviso 
+        in varie sezioni ognuna delle quali &egrave; detta <b><a href="../glossary/s.htm#SLICE">slice</a></b> 
+        (fetta); ogni sezione ha la durata approssimativamente di 20 millisecondi.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il sistema, pertanto, assegna un certo numero di <i>slices</i> ai vari 
+        <b><a href="../glossary/t.htm#TASK">task</a></b> (compiti) in base alla 
+        loro priorit&agrave; rispetto agli altri compiti da eseguire. Questa separazione 
+        dei lavori <i>&quot;illude&quot;</i> l'utente che il sistema stia eseguendo 
+        pi&ugrave; lavori contemporaneamente.</p>
+      <p>Ogni programma in esecuzione &egrave; detto <a href="../glossary/p.htm#PROCESSO"><b>Processo</b></a> 
+        e dispone di un suo spazio di <a href="../glossary/i.htm#INDIRIZZO">indirizzamento</a> 
+        virtuale privato, che conterr&agrave; il codice del processo, i suoi dati 
+        ed altre risorse di sistema, quali i files, i tubi (pipe) e le periferiche 
+        di <a href="../glossary/i.htm#INPUT">input</a> e <a href="../glossary/o.htm#OUTPUT">output</a>.<br>
+        Il processo creder&agrave; di avere a disposizione tutto il sistema, cos&igrave; 
+        come una grossa porzione di memoria (fino a 2 GB), persino maggiore della 
+        memoria fisica installata nel computer.<br>
+        Un processo pu&ograve; anche creare ed <a href="../glossary/a.htm#ALLOCARE">allocare</a> 
+        nuovi processi.</p>
+      <p>Ogni processo viene avviato con un singolo <a href="../glossary/t.htm#THREAD"><b>Thread</b></a> 
+        in esecuzione, ma questo pu&ograve; creare nuovi threads e fargli svolgere 
+        diverse mansioni. Il sistema allocher&agrave; le varie slices di CPU ai 
+        singoli threads, in base alla loro priorit&agrave; di esecuzione.</p>
+      <p>Alla scadenza del tempo di esecuzione assegnato al thread, il sistema 
+        sospende il thread, ne memorizza il contenuto nello spazio di indirizzamento 
+        del processo ed avvia l'esecuzione di un altro thread. Al termine dell'esecuzione 
+        di tutti i thread sospesi, viene riavviato il primo thread, dando cos&igrave; 
+        l'apparenza di sistema multitasking.<br>
+        Il contenuto del singolo thread include il set di registri macchina, lo 
+        stack e la posizione in cui il thread &egrave; stato sospeso. Tutti i 
+        threads all'interno di un processo possono utilizzare tutti i dati globali 
+        all'interno dello spazio di indirizzamento virtuale e le risorse di sistema 
+        a disposizione del processo.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La priorit&agrave; del thread &egrave; data dalla somma di tre valori:</p>
+      <ol>
+        <li>Classe di priorit&agrave; del processo: 
+          <ul type="disc">
+            <li><i>High</i> - Alta<br>
+              Per effettuare operazioni in cui la velocit&agrave; &egrave; importante 
+              per assicurare un corretto funzionamento del programma, ad esempio 
+              l'invio di dati alla scheda video.</li>
+            <li><i>Normal</i> - Normale<br>
+              La priorit&agrave; di default, utilizzata dalla gran parte dei programmi.</li>
+            <li><i>Idle</i> - Dormiente<br>
+              Classe di priorit&agrave; molto bassa per eseguire operazioni nei 
+              tempi morti di elaborazione.</li>
+            <li><i>Realtime</i> - Tempo reale<br>
+              La priorit&agrave; pi&ugrave; alta possibile a disposizione del 
+              sistema. I programmi non dovrebbero utilizzare mai tale classe di 
+              priorit&agrave; per non bloccare l'esecuzione di altri programmi. 
+              Viene utilizzata dai driver per le operazioni critiche e brevi quali 
+              il tempo di risposta del mouse o la scrittura dei dati di un programma 
+              di cache.<br>
+              <br>
+            </li>
+          </ul>
+        </li>
+        <li>Livello di priorit&agrave; all'interno della classe del processo: 
+          <ul type="disc">
+            <li><i>Lowest</i> - Il pi&ugrave; basso</li>
+            <li><i>Below normal</i> - Sotto il normale</li>
+            <li><i>Normal</i> - Normale</li>
+            <li><i>Above normale</i> - Sopra il normale</li>
+            <li><i>Highest</i> - Il pi&ugrave; alto<br>
+              <br>
+            </li>
+          </ul>
+        </li>
+        <li>Acceleratore di priorit&agrave;<br>
+          Assegnato dal sistema operativo in caso di richieste di input o output 
+          di un thread.</li>
+      </ol>
+      <p>Ogni processo ed ogni thread viene identificato da un suo <a href="../glossary/h.htm#HANDLE">handle</a> 
+        unico.<br>
+        Un processo avvia inzialmente un thread e quest'ultimo si occuper&agrave; 
+        di avviare gli altri threads per svolgere il lavoro del processo.</p>
+      <hr>
+      <p>&Egrave; possibile verificare lo stato di esecuzione di un thread utilizzando 
+        la funzione <a href="../glossary/a.htm#API">API</a> <i>GetExitCodeThread</i>. 
+        Fintanto che il thread &egrave; in esecuzione, la funzione restituisce 
+        il valore API <b><i>STILL_ACTIVE</i></b> (259). Il thread pu&ograve; essere 
+        sospeso o fatto ripartire attraverso un altro thread mediante l'utilizzo 
+        delle funzioni API <i>SuspendThread</i> e <i>ResumeThread</i>.</p>
+      <p>Un thread pu&ograve; essere terminato in quattro modalit&agrave;:</p>
+      <ul>
+        <li>Chiamata della funzione API <i>ExitThread</i> da parte del thread 
+          in esecuzione.</li>
+        <li>Ritorno della funzione del thread, che genera un <i>ExitThread</i> 
+          o <i>ExitProcess</i> implicito.</li>
+        <li>Chiamata della funzione API TerminateThread da parte di un altro thread 
+          o di un altro processo.</li>
+        <li>Chiamata alla funzione API <i>TerminateProcess</i> con l'handle del 
+          processo in cui il thread &egrave; eseguito, che effettua la chiusura 
+          del processo.</li>
+      </ul>
+      <p>Dopo la chiusura del thread il richiamo della funzione <i>GetExitCodeThread</i> 
+        restituir&agrave; il codice di uscita della funzione eseguita dal thread.</p>
+      <p>Nella sezione HowTo &egrave; presente un esempio per <a href="../howto/ht_030.htm">creare 
+        e chiudere dei threads</a> con Visual Basic.</p>
+      <hr>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Un processo, fintanto che &egrave; in esecuzione, restituisce alla chiamata 
+        <i>GetExitCodeProcess</i> il valore API <b>STILL_ACTIVE</b> (259). La 
+        chiusura del processo &egrave; invocata in quattro situazioni:</p>
+      <ul>
+        <li>Un thread qualunque del processo richiama la funzione API <i>ExitProcess</i>.</li>
+        <li>Il thread primario del processo termina la sua esecuzione mediante 
+          ritorno. Questo infatti genera una chiamata implicita alla funzione 
+          <i>ExitProcess</i>.</li>
+        <li>Tutti i thread del processo terminano.</li>
+        <li>Qualche thread ha richiamato la funzione <i>TerminateProcess</i> con 
+          l'handle del processo.</li>
+      </ul>
+      <p>Alla chiusura del processo tutti i files lasciati aperti saranno chiusi 
+        e gli handle degli oggetti sono deallocati soltanto quando tutti i processi 
+        che li utilizzano chiudono tali handle.<br>
+        Tuttavia, i processi richiamati dal processo appena chiuso non saranno 
+        automaticamente chiusi.</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->Nella sezione HowTo &egrave; presente 
+      un esempio per <a href="../howto/ht_032.htm">creare e chiudere un processo</a> 
+      con Visual Basic.<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI </a><br>
+        30 Aprile 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

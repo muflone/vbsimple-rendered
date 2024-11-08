@@ -1,0 +1,468 @@
+<html><!-- #BeginTemplate "/Templates/ClientServer.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Visualizza il contenuto delle cartelle remote tramite due programmi Client/Server 
+(prima parte)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Visualizza il contenuto 
+    delle cartelle remote tramite due programmi Client/Server (prima&nbsp;parte)<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/cliserv.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+  </div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"> 
+        4<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Vedremo come scrivere una funzione che mostri in un programma client 
+        l'elenco delle cartelle e dei files presenti sul computer in cui &egrave; 
+        presente il server.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Passiamo subito alla costruzione della parte Server, ovvero la parte 
+        del progetto che si occupa di fornire i dati e trasmetterli alla parte 
+        Client. Nel nostro progetto vogliamo leggere la struttura delle cartelle 
+        presenti sul computer dove viene eseguito il Server. Tale struttura verr&agrave; 
+        inviata al programma client che si occuper&agrave; di visualizzarla nella 
+        maniera pi&ugrave; adeguata.</p>
+      <p>Tutte le comunicazioni avverranno via TCP/IP sulla <b>porta 1500</b>. 
+      </p>
+      <p>Il server si compone di tre soli controlli posizionati sopra un form 
+        di nome <b>ServerForm</b>.</p>
+      <p align="center"><img src="../images/cliserv/cliserv005_01.jpg" width="320" height="67" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <p> Abbiamo innanzitutto un controllo Winsock di nome <b>Server</b>. Impostiamo 
+        la sua propriet&agrave; <i>LocalPort</i> a 1500.<br>
+      </p>
+      <p>Inseriamo anche un controllo Timer <img src="../images/controls/timer.gif" width="25" height="25" align="absbottom">di 
+        nome <b>TimeOut</b>. Esso controller&agrave; l'attivit&agrave; del server; 
+        se per 60 secondi non vengono inviati dati dal programma client, il controllo 
+        TimeOut provveder&agrave; a chiudere la connessione. Questo genere di 
+        controlli sono obbligatori, particolarmente in connessioni Dial-Up via 
+        modem. Se si dovesse disconnettere la linea, in alcuni casi, non riusciremmo 
+        pi&ugrave; a connetterci al server perch&eacute; la connessione risulterebbe 
+        gi&agrave; effettuata. In questo modo baster&agrave; aspettare fino a 
+        60 secondi dall'ultimo comando inviato per potersi riconnettere al server. 
+        Impostiamo quindi la propriet&agrave; <i>Interval</i> a 60000 millisecondi, 
+        ovvero 60 secondi.</p>
+      <p>L'ultimo controllo presente sul nostro form &egrave; una Label di nome 
+        <b>StatoConnessione</b>. Essa visualizzer&agrave; se la connessione &egrave; 
+        stabilita oppure se non vi &egrave; nessun utente collegato al server.</p>
+      <p>Prima di passare al codice vero e proprio analizziamone il funzionamento.<br>
+        All'avvio del programma il server si mette in ascolto sulla porta 1500.<br>
+        Nel momento in cui avviene una richiesta di connessione scatta l'<a href="../glossary/e.htm#EVENTO">evento</a> 
+        <i>ConnectionRequest</i> dell'oggetto Server. All'arrivo della richiesta 
+        il server risponde con l'accettazione della chiamata. L'accettazione della 
+        chiamata comporta l'avvenuta connessione, per cui all'interno di tale 
+        evento cambiamo anche la propriet&agrave; <i>Caption</i> della Label <b>StatoConnessione</b> 
+        ed avviamo il Timer <b>TimeOut</b>. </p>
+      <p>Il server autonomamente non invier&agrave; nessun dato al Client. Esso 
+        rester&agrave; fermo fintanto che non sar&agrave; inviato dal Client qualche 
+        comando. La ricezione di dati comporta l'esecuzione dell'evento <i>DataArrival</i>.</p>
+      <p>Tutti i dati inviati al server devono necessariamente terminare con un 
+        INVIO (<a href="../glossary/c.htm#COSTANTE">costante</a> <img src="../images/ide/costante.gif" width="16" height="16" border="0" align="absmiddle"> 
+        vbNewLine). La motivazione &egrave; molto semplice: esistono svariati 
+        programmi di connessione -&nbsp;un esempio lampante &egrave; il Telnet 
+        di Windows&nbsp;- che inviano i dati carattere per carattere. Per cui 
+        al server non arriverebbero mai stringhe complete ma solo tante serie 
+        composte da un solo carattere. Per questo motivo tutti i dati ricevuti 
+        vengono immagazzinati in un <a href="../glossary/b.htm#BUFFER">buffer</a> 
+        finch&eacute; l'ultimo carattere ricevuto non &egrave; il tasto INVIO. 
+        Esso decreta la fine di una riga di comando.</p>
+      <p>Quando il comando si completa con l'INVIO esso sar&agrave; analizzato 
+        da una funzione che si occupa di effettuare le operazioni legate al comando. 
+        Subito dopo l'esecuzione del comando il buffer dei caratteri ricevuti 
+        deve essere svuotato per permettere l'esecuzione di un altro comando.</p>
+      <p>Inoltre ogni volta che viene inviato qualche dato al Server il Timer 
+        <b>TimeOut</b> deve ricominciare il suo conteggio.</p>
+      <p>Vediamo ora il codice:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li>Private DATIINARRIVO As String</li>
+      </ol>
+      <p>La variabile DATIINARRIVO &egrave; il buffer in cui vengono immagazzinati 
+        tutti i caratteri ricevuti fino a quando non viene inviato un INVIO.</p>
+      <ol class="codicevb" start="4">
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Server.Listen</li>
+        <li>End Sub</li>
+      </ol>
+      <p>All'avvio del programma il server viene messo in ascolto sulla porta 
+        indicata dalla propriet&agrave; <i>LocalPort</i>, ovvero la 1500.</p>
+      <ol class="codicevb" start="8">
+        <li>Private Sub Form_Unload(Cancel As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Server_Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Nel momento della chiusura del server vengono chiuse tutte le connessioni 
+        e viene forzata la chiusura del programma.</p>
+      <ol class="codicevb" start="13">
+        <li>Private Sub Server_Close()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Server.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Server.Listen</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;StatoConnessione.Caption = &quot;Nessun utente 
+          collegato&quot;</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Questa routine indica la chiusura della connessione. La riga 14 &egrave; 
+        presente per il fatto che alcune funzioni pi&ugrave; in basso fanno riferimento 
+        a quest'evento, ma senza tale riga la chiamata ad esso non assicura la 
+        chiusura della connessione.<br>
+        &Egrave; soltanto una semplificazione scritturale.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alla chiusura della connessione il server si rimette in ascolto per attendere 
+        un'ulteriore connessione e nel frattempo cambia il contenuto della Label 
+        <b>StatoConnessione</b>. </p>
+      <ol class="codicevb" start="19">
+        <li>Private Sub Server_ConnectionRequest(ByVal requestID As Long)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Server.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Server.Accept requestID</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DoEvents</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TimeOut.Enabled = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;StatoConnessione.Caption = &quot;Un utente 
+          collegato&quot;</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Nel momento in cui il server riceve una richiesta di connessione scatta 
+        quest'evento.<br>
+        Per evitare alcuni errori di connessione gi&agrave; effettuata &egrave; 
+        stata inserita un'istruzione di chiusura della connessione alla riga 20.</p>
+      <p>In seguito a quella avviene l'accettazione della chiamata tramite il 
+        metodo <i>Accept</i>.<br>
+        Da questo momento in poi scatta il contatore dei 60 secondi prima della 
+        chiusura della connessione e viene aggiornato il contenuto della Label 
+        <b>StatoConnessione</b>. </p>
+      <ol class="codicevb" start="27">
+        <li>Private Sub Server_DataArrival(ByVal bytesTotal As Long)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim DATI As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TimeOut.Enabled = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;On Error Resume Next</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Server.GetData DATI, vbString, bytesTotal</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DATIINARRIVO = DATIINARRIVO &amp; DATI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Right(DATIINARRIVO, 2) = vbNewLine Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GestisciComandi Left(DATIINARRIVO, 
+          Len(DATIINARRIVO) - 2)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATIINARRIVO = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TimeOut.Enabled = True</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Questo evento viene eseguito ogni volta che il server riceve dei dati.<br>
+        Per la motivazione vista prima, i dati vengono memorizzati in un buffer 
+        di nome <b>DATIINARRIVO</b> fino a quando l'ultimo carattere inviato non 
+        &egrave; un INVIO ovvero vbNewLine.</p>
+      <p>La ricezione di un dato comporta l'azzeramento del contatore <b>TimeOut</b> 
+        effettato tramite la riga 29.<br>
+        I dati inviati - siano essi singoli caratteri o parole complete - vengono 
+        ricevuti tramite l'istruzione <i>GetData</i> della riga 31. Tali dati 
+        saranno comunque accodati al contenuto del buffer.</p>
+      <p>Se l'ultimo carattere contenuto nel buffer &egrave; INVIO, allora il 
+        buffer dovr&agrave; essere analizzato per controllare se esso contiene 
+        dei comandi validi per il serve.<br>
+        Alla riga 33 c'&egrave; scritto di estrarre gli ultimi <b>due</b> caratteri 
+        e non soltanto l'ultimo perch&eacute; nei sistemi Windows il tasto INVIO 
+        &egrave; composto da due caratteri ASCII. La costante <i><b>vbNewLine</b></i> 
+        ha infatti la lunghezza di due bytes.</p>
+      <p>Se l'ultimo tasto inviato &egrave; INVIO verr&agrave; eseguita la funzione 
+        <b><i>GestisciComandi</i></b>, che analizza il contenuto del buffer.</p>
+      <p>In seguito all'analisi dei parametri il buffer viene azzerato per permettere 
+        la ricezione di nuovi comandi (riga 35).</p>
+      <p>Dopo quest'operazione viene riattivato il contatore <b>TimeOut</b> che 
+        permette la disconnessione automatica dopo 60 secondi di inattivit&agrave;.</p>
+      <ol class="codicevb" start="40">
+        <li>Private Sub TimeOut_Timer()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Server_Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TimeOut.Enabled = False</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Infatti dopo 60 secondi di inattivit&agrave; scatta l'evento <i>Timer</i> 
+        del controllo <b>TimeOut</b>. Esso effettua la disconnessione tramite 
+        la funzione Server_Close (che al suo interno racchiude l'istruzione di 
+        disconnessione).</p>
+      <ol class="codicevb" start="45">
+        <li>Private Sub GestisciComandi(ByVal COMANDO As String)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim VALORE As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;On Error Resume Next</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If InStr(1, COMANDO, &quot; &quot;) &lt;= 
+          0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select Case UCase(COMANDO)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          &quot;QUIT&quot;: Server_Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          &quot;BYE&quot;: Server_Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          &quot;DIR&quot;: LeggiFilesDir CurDir, True, True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          &quot;DIRS&quot;: LeggiFilesDir CurDir, True, False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          &quot;DIRF&quot;: LeggiFilesDir CurDir, False, True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          Else: Server.SendData &quot; -ERR: Comando sconosciuto -> &quot; &amp; 
+          COMANDO &amp; vbNewLine</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End Select</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VALORE = Trim(Mid(COMANDO, 
+          InStr(1, COMANDO, &quot; &quot;) + 1))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If UCase(Left(COMANDO, 
+          InStr(1, COMANDO, &quot; &quot;) - 1)) = &quot;CD&quot; Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ChDir 
+          VALORE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Server.SendData 
+          &quot; +OK: La cartella di lavoro &eacute;: &quot; &amp; CurDir &amp; 
+          vbNewLine</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Questa funzione si occupa di smistare i dati ricevuti dal controllo Server.<br>
+        Essa innanzitutto controlla se all'interno del comando inviato ci sia 
+        uno spazio separatore. La sua presenza dovrebbe indicare che tale comando 
+        richiede dei parametri. Se non vi &egrave; spazio separatore viene eseguito 
+        un test tramite l'istruzione <i>Select Case</i>.</p>
+      <p>Seguono una serie di possibili comandi, come la chiusura della connessione 
+        o l'elencazione di tutti i files, dei soli files o delle sole cartelle 
+        contenute nella directory di lavoro.<br>
+        Se il comando non rientra in quelli elencati precedentemente viene inviato 
+        al client un messaggio di errore.</p>
+      <p>I messaggi che invia il server iniziano con &quot; +OK:&quot; se l'esecuzione 
+        del comando &egrave; esatta oppure con &quot; -ERR:&quot; se l'esecuzione 
+        non &egrave; andata a buon fine.</p>
+      <p>Per ragioni di compatibilit&agrave; in ogni caso alla fine di ogni risposta 
+        da parte del server segue un carattere di INVIO (vbNewLine).</p>
+      <p>Se il comando passato alla funzione <b>GestisciComandi</b> contiene almeno 
+        uno spazio viene separato il comando vero (quello precedente allo spazio) 
+        dai parametri che seguono lo spazio. Il parametro viene memorizzato in 
+        una variabile di nome <b>Valore</b>.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Questo server gestisce soltanto un comando parametrico: il CD, ovvero 
+        la richiesta di cambio della cartella di lavoro. Viene per cui effettuato 
+        un controllo se il comando parametrico &egrave; CD. In caso di risposta 
+        affermativa viene cambiata la directory di lavoro tramite l'istruzione 
+        <i>ChDir</i> e viene inviato un messaggio di conferma con la nuova cartella.</p>
+      <blockquote> 
+        <p>Public Sub LeggiFilesDir(ByVal CARTELLA As String, ByVal CARTELLE As 
+          Boolean, ByVal FILES As Boolean)</p>
+      </blockquote>
+      <p>L'ultima funzione del programma Server &egrave; la <b>LeggiFilesDir</b> 
+        che effettua la scansione di una cartella e restituisce al programma client 
+        una riga contenente la lista dei files e/o cartelle contenuti in essa. 
+        La funzione richiede tre parametri: il primo (<b>CARTELLA</b>) &egrave; 
+        la cartella di cui effettuare la scansione; il secondo (<b>CARTELLE</b>) 
+        determina se devono essere restituite le cartelle. Se il suo valore &egrave; 
+        False tutte le cartelle saranno escluse dalla scansione. L'ultimo parametro 
+        (<b>FILES</b>) indica se devono essere restituiti i nomi dei files. Se 
+        ad esempio il parametro CARTELLE &egrave; True ed il parametro FILES &egrave; 
+        False, saranno restituite soltanto le cartelle contenute nella directory 
+        di lavoro. Quando, invece entrambi i parametri sono impostati a True saranno 
+        restituiti sia i files che le cartelle contenuti nella directory di lavoro.</p>
+      <ol class="codicevb" start="66">
+        <li>Public Sub LeggiFilesDir(ByVal CARTELLA As String, ByVal CARTELLE 
+          As Boolean, ByVal FILES As Boolean)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim ELENCOFILESDIR As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim TEMPSTR As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim VALIDO As Boolean</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ELENCOFILESDIR = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Right(CARTELLA, 1) = &quot;\&quot; Then 
+          CARTELLA = Left(CARTELLA, Len(CARTELLA - 1))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TEMPSTR = Dir(CARTELLA &amp; &quot;\*.*&quot;, 
+          vbArchive + vbDirectory + vbHidden + vbNormal + vbReadOnly + vbSystem)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;While TEMPSTR &lt;&gt; &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VALIDO = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If (CARTELLE = True) 
+          And (GetAttr(CARTELLA &amp; &quot;\&quot; &amp; TEMPSTR) And vbDirectory) 
+          = vbDirectory Then VALIDO = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If (FILES = True) 
+          And (GetAttr(CARTELLA &amp; &quot;\&quot; &amp; TEMPSTR) And vbDirectory) 
+          &lt;&gt; vbDirectory Then VALIDO = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If VALIDO = True Then 
+          ELENCOFILESDIR = ELENCOFILESDIR &amp; vbNewLine &amp; TEMPSTR</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEMPSTR = Dir</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Wend</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Server.SendData &quot; +OK: &quot; &amp; ELENCOFILESDIR 
+          &amp; vbNewLine</li>
+        <li>End Sub</li>
+      </ol>
+      <p>La variabile <b>ELENCOFILESDIR</b> conterr&agrave; l'elenco di tutti 
+        i files o le cartelle rilevate nella scansione, ognuga separata da INVIO 
+        (vbNewLine). Alla riga 70 tale variabile viene inizializzata con una stringa 
+        nulla.</p>
+      <p>Alla riga 71 viene effettuato un controllo: se l'ultimo carattere del 
+        parametro CARTELLA &egrave; &quot;\&quot; allora viene in automatico scartato 
+        prendendo tutti i caratteri di CARTELLA tranne l'ultimo.</p>
+      <p>Alla riga 72 inizia la vera e propria scansione.<br>
+        Per il nostro scopo servono sia i files sia le cartelle. Saranno poi i 
+        parametri CARTELLE e FILES che decideranno se gli uni o gli altri debbano 
+        essere restituiti al client. Questa riga utilizza la funzione <i>Dir</i> 
+        per elencare tutti i files o cartelle (*.*) con qualunque attributo e 
+        memorizza il primo di essi nella variabile <b>TEMPSTR</b>.</p>
+      <p>Alla riga 73 viene azzerato il contenuto della variabile <b>VALIDO</b>. 
+        Essa servir&agrave; per determinare se l'elemento estratto dalla directory 
+        di lavoro deve essere aggiunto all'elenco.</p>
+      <p>Segue un ciclo che si ripeter&agrave; finch&eacute; esistono files o 
+        cartelle nella directory di lavoro.<br>
+        All'interno del ciclo vengono effettuati dei controlli: se il parametro 
+        CARTELLE &egrave; True <b>E</b> l'elemento estratto (contenuto in TEMPSTR) 
+        &egrave; una cartella, segna l'attributo <b>VALIDO</b> a True.<br>
+        Altres&igrave; viene controllato se il parametro FILES &egrave; True <b>E</b> 
+        l'elemento estratto <b>non</b> &egrave; una cartella (ossia &egrave; un 
+        file - all'interno di una directory ci sono soltanto files e cartelle; 
+        tutto ci&ograve; che non &egrave; cartella &egrave; file) viene segnato 
+        l'attributo <b>VALIDO</b>.</p>
+      <p>Alla riga 77 viene controllato se l'attributo <b>VALIDO</b> &egrave; 
+        True; in caso positivo il file indicato nella variabile <b>TEMPSTR</b> 
+        viene aggiunto all'elenco degli elementi, separato dal precedente da un 
+        INVIO.</p>
+      <p>L'ultima riga prima della fine del ciclo (riga 78) cerca l'elemento successivo 
+        nella scansione.<br>
+        Se ci sono altri elementi il ciclo si ripete, altrimenti il ciclo termina.</p>
+      <p>Subito dopo la fine del ciclo viene inviato al programma client l'elenco 
+        degli elementi della scansione nella solita forma: <code>&quot; +OK:&quot;</code> 
+        e l'INVIO alla fine della riga.</p>
+      <p>La parte server di questo programmino termina qui.<br>
+        Nella prossima parte della richiesta vedremo come sviluppare la parte 
+        client che ricever&agrave; i dati inviati dal Server.</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p align="center"><a href="clser_05_2.htm">Segue parte 2 &gt;&gt;</a></p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        4 Giugno 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice Client/Server</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

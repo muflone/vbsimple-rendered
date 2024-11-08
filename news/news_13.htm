@@ -1,0 +1,297 @@
+<html><!-- #BeginTemplate "/Templates/Articoli.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Utilizzare i Watch e l'Object Browser per analizzare un oggetto WebBrowser</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Utilizzare i Watch e l'Object 
+    Browser per analizzare un oggetto WebBrowser<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/news.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+  </div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Quest'articolo nasce da <a href="../forum/topic.asp?TOPIC_ID=243">una 
+        domanda</a> posta nel <a href="../forum/">Forum di 
+        VBSimple</a> circa il recupero del testo attualmente selezionato all'interno 
+        di una pagina web caricata in un controllo <b>WebBrowser</b>. Personalmente 
+        non conoscevo la soluzione ma sono arrivato al recupero delle informazioni 
+        necessarie con la semplice analisi riportata in quest'articolo. Ho ritenuto 
+        utile e costruttivo scrivere l'articolo perch&egrave; la coppia <i> <b>Watch</b></i> 
+        e <i><b>Object Browser</b></i> (chiamati in italiano rispettivamente <i>Espressioni 
+        di controllo</i> e <i>Visualizzatore oggetti</i>) consente un'analisi 
+        molto approfondita dei contenuti delle librerie ActiveX esterne, in grado 
+        di supplire alla troppo spesso frammentaria documentazione delle librerie.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Per capire quanto spiegato in quest'articolo si raccomanda di seguire 
+        passo passo il progetto sviluppato; a tal fine sar&agrave; necessario 
+        inserire un riferimento al controllo <i><b>Microsoft Internet Controls</b></i> 
+        (<i>SHDOCVW.DLL</i>), aggiungere un controllo <i>WebBrowser</i><img src="../images/controls/webbrowser.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>wb1</b> sopra un form ed un semplice <i>CommandButton</i> di nome 
+        <b>cmdTesto</b>. Il codice inizialmente includer&agrave; due sole righe, 
+        la prima all'interno della routine di gestione dell'evento <i><b>Load</b></i> 
+        del Form e la seconda legata al <i><b>Click</b></i> sul pulsante:</p>
+      <ol class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wb1.Navigate &quot;http://www.vbsimple.net/forum&quot;</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub cmdTesto_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Stop</li>
+        <li>End Sub</li>
+      </ol>
+      <p>La prima delle due istruzioni richiamer&agrave; il forum di VBSimple 
+        all'interno del controllo WebBrowser, mentre la seconda interromper&agrave; 
+        l'esecuzione del codice per trasferire il controllo all'ambiente di Visual 
+        Basic. Naturalmente al posto di quello Stop andr&agrave; inserito il codice 
+        che vedremo fra poco. L'interruzione ci servir&agrave; per capire come 
+        recuperare le informazioni che ci servono.</p>
+      <p><!-- #BeginLibraryItem "/Library/Notes1.lbi" --><img src="../images/notes.gif" width="56" height="57" align="left"><!-- #EndLibraryItem -->Abbiamo 
+        scelto di usare il Forum di VBSimple perch&eacute; si tratta di una pagina 
+        semplice, senza frames (le divisioni dell'area in pi&ugrave; parti), a 
+        differenza della pagina principale di VBSimple che contiene tre frames 
+        al suo interno. La soluzione qui spiegata infatti non funziona correttamente 
+        in presenza di frames, ma non &egrave; questo scopo lo scopo dell'articolo.</p>
+      <hr>
+      <p>Eseguire il progetto, attendere il caricamento della pagina e selezionare 
+        una o pi&ugrave; parole nella pagina, come faremmo solitamente all'interno 
+        del browser, trascinando cio&egrave; il cursore del mouse. Nel nostro 
+        esempio supponiamo una situazione del genere:</p>
+      <p align="center"><img src="../images/news/news13_01.png" width="411" height="175" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <p>Come mostrato nella Figura 1 abbiamo selezionato il testo <b>&quot;dedicato 
+        esclusivamente alla pubblicazione di links&quot;</b>, disposto su tre 
+        righe differenti ma continue. Il click sopra il pulsante Testo selezionato 
+        dovr&agrave; restituirci proprio il suddetto testo. Attualmente al posto 
+        del codice necessario c'&egrave; solo uno Stop; clicchiamo il pulsante 
+        e e quando il programma verr&agrave; interrotto selezioniamo wb1 dall'istruzione 
+        che carica la pagina, clicchiamo il tasto destro e scegliamo l'opzione 
+        <i>Aggiungi Espressione di Controllo</i> (<i><b>Watch</b></i>) come evidenziato 
+        nella Figura&nbsp;2:</p>
+      <p align="center"><img src="../images/news/news13_02.png" width="375" height="166" alt="Figura 2"><br>
+        <b>Figura 2</b></p>
+      <p>Sar&agrave; mostrata la finestra di dialogo <i>Aggiungi espressione di 
+        controllo</i> (<i><b>Add Watch</b></i>), selezionare la voce <b>(tutte 
+        le routine)</b> a fianco dell'etichetta Routine, quindi premere <i>OK</i>.</p>
+      <p align="center"><img src="../images/news/news13_03.png" width="307" height="222" alt="Figura 3"><br>
+        <b>Figura 3</b></p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Si aprirà una finestrella a parte, solitamente posta in basso, contenente 
+        il Watch attivato in precedenza, con una struttura ad albero da sfogliare. 
+        Al suo interno sono elencate tutte le proprietà leggibili del controllo 
+        WebBrowser (vale naturalmente anche per qualsiasi altro oggetto). In particolare 
+        per il nostro scopo interessa la propriet&agrave; <b>Document</b>, possiamo 
+        intuirlo sfogliando le propriet&agrave; una per una ed andando per esclusione. 
+        Apriamo la struttura e osserviamo le altre propriet&agrave; all'interno.</p>
+      <p><!-- #BeginLibraryItem "/Library/Notes2.lbi" --><img src="../images/notes2.gif" width="31" height="32" align="left"><!-- #EndLibraryItem -->Particolare 
+        attenzione deve essere dedicata alle propriet&agrave; circolari, quali 
+        <i>Application</i>. Questa infatti punta allo stesso oggetto, cos&igrave; 
+        l'esplorazione risulta infinita: dentro Application c'&egrave; un altra 
+        Application (se stessa in realt&agrave;) e dentro questa un'altra ancora 
+        e ancora e cos&igrave; via... </p>
+      <p align="center"><img src="../images/news/news13_04.png" width="463" height="176" alt="Figura 4"><br>
+        <b>Figura 4</b></p>
+      <p>Sfogliamo le propriet&agrave; fino a quando non arriviamo ad una che 
+        potrebbe fare al caso nostro: <b>Selection</b>, che in inglese significa 
+        appunto selezione. Al suo interno non sembra esserci alcuna propriet&agrave; 
+        che faccia riferimento al nostro testo scelto nella finestra, potremmo 
+        procedere oltre ma nessun'altra propriet&agrave; della struttura riporta 
+        ci&ograve; che cerchiamo.</p>
+      <p align="center"><img src="../images/news/news13_05.png" width="520" height="48" alt="Figura 5"><br>
+        <b>Figura 5</b></p>
+      <p>Approfondiamo perci&ograve; la propriet&agrave; Selection che risulta 
+        essere di tipo <b>IHTMLSelectionObject</b> (la presenza del doppio tipo 
+        di dato &egrave; giustificata da alcuni fattori complessi, quali le interfacce 
+        polimorfiche o quelle doppie, dette altrimenti <i>dual interfaces</i>). 
+        In questi casi il tipo di dato reale &egrave; comunque sempre il secondo.</p>
+      <p>Sorge qui una complicazione che pu&ograve; sembrare strana e rendere 
+        pi&ugrave; difficile la nostra ricerca: tra le classi native di VB non 
+        esiste nessuna IHTMLSelectionObject; la stessa non appare neanche nella 
+        libreria contenente il WebBrowser.</p>
+      <p>La classe è definita nella libreria <i>Microsoft HTML Object Library</i> 
+        (MSHTML.TLB) che dovremo aggiungere manualmente al progetto dalla voce 
+        <i><b>Riferimenti</b></i> nel menu <i>Progetto</i>. Questo genere di notizia 
+        non &egrave; scritta da alcuna parte e tocca al fiuto del programmatore 
+        capire dove recuperare tale informazione. <img src="../images/smiley/blackeye.gif" width="15" height="15" align="absmiddle"></p>
+      <hr>
+      <p>Per investigare il contenuto completo della classe IHTMLSelectionObject 
+        <i>e quindi della proprietà Selection</i> sar&agrave; necessario dare 
+        uno sguardo al secondo strumento d'analisi: il Visualizzatore di oggetti 
+        <img src="../images/ide/visogget.gif" width="16" height="16" align="absmiddle"> 
+        (<i><b>Object Browser</b></i>) richiamabile tramite il menu Visualizza 
+        o premendo semplicemente il tasto F2. Il funzionamento del Visualizzatore 
+        di oggetti &egrave; <a href="../base/bas_11.htm">spiegato nel Corso Base</a>.</p>
+      <p>Selezionare dalla ComboBox in alto a sinistra libreria MSHTML e cercare 
+        tra le classi (la colonna di sinistra) <b>IHTMLSelectionObject</b>. Troveremo 
+        al suo interno 1 proprietà (la stessa che era riportata nella struttura 
+        ad albero indicata prima) e 3 metodi.</p>
+      <p align="center"><img src="../images/news/news13_06.png" width="322" height="194" alt="Figura 6"><br>
+        <b>Figura 6</b></p>
+      <p>Clear ed Empty difficilmente serviranno al nostro scopo, ma piuttosto 
+        il metodo <b>CreateRange</b> desta il nostro interesse; cliccando e leggendo 
+        la sua definizione in fondo scopriamo che restituisce un oggetto dichiarato 
+        come Object, ma non sappiamo di quale tipo esattamente e cosa conterr&agrave;.</p>
+      <p>Con la stessa tecnica di prima interrogheremo il risultato della chiamata 
+        al metodo CreateRange; per far ci&ograve; richiameremo la finestra <i>Aggiungi 
+        Espressione di controllo</i>, avendo cura di specificare il nome del nuovo 
+        oggetto da analizzare, sotto l'etichetta <i>Espressione</i>, come mostrato 
+        nella Figura&nbsp;7.</p>
+      <p align="center"><img src="../images/news/news13_07.png" width="307" height="222" alt="Figura 7"><br>
+        <b>Figura 7</b></p>
+      <p>Verr&agrave; aggiunto un altro watch, e scopriremo subito che si tratta 
+        di un oggetto di classe <b>IHTMLTxtRange</b>.</p>
+      <p align="center"><img src="../images/news/news13_08.png" width="510" height="37" alt="Figura 8"><br>
+        <b>Figura 8</b></p>
+      <p>Possiamo anche notare subito che al suo interno sono contenute due propriet&agrave; 
+        di tipo String che contengono esattamente il testo che avevamo selezionato 
+        in precedenza. Il nostro viaggio sembra terminato ma vogliamo procedere 
+        oltre, e conoscere il contenuto dell'oggetto di classe IHTMLTxtRange.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Cerchiamo perci&ograve; detta classe nell'Object Browser e troveremo 
+        due proprietà di nome <b>text</b> e <b>htmltext</b> (le stesse mostrate 
+        all'interno del Watch), assieme a tante altre funzioni che il Watch non 
+        presenta. Ciascuna di queste potrebbe richiedere ulteriori analisi combinazioni 
+        da Watch&nbsp;+&nbsp;Object Browser.</p>
+      <p align="center"><img src="../images/news/news13_09.png" width="322" height="194" alt="Figura 9"><br>
+        <b>Figura 9</b></p>
+      <hr>
+      <p>Possiamo quindi modificare il nostro codice, rimuovendo la riga Stop 
+        e sostituendola ad esempio con la seguente:</p>
+      <p class="codicevb">&nbsp;&nbsp;MsgBox wb1.Document.selection.createRange.Text, 
+        vbInformation</p>
+      <p>Ottenendo cos&igrave; la visualizzazione del testo evidenziato in precedenza. 
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Lo scopo di questo tutorial non &egrave; quello di mostrare in una finestra 
+        il testo selezionato in un oggetto WebBrowser ma piuttosto quello di insegnare 
+        come recuperare queste informazioni, come scoprire i contenuti degli oggetti 
+        complessi e come orientarsi di fronte lo smarrimento dovuto ad un componente 
+        sconosciuto.</p>
+      <p>Watch ed Object Browser accoppiati possono divenire degli strumenti indispensabili 
+        per l'analisi delle librerie ActiveX e degli oggetti sia in fase di progettazione 
+        (Object Browser) che di esecuzione (Watch ed Object Browser). Sono convinto 
+        che <b>oltre il 60%</b> dei problemi legati alla difficile implementanzione 
+        di una soluzione gi&agrave; nota possono essere risolti conoscendo l'uso 
+        di questi due potentissimi strumenti.</p>
+      <!-- #EndEditable -->
+      <!-- #BeginEditable "CREDITS" --> 
+      <p align="right" class="credits2"><a href="../vbmail.htm?id=1">Fibia FBI</a><br>
+        5 Dicembre 2003<br>
+        Ripubblicato il 21 Gennaio 2004</p>
+      <!-- #EndEditable --><!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli articoli</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

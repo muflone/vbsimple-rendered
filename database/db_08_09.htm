@@ -1,0 +1,861 @@
+<html><!-- #BeginTemplate "/Templates/Database2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Il linguaggio SQL (l'operatore JOIN)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Il linguaggio SQL<br>
+    L'operatore JOIN<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/database.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>La possibilit&agrave; di suddividere i dati in pi&ugrave; tabelle sarebbe 
+        inutile se non si potesse unire il contenuto di pi&ugrave; tabelle in 
+        un unico set di risultati; abbiamo infatti gi&agrave; anticipato il concetto 
+        di JOIN accennando alla possibilit&agrave; di specificare pi&ugrave; origini 
+        nella clausola <b>FROM</b> trattata <a href="db_08_01.htm">qualche pagina 
+        addietro</a>. Tuttavia l'insieme dei JOIN &egrave; molto pi&ugrave; complesso 
+        di quanto presentato nelle pagine precedenti.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Un'operazione di JOIN unisce il contenuto di una o pi&ugrave; tabelle 
+        con l'origine specificata nella clausola FROM; il suo funzionamento &egrave; 
+        infatti basato sull'uso della clausola FROM e si presenta immediatamente 
+        accanto, in un'operazione di selezione:</p>
+      <p class="codicevb2">SELECT &lt;campi&gt;<br>
+        FROM &lt;origine&gt;<br>
+        &lt;tipo di join&gt; &lt;origine&gt;<br>
+        [ ON &lt;campo&gt; &lt;relazione&gt; &lt;campo&gt; ]</p>
+      <p>Anzich&egrave; specificare pi&ugrave; origini nella clausola FROM la 
+        soluzione ideale &egrave; quella di specificare un'unica origine in FROM 
+        e tutte le altre origini in tante clausole JOIN, ognuna con la propria 
+        relazione con l'origine principale. Prima di affrontare in dettaglio il 
+        comportamento dell'operatore JOIN &egrave; necessaria una presentazione 
+        dei diversi tipi di join:</p>
+      <ul>
+        <li><b><a href="db_08_09.htm#INNERJOIN">INNER JOIN</a></b><br>
+          Il JOIN interno, sicuramente il principale, stabilisce che i dati che 
+          verranno restituiti sono <b>soltanto quelli</b> che corrispondono al 
+          critero formato dalla relazione dei due campi; tutte le righe che non 
+          rientrano nella relazione sono escluse, sia dall'origine principale 
+          che da quelle coinvolte nelle relazioni. Corrisponde alla stessa modalit&agrave; 
+          di JOIN trattata nell'articolo dedicato all'istruzione SELECT.<br>
+          <br>
+        </li>
+        <li><b><a href="db_08_09.htm#LEFTJOIN">LEFT OUTER JOIN</a></b><br>
+          Il primo dei JOIN esterni, aggiunge ai risultati del JOIN interno anche 
+          quelle righe presenti nell'origine presente a sinistra (LEFT) della 
+          clausola JOIN; le nuove righe formate da questi dati aggiuntivi sono 
+          riempiti con valori <a href="../glossary/n.htm#NULL">NULL</a>.<br>
+          <br>
+        </li>
+        <li><b><a href="db_08_09.htm#RIGHTJOIN">RIGHT OUTER JOIN</a></b><br>
+          Il JOIN esterno opposto al precedente, aggiunge ai risultati del JOIN 
+          interno anche le righe dell'origine che si trova alla destra (RIGHT) 
+          della clausola JOIN; le righe non corrispondenti sono riempite con valori 
+          NULL.<br>
+          <br>
+        </li>
+        <li><b><a href="db_08_09.htm#FULLJOIN">FULL OUTER JOIN</a></b><br>
+          La combinazione di JOIN interno, esterno sinistro ed esterno destro, 
+          include tutte le righe presenti nelle orignini a sinistra e a destra 
+          della clausola; i dati presenti in una delle origini ma non corrisponti 
+          nell'altra conterranno valori NULL.<br>
+          <br>
+        </li>
+        <li><b><a href="db_08_09.htm#CROSSJOIN">CROSS JOIN</a></b><br>
+          Un JOIN non supportato direttamente da tutti i database, basato praticamente 
+          sull'assenza di una relazione che limiti i dati restituiti. Corrisponde 
+          alla modalit&agrave; di JOIN trattata negli articoli precedenti senza 
+          tuttavia la presenza della clausola di relazione. Comporta la permutazione 
+          di tutte le righe delle origini coinvolte nella relazione.<br>
+        </li>
+      </ul>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Vediamo in esame le singole modalit&agrave; di JOIN, il loro funzionamento 
+        ed una serie di esempi per cercare di chiarire questo concetto alquanto 
+        complesso. A scopo di esempio immaginiamo una situazione di un'azienda 
+        che mantiene in due tabelle separate il personale generale ed i soli dipendenti.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr> 
+          <td align="center" width="50%" valign="top"> 
+            <table width="90%" border="1" cellspacing="2" cellpadding="2">
+              <tr> 
+                <th colspan="3">PERSONALE</th>
+              </tr>
+              <tr> 
+                <th width="33%">NOME</th>
+                <th width="34%">COGNOME</th>
+                <th width="33%">RUOLO</th>
+              </tr>
+              <tr> 
+                <td width="33%">Lucio</td>
+                <td width="34%">Capelli</td>
+                <td width="33%">Ragioniere</td>
+              </tr>
+              <tr> 
+                <td width="33%">Marco</td>
+                <td width="34%">Tardi</td>
+                <td width="33%">Ragioniere</td>
+              </tr>
+              <tr> 
+                <td width="33%">Maurizio</td>
+                <td width="34%">Maugeri</td>
+                <td width="33%">Usciere</td>
+              </tr>
+              <tr> 
+                <td width="33%">Pasquale</td>
+                <td width="34%">Catozzo</td>
+                <td width="33%">Manager</td>
+              </tr>
+              <tr> 
+                <td width="33%">Milena</td>
+                <td width="34%">Piconi</td>
+                <td width="33%">Responsabile Acq.</td>
+              </tr>
+            </table>
+          </td>
+          <td width="50%" align="center" valign="top"> 
+            <table width="90%" border="1" cellspacing="2" cellpadding="2">
+              <tr> 
+                <th colspan="3">DIPENDENTI</th>
+              </tr>
+              <tr> 
+                <th width="33%">NOME</th>
+                <th width="34%">COGNOME</th>
+                <th width="33%">RUOLO</th>
+              </tr>
+              <tr> 
+                <td width="33%">Lucio</td>
+                <td width="34%">Capelli</td>
+                <td width="33%">Ragioniere</td>
+              </tr>
+              <tr> 
+                <td width="33%">Marco</td>
+                <td width="34%">Tardi</td>
+                <td width="33%">Ragioniere</td>
+              </tr>
+              <tr> 
+                <td width="33%">Silvana</td>
+                <td width="34%">Perugia</td>
+                <td width="33%">Consulente</td>
+              </tr>
+              <tr> 
+                <td width="33%">Maurizio</td>
+                <td width="34%">Maugeri</td>
+                <td width="33%">Usciere</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <p>In questa presunta realt&agrave; aziendale abbiamo tre persone (<i>Capelli</i>, 
+        <i>Tardi</i> e <i>Maugeri</i>) che lavorano come dipendenti e prestano 
+        la loro attivit&agrave; nell'azienda; altri due soggetti (<i>Catozzo</i> 
+        e <i>Piconi</i>) fanno parte del personale perch&eacute; prestano la loro 
+        attivit&agrave; nell'azienda ma come professionisti esterni e quindi non 
+        rientrano tra i dipendenti; la signora <i>Perugia</i> invece che appare 
+        soltanto come dipendente &egrave; stipendiata dall'azienda solo per questioni 
+        di bilancio ma presta la sua attivit&agrave; in un'altra azienda, collegata 
+        alla prima.</p>
+      <hr class="hrseparator">
+      <p class="size3" align="center"><a name="INNERJOIN"></a>INNER JOIN</p>
+      <p>La forma di JOIN pi&ugrave; semplice, combina dei criteri per estrarre 
+        soltanto le righe che presentano i campi indicati in entrambe le origini. 
+        Data la situazione di analisi precedente &egrave; possibile stabilire 
+        un JOIN interno che relazioni i due gruppi di persone e riporti soltanto 
+        quelle che costituiscono sia figura di personale sia figura di dipendente. 
+        La rappresentazione SQL di questa situazione pu&ograve; essere la presente:</p>
+      <p class="codicevb2">SELECT p.nome, p.cognome, p.ruolo, d.nome, d.cognome, 
+        d.ruolo<br>
+        FROM personale p INNER JOIN dipendenti d<br>
+        ON p.nome=d.nome AND p.cognome=d.cognome AND p.ruolo=d.ruolo</p>
+      <p>Questa estrazione riporta i 3 campi della prima tabella (PERSONALE) ed 
+        i 3 della seconda (DIPENDENTI), combinando le righe della seconda la relazione 
+        indicata a seguito di ON. La stessa poteva essere rappresentata utilizzando 
+        la forma gi&agrave; vista in precedenza:</p>
+      <p class="codicevb2">SELECT p.nome, p.cognome, p.ruolo, d.nome, d.cognome, 
+        d.ruolo<br>
+        FROM personale p, dipendenti d<br>
+        WHERE p.nome=d.nome AND p.cognome=d.cognome AND p.ruolo=d.ruolo</p>
+      <p>I risultati riportati da entrambe le forme sono i seguenti:</p>
+      <table width="90%" border="1" cellspacing="2" cellpadding="2" align="center">
+        <tr> 
+          <th width="16%">P_NOME</th>
+          <th width="17%">P_COGNOME</th>
+          <th width="17%">P_RUOLO</th>
+          <th width="16%">D_NOME</th>
+          <th width="17%">D_COGNOME</th>
+          <th width="17%">D_RUOLO</th>
+        </tr>
+        <tr> 
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+        </tr>
+      </table>
+      <p>Infatti le tre figure fanno parte di entrambe le tabelle di origine; 
+        tutte le altre righe sono scartate. Se non &egrave; specifica il tipo 
+        di JOIN (cio&egrave; &egrave; indicato solamente JOIN seguito dall'origine) 
+        questo &egrave; il tipo predefinito.</p>
+      <hr class="hrseparator">
+      <p class="size3" align="center"><a name="LEFTJOIN"></a>LEFT OUTER JOIN</p>
+      <p>Questo JOIN esterno tiene conto di tutte le righe che soddisfano la relazione 
+        ed include anche quelle righe presenti nella tabella che si trova a sinistra 
+        del JOIN, riempiendo i campi della seconda tabella con NULL. Data l'analisi 
+        della situazione aziendale potremmo voler estrarre tutti i nominativi 
+        del personale, mostrando la loro relazione di dipendenza con l'azienda 
+        e per far ci&ograve; useremo una query SQL del genere:</p>
+      <p class="codicevb2">SELECT p.nome, p.cognome, p.ruolo, d.nome, d.cognome, 
+        d.ruolo<br>
+        FROM personale p LEFT JOIN dipendenti d<br>
+        ON p.nome=d.nome AND p.cognome=d.cognome AND p.ruolo=d.ruolo </p>
+      <p>Il risultato ottenuto sar&agrave; il seguente:</p>
+      <table width="90%" border="1" cellspacing="2" cellpadding="2" align="center">
+        <tr> 
+          <th width="16%">P_NOME</th>
+          <th width="17%">P_COGNOME</th>
+          <th width="17%">P_RUOLO</th>
+          <th width="16%">D_NOME</th>
+          <th width="17%">D_COGNOME</th>
+          <th width="17%">D_RUOLO</th>
+        </tr>
+        <tr> 
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Pasquale</td>
+          <td width="17%">Catozzo</td>
+          <td width="17%">Manager</td>
+          <td width="16%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="16%">Milena</td>
+          <td width="17%">Piconi</td>
+          <td width="17%">Responsabile Acq.</td>
+          <td width="16%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+        </tr>
+      </table>
+      <p>Naturalmente i valori qui presentati in bianco conterranno in realt&agrave; 
+        il valore NULL. Possiamo ben capire il comportamento osservando la forma 
+        dell'interrogazione SQL: la tabella PERSONALE si trova alla sinistra del 
+        JOIN, mentre la DIPENDENTI si trova alla destra; utilizzando il LEFT JOIN 
+        estrarremo tutte le righe presenti nella tabella PERSONALE, assegnando 
+        i campi corrispondenti della tabella DIPENDENTI e riempiendo con NULL 
+        quelli il cui valore non esiste nella seconda tabella. Le righe presenti 
+        unicamente nella tabella DIPENDENTI non saranno affatto estratte.</p>
+      <p><!-- #BeginLibraryItem "/Library/Notes2.lbi" --><img src="../images/notes2.gif" width="31" height="32" align="left"><!-- #EndLibraryItem -->Alcuni 
+        database (Microsoft SQL Server ad esempio) supportano l'uso di una sintassi 
+        dedicata alla creazione di un LEFT JOIN utilizzando le clausole FROM e 
+        WHERE anzich&eacute; JOIN e ON, sfruttando un operatore di relazione particolare: 
+        <b>*=</b></p>
+      <p class="codicevb2">SELECT p.nome, p.cognome, p.ruolo, d.nome, d.cognome, 
+        d.ruolo<br>
+        FROM personale p, dipendenti d<br>
+        WHERE p.nome*=d.nome AND p.cognome*=d.cognome AND p.ruolo*=d.ruolo</p>
+      <p>Tuttavia Microsoft stessa sconsiglia l'uso di questi operatori e indica 
+        che nelle prossime versioni del suo database potrebbe non essere presente 
+        e gi&agrave; adesso comportarsi in una maniera inaspettata. Alcuni database 
+        invece supportano l'uso dell'operatore <b>LEFT OUTER JOIN</b> al posto 
+        del semplice LEFT JOIN.</p>
+      <hr class="hrseparator">
+      <p class="size3" align="center"><a name="RIGHTJOIN"></a>RIGHT OUTER JOIN</p>
+      <p>Il caso opposto del precedente &egrave; quello che riporta quelle righe 
+        che si trovano nella tabella indicata a destra del JOIN e riempie i campi 
+        non corrispondenti della prima tabella con il valore NULL. Analizzando 
+        ancora una volta il nostro problema potremmo cercare di ottenere l'elenco 
+        di tutti i dipendenti, segnalando anche quelli che non son considerati 
+        personale dell'azienda. Baster&agrave; sostituire alla query precedente 
+        il LEFT con il RIGHT:</p>
+      <p class="codicevb2">SELECT p.nome, p.cognome, p.ruolo, d.nome, d.cognome, 
+        d.ruolo<br>
+        FROM personale p RIGHT JOIN dipendenti d<br>
+        ON p.nome=d.nome AND p.cognome=d.cognome AND p.ruolo=d.ruolo</p>
+      <p>Ed il risultato ottenuto sar&agrave; il seguente:</p>
+      <table width="90%" border="1" cellspacing="2" cellpadding="2" align="center">
+        <tr> 
+          <th width="16%">P_NOME</th>
+          <th width="17%">P_COGNOME</th>
+          <th width="17%">P_RUOLO</th>
+          <th width="16%">D_NOME</th>
+          <th width="17%">D_COGNOME</th>
+          <th width="17%">D_RUOLO</th>
+        </tr>
+        <tr> 
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+          <td width="16%">Silvana</td>
+          <td width="17%">Perugia</td>
+          <td width="17%">Consulente</td>
+        </tr>
+        <tr> 
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+        </tr>
+      </table>
+      <p>Possiamo notare la presenza di tutte le righe della tabella DIPENDENTI, 
+        le tre righe corrispondenti presenti nella tabella PERSONALE ed i campi 
+        della prima tabella riguardo la signora <i>Perugia</i> riempiti con valore 
+        NULL. I nominativi presenti esclusivamente nella prima tabella non sono 
+        stati estratti affatto.</p>
+      <p><!-- #BeginLibraryItem "/Library/Notes2.lbi" --><img src="../images/notes2.gif" width="31" height="32" align="left"><!-- #EndLibraryItem -->In 
+        maniera analoga al caso precedente, alcuni database (Microsoft SQL Server 
+        ad esempio) supportano l'uso di una sintassi dedicata alla creazione di 
+        un RIGHT JOIN utilizzando le clausole FROM e WHERE anzich&eacute; JOIN 
+        e ON, sfruttando un altro operatore di relazione particolare: <b>=*</b></p>
+      <p class="codicevb2">SELECT p.nome, p.cognome, p.ruolo, d.nome, d.cognome, 
+        d.ruolo<br>
+        FROM personale p, dipendenti d<br>
+        WHERE p.nome=*d.nome AND p.cognome=*d.cognome AND p.ruolo=*d.ruolo</p>
+      <p>Anche per questo Microsoft avverte che non sar&agrave; pi&ugrave; supportato 
+        nelle versioni successive. &Egrave; anche possibile per certi database 
+        utilizzare la clausola <b>RIGHT OUTER JOIN</b> al posto del semplice RIGHT 
+        JOIN.</p>
+      <hr class="hrseparator">
+      <p class="size3" align="center"><a name="FULLJOIN"></a>FULL OUTER JOIN</p>
+      <p>L'ultimo tipo di JOIN esterno &egrave; il FULL JOIN, che mettendo assieme 
+        sia LEFT che RIGHT comprende quindi tutti i dati presenti in entrambe 
+        le origini indicate, cio&egrave; includendo le righe presenti nella prima 
+        tabella ma non nella seconda, quelle presenti nella seconda tabella ma 
+        non nella prima, oltre che naturalmente tutte quelle che soddisfano la 
+        relazione. L'analisi della nostra problematica potrebbe ad esempio richiedere 
+        l'estrazione di tutto il personale e di tutti i dipendenti e ci&ograve; 
+        pu&ograve; essere esposto con una selezione del genere:</p>
+      <p class="codicevb2">SELECT p.nome, p.cognome, p.ruolo, d.nome, d.cognome, 
+        d.ruolo<br>
+        FROM personale p FULL JOIN dipendenti d<br>
+        ON p.nome=d.nome AND p.cognome=d.cognome AND p.ruolo=d.ruolo</p>
+      <p>Ed il risultato ottenuto sar&agrave; il seguente:</p>
+      <table width="90%" border="1" cellspacing="2" cellpadding="2" align="center">
+        <tr> 
+          <th width="16%">P_NOME</th>
+          <th width="17%">P_COGNOME</th>
+          <th width="17%">P_RUOLO</th>
+          <th width="16%">D_NOME</th>
+          <th width="17%">D_COGNOME</th>
+          <th width="17%">D_RUOLO</th>
+        </tr>
+        <tr> 
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Pasquale</td>
+          <td width="17%">Catozzo</td>
+          <td width="17%">Manager</td>
+          <td width="16%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="16%">Milena</td>
+          <td width="17%">Piconi</td>
+          <td width="17%">Responsabile Acq.</td>
+          <td width="16%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="16%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+          <td width="17%">&nbsp;</td>
+          <td width="16%">Silvana</td>
+          <td width="17%">Perugia</td>
+          <td width="17%">Consulente</td>
+        </tr>
+      </table>
+      <p>Abbiamo cio&egrave; estratto le 5 righe presenti nella tabella PERSONALE 
+        e le 4 righe contenute all'interno della tabella DIPENDENTI. La relazione 
+        dov'era possibile &egrave; avvenuta, mentre dove non lo era ha riportato 
+        i dati esistenti accompagnati da un valore NULL. Al posto di FULL JOIN 
+        alcuni database consentono l'uso di <b>FULL OUTER JOIN</b>.</p>
+      <hr class="hrseparator">
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p class="size3" align="center"><a name="CROSSJOIN"></a>CROSS JOIN</p>
+      <p>Un JOIN particolare non supportato da tutti i database &egrave; quello 
+        incrociato, in realt&agrave; il pi&ugrave; semplice perch&eacute; non 
+        richiede la specifica dei campi con cui effettuare la relazione e pertanto 
+        permuta tutte le righe in modo che ciascuna riga presente nella prima 
+        tabella abbia una corrispondenza con tutte le righe nella seconda tabella; 
+        il numero di righe risultati &egrave; quindi dato dalla moltiplicazione 
+        del numero di righe nella prima tabella col numero di righe presenti nella 
+        seconda tabella.</p>
+      <p>Utilizza una sintassi del genere:</p>
+      <p class="codicevb2">SELECT p.nome, p.cognome, p.ruolo, d.nome, d.cognome, 
+        d.ruolo<br>
+        FROM personale p CROSS JOIN dipendenti d</p>
+      <p>E riporta il seguente incredibile risultato:</p>
+      <table width="90%" border="1" cellspacing="2" cellpadding="2" align="center">
+        <tr> 
+          <th width="16%">P_NOME</th>
+          <th width="17%">P_COGNOME</th>
+          <th width="17%">P_RUOLO</th>
+          <th width="16%">D_NOME</th>
+          <th width="17%">D_COGNOME</th>
+          <th width="17%">D_RUOLO</th>
+        </tr>
+        <tr> 
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Silvana</td>
+          <td width="17%">Perugia</td>
+          <td width="17%">Consulente</td>
+        </tr>
+        <tr> 
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Silvana</td>
+          <td width="17%">Perugia</td>
+          <td width="17%">Consulente</td>
+        </tr>
+        <tr> 
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+          <td width="16%">Silvana</td>
+          <td width="17%">Perugia</td>
+          <td width="17%">Consulente</td>
+        </tr>
+        <tr> 
+          <td width="16%">Pasquale</td>
+          <td width="17%">Catozzo</td>
+          <td width="17%">Manager</td>
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Pasquale</td>
+          <td width="17%">Catozzo</td>
+          <td width="17%">Manager</td>
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Pasquale</td>
+          <td width="17%">Catozzo</td>
+          <td width="17%">Manager</td>
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Pasquale</td>
+          <td width="17%">Catozzo</td>
+          <td width="17%">Manager</td>
+          <td width="16%">Silvana</td>
+          <td width="17%">Perugia</td>
+          <td width="17%">Consulente</td>
+        </tr>
+        <tr> 
+          <td width="16%">Milena</td>
+          <td width="17%">Piconi</td>
+          <td width="17%">Responsabile Acq.</td>
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Milena</td>
+          <td width="17%">Piconi</td>
+          <td width="17%">Responsabile Acq.</td>
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Milena</td>
+          <td width="17%">Piconi</td>
+          <td width="17%">Responsabile Acq.</td>
+          <td width="16%">Maurizio</td>
+          <td width="17%">Maugeri</td>
+          <td width="17%">Usciere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Milena</td>
+          <td width="17%">Piconi</td>
+          <td width="17%">Responsabile Acq.</td>
+          <td width="16%">Silvana</td>
+          <td width="17%">Perugia</td>
+          <td width="17%">Consulente</td>
+        </tr>
+      </table>
+      <p>Da questa confusa estrazione possiamo notare la combinazione di ciascuna 
+        persona presente nella prima tabella con qualsiasi altra persona presente 
+        nella seconda tabella; dalle 5 righe presenti nella prima tabella, e 4 
+        righe presenti nella seconda sono estratte 20 righe (4*5) permutando qualsiasi 
+        possibile combinazione tra i nominativi di ciascuna tabella.</p>
+      <p>Equivale anche all'uso della specifica delle due origini nella clausola 
+        FROM senza l'uso di una clausola WHERE:</p>
+      <p class="codicevb2">SELECT p.nome, p.cognome, p.ruolo, d.nome, d.cognome, 
+        d.ruolo<br>
+        FROM personale p, dipendenti d</p>
+      <p>Nel qual caso che il database non dovesse apprezzare la sintassi CROSS 
+        JOIN sar&agrave; sempre possibile ricorrere a questa forma alternativa.</p>
+      <hr class="hrseparator">
+      <p class="size3" align="center"><a name="SELFJOIN"></a>SELF JOIN</p>
+      <p>Non si tratta di JOIN veri e propri ma vale la pena citarli; in questi 
+        esempi abbiamo sempre utilizzato due differenti tabelle come origini ma 
+        nulla vieta l'uso di un'unica tabella ripetuta due volte e di una relazione 
+        con la stessa; si tratta di una pratica singolare ma utile in certi casi 
+        quando non &egrave; semplice combinare in una sola relazione pi&ugrave; 
+        caratteristiche.</p>
+      <p>Il tipo di JOIN pu&ograve; essere uno qualsiasi tra quelli esposti in 
+        precedenza e cerchiamo di inventarci una relazione sensata per questo 
+        tipo di caso: l'unica che mi possa venire in mente con questi pochi dati 
+        &egrave; una sorta di estrazione che riporti tutti i dipendenti che svolgono 
+        lo stesso ruolo di un'altra persona e chi sia questa persona; la query 
+        pu&ograve; essere esposta come segue:</p>
+      <p class="codicevb2">SELECT p.nome, p.cognome, p.ruolo, d.nome, d.cognome, 
+        d.ruolo<br>
+        FROM personale p INNER JOIN dipendenti d<br>
+        ON p.ruolo=d.ruolo<br>
+        WHERE p.nome&lt;&gt;d.nome AND p.cognome&lt;&gt;d.cognome</p>
+      <p>Ed il corrispondente risultato:</p>
+      <table width="90%" border="1" cellspacing="2" cellpadding="2" align="center">
+        <tr> 
+          <th width="16%">P_NOME</th>
+          <th width="17%">P_COGNOME</th>
+          <th width="17%">P_RUOLO</th>
+          <th width="16%">D_NOME</th>
+          <th width="17%">D_COGNOME</th>
+          <th width="17%">D_RUOLO</th>
+        </tr>
+        <tr> 
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+        <tr> 
+          <td width="16%">Marco</td>
+          <td width="17%">Tardi</td>
+          <td width="17%">Ragioniere</td>
+          <td width="16%">Lucio</td>
+          <td width="17%">Capelli</td>
+          <td width="17%">Ragioniere</td>
+        </tr>
+      </table>
+      <p>Come gi&agrave; detto si tratta di casi rari ma in alcuni casi di complesse 
+        relazioni tra molte origini pu&ograve; essere una strada applicabile, 
+        se non altro per cercare di semplificare un problema risolvibile in una 
+        maniera molto pi&ugrave; complessa.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Aggiungiamo per completezza la sintassi da utilizzare quando la relazione 
+        integra tre o pi&ugrave; origini:</p>
+      <p class="codicevb2">SELECT &lt;campi&gt;<br>
+        FROM &lt;origine&gt;<br>
+        &lt;tipo di join&gt; &lt;origine&gt;<br>
+        ON &lt;campo&gt; &lt;relazione&gt; &lt;campo&gt;<br>
+        &lt;tipo di join&gt; &lt;origine&gt;<br>
+        ON &lt;campo&gt; &lt;relazione&gt; &lt;campo&gt;<br>
+        .... </p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        30 Marzo 2004<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice della sezione Database</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

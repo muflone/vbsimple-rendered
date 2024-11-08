@@ -1,0 +1,458 @@
+<html><!-- #BeginTemplate "/Templates/Corso Base2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 12 del Corso Base</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso base - Lezione <!-- #BeginEditable "LEZIONE" -->12<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/base.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="bas_12.htm#STEP1">Alla scoperta dei menu di Visual Basic (prima 
+    parte)</a>.</li>
+  <li><a href="bas_12.htm#STEP2">Menu File</a>.</li>
+  <li><a href="bas_12.htm#STEP3">Menu Modifica</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><a name="STEP1"></a>Il Corso Base si conclude con la visione di tutti 
+        i menu dell'<a href="../glossary/i.htm#IDE">IDE</a> di Visual Basic. Alcune 
+        voci sono semplicissime da comprendere e presenti in quasi tutti i programmi 
+        per Windows, ma alcune sono realmente complesse e talvolta ostiche da 
+        utilizzare.<br>
+        Nelle lezioni 12-17 vedremo uno per uno tutti i menu ed approfondiremo 
+        le loro opzioni.</p>
+      <hr>
+      <p align="center" class="size3"><a name="STEP2"></a>Menu File<map name="MapFile"> 
+          <area shape="rect" coords="4,21,237,39" href="#FILEOPT1" alt="Nuovo progetto" title="Nuovo progetto"> 
+          <area shape="rect" coords="4,39,237,57" href="#FILEOPT2" alt="Apri progetto..." title="Apri progetto..."> 
+          <area shape="rect" coords="4,64,237,82" href="#FILEOPT3" alt="Aggiungi progetto..." title="Aggiungi progetto..."> 
+          <area shape="rect" coords="4,82,237,100" href="#FILEOPT4" alt="Rimuovi progetto" title="Rimuovi progetto"> 
+          <area shape="rect" coords="4,107,237,125" href="#FILEOPT5" alt="Salva progetto" title="Salva progetto"> 
+          <area shape="rect" coords="4,125,237,143" href="#FILEOPT6" alt="Salva progetto con nome..." title="Salva progetto con nome..."> 
+          <area shape="rect" coords="4,149,237,167" href="#FILEOPT7" alt="Salva nome.xxx" title="Salva nome.xxx"> 
+          <area shape="rect" coords="4,167,237,185" href="#FILEOPT8" alt="Salva nome.xxx con nome..." title="Salva nome.xxx con nome..."> 
+          <area shape="rect" coords="4,193,237,211" href="#FILEOPT9" alt="Stampa..." title="Stampa..."> 
+          <area shape="rect" coords="4,211,237,229" href="#FILEOPT10" alt="Imposta stampante..." title="Imposta stampante..."> 
+          <area shape="rect" coords="4,236,237,254" href="#FILEOPT11" alt="Crea nome.xxx..." title="Crea nome.xxx..."> 
+          <area shape="rect" coords="4,254,237,272" href="#FILEOPT12" alt="Crea gruppo di progetti..." title="Crea gruppo di progetti..."> 
+          <area shape="rect" coords="4,280,237,351" href="#FILEOPT13" alt="Lista progetti recenti" title="Lista progetti recenti"> 
+          <area shape="rect" coords="4,357,237,375" href="#FILEOPT14" alt="Esci" title="Esci"></map> 
+      </p>
+      <p><img src="../images/lezioni/bas12_01.jpg" width="239" height="378" align="right" alt="Figura 1" usemap="#MapFile" border="0">Tralasciando 
+        il menu di sistema presente in tutte le applicazioni, vediamo il primo 
+        menu: <b>File</b>. Esso contiene tutti i comandi riguardanti i files o 
+        la stampa.<br>
+        Vediamo in esso le seguenti voci:</p>
+      <ol>
+        <li><a name="FILEOPT1"></a><b>Nuovo progetto</b><br>
+          Chiude il progetto attualmente aperto e ne crea uno nuovo. Sar&agrave; 
+          presentata una finestra che permette la scelta del tipo di progetto 
+          <img src="../images/ide/progetto.gif" width="16" height="16" align="absmiddle"> 
+          da creare, come abbiamo gi&agrave; visto nella <a href="bas_01.htm">lezione 
+          1</a> di questo stesso corso.<br>
+          <br>
+        </li>
+        <li><a name="FILEOPT2"></a><img src="../images/ide/apriproj.gif" width="16" height="16" align="absmiddle"> 
+          <b>Apri progetto...</b><br>
+          Chiude il progetto attuale e presenta una finestra di dialogo per la 
+          scelta del progetto <img src="../images/ide/progetto.gif" width="16" height="16" align="absmiddle"> 
+          da aprire. La stessa finestra &egrave; stata vista brevemente nella 
+          <a href="bas_02.htm">lezione 2</a> di questo corso.<br>
+          <br>
+        </li>
+        <li><a name="FILEOPT3"></a><b>Aggiungi progetto...</b><br>
+          Consente di aggiungere un progetto <img src="../images/ide/progetto.gif" width="16" height="16" align="absmiddle"> 
+          nuovo o esistente al progetto corrente. L'aggiunta di uno o pi&ugrave; 
+          progetti al progetto esistente provoca la generazione di un gruppo di 
+          progetti <img src="../images/ide/progetti.gif" width="16" height="16" align="absmiddle"> 
+          ovvero un insieme di progetti connessi tra loro concettualmente, ma 
+          non in altro modo. Non sar&agrave; possibile da un progetto accedere 
+          ai dati o ai membri di un altro progetto seppur nello stesso gruppo.<br>
+          <br>
+        </li>
+        <li><a name="FILEOPT4"></a><b>Rimuovi progetto</b><br>
+          Rimuove un progetto dal gruppo di progetti corrente. Se il progetto 
+          &egrave; stato salvato, non sar&agrave; fisicamente rimosso dall'hard 
+          disk, ma sparir&agrave; soltanto il collegamento all'interno del gruppo 
+          <img src="../images/ide/progetti.gif" width="16" height="16" align="absmiddle"> 
+          di progetti.<br>
+          <br>
+        </li>
+        <li><a name="FILEOPT5"></a><img src="../images/ide/salvapr.gif" width="16" height="16" align="absmiddle"> 
+          <b>Salva progetto / Salva gruppo di progetti</b><br>
+          Salva il progetto (o il gruppo di progetti se esiste) con il nome con 
+          il quale &egrave; stato salvato in precedenza. Se il progetto non &egrave; 
+          stato mai salvato il comando sar&agrave; del tutto identico alla voce 
+          successiva. <br>
+          <br>
+        </li>
+        <li><a name="FILEOPT6"></a><img src="../images/ide/salvatut.gif" width="16" height="16" align="absmiddle"> 
+          <b>Salva progetto con nome... / Salva gruppo di progetti con nome...</b><br>
+          Salva il progetto (o il gruppo di progetti se esiste) con un altro nome, 
+          differente da quello con il quale &egrave; stato salvato in precedenza.<br>
+          Se il progetto non &egrave; mai stato salvato prima, verr&agrave; eseguita 
+          questa voce anche quando l'utente utilizza la voce <b>Salva progetto</b>.<br>
+          <br>
+        </li>
+        <li><img src="../images/lezioni/bas02_05.jpg" width="182" height="109" align="right" alt="Figura 2"><a name="FILEOPT7"></a>Salva 
+          <b><i>nome.xxx</i></b><br>
+          Salva l'oggetto attualmente selezionato nella finestra di gestione dei 
+          progetti. Se l'oggetto non &egrave; mai stato salvato apparir&agrave; 
+          il suo nome, altrimenti apparir&agrave; il nome del file con il quale 
+          &egrave; stato salvato in precedenza.<br>
+          <br>
+        </li>
+        <li><a name="FILEOPT8"></a><b>Salva <i>nome.xxx</i> con nome...</b><br>
+          Salva con un altro nome l'oggetto attualmente selezionato nella finestra 
+          di gestione dei progetti. Questa voce permette di cambiare il nome del 
+          file con il quale l'oggetto scelto &egrave; stato salvato in precedenza.<br>
+          <br>
+        </li>
+        <li><a name="FILEOPT9"></a><img src="../images/ide/stampa.gif" width="16" height="16" align="absmiddle"> 
+          <b>Stampa...</b><br>
+          Stampa la grafica e il codice dell'oggetto selezionato nella finestra 
+          gestione dei progetti. Consente di specificare anche la qualit&agrave; 
+          di stampa.<br>
+          <br>
+        </li>
+        <li><a name="FILEOPT10"></a><img src="../images/ide/impospag.gif" width="16" height="16" align="absmiddle"> 
+          <b>Imposta stampante...</b><br>
+          Permette la scelta della stampante da utilizzare per l'operazione di 
+          stampa e l'orientamento della carta da utilizzare.<br>
+          <br>
+        </li>
+        <li><a name="FILEOPT11"></a><b>Crea nome.xxx</b><br>
+          Compila il progetto selezionato e mediante il <a href="../glossary/l.htm#LINKER">linker</a> 
+          genera il file eseguibile <a href="../glossary/e.htm#ESTENSIONIVB">.exe</a> 
+          o il file di <a href="../glossary/l.htm#LIBRERIA">libreria</a> .dll 
+          oppure il file di <a href="../glossary/c.htm#CONTROLLO">controlli</a> 
+          .ocx. La <a href="../glossary/c.htm#COMPILAZIONE">compilazione</a> effettua 
+          anche la <a href="../info/info_02.htm">registrazione</a> del file sul 
+          computer in cui viene effettuata.<br>
+          <br>
+        </li>
+        <li><a name="FILEOPT12"></a><b>Crea gruppo di progetti...</b><br>
+          Compila tutti i progetti all'interno del gruppo di progetti attuale.<br>
+          <br>
+        </li>
+        <li><a name="FILEOPT13"></a><b>Lista di progetti recenti</b><br>
+          Come in tanti altri programmi, gli ultimi progetti salvati o caricati 
+          saranno mostrati nella lista dei files recenti (MRU list). La scelta 
+          di un file progetto dalla lista comporta il caricamento del progetto 
+          (o del gruppo) scelto.<br>
+          <br>
+        </li>
+        <li><a name="FILEOPT14"></a><b>Esci</b><br>
+          Esce e chiude l'IDE di Visual Basic.<br>
+          Esegue la medesima operazione che viene eseguita alla pressione del 
+          pulsante di chiusura <img src="../images/icons/wndclose.gif" width="16" height="14" align="absmiddle"> 
+          del programma.</li>
+      </ol>
+      <hr>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p align="center" class="size3"><a name="STEP3"></a>Menu Modifica <map name="MapModifica"> 
+          <area shape="rect" coords="3,20,231,37" href="#MODIFICAOPT1" alt="Annulla xxx" title="Annulla xxx"> 
+          <area shape="rect" coords="3,37,231,54" href="#MODIFICAOPT2" alt="Ripeti xxx" title="Ripeti xxx"> 
+          <area shape="rect" coords="3,63,231,80" href="#MODIFICAOPT3" alt="Taglia" title="Taglia"> 
+          <area shape="rect" coords="3,80,231,97" href="#MODIFICAOPT4" alt="Copia" title="Copia"> 
+          <area shape="rect" coords="3,98,231,115" href="#MODIFICAOPT5" alt="Incolla" title="Incolla"> 
+          <area shape="rect" coords="3,115,231,132" href="#MODIFICAOPT6" alt="Incolla collegamento" title="Incolla collegamento"> 
+          <area shape="rect" coords="3,133,231,150" href="#MODIFICAOPT7" alt="Elimina" title="Elimina"> 
+          <area shape="rect" coords="3,150,231,167" href="#MODIFICAOPT8" alt="Seleziona tutto" title="Seleziona tutto"> 
+          <area shape="rect" coords="3,177,231,194" href="#MODIFICAOPT9" alt="Trova..." title="Trova..."> 
+          <area shape="rect" coords="3,194,231,211" href="#MODIFICAOPT10" alt="Trova successivo" title="Trova successivo"> 
+          <area shape="rect" coords="3,211,231,228" href="#MODIFICAOPT11" alt="Sostituisci..." title="Sostituisci..."> 
+          <area shape="rect" coords="3,238,231,255" href="#MODIFICAOPT12" alt="Aumenta rientro" title="Aumenta rientro"> 
+          <area shape="rect" coords="3,255,231,272" href="#MODIFICAOPT13" alt="Riduci rientro" title="Riduci rientro"> 
+          <area shape="rect" coords="3,281,231,298" href="#MODIFICAOPT14" alt="Inserisci file..." title="Inserisci file..."> 
+          <area shape="rect" coords="3,306,231,323" href="#MODIFICAOPT15" alt="Elenca propriet&agrave;/metodi" title="Elenca propriet&agrave;/metodi"> 
+          <area shape="rect" coords="3,323,231,340" href="#MODIFICAOPT16" alt="Elenca costanti" title="Elenca costanti"> 
+          <area shape="rect" coords="3,342,231,359" href="#MODIFICAOPT17" alt="Informazioni rapide" title="Informazioni rapide"> 
+          <area shape="rect" coords="3,359,231,376" href="#MODIFICAOPT18" alt="Informazioni parametri" title="Informazioni parametri"> 
+          <area shape="rect" coords="3,376,231,393" href="#MODIFICAOPT19" alt="Completa parola" title="Completa parola"> 
+          <area shape="rect" coords="3,402,231,419" href="#MODIFICAOPT20" alt="Segnalibri" title="Segnalibri"> 
+        </map></p>
+      <p><img src="../images/lezioni/bas12_02.jpg" width="234" height="422" align="right" alt="Figura 3" usemap="#MapModifica" border="0">Il 
+        menu Modifica consente di modificare parti di codice o controlli selezionati. 
+        Contiene anche le funzioni di ricerca e sostituzione di parti del codice. 
+        Include pure alcune funzioni riguardanti il sistema Intellisense. Troviamo 
+        quindi:</p>
+      <ol>
+        <li><a name="MODIFICAOPT1"></a><img src="../images/ide/annulla.gif" width="16" height="16" align="absmiddle"> 
+          <b>Annulla xxx</b><br>
+          Consente di annullare l'ultimo comando e ritornare alla situazione precedente 
+          all'esecuzione del comando.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT2"></a><img src="../images/ide/ripeti.gif" width="16" height="16" align="absmiddle"> 
+          <b>Ripeti xxx</b><br>
+          Dopo l'esecuzione del comando Annulla sar&agrave; possibile rieseguire 
+          il comando ritornando allo stato in cui ci si trovava prima di annullare 
+          l'ultimo comando.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT3"></a><img src="../images/ide/taglia.gif" width="16" height="16" align="absmiddle"> 
+          <b>Taglia</b><br>
+          Copia la selezione negli <a href="../glossary/a.htm#APPUNTI">appunti</a> 
+          e nel contempo la rimuove dal posto originale.<br>
+          Come la funzione <i><b>Taglia</b></i> in tutti i normali programmi per 
+          Windows.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT4"></a><img src="../images/ide/copia.gif" width="16" height="16" align="absmiddle"> 
+          <b>Copia</b><br>
+          Copia la selezione (testo o oggetti) all'interno degli appunti, rendendola 
+          disponibile per un riutilizzo nello stesso o in un altro programma.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT5"></a><img src="../images/ide/incolla.gif" width="16" height="16" align="absmiddle"> 
+          <b>Incolla</b><br>
+          Estrae i dati dagli appunti e li inserisce nel punto selezionato. Come 
+          la funzione <i><b>Incolla</b></i> di tutti gli altri programmi per Windows.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT6"></a><b>Incolla collegamento</b><br>
+          Modalit&agrave; di incollamento speciale che consente di collegare due 
+          programmi tra loro, inserendo un collegamento ad un oggetto <a href="../glossary/o.htm#OLE">OLE</a> 
+          all'interno di un contenitore OLE.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT7"></a><img src="../images/ide/elimina.gif" width="16" height="16" align="absmiddle"> 
+          <b>Elimina</b><br>
+          Cancella la selezione corrente.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT8"></a><b>Seleziona tutto</b><br>
+          Seleziona tutto quello che &egrave; possibile selezionare nello stato 
+          in cui ci si trova. Ad esempio seleziona tutti i controlli del form, 
+          oppure tutto il codice, oppure tutto il testo all'interno di una propriet&agrave;.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT9"></a><img src="../images/ide/trova.gif" width="16" height="16" align="absmiddle"> 
+          <b>Trova...</b><br>
+          Apre la finestra di dialogo per effettuare la ricerca di una porzione 
+          di codice da trovare.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT10"></a><img src="../images/ide/trovaanc.gif" width="16" height="16" align="absmiddle"> 
+          <b>Trova successivo</b><br>
+          Continua la ricerca precedente interrotta. Non mostra la finestra di 
+          dialogo ma utilizza i valori ricercati/sostituiti in precedenza.<br>
+          Se non &egrave; stata effettuata una ricerca in precedenza il comando 
+          &egrave; lo stesso del precedente.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT11"></a><img src="../images/ide/sostitui.gif" width="16" height="16" align="absmiddle"> 
+          <b>Sostituisci...</b><br>
+          Apre la finestra di dialogo per la ricerca e la sostituzione del testo. 
+          Il testo trovato potr&agrave; essere sostituito con un altro testo.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT12"></a><img src="../images/ide/rientro.gif" width="16" height="16" align="absmiddle"> 
+          <b>Aumenta rientro</b><br>
+          Aggiunge nel codice una rientranza, una tabulazione, per effettuare 
+          l'<a href="../glossary/i.htm#INDENTATURA">indentatura</a>. Non influisce 
+          minimamente sul funzionamento del codice, ma semplifica la lettura del 
+          codice.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT13"></a><img src="../images/ide/rientro-.gif" width="16" height="16" align="absmiddle"> 
+          <b>Riduci rientro</b><br>
+          Elimina dal codice una rientranza, posizionando il codice selezionato 
+          indietro di una tabulazione.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT14"></a><b>Inserisci file...</b><br>
+          Inserisce dentro il codice il contenuto del file di testo selezionato. 
+          Non verr&agrave; aggiunto alcun <a href="../glossary/m.htm#MODULO">modulo</a> 
+          <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+          o <a href="../glossary/c.htm#CLASSE">classe</a> <img src="../images/ide/classe.gif" width="16" height="16" align="absmiddle"> 
+          aggiuntiva, ma il contenuto de file sar&agrave; copiato nel modulo aperto.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT15"></a><b><img src="../images/ide/elenprop.gif" width="16" height="16" align="absmiddle"> 
+          Elenca propriet&agrave;/moduli</b><br>
+          Mostra, con l'<a href="../glossary/i.htm#INTELLISENSE">Intellisense</a>, 
+          una lista contenente tutte le propriet&agrave; e i metodi utilizzabili 
+          con l'oggetto o la situazione in corso. Se per esempio stiamo scrivendo 
+          una dichiarazione, il richiamo del comando mostrer&agrave; tutte le 
+          classi, le <a href="../glossary/e.htm#ENUMERAZIONE">enumerazioni</a> 
+          <img src="../images/ide/enumeraz.gif" width="16" height="16" align="absmiddle"> 
+          e i tipi di dati <img src="../images/ide/tipoudt.gif" width="16" height="16" align="absmiddle">utilizzabili 
+          nella dichiarazione.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT16"></a><img src="../images/ide/elencost.gif" width="16" height="16" align="absmiddle"> 
+          <b>Elenca costanti</b><br>
+          Mostra, con Intellisense, un elenco di <a href="../glossary/c.htm#COSTANTE">costanti</a> 
+          <img src="../images/ide/costante.gif" width="16" height="16" align="absmiddle">che 
+          la variabile selezionata pu&ograve; assumere in base alla sua dichiarazione 
+          di tipo o enumerazione.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT17"></a><img src="../images/ide/infrapid.gif" width="16" height="16" align="absmiddle"> 
+          <b>Informazioni rapide</b><br>
+          Mostra un ToolTip contenente la dichiarazione del <a href="../glossary/m.htm#MEMBRO">membro</a> 
+          selezionato. Affinch&eacute; esso funzioni, naturalmente, deve essere 
+          presente la dichiarazione.<br>
+          In altri casi si comporta in maniera del tutto uguale alla voce successiva.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT18"></a><img src="../images/ide/infparam.gif" width="16" height="16" align="absmiddle"> 
+          <b>Informazioni parametri</b><br>
+          Mostra un ToolTip contenente la dichiarazione della funzione in scrittura. 
+          All'interno del ToolTip saranno mostrati i nomi dei parametri ed i loro 
+          tipi, cos&igrave; come il tipo di valore ritornato dalla funzione o 
+          Sub. <br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT19"></a><img src="../images/ide/complpar.gif" width="16" height="16" align="absmiddle"> 
+          <b>Completa parola</b><br>
+          Effettua l'autocompletamento della parola selezionata o in scrittura. 
+          In caso di ambiguit&agrave; di nomi saranno mostrate con Intellisense 
+          tutte i possibili valori.<br>
+          <br>
+        </li>
+        <li><a name="MODIFICAOPT20"></a><img src="../images/ide/segnalib.gif" width="16" height="16" align="absmiddle"> 
+          <img src="../images/ide/segnsucc.gif" width="16" height="16" align="absmiddle"> 
+          <img src="../images/ide/segnprec.gif" width="16" height="16" align="absmiddle"> 
+          <img src="../images/ide/segnrim.gif" width="16" height="16" align="absmiddle"><img src="../images/lezioni/bas12_03.png" width="142" height="75" align="right" alt="Figura 4"><b>Segnalibri</b><br>
+          Contiene il sottomenu riguardante i segnalibri.<br>
+          Permette di impostare, rimuovere e spostare il cursore tra i vari segnalibri 
+          impostati.<br>
+          Consente uno spostamento rapido del cursore all'interno del codice.<br>
+        </li>
+      </ol>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->Come quasi tutte le applicazioni, i menu 
+      File e Modifica contengono i comandi relativi ai files o alle modifiche 
+      del testo nel progetto.<br>
+      Molti comandi sono intuitivi, ma come vedremo in seguito, alcuni comandi 
+      di altri menu, possono nascondere inside e meritano una pi&ugrave; ampia 
+      trattazione rispetto a questi due menu di grande semplicit&agrave; d'uso.<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        19 Marzo 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="bas_11.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'undicesima lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="bas_13.htm">Vai 
+      alla tredicesima lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

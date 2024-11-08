@@ -1,0 +1,396 @@
+<html><!-- #BeginTemplate "/Templates/Corso Base.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 7 del Corso Base</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso base - Lezione <!-- #BeginEditable "LEZIONE" -->7<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/base.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="bas_07.htm#STEP1">Il programma prende una sua forma</a>.</li>
+  <li><a href="bas_07.htm#STEP2">Oggetto CommandButton</a>.</li>
+  <li><a href="bas_07.htm#STEP3">Sue propriet&agrave;</a>.</li>
+  <li><a href="bas_07.htm#STEP4">Eventi dell'oggetto CommandButton</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><a name="STEP1"></a>Cercheremo in questa lezione di dare al nostro progetto 
+        la forma di un vero programma, vedremo infatti i primi pulsanti di Visual 
+        Basic. Per cui riapriamo il nostro Progetto1 e diamogli una impostazione 
+        migliore. Invece di aggiornare i dati quando l'utente clicca sopra la 
+        superficie del form, inseriremo un vero pulsante al cui click si aggiorneranno 
+        i dati.</p>
+      <p><a name="STEP2"></a>Osserviamo la casella degli strumenti e troveremo 
+        facilmente l'icona del controllo <i><b><a href="../thunder/thnd_02.htm">CommandButton</a></b></i> 
+        <a href="../thunder/thnd_01.htm"><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle" border="0"></a>, 
+        il pulsante di comando, utilizzabile per effettuare le operazioni pi&ugrave; 
+        disparate. Andiamo quindi nella finestra di progettazione del form, ormai 
+        lo dovreste saper fare senza ulteriori istruzioni, e qui inseriamo un 
+        pulsante di questo genere. La posizione non &egrave; importante.</p>
+      <p>La prima cosa che noteremo appena inserito il pulsante &egrave; che sopra 
+        d'esso c'&egrave; una scritta: <b>Command1</b>. Ebbene, come i form e 
+        le Label, anche la classe CommandButton ha la propriet&agrave; <i>Caption</i>, 
+        cio&egrave; la propriet&agrave; che definisce il testo visibile all'utente. 
+        Come prima cosa diamo una caption migliore al nostro pulsante scrivendoci 
+        dentro <b><i>Aggiorna</i></b>, per renderlo pi&ugrave; comprensibile. 
+        Cambiamo anche il nome del pulsante per abituarci a scrivere codici pi&ugrave; 
+        semplici ed ordinati. Per cambiare il nome a qualsiasi oggetto, selezionare 
+        l'oggetto cliccandoci sopra e modificare il valore della propriet&agrave; 
+        <i>Name</i> di tale oggetto. Diamogli il nome di <i><b>PulsanteConta</b></i>, 
+        naturalmente tutta una parola, poich&eacute; tutti i nomi degli oggetti 
+        devono essere formati da una sola parola.<br>
+        <img src="../images/lezioni/bas07_01.jpg" width="230" height="133" align="right" alt="Figura 1">Al 
+        termine di questo il nostro form dovrebbe apparire simile alla figura 
+        mostrata a lato. Tuttavia se proviamo il programma e clicchiamo il pulsante 
+        non succede nulla, perch&eacute; non &egrave; stato ancora impostato l'evento 
+        Click del pulsante. Per cui andiamo nella finestra del codice, selezioniamo 
+        dalla lista degli oggetti, l'oggetto PulsanteConta e selezioniamo sulla 
+        destra l'evento Click. Verr&agrave; generata in automatico la routine 
+        PulsanteConta_Click.</p>
+      <p>Ora <i>trasferiamo </i> le istruzioni dalla routine Form_Click alla nuova 
+        routine.</p>
+      <p>La maniera pi&ugrave; semplice &egrave; sfruttare le funzionalit&agrave; 
+        di <i>Copia/Incolla</i> di Windows, ovvero selezionare con il mouse o 
+        con la tastiera la parte di codice che ci interessa (nel nostro caso tutto 
+        il contenuto della routine Form_Click, escluse la riga <code><b>Private&nbsp;Sub&nbsp;Form_Click()</b></code> 
+        e la riga <code><b>End Sub</b></code>. Quelle infatti non fanno parte 
+        della routine, esse sono soltanto l'intestazione e la chiusura della routine. 
+        Selezionato il nostro codice, apriamo il menu Modifica e clicchiamo sulla 
+        voce <b><i>Copia</i></b>. Fatto questo posizioniamo il cursore del testo 
+        all'interno della routine PulsanteConta_Click, cio&eacute; tra la sua 
+        intestazione e la sua fine, riapriamo il menu Modifica e clicchiamo la 
+        voce Incolla. Automaticamente verr&agrave; copiato il testo precedentemente 
+        selezionato. A questo punto &egrave; possibile cancellare l'intera routine 
+        Form_Click, dalla sua definizione alla sua fine.</p>
+      <p>Le funzioni di <i>Copia/Incolla</i> non sono funzionalit&agrave; di Visual 
+        Basic, ma sono presenti in quasi tutti i programmi per Windows, ragion 
+        per cui non verranno approfondite in questa sede.</p>
+      <p>Se avete fatto tutto correttamente dovreste avere il seguente codice:</p>
+      <ol class="codicevb" start="1">
+        <li>Private Const PIGreco As Double = 3.14159265358979</li>
+        <li></li>
+        <li>Private Type ClickConData</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;NumeroClick As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;UltimoClick As Date</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;PenultimoClick As Date</li>
+        <li>End Type</li>
+        <li></li>
+        <li>Dim MioClick As ClickConData</li>
+        <li></li>
+        <li>Private Sub PulsanteConta_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MioClick.NumeroClick = MioClick.NumeroClick 
+          + 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MioClick.PenultimoClick = MioClick.UltimoClick</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MioClick.UltimoClick = Now</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Label2.Caption = MioClick.NumeroClick</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Label5.Caption = MioClick.UltimoClick</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Label7.Caption = MioClick.PenultimoClick</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Caption = PIGreco</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Proviamo ora ad eseguire il programma e vediamone i risultati.<br>
+        Adesso, com'&egrave; prevedibile, cliccando sopra il form non accade e 
+        non cambia nulla, ma se clicchiamo sul pulsante <b>Aggiorna</b> viene 
+        eseguito il conteggio dei click.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><a name="STEP3"></a>Torniamo alla finestra di progettazione del form 
+        e selezioniamo l'oggetto PulsanteConta e proviamo ad osservarne le propriet&agrave; 
+        nella finestra delle propriet&agrave;.</p>
+      <p>La prima che troviamo &egrave; la propriet&agrave; <b><i>Name</i></b>, 
+        la cui utilit&agrave; l'abbiamo gi&agrave; vista, ma soffermiamoci un 
+        minuto. In questo momento il pulsante si chiama PulsanteConta ed abbiamo 
+        una routine di nome PulsanteConta_Click. Se ora decidessimo di cambiare 
+        il nome al pulsante, tutto quello che si trova all'interno della finestra 
+        del codice non verr&agrave; toccato. Per cui la routine legata al click 
+        del pulsante non funzioner&agrave; pi&ugrave;. Dovremmo rifarla da capo 
+        o aggiustare i riferimenti a tali oggetti. </p>
+      <p>La scelta migliore, da adottare sempre ed in ogni caso, &egrave; quella 
+        di decidere i nomi degli oggetti prima di cominciare a scrivere codice 
+        legato all'oggetto, direttamente (come le routine di eventi) e indirettamente 
+        (come le istruzioni che fanno riferimento all'oggetto).</p>
+      <p>La seconda propriet&agrave; &egrave; <b><i>Appearance</i></b>, e come 
+        leggiamo nella finestrella sotto le propriet&agrave; serve ad indicare 
+        al programma se l'oggetto verr&agrave; ridisegnato con effetti tridimensionali.</p>
+      <p><img src="../images/lezioni/bas07_02.png" width="157" height="44" align="right" alt="Figura 2">Osserviamo 
+        che la propriet&agrave; ha una freccetta accanto al valore, se clicchiamo 
+        sulla freccetta ci verranno mostrati i possibili valori della propriet&agrave;. 
+        Questa propriet&agrave; ha solo due valori ammissibili. Non potremo scrivere 
+        dentro la propriet&agrave; un valore come abbiamo fatto per le propriet&agrave; 
+        Caption e Name, ma saremo costretti a sceglierlo dalla lista.</p>
+      <p>Ormai quasi tutti i programmi per Windows hanno le finestre in 3D, con 
+        i bordi rialzati o abbassati. Impostare questa propriet&agrave; a 0 - 
+        Flat solo se vogliamo dare al nostro programma un look diverso da tutti 
+        gli altri programmi. Noi lo lasceremo a 1 - 3D.</p>
+      <p><img src="../images/lezioni/bas07_03.png" width="206" height="185" align="right" alt="Figura 3">Segue 
+        nell'elenco delle propriet&agrave; <b><i>BackColor</i></b>, che definisce 
+        il colore che avr&agrave; il pulsante. Anche questa propriet&agrave; ha 
+        la freccetta di scelta del valore. Clicchiamo su d'essa e si aprir&agrave; 
+        una finestrella per la scelta del colore. Questa si divide in due zone: 
+        Tavolozza e Sistema. La prima serve per scegliere un colore arbitrariamente, 
+        mentre la seconda fornisce i colori di sistema impostati per tutti i programmi 
+        standard Windows. Gran parte degli utenti utilizzano il grigio come sfondo 
+        delle finestre, ma attraverso il <i>pannello di controllo di Windows</i> 
+        &egrave; possibile decidere il colore standard delle finestre. Se noi 
+        impostassimo un colore attraverso la Tavolozza, l'utente che ha un diverso 
+        colore per le finestre continuerebbe a vedere il controllo con il colore 
+        impostato da noi. La scelta che noi adotteremo &egrave; quella di lasciare 
+        i colori predefiniti, in questo caso il colore grigio di sistema.</p>
+      <p>Segue la propriet&agrave; <b><i>Cancel</i></b>, che stabilisce se il 
+        pulsante &egrave; un pulsante Annulla della finestra. Impostare questo 
+        valore a True fa s&igrave; che quando l'utente preme il tasto ESC sulla 
+        finestra viene chiamato l'evento Click del pulsante, anche se l'utente 
+        non ha esplicitamente cliccato con il mouse sopra d'esso. L'effetto di 
+        annullamento descritto all'interno di VB deve essere impostato dal programmatore.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La propriet&agrave; successiva &egrave; <b><i>Caption</i></b>,che abbiamo 
+        gi&agrave; visto. Essa serve ad impostare il testo sopra il pulsante.</p>
+      <p>La propriet&agrave; <b><i>Default</i></b> fa s&igrave; che quando l'oggetto 
+        attivo sia un controllo che non gestisce il tasto ENTER, e l'utente, in 
+        quella situazione, preme detto tasto, viene eseguito l'evento Click del 
+        tasto.</p>
+      <p>La propriet&agrave; <b><i>DisabledPicture</i></b> serve ad impostare 
+        un'immagine che verr&agrave; mostrata quando il pulsante viene disabilitato 
+        attraverso la propriet&agrave; Enabled.</p>
+      <p>La propriet&agrave; <b><i>DownPicture</i></b> imposta l'immagine che 
+        sar&agrave; mostrata nel momento in cui l'utente tiene premuto il tasto 
+        del mouse, per esempio quando clicca, sopra il controllo.</p>
+      <p>La propriet&agrave; <b><i>DragIcon</i></b> imposta l'icona che verr&agrave; 
+        visualizzata in caso di trascinamento.<br>
+        Il trascinamento sar&agrave; trattato nel corso Avanzato, per cui ignorare 
+        questa propriet&agrave; per il momento.</p>
+      <p>La propriet&agrave; <b><i>DragMode</i></b> definisce la modalit&agrave; 
+        di trascinamento, automatica o manuale.</p>
+      <p>La propriet&agrave; <b><i>Enabled</i></b> attiva e disattiva un controllo. 
+        Quando essa &egrave; impostata a False il controllo non generer&agrave; 
+        nessun evento quando l'utente cerca di operare con essa. In genere si 
+        utilizza questa propriet&agrave; quando si vuole bloccare l'utilizzo di 
+        un pulsante finch&eacute; non si verifica un determinato evento.</p>
+      <p>La propriet&agrave; <b><i>Font</i></b> imposta il carattere utilizzato 
+        nelle operazioni di scrittura sul controllo, come la propriet&agrave; 
+        Caption. Questa &egrave; una macropropriet&agrave;, nel senso che racchiude 
+        al suo interno tante propriet&agrave;. Infatti il programmatore via codice 
+        potrebbe impostare questa propriet&agrave; complessa o potrebbe modificare 
+        le singole componenti: <i>FontName, FontSize, FontBold, etc..</i></p>
+      <p>La propriet&agrave; <b><i>Height</i></b> definisce l'altezza dell'oggetto.</p>
+      <p><b><i>HelpContextID</i></b> serve per impostare la pagina della guida 
+        collegata a quel pulsante. La generazione di una guida di un programma 
+        sar&agrave; trattata in un altro corso.</p>
+      <p>La propriet&agrave; <b><i>Index</i></b> &egrave; l'indice del controllo 
+        in una <a href="../glossary/m.htm#MATRICE">matrice</a> di controlli. Le 
+        matrici saranno trattate nel corso Intermedio.</p>
+      <p>La propriet&agrave; <b><i>Left</i></b> definisce la posizione dell'oggetto 
+        rispetto al bordo sinistro del suo contenitore.</p>
+      <p>La propriet&agrave; <b><i>MaskColor</i></b> serve a definire una maschera 
+        utilizzata per creare un effetto di trasparenza.</p>
+      <p>Le propriet&agrave; <b><i>MouseIcon</i></b> e <b><i>MousePointer</i></b> 
+        definiscono la forma del puntatore del mouse. La seconda permette di scegliere 
+        un puntatore tra quelli impostati nel sistema oppure uno personalizzato 
+        (voce <i>Custom</i>). Quando la propriet&agrave; MousePointer &egrave; 
+        impostata a Custom verr&agrave; utilizzato come puntatore quello specificato 
+        attraverso la propriet&agrave; MouseIcon.</p>
+      <p>La propriet&agrave; <i><b>OLEDropMode</b></i> interviene in operazioni 
+        di trascinamento, trattate in un altro corso.</p>
+      <p>La propriet&agrave; <b><i>Picture</i></b> serve per inserire un'immagine 
+        che verr&agrave; visualizzata sul pulsante quando la propriet&agrave; 
+        Style &egrave; impostata su Graphical.</p>
+      <p>La propriet&agrave; <b><i>RightToLeft</i></b> serve a definire la direzione 
+        di scrittura del testo. Non &egrave; disponibile nelle lingue occidentali, 
+        ma soltanto nelle <a href="../glossary/e.htm#EDIZIONI">edizioni</a> di 
+        Visual Basic in lingue che permettono la scrittura da destra verso sinistra.</p>
+      <p>Come accennato prima la propriet&agrave; <b><i>Style</i></b> definisce 
+        lo stile del pulsante. Sia esso normale o grafico, cio&egrave; con un'immagine 
+        sopra. Se il valore &egrave; True verr&agrave; visualizzata l'immagine 
+        impostata nella propriet&agrave; Picture.</p>
+      <p>La propriet&agrave; <b><i>TabIndex</i></b> stabilisce l'ordine di tabulazione 
+        nel form. Questa propriet&agrave; determina l'ordine con il quale l'oggette 
+        riceve il <a href="../glossary/f.htm#FOCUS">Focus</a> sfruttando il tasto 
+        TAB o le freccette.</p>
+      <p>La propriet&agrave; <b><i>TabStop</i></b> determina se l'oggetto pu&ograve; 
+        ricevere il focus utilizzando il tasto TAB.</p>
+      <p>La propriet&agrave; <b><i>Tag</i></b> non viene utilizzata mai ed &egrave; 
+        disponibile in tutti i controlli per memorizzare qualche dato utile. Il 
+        suo valore non determina il cambiamento di nessuno stato.</p>
+      <p>La propriet&agrave; <b><i>ToolTipText</i></b> imposta il testo che apparir&agrave; 
+        quando l'utente posiziona il mouse sopra il pulsante per un secondo circa.</p>
+      <p>La propriet&agrave; <b><i>Top</i></b> determina la posizione verticale 
+        dell'oggetto dal bordo superiore del suo contenitore.</p>
+      <p>La propriet&agrave; <b><i>UseMaskColor</i></b> determina se il colore 
+        impostato nella propriet&agrave; MaskColor verr&agrave; utilizzato per 
+        creare aree trasparenti.</p>
+      <p>La propriet&agrave; <b><i>Visible</i></b> imposta la visibilit&agrave; 
+        dell'oggetto. Un oggetto nascosto funziona a tutti gli effetti, ma non 
+        risponde agli eventi del mouse.</p>
+      <p>La propriet&agrave; <b><i>WhatsThisHelpID</i></b> identifica un argomento 
+        della guida da utilizzare quando &egrave; presente un pulsante <i>What's 
+        This</i>. La generazione di un file della guida sar&agrave; trattata in 
+        un altro corso.</p>
+      <p>L'ultima propriet&agrave; della finestra delle propriet&agrave; &egrave; 
+        la <b><i>Width</i></b> che determina la larghezza del pulsante.</p>
+      <p>Queste sono tutte le propriet&agrave; disponibili in fase di progettazione 
+        per l'oggetto CommandButton. Ma ci sono anche alcune propriet&agrave; 
+        utilizzabili solo in fase di esecuzione; queste sono:</p>
+      <p><b><i>Container</i></b> un riferimento all'oggetto dentro il quale il 
+        pulsante &egrave; contenuto.</p>
+      <p><b><i>hWnd</i></b>, <a href="../glossary/h.htm#HANDLE">handle</a> del 
+        pulsante, utilizzato dall'API per effettuare operazioni su di esso.</p>
+      <p><b><i>Parent</i></b>, simile a Container, che identifica il Form dentro 
+        il quale risiede il pulsante, e non il contenitore.</p>
+      <p><b><i>Value</i></b> che identifica lo stato del pulsante, premuto o non 
+        premuto.</p>
+      <p>Di tutte queste numerose propriet&agrave; inizialmente utilizzeremo soltanto 
+        <i>Name, Caption, Height, Left, Top, Visible e Width</i>.</p>
+      <hr>
+      <p><a name="STEP4"></a>Passiamo ora agli eventi dell'oggetto CommandButton. 
+        Abbiamo:</p>
+      <p><b><i>Click</i></b>, evento principale. Determina il momento in cui l'utente 
+        clicca con il mouse sopra il controllo.</p>
+      <p><b><i>DragDrop DragOver, OLECompleteDrag, OLEDragDrop, OLEDragOver, OLEGiveFeedBack, 
+        OLESetData </i></b>e <b><i>OLEStartDrag</i></b> collegati alle operazioni 
+        di trascinamento. Saranno visti in un altro corso.</p>
+      <p><b><i>GotFocus</i></b>, eseguito nel momento in cui il pulsante diventa 
+        l'oggetto attivo.</p>
+      <p><b><i>KeyDown, KeyUp </i></b>e <b><i>KeyPress</i></b> eseguiti rispettivamente 
+        nei momenti quando l'utente preme un tasto, quando lo rilascia e quando 
+        viene inviato un carattere al pulsante.</p>
+      <p><b><i>LostFocus</i></b>, eseguito nel momento in cui il pulsante cessa 
+        di essere l'oggetto attivo.</p>
+      <p><b><i>MouseDown</i></b> e <b><i>MouseUp</i></b>, generati nel momento 
+        in cui l'utente preme il pulsante del mouse e nel momento in cui lo lascia. 
+        Subito dopo l'esecuzione dell'evento MouseUp viene generato l'evento Click.</p>
+      <p><b><i>MouseMove</i></b>, eseguito ogni volta che il puntatore del mouse 
+        si sposta sopra la superficie del pulsante.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->Quello che abbiamo visto &egrave; uno 
+      dei controlli pi&ugrave; semplici. Tuttavia possiede tantissime propriet&agrave; 
+      e vari eventi. Piano piano impareremo ad usare quelli che ci servono. Intanto 
+      non facciamoci impressionare dalla loro quantit&agrave;. Per i normali programmi 
+      ci basteranno poche propriet&agrave; e ancora meno eventi.<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        30 Ottobre 2000<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="bas_06.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna alla sesta lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="bas_08.htm">Vai 
+      all'ottava lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

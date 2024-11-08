@@ -1,0 +1,182 @@
+a {
+  color: #0000cc;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+i {
+  font-family: Times New Roman;
+  font-size: 13.2pt;
+}
+
+p, table, body {
+  font-family: Times New Roman;
+  font-size: 13.2pt;
+}
+
+.capitolo {
+  font-size : 18pt;
+  font-family : Times New Roman;
+  font-weight : bold;
+  font-style : italic;
+  color : #00008B;
+  text-justify : inter-word;
+}
+
+.codicevb {
+  font-family : "Courier New";
+  font-size : 9pt;
+}
+
+.codicevbc {
+  background-color : #FFFFDC;
+  color : Blue;
+}
+
+.codicevb2 {
+    font-family : "Courier New";
+    font-size : 9pt;
+    margin-left : 30px;
+}
+
+.credits {
+  font-family : Times New Roman;
+  font-size: 9pt;
+}
+
+.credits2 {
+  font-family : Times New Roman;
+  font-size: 9pt;
+  text-align : right;
+  right : 30pt;
+  position : relative;
+}
+
+.dataaggiornamento {
+  font-family : Times New Roman;
+  font-size: 8pt;
+  text-align : right;
+}
+
+.destra {
+  text-align : right;
+}
+
+.elenco {
+  font-family: Times New Roman;
+  font-size: 18px;
+  layout-grid-mode : both;
+  layout-grid-line : 40px;
+  left : 40px;
+  position : relative;
+  layout-grid-type : fixed;
+}
+
+.fixed, code {
+  font-family : "Courier New", Courier, monospace;
+  font-size : 9pt;
+}
+
+.imglink {
+  background-color : White;
+}
+
+.intestazioni {
+  font-size: 12pt;
+  font-weight : bold;
+  font-style : italic;
+}
+
+.justify {
+  text-align : justify;
+}
+
+.nascosto {
+  font-family : Tahoma;
+  font-size : 2pt;
+  visibility : hidden;
+}
+
+.nascosto2 {
+  visibility: hidden;
+}
+
+.nomepagina {
+  font-size : 8pt;
+}
+
+.seminascosto {
+  color: #009966;
+}
+
+.size0 {
+	font-family: Tahoma;
+	font-size : 7pt;
+}
+
+.size1 {
+  font-family: Times New Roman;
+  font-size : 9pt;
+}
+
+.size2 {
+  font-family : Times New Roman;
+  font-size : 14pt;
+}
+
+.size3 {
+  font-family: Times New Roman;
+  font-size: 18px;
+  font-weight : bold;
+}
+
+.size4 {
+  font-family: Times New Roman;
+  font-size: 18pt;
+}
+
+.smallerrore {
+  font-family : Times New Roman;
+  font-size : 18px;
+  font-weight : bold;
+  color : #CC3300;
+}
+
+.sottolineato {
+  text-decoration : underline;
+}
+
+.striked {
+  text-decoration : line-through;
+}
+
+.textboxblue {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  font-weight : bold;
+  color: Yellow;
+  background-color: #0099CC;
+  border: #000000;
+  border-style : solid;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+.titolo {
+  font-family: Times New Roman;
+  font-size: 18pt;
+  font-style : italic;
+  text-decoration : underline;
+}
+
+.dontprint {
+  display : none;
+}
+
+.hrseparator {
+  width: 60%;
+}

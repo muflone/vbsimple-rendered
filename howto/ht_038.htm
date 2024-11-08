@@ -1,0 +1,459 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Gestire i colori RGB</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Gestire i colori RGB<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Nella maggioranza dei programmi per personal computer i colori sono gestiti 
+        come triplette <a href="../glossary/r.htm#RGB">RGB</a> (Red Green Blue 
+        - Rosso Verde Blu). Anche Visual Basic adotta tale tecnica; mettendo insieme 
+        3 bytes (3 * 8 = 24 bit) possiamo ottenere 16.777.216 (<i><b>2^24</b></i>) 
+        differenti colori. Questo mettere insieme delle diverse gradazioni di 
+        ogni componente del colore deve essere fatto secondo un certo criterio.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Vedremo in questo HowTo come maneggiare i colori, comporli in numeri 
+        complessi e scomporli in triplette RGB attraverso due diverse soluzioni.<br>
+        <img src="../images/howto/howto038_01.jpg" width="319" height="138" align="right" alt="Figura 1">Utilizzeremo 
+        un solo form con vari controlli; cominciamo dalla parte superiore in cui 
+        una serie di controlli sono contenuti in un frame: abbiamo innanzitutto 
+        tre <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>LabelColori</b> in una <a href="../glossary/m.htm#MATRICE">matrice</a> 
+        di 3 elementi con il nome dei 3 colori primari.</p>
+      <p>Accanto ad ognuna di esse c'&egrave; una <i>barra di scorrimento orizzontale</i> 
+        <img src="../images/controls/hscrollbar.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>BarraColori</b> con gli indici da 0 a 2, propriet&agrave; <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        <i>Min</i> impostata a <i><b>0</b></i>, propriet&agrave; <i>Max</i> impostata 
+        a <i><b>255</b></i>, propriet&agrave; <i>SmallChange</i> impostata su 
+        <i> <b>1</b></i> e <i>LargeChange</i> impostata su <i><b>8</b></i>. Questo 
+        perch&eacute; ogni componente dei colori utilizza 1 <a href="../glossary/b.htm#BYTE">byte</a> 
+        e pertanto pu&ograve; contenere i numeri compresi tra 0 e 255.</p>
+      <p>Accanto ad ogni barra &egrave; presente una <i>TextBox</i> <img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>TextColoriDec</b> con indici sempre da 0 a 2, propriet&agrave; 
+        <i>MaxLength</i> impostata a <i><b>3</b></i> e <i>Locked</i> impostata 
+        a <i><b>True</b></i>. Esse mostreranno soltanto il valore corrente di 
+        ogni singola barra del colore. Infine altre 3 TexBox di nome <b>TextColoriHex</b> 
+        con propriet&agrave; <i>MaxLength</i> impostata a <i><b>2</b></i> e <i>Locked</i> 
+        impostata a <i><b>True</b></i>. Queste ultime serviranno a rappresentare 
+        il valore esadecimale del colore indicato nella casella a fianco e quindi 
+        dalle barre di scorrimento.</p>
+      <p>La parte inferiore del form contiene invece i comandi utilizzabili nel 
+        nostro programma. Il suo ruolo &egrave;: </p>
+      <ul>
+        <li>Mettere assieme una tripletta di componenti RGB in un numero lungo 
+          di colore;</li>
+        <li>Scomporre un numero lungo di colore in una tripletta di colori RGB.</li>
+      </ul>
+      <p>Per entrambi i problemi abbiamo due soluzioni: una semplice e banale 
+        ed una tecnicamente pi&ugrave; corretta che svolge le operazioni pi&ugrave; 
+        elementari per ottenere il risultato.</p>
+      <p>Ritornando al nostro form, abbiamo una <i>TextBox</i> di nome <b>TextColoreLungo</b> 
+        con la propriet&agrave; <i>MaxLength</i> impostata a <i><b>8</b></i>; 
+        sulla destra invece tre caselle di testo di nome <b>ColoriRGB</b> con 
+        indici da 0 a 2 e propriet&agrave; <i>MaxLength</i> impostata a <i><b>3</b></i>.<br>
+        In mezzo alle caselle di testo 4 CommandButton per eseguire le quattro 
+        operazioni previste di nome <b>Long2RGB</b>, <b>Long2RGB2</b>, <b>RGB2Long</b> 
+        e <b>RGB2Long2</b>. I primi due convertiranno il numero lungo in tripletta 
+        RGB mentre gli altri due congiungeranno la tripletta RGB in un numero 
+        lungo di colore.</p>
+      <p>Infine sulla destra del form ci sono due <i>PictureBox</i> <img src="../images/controls/picturebox.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>AnteprimaColore1</b> e <b>AnteprimaColore2</b>; la prima servir&agrave; 
+        per vedere il colore indicato dalle barre di scorrimento della parte superiore 
+        del form mentre la seconda servir&agrave; per mostrare il colore indicato 
+        dalle 3 caselle di testo in basso.</p>
+      <p>Vediamo il codice che, preso passo passo, non presenta alcuna difficolt&agrave; 
+        particolare, ma molto utile didatticamente per capire la gestione dei 
+        colori in Visual Basic.</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub BarraColori_Scroll(Index As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TextColoriDec(Index).Text = CStr(BarraColori(Index).Value)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TextColoriHex(Index).Text = Right$(&quot;00&quot; 
+          &amp; Hex$(BarraColori(Index).Value), 2)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;AnteprimaColore1.BackColor = RGB(BarraColori(0).Value, 
+          BarraColori(1).Value, BarraColori(2).Value)</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub BarraColori_Change(Index As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;BarraColori_Scroll Index</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Nel momento in cui l'utente <i>&quot;afferra&quot;</i> la barra di scorrimento 
+        e la posta da un valore ad un altro viene scatenato l'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><b>Scroll</b>. 
+        Essendo una matrice di controlli viene passato il parametro Index in base 
+        alla barra che si sta trascinando.</p>
+      <p>Alla riga 4 viene aggiornata la casella di testo di nome <b>TextColoriDec</b> 
+        corrispondente alla barra trascinata con il valore della barra. Alla riga 
+        successiva viene svolta l'operazione analoga ma in esadecimale aggiornando 
+        la casella di testo <b>TextColoriHex</b>. L'operazione di conversione 
+        viene svolta dalla funzione <i>Hex$</i>. L'istruzione <i>Right$</i> serve 
+        per assicurare che vengano mostrati almeno 2 caratteri <a href="../glossary/e.htm#ESADECIMALE">esadecimali</a>. 
+        Alla riga 6 viene infine aggiornata la <i>PictureBox</i> <b>AnteprimaColore1</b> 
+        con il colore indicato da <i><b>tutti e tre</b></i> i valori delle barre 
+        di scorrimento.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Se l'utente invece di trascinare la barra di scorrimento clicca su un'area 
+        libera della barra oppure su una delle freccette della stessa oppure utilizza 
+        la tastiera, viene aggiornato il valore della barra ma non viene eseguito 
+        l'evento <b>Scroll</b>. Al suo posto &egrave; eseguito l'evento <b>Change</b>; 
+        ecco perch&eacute; abbiamo fatto in modo che l'esecuzione di tale evento 
+        richiami (riga 10) la funzione legata all'evento <b>Scroll</b>, in modo 
+        da non dover ripetere lo stesso codice.</p>
+      <ol class="codicevb" start="13">
+        <li>Private Sub ColoriRGB_GotFocus(Index As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ColoriRGB(Index).SelStart = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ColoriRGB(Index).SelLength = 3</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub ColoriRGB_KeyPress(Index As Integer, KeyAscii As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If ((KeyAscii &lt; Asc(&quot;0&quot;)) Or 
+          (KeyAscii &gt; Asc(&quot;9&quot;))) And (KeyAscii &lt;&gt; vbKeyBack) 
+          Then KeyAscii = 0</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La funzione alle righe 13-16 &egrave; esclusivamente di supporto e non 
+        ha nessuna utilit&agrave; nel progetto. Nel momento in cui una TextBox 
+        di nome ColoriRGB riceve il focus il testo contenuto in essa viene selezionato, 
+        cosicch&eacute; la digitazione sovrascriva i dati precedenti.</p>
+      <p>Dovendo tali caselle di testo contenere soltanto numeri abbiamo fatto 
+        in modo di bloccare tutti i tasti eccetti i numeri ed il BackSpace per 
+        cancellare. Alla riga 19 viene effettuato il controllo del tasto premuto. 
+        Possiamo scomporre la condizione in due parti:</p>
+      <p>If ((KeyAscii &lt; Asc(&quot;0&quot;)) Or (KeyAscii &gt; Asc(&quot;9&quot;)))</p>
+      <p>Se il tasto premuto &egrave; minore del codice del tasto 0 oppure maggiore 
+        del codice del tasto 9, ovvero non &egrave; un tasto compreso tra 0 e 
+        9... </p>
+      <p>And (KeyAscii &lt;&gt; vbKeyBack) Then KeyAscii = 0</p>
+      <p>Ma altres&igrave; il tasto premuto <b>non &egrave;</b> il tasto BackSpace, 
+        allora tale tasto deve essere annullato e non mandato alla casella di 
+        testo. Questo duplice controllo assicura che il tasto premuto sia un numero 
+        oppure il tasto BackSpace.<br>
+        Questo controllo far&agrave; s&igrave; che siano inseriti soltanto numeri 
+        nella casella di testo. L'unico problema pu&ograve; consistere nel copia-incolla 
+        di dati nella casella. Abbiamo voluto evitare questo ulteriore controllo 
+        per non creare confusione.</p>
+      <ol class="codicevb" start="22">
+        <li>Private Sub ColoriRGB_Change(Index As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Val(ColoriRGB(Index).Text) &gt; 255 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ColoriRGB(Index).Text 
+          = &quot;255&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ColoriRGB(Index).SelStart 
+          = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ColoriRGB(Index).SelLength 
+          = 3</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;AnteprimaColore2.BackColor = RGB(Val(ColoriRGB(0).Text), 
+          Val(ColoriRGB(1).Text), Val(ColoriRGB(2).Text))</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Controlliamo anche l'evento<img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><b>Change</b> 
+        delle caselle di testo <b>ColoriRGB</b> che verr&agrave; eseguito subito 
+        dopo l'evento KeyPress. Questo per evitare che il numero immesso in ciascuna 
+        casella sia inferiore a 256 e per aggiornare la PictureBox con l'anteprima 
+        del colore.</p>
+      <p>La prima di queste due operazioni viene svolta dalle righe 23-27; se 
+        il numero immesso &egrave; maggiore di 255 allora ne cambia il contenuto 
+        in 255 e ne evidenzia il testo in essa.</p>
+      <p>Alla riga 28 viene invece cambiato il colore di <b>AnteprimaColore2</b> 
+        con i valori delle tre caselle di testo <b>ColoriRGB</b>. Viene utilizzata 
+        la funzione RGB che combina i tre valori.</p>
+      <p>Seguono le due funzioni di conversione da numero lungo a tripletta RGB 
+        e viceversa. Prima vediamo per&ograve; come sono organizzati i colori.</p>
+      <p>Data una tripletta di valori che rappresentano ogni colore, ad esempio 
+        i numeri <b class="colorerosso">48</b>, <b class="coloreverde">128</b> 
+        e <b class="coloreblu">226</b> hanno i corrispondenti valori esadecimali 
+        <b class="colorerosso">30</b>, <b class="coloreverde">80</b> e <b class="coloreblu">E2</b>. 
+        Sia in forma decimale che esadecimale tali valori occupano sempre due 
+        bytes. Il sistema per creare un numero lungo rappresentativo di una tripletta 
+        di colori mette assieme i tre singoli valori: <b class="coloreblu">E2</b><b class="coloreverde">80</b><b class="colorerosso">30</b>. 
+        Tale numero convertito in decimale &egrave; <b>14843952</b>. Tale colore 
+        rappresenta un <b class="coloreazzurro">azzurro</b>.</p>
+      <p>Spiegato in altri termini, la conversione da tripletta a numero lungo 
+        viene effettuata facendo la somma di tali valori: <b class="coloreblu">E20000</b> 
+        + <b class="coloreverde">008000</b> + <b class="colorerosso">000030</b>. 
+        Il valore <b class="coloreblu">E2</b> viene moltiplicato per <b>65536</b> 
+        (ovvero <i>256^2</i> oppure <b>10000</b> esadecimale); il valore <b class="coloreverde">80</b> 
+        viene moltiplicato per <b>256</b> (ovvero <i>256^1</i> oppure <b>100</b> 
+        esadecimale); mentre il valore del blu <b class="colorerosso">30</b> viene 
+        lasciato inalterato (ovvero 256^0 oppure <b>1</b> esadecimale).</p>
+      <p>Lo stesso sistema pu&ograve; essere effettuato con cifre decimali:<b class="coloreblu"><br>
+        226</b> * <b><i>65536</i></b> = 14811136 (ovvero <b class="coloreblu">E20000</b> 
+        esadecimale);<br>
+        <b class="coloreverde">128</b> * <i><b>256</b></i> = 32768 (ovvero <b class="coloreverde">008000</b> 
+        esadecimale);<br>
+        <b class="colorerosso">48</b> * <b>1</b> = 48 (ovvero <b class="colorerosso">000030</b> 
+        esadecimale).</p>
+      <p>La somma di 14811136 + 32768 + 48 d&agrave; come risultato <b>14843952</b> 
+        ovvero il nostro valore lungo corrispondente (<b>E28030</b> in esadecimale).</p>
+      <p>Pertanto la conversione opposta deve essere fatta mediante operazioni 
+        inverse: essendo i valori sommati tra loro &egrave; necessario estrarre 
+        ogni parte corrispondente mediante divisioni interere ed <a href="../info/info_06.htm">operazioni 
+        booleane di AND</a> che assicurano che vengano estratti soltanto gli ultimi 
+        due bytes del numero</p>
+      <p>Ricordando che l'operatore \ indica una divisione intera (ad esempio 
+        7 \ 3 = 2), il numero lungo 14843952 pu&ograve; essere scomposto come 
+        segue:<br>
+        14843952 \ <b>1</b> AND 255 = <b class="colorerosso">48</b> (ovvero <b class="colorerosso">30</b> 
+        esadecimale)<br>
+        14843952 \ <b>256</b> AND 255 = <b class="coloreverde">128</b> (ovvero 
+        <b class="coloreverde">80</b> esadecimale)<br>
+        14843952 \ <b>65536</b> AND 255 = <b class="coloreblu">226</b> (ovvero 
+        <b class="coloreblu">E2</b> esadecimale)</p>
+      <p>Abbiamo due soluzioni per ogni problema.</p>
+      <ol class="codicevb" start="31">
+        <li>Private Sub Long2RGB_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim Valore As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Valore = Right$(&quot;000000&quot; &amp; Hex$(TextColoreLungo.Text), 
+          6)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ColoriRGB(0).Text = CInt(&quot;&amp;H&quot; 
+          &amp; Mid(Valore, 5, 2))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ColoriRGB(1).Text = CInt(&quot;&amp;H&quot; 
+          &amp; Mid(Valore, 3, 2))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ColoriRGB(2).Text = CInt(&quot;&amp;H&quot; 
+          &amp; Mid(Valore, 1, 2))</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La prima soluzione effettua una semplice conversione del numero lungo 
+        in una stringa esadecimale ed estrae le coppie di byte corrispondenti 
+        per ogni colore.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alla riga 33 viene effettuata la conversione del numero in esadecimale 
+        (funzione <i>Hex$</i>); il numero di caratteri restituiti &egrave; sempre 
+        6, in base all'utilizzo dell'istruzione <i>Right$</i>. Le righe 34-36 
+        estraggono 3 coppie di byte dal valore convertito. Il rosso &egrave; indicato 
+        dalle 2 cifre meno significative mentre il blu sta alla prima posizione.</p>
+      <ol class="codicevb" start="39">
+        <li>Private Sub RGB2Long_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TextColoreLungo.Text = CStr(RGB(Val(ColoriRGB(0).Text), 
+          Val(ColoriRGB(1).Text), Val(ColoriRGB(2).Text)))</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La conversione da tripletta RGB a numero lungo &egrave; ancora pi&ugrave; 
+        semplice e viene effettuato utilizzando la funzione apposita RGB, convertita 
+        in stringa per visualizzarla nella casella di testo. La funzione RGB richiede 
+        che siano passati in ordine i colori rosso, verde e blu.</p>
+      <p>Seguono altre due soluzioni per produrre i medesimi risultati che effettuano 
+        le operazioni matematiche dovute per ottenere il risultato. In pratica 
+        &egrave; quello che avviene <i>&quot;under the hood&quot;</i> utilizzando 
+        le soluzioni appena viste.</p>
+      <ol class="codicevb" start="43">
+        <li>Private Sub Long2RGB2_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If TextColoreLungo.Text = &quot;&quot; Then 
+          TextColoreLungo.Text = &quot;0&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ColoriRGB(0).Text = CStr(CLng(TextColoreLungo.Text) 
+          \ 1 And 255)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ColoriRGB(1).Text = CStr(CLng(TextColoreLungo.Text) 
+          \ 256 And 255)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ColoriRGB(2).Text = CStr(CLng(TextColoreLungo.Text) 
+          \ 65536 And 255)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La conversione da numero lungo a tripletta RGB viene effettata mediante 
+        le operazioni di divisione intera ed operazioni di AND, come visto prima.</p>
+      <p>Alla riga 44 viene verificato che il valore di <b>TextColoreLungo</b> 
+        non sia una stringa vuota; se lo fosse sarebbe sostituita con uno 0. Questo 
+        al fine di evitare errori di calcolo su numeri impossibili.<br>
+        Le righe 45-48 estraggono i 3 bytes nell'ordine rosso, verde e blu ed 
+        inseriscono il risultato nelle caselle <b>ColoriRGB</b> corrispondenti.</p>
+      <ol class="codicevb" start="50">
+        <li>Private Sub RGB2Long2_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim Valore As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If ColoriRGB(0).Text = &quot;&quot; Then ColoriRGB(0) 
+          = &quot;0&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If ColoriRGB(1).Text = &quot;&quot; Then ColoriRGB(1) 
+          = &quot;0&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If ColoriRGB(2).Text = &quot;&quot; Then ColoriRGB(2) 
+          = &quot;0&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Valore = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Valore = Valore + CLng(ColoriRGB(0).Text) 
+          * 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Valore = Valore + CLng(ColoriRGB(1).Text) 
+          * 256</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Valore = Valore + CLng(ColoriRGB(2).Text) 
+          * 65536</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TextColoreLungo.Text = CStr(Valore)</li>
+        <li>End Sub</li>
+      </ol>
+      <p>L'operazione di conversione da tripletta a valore lungo &egrave; ancora 
+        pi&ugrave; semplice. Si tratta infatti di moltiplicare i valori di ogni 
+        colore rispettivamente per 255^0, 255^1 e 255^2 e sommarli tra loro.</p>
+      <p>I controlli alle righe 52-54 assicurano che sia presente un valore nelle 
+        caselle <b>ColoriRGB</b>.<br>
+        Alla riga 55 comincia la conversione: viene azzerata la variabile <i><b>Valore</b></i>; 
+        il valore del rosso viene moltiplicato per <b>1</b> (256^0) e sommato 
+        a <i><b>Valore</b></i>. Alla riga successiva viene moltiplicato il valore 
+        del verde per <b>256</b> (256^1) e sommato a <b><i>Valore</i></b>; il 
+        blu viene invece moltiplicato per <b>65536</b> (256^2) ed il risultato 
+        viene sempre sommato a <b><i>Valore</i></b>.<br>
+        Infine la casella <b>TextColoreLungo</b> assumer&agrave; il contenuto 
+        di <b><i>Valore</i></b>.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p><img src="../images/howto/howto038_02.jpg" width="319" height="138" align="right" alt="Figura 2">Questo 
+        processo di conversione viene applicato dalla quasi totalit&agrave; dei 
+        programmi. Alcuni fanno piccole eccezioni; ad esempio l'HTML, il linguaggio 
+        di marcatura con cui vengono scritte le pagine web come questa utilizza 
+        lo stesso procedimento ma inverte i colori rosso e blu.</p>
+      <p> Lo stesso colore esadecimale <b>E28030</b> che in Visual Basic rappresentava 
+        un <b class="coloreazzurro">azzurro</b>, nell'HTML rappresenta invece 
+        un <b class="coloremarroncino">marroncino</b>. Per ottenere lo stesso 
+        azzurro di Visual Basic &egrave; necessario invertire i colori rosso e 
+        blu, ottenendo quindi <b>3080E2</b>.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        27 Agosto 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

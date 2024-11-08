@@ -1,0 +1,330 @@
+<html><!-- #BeginTemplate "/Templates/Database2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Struttura del progetto</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Struttura del progetto<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/database.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --> 
+        1<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Nei prossimi articoli di questa sezione sar&agrave; sviluppato un progetto 
+        per l'archiviazione dei CD-ROM utilizzando un database tra quelli gi&agrave; 
+        citati. Per semplificare il problema il suddetto database non verr&agrave; 
+        creato con Visual Basic ma si suppone che esista gi&agrave; e contenga 
+        al suo interno due tabelle relazionate come mostrato nella Figura 1.</p>
+      <p align="center"><img src="../images/database/db004_01.png" width="328" height="124" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <p>Il database conterr&agrave; al suo interno due tabelle: <i>ElencoCD</i> 
+        e <i>Files</i>. La prima si comporr&agrave; di tre campi obbligatori: 
+        <b>ID</b> di tipo numerico intero (<i>non contatore</i>), <b>NOME</b> 
+        di tipo testo con ampiezza massima 128 caratteri e <b>DATA</b> di tipo 
+        data/orario. La stessa tabella conterr&agrave; un indice di nome <b><i>PK_CD</i></b> 
+        come chiave primaria del campo ID e come tale dovr&agrave; impedire i 
+        duplicati.</p>
+      <p>La seconda tabella conterr&agrave; invece cinque campi: <b>ID</b> di 
+        tipo numerico intero (<i>non contatore</i>), <b>CD</b> anche questo numerico 
+        intero, <b>NOME</b> di tipo testo con ampiezza massima 128 caratteri, 
+        <b>SPAZIO</b> di tipo numerico intero lungo ed infine <b>DESCR</b> di 
+        tipo testo/blob a dimensione ampia. La tabella contiene due indici: <b>PK_FILES</b> 
+        come chiave primaria del campo ID e <b><i>FK_CD</i></b> come chiave esterna 
+        del campo CD.</p>
+      <p>Non tutti i database supportano le predette caratteristiche come le chiavi 
+        primarie ed esterne oppure l'assegnazione di un nome arbitrario agli indici. 
+        Si assume quindi che il database utilizzato consenta l'esecuzione di tutte 
+        le operazioni eseguite negli articoli successivi, ma si cercher&agrave; 
+        quanto possibile di evitare l'uso di caratteristiche specifiche.</p>
+      <hr>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Sono di seguito riportati i collegamenti a diversi database contenenti 
+        soltanto le due tabelle <i>ElencoCD</i> e <i>Files</i>, gli Indici e le 
+        chiavi nel caso queste fossero ammesse. Insieme ad ogni database &egrave; 
+        presente un breve script SQL per la rigenerazione delle tabelle create.</p>
+      <table width="95%" border="1" cellspacing="2" cellpadding="4" align="center" bordercolor="#000000">
+        <tr> 
+          <td bgcolor="#F0F0F0" width="87%" valign="top"><b>Microsoft Access 97</b><br>
+            <span class="size1">Il database &egrave; contenuto in un unico file 
+            di nome DB004.MDB al cui interno sono presenti le due tabelle, i tre 
+            indici, le chiavi primaria ed esterna per effettuare le relazioni 
+            e l'integrit&agrave; referenziale. Il file CREATE&nbsp;TABLES.SQL 
+            contiene le istruzioni SQL per creare le tabelle, gli indici e le 
+            chiavi per le relazioni utilizzando il Driver ODBC <b>Microsoft Access</b>.</span></td>
+          <td bgcolor="#F0F0F0" width="13%" align="center" valign="top"><a href="../dativari/db_04_01.zip"><img src="../images/disco.gif" width="43" height="25" border="0"></a><br>
+            <b>4&nbsp;KB</b></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#FFFFFF" width="87%" valign="top"><b>Microsoft SQL Server 
+            7</b><br>
+            <span class="size1">Il database si compone di due files: DB004.MDF 
+            con i dati e DB004.LDF con il log delle transazioni del database. 
+            Il proprietario del database e di tutti gli oggetti in esso contenuti 
+            &egrave; il SysAdmin di default (sa). Il database contiene le tabelle, 
+            gli indici e le chiavi per le relazioni e l'integrit&agrave; referenziale. 
+            Il file CREATE&nbsp;TABLES.SQL contiene le istruzioni SQL per creare 
+            le tabelle, gli indici e le chiavi per le relazioni utilizzando il 
+            Driver ODBC <b>Microsoft SQL Server</b>.</span></td>
+          <td bgcolor="#FFFFFF" width="13%" align="center" valign="top"><a href="../dativari/db_04_02.zip"><img src="../images/disco.gif" width="43" height="25" border="0"></a><br>
+            <b>215&nbsp;KB</b></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#F0F0F0" width="87%" valign="top"><b>MySQL 3.23</b><br>
+            <span class="size1">Il database si compone di sei files: ELENCOCD.FRM 
+            e FILES.FRM per la definizione delle tabelle, ELENCOCD.MYD e FILES.MYD 
+            con i dati delle due tabelle, ELENCOCD.MYI e FILES.MYI con gli indici 
+            delle tabelle. Tutti gli oggetti sono stati creati utilizzando il 
+            SysAdmin di default (root). All'interno, oltre le tabelle, sono contenuti 
+            gli indici e le chiavi primarie. Il database non supporta l'uso di 
+            chiavi esterne, quindi le relazioni e l'integrit&agrave; referenziale. 
+            Il file CREATE&nbsp;TABLES.SQL contiene le istruzioni SQL per creare 
+            le tabelle, gli indici e le chiavi primarie utilizzando il Driver 
+            <b>MySQL ODBC 3.51</b>.</span></td>
+          <td bgcolor="#F0F0F0" width="13%" align="center" valign="top"><a href="../dativari/db_04_05.zip"><img src="../images/disco.gif" width="43" height="25" border="0"></a><br>
+            <b>2&nbsp;KB</b></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#FFFFFF" width="87%" valign="top"><b>Interbase / Firebird 
+            1.0</b><br>
+            <span class="size1">Tutto il database &egrave; contenuto all'interno 
+            del file DB004.GDB e comprende le due tabelle, gli indici e le chiavi 
+            per effettuare relazioni ed integrit&agrave; referenziale. Tutti gli 
+            oggetti sono stati creati utilizzando il SysAdmin di default (SYSDBA). 
+            Il file CREATE&nbsp;TABLES.SQL contiene le istruzioni SQL per creare 
+            le tabelle, gli indici e le chiavi per le relazioni utilizzando il 
+            Driver ODBC <b>IBPhoenix Firebird/InterBase(r)</b>.</span></td>
+          <td bgcolor="#FFFFFF" width="13%" align="center" valign="top"><a href="../dativari/db_04_06.zip"><img src="../images/disco.gif" width="43" height="25" border="0"></a><br>
+            <b>32&nbsp;KB</b></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#F0F0F0" width="87%" valign="top"><b>PostgreSQL 7.2</b><br>
+            <span class="size1">Il database non pu&ograve; essere installato semplicemente 
+            copiando uno o pi&ugrave; files ma deve essere rigenerato tramite 
+            l'utilit&agrave; createdb e poi ripristinando il file DB004 mediante 
+            psql. Tutti gli oggetti sono stati creati utilizzando il SysAdmin 
+            di default in ambiente CygWin (unknown). Il file CREATE&nbsp;TABLES.SQL 
+            contiene le istruzioni SQL per creare le tabelle, gli indici, le chiavi 
+            per le relazioni ed i trigger utilizzando il Driver <b>Insight PostgreSQL 
+            ODBC</b>.</span></td>
+          <td bgcolor="#F0F0F0" width="13%" align="center" valign="top"><a href="../dativari/db_04_07.zip"><img src="../images/disco.gif" width="43" height="25" border="0"></a><br>
+            <b>2&nbsp;KB</b></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#FFFFFF" width="87%" valign="top"><b>Microsoft Visual FoxPro 
+            6.0</b><br>
+            <span class="size1">Il database pu&ograve; essere utilizzato in due 
+            modalit&agrave;: a tabelle libere oppure collegate in un database; 
+            tra le due opzioni &egrave; stata preferita la seconda. Il DB004.DBC 
+            contiene la definizione del database, DB004.DCT contiene i campi Memo 
+            e DB004.DCX contiene gli indici delle tabelle, le quali sono contenute 
+            in altri cinque files: ELENCOCD.DBF e FILES.DBF con la definizione 
+            ed i dati delle tabelle, ELENCOCD.CDX e FILES.CDX con gli indici e 
+            FILES.FPT con i campi Memo della tabella Files. Il file CREATE&nbsp;TABLES.SQL 
+            contiene le istruzioni SQL per creare le tabelle e le chiavi primarie 
+            utilizzando il Driver ODBC <b>Microsoft Visual FoxPro</b>. Il file 
+            CREATE&nbsp;TABLES&nbsp;2.SQL contiene le istruzioni SQL per creare 
+            il database, le tabelle, gli indici e le chiavi per le relazioni utilizzando 
+            il Driver ODBC <b>Merant DataDirect 4.0 FoxPro 3.0 Database</b>.</span></td>
+          <td bgcolor="#FFFFFF" width="13%" align="center" valign="top"><a href="../dativari/db_04_08.zip"><img src="../images/disco.gif" width="43" height="25" border="0"></a><br>
+            <b>3&nbsp;KB</b></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#F0F0F0" width="87%" valign="top"><b>Paradox 5.0</b><br>
+            <span class="size1">Vari files compongono questo database: ELENCOCD.DB 
+            e FILES.DB contengono la definizione delle due tabelle, ELENCOCD.PX 
+            e FILES.PX contengono l'indice della chiave primaria, ELENCOCD.VAL 
+            e FILES.VAL contengono la Costraint NOT NULL, FILES.MB contiene i 
+            dati del campo Memo, FILES.X02 e FILES.Y02 contengono invece i dati 
+            dell'indice secondario. Il file CREATE&nbsp;TABLES.SQL contiene le 
+            istruzioni SQL per creare le tabelle, gli indici e le chiavi per le 
+            relazioni utilizzando il Driver ODBC <b>Microsoft Paradox</b>. Il 
+            file CREATE&nbsp;TABLES&nbsp;2.SQL contiene le istruzioni SQL per 
+            creare le tabelle, gli indici e le chiavi per le relazioni utilizzando 
+            il Driver ODBC <b>Merant DataDirect 4.0 ParadoxFile</b>.</span></td>
+          <td bgcolor="#F0F0F0" width="13%" align="center" valign="top"><a href="../dativari/db_04_09.zip"><img src="../images/disco.gif" width="43" height="25" border="0"></a><br>
+            <b>4&nbsp;KB</b></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#FFFFFF" width="87%" valign="top"><b>dBase 5.0</b><br>
+            <span class="size1">Il database nel vecchio formato dBase conta numerosissimi 
+            files: ELENCOCD.DBF e FILES.DBF con la definizione ed i dati delle 
+            tabelle, ELENCOCD.MDX e FILES.MDX con gli indici, FILES.DBT con il 
+            campo Memo della tabella Files. A questi files di dati se ne aggiungono 
+            alti relativi ai driver ODBC utilizzati: ELENCOCD.INF e FILES.INF 
+            specificano quali files contengono gli indici delle tabelle, utilizzando 
+            il driver Microsoft; QEDBF.INF contiene le stesse informazioni ma 
+            nel formato per il driver Merant. Il file CREATE&nbsp;TABLES.SQL contiene 
+            le istruzioni SQL per creare le tabelle e gli indici utilizzando il 
+            Driver ODBC <b>Microsoft dBase</b>. Il file CREATE&nbsp;TABLES&nbsp;2.SQL 
+            contiene le istruzioni SQL per creare le tabelle e gli indici utilizzando 
+            il Driver ODBC <b>Merant DataDirect 4.0 dBASEFile</b>.</span></td>
+          <td bgcolor="#FFFFFF" width="13%" align="center" valign="top"><a href="../dativari/db_04_10.zip"><img src="../images/disco.gif" width="43" height="25" border="0"></a><br>
+            <b>3&nbsp;KB</b></td>
+        </tr>
+        <tr> 
+          <td bgcolor="#F0F0F0" width="87%" valign="top"><b>Microsoft Excel 97</b><br>
+            <span class="size1">Il database/foglio elettronico di Excel 97 &egrave; 
+            contenuto in un unico file di nome DB004.XLS al cui interno si trovano 
+            sei fogli di lavoro in bianco (inutilizzati) e due fogli relativi 
+            alle due tabelle del database. Il file CREATE&nbsp;TABLES.SQL contiene 
+            le istruzioni SQL per creare le tabelle utilizzando il Driver ODBC 
+            <b>Microsoft Excel</b>.</span></td>
+          <td bgcolor="#F0F0F0" width="13%" align="center" valign="top"><a href="../dativari/db_04_11.zip"><img src="../images/disco.gif" width="43" height="25" border="0"></a><br>
+            <b>3&nbsp;KB</b></td>
+        </tr>
+      </table>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/notes2.gif" width="31" height="32" align="left">Per 
+        evitare possibili errori dati da una differente posizione dati, si raccomanda 
+        di porre il database nella cartella C:\DB004<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Gli articoli successivi si baseranno sulla connessione e l'uso di uno 
+        qualsiasi di questi database ed il loro accesso sar&agrave; effettuato 
+        con interfacce dati differenti.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        27 Novembre 2002<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice della sezione Database</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

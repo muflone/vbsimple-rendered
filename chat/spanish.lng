@@ -1,0 +1,121 @@
+#
+#         This java file is a part of the
+#
+#          -  Plouf's Java IRC Client  -
+#
+#      Copyright (C) 2002 Philippe Detournay
+#
+#   This file is licensed under the GPL license
+#
+#        All contacts : theplouf@yahoo.com
+#
+#      This translation file was provided by
+#                 Nicolás Chaim
+#
+
+
+0001 [INTERPRETOR_NOT_ON_CHANNEL] En ningún canal
+0002 [INTERPRETOR_UNKNOWN_DCC] %1 : comando DCC desconocido
+0003 [INTERPRETOR_INSUFFICIENT_PARAMETERS] %1 : parámetros insuficientes
+0004 [INTERPRETOR_BAD_CONTEXT] %1 : imposible realizar en el contexto actual
+0005 [INTERPRETOR_CANNOT_CTCP_IN_DCCCHAT] No se pueden enviar códigos CTCP en chat DCC
+0006 [INTERPRETOR_UNKNOWN_CONFIG] %1 : comando desconocido
+0007 [INTERPRETOR_TIMESTAMP_ON] Fechador activado
+0008 [INTERPRETOR_TIMESTAMP_OFF] Fechador desactivado
+0009 [INTERPRETOR_SMILEYS_ON] Íconos gestuales activados
+000a [INTERPRETOR_SMILEYS_OFF] Íconos gestuales desactivados
+000b [INTERPRETOR_IGNORE_ON] Ignorando a %1
+000c [INTERPRETOR_IGNORE_OFF] Ya no ignorando a %1
+      
+0101 [DCC_WAITING_INCOMING] Conectando...
+0102 [DCC_UNABLE_TO_OPEN_CONNECTION] Imposible conectarse : %1
+0103 [DCC_CONNECTION_ESTABLISHED] Conexión DCC establecida
+0104 [DCC_CONNECTION_CLOSED] Desconectado
+0105 [DCC_ERROR] Error : %1
+0106 [DCC_UNABLE_TO_SEND_TO] %1 : imposible enviar a %2
+0107 [DCC_BAD_CONTEXT] Imposible ejecutar comando en el contexto actual
+0108 [DCC_NOT_CONNECTED] Desconectado
+0109 [DCC_UNABLE_PASSIVE_MODE] Imposible iniciar el modo pasivo
+010a [CTCP_PING_REPLY] [PING a %1] : %2 segundos
+010b [DCC_STREAM_CLOSED] Desconectado
+      
+0201 [IDENT_FAILED_LAUNCH] Error al ejecutar servidor IDENT : %1
+0202 [IDENT_REQUEST] Solicitud IDENT de %1
+0203 [IDENT_ERROR] Ha ocurrido un error
+0204 [IDENT_REPLIED] Respondió %1
+0205 [IDENT_DEFAULT_USER] usuario predeterminado
+0206 [IDENT_NO_USER] No hay usuario para la solicitud
+0207 [IDENT_RUNNING_ON_PORT] Servidor IDENT en el puerto %1
+0208 [IDENT_LEAVING] El servidor IDENT se cierra : %1
+0209 [IDENT_NONE] ninguno
+020a [IDENT_UNKNOWN] desconocido
+020b [IDENT_UNDEFINED] Resultado indefinido
+      
+0301 [FILE_SAVEAS] Guardar archivo como
+      
+0401 [ABOUT_ABOUT] Acerca de
+0402 [ABOUT_PROGRAMMING] Programación
+0403 [ABOUT_DESIGN] Diseño
+0404 [ABOUT_THANKS] Agradecimientos
+0405 [ABOUT_SUPPORT] por su soporte, ideas y pruebas
+0406 [ABOUT_GPL] Este programa funciona bajo la licencia GPL
+      
+0501 [SERVER_UNABLE_TO_CONNECT] Imposible conectarse : %1
+0502 [SERVER_UNABLE_TO_CONNECT_STILL] Imposible conectarse a %1 : intentando conectarse a %2
+0503 [SERVER_DISCONNECTING] Desconectándose de %1
+0504 [SERVER_CONNECTING] Conectándose...
+0505 [SERVER_NOT_CONNECTED] Desconectado
+0506 [SERVER_LOGIN] Autenticándose...
+0507 [SERVER_DISCONNECTED] Desconectado de %1
+0508 [SERVER_ERROR] Error : %1
+      
+0601 [SOURCE_YOU_KICKED] Has sido expulsado de %1 por %2
+0602 [SOURCE_STATUS] Estado
+0603 [SOURCE_CHANLIST] Canales en %1
+0604 [SOURCE_CHANLIST_RETREIVING] Obteniendo canales...
+0605 [SOURCE_HAS_JOINED] %1 ha entrado a %2
+0606 [SOURCE_HAS_LEFT] %1 a salido de %2
+0607 [SOURCE_HAS_BEEN_KICKED_BY] %1 ha sido expulsado por %2
+0608 [SOURCE_HAS_QUIT] %1 ha salido
+0609 [SOURCE_TOPIC_IS] El tema es %1
+060a [SOURCE_CHANGED_TOPIC] %1 ha cambiado el tema a %2
+060b [SOURCE_CHANNEL_MODE] %1 ha cambiado el modo a %2
+060c [SOURCE_CHANNEL_MODE_IS] El modo del canal es %1
+060d [SOURCE_USER_MODE] %1 cambia el modo a %2 en %3
+060e [SOURCE_KNOWN_AS] %1 es conocido como %2
+060f [SOURCE_YOUR_MODE] Tu modo ha cambiado a %1
+0610 [SOURCE_YOUR_NICK] Tu alias es %1
+0611 [SOURCE_INFO] Información
+      
+0701 [GUI_WHOIS] Información
+0702 [GUI_QUERY] Conversar en privado
+0703 [GUI_KICK] Expulsar
+0704 [GUI_BAN] Suspender
+0705 [GUI_KICKBAN] Expulsar y suspender
+0706 [GUI_OP] Convertir en operador
+0707 [GUI_DEOP] Quitar de operador
+0708 [GUI_VOICE] Dar la palabra
+0709 [GUI_DEVOICE] Quitar la palabra
+070a [GUI_PING] Ping
+070b [GUI_VERSION] Versión
+070c [GUI_TIME] Hora
+070d [GUI_FINGER] Finger
+070e [GUI_RETREIVING_FILE] Recibiendo archivo (%1 bytes)
+070f [GUI_SENDING_FILE] Enviando archivo (%1 bytes)
+0710 [GUI_TERMINATED] %1 terminó
+0711 [GUI_FAILED] %1 falló
+0712 [GUI_CLOSE] Cerrar
+0713 [GUI_DISCONNECT] Desconectar
+0714 [GUI_CHANNELS] Canales
+0715 [GUI_HELP] Ayuda
+0716 [GUI_PRIVATE] privado
+0717 [GUI_PUBLIC] público
+0718 [GUI_CONNECT] Conectar
+0719 [GUI_ABOUT] Acerca de
+071a [GUI_CHANGE_NICK] Cambiar alias a
+071b [GUI_COPY_WINDOW] Copy text
+      
+0801 [ASL_MALE] Hombre, %1 años, %2
+0802 [ASL_FEMALE] Mujer, %1 años, %2
+      
+ffff [ERROR_NOT_DEFINED] Error : Texto indefinido

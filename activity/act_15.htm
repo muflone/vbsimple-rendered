@@ -1,0 +1,451 @@
+<html><!-- #BeginTemplate "/Templates/Richieste.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Lettura di un DataBase Remoto con ADO tramite XML</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Lettura di un DataBase Remoto 
+    con ADO tramite XML<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/activity.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Richiesta di: <!-- #BeginEditable "RICHIEDENTE" -->Antonio<!-- #EndEditable --> 
+        - <!-- #BeginEditable "DATARICHIESTA" -->16 Giugno 2001<!-- #EndEditable --><br>
+        Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"> 
+        4<!-- #EndEditable --> / 5 </p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p><i>Come fare per leggere il contenuto di una tabella che si trova su 
+        un sito Internet remoto?</i></p>
+      <hr>
+      <p>Questo articolo implementa una soluzione sviluppata da Moreno Sirri e 
+        pubblicata sul suo sito (<a href="http://www.msvbsite.net" target="_blank">http://www.msvbsite.net</a>).</p>
+      <p>Con il sempre pi&ugrave; crescente sviluppo della tecnologia <a href="../glossary/m.htm#MICROSOFT">Microsoft</a> 
+        COM (<a href="../glossary/c.htm#COMPONENTOBJECTMODEL">Component Object 
+        Model</a>) aumentano i programmi che utilizzano risorse distribuite su 
+        vari server.<br>
+        Le ultime versioni di ADO (<a href="../glossary/a.htm#ACTIVEXDATAOBJECTS">ActiveX 
+        Data Objects</a>) permettono l'apertura di un <a href="../glossary/r.htm#RECORDSET">Recordset</a> 
+        senza connessione attraverso la chiamata di un indirizzo Internet HTTP 
+        o FTP. Naturalmente &egrave; necessario che l'indirizzo Internet richiamato 
+        restituisca in uscita un Recordset.<br>
+        <i><b>Nota bene:</b></i> abbiamo detto Recordset, non Database. Non dovremo 
+        inserire la posizione in cui si trova l'archivio dati ma dovremo provvedere 
+        una sequenza dati in una forma comprensibile all'ADO.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Tale forma di scambio di dati &egrave; l'<a href="../glossary/x.htm#XML">XML</a> 
+        (<a href="../glossary/e.htm#EXTENDEDMARKUPLANGUAGE">Extended Markup Language</a>), 
+        un linguaggio di marcatura in grado di trasferire dati di qualunque genere, 
+        nato come evoluzione dell'HTML utilizzato per disegnare le pagine Web.</p>
+      <p>Il nostro progetto si compone di due parti: la prima &egrave; scritta 
+        in <a href="../glossary/a.htm#ASP">ASP</a> (Active Server Pages) e servir&agrave; 
+        come interfaccia tra il nostro programmino scritto in VB ed il database 
+        remoto. La pagina ASP interrogher&agrave; il Database per noi e restituir&agrave; 
+        un Recordset XML. Il nome del Recordset richiesto sar&agrave; passato 
+        attraverso il metodo <i>GET</i>.<br>
+        La seconda parte &egrave; un semplicissimo programma in Visual Basic che 
+        richiama la pagina ASP sul server e mostra in una griglia il contenuto 
+        del Recordset ricevuto.<br>
+        Iniziamo a vedere il codice della pagina ASP:</p>
+      <ol class="codicevb" start="1">
+        <li>&lt;%</li>
+        <li>&nbsp;&nbsp;Option Explicit</li>
+        <li>&nbsp;&nbsp;Const adLockPessimistic = 2</li>
+        <li>&nbsp;&nbsp;Const adOpenkeyset = 1</li>
+        <li>&nbsp;&nbsp;Const adPeRSistXML = 1</li>
+        <li>&nbsp;&nbsp;Const adStateOpen = 1</li>
+        <li>&nbsp;&nbsp;Const adVarChar = 200</li>
+        <li>&nbsp;&nbsp;Const adInteger = 3</li>
+        <li>&nbsp;&nbsp;Const NOMEDB = &quot;Libri.mdb&quot;</li>
+        <li>&nbsp;&nbsp;Dim CONN</li>
+        <li>&nbsp;&nbsp;Dim RS</li>
+        <li>&nbsp;&nbsp;Dim XMLStream</li>
+        <li></li>
+      </ol>
+      <p>Alle righe 3-8 sono dichiarate alcune costanti di <a href="../glossary/a.htm#ADO">ADO</a>. 
+        In Visual Basic normalmente non sono ncessarie, ma poich&eacute; stiamo 
+        utilizzando ASP esse non sono presenti. Suppliamo alla loro mancanza dichiarandole 
+        manualmente.<br>
+        Alla riga 9 dichiariamo la variabile <b>NOMEDB</b> che conterr&agrave; 
+        il nome del database da aprire nella cartella in cui si trova la nostra 
+        pagina ASP.</p>
+      <p>Seguono le dichiarazioni di tre variabili: <b>CONN</b> sar&agrave; la 
+        connessione al database da aprire, <b>RS</b> sar&agrave; il Recordset 
+        che verr&agrave; aperto dalla connessione ed i cui dati saranno restituiti 
+        alla chiamata della pagina ASP; <b>XMLStream</b> &egrave; invece uno <a href="../glossary/s.htm#STREAM">stream</a> 
+        che verr&agrave; utilizzato per trasformare il Recordset in XML da inviare 
+        al browser.</p>
+      <ol class="codicevb" start="14">
+        <li>&nbsp;&nbsp;On Error Resume Next</li>
+        <li>&nbsp;&nbsp;Set RS = Server.CreateObject(&quot;ADODB.Recordset&quot;)</li>
+        <li>&nbsp;&nbsp;Set CONN = Server.CreateObject(&quot;ADODB.Connection&quot;)</li>
+        <li>&nbsp;&nbsp;CONN.ConnectionString = &quot;Driver={Microsoft Access 
+          Driver (*.mdb)}; DBQ=&quot; &amp; Server.MapPath(NOMEDB)</li>
+        <li>&nbsp;&nbsp;CONN.Open</li>
+        <li>&nbsp;&nbsp;RS.Open &quot;SELECT * FROM &quot; &amp; Request.QueryString(&quot;TableName&quot;), 
+          CONN, adOpenkeyset, adLockPessimistic</li>
+      </ol>
+      <p>&Egrave; necessario dedicare una nota particolare alla possibilit&agrave; 
+        che si verifichi un errore durante l'apertura del Recordset richiesto. 
+        Dall'altro lato dell'applicazione si trova un programmino Visual Basic, 
+        che si aspetta comunque dei dati in una forma corretta. Sar&agrave; pertanto 
+        necessario verificare la presenza di errori ed in questo caso restituire 
+        comunque un Recordset. Ecco perch&eacute; alla riga 14 abbiamo inserito 
+        la funzione di gestione degli errori.</p>
+      <p><a href="../glossary/i.htm#ISTANZA">Istanziate</a> le due variabili <b>CONN</b> 
+        ed <b>RS</b>, segue la normale sequenza di istruzioni per l'apertura di 
+        una connessione ADO e del Recordset richiesto (righe 17-19). </p>
+      <ol class="codicevb" start="20">
+        <li>&nbsp;&nbsp;If Err Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If RS Is Nothing Then Set RS = Server.CreateObject(&quot;ADODB.Recordset&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;With RS</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If .State = adStateOpen Then .Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Fields.Append &quot;Type&quot;, 
+          adVarChar, 9</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Fields.Append &quot;Source&quot;, 
+          adVarChar, 50</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Fields.Append &quot;Description&quot;, 
+          adVarChar, 255</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Fields.Append &quot;Code&quot;, 
+          adInteger</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Source = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.ActiveConnection = Nothing</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Open</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.AddNew</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Fields(&quot;Type&quot;) = &quot;##Error##&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Fields(&quot;Source&quot;)= Err.Source</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Fields(&quot;Description&quot;) 
+          = Server.URLEncode(Err.Description)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Fields(&quot;Code&quot;) = Err.Number</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Update</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;On Error Goto 0</li>
+      </ol>
+      <p>Nel caso che si verifichi un errore, faremo in modo che la pagina restituisca 
+        comunque un Recordset valido contenente il messaggio di errore generato.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alla riga 21 viene istanziato il Recordset se la precedente istanza ha 
+        avuto esito negativo. Se il Recordset <b>RS</b> arriva aperto, sar&agrave; 
+        chiuso per permettere la modifica della struttura.</p>
+      <p>Saranno aggiunti quattro campi (<i>Type</i>, <i>Source</i>, <i>Description</i> 
+        e <i>Code</i>), viene aperto il Recordset, vengono aggiunti dei dati che 
+        indicano l'errore che si &egrave; verificato (righe 24-36).</p>
+      <p>Solo allora viene rimpossa la funzione di gestione degli errori. Dalla 
+        riga 39 in poi tutti gli errori che si saranno verificati non saranno 
+        controllati. L'ideale sarebbe di creare una nuova sezione di codice per 
+        la gestione dei nuovi errori.</p>
+      <ol class="codicevb" start="40">
+        <li>&nbsp;&nbsp;Set XMLStream = Server.CreateObject(&quot;ADODB.Stream&quot;)</li>
+        <li>&nbsp;&nbsp;RS.Save XMLStream, adPersistXML</li>
+        <li>&nbsp;&nbsp;RS.Close</li>
+        <li>&nbsp;&nbsp;CONN.Close</li>
+        <li>&nbsp;&nbsp;Set RS = Nothing</li>
+        <li>&nbsp;&nbsp;Set CONN = Nothing</li>
+        <li>&nbsp;&nbsp;Response.ContentType = &quot;text/xml&quot;</li>
+        <li>&nbsp;&nbsp;Response.Write XMLStream.ReadText</li>
+        <li>&nbsp;&nbsp;XMLStream.Close</li>
+        <li>&nbsp;&nbsp;Set XMLStream = Nothing</li>
+        <li>%&gt;</li>
+      </ol>
+      <p>Alla riga 40 viene istanziato lo Stream. Alla riga successiva viene salvato 
+        il Recordset RS all'interno dello stream XMLStream; la costante adPersistXML 
+        identifica il tipo di salvataggio (in XML quindi). Alle righe 42-45 vengono 
+        chiusi e <a href="../glossary/d.htm#DEALLOCARE">deallocati</a> Recordset 
+        e connessione.</p>
+      <p>Completiamo il nostro programmino ASP con la restituzione dei dati al 
+        chiamante. Viene innanzitutto definito il tipo di dati restituiti (riga 
+        46) e poi viene restituito il contenuto di XMLStream, prima di chiuderlo 
+        e deallocarlo.</p>
+      <p>Se richiamassimo questa pagina ASP mediante un browser riceveremmo un 
+        Recordset XML da esplorare. Nel nostro caso abbiamo invece un semplice 
+        programma scritto in Visual Basic; vediamolo:</p>
+      <p align="center"><img src="../images/activity/att15_01.jpg" width="391" height="291" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <p>Il progetto far&agrave; uso di <i><a href="../glossary/a.htm#ADO">ADO</a> 
+        2.6</i> e pertanto sar&agrave; necessario aggiungere tale <a href="../glossary/l.htm#LIBRERIA">libreria</a> 
+        alla lista dei riferimenti <img src="../images/ide/riferime.gif" width="16" height="16" align="absmiddle"> 
+        del progetto. Il form contiene solo 4 controlli. Il primo di questi &egrave; 
+        una <i><b>Microsoft FlexGrid</b></i><img src="../images/controls/flexgrid.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>Griglia</b>, che occupa quasi la totalit&agrave; della superficie 
+        del form. Gli altri controlli sono una <i><b>Label</b></i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>URLLabel</b>, una <i><b>TextBox</b></i><img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>URLText</b> ed un <i><b>CommandButton</b></i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>ApriDBRemoto</b>.<br>
+        Il codice &egrave; molto semplice:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub ApriDBRemoto_Click()</li>
+        <li>&nbsp;&nbsp;Dim RS As ADODB.Recordset</li>
+        <li>&nbsp;&nbsp;Dim Y As Integer</li>
+        <li>&nbsp;&nbsp;Dim X As Integer</li>
+        <li></li>
+        <li>&nbsp;&nbsp;On Error GoTo ERRORE</li>
+        <li>&nbsp;&nbsp;Set RS = New ADODB.Recordset</li>
+        <li>&nbsp;&nbsp;RS.Open URLXML.Text</li>
+      </ol>
+      <p>Nel momento in cui l'utente clicca sul pulsante ApriDBRemoto viene avviata 
+        la connessione al sito Internet remoto. Il suo funzionamento &egrave; 
+        molto semplice.</p>
+      <p>Alla riga 4 dichiariamo un <i>Recordset</i> di nome <b>RS</b> e lo allochiamo 
+        alla riga 9. Tutti gli errori saranno gestiti (riga 8) dalla sezione di 
+        codice identificata con l'etichetta <b>ERRORE</b>.</p>
+      <p>Alla riga 10 viene effettuata l'apertura del Recordset, fornendo come 
+        origine della tabella l'indirizzo Internet presente nella TextBox <b>URLXML</b>.<br>
+        La pagina chiamata dovr&agrave; restituire un Recordset XML altrimenti 
+        verr&agrave; generato un errore.</p>
+      <ol class="codicevb" start="11">
+        <li>&nbsp;&nbsp;If (RS.Fields(0).Name = &quot;Type&quot;) And (RS.Fields(1).Name 
+          = &quot;Source&quot;) Then Err.Raise RS.Fields(&quot;CODE&quot;).Value, 
+          RS.Fields(&quot;SOURCE&quot;).Value, RS.Fields(&quot;DESCRIPTION&quot;).Value</li>
+        <li>&nbsp;&nbsp;Griglia.Clear</li>
+        <li>&nbsp;&nbsp;Griglia.Cols = RS.Fields.Count</li>
+        <li>&nbsp;&nbsp;Griglia.Rows = RS.RecordCount + 1</li>
+        <li>&nbsp;&nbsp;For X = 1 To RS.RecordCount</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For Y = 0 To RS.Fields.Count - 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If X = 1 Then Griglia.TextMatrix(0, 
+          Y) = RS.Fields(Y).Name</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Griglia.TextMatrix(X, Y) = RS.Fields(Y).Value 
+          &amp; &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next Y</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;RS.MoveNext</li>
+        <li>&nbsp;&nbsp;Next</li>
+        <li>&nbsp;&nbsp;RS.Close</li>
+        <li>&nbsp;&nbsp;Set RS = Nothing</li>
+        <li>&nbsp;&nbsp;Exit Sub</li>
+      </ol>
+      <p>Ricordiamoci cosa faceva la nostra pagina ASP nel momento in cui si verificava 
+        un errore! Essa creava un Recordset contenente quattro campi e li riempiva 
+        con i dati dell'errore generato.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Pertanto alla riga 11 viene verificato se i primi due campi del Recordset 
+        ricevuto si chiamano <b>Type</b> e <b>Source</b>. In tal caso viene generato 
+        volontariamente un errore con i dati presenti nel Recordset. L'errore 
+        sar&agrave; gestito dalla funzione apposita.</p>
+      <p>Solo allora sar&agrave; possibile azzerare la <b>Griglia</b> e riempirla 
+        con i dati ricevuti. Dopo aver preparato righe e colonne, verranno utilizzati 
+        due cicli per estrarre i dati dal Recordset (righe 12-21).<br>
+        Per la prima riga soltanto, sar&agrave; eseguita un'istruzione aggiuntiva, 
+        che riempie oltre le celle della griglia, anche le intestazioni della 
+        colonna (riga 17).</p>
+      <p>La procedura si conclude con la chiusura e <a href="../glossary/d.htm#DEALLOCARE">deallocazione</a> 
+        del Recordset <b>RS</b>. </p>
+      <ol class="codicevb" start="25">
+        <li>ERRORE:</li>
+        <li>&nbsp;&nbsp;MsgBox &quot;Si &egrave; verificato un errore.&quot; &amp; 
+          vbNewLine &amp; Err.Description, vbCritical Or vbOKOnly, &quot;DB Remoto&quot;</li>
+        <li>&nbsp;&nbsp;If RS.State = adStateOpen Then RS.Close</li>
+        <li>&nbsp;&nbsp;Set RS = Nothing</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Se si dovesse verificare un errore sar&agrave; mostrata una finestra 
+        di dialogo con la descrizione dell'errore (riga 26) e se il Recordset 
+        &egrave; ancora aperto sar&agrave; chiuso prima di essere deallocato.</p>
+      <ol class="codicevb" start="31">
+        <li>Private Sub Form_Unload(Cancel As Integer)</li>
+        <li>&nbsp;&nbsp;MsgBox &quot;Il presente codice &egrave; stato sviluppato 
+          sulla base di un codice di Moreno Sirri&quot; &amp; vbNewLine &amp; 
+          &quot;Moreno Sirri VB Site - http://www.msvbsite.net&quot;, vbInformation 
+          + vbOKOnly, Me.Caption</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub Griglia_DblClick()</li>
+        <li>&nbsp;&nbsp;Griglia.Clear</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub URLXML_KeyPress(KeyAscii As Integer)</li>
+        <li>&nbsp;&nbsp;If KeyAscii = 13 Then KeyAscii = 0</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Seguono tre semplicissime funzioni non fondamentali, ma utili. La prima 
+        mostra un avviso sull'autore del codice originale, per rispettare le regole 
+        di copyright presenti nella pagina da cui viene fatto spunto per questo 
+        esempio (riga 31-33).</p>
+      <p>Nel momento in cui l'utente clicca due volte sulla griglia essa sar&agrave; 
+        azzerata. La sua funzione si rivela utile prima di richiedere una nuova 
+        pagina, per verificare se i dati sono stati effettivamente aggiornati 
+        (righe 35-37).</p>
+      <p>L'ultima funzione blocca la pressione del tasto Invio nella casella URLXML, 
+        in modo da non generare un indirizzo Internet con un carattere di Invio 
+        inserito in mezzo (righe 39-41).</p>
+      <p align="center"><img src="../images/activity/att15_02.jpg" width="391" height="291" alt="Figura 2"><br>
+        <b>Figura 2</b></p>
+      <p>Possiamo passare alla prova del programma, molto semplice.<br>
+        Abbiamo richiamato la nostra pagina ASP richiedendo l'indirizzo della 
+        pagina seguito dal parametro <b><code>Tablename=libri</code></b>. Essa 
+        richieder&agrave; l'apertura della tabella <b>LIBRI</b> che sar&agrave; 
+        mostrata nella griglia.</p>
+      <p><img src="../images/activity/att15_03.jpg" width="398" height="122" align="right" alt="Figura 3">Se 
+        si dovesse generare un errore, sar&agrave; mostrato un avviso di errore 
+        che, purtroppo, conterr&agrave; tantissimi caratteri incomprensibili a 
+        causa della diversa codifica tra Visual Basic e Internet.</p>
+      <p><img src="../images/activity/att15_04.jpg" width="391" height="291" align="right" alt="Figura 4">&Egrave; 
+        molto interessante notare che &egrave; possibile anche salvare i Recordset 
+        XML in files con estensione XML e poi richiamarli fornendo semplicemente 
+        l'indirizzo Internet della pagina XML salvata.</p>
+      <p>Questa soluzione si rivela molto utile per alleggerire il lavoro del 
+        server e per poter utilizzare anche connessioni a database remoti quando 
+        il server ASP &egrave; inutilizzabile o non disponibile. Sar&agrave; possibile 
+        infatti inserire pagine XML statiche anche in server che non supportano 
+        ASP. <br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Il progetto &egrave; soltanto la punta di un grosso iceberg e mediante 
+        soluzioni di questo genere &egrave; possibile creare anche applicazioni 
+        di una certa grandezza ed importanza. In questo esempio &egrave; stata 
+        effettuata la sola lettura del Recordset originale ma con questa stessa 
+        tecnica &egrave; possible anche effettuare modifiche di dati sul server 
+        remoto.</p>
+      <p>La gestione degli errori &egrave; molto rozza e presenta numerose pecche.<br>
+        Inoltre, la diversa codifica tra Internet e Visual Basic fa s&igrave; 
+        che non sia possible restituire Recordset contenenti caratteri accentati 
+        o altri simboli senza effettuare la codifica Internet. Tale codifica render&agrave; 
+        per&ograve; i dati illeggibili al client a meno di sviluppare una funzione 
+        di decodifica (non molto complessa comunque).</p>
+      <!-- #EndEditable --><!-- #BeginEditable "CREDITS" --> 
+      <p align="right" class="credits2"><a href="../vbmail.htm?id=5">Moreno 
+        Sirri</a> e <a href="../vbmail.htm?id=1">Fibia FBI</a><br>
+        Basato su: <a href="http://www.morenosoft.com/MSVBSite/pagestruct.asp?lang=Ita&amp;type=4&amp;ID=89" target="_blank">Gestione 
+        di un Database Remoto</a><br>
+        18 Giugno 2001</p>
+      <!-- #EndEditable --><!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'introduzione delle Richieste dei lettori</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,451 @@
+<html><!-- #BeginTemplate "/Templates/Corso Intermedio.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 10 del Corso Intermedio</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso Intermedio - Lezione <!-- #BeginEditable "LEZIONE" -->10<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/intermed.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="int_10.htm#STEP1">Verifica dell'input</a>.</li>
+  <li><a href="int_10.htm#STEP2">L'evento KeyPress</a>.</li>
+  <li><a href="int_10.htm#STEP3">Gestione degli errori</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+       <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+     <table width="347" border="0" cellspacing="0" cellpadding="0" align="right">
+        <tr align="center" valign="top"> 
+          <td><img src="../images/lezioni/int10_01.png" width="347" height="200" alt="Figura 1"><br>
+            <b>Figura 1</b></td>
+        </tr>
+        <tr align="center" valign="top"> 
+          <td><img src="../images/lezioni/int10_02.png" width="297" height="161" alt="Figura 2"><br>
+            <b>Figura 2</b></td>
+        </tr>
+        <tr valign="top" align="center"> 
+          <td><img src="../images/lezioni/int10_03.png" width="156" height="101" alt="Figura 3"><br>
+            <b>Figura 3</b></td>
+        </tr>
+      </table>
+      <p><a name="STEP1"></a>Ogni programma che consente l'immissione di dati 
+        da parte dell'utente deve verificarne la validit&agrave; sia formale che 
+        di congruenza. &Egrave; importante tenere a mente che tutti i dati inseriti 
+        dall'utente potrebbero essere errati, ad esempio esserci lettere anzich&eacute; 
+        numeri o simboli strani anzich&eacute; una data; anche il nostro progettino 
+        sin qui sviluppato necessita di queste verifiche: i campi <b>Numero traccia</b> 
+        e <b>Anno di pubblicazione</b> si aspettano dei dati numerici e nessuna 
+        verifica &egrave; effettuata n&eacute; a priori n&eacute; a posteriori.</p>
+      <p>Proviamo ad esempio ad inserire delle lettere nei due campi numerici, 
+        come mostrato nella <b>Figura 1</b>. Le due caselle di testo hanno ricevuto 
+        i dati anzich&eacute; rifiutarli durante la digitazione; questo &egrave; 
+        gi&agrave; un comportamento inaccettabile e fuorviante per l'utilizzatore, 
+        ma procediamo oltre...</p>
+      <p>Alla pressione del pulsante <b>Salva brano</b>, nel tentativo di salvare 
+        i dati su file, il programma si interrompe con l'errore 13, mostrato nella 
+        <b>Figura 2</b>. Se il programma non fosse eseguito all'interno dell'ambiente 
+        di Visual Basic si sarebbe chiuso con l'errore mostrato nella <b>Figura 
+        3</b>.</p>
+      <p>Si rende perci&ograve; necessario aggiungere dei controlli formali sulle 
+        caselle di Input che si aspettano l'inserimento di cifre numeriche. A 
+        tal fine impediremo l'inserimento di qualsiasi carattere che non sia effettivamente 
+        un numero.</p>
+      <p>Questo genere di controlli solitamente si suddivide in due parti: la 
+        prima riguarda la digitazione e <a href="int_10.htm#STEP3">la seconda 
+        riguarda la correttezza</a>. <a name="STEP2"></a>Il primo di questi controlli 
+        si basa sull'utilizzo dell'evento<img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><b>KeyPress</b>, 
+        presente in quasi tutti i controlli; vediamolo subito in dettaglio:</p>
+      <p class="codicevb"> &nbsp;&nbsp;Private Sub Text1_KeyPress(KeyAscii As 
+        Integer)</p>
+      <p>L'evento fornisce un parametro di nome <b>KeyAscii</b> <a href="../info/info_05.htm">passato 
+        per riferimento</a> (notare l'assenza della parola chiave <i>ByVal</i>) 
+        che corrisponder&agrave; al codice <a href="../glossary/a.htm#ASCII">ASCII</a> 
+        del tasto premuto, quindi se relativo ad un casella di testo, corrisponder&agrave; 
+        anche al carattere da inserire.</p>
+      <p>Esiste inizialmente questa corrispondenza tra codice del tasto premuto 
+        e carattere da inserire: nel momento in cui l'utente premer&agrave; il 
+        tasto <b>A</b> sar&agrave; richiamato l'evento KeyPress ed il parametro 
+        KeyAscii avr&agrave; valore 65, corrispondente al codice ASCII di A. Essendo 
+        il parametro passato per riferimento ogni modifica al suo valore apportata 
+        all'interno della routine sar&agrave; riportata anche all'esterno; ci&ograve; 
+        significa che se variassimo il valore del parametro KeyAscii sar&agrave; 
+        rappresentato un altro carattere. Tornando all'esempio precedente:</p>
+      <p class="fixed">&nbsp;&nbsp;Private Sub Text1_KeyPress(KeyAscii As Integer)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;If KeyAscii = 65 Then KeyAscii = 66<br>
+        &nbsp;&nbsp;End Sub</p>
+      <p>Il presente codice nel caso in cui il codice del tasto premuto fosse 
+        65 (la A maiuscola), modificher&agrave; il valore di KeyAscii in 66 (B 
+        maiuscola); questo comporta che ogni volta che l'utente tenta di scrivere 
+        A nella casella di testo, al suo posto sar&agrave; scritto B. Alla stessa 
+        maniera &egrave; possibile richiedere che scartare il carattere e non 
+        scrivere nulla; baster&agrave; semplicemente assegnare valore 0 al parametro 
+        KeyAscii.</p>
+      <p>Pertanto, al fine di negar la possibilit&agrave; di scrivere lettere 
+        o simboli nelle caselle in cui desideriamo accettare soltanto numeri, 
+        dovremo fare un semplice controllo del valore di KeyAscii e se questo 
+        non dovesse essere una cifra, scartare il carattere ricevuto. L'operazione 
+        &egrave; molto semplice:</p>
+      <ol class="codicevb">
+        <li class="codicevbc">Private Sub txtAnnoPubblicazione_KeyPress(KeyAscii 
+          As Integer)</li>
+        <li class="codicevbc">&nbsp;&nbsp;If (KeyAscii < vbKey0 Or KeyAscii > 
+          vbKey9) And (KeyAscii <> vbKeyBack) Then KeyAscii = 0</li>
+        <li class="codicevbc">End Sub</li>
+        <li class="codicevbc"></li>
+        <li class="codicevbc">Private Sub txtNumeroTraccia_KeyPress(KeyAscii As 
+          Integer)</li>
+        <li class="codicevbc">&nbsp;&nbsp;If (KeyAscii < vbKey0 Or KeyAscii > 
+          vbKey9) And (KeyAscii <> vbKeyBack) Then KeyAscii = 0</li>
+        <li class="codicevbc">End Sub</li>
+        <li class="codicevbc"></li>
+      </ol>
+      <p>Per entrambe le caselle di testo <b>txtAnnoPubblicazione</b> e <b>txtNumeroTraccia</b> 
+        sar&agrave; effettuato lo stesso controllo: se il valore di <i>KeyAscii</i> 
+        non &egrave; compreso tra i codici dei tasti 0 e 9 (ovvero &egrave; minore 
+        di 0 oppure maggiore di 9) il tasto andr&agrave; scartato. A questo controllo 
+        ne &egrave; affiancato un altro: la battuta andr&agrave; scartata se il 
+        tasto premuto non &egrave; neanche quello di cancellazione (<i>Backspace</i>). 
+        Senza quest'ultimo controllo la casella avrebbe accettato soltanto i numeri, 
+        ma non sarebbe stato possibile cancellare le battute utilizzando il tasto 
+        Backspace.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Esistono anche altre soluzioni per rendere una casella di testo numerica 
+        e sono trattate nell'<a href="../howto/ht_000.htm">HowTo dedicato alla 
+        TextBox numeriche</a>.</p>
+      <p><!-- #BeginLibraryItem "/Library/Notes2.lbi" --><img src="../images/notes2.gif" width="31" height="32" align="left"><!-- #EndLibraryItem -->Nel 
+        codice in esame sono state utilizzate le costanti vbKey0 e vbKey9 per 
+        indicare i codici dei tasti 0 e 9; al loro posto avremmo potuto utilizzare 
+        i valori 48 e 57, cos&igrave; come le chiamate a funzione Asc(&quot;0&quot;) 
+        e Asc(&quot;9&quot;). In tale situazione &egrave; sempre bene cercare 
+        di sfruttare le costanti messe a disposizione da Visual Basic, rendendo 
+        peraltro il codice pi&ugrave; scorrevole e leggibile.</p>
+      <hr>
+      <p><a name="STEP3"></a>Alla dimostrazione pratica possiamo notare che questo 
+        controllo &egrave; efficace ad inibire tutte le battute che non siano 
+        cifre numeriche; resta tuttavia ancora una possibilit&agrave; di errore 
+        data dalla libert&agrave; all'utente di sfruttare le capacit&agrave; di 
+        Incollare del testo precedentemente copiato negli <a href="../glossary/a.htm#APPUNTI">appunti</a>, 
+        sfruttando il menu popup oppure la combinazione di tasti CTRL+V.</p>
+      <p>Nonostante esista la possibilit&agrave; di evitare questo genere di comportamenti 
+        vogliamo mettere da parte questa difficolt&agrave; per introdurre il secondo 
+        dei controlli: quello relativo alla correttezza dei dati recuperati ed 
+        alla relativa <b>gestione degli errori</b>.</p>
+      <p>&Egrave; opportuno tenere a mente che in qualsiasi operazione importante 
+        i dati da trattare potrebbero essere formalmente errati; di solito ci&ograve; 
+        &egrave; dovuto ad una cattiva analisi del problema oppure al sorgere 
+        di un comportamento inizialmente non previsto ed ancora i dati potrebbero 
+        essere stati corrotti su disco da Virus o malfunzionamenti.</p>
+      <p>&Egrave; compito del buon analista programmatore cercare di prevedere 
+        tutti i possibili comportamenti dell'utente e compito del programmatore 
+        mantenere sempre il controllo del funzionamento del programma, cercando 
+        di gestire anche i comportamenti non previsti.<br>
+        Supponiamo che la possibilit&agrave; di incollare del testo nelle caselle 
+        di testo sia un comportamento non previsto; sappiamo che in qualche maniera 
+        l'utente riuscir&agrave; a scrivere un valore non numerico in quelle caselle 
+        che si aspettano un valore numerico.</p>
+      <p>L'utilizzo di un dato non numerico al posto di uno numerico abbiamo visto 
+        che comporta un errore <i>13&nbsp;-&nbsp;Tipo non corrispondente</i>, 
+        come mostrato nelle <b>Figure 2</b> e <b>3</b>. &Egrave; per&ograve; possibile 
+        gestire gli errori con l'apposita istruzione:</p>
+      <p class="fixed">&nbsp;&nbsp;On Error &lt;comportamento&gt;</p>
+      <p>Dove al posto di &lt;comportamento&gt; possiamo avere una delle seguenti 
+        istruzioni:</p>
+      <ul>
+        <li><span class="fixed">Resume Next</span><br>
+          Ignora l'errore e procede alla riga successiva<br>
+          <br>
+        </li>
+        <li><span class="fixed">Goto 0</span><br>
+          Disattiva la gestione degli errori<br>
+          <br>
+        </li>
+        <li><span class="fixed">Goto &lt;Etichetta&gt;</span><br>
+          Al verificarsi dell'errore il codice salter&agrave; alla posizione successiva 
+          all'etichetta indicata</li>
+      </ul>
+      <p>Dopo il salto ad un'etichetta &egrave; anche possibile tornare alla riga 
+        che ha generato l'errore oppure a quella immediatamente successiva utilizzando 
+        le istruzioni <span class="fixed">Resume</span> e <span class="fixed">Resume 
+        Next</span> rispettivamente. Particolare cura deve essere dedicata nell'uso 
+        dell'istruzione Resume perch&eacute; l'esecuzione torner&agrave; alla 
+        stessa riga che ha generato l'errore; se la situazione di errore non viene 
+        corretta si genera un meccanismo infinito di genera errore-gestisci-ritenta.</p>
+      <p>In ogni caso al verificarsi di un errore gestito o non gestito, l'oggetto 
+        globale <b>Err</b> sar&agrave; riempito con le informazioni sull'errore 
+        verificatosi; in tal modo, durante un'operazione di gestione di errori, 
+        sar&agrave; possibile cercare di capire che errore si &egrave; verificato 
+        e quindi decidere cosa fare successivamente. Vediamo alcuni esempi per 
+        capire meglio il funzionamento:</p>
+      <ul>
+        <li><span class="fixed">Open &quot;C:\FILE_INESISTENTE&quot; For Input 
+          As #1</span><br>
+          <br>
+          Sar&agrave; generato un errore <i>53 - Impossibile trovare il file</i> 
+          ed il programma sar&agrave; interrotto.<br>
+          <br>
+        </li>
+        <li><span class="fixed">On Error Resume Next<br>
+          Open &quot;C:\FILE_INESISTENTE&quot; For Input As #1</span><br>
+          <br>
+          Sar&agrave; generato comunque l'errore 53 ma non sar&agrave; notificato 
+          all'utente e l'esecuzione del programma proceder&agrave; alla prossima 
+          istruzione; il file ovviamente non sar&agrave; aperto.<br>
+          <br>
+        </li>
+        <li><span class="fixed">On Error Resume Next<br>
+          Open &quot;C:\FILE_INESISTENTE&quot; For Input As #1<br>
+          If Err.Number &lt;&gt; 0 Then Exit Sub</span><br>
+          <br>
+          Sar&agrave; generato comunque l'errore 53 ma non sar&agrave; notificato 
+          all'utente e l'esecuzione del programma proceder&agrave; alla prossima 
+          istruzione, che controller&agrave; la generazione di un errore ed in 
+          tal caso richieder&agrave; l'uscita dalla procedura.<br>
+          <br>
+        </li>
+        <li><span class="fixed">On Error Goto Gestione_Errori<br>
+          Open &quot;C:\FILE_INESISTENTE&quot; For Input As #1<br>
+          Close #1<br>
+          Gestione_Errori:<br>
+          &nbsp;&nbsp;MsgBox &quot;Si &egrave; verificato un errore.&quot;, vbCritical 
+          </span><br>
+          <br>
+          Sar&agrave; generato l'errore 53 ma come in precedenza, in maniera invisibile 
+          all'utente, e l'esecuzione salter&agrave; alla posizione indicata dall'etichetta 
+          <i><b>Gestione_Errori</b></i>, ovvero sar&agrave; mostrato un avviso. 
+          Il codice relativo alla chiusura del file non sar&agrave; eseguito.<br>
+          <br>
+        </li>
+        <li><span class="fixed">On Error Goto Gestione_Errori<br>
+          Open &quot;C:\FILE_INESISTENTE&quot; For Input As #1<br>
+          Close #1<br>
+          Gestione_Errori:<br>
+          &nbsp;&nbsp;If Err.Number = 53 Then<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Il file non esiste&quot;, vbCritical<br>
+          &nbsp;&nbsp;Else <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Errore: &quot; &amp; Err.Description, 
+          vbCritical<br>
+          &nbsp;&nbsp;End If </span><br>
+          <br>
+          In maniera analoga alla precedente al verificarsi dell'errore l'esecuzione 
+          salter&agrave; alla posizione indicata dall'etichetta <i><b>Gestione_Errori</b></i>, 
+          in seguito alla quale il codice verificher&agrave; il codice dell'errore. 
+          In caso di errore 53 sar&agrave; mostrato un avviso, per tutti gli altri 
+          errori sar&agrave; mostrato un avviso differente con la descrizione 
+          dell'errore. Il codice relativo alla chiusura del file non sar&agrave; 
+          eseguito.<br>
+          <br>
+        </li>
+        <li><span class="fixed">On Error Resume Next<br>
+          Kill &quot;C:\FILE_INESISTENTE&quot;<br>
+          On Error Goto 0<br>
+          Open &quot;C:\FILE_INESISTENTE&quot; For Input As #1 </span><br>
+          <br>
+          L'operazione di cancellazione non sar&agrave; eseguita e nessun errore 
+          sar&agrave; mostrato all'utente; alla terza riga cesser&agrave; la gestione 
+          degli errori cosicch&eacute; la successiva provocher&agrave; l'interruzione 
+          del programma e la chiusura con errore.<br>
+        </li>
+      </ul>
+      <hr>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Ritornando al nostro progetto, abbiamo detto di voler ignorare il problema 
+        relativo all'uso del comando Incolla sulle caselle di testo rese numeriche; 
+        sappiamo gi&agrave; che se l'utente dovesse incollare un simbolo non numerico 
+        sar&agrave; generato errore. A questo scopo vogliamo proteggere l'intera 
+        routine relativa all'inserimento di un nuovo brano con un semplice gestore 
+        che rinvier&agrave; l'inserimento fintanto che persiste la condizione 
+        di errore:</p>
+      <ol class="codicevb">
+        <li>Private Sub cmdAggiungiBrano_Click()</li>
+        <li>&nbsp;&nbsp;If blnModifica = False Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;... Codice trattato nelle lezioni precedenti 
+          ...</li>
+        <li>&nbsp;&nbsp;Else</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;On Error Resume Next</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;With udtDiscoCorrente</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.intIndice = LOF(intFileDati) 
+          / Len(udtDiscoCorrente) + 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.strTitoloBrano = txtTitoloBrano.Text</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.strAutore = txtAutoreBrano.Text</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.strTitoloCD = txtTitoloCD.Text</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.intTraccia = CInt(txtNumeroTraccia.Text)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.intAnnoPubblicazione = CInt(txtAnnoPubblicazione.Text)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.strNote = txtNote.Text</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.blnEliminato = False</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Err.Number 
+          = 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Put #intFileDati, 
+          .intIndice, udtDiscoCorrente</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstBrani.AddItem Trim$(.strTitoloBrano)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstBrani.ItemData(lstBrani.NewIndex) 
+          = .intIndice</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox 
+          &quot;Si &egrave; verificato un errore nell'inserimento dei dati&quot;, 
+          vbCritical</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstBrani_Click</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit 
+          Sub</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;On Error GoTo 
+          0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;cmdAggiungiBrano.Caption = &quot;&amp;Aggiungi 
+          brano&quot;</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;blnModifica = Not blnModifica</li>
+        <li class="codicevbc">&nbsp;&nbsp;lstBrani.Enabled = Not blnModifica</li>
+        <li>&nbsp;&nbsp;... Codice trattato nelle lezioni precedenti ...</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Prima della fase di inserimento &egrave; stata aggiunto un gestore di 
+        errori che rinvier&agrave; procedendo alla riga successiva (riga 5); l'inserimento 
+        dei dati sar&agrave; effettuato soltanto se al termine del riempimento 
+        non risulta alcun errore (riga 15); viceversa sar&agrave; mostrato un 
+        avviso che informa della presenza di errori (riga 20) e sar&agrave; reinizializzata 
+        la variabile <b>udtDiscoCorrente</b> semplicemente chiamando la routine 
+        <i> <b>lstBrani_Click</b></i>, la routine legata all'evento Click sulla 
+        ListBox gi&agrave; trattata nelle lezioni precedenti. Al termine dell'operazione 
+        sar&agrave; richiesta l'uscita forzata dalla procedura, per non eseguire 
+        tutte quelle azioni legate al completamento.</p>
+      <p>Alla riga 24 il gestore di errori precedentemente avviato sar&agrave; 
+        annullato e tutti gli eventuali errori successivi non saranno gestiti. 
+        Questo approccio consente di non nascondere errori non previsti ma di 
+        rivelarli immediatamente alla loro generazione.</p>
+      <p>La riga 29 &egrave; stata aggiunta per impedire lo spostamento della 
+        riga di puntamento al brano durante la fase di modifica.<br>
+        In maniera analoga sar&agrave; modificata la routine relativa alla modifica 
+        di un brano esistente, non esposta in questa sede per brevit&agrave;.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->Esistono ancora una serie di possibili 
+      problemi da gestire ma che non saranno affrontati in questa sede; la maggior 
+      parte delle volte i programmi terminati richiedono ancora parecchie modifiche 
+      prima di divenire programmi completi. Spesso si tratta di gestire errori 
+      relativi a situazioni non previste o anomale e che durante l'analisi sfuggono 
+      per la complessit&agrave; del problema o per semplice dimenticanza.<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI </a><br>
+        31 Dicembre 2003<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+     </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="int_09.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna alla nona lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="int_11.htm">Vai 
+      all'undicesima lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

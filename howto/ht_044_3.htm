@@ -1,0 +1,463 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Utilizzare il registro di Windows (terza parte)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Utilizzare il registro di 
+    Windows<br>
+    (terza parte)<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level5.gif" width="17" height="18" align="absmiddle"> 
+        5<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p align="center"><a href="ht_044_2.htm">&lt;&lt; Continua dalla parte 2</a></p>
+      <p>Quella che segue &egrave; la parte pi&ugrave; complessa dell'intero articolo: 
+        saranno trattati i metodi <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        pubblici e privati della nostra classe <i>clsFBIRegistry</i>.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <ol class="codicevb" start="189">
+        <li>Public Function ApriChiave(ByVal ChiavePrincipale As ChiaviPrincipali, 
+          ByVal SottoChiave As String) As Long</li>
+        <li>&nbsp;&nbsp;Dim oldKey As Long</li>
+        <li>&nbsp;&nbsp;oldKey = lngKeyValue</li>
+        <li>&nbsp;&nbsp;If ChiavePrincipale = CHIAVE_APERTA Then ChiavePrincipale 
+          = lngKeyValue</li>
+        <li>&nbsp;&nbsp;lngKeyValue = 0</li>
+        <li>&nbsp;&nbsp;Call RegOpenKeyEx(ChiavePrincipale, SottoChiave, ByVal 
+          0&amp;, lngKeySecurity, lngKeyValue)</li>
+        <li>&nbsp;&nbsp;ApriChiave = lngKeyValue</li>
+        <li>&nbsp;&nbsp;Call RegCloseKey(oldKey)</li>
+        <li>End Function</li>
+        <li></li>
+        <li>Public Sub ChiudiChiave()</li>
+        <li>&nbsp;&nbsp;Call RegCloseKey(lngKeyValue)</li>
+        <li>&nbsp;&nbsp;lngKeyValue = 0</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Le prime due funzioni sono le pi&ugrave; scontate: <b>ApriChiave</b> 
+        effettua l'apertura di una chiave o di una sottochiave, mentre <b>ChiudiChiave</b> 
+        chiude la chiave aperta. Per la prima funzione potr&agrave; essere fornito 
+        l'handle ad una qualsiasi chiave aperta (da un'altra istanza o processo) 
+        oppure una chiave di sistema (come definito dall'enumerazione <img src="../images/ide/enumeraz.gif" width="16" height="16" align="absmiddle"> 
+        <b>ChiaviPrincipali</b>). Nel caso venisse utilizzato il valore <b>CHIAVE_APERTA</b> 
+        sar&agrave; utilizzato l'handle della chiave aperta dall'istanza della 
+        nostra classe. Il parametro sottochiave invece identicher&agrave; la sottochiave 
+        da apire rispetto alla chiave specificata.</p>
+      <p>La funzione <b>ChiudiChiave</b> invece effettua semplicemente la chiusura 
+        della chiave e l'azzeramento dell'handle <b>lngKeyValue</b>.</p>
+      <ol class="codicevb" start="204">
+        <li>Public Function CreaChiave(ByVal ChiavePrincipale As ChiaviPrincipali, 
+          ByVal SottoChiave As String, Optional ByVal NonCambiare As Boolean = 
+          False) As Long</li>
+        <li>&nbsp;&nbsp;Dim newKeyValue As Long</li>
+        <li>&nbsp;&nbsp;If ChiavePrincipale = CHIAVE_APERTA Then ChiavePrincipale 
+          = lngKeyValue</li>
+        <li>&nbsp;&nbsp;Call RegCreateKeyEx(ChiavePrincipale, SottoChiave, ByVal 
+          0&amp;, vbNullChar, REG_OPTION_NON_VOLATILE, lngKeySecurity, ByVal 0&amp;, 
+          newKeyValue, ByVal 0&amp;)</li>
+        <li>&nbsp;&nbsp;If NonCambiare = False Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call RegCloseKey(lngKeyValue)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lngKeyValue = newKeyValue</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;CreaChiave = newKeyValue</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>In maniera analoga alla funzione vista in precedenza, la funzione <b>CreaChiave</b> 
+        consente la creazione e l'apertura di una sottochiave. Se la sottochiave 
+        richiesta non esiste essa verr&agrave; creata ed aperta. Il funzionamento 
+        &egrave; analogo alla funzione <b>ApriChiave</b> ma il parametro aggiuntivo 
+        <b>NonCambiare</b> consente di effettuare le due succitate operazioni 
+        senza tuttavia chiudere e cambiare la chiave utilizzata dall'istanza, 
+        ed indicata dalla propriet&agrave; <b>Chiave</b>.</p>
+      <p>Questa possibilit&agrave; si rivela utile quando si desidera creare una 
+        nuova sottochiave, ottenerne l'handle (come valore di ritorno della funzione) 
+        senza per&ograve; chiudere la chiave sulla quale l'istanza sta lavorando.</p>
+      <ol class="codicevb" start="215">
+        <li>Public Function ElencaChiave(ByVal ChiavePrincipale As ChiaviPrincipali, 
+          ByVal Indice As Long) As String</li>
+        <li>&nbsp;&nbsp;Dim Buffer As String</li>
+        <li>&nbsp;&nbsp;Dim Lunghezza As Long</li>
+        <li>&nbsp;&nbsp;If ChiavePrincipale = CHIAVE_APERTA Then ChiavePrincipale 
+          = lngKeyValue</li>
+        <li>&nbsp;&nbsp;Buffer = String$(255, 0)</li>
+        <li>&nbsp;&nbsp;Lunghezza = 255</li>
+        <li>&nbsp;&nbsp;Call RegEnumKeyEx(ChiavePrincipale, Indice, Buffer, Lunghezza, 
+          ByVal 0&amp;, vbNullString, ByVal 0&amp;, ByVal 0&amp;)</li>
+        <li>&nbsp;&nbsp;ElencaChiave = Left$(Buffer, Lunghezza)</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>La funzione <b>ElencaChiave</b> consente di recuperare il nome di una 
+        sottochiave in base al suo ordine, ad esempio la prima, la seconda o la 
+        terza sottochiave della chiave aperta. Viene utilizzata a tale scopo la 
+        funzione API <i>RegEnumKeyEx</i>.</p>
+      <ol class="codicevb" start="225">
+        <li>Public Function ElencaChiavi(ByVal ChiavePrincipale As ChiaviPrincipali) 
+          As Variant</li>
+        <li>&nbsp;&nbsp;Dim Elenco() As String</li>
+        <li>&nbsp;&nbsp;Dim Conta As Long</li>
+        <li>&nbsp;&nbsp;Dim Buffer As String</li>
+        <li>&nbsp;&nbsp;If ChiavePrincipale = CHIAVE_APERTA Then ChiavePrincipale 
+          = lngKeyValue</li>
+        <li>&nbsp;&nbsp;Buffer = String$(1024, 0)</li>
+        <li>&nbsp;&nbsp;Call RegQueryInfoKey(ChiavePrincipale, Buffer, Len(Buffer), 
+          ByVal 0&amp;, Conta, ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, ByVal 
+          0&amp;, ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)</li>
+        <li>&nbsp;&nbsp;If Conta &gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ReDim Elenco(Conta - 1) As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For Conta = 0 To Conta - 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer = String$(255, 0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call RegEnumKeyEx(ChiavePrincipale, 
+          Conta, Buffer, Len(Buffer), ByVal 0&amp;, vbNullString, ByVal 0&amp;, 
+          ByVal 0&amp;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elenco(Conta) = Left$(Buffer, 
+          InStr(1, Buffer, Chr$(0), vbBinaryCompare) - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next Conta</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ElencaChiavi = Elenco</li>
+        <li>&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ElencaChiavi = Null</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>In maniera analoga alla funzione precedente, la funzione <b>ElencaChiavi</b> 
+        restituisce un <a href="../glossary/a.htm#ARRAY">array</a> contenente 
+        i nomi di tutte le sottochiavi presenti all'interno della chiave specificata. 
+        Se nessuna sottochiave &egrave; presente, restituir&agrave; valore Null. 
+        Utilizza la funzione <i>RegQueryInfoKey</i> allo stesso modo della propriet&agrave; 
+        NumeroSottochiavi per recuperare il numero complessivo delle sottochiavi 
+        ed allocare cos&igrave; il buffer necessario e poi ne estrae uno per uno 
+        i nomi utilizzando la funzione <i>RegEnumKeyEx</i> nella stessa maniera 
+        della funzione <b>ElencaChiave</b>.</p>
+      <ol class="codicevb" start="245">
+        <li>Public Function ElencaValore(ByVal ChiavePrincipale As ChiaviPrincipali, 
+          ByVal Indice As Long) As String</li>
+        <li>&nbsp;&nbsp;Dim Buffer As String</li>
+        <li>&nbsp;&nbsp;Dim Lunghezza As Long</li>
+        <li>&nbsp;&nbsp;If ChiavePrincipale = CHIAVE_APERTA Then ChiavePrincipale 
+          = lngKeyValue</li>
+        <li>&nbsp;&nbsp;Buffer = String$(255, 0)</li>
+        <li>&nbsp;&nbsp;Lunghezza = 255</li>
+        <li>&nbsp;&nbsp;Call RegEnumValue(ChiavePrincipale, Indice, Buffer, Lunghezza, 
+          ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)</li>
+        <li>&nbsp;&nbsp;ElencaValore = Left$(Buffer, Lunghezza)</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>La funzione <b>ElencaValore</b> consente di recuperare il nome di un 
+        valore specifico, di cui si possiede l'indice, all'interno della chiave 
+        indicata. Il funzionamento &egrave; molto simile a quello della funzione 
+        <b>ElencaChiave</b> con l'unica differenza che utilizza la funzione <i>RegEnumValue</i> 
+        per recuperare l'informazione dal registro.</p>
+      <ol class="codicevb" start="255">
+        <li>Public Function ElencaValori(ByVal ChiavePrincipale As ChiaviPrincipali) 
+          As Variant</li>
+        <li>&nbsp;&nbsp;Dim Elenco() As String</li>
+        <li>&nbsp;&nbsp;Dim Conta As Long</li>
+        <li>&nbsp;&nbsp;Dim Buffer As String</li>
+        <li>&nbsp;&nbsp;If ChiavePrincipale = CHIAVE_APERTA Then ChiavePrincipale 
+          = lngKeyValue</li>
+        <li>&nbsp;&nbsp;Buffer = String$(255, 0)</li>
+        <li>&nbsp;&nbsp;Call RegQueryInfoKey(lngKeyValue, Buffer, Len(Buffer), 
+          ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, Conta, ByVal 
+          0&amp;, ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)</li>
+        <li>&nbsp;&nbsp;If Conta &gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ReDim Elenco(Conta - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Buffer = String$(255, 0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Conta = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Do While RegEnumValue(ChiavePrincipale, Conta, 
+          Buffer, Len(Buffer), ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, ByVal 
+          0&amp;) = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elenco(Conta) = Left$(Buffer, 
+          InStr(1, Buffer, Chr$(0), vbBinaryCompare) - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Conta = Conta + 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer = String$(255, 0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Loop</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ElencaValori = Elenco</li>
+        <li>&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ElencaValori = Null</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>E come la sua parente, la funzione <b>ElencaValori</b> restituisce un 
+        array contenente i nomi di tutti i valori presenti all'interno della chiave 
+        specificata. Restituisce invece Null in assenza di valori all'interno 
+        della chiave.</p>
+      <ol class="codicevb" start="277">
+        <li>Public Function EliminaChiave(ByVal ChiavePrincipale As ChiaviPrincipali, 
+          Optional ByVal SottoChiave As String) As Boolean</li>
+        <li>&nbsp;&nbsp;If ChiavePrincipale = CHIAVE_APERTA Then ChiavePrincipale 
+          = lngKeyValue</li>
+        <li>&nbsp;&nbsp;EliminaChiave = (RegDeleteKey(ChiavePrincipale, SottoChiave) 
+          = 0)</li>
+        <li>End Function</li>
+        <li></li>
+        <li>Public Function EliminaValore(Optional ByVal NomeValore As String 
+          = &quot;&quot;) As Boolean</li>
+        <li>&nbsp;&nbsp;EliminaValore = (RegDeleteValue(lngKeyValue, NomeValore) 
+          = 0)</li>
+        <li>End Function</li>
+        <li></li>
+      </ol><p>Le due funzioni di eliminazione: <b>EliminaChiave</b> ed <b>EliminaValore</b> 
+        consentono l'eliminazione rispettivamente di una chiave e di un valore.</p>
+      <p>Tralasciamo per il momento l'ordine alfabetico e, saltando la funzione 
+        Esporta, passiamo direttamente alla funzione <b>ForzaAggiornamentoChiave</b>. 
+        Vista la loro complessit&agrave;, le due funzioni di esportazione ed importazione 
+        saranno trattate nella prossima parte.</p>
+      <ol class="codicevb" start="286">
+        <li>Public Sub ForzaAggiornamentoChiave()</li>
+        <li>&nbsp;&nbsp;Call RegFlushKey(lngKeyValue)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol><p>La sua utilit&agrave; &egrave; dubbia e potrebbe generare sospetti sul 
+        corretto funzionamento della classe. Nel momento in cui viene richiesta 
+        la modifica di un valore nel registro i dati sono effettivamente alterati 
+        ma non immediatamente scritti su disco. Se ipoteticamente, un secondo 
+        dopo un'operazione di scrittura sul registro, andasse via la luce, al 
+        riavvio del computer il valore potrebbe non essere stato ancora scritto.</p>
+      <p>Questo perch&eacute; Windows utilizza un sistema di cache e di scrittura 
+        ritardata (<i>lazy write</i>) che non impegna troppo il computer in lente 
+        operazioni di scrittura. Essa seguir&agrave; infatti nei momenti pi&ugrave; 
+        liberi del computer.</p>
+      <p>La funzione <b>ForzaAggiornamentoChiave</b> e quindi <i>RegFlushKey</i> 
+        obbligano il sistema operativo a scrivere su disco tutte le modifiche 
+        relative alla chiave specificata, garantendo l'immediata scrittura su 
+        disco ma rallentando pericolosamente la velocit&agrave; del sistema. In 
+        linea generale questa funzione non &egrave; necessaria ma in rarissimi 
+        casi pu&ograve; richiedersi utile. La funzione <i>RegFlushKey</i> viene 
+        chiamata dal sistema operativo sulle chiavi di sistema al momento dello 
+        spegnimento della macchina per assicurare la corretta scrittura dei dati 
+        su disco.</p>
+      <hr>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Prima di vedere le ultime due funzioni pubbliche relative all'esportazione 
+        ed all'importazione dei dati, diamo un rapido sguardo ad alcune funzioni 
+        private utilizzate in altre parti del codice.</p>
+      <ol class="codicevb" start="290">
+        <li>Private Function DeQuote(ByVal Stringa As String) As String</li>
+        <li>&nbsp;&nbsp;If Left$(Stringa, 1) = &quot;&quot;&quot;&quot; Then Stringa 
+          = Mid$(Stringa, 2)</li>
+        <li>&nbsp;&nbsp;If Right$(Stringa, 1) = &quot;&quot;&quot;&quot; Then 
+          Stringa = Left$(Stringa, Len(Stringa) - 1)</li>
+        <li>&nbsp;&nbsp;DeQuote = Stringa</li>
+        <li>End Function</li>
+        <li></li>
+        <li>Private Function Ceil(ByVal Numero As Double) As Double</li>
+        <li>Ceil = Fix(Numero)</li>
+        <li>If Numero &gt; Fix(Numero) Then Ceil = Ceil + 1</li>
+        <li>End Function</li>
+        <li></li>
+      </ol><p>La funzione <b>DeQuote</b> consente di rimuovere l'eventuali virgolette 
+        (&nbsp;&quot;&nbsp;) alla sinistra ed alla destra di una stringa. Non 
+        rimuovono tutte le virgolette ma soltanto un singolo paio. Viene utilizzata 
+        per recuperare il nome reale dei valori durante la fase di importazione 
+        da file.</p>
+      <p>La funzione <b>Ceil</b> prende il nome dalla funzione analoga del linguaggio 
+        JavaScript e restituisce il numero arrotodonato <b>sempre</b> per eccesso. 
+        &Egrave; utilizzata per determinare l'ampiezza del buffer durante il processo 
+        di importazione.</p>
+      <ol class="codicevb" start="301">
+        <li>Private Function HexDouble(ByVal Numero As Double, Optional Padding 
+          As Integer) As String</li>
+        <li>&nbsp;&nbsp;Dim HighPart As Double</li>
+        <li>&nbsp;&nbsp;Numero = Fix(Numero)</li>
+        <li>&nbsp;&nbsp;HighPart = Fix(Numero / 65536)</li>
+        <li>&nbsp;&nbsp;Numero = Numero - HighPart * 65536</li>
+        <li>&nbsp;&nbsp;HexDouble = Hex$(HighPart) &amp; Right$(&quot;0000&quot; 
+          &amp; Hex$(Numero), 4)</li>
+        <li>&nbsp;&nbsp;If Padding &gt; 0 Then HexDouble = Right$(String$(Padding, 
+          &quot;0&quot;) &amp; HexDouble, Padding)</li>
+        <li>End Function</li>
+        <li></li>
+      </ol><p>Una funzione un po' unusuale &egrave; la <b>HexDouble</b> ed in un linguaggio 
+        quale il C non avrebbe probabilmente senso di esistere. Viene utilizzata 
+        durante il processo di esportazione per convertire un numero Double ovvero 
+        il valore DWORD (visto che in VB non &egrave; possibile definire Long 
+        senza segno) in una stringa esadecimale. L'istruzione <i>Hex</i> arriva 
+        infatti soltanto al 31&deg; bit ed al superamento di questo, genera <i>Overflow</i>. 
+      </p>
+      <p>La funzione scompone il numero Double in due parti: la parte alta &egrave; 
+        mantenuta nella variabile <b>HighPart</b> mentre la parte bassa rimane 
+        nel parametro Numero. I due valori sono poi convertiti separatamente e 
+        le due stringhe unite solo in seguito alla conversione.</p>
+      <p>Il parametro Padding &egrave; utile per assicurare una lunghezza minima 
+        di quella specificata in tale argomento; eventuali cifre mancanti saranno 
+        riempite con zeri alla sinistra.</p>
+      <ol class="codicevb" start="310">
+        <li>Private Function Replace(ByVal Stringa As String, ByVal Trova As String, 
+          ByVal Rimpiazza As String) As String</li>
+        <li>&nbsp;&nbsp;Dim Pos As Integer</li>
+        <li>&nbsp;&nbsp;Dim Buffer As String</li>
+        <li>&nbsp;&nbsp;Pos = InStr(1, Stringa, Trova)</li>
+        <li>&nbsp;&nbsp;Buffer = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;Do While Pos &gt; 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Buffer = Buffer &amp; Left$(Stringa, Pos - 
+          1) &amp; Rimpiazza</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Stringa = Mid$(Stringa, Pos + Len(Trova))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Pos = InStr(1, Stringa, Trova)</li>
+        <li>&nbsp;&nbsp;Loop</li>
+        <li>&nbsp;&nbsp;Replace = Buffer &amp; Stringa</li>
+        <li>End Function</li>
+        <li></li>
+      </ol><p>La funzione <b>Replace</b> &egrave; del tutto inutile ai programmatori 
+        VB6 ma per chi usufruisce (<i>come me</i>) della versione 5 di VB essa 
+        &egrave; indispensabile. Com'&egrave; ovvio, consente di sostuire tutte 
+        le occorrenze di una data stringa con un'altra e presenta alcune marginali 
+        differenze rispetto alla funzione <i>Replace</i> nativa in VB6.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p align="center"><a href="ht_044_4.htm">Segue parte 4 &gt;&gt;</a></p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        1 Aprile 2002<br>
+        Corretto il 20 Settembre 2002<br>
+        Rivisitato il 24 Maggio 2003<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

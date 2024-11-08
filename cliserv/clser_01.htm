@@ -1,0 +1,399 @@
+<html><!-- #BeginTemplate "/Templates/ClientServer.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Una semplice chat senza protocolli</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Una semplice chat senza 
+    protocolli<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/cliserv.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+  </div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>L'esempio pi&ugrave; semplice in assoluto di programma Client/Server 
+        &egrave; la chat.<br>
+        L'esempio che vedremo permetter&agrave; a due utenti di comunicare tra 
+        loro, mediante la connessione diretta tramite una specifica <a href="../glossary/p.htm#PORTATCP">porta 
+        TCP</a>.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La parte server di questa semplice chat aprir&agrave; la porta 2000 in 
+        modalit&agrave; di ascolto ed attender&agrave; la connessione da parte 
+        della parte client del progetto. L'esempio funzioner&agrave; senza alcun 
+        <a href="../glossary/p.htm#PROTOCOLLO">protocollo</a>, ovvero non esisteranno 
+        regole che stabiliscono il formato dei messaggi o ne controllano la correttezza. 
+        Tutti i dati che un utente invier&agrave; all'altro saranno mostrati in 
+        una casella di testo.</p>
+      <hr>
+      <p><img src="../images/cliserv/cliserv001_01.jpg" width="219" height="134" align="right" alt="Figura 1">Vediamo 
+        inizialmente la parte server: essa consiste soltanto in un Form<img src="../images/controls/form.gif" width="25" height="25" align="absmiddle">sulla 
+        cui superficie inseriremo alcuni controlli.</p>
+      <p>Innanzitutto inseriremo un <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>Listen</b>. Inseriamo un controllo <i>Winsock</i><img src="../images/controls/winsock.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>wskServer</b> che servir&agrave; da server di ascolto per comunicare 
+        con il client.</p>
+      <p>Inseriremo anche due caselle di testo: la prima sar&agrave; chiamata 
+        <b>txtReply</b> ed avr&agrave; la propriet&agrave; <i>Multiline</i> settata 
+        a <i><b>True</b></i>; la seconda sar&agrave; chiamata <b>txtOut</b>. Il 
+        form si conclude con un altro pulsante di nome <b>Invia</b>.</p>
+      <p>Il funzionamento del form &egrave; molto semplice: l'utente del server 
+        prima di poter ricevere chiamate dal client deve porre il programma in 
+        attesa di connessione premendo il pulsante <b>Listen</b>. Una volta che 
+        l'altro utente si sar&agrave; collegato i messaggi provenienti dal client 
+        saranno mostrati nella casella di testo grande. L'altra casella pi&ugrave; 
+        piccola con il pulsante <b>Invia</b> servir&agrave; per inviare messaggi 
+        al client.</p>
+      <p>Il codice &egrave; altrettanto semplice:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub Listen_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wskServer.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wskServer.LocalPort = 2000</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wskServer.Listen</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtReply.Text = txtReply.Text &amp; &quot;Server 
+          in attesa...&quot; &amp; vbCrLf</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtReply.SelStart = Len(txtReply.Text)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Come prima cosa porremo il server in attesa (in ascolto).<br>
+        Alla riga 4, per evitare problemi in caso che l'utente clicchi pi&ugrave; 
+        di una volta il pulsante, chiudiamo la connessione del server. Se essa 
+        era aperta sar&agrave; chuisa; se essa non era aperta, l'istruzione non 
+        ha alcun effetto, n&eacute; genera errori.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alla riga 5 stabiliamo la porta <a href="../glossary/l.htm#LOCALE">locale</a> 
+        sulla quale il server ascolter&agrave; (riga 6). Non appena il server 
+        si sar&agrave; messo in attesa sar&agrave; aggiunto alla <b>txtReply</b> 
+        il testo <i><b>&quot;Server in attesa...&quot;</b></i> ed il cursore sar&agrave; 
+        spostato alla fine del testo (righe 7-8).</p>
+      <p>Da questo momento in poi il server non potr&agrave; fare nulla fino a 
+        quando il client non si connette ad esso.</p>
+      <ol class="codicevb" start="11">
+        <li>Private Sub wskServer_ConnectionRequest(ByVal requestID As Long)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If (wskServer.State &lt;&gt; sckClosed) Then 
+          wskServer.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wskServer.Accept requestID</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtReply.Text = txtReply.Text &amp; &quot;Connessione 
+          accettata...&quot; &amp; vbCrLf</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtReply.SelStart = Len(txtReply.Text)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Quando un qualunque computer tenta di collegarsi al server, scatter&agrave; 
+        l'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"> 
+        <i>ConnectionRequest</i> sul socket <b>wskServer</b>. Sar&agrave; fornito 
+        anche un numero identificativo della chiamata. Per confermare la chiamata 
+        &egrave; necessario che venga accettata la chiamata a tale numero identificativo.</p>
+      <p>Cos&igrave;, alla riga 11, viene innanzitutto controllato se il server 
+        era precedentemente collegato. Nel caso che lo fosse, sar&agrave; disconnesso 
+        prima di effettuare una nuova connessione.</p>
+      <p>Alla riga 12 viene accettata la connessione mediante il <a href="../glossary/m.htm#METODO">metodo</a> 
+        <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        <b>Accept</b> ed il parametro identificativo della connessione <i>requestID</i>. 
+        Fatto questo sar&agrave; mostrato il messaggio <i><b>&quot;Connessione 
+        accettata...&quot;</b></i> ed il cursore sar&agrave; spostato alla fine 
+        del testo, per mostrare gli ultimi messaggi (righe 14-15).</p>
+      <ol class="codicevb" start="18">
+        <li>Private Sub wskServer_DataArrival(ByVal bytesTotal As Long)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim DATI As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wskServer.GetData DATI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtReply.Text = txtReply.Text &amp; DATI &amp; 
+          vbCrLf</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtReply.SelStart = Len(txtReply.Text)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Nel momento in cui il server riceve dati, tramite il client oppure tramite 
+        una qualunque altra connessione, verr&agrave; eseguito l'evento<img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><i>DataArrival</i>.<br>
+        Pertanto, ogni volta che scatta tale evento, il server si dovr&agrave; 
+        occupare di leggere i dati in entrata e mostrarli nella casella di testo 
+        dedicata.</p>
+      <p>Per leggere i dati sar&agrave; necessaria una variabile di <a href="../info/info_04.htm">tipo 
+        Stringa</a> che chiameremo <b>DATI</b>. Mediante essa leggeremo i dati 
+        utilizzando il metodo <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        <b>GetData</b> del socket server.</p>
+      <p>Sar&agrave; allora possibile mostrarne il contenuto aggiungendolo alla 
+        casella di testo <b>txtReply</b> e spostando il cursore alla fine del 
+        testo (righe 21-22).</p>
+      <ol class="codicevb" start="25">
+        <li>Private Sub Invia_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If wskServer.State &lt;&gt; sckConnected Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtReply.Text = txtReply.Text 
+          &amp; &quot;Non connesso&quot; &amp; vbCrLf</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtReply.SelStart 
+          = Len(txtReply.Text)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit Sub</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wskServer.SendData txtOut.Text &amp; vbCrLf</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Le funzioni del server si completano concedendogli la possibilit&agrave; 
+        di comunicare con il client. Abbiamo un pulsante <b>Invia</b> che invia 
+        il testo presente nella casella di testo <b>txtReply</b>.</p>
+      <p>Pertanto l'esecuzione dell'evento <i>Click</i> del pulsante dovr&agrave; 
+        inviare i dati al socket collegato. Prima di effettuare quest'operazione, 
+        per&ograve;, &egrave; necessario verificare se il server &egrave; connesso 
+        (riga 26). Se esso non &egrave; connesso, il tentativo di inviare dati 
+        genera un errore.<br>
+        Quindi, prima di inviare i dati, controlliamo lo stato del server mediante 
+        la <a href="../glossary/p.htm#PROPRIETA">propriet&agrave;</a> <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        <i>State</i> del socket <b>wskServer</b>. Se esso non &egrave; connesso 
+        mostreremo il messaggio <i><b>&quot;Non connesso&quot;</b></i> ed usciremo 
+        dalla Sub (righe 27-29).</p>
+      <p>Il raggiungimento della riga 31 presuppone la connessione del server 
+        con il client. Potremo pertanto inviare i dati mediante il metodo <b>SendData</b> 
+        e specificando come testo il contenuto della casella di testo <b>txtOut</b>.</p>
+      <p>Il server termina qui. Possiamo provare il nostro server e collegarci 
+        ad esso mediante un qualunque programma di Telnet specificando come server 
+        l'indirizzo del computer in cui viene eseguito il programma server e come 
+        porta il numero 2000.</p>
+      <hr>
+      <p><img src="../images/cliserv/cliserv001_03.jpg" width="219" height="134" align="right" alt="Figura 2">Alternativamente 
+        al programma di Telnet possiamo utilizzare un client molto semplice disegnato 
+        appositamente per questa applicazione. Il client si compone di un solo 
+        form.</p>
+      <p>Similmente al form server, questo contiene un pulsante di nome <b>Connetti</b>, 
+        una <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>HostNameLabel</b>, una casella di testo di nome <b>txtHostName</b>. 
+        &Egrave; necessario ovviamente anche un socket Winsock<img src="../images/controls/winsock.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>wskClient</b>.</p>
+      <p>Per comunicare abbiamo bisogno anche di una casella di testo di nome 
+        <b>txtReply</b> con la propriet&agrave; <i>Multiline</i> impostata a <i><b>True</b></i>, 
+        una casella di testo di nome <b>txtOut</b> ed un pulsante di comando di 
+        nome <b>Invia</b>.</p>
+      <p>Il funzionamento &egrave; estremamente semplice: l'utente deve immettere 
+        l'indirizzo <a href="../glossary/i.htm#IP">IP</a> o il <a href="../glossary/d.htm#DNS">DNS</a> 
+        del server in ascolto sulla porta 2000 e premere il pulsante <b>Connetti</b>. 
+        Stabilita la connessione sar&agrave; possibile scrivere messaggi nella 
+        casella piccola e inviarli con il tasto <b>Invia</b>. Il codice &egrave; 
+        persino pi&ugrave; semplice di quello del server:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Public Sub Connetti_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtReply.Text = txtReply.Text &amp; &quot;Connessione 
+          in corso...&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtReply.SelStart = Len(txtReply.Text)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wskClient.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wskClient.LocalPort = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wskClient.Connect txtHostName.Text, 2000</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Al click sul pulsante Connetti il client dovr&agrave; tentare la connessione 
+        al server, il cui indirizzo &egrave; specificato nella casella txtHostName.</p>
+      <p>Alle righe 4 e 5 viene mostrato un messaggio all'utente che avverte della 
+        richiesta connessione. Alla riga 6 viene chiuso l'eventuale socket aperto; 
+        se l'utente preme il pulsante <b>Connetti</b> mentre &egrave; connesso, 
+        sar&agrave; eseguita la disconnessione, l'impostazione della porta <a href="../glossary/l.htm#LOCALE">locale</a> 
+        0 (riguardo lo <a href="clser_00.htm#STEP4">stato TIME_WAIT di NETSTAT</a>) 
+        per far scegliere al sistema operativo una <a href="../glossary/p.htm#PORTATCP">porta 
+        TCP</a> libera (riga 7).</p>
+      <p>Possiamo adesso effettuare la connessione al server utilizzando il metodo 
+        <b>Connect</b> del socket <b>wskClient</b> richiedendo come indirizzo 
+        a cui collegarsi quello specificato nella casella di testo <b>txtHostName</b> 
+        e numero della porta 2000.</p>
+      <ol class="codicevb" start="11">
+        <li>Private Sub wskClient_DataArrival(ByVal bytesTotal As Long)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim DATI As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wskClient.GetData DATI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtReply.Text = txtReply.Text &amp; DATI &amp; 
+          vbCrLf</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtReply.SelStart = Len(txtReply.Text)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>In maniera perfettamente identica al server, quando arrivano dati al 
+        socket <b>wskClient</b>, sar&agrave; necessario estrarre i dati, salvarli 
+        in una variabile di nome <b>DATI</b> e visualizzarli nella casella di 
+        testo <b>txtReply</b> (righe 12-15).</p>
+      <ol class="codicevb" start="18">
+        <li>Private Sub Invia_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If wskClient.State &lt;&gt; sckConnected Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtReply.Text = txtReply.Text 
+          &amp; &quot;Non connesso&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtReply.SelStart 
+          = Len(txtReply.Text)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit Sub</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wskClient.SendData txtOut.Text &amp; vbCrLf</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Anche qui il processo &egrave; del tutto analogo a quello del server.<br>
+        Prima di inviare i dati mediante il pulsante <b>Invia</b>, viene verificata 
+        se la connessione &egrave; attiva. Se non lo &egrave; viene mostrato un 
+        messaggio all'interno della casella di testo <b>txtReply</b>, altrimenti 
+        mediante il metodo SendData viene inviato al socket server il contenuto 
+        della casella <b>txtOut</b> (righe 19-24).</p>
+      <hr>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Per provare i due programmi, se si dispone di una <a href="../glossary/l.htm#LAN">LAN</a>, 
+        installare il server su un computer ed il client su un altro; se si dispone 
+        invece di un solo computer e non si ha la possibilit&agrave; di far installare 
+        il programma ad un amico connesso su internet, &egrave; possibile eseguire 
+        entrambi i computer sulla stessa macchina.</p>
+      <p>Fatto questo sar&agrave; possibile eseguire il programma client, immettere 
+        l'indirizzo IP della macchina che funge da server (se entrambi vengono 
+        eseguiti sulla stessa macchina, utilizzare <a href="clser_00.htm#STEP2">l'indirizzo 
+        di loopback 127.0.0.1</a> per chiamare il server della stessa macchina) 
+        e premere il pulsante connetti. Sar&agrave; facilmente possibile comunicare 
+        tra i due programmi.</p>
+      <p align="center"><img src="../images/cliserv/cliserv001_02.jpg" width="219" height="134" alt="Figura 3" align="left"><img src="../images/cliserv/cliserv001_04.jpg" width="219" height="134" alt="Figura 4" align="right">Lanciare 
+        innanzitutto il programma server e premere il pulsante <b>Listen</b>. 
+      </p>
+      <p align="center"><br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Il progetto &egrave; molto semplice e contiene molti errori legati alla 
+        disconnessione di uno dei computer. Inoltre non esistendo protocollo non 
+        sar&agrave; possibile scambiare comandi tra i due programmi.</p>
+      <p>Questo esempio intende soltanto introdurre il funzionamento di base del 
+        controllo Winsock e mostrare quali sono le procedure di base da eseguire 
+        per controllare qualsiasi programma Client/Server.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=14">Alberto 
+        Alagna</a><br>
+        7 Marzo 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice Client/Server</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

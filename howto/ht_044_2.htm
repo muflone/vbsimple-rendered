@@ -1,0 +1,455 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Utilizzare il registro di Windows (seconda parte)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Utilizzare il registro di 
+    Windows<br>
+    (seconda parte)<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level5.gif" width="17" height="18" align="absmiddle"> 
+        5<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p align="center"><a href="ht_044.htm">&lt;&lt; Continua dalla parte 1</a></p>
+      <p>Dopo l'introduttiva presentazione delle dichiarazioni della classe passiamo 
+        direttamente alla fase implementativa; vedremo in ordine le propriet&agrave; 
+        <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        pubbliche della <a href="../glossary/c.htm#CLASSE">classe</a>, i suoi 
+        <a href="../glossary/m.htm#METODO">metodi</a> <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        pubblici ed infine quelli privati. L'ordine seguito &egrave; quello esclusivamente 
+        alfabetico per i tre gruppi; pertanto a volte saranno utilizzate funzioni 
+        descritte soltanto in seguito. <img src="../images/icons/smile%20sad.gif" width="15" height="15" border="0" align="absmiddle"></p>
+      <ol class="codicevb" start="72">
+        <li>Public Property Get Chiave() As Long</li>
+        <li>&nbsp;&nbsp;Chiave = lngKeyValue</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Let Chiave(ByVal newChiave As Long)</li>
+        <li>&nbsp;&nbsp;Call RegOpenKeyEx(newChiave, vbNullString, ByVal 0&amp;, 
+          lngKeySecurity, newChiave)</li>
+        <li>&nbsp;&nbsp;Call RegCloseKey(lngKeyValue)</li>
+        <li>&nbsp;&nbsp;lngKeyValue = newChiave</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La propriet&agrave; <b>Chiave</b> di lettura e scrittura restituisce 
+        ed imposta l'handle della chiave utilizzata dalla classe assegnando il 
+        contenuto del membro interno. L'operazione di scrittura della propriet&agrave; 
+        &egrave; per&ograve; leggermente pi&ugrave; complessa: prima di assegnare 
+        il nuovo valore alla variabile <i><b>lngKeyValue</b></i> &egrave; necessario 
+        riaprire la nuova chiave (riga 77) e chiudere quella precedente (riga 
+        78).</p>
+      <p>Questo perch&eacute; Windows tiene conto del numero di volte che la chiave 
+        &egrave; stata aperta. Se due istanze aprono la stessa chiave, ed una 
+        delle due istanze ne richiede la chiusura, l'handle dell'altra istanza 
+        non verr&agrave; invalidato ed entrambe le chiavi chiuse.<br>
+        &Egrave; pertanto fondamentale chiudere soltanto la chiave che l'istanza 
+        ha aperto e riaprire la nuova chiave ogni volta che un'istanza ne usufruisce. 
+        Questo garantisce che la chiave non venga chiusa da un'altra istanza o 
+        da un altro processo.</p>
+      <ol class="codicevb" start="82">
+        <li>Public Property Get NumeroSottoChiavi() As Long</li>
+        <li>&nbsp;&nbsp;Dim strClass As String</li>
+        <li>&nbsp;&nbsp;strClass = Space$(1024)</li>
+        <li>&nbsp;&nbsp;Call RegQueryInfoKey(lngKeyValue, strClass, Len(strClass), 
+          ByVal 0&amp;, NumeroSottoChiavi, ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, 
+          ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get NumeroValori() As Long</li>
+        <li>&nbsp;&nbsp;Dim strClass As String</li>
+        <li>&nbsp;&nbsp;strClass = Space$(1024)</li>
+        <li>&nbsp;&nbsp;Call RegQueryInfoKey(lngKeyValue, strClass, Len(strClass), 
+          ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, NumeroValori, 
+          ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;, ByVal 0&amp;)</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>Seguono due propriet&agrave; in sola lettura che restituiscono rispettivamente 
+        il numero di sottochiavi ed il numero di valori della chiave aperta. Entrambe 
+        le propriet&agrave; utilizzano la funzione API <i>RegQueryInfoKey</i>. 
+        In ambienti Windows NT/2000/XP &egrave; necessario che venga fornito un 
+        buffer per la classe, indicato da <b>strClass</b>.</p>
+      <ol class="codicevb" start="94">
+        <li>Public Property Get Security() As ChiaviSecurity</li>
+        <li>&nbsp;&nbsp;Security = lngKeySecurity</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Let Security(ByVal newSecurity As ChiaviSecurity)</li>
+        <li>&nbsp;&nbsp;lngKeySecurity = newSecurity</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>La propriet&agrave; <b>Security</b> consente di recuperare ed impostare 
+        un valore relativo ai permessi concessi. Trascurabile su Windows 95/98/ME, 
+        necessaria invece su Windows NT/2000/XP.</p>
+      <ol class="codicevb" start="102">
+        <li>Public Property Get Valore(Optional ByVal NomeValore As String, Optional 
+          ByRef TipoDati As TipoValoriRegistro) As Variant</li>
+        <li>&nbsp;&nbsp;Dim AmpiezzaBuffer As Long</li>
+        <li>&nbsp;&nbsp;Dim Buffer() As Byte</li>
+        <li>&nbsp;&nbsp;TipoDati = REG_NONE</li>
+        <li>&nbsp;&nbsp;Call RegQueryValueEx(lngKeyValue, NomeValore, ByVal 0&amp;, 
+          TipoDati, ByVal 0&amp;, AmpiezzaBuffer)</li>
+        <li>&nbsp;&nbsp;If AmpiezzaBuffer &gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ReDim Buffer(AmpiezzaBuffer - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call RegQueryValueEx(lngKeyValue, NomeValore, 
+          ByVal 0&amp;, ByVal 0&amp;, Buffer(0), AmpiezzaBuffer)</li>
+      </ol>
+      <p>La propriet&agrave; <b>Valore</b> si presenta un pochino pi&ugrave; complessa 
+        delle precedenti. L'operazione di lettura recupera il contenuto dei valori: 
+        quello predefinito della chiave se non viene specificato il nome del valore, 
+        o quello indicato se ne viene specificato il nome.</p>
+      <p>Sar&agrave; anche possibile recuperare con la stessa propriet&agrave; 
+        il tipo di dato passando una variabile come secondo argomento. Al ritorno 
+        della funzione tale variabile conterr&agrave; il tipo di dati del valore 
+        richiesto.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alla riga 106 sono richiesti il tipo di dato del valore e l'ampiezza 
+        del contenuto del valore mediante la funzione <i>RegQueryValueEx</i>. 
+        Se il dato pu&ograve; essere recuperato, la variabile <b>AmpiezzaBuffer</b> 
+        conterr&agrave; la dimensione in bytes del <a href="../glossary/b.htm#BUFFER">buffer</a> 
+        da <a href="../glossary/a.htm#ALLOCARE">allocare</a>.</p>
+      <p>Tale buffer sar&agrave; effettivamente allocato alla riga 108 ed i dati 
+        potranno quindi essere recuperati richiamando nuovamente la funzione <i>RegQueryValueEx</i> 
+        e fornendo il <a href="../glossary/p.htm#PUNTATORE">puntatore</a> al buffer 
+        precedentemente allocato.</p>
+      <ol class="codicevb" start="110">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Select Case TipoDati</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case REG_SZ</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valore = Left$(StrConv(Buffer, 
+          vbUnicode), AmpiezzaBuffer - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case REG_NONE, REG_BINARY, REG_EXPAND_SZ, 
+          REG_MULTI_SZ</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valore = Buffer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case REG_DWORD, REG_DWORD_LITTLE_ENDIAN</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If UBound(Buffer) 
+          = 3 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valore 
+          = CDbl(Buffer(0) + Buffer(1) * 256&amp; + Buffer(2) * 65536) + Buffer(3) 
+          * 16777216#</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valore 
+          = Buffer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case REG_DWORD_BIG_ENDIAN, REG_LINK, 
+          REG_RESOURCE_LIST</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Tipo 
+          di dati non implementato [Valore Get]!&quot;, vbCritical + vbOKOnly, 
+          &quot;FBIRegistry&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End Select</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;If AmpiezzaBuffer = 0 Then Valore = Null</li>
+        <li>&nbsp;&nbsp;Erase Buffer</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>Avendo recuperato il contenuto del valore ed il suo tipo di dati, sar&agrave; 
+        quindi possibile effettuare la conversione nel formato pi&ugrave; convenzionale: 
+        stringa per il tipo <b>REG_SZ</b>, numero intero double per il tipo <b>REG_DWORD</b> 
+        o matrice di byte per gli altri tipi di dato. Per quanto riguarda la conversione 
+        in stringa verr&agrave; effettuata la conversione da formato ANSI ad Unicode 
+        (riga 112). La conversione in numero double effettuer&agrave; un controllo 
+        in pi&ugrave; alla riga 116: sebbene il processo di conversione &egrave; 
+        semplice (riga 117), esistono all'interno del registro alcuni valore memorizzati 
+        in maniera errata, ovvero con un numero di bytes minore o maggiore dei 
+        normali quattro che compongono un valore DWORD. Per tali casi sar&agrave; 
+        semplicemente restituita la matrice di dati senza effettuare la conversione 
+        (riga 119).</p>
+      <p>Se il valore richiesto non esiste all'interno del registro oppure non 
+        &egrave; impostato alcun valore per esso, la dimensione del buffer sar&agrave; 
+        uguale a 0 e sar&agrave; pertanto restituito un valore <i><b>Null</b></i> 
+        (riga 125).</p>
+      <ol class="codicevb" start="129">
+        <li>Public Property Let Valore(ByVal NomeValore As String, Optional ByRef 
+          TipoDati As TipoValoriRegistro = REG_SZ, ByVal newValore As Variant)</li>
+        <li>&nbsp;&nbsp;Dim AmpiezzaBuffer As Long</li>
+        <li>&nbsp;&nbsp;Dim Buffer() As Byte</li>
+        <li>&nbsp;&nbsp;If (TipoDati &lt; REG_NONE) Or (TipoDati &gt; REG_RESOURCE_LIST) 
+          Then TipoDati = REG_SZ</li>
+        <li>&nbsp;&nbsp;Select Case TipoDati</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case REG_SZ</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer = StrConv(newValore, vbFromUnicode) 
+          &amp; vbNullChar</li>
+      </ol>
+      <p>L'ultima propriet&agrave; &egrave; l'operazione di scrittura sul valore 
+        del registro. Come la precedente consente opzionalmente la specifica di 
+        un nome di valore e di un tipo di dati che se non specificato assume il 
+        significato di stringa (<b>REG_SZ</b>). Alla riga 132 viene effettuato 
+        un controllo d'obbligo sul tipo di dato specificato.</p>
+      <p>Se il dato da scrivere &egrave; di tipo stringa esso sar&agrave; semplicemente 
+        convertito da Unicode ad ANSI e trasferito nella variabile binaria <b>Buffer</b>.</p>
+      <ol class="codicevb" start="136">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case REG_BINARY, REG_NONE, REG_EXPAND_SZ, 
+          REG_MULTI_SZ</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If (VarType(newValore) And vbArray) 
+          = vbArray Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ReDim Buffer(0) As 
+          Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Not IsNull(newValore) 
+          Then ReDim Buffer(UBound(newValore) + 1) As Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer(UBound(Buffer)) 
+          = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select Case (VarType(newValore) 
+          Xor vbArray)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case vbByte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer 
+          = newValore</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          Not IsNull(newValore) Then ReDim Preserve Buffer(UBound(newValore) + 
+          1) As Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer(UBound(Buffer)) 
+          = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case vbInteger, 
+          vbLong, vbDouble, vbVariant</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For 
+          AmpiezzaBuffer = LBound(newValore) To UBound(newValore)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer(AmpiezzaBuffer) 
+          = (newValore(AmpiezzaBuffer) And 255)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next 
+          AmpiezzaBuffer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox 
+          &quot;Tipo di dati non supportato [Valore Let]!&quot;, vbCritical + 
+          vbOKOnly, &quot;FBIRegistry&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit 
+          Property</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End Select</li>
+      </ol>
+      <p>La situazione si complica nel caso dei tipi di dati binari specificato 
+        alla riga 136. Essi dovranno essere convertiti in maniera idonea in una 
+        matrice. L'operazione sarebbe uno scherzo se il <a href="../info/info_04.htm">tipo 
+        di dati</a> non fosse Variant e come tale Visual Basic si rifiuter&agrave; 
+        di trattarlo o trasformarlo direttamente in matrice di byte, a meno che 
+        il suo sottotipo non sia Byte.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Sar&agrave; quindi verificato alla riga 137 che il nuovo valore passato 
+        sia una matrice: in tal caso verr&agrave; allocata una nuova matrice di 
+        bytes di nome <b>Buffer</b> della dimensione dell'altra matrice ed il 
+        contenuto verr&agrave; quindi ricopiato nella matrice <b>Buffer</b>. Sar&agrave; 
+        generato un errore se il sottotipo dei dati non &egrave; numerico (riga 
+        151).</p>
+      <ol class="codicevb" start="154">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ElseIf Not IsNull(newValore) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;I dati 
+          binari devono essere in una matrice!&quot;, vbCritical + vbOKOnly, &quot;FBIRegistry&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit Property</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ReDim Buffer(0) As 
+          Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case REG_DWORD, REG_DWORD_LITTLE_ENDIAN</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If IsNull(newValore) = False Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If IsArray(newValore) 
+          = False Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ReDim 
+          Buffer(4) As Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer(0) 
+          = (newValore And 255)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer(1) 
+          = (newValore \ 256) And 255</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer(2) 
+          = (newValore And &amp;H7FFFFF00) \ 65536 And 255</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer(3) 
+          = ((newValore And &amp;HFF000000) \ 16777216) And 255</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ReDim 
+          Buffer(UBound(newValore) + 1) As Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For AmpiezzaBuffer 
+          = LBound(newValore) To UBound(newValore)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Buffer(AmpiezzaBuffer) 
+          = (newValore(AmpiezzaBuffer) And 255)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next AmpiezzaBuffer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ReDim Buffer(0) As 
+          Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+      </ol>
+      <p>Sar&agrave; generato un avviso anche nel caso in cui i dati passati non 
+        siano in una matrice ed il tipo richiesto sia comunque di dati binari 
+        (riga 155). Nell'ultimo caso che il valore passato sia un valore Nullo 
+        sar&agrave; generata una matrice vuota (riga 158).</p>
+      <p>Se invece il tipo di dati richiesto &egrave; il <b>REG_DWORD</b> sar&agrave; 
+        verificato che i dati non siano una matrice. Nel caso che non lo fossero 
+        dovr&agrave; quindi essere calcolato il nuovo valore ed assegnarlo ad 
+        una matrice di 4 bytes (righe 163-167). Se i dati sono invece in una matrice 
+        tali dati saranno ricopiati nel nuovo buffer (righe 169-172).</p>
+      <ol class="codicevb" start="177">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case REG_DWORD_BIG_ENDIAN, REG_LINK, REG_RESOURCE_LIST</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Tipo di dati non 
+          implementato [Valore Let]!&quot;, vbCritical + vbOKOnly, &quot;FBIRegistry&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit Property</li>
+        <li>&nbsp;&nbsp;End Select</li>
+        <li>&nbsp;&nbsp;If IsNull(newValore) And (TipoDati = REG_SZ) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call RegDeleteValue(lngKeyValue, NomeValore)</li>
+        <li>&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call RegSetValueEx(lngKeyValue, NomeValore, 
+          ByVal 0&amp;, TipoDati, Buffer(0), UBound(Buffer))</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;Erase Buffer</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>Tutti gli altri tipi di dati non sono supportati (righe 177-179).<br>
+        Prima di procedere con la scrittura dei dati richiesti sar&agrave; effettuato 
+        un ultimo controllo: se il dato da scrivere &egrave; un valore Null ed 
+        il tipo richiesto &egrave; la stringa <b>REG_SZ</b> il valore non sar&agrave; 
+        scritto affatto, anzi sar&agrave; cancellato del tutto il valore (riga 
+        182) tramite funzione API <i>RegDeleteValue</i>. Nel caso contrario sar&agrave; 
+        effettuata la normale scrittura del buffer tramite la funzione <i>RegSetValueEx</i> 
+        (riga 184).<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p align="center"><a href="ht_044_3.htm">Segue parte 3 &gt;&gt;</a></p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        1 Aprile 2002<br>
+        Corretto il 20 Settembre 2002<br>
+        Rivisitato il 24 Maggio 2003<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

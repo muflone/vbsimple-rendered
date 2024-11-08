@@ -1,0 +1,285 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Effettuare una pausa all'interno di un progetto</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Effettuare una pausa all'interno 
+    di un progetto<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --> 
+        1<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <ul>
+        <li><a href="ht_034.htm#STEP1">Prima soluzione, senza l'utilizzo dell'API</a></li>
+        <li><a href="ht_034.htm#STEP2">Seconda soluzione, con l'utilizzo dell'API</a></li>
+        <li><a href="ht_034.htm#STEP3">Terza soluzione, con l'utilizzo dell'API</a></li>
+      </ul>
+      <p>Sono davvero tante le occasioni nelle quali si rende necessario effettuare 
+        una pausa all'interno di un progetto. La stragrande maggioranza dei casi 
+        riguarda la sincronizzazione di processi esterni al progetto e la pausa 
+        concede tempo e priorit&agrave; agli altri programmi invece che al nostro 
+        progetto.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Esistono svariate soluzioni per effettuare questa operazione ed in questa 
+        sede ne vedremo tre, ognuna con i suoi pregi e difetti. Prima di vederle 
+        una per una inseriamo sopra un form cinque controlli.</p>
+      <p><img src="../images/howto/howto034_01.jpg" width="304" height="43" align="right" alt="Figura 1">Il 
+        primo controllo &egrave; una <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>SecondiLabel</b>, con la propriet&agrave; <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        <i>Caption</i> impostata su <i><b>&quot;Secondi&quot;</b></i>.<br>
+        Il secondo controllo &egrave; una <i>TextBox</i> <img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>Secondi</b>, con la propriet&agrave; <i>MaxLength</i> impostata 
+        a 2. Gli altri tre controlli sono tre <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>Pausa1</b>, <b>Pausa2</b> e <b>Pausa3</b>; essi serviranno per 
+        richiamare le tre soluzioni proposte in questo HowTo.</p>
+      <p>In questi esempi nasconderemo il form, lanceremo la funzione che esegue 
+        la pausa e solo dopo il numero specificato di secondi, il form sar&agrave; 
+        nuovamente mostrato.</p>
+      <hr>
+      <p align="center" class="size3"><a name="STEP1"></a>Prima soluzione, senza 
+        l'utilizzo dell'API</p>
+      <p>La prima soluzione utilizzer&agrave; una funzione interna a Visual Basic. 
+        Vediamo subito il codice dell'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle">Click 
+        sul primo pulsante.</p>
+      <ol class="codicevb" start="1">
+        <li>Private Sub Pausa1_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim TempoIniziale As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TempoIniziale = Timer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Hide</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;While Timer &lt; (TempoIniziale + Val(Secondi.Text))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoEvents</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Wend</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Show</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Alla riga 2 dichiariamo una variabile di nome <b>TempoIniziale</b>. Essa 
+        servir&agrave; per memorizzare il momento in cui viene avviata la pausa. 
+        Tale momento viene memorizzato mediante lettura del valore restituito 
+        dalla funzione Timer (riga 3). Essa infatti restituisce il numero di secondi 
+        trascorsi dalla mezzanotte.</p>
+      <p>Alla riga 4 viene nascosto il form e avviata la pausa.<br>
+        Fintanto che il numero di secondi attuale &egrave; minore del momento 
+        iniziale + il numero di secondi specificato nella casella <b>Secondi</b> 
+        (riga 5), il programma sar&agrave; in pausa.<br>
+        All'interno del ciclo &egrave; stato inserita l'istruzione DoEvents per 
+        abbassare l'attivit&agrave; del nostro progetto e concedere maggior priorit&agrave; 
+        agli altri processi (riga 6).<br>
+        Alla fine della pausa il form sar&agrave; nuovamente mostrato (riga 8).</p>
+      <p>Questa funzione ha un limite veramente pesante: la funzione Timer calcola 
+        il numero di secondi trascorsi dalla mezzanotte. Pertanto se, durante 
+        la pausa, si passa da un giorno al successivo per superamento della mezzanotte, 
+        il Timer viene azzerato e la pausa non terminer&agrave; pi&ugrave;, bloccando 
+        il programma.</p>
+      <hr>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p align="center" class="size3"><a name="STEP2"></a>Seconda soluzione, con 
+        l'utilizzo dell'API <img src="../images/api.gif" width="34" height="24" align="absmiddle"></p>
+      <p>La seconda soluzione &egrave; molto simile alla precedente ma elimina 
+        il limite poco prima citato. Vediamo pertanto la funzione che regola il 
+        click sopra il pulsante <b>Pausa2</b>.</p>
+      <ol class="codicevb" start="1">
+        <li>Private Declare Function GetTickCount Lib &quot;kernel32&quot; () 
+          As Long</li>
+        <li></li>
+        <li>Private Sub Pausa2_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim TempoIniziale As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TempoIniziale = GetTickCount</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Hide</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;While GetTickCount &lt; (TempoIniziale + Val(Secondi.Text) 
+          * 1000)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DoEvents</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Wend</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Show</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Alla riga 1 dichiariamo la funzione <a href="../glossary/a.htm#API">API</a> 
+        <i>GetTickCount</i> vista in altri <i>HowTo</i> (<a href="ht_019.htm">019</a> 
+        - <a href="ht_029.htm#STEP4">029</a> - <a href="ht_030.htm">030</a>). 
+        Essa riporta il numero di millisecondi trascorsi dall'avvio di Windows.</p>
+      <p>La funzione &egrave; del tutto identica alla precedente. Gli unici cambiamenti 
+        riguardano la sostituzione della funzione <i>Timer</i> con la funzione 
+        <i>GetTickCount</i> e la specificazione della pausa in millisecondi anzich&eacute; 
+        in secondi.</p>
+      <p>Essendo riportato il tempo in millisecondi, il valore indicato nella 
+        casella di testo <b>Secondi</b> sar&agrave; moltiplicato per 1000 (riga 
+        7).</p>
+      <p>La funzione non risente del limite precedente e non presenta alcun difetto 
+        rilevante.</p>
+      <hr>
+      <p align="center" class="size3"><a name="STEP3"></a>Terza soluzione, con 
+        l'utilizzo dell'API <img src="../images/api.gif" width="34" height="24" align="absmiddle"></p>
+      <p>L'ultima soluzione &egrave; una delle pi&ugrave; semplici ed applicate. 
+        Consiste nell'utilizzare la funzione <a href="../glossary/a.htm#API">API</a> 
+        Sleep. Vediamo l'evento Click dell'ultimo pulsante.</p>
+      <ol class="codicevb" start="1">
+        <li>Private Declare Sub Sleep Lib &quot;kernel32&quot; (ByVal dwMilliseconds 
+          As Long)</li>
+        <li></li>
+        <li>Private Sub Pausa3_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Hide</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Sleep Val(Secondi.Text) * 1000</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Show</li>
+        <li>End Sub</li>
+      </ol>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Dichiarata la funzione alla riga 1, la funzione in questione diventa 
+        semplicissima: alla riga 4 viene nascosto il form, alla riga 5 viene richiamata 
+        la funzione specificando il numero di millisecondi di pausa, dato dal 
+        numero di <b>Secondi</b> moltiplicato per 1000. Alla riga 6 viene nuovamente 
+        mostrato il form.</p>
+      <p>Il limite principale di questa funzione &egrave; che non &egrave; possibile 
+        inserire del codice nel momento di pausa. Quando viene richiamata la funzione 
+        Sleep l'intero programma viene congelato e tutti gli eventi del progetto 
+        non saranno richiamati.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Delle tre funzioni probabilmente la seconda &egrave; la pi&ugrave; utile 
+        e personalizzabile e non presenta alcun rischio connesso.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        25 Aprile 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

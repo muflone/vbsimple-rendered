@@ -1,0 +1,363 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Creazione di pulsanti di sistema</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Creazione di pulsanti di 
+    sistema<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <ul>
+        <li><a href="ht_001.htm#STEP1">I pulsanti di sistema</a>.</li>
+        <li><a href="ht_001.htm#STEP2">Il pulsante di chiusura di un form</a>.&nbsp;<img src="../images/icons/wndclose.gif" width="16" height="14" align="absmiddle"></li>
+        <li><a href="ht_001.htm#STEP3">Il pulsante di riduzione ad icona</a>.&nbsp;<img src="../images/icons/wndmin.gif" width="16" height="14" align="absmiddle"></li>
+        <li><a href="ht_001.htm#STEP4">Il pulsante di ingrandimento</a>.&nbsp;<img src="../images/icons/wndmax.gif" width="16" height="14" align="absmiddle"></li>
+        <li><a href="ht_001.htm#STEP5">Il pulsante di ripristino</a>.&nbsp;<img src="../images/icons/wndrest.gif" width="16" height="14" align="absmiddle"></li>
+        <li><a href="ht_001.htm#STEP6">Il menu di sistema</a><img src="../images/controls/form.gif" width="25" height="25" align="top">(<a href="ht_001.htm#STEP6">senza 
+          API</a> e <a href="ht_001.htm#STEP7">con API</a>).</li>
+      </ul>
+      <hr>
+      <p align="center" class="size3"><a name="STEP1"></a>I pulsanti di sistema.</p>
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2 / 5</p>
+      <p>Vedremo in questo HowTo come &egrave; possibile collegare dei pulsanti 
+        normali ai pulsanti di sistema di un Form. Posizioneremo sopra un form 
+        5 pulsanti&nbsp;<img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle"> 
+        al cui click verranno eseguite le operazioni di chiusura del form&nbsp;<img src="../images/icons/wndclose.gif" width="16" height="14" align="absmiddle">, 
+        la riduzione ad icona&nbsp;<img src="../images/icons/wndmin.gif" width="16" height="14" align="absmiddle">, 
+        la massimizzazione del form&nbsp;<img src="../images/icons/wndmax.gif" width="16" height="14" align="absmiddle">, 
+        il ripristino del suo stato normale&nbsp;<img src="../images/icons/wndrest.gif" width="16" height="14" align="absmiddle"> 
+        e l'apertura del menu di sistema<img src="../images/controls/form.gif" width="25" height="25" align="absmiddle">di 
+        un form.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p align="center" class="size3"><a name="STEP2"></a>Il pulsante di chiusura 
+        di un form.</p>
+      <p></p>
+      <p>Le operazioni da eseguire sono facilissime.<br>
+        Nel momento in cui clicchiamo il pulsante di chiusura &nbsp;<img src="../images/icons/wndclose.gif" width="16" height="14" align="absmiddle"> 
+        scatta l'evento <i>Unload</i> del form. Per cui al nostro scopo serve 
+        una funzione per far scattare tale evento. Il comando pi&ugrave; adatto 
+        &egrave; l'istruzione <b><i>Unload</i></b> seguita dal nome di un form. 
+        <code>Unload Me</code> provoca la chiusura del form dentro il quale quest'istruzione 
+        viene scritta.<br>
+        Inseriamo un pulsante e denominiamolo <b>PulsanteChiudi</b> e nella routine 
+        che gestisce l'evento Click scriviamo <code>Unload Me</code>. Il primo 
+        pulsante &egrave; completo.</p>
+      <p align="center" class="size3"><a name="STEP3"></a>Il pulsante di riduzione 
+        ad icona.</p>
+      <p></p>
+      <p>Passiamo al pulsante&nbsp;<img src="../images/icons/wndmin.gif" width="16" height="14" align="absmiddle"> 
+        che riduce ad icona il form. Nel momento in cui viene cliccato, il valore 
+        della propriet&agrave; <i>WindowState</i> del form assume il valore 1, 
+        corrispondente al valore della <a href="../glossary/c.htm#COSTANTE">costante</a> 
+        <img src="../images/ide/costante.gif" width="16" height="16" border="0" align="absmiddle"> 
+        vbMinimized.<br>
+        Nel momento in cui vorremo ridurre ad icona un form ci baster&agrave; 
+        impostare il valore della propriet&agrave; WindowState a 1 oppure a vbMinimized.<br>
+        Inseriamo nel nostro form un pulsante e diamogli il nome di <b>PulsanteRiduci</b>. 
+        All'interno dell'evento Click scriviamo <code>WindowState=vbMinimized</code>. 
+        Secondo pulsante completo.</p>
+      <p align="center" class="size3"><a name="STEP4"></a>Il pulsante di ingrandimento.</p>
+      <p></p>
+      <p>Il terzo pulsante &egrave; quello di ingrandimento, detto anche pulsante 
+        di massimizzazione&nbsp;<img src="../images/icons/wndmax.gif" width="16" height="14" align="absmiddle"> 
+        del form. Al click sopra di esso, la propriet&agrave; <i>WindowState</i> 
+        riceve il valore 2 ovvero la costante vbMaximized.<br>
+        Inseriamo un pulsante di nome <b>PulsanteIngrandisci</b> e scriviamo all'interno 
+        della routine dell'evento Click <code>WindowState=vbMaximized</code>. 
+        Anche questo &egrave; finito.</p>
+      <p align="center" class="size3"><a name="STEP5"></a>Il pulsante di ripristino.</p>
+      <p></p>
+      <p>Il penultimo pulsante &egrave; il pulsante di ripristino&nbsp;<img src="../images/icons/wndrest.gif" width="16" height="14" align="absmiddle"> 
+        che appare ogni volta che si ingrandisce la finestra al massimo. Anche 
+        per questo stato si sfrutta la propriet&agrave; <i>WindowState</i>. L'impostazione 
+        d'essa al valore 0 oppure alla costante vbNormal provoca il ritorno alla 
+        dimensione originale del form, prima che venisse effettuata la massimizzazione.<br>
+        Inseriamo il pulsante <b>PulsanteRipristina</b> e scriviamo all'interno 
+        della routine dell'evento Click <code>WindowState=vbNormal</code>. Ora 
+        che questo &egrave; completo possiamo passare all'ultimo.</p>
+      <p align="center" class="size3"><a name="STEP6"></a>Il menu di sistema.</p>
+      <p></p>
+      <p>Questo pulsante &egrave; il pi&ugrave; complesso. Nei progetti Visual 
+        Basic in genere ha l'icona generica dei form<img src="../images/controls/form.gif" width="25" height="25" align="absmiddle">ma 
+        essa pu&ograve; essere cambiata tramite la propriet&agrave; Icon del form.<br>
+        All'interno di questo menu sono disponibili le funzioni le funzioni degli 
+        altri pulsanti di sistema e le possibilit&agrave; di ingrandimento e spostamento 
+        del form.<br>
+        Non esiste nessun evento e nessuna propriet&agrave; che regolano la pressione 
+        di tale menu. Inoltre tutti gli altri pulsanti di sistema potranno funzionare 
+        anche se essi saranno nascosti tramite le propriet&agrave; <i>ControlBox</i>, 
+        <i>MinButton</i> e <i>MaxButton</i> del form, mentre se il menu di sistema 
+        &egrave; nascosto non potr&agrave; essere sfruttato con il metodo che 
+        vedremo fra poco.</p>
+      <p>Non esistendo elementi all'interno del linguaggio useremo un trucchetto 
+        per forzare la comparsa di tale menu. In tutti i programmi per Windows 
+        premendo la combinazione di tasti ALT&nbsp;SPAZIO si apre il menu di sistema.<br>
+        Faremo in modo che al click del mouse sopra il pulsante <b>PulsanteMenuSys</b> 
+        venga inviata tale combinazione di tasti. Per il nostro scopo utilizzeremo 
+        la funzione <i>SendKeys</i>.</p>
+      <p>All'interno della routine dell'evento Click scriveremo <code>SendKeys 
+        &quot;% &quot;</code>.<br>
+        Nota bene che dopo il simbolo di percentuale segue uno spazio.<br>
+        L'istruzione si aspetta una stringa come parametro dei tasti da inviare. 
+        Il simbolo % indica la pressione del tasto ALT.</p>
+      <p align="center" class="size3"><a name="STEP7"></a>Il menu di sistema attraverso 
+        l'uso dell'API. <img src="../images/api.gif" width="34" height="24" align="absmiddle"></p>
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3 / 5</p>
+      <p></p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Esiste un'altra soluzione al problema di far apparire il menu di sistema, 
+        ma anch'essa &egrave; sottoposta alla limitazione imposta dalla propriet&agrave; 
+        <i>ControlBox</i> del form.<br>
+        Per questa soluzione utilizzeremo due funzioni <a href="../glossary/a.htm#API">API</a>: 
+      </p>
+      <ol class="codicevb" start="1">
+        <li>Private Declare Function GetSystemMenu Lib &quot;USER32&quot; (ByVal 
+          hwnd As Long, ByVal bRevert As Long) As Long</li>
+        <li>Private Declare Function TrackPopupMenu Lib &quot;USER32&quot; (ByVal 
+          hMenu As Long, ByVal wFlags As Long, ByVal X As Long, ByVal Y As Long, 
+          ByVal nReserved As Long, ByVal hwnd As Long, ByVal lprc As Any) As Long</li>
+        <li></li>
+      </ol>
+      <p>La prima dichiarazione &egrave; la funzione <b>GetSystemMenu</b> che 
+        riporta l'<a href="../glossary/h.htm#HANDLE">handle</a> del menu di sistema 
+        della finestra il cui handle &egrave; il parametro hwnd.<br>
+        La seconda dichiarazione &egrave; la funzione <b>TrackPopupMenu</b> che 
+        mostra un menu sullo schermo. &Egrave; molto simile all'istruzione Visual 
+        Basic <i>PopupMenu</i>, ma invece di un oggetto Menu richiede il suo handle 
+        e le coordinate sono obbligatorie.</p>
+      <p>Inseriamo un nuovo pulsante di nome <b>PulsanteMenuSysAPI</b> e scriviamo 
+        questo codice all'interno della routine dell'evento Click:</p>
+      <ol class="codicevb" start="4">
+        <li>Dim COORDX As Long</li>
+        <li>Dim COORDY As Long</li>
+        <li>Dim hMenu As Long</li>
+        <li></li>
+        <li>COORDX = Me.Left / Screen.TwipsPerPixelX + 2</li>
+        <li>COORDY = Me.Top / Screen.TwipsPerPixelY + 21</li>
+        <li>hMenu = GetSystemMenu(Me.hwnd, False)</li>
+        <li>TrackPopupMenu hMenu, 0, COORDX, COORDY, 0, Me.hwnd, 0&</li>
+      </ol>
+      <p>Le prime due righe dichiarano due variabili che conterranno le coordinate 
+        dove apparir&agrave; il menu. La terza riga invece &egrave; una variabile 
+        che conterr&agrave; l'handle del menu di sistema.</p>
+      <p>Poich&eacute; la funzione API TrackPopupMenu vuole le coordinate del 
+        menu in Pixel, mentre Visual Basic regolarmente utilizza come unit&agrave; 
+        di misura il Twip, &egrave; necessario svolgere un semplice operazione 
+        di conversione da Twips a Pixel.</p>
+      <p>All'interno dell'oggetto Screen abbiamo le propriet&agrave; <b>TwipsPerPixelX</b> 
+        e <b>TwipsPerPixelY</b>, le quali indicano rispettivamente il numero di 
+        Pixel per ogni Twip sull'asse X e quelli sull'asse Y.<br>
+        Per convertire un valore da Twips a Pixel &egrave; necessario dividere 
+        il valore in Twips per il numero di Pixel per Twip.</p>
+      <p>Alla riga 8 abbiamo il calcolo <code>Me.Left / Screen.TwipsPerPixelX.<br>
+        </code>Tale operazione ci restituisce la coordinata Left del form in Pixel. 
+        A questa coordinata aggiungiamo 2 ovvero la dimensione in pixel del bordo 
+        sinistro, in modo da evitare che il menu venga disegnato sopra di esso.</p>
+      <p>La nona riga effettua lo stesso calcolo per la coordinata Top del form.<br>
+        Al risultato aggiungiamo 21 che &egrave; la somma dei pixel occupati dalla 
+        barra del titolo pi&ugrave; il bordo superiore.</p>
+      <p>Alla riga 10 utilizziamo la funzione <i>GetSystemMenu</i> per ricevere 
+        l'handle del menu di sistema del form Me e memorizzarlo nella variabile 
+        hMenu.</p>
+      <p>La riga 11 completa la routine con l'istruzione <i>TrackPopupMenu</i> 
+        che fa apparire un menu di cui abbiamo l'handle. Alla funzione API forniamo 
+        l'handle hMenu, le due coordinate COORDX e COORDY, l'handle del form cui 
+        si riferisce (<code>Me.hwnd</code>) pi&ugrave; alcune costanti 0.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il nostro problema finisce qui. Segue un riepilogo dell'intero codice 
+        del form:</p>
+      <ol class="codicevb" start="1">
+        <li>Private Declare Function TrackPopupMenu Lib &quot;USER32&quot; (ByVal 
+          hMenu As Long, ByVal wFlags As Long, ByVal X As Long, ByVal Y As Long, 
+          ByVal nReserved As Long, ByVal hwnd As Long, ByVal lprc As Any) As Long</li>
+        <li>Private Declare Function GetSystemMenu Lib &quot;USER32&quot; (ByVal 
+          hwnd As Long, ByVal bRevert As Long) As Long</li>
+        <li></li>
+        <li>Private Sub PulsanteChiudi_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Unload Me</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub PulsanteIngrandisci_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;WindowState = vbMaximized</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub PulsanteMenuSys_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SendKeys &quot;% &quot;</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub PulsanteMenuSysAPI_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim COORDX As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim COORDY As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim hMenu As Long</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;COORDX = Me.Left / Screen.TwipsPerPixelX + 
+          2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;COORDY = Me.Top / Screen.TwipsPerPixelY + 
+          21</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hMenu = GetSystemMenu(Me.hwnd, False)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TrackPopupMenu hMenu, 0, COORDX, COORDY, 0, 
+          Me.hwnd, 0&</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub PulsanteRiduci_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;WindowState = vbMinimized</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub PulsanteRipristina_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;WindowState = vbNormal</li>
+        <li>End Sub</li>
+      </ol>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        18 Novembre 2000<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

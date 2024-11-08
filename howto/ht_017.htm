@@ -1,0 +1,257 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Rilevare se una precedente istanza del programma è attiva</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Rilevare se una precedente 
+    istanza del programma &egrave; attiva<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --> 
+        1<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Pu&ograve; essere interessante ed utile impedire che un nostro programma 
+        venga caricato due volte contemporaneamente. La sua utilit&agrave; si 
+        dimostra nel momento in cui l'attivazione di una prima istanza del programma 
+        provoca un blocco di determinate risorse, quale l'ascolto su una porta 
+        seriale o la connessione Internet su una particolare porta TCP/IP oppure 
+        la riproduzione audio della scheda audio, in quanto tali risorse, per 
+        loro natura, non possono interagire su due processi contemporaneamente.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Vedremo come rilevare se un nostro programma viene caricato pi&ugrave; 
+        di una volta. In tal caso la seconda <a href="../glossary/i.htm#ISTANZA">istanza</a> 
+        del programma verr&agrave; chiusa e verr&agrave; mostrata la finestra 
+        della prima istanza.</p>
+      <p>Il nostro progetto si comporr&agrave; di due semplici <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">poste 
+        sopra un form. Il programma non far&agrave; null'altro che mostrare l'orario 
+        nel quale la prima istanza &egrave; stata caricata e chiudere la seconda 
+        istanza quando verr&agrave; richiamata.</p>
+      <p><img src="../images/howto/howto017_01.jpg" width="261" height="51" align="right" alt="Figura 1">Inseriamo 
+        sopra il nostro form due <i>Label</i>: la prima si chiamer&agrave; <b>Label1</b> 
+        e conterr&agrave; il testo <b><i>&quot;Il programma &egrave; stato eseguito 
+        il: &quot;</i></b>, mentre la seconda avr&agrave; il nome di <b>Label2</b> 
+        e conterr&agrave; il testo <b><i>&quot;Data e ora&quot;</i></b>.</p>
+      <p>Il codice si riassume in pochissime righe inserite nell'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><i>Load</i> 
+        del form.</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim CaptionForm As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If App.PrevInstance Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;C'&egrave; 
+          gi&agrave; una istanza di questo programma&quot;, vbExclamation, &quot;Rileva 
+          istanza attiva&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CaptionForm = Me.Caption</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Me.Caption = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unload Me</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AppActivate CaptionForm</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Label2.Caption = Now</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Alla riga 4 abbiamo dichiarato una variabile di nome <b>CaptionForm</b> 
+        di tipo stringa. Essa sar&agrave; utilizzata per salvare la <i>Caption</i> 
+        del form, poich&eacute; verr&agrave; modificata alla riga 8.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il cuore di questa funzione si trova alla riga 5.<br>
+        Viene controllato, tramite la propriet&agrave; <i>App.PrevInstance</i> 
+        se sono presenti altre istanze del programma. In caso negativo verr&agrave; 
+        eseguita la riga 12, che aggiorna il contenuto della <b>Label2</b> con 
+        l'orario corrente.</p>
+      <p>Se &egrave; presente almeno un'altra istanza del programma, viene mostrata 
+        una finestra che avverte di questo (riga 6), la <i>Caption</i> del form 
+        viene prima salvata nella variabile <b>CaptionForm</b> (riga 7) e poi 
+        viene azzerata alla riga 8.</p>
+      <p>Poich&eacute; abbiamo tentato di aprire due copie dello stesso programma, 
+        quella che sta caricando (ovvero la seconda) viene subito chiusa tramite 
+        l'istruzione <i>Unload</i> della riga 9. Questo far&agrave; s&igrave; 
+        che alla fine della routine Form_Load venga chiuso il programma.<br>
+        Prima di chiudere, per&ograve;, viene attivata (ovvero mostrata) la finestra 
+        dell'altra istanza, tramite l'istruzione <i>AppActivate</i>. Questa richiede 
+        il titolo della finestra da attivare.</p>
+      <p>Alla riga 7 &egrave; stata salvata la <i>Caption</i> della finestra. 
+        Baster&agrave; per cui attivare la finestra la cui Caption &egrave; uguale 
+        a quella contenuta nella variabile <b>CaptionForm</b>. Per questo motivo 
+        &egrave; estremamente importante evitare di cambiare la <i>Caption</i> 
+        del form in questo genere di operazioni. Infatti, se la Caption venisse 
+        cambiata, l'istruzione <i>AppActivate</i>, non trovando la finestra da 
+        mostrare genererebbe un errore.</p>
+      <p>Magari vi starete chiedendo come mai abbiamo cambiato la <i>Caption</i> 
+        del form alla riga 8? La spiegazione &egrave; molto semplice: se la seconda 
+        istanza porta la stessa <i>Caption</i> della prima, &egrave; impossibile 
+        far capire all'istruzione <i>AppActivate</i> che vogliamo attivare <b>l'altra</b> 
+        istanza del programma, poich&eacute; <i>AppActivate</i> lavora in base 
+        alla Caption della finestra principale. Abbiamo, per cui, preferito azzerare 
+        la Caption dell'istanza che deve essere chiusa prima di attivare l'altra.</p>
+      <p>Ci&ograve; fa in modo che la chiamata <i>AppActivate</i> tenti di attivare 
+        la finestra la cui Caption sia identica a quella salvata. La seconda istanza 
+        non porter&agrave; pi&ugrave; quel titolo. Per cui rimane soltanto una 
+        possibile finestra da attivare e quella sar&agrave; attivata.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Per provare questo programma &egrave; necessario <a href="../glossary/c.htm#COMPILAZIONE">compilare</a> 
+        il programma in un file eseguibile, poich&eacute; la propriet&agrave; 
+        <i>App.PrevInstance</i> non funziona all'interno dell'<a href="../glossary/i.htm#IDE">IDE</a> 
+        di Visual Basic.</p>
+      <p><img src="../images/howto/howto017_02.jpg" width="261" height="51" align="right" alt="Figura 2">Effettuata 
+        la compilazione eseguite una prima volta il programma e verr&agrave; mostrato 
+        il form, con l'orario di esecuzione.</p>
+      <p><img src="../images/howto/howto017_03.jpg" width="213" height="95" align="right" alt="Figura 3">Nel 
+        momento in cui verr&agrave; tentata l'apertura di una seconda istanza 
+        del programma verr&agrave; mostrata una finestra che avverte di questa 
+        situazione. Appena l'utente clicca il pulsante OK la seconda istanza del 
+        programma verr&agrave; chiusa e verr&agrave; nuovamente mostrata la prima 
+        copia del programma.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Questo genere di operazioni, comporta pochissimi rischi: il principale 
+        riguarda l'impossibilit&agrave; di cambiare in <a href="../glossary/f.htm#FASEDIESECUZIONE">fase 
+        di esecuzione</a> la <i>Caption</i> del form.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=3">Giuseppe 
+        Della Bianca</a><br>
+        9 Gennaio 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

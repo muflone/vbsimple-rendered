@@ -1,0 +1,511 @@
+<html><!-- #BeginTemplate "/Templates/Corso Base2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 14 del Corso Base</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso base - Lezione <!-- #BeginEditable "LEZIONE" -->14<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/base.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="bas_14.htm#STEP1">Alla scoperta dei menu di Visual Basic (terza 
+    parte)</a>.</li>
+  <li><a href="bas_14.htm#STEP2">Menu Formato</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><a name="STEP1"></a>Il Corso Base si conclude con la visione di tutti 
+        i menu dell'<a href="../glossary/i.htm#IDE">IDE</a> di Visual Basic. Alcune 
+        voci sono semplicissime da comprendere e presenti in quasi tutti i programmi 
+        per Windows, ma alcune sono realmente complesse e talvolta ostiche da 
+        utilizzare.<br>
+        Nelle lezioni 12-17 vedremo uno per uno tutti i menu ed approfondiremo 
+        le loro opzioni.</p>
+      <hr>
+      <p align="center" class="size3"><a name="STEP2"></a>Menu Formato <map name="MapFormato"><area shape="rect" coords="3,20,121,38" href="#FORMATOOPT1" alt="Allinea" title="Allinea"> 
+          <area shape="rect" coords="3,38,121,56" href="#FORMATOOPT2" alt="Rendi uguale" title="Rendi uguale"> 
+          <area shape="rect" coords="3,62,121,81" href="#FORMATOOPT3" alt="Adatta alla griglia" title="Adatta alla griglia"> 
+          <area shape="rect" coords="3,89,121,107" href="#FORMATOOPT4" alt="Spaziatura orizzontale" title="Spaziatura orizzontale"> 
+          <area shape="rect" coords="3,107,121,125" href="#FORMATOOPT5" alt="Spaziatura verticale" title="Spaziatura verticale"> 
+          <area shape="rect" coords="3,131,121,150" href="#FORMATOOPT6" alt="Centra nel form" title="Centra nel form"> 
+          <area shape="rect" coords="3,156,121,175" href="#FORMATOOPT7" alt="Ordine" title="Ordine"> 
+          <area shape="rect" coords="3,181,121,200" href="#FORMATOOPT8" alt="Blocca controlli" title="Blocca controlli"> 
+        </map></p>
+      <p><img src="../images/lezioni/bas14_01.jpg" width="122" height="203" align="right" alt="Figura 1" usemap="#MapFormato" border="0">Il 
+        menu che vedremo questa volta riguarda il posizionamento dei controlli 
+        sulla superficie del form. Sono una serie di comandi, talvolta difficili 
+        da comprendere e distinguere.</p>
+      <p>Per utilizzare la maggior parte dei comandi di questo menu &egrave; necessario 
+        selezionare almeno due oggetti sul form, mentre per altri &egrave; necessario 
+        selezionarne almeno tre.<br>
+        Per effettuare la scelta di controlli multipli baster&agrave; selezionare 
+        un primo controllo normalmente (ovvero cliccandoci sopra una volta con 
+        il tasto sinistro), tenere premuto il tasto <i>SHIFT</i> oppure <i>CTRL</i> 
+        e cliccare una volta sui controlli da aggiungere alla selezione. La stessa 
+        operazione pu&ograve; essere effettuata per deselezionare un controllo 
+        da un gruppo di controlli scelti.</p>
+      <p>L'ordine di scelta di questi elementi &egrave; fondamentale per l'utilizzo 
+        dei comandi del menu Formato. I comandi che richiedono scelte multiple 
+        organizzeranno gli elementi selezionati in base alla posizione e alla 
+        grandezza dell'<b>ultimo controllo selezionato</b>.<br>
+        <b class="sottolineato">&Egrave; fondamentale tenere questo a mente!</b><br>
+        L'ultimo controllo selezionato regoler&agrave; il comportamento di tutti 
+        gli altri controlli selezionati.</p>
+      <p>Vediamo ora i singoli sottomenu e i loro comandi:</p>
+      <ol>
+        <li><a name="FORMATOOPT1"></a><img src="../images/lezioni/bas14_02.jpg" width="106" height="144" align="right" alt="Figura 2"><b>Allinea</b><br>
+          Sottomenu contenente una serie di comandi per allineare pi&ugrave; oggetti 
+          lungo un asse.<br>
+          <br>
+          Vediamo anche una rappresentazione grafica delle operazioni di allineamento 
+          effettuate su tre caselle di testo.<br>
+          La selezione dei controlli &egrave; in fatto in maniera regolare, ovvero 
+          il primo controllo selezionato &egrave; <b>CASELLA1</b>, il secondo 
+          &egrave; <b>CASELLA2</b> e l'ultimo &egrave; <b>CASELLA3</b>.<br>
+          Pertanto l'allineamento verr&agrave; fatto in base alla posizione di 
+          <b>CASELLA3</b>.<br>
+          <br>
+          <table width="93%" border="0" cellspacing="0" cellpadding="2">
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/alsinist.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>A sinistra</b></i><br>
+                Sposta tutti i controlli selezionati lungo l'asse orizzontale, 
+                allineandoli sul margine sinistro dell'ultimo controllo selezionato. 
+                In particolare opera sulla <a href="../glossary/p.htm#PROPRIETA">propriet&agrave;</a> 
+                <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Left</b></i>, cambiandone il valore per farlo coincidere 
+                con la stessa propriet&agrave; dell'ultimo controllo.</td>
+              <td width="148" valign="top"><img src="../images/lezioni/bas14_08.jpg" width="148" height="131" alt="Figura 3"></td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/alassev.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Asse verticale</b></i><br>
+                Sposta tutti i controlli selezionati sull'asse orizzontale allineandoli 
+                al centro dell'ultimo controllo selezionato. Modifica la propriet&agrave; 
+                <i> <b>Left</b></i> di tutti i controlli selezionati in modo che 
+                siano tutti centrati verticalmente rispetto all'ultimo elemento.</td>
+              <td width="148" valign="top"><img src="../images/lezioni/bas14_09.jpg" width="148" height="131" alt="Figura 4"></td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/aldestra.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>A destra</b></i><br>
+                Allinea tutti i controlli sul margine destro dell'ultimo controllo 
+                selezionato. Di fatto modifica la propriet&agrave; <i><b>Left</b></i> 
+                di tutti i controlli, spostandoli orizzontalmente.</td>
+              <td width="148" valign="top"><img src="../images/lezioni/bas14_10.jpg" width="148" height="131" alt="Figura 5"></td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/alalto.gif" width="16" height="16" align="absmiddle"> 
+                <i><b> In alto</b></i><br>
+                Modifica la propriet&agrave; <i><b>Top</b></i> di tutti i controlli 
+                selezionati rendendole tutte uguali tra loro in base alla stessa 
+                dell'ultimo controllo, al fine di portare tutti i controlli sullo 
+                stesso asse orizzontale allineati secondo il margine superiore 
+                del controllo.</td>
+              <td width="148" valign="top"><img src="../images/lezioni/bas14_11.jpg" width="148" height="131" alt="Figura 6"></td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/alasseh.gif" width="16" height="16" align="absmiddle"> 
+                <i><b> Asse orizzontale</b></i><br>
+                Sposta tutti i controlli verticalmente fino a centrarli tutti 
+                intorno all'asse orizzontale dell'ultimo controllo selezionato. 
+                Modifica la propriet&agrave; <i><b>Top</b></i> in modo che l'asse 
+                verticale al centro di tutti i controlli corrisponda all'asse 
+                verticale al centro dell'ultimo controllo.</td>
+              <td width="148" valign="top"><img src="../images/lezioni/bas14_12.jpg" width="148" height="131" alt="Figura 7"></td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/albasso.gif" width="16" height="16" align="absmiddle"> 
+                <i><b> In basso</b></i><br>
+                Sposta i controlli selezionati in modo da allinearli al lato inferiore 
+                dell'ultimo controllo. Modifica la propriet&agrave; <i><b>Top</b></i> 
+                spostando il controllo sull'asse orizzontale.</td>
+              <td width="148" valign="top"><img src="../images/lezioni/bas14_13.jpg" width="148" height="131" alt="Figura 8"></td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top" colspan="2"><img src="../images/ide/algrigl.gif" width="16" height="16" align="absmiddle"> 
+                <i><b> Alla griglia</b></i><br>
+                Sposta tutti i controlli selezionati in modo da localizzarli orizzontalmente 
+                e verticalmente sulla griglia. Infatti in base alle impostazioni 
+                dell'<a href="../glossary/i.htm#IDE">IDE</a> &egrave; possibile 
+                definire una griglia di posizionamento dei controlli sul form. 
+                Essa far&agrave; in modo che lo spostamento di controlli sul form, 
+                quando viene effettuato tramite il mouse, sia fatto ad intervalli 
+                regolari. Ad esempio un controllo viene spostato di 30 o 60 pixel 
+                per volta. L'utilizzo di questo comando fa s&igrave; che il controllo 
+                sia spostato alla posizione della griglia pi&ugrave; vicina, sia 
+                orizzontalmente che verticalmente. Il suo utilizzo &egrave; assolutamente 
+                inutile fintanto che si utilizza il mouse per effettuare i posizionamenti, 
+                ma &egrave; utile quando lo spostamento viene fatto modificando 
+                le propriet&agrave; <i><b>Left</b></i> e <i><b>Top</b></i> inserendo 
+                un numero arbitrario</td>
+            </tr>
+          </table>
+          &nbsp;<br>
+        </li>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+        <li><a name="FORMATOOPT2"></a><img src="../images/lezioni/bas14_03.jpg" width="82" height="58" align="right" alt="Figura 9"><b>Rendi 
+          uguale</b><br>
+          Modifica la dimensione dei controlli selezionati in modo tale da rendere 
+          la dimensione scelta nel menu, uguale alla dimensione dell'ultimo controllo 
+          selezionato. <br>
+          <br>
+          <table width="93%" border="0" cellspacing="0" cellpadding="2">
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/adlargh.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Larghezza</b></i><br>
+                Modifica la propriet&agrave; <i><b>Width</b></i> dei controlli 
+                selezionati rendendola uguale alla stessa propriet&agrave; dell'ultimo 
+                controllo di riferimento.<br>
+                <br>
+              </td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/adaltez.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Altezza</b></i><br>
+                Modifica la propriet&agrave; <i><b>Height</b></i> in modo da rendele 
+                l'altezza del controllo uguale all'altezza dell'ultimo controllo 
+                selezionato.<br>
+                <br>
+              </td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/adentram.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Entrambe</b></i><br>
+                Adatta la dimensione dei controlli selezionati alla dimensione 
+                dell'ultimo controllo. L'utilizzo di quest'opzione rende tutti 
+                i controlli selezionati, della stessa dimensione. Modifica sia 
+                la propriet&agrave; <i><b>Width</b></i> che la propriet&agrave; 
+                <i><b>Height</b></i>.</td>
+            </tr>
+          </table>
+          <br>
+        </li>
+        <li><a name="FORMATOOPT3"></a><img src="../images/ide/adgrigl.gif" width="16" height="16" align="absmiddle"> 
+          <b>Adatta alla griglia</b><br>
+          Modifica la dimensione dei controlli selezionati per adattarla ai margini 
+          della griglia pi&ugrave; vicini. Modifica sia la propriet&agrave; <i><b>Width</b></i> 
+          che la propriet&agrave; <i><b>Height</b></i>.<br>
+          <br>
+        </li>
+        <li><a name="FORMATOOPT4"></a><img src="../images/lezioni/bas14_04.jpg" width="90" height="75" align="right" alt="Figura 10"><b>Spaziatura 
+          orizzontale</b><br>
+          Modifica la posizione dei controlli selezionati modificando la spaziatura 
+          orizzontale che c'&egrave; tra un controllo ed il successivo. Alcune 
+          operazioni richiedono la selezione di due soli controlli, mentre altre 
+          ne richiedono almeno tre. L'azione non viene effettuata in base all'ordine 
+          di scelta ma in ordine di coordinata orizzontale. L'oggetto che si trova 
+          all'estrema sinistra, sar&agrave; quello preso in riferimento per modificare 
+          tutti gli altri.<br>
+          <br>
+          <table width="93%" border="0" cellspacing="0" cellpadding="2">
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/sphugual.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Rendi uguale</b></i><br>
+                Modifica la spaziatura orizzontale dei controlli selezionati in 
+                modo tale che la distanza tra un controllo ed un altro sia uguale 
+                per tutti i controlli selezionati.<br>
+                Verr&agrave; modificata la propriet&agrave; <i><b>Left</b></i> 
+                di tutti i controlli selezionati eccetto il primo e l'ultmo in 
+                ordine di coordinate; richiede pertanto la selezione di almeno 
+                tre controlli.<br>
+                <br>
+              </td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/sphaumen.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Aumenta</b></i><br>
+                Aumenta la spaziatura orizzontale tra i vari controlli selezionati. 
+                Modifica di fatto la propriet&agrave; <i><b>Left</b></i> di tutti 
+                i controlli eccetto quello di riferimento. Gli scostamenti sono 
+                fatti in base all'ampiezza delle caselle di cui &egrave; composta 
+                la griglia.<br>
+                <br>
+              </td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/sphdimin.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Diminuisci</b></i><br>
+                Diminuisce la spaziatura orizzontale tra i controlli scelti, modificando 
+                la propriet&agrave; <i><b>Left</b></i> dei controlli selezionati. 
+                Lo spostamento viene fatto in base all'ampiezza delle caselle 
+                di cui si compone la griglia.<br>
+                <br>
+              </td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/sphrim.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Rimuovi</b></i><br>
+                Sposta tutti i controlli selezionati eccetto quello di riferimento 
+                al fine di rimuovere ogni spaziatura orizzontale tra un controllo 
+                ed il successivo. Alla fine dell'operazione i controlli saranno 
+                affiancati l'uno all'altro, senza alcuna spaziatura o allineamento 
+                alla griglia.</td>
+            </tr>
+          </table>
+          <br>
+        </li>
+        <li><a name="FORMATOOPT5"></a><img src="../images/lezioni/bas14_05.jpg" width="90" height="75" align="right" alt="Figura 11"><b>Spaziatura 
+          verticale</b><br>
+          Analogamente alla spaziatura orizzontale, modifica la posizione dei 
+          controlli selezionati modificando la spaziatura verticale che c'&egrave; 
+          tra un controllo ed il successivo. Alcune operazioni richiedono la selezione 
+          di due soli controlli, mentre altre ne richiedono almeno tre. L'azione 
+          non viene effettuata in base all'ordine di scelta ma in ordine di coordinata 
+          verticale. L'oggetto che si trova in posizione pi&ugrave; alta, sar&agrave; 
+          quello preso in riferimento per modificare tutti gli altri.<br>
+          <br>
+          <table width="93%" border="0" cellspacing="0" cellpadding="2">
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/spvugual.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Rendi uguale</b></i><br>
+                Modifica la spaziatura verticale dei controlli selezionati in 
+                modo tale che la distanza tra un controllo ed un altro sia uguale 
+                per tutti i controlli selezionati.<br>
+                Verr&agrave; modificata la propriet&agrave; <i><b>Top</b></i> 
+                di tutti i controlli selezionati eccetto il primo e l'ultmo in 
+                ordine di coordinate; richiede pertanto la selezione di almeno 
+                tre controlli.<br>
+                <br>
+              </td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/spvaumen.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Aumenta</b></i><br>
+                Aumenta la spaziatura verticale tra i vari controlli selezionati. 
+                Modifica di fatto la propriet&agrave; <i><b>Top</b></i> di tutti 
+                i controlli eccetto quello di riferimento. Gli scostamenti sono 
+                fatti in base all'ampiezza delle caselle di cui &egrave; composta 
+                la griglia.<br>
+                <br>
+              </td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/spvdimin.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Diminuisci</b></i><br>
+                Diminuisce la spaziatura verticale tra i controlli scelti, modificando 
+                la propriet&agrave; <i><b>Top</b></i> dei controlli selezionati. 
+                Lo spostamento viene fatto in base all'ampiezza delle caselle 
+                di cui si compone la griglia.<br>
+                <br>
+              </td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/spvrim.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Rimuovi</b></i><br>
+                Sposta tutti i controlli selezionati eccetto quello di riferimento 
+                al fine di rimuovere ogni spaziatura verticale tra un controllo 
+                ed il successivo. Alla fine dell'operazione i controlli saranno 
+                affiancati verticalmente l'uno all'altro, senza alcuna spaziatura 
+                o allineamento alla griglia.</td>
+            </tr>
+          </table>
+          <br>
+        </li>
+        <li><a name="FORMATOOPT6"></a><img src="../images/lezioni/bas14_06.jpg" width="106" height="40" align="right" alt="Figura 12"><b>Centra 
+          nel form</b><br>
+          Un semplice sottomenu composto da due sole voci, atte a centrare i controlli 
+          selezionati sull'asse orizzontale o verticale. La centratura, tuttavia, 
+          non &egrave; individuale; sar&agrave; centrato sul form il gruppo intero 
+          di controlli selezionati, considerato un'unica entit&agrave;. Ci&ograve; 
+          significa che al termine dell'operazione i singoli controlli non saranno 
+          centrati sul form, ma sar&agrave; il gruppo di controlli selezionati 
+          ad essere centrati. L'ordine di scelta dei controlli &egrave; ininfluente; 
+          sar&agrave; la posizione a determinare quale sia il primo e l'ultimo 
+          controllo. <br>
+          <br>
+          <table width="93%" border="0" cellspacing="0" cellpadding="2">
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/cenassev.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Asse verticale</b></i><br>
+                Centra il gruppo di controlli selezionati sull'asse verticale. 
+                Ci&ograve; viene fatto spostando il gruppo di controlli verso 
+                sinistra o verso destra; viene pertanto modificata la propriet&agrave; 
+                <i> <b>Left</b></i> di tutti i controlli selezionati.<br>
+                <br>
+              </td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/cenasseh.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Asse orizzontale</b></i><br>
+                Centra il gruppo di controlli selezionati sull'asse orizzontale. 
+                Ci&ograve; viene fatto spostando il gruppo di controlli in alto 
+                o in basso; viene pertanto modificata la propriet&agrave; <i> 
+                <b>Top</b></i> di tutti i controlli selezionati.<br>
+                <br>
+              </td>
+            </tr>
+          </table>
+          <br>
+        </li>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+        <li><a name="FORMATOOPT7"></a><img src="../images/lezioni/bas14_07.jpg" width="172" height="40" align="right" alt="Figura 13"><b>Ordine</b><br>
+          Modifica la posizione sull'asse Z dei controlli selezionati. Per queste 
+          due operazioni &egrave; possibile selezionare anche un solo controllo. 
+          L'operazione determina la visibilit&agrave; dei controlli posizionati 
+          sopra o sotto altri controlli. L'operazione &egrave; effettuabile anche 
+          in <a href="../glossary/f.htm#FASEDIESECUZIONE">fase di esecuzione</a> 
+          mediante l'utilizzo del <a href="../glossary/m.htm#METODO">metodo</a> 
+          <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+          <i>ZOrder</i>.<br>
+          <br>
+          <table width="93%" border="0" cellspacing="0" cellpadding="2">
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/pripiano.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Porta in primo piano</b></i><br>
+                Porta i controlli selezionati in primo piano, rendendoli visibili 
+                rispetto ai controlli che si trovano alla stessa posizione.<br>
+                <br>
+              </td>
+            </tr>
+            <tr> 
+              <td align="left" valign="top"><img src="../images/ide/secpiano.gif" width="16" height="16" align="absmiddle"> 
+                <i><b>Porta in secondo piano</b></i><br>
+                Porta i controlli selezionati in secondo piano, ovvero dietro, 
+                rendendoli invisibili rispetto ai controlli che si trovano alla 
+                stessa posizione.<br>
+                <br>
+              </td>
+            </tr>
+          </table>
+          <br>
+        </li>
+        <li><a name="FORMATOOPT8"></a><img src="../images/ide/blocca.gif" width="16" height="16" align="absmiddle"> 
+          <b>Blocca controlli</b><br>
+          Blocca tutti i controlli sul form, impedendo il trascinamento e l'ingrandimento 
+          o la riduzione tramite mouse. Viene utilizzato soltanto al completamento 
+          dell'interfaccia grafica del form. Il suo utilizzo serve per impedire 
+          lo spostamento involontario di controlli in <a href="../glossary/f.htm#FASEDIPROGETTAZIONE">fase 
+          di progettazione</a> poich&eacute; l'operazione di annullamento vista 
+          nel menu Modifica non funziona per tale tipo di operazioni.<br>
+        </li>
+      </ol>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->Il menu <i><b>Formato</b></i> &egrave; 
+      probabilmente il menu pi&ugrave; complesso da comprendere senza una lettura, 
+      poich&eacute; i meccanismi che regolano i comportamenti dei controlli selezionati 
+      non sono istintivi e le descrizioni del menu sono un po' difficili da comprendere.<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        22 Aprile 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="bas_13.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna alla tredicesima lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="bas_15.htm">Vai 
+      alla quindicesima lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

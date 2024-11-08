@@ -1,0 +1,405 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Aprire e chiudere un programma eseguibile (seconda parte)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Aprire e chiudere un programma 
+    eseguibile<br>
+    (seconda parte)<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level5.gif" width="17" height="18" align="absmiddle"> 
+        5<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p align="center"><a href="ht_032.htm"> &lt;&lt; Continua dalla parte 1</a></p>
+      <p>Viste le tre funzioni di supporto del programma passiamo alla funzione 
+        di apertura del processo e della chiusura del thread principale per il 
+        processo avviato.</p>
+      <ol class="codicevb" start="75">
+        <li>Private Function ApriApp(FileApp As String) As Boolean</li>
+        <li>&nbsp;&nbsp;StartProc.cb = Len(StartProc)</li>
+        <li>&nbsp;&nbsp;ApriApp = CreateProcess(FileApp, vbNullString, vbNullString, 
+          vbNullString, True, DETACHED_PROCESS, vbNullString, vbNullString, StartProc, 
+          InfProc)</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La prima funzione &egrave; ApriApp che avvia il processo esterno passato 
+        come stringa. Alla riga 77 viene richiamata la funzione API <b><i>CreateProcess</i></b> 
+        fornendole i parametri di default: il nome del file da aprire, senza parametri. 
+        Sono richieste due strutture particolari per contenere i dati descrittori 
+        del processo: tali due strutture sono <b>StartProc</b> e <b>InfProc</b> 
+        definite all'inizio del codice. La prima struttura non verr&agrave; pi&ugrave; 
+        utilizzata all'interno del codice, mentre la seconda verr&agrave; richiamata 
+        pi&ugrave; volte: essa conterr&agrave; infatti quattro dati fondamentali 
+        per il nostro progetto. Tali dati sono: l'handle del processo creato (<i>hProcess</i>), 
+        l'handle del thread principale (<i>hThread</i>), il numero identificativo 
+        del processo (<i>dwProcessId</i>) ed il numero identificativo del thread 
+        (<i>dwThreadId</i>).</p>
+      <p>La funzion <b>ApriApp</b> restituir&agrave; il valore True soltanto se 
+        l'apertura del processo &egrave; andata a buon fine.</p>
+      <ol class="codicevb" start="80">
+        <li>Private Function ChiudiThread() As Boolean</li>
+        <li>&nbsp;&nbsp;Dim Esito As Boolean</li>
+        <li>&nbsp;&nbsp;Dim hWindow As Long</li>
+        <li>&nbsp;&nbsp;Dim ThreadId As Long</li>
+        <li>&nbsp;&nbsp;Dim CicloNum As Integer</li>
+        <li>&nbsp;&nbsp;On Error GoTo Error</li>
+        <li>&nbsp;&nbsp;Esito = True</li>
+        <li>&nbsp;&nbsp;AppActivate InfProc.dwProcessId</li>
+      </ol>
+      <p>La variabile booleana <b>Esito</b> serve per verificare la riuscita di 
+        alcune operazioni richieste per chiudere il thread principale. All'avvio 
+        viene impostata a True (riga 86).</p>
+      <p>Alla riga 85 viene inserita una procedura di gestione degli errori; il 
+        verificarsi di un errore non bloccher&agrave; il programma ma eseguir&agrave; 
+        il codice che si trova alla label <i><b>Error</b></i>. Tale codice imposter&agrave; 
+        il valore di Esito a False e ritorner&agrave; l'esecuzione al punto subito 
+        successivo a quello dove &egrave; stato generato l'errore.</p>
+      <p>Con questa minima gestione degli errori possiamo lanciare la chiamata 
+        alla funzione AppActivate passsandole come <i>PID</i> (Process IDentifier) 
+        il valore contenuto nella struttura <b>InfProc</b>. Se la finestra &egrave; 
+        attivabile essa sar&agrave; attivata regolarmente; nel caso contrario 
+        sar&agrave; generato un errore che sar&agrave; catturato dalla funzione 
+        di gestione degli errori.</p>
+      <p>Il verificarsi dell'errore imposta il valore di Esito a False e ripristina 
+        la normale esecuzione del programma mediante l'istruzione <i>Resume Next</i>.</p>
+      <ol class="codicevb" start="88">
+        <li>&nbsp;&nbsp;If Esito Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hWindow = GetForegroundWindow()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ThreadId = GetWindowThreadProcessId(hWindow, 
+          0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If IsThread(InfProc.hThread) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If InfProc.dwThreadId = ThreadId 
+          Then</li>
+      </ol>
+      <p>Il valore di Esito sar&agrave; True soltanto se la finestra &egrave; 
+        stata attivata senza alcun errore.<br>
+        Alla riga 89 viene ritrovato l'handle della finestra in primo piano (che 
+        dovrebbe essere quella attivata) tramite la funzione API <i><b>GetForegroundWindow</b></i> 
+        ed alla riga successiva viene ritrovato il numero identificativo del thread 
+        che ha generato la finestra tramite la funzione API <i><b>GetWindowThreadProcessID</b></i>.</p>
+      <p>Alla riga 91 viene verificato se il thread principale del processo lanciato 
+        &egrave; in esecuzione; in tal caso viene controllato se il numero identificativo 
+        del thread del processo &egrave; lo stesso di quello appena ritrovato, 
+        ovvero quello della finestra in primo piano.<br>
+        Tutti questi controlli sono necessari per verificare che la finestra che 
+        stiamo per chiudere sia effettivamente la finestra del processo lanciato.</p>
+      <ol class="codicevb" start="93">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call SendMessage(hWindow, 
+          WM_CLOSE, 0, 0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For CicloNum = 0 To 
+          15</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If IsWindow(hWindow) 
+          Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call 
+          Sleep(200)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ChiudiThread 
+          = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call 
+          TerminateThread(InfProc.hThread, 0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call 
+          TerminateProcess(InfProc.hProcess, 0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit 
+          For</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next CicloNum</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+      </ol>
+      <p>Fatti tutti questi controlli possiamo tranquillamente chiudere la finestra 
+        in primo piano inviandole il <a href="../glossary/m.htm#MESSAGGIO">messaggio</a> 
+        <b>WM_CLOSE</b> tramite la funzione API <i><b>SendMessage</b></i>.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>In seguito viene avviato un ciclo che verr&agrave; eseguito 16 volte. 
+        Questo ciclo servir&agrave; soltanto per dare il tempo alla finestra di 
+        chiudersi e terminare il processo di chiusura.</p>
+      <p>Alla riga 95 viene verificato se, dopo la chiusura tramite <b><i>SendMessage</i></b>, 
+        la finestra &egrave; ancora attiva (funzione API <b><i>IsWindow</i></b>): 
+        in tal caso verr&agrave; eseguita una pausa di 200 millesimi di secondo, 
+        per rallentare l'esecuzione del programma e dare il tempo alla finestra 
+        di chiudersi.</p>
+      <p>Se invece, la finestra &egrave; stata chiusa dalla funzione <b><i>SendMessage</i></b>, 
+        si procede alla chiusura completa del processo terminando il thread principale 
+        ed il processo tramite le funzioni <b><i>TerminateThread</i></b> e <b><i>TerminateProcess</i></b>. 
+        Questo perch&eacute; alcuni programmi possono mantenere il thread principale 
+        attivo anche dopo la chiusura della finestra. Verr&agrave; impostato il 
+        valore di uscita della funzione e verr&agrave; interrotto il ciclo, che 
+        condurra la funzione alla fine.</p>
+      <ol class="codicevb" start="105">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ChiudiThread = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ChiudiThread = Not IsThread(InfProc.hThread)</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;Exit Function</li>
+      </ol>
+      <p>Se invece il controllo fatto alla riga 91 rivela che il thread principale 
+        ha terminato la sua esecuzione, la funzione non deve occuparsi di chiudere 
+        nulla in quanto il lavoro si &egrave; gi&agrave; svolto naturalmente. 
+        Verr&agrave; impostato il valore di uscita di <b>ChiudiThread</b> a True 
+        (riga 106).</p>
+      <p>Il primo controllo effettuato in cima alla funzione riguardava l'attivazione 
+        della finestra tramite chiamata alla funzione AppActivate. Se tale attivazione 
+        non &egrave; andata a buon fine, il valore di Esito sar&agrave; impostato 
+        su False.</p>
+      <p>&Egrave; pertanto chiaro che la finestra non &egrave; attivabile.<br>
+        Cosa fare in tal caso?<br>
+        La funzione si limiter&agrave; a controllare se il thread principale della 
+        funzione &egrave; terminato spontaneamente, tramite chiamata alla funzione 
+        <b>IsThread</b>.</p>
+      <p>Se il thread si &egrave; chiuso naturalmente il valore di uscita della 
+        funzione sar&agrave; True. Se invece il thread principale &egrave; ancora 
+        attivo, la funzione <b>ChiudiThread</b> non potr&agrave; applicare i suoi 
+        effetti e non proceder&agrave; alla chiusura del processo. Il valore di 
+        ritorno della funzione <b>ChiudiThread</b> sar&agrave; allora False.</p>
+      <p>La funzione termina qui.</p>
+      <ol class="codicevb" start="112">
+        <li>Error:</li>
+        <li>&nbsp;&nbsp;Esito = False</li>
+        <li>&nbsp;&nbsp;Resume Next</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>Alle righe 112-114 &egrave; presente la funzione di gestione di errori 
+        che imposta a False la variabile <b>Esito</b> e ripristina il funzionamento 
+        del programma.</p>
+      <p>L'ultima funzione da vedere prima della gestione dei controlli del form 
+        &egrave; la funzione <b>ChiudiApp</b> che si occuper&agrave; di effettuare 
+        la chiusura del processo in due maniere: controllata oppure mediante terminazione 
+        immediata del processo.<br>
+        La funzione <b>ChiudiApp</b> richiede un parametro booleano di nome <b>Termina</b>. 
+        Se esso sar&agrave; impostato su False, sar&agrave; effettuata la normale 
+        chiusura dell'applicazione; se invece il parametro &egrave; impostato 
+        su True, oltre alla normale chiusura verr&agrave; effettuata anche la 
+        terminazione del thread e del processo in maniera forzata. </p>
+      <ol class="codicevb" start="117">
+        <li>Private Function ChiudiApp(Termina As Boolean) As Boolean</li>
+        <li>&nbsp;&nbsp;If IsProcess(InfProc.hProcess) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If IsThread(InfProc.hThread) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Not ChiudiThread() And Termina 
+          Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call TerminateThread(InfProc.hThread, 
+          0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call TerminateProcess(InfProc.hProcess, 
+          0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ChiudiApp = Not IsProcess(InfProc.hProcess)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ChiudiApp = True</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;If ChiudiApp Then Call CloseAllHandle</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>Il codice &egrave; alquanto compatto, ma abbastanza semplice. Il primo 
+        controllo effettuato &egrave; d'obbligo: il processo &egrave; ancora in 
+        esecuzione? (riga 118) Se non lo fosse la funzione non dovrebbe procedere 
+        oltre; il codice eseguir&agrave; il codice alla riga 127, poi quello alla 
+        riga 129 ed uscirebbe dalla funzione.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Naturalmente nella maggior parte dei casi il processo non si &egrave; 
+        ancora chiuso ed il nostro programma ha invocato tale funzione perch&eacute; 
+        il processo risulta essere ancora in esecuzione.</p>
+      <p>Alla riga 119 viene controllato se il thread principale &egrave; ancora 
+        in esecuzione.<br>
+        Se non lo fosse la situazione sarebbe complessa: il processo &egrave; 
+        in esecuzione mentre il thread principale no. Ci&ograve; significa che 
+        il thread primario, dopo aver lanciato un thread secondario, si &egrave; 
+        chiuso. La vita del processo sussiste soltanto per un secondo thread che 
+        non sappiamo quale sia. In questo sfortunato caso la funzione non pu&ograve; 
+        applicarsi e si avvier&agrave; alla chiusura con il valore False.</p>
+      <p>Fortunatamente, nella maggior parte dei programmi il thread primario 
+        &egrave; quello che regola l'intera esecuzione del programma.<br>
+        Rivediamo il codice che segue, perch&eacute; &egrave; molto compatto, 
+        ma critico:</p>
+      <ol class="codicevb" start="120">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Not ChiudiThread() And Termina 
+          Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call TerminateThread(InfProc.hThread, 
+          0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call TerminateProcess(InfProc.hProcess, 
+          0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ChiudiApp = Not IsProcess(InfProc.hProcess)</li>
+      </ol>
+      <p>Alla riga 120 viene effettuato un particolare controllo: se la funzione 
+        <b>ChiudiThread</b> (abbiamo lasciato le parentesi nella chiamata per 
+        rendere maggiormente chiaro che si tratta di una funzione) restituisce 
+        valore True, che con il <i>Not</i> precedente crea un False, ed il parametro 
+        Termina &egrave; impostato su True, verranno eseguite le righe 121-122.</p>
+      <p>Se la funzione ChiudiThread restituisce valore True, ci&ograve; significher&agrave; 
+        che il thread principale &egrave; stato chiuso con successo. In tal caso 
+        non ci importa di forzare la chiusura.<br>
+        Se invece la funzione ChiudiThread restituisce il valore False, il thread 
+        principale non sar&agrave; stato chiuso.</p>
+      <p>Il Not posto prima della funzione fa s&igrave; che il ciclo If debba 
+        controllare il valore apposto a quello restituito dalla funzione ChiudiThread.<br>
+        Pertanto, soltanto se la funzione ChiudiThread <b>non</b> &egrave; riuscita 
+        a chiudere il thread principale <b>e</b> il parametro Termina &egrave; 
+        impostato su True, si proceder&agrave; alla terminazione del thread prima 
+        e del processo dopo (righe 121 e 122). Gli handle del thread e del processo 
+        sono memorizzate nella struttura <b>InfProc</b>, riempita all'apertura 
+        del processo.</p>
+      <p>Fatto questo, il risultato della funzione sar&agrave; determinato da 
+        un ultimo controllo: se il processo continua ad esistere la nostra funzione 
+        non ha avuto effetto e restituir&agrave; il valore False. Se il processo 
+        invece non esiste pi&ugrave; abbiamo ottenuto ci&ograve; che volevamo 
+        (riga 124).</p>
+      <p>La funzione si chiude con la riga 129. Se la chiusura ha avuto effetto 
+        e pertanto il valore di <i><b>ChiudiApp</b></i> &egrave; True, effettueremo 
+        la chiusura degli <a href="../glossary/h.htm#HANDLE">handle</a> aperti, 
+        mediante la funzione <b>CloseAllHandle</b>.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p align="center"><a href="ht_032_3.htm">Segue parte 3 &gt;&gt;</a></p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=3">Giuseppe 
+        Della Bianca</a><br>
+        23 Aprile 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,249 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Estrarre un'immagine da Internet</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Estrarre un'immagine da 
+    Internet<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Sono sempre pi&ugrave; frequenti i programmi che accedono ad Internet 
+        per effettuare alcune operazioni. Molti programmi rientrano in quella 
+        categoria detta Ad-ware, ovvero a costo gratuito dietro visione di banner 
+        pubblicitari.<br>
+        Le immagini che saranno mostrate nel programma, tuttavia, non sono statiche, 
+        ma cambiano continuamente; infatti tali programmi si collegano ad Internet 
+        per recuperare le immagini e mostrarle dentro un contenitore Immagine.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>L'operazione da svolgere &egrave; molto semplice e sfrutter&agrave; il 
+        controllo Inet <img src="../images/controls/inet.gif" width="25" height="25" align="absmiddle"> 
+        o <i><b>Microsoft Internet Transfer Control</b></i>; sar&agrave; necessario 
+        scegliere tale controllo dalla voce <i><b>Componenti</b></i>.</p>
+      <p>Il progetto si compone di un solo form con cinque controlli:</p>
+      <p><img src="../images/howto/howto033_01.png" width="369" height="164" align="right" alt="Figura 1">Abbiamo 
+        inserito una semplice <i>Label</i> <img src="../images/controls/label.gif" width="25" height="25" align="absmiddle"> 
+        descrittiva di nome <b>EtichettaPercorso</b> con il testo &quot;Indirizzo 
+        dell'immagine da estrarre&quot;.</p>
+      <p>Inseriamo anche una casella di testo <img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>PercorsoImmagine</b>: essa servir&agrave; per inserire il percorso 
+        Internet dell'immagine da estrarre. Inseriamo anche un <i>CommandButton</i> 
+        <img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>Estrai</b>. In fondo al form inseriamo una <i>PictureBox</i> <img src="../images/controls/picturebox.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>Immagine</b> ed un controllo <i>Inet</i> <img src="../images/controls/inet.gif" width="25" height="25" align="absmiddle"> 
+        di nome <b>AccessoInternet</b>.</p>
+      <p>Il funzionamento &egrave; molto semplice: l'utente immette nella casella 
+        di testo il percorso dell'immagine da estrarre, preme il pulsante <i><b>Estrai</b></i> 
+        e l'immagine apparir&agrave; nella PictureBox.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il codice si compone di una sola Sub, legata all'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle">Click 
+        sul pulsante Estrai:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub PulsanteEstrai_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim buffer() As Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim FileNR As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;buffer = AccessoInternet.OpenURL(PercorsoImmagine.Text, 
+          icByteArray)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FileNR = FreeFile</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Open App.Path &amp; &quot;\IMGTMP&quot; For 
+          Binary As FileNR</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Put FileNR, , buffer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Close FileNR</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;On Error Resume Next</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Immagine.Picture = LoadPicture(&quot;&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Immagine.Picture = LoadPicture(App.Path &amp; 
+          &quot;\IMGTMP&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Kill App.Path &amp; &quot;\IMGTMP&quot;</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Alla riga 4 abbiamo dichiarato una <a href="../glossary/m.htm#MATRICE">matrice</a> 
+        di <a href="../glossary/b.htm#BYTE">byte</a> senza dimensione di nome 
+        <b><a href="../glossary/b.htm#BUFFER">buffer</a></b>. Essa servir&agrave; 
+        per memorizzare i dati provenienti dalla chiamata ad Internet. Alla riga 
+        successiva abbiamo la variabile <b>FileNR</b> che servir&agrave; per identificare 
+        l'<a href="../glossary/h.htm#HANDLE">handle</a> del file temporaneo in 
+        cui scrivere l'immagine proveniente da Internet.</p>
+      <p>La prima operazione eseguita in questa Sub &egrave; la lettura dell'immagine 
+        tramite il controllo <b>AccessoInternet</b>. L'operazione da eseguire 
+        &egrave; la chiamata al metodo <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        <i>OpenURL</i> passandogli l'indirizzo della pagina da aprire, presa dalla 
+        casella di testo PercorsoImmagine. Il secondo parametro &egrave; il tipo 
+        di dati da restituire: in questo caso il valore <i><b>icByteArray</b></i> 
+        indica di scrivere i dati in un array di Byte, quale &egrave; la matrice 
+        <b>buffer</b>. </p>
+      <p>Alla riga 7 viene trovato il primo handle di file libero attraverso la 
+        funzione FreeFile.<br>
+        Trovato l'handle si procede all'apertura del file IMGTMP in modalit&agrave; 
+        binaria; alla riga successiva viene scritto il buffer di dati nel file 
+        appena aperto; effettuata la scrittura del file esso sar&agrave; chiuso 
+        (righe 7-10).</p>
+      <p>Alla riga 11 viene inserita una semplicissima funzione per evitare di 
+        bloccare il programma in caso di errore: infatti se l'immagine non viene 
+        trovata oppure il server remoto risponde con altri dati che non costituiscono 
+        un'immagine, il programma genera un errore. Questa funzione fa s&igrave; 
+        che il programma proceda regolarmente come se non fosse stato generato 
+        alcun errore.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alla riga 12 viene cancellata l'immagine precedente e in seguito viene 
+        caricata l'immagine dal file <i>IMGTMP</i> (riga 13). Caricata l'immagine 
+        il file pu&ograve; essere cancellato (riga 14).</p>
+      <p>Possiamo passare alla prova, tra l'altro semplicissima, digitando l'indirizzo 
+        di un'immagine di VB Simple nella casella di testo e premendo il tasto 
+        <b>Estrai</b>.</p>
+      <p align="center"><img src="../images/howto/howto033_02.jpg" width="369" height="164" alt="Figura 2"><br>
+        <b>Figura 2<br>
+        </b></p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Il programma &egrave; estremamente semplice, ma non include alcun codice 
+        di controllo degli errori. &Egrave; soltanto un semplice esempio per comprendere 
+        il funzionamento di un processo di prelevamento di dati da Internet.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        23 Aprile 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

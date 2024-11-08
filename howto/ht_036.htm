@@ -1,0 +1,367 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Ingrandire o ridurre una parte dello schermo</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Ingrandire o ridurre una 
+    parte dello schermo<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Prendendo spunto dall'<a href="ht_035.htm">How-To per determinare il 
+        colore di un pixel sullo schermo</a> svilupperemo un semplice progettino 
+        che funga da lente d'ingrandimento dello schermo. Sar&agrave; inquadrata 
+        una porzione dello schermo indicata dal cursore del mouse e in base al 
+        fattore di riproduzione sar&agrave; mostrata la sezione grafica.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/howto/howto036_01.jpg" width="226" height="234" align="right" alt="Figura 1">Il 
+        progetto consiste di un solo form contenente quattro controlli:</p>
+      <ol>
+        <li>una grande <i>PictureBox</i><img src="../images/controls/picturebox.gif" width="25" height="25" align="absmiddle">di 
+          nome <b>Immagine</b></li>
+        <li>una <i>CheckBox</i><img src="../images/controls/checkbox.gif" width="25" height="25" align="absmiddle">di 
+          nome <b>Invertito</b></li>
+        <li>un <i>Timer</i><img src="../images/controls/timer.gif" width="25" height="25" align="absmiddle">di 
+          nome <b>Tempo</b> con la propriet&agrave; <i>Interval</i> impostata 
+          a <i><b>100</b></i> e la propriet&agrave; <i>Enabled</i> impostata a 
+          <i><b>True</b></i></li>
+        <li>una <i>ComboBox</i><img src="../images/controls/combobox.gif" width="25" height="25" align="absmiddle">di 
+          nome <b>Fattore</b> con la propriet&agrave; <i>Style</i> impostata a 
+          <i><b>2 - Dropdown List</b></i>.</li>
+      </ol>
+      <p>La PictureBox Immagine conterr&agrave; la sezione grafica estratta dallo 
+        schermo; la ComboBox conterr&agrave; l'elenco dei fattori di riproduzione 
+        della grandezza ed il Timer provveder&agrave; ad aggiornare regolarmente 
+        l'immagine estratta.<br>
+        La CheckBox servir&agrave; esclusivamente per vedere l'immagine in maniera 
+        invertita, con i colori al contrario. Il codice non &egrave; molto difficile 
+        e contiene molte parti in comune con il codice per <a href="ht_035.htm">determinare 
+        il colore di un pixel sullo schermo</a>:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit </li>
+        <li></li>
+        <li>Private Type POINTAPI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;x As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;y As Long</li>
+        <li>End Type</li>
+        <li></li>
+        <li>Private Declare Function GetCursorPos Lib &quot;USER32&quot; (lpPoint 
+          As POINTAPI) As Long</li>
+        <li>Private Declare Function GetDC Lib &quot;USER32&quot; (ByVal hwnd 
+          As Long) As Long</li>
+        <li>Private Declare Function ReleaseDC Lib &quot;USER32&quot; (ByVal hwnd 
+          As Long, ByVal hdc As Long) As Long</li>
+        <li>Private Declare Function StretchBlt Lib &quot;GDI32&quot; (ByVal hdc 
+          As Long, ByVal x As Long, ByVal y As Long, ByVal nWidth As Long, ByVal 
+          nHeight As Long, ByVal hSrcDC As Long, ByVal xSrc As Long, ByVal ySrc 
+          As Long, ByVal nSrcWidth As Long, ByVal nSrcHeight As Long, ByVal dwRop 
+          As Long) As Long</li>
+        <li></li>
+        <li>Private ScreenDC As Long</li>
+        <li></li>
+      </ol>
+      <p>Alle righe 3-6 definiamo un nuovo tipo di dati <img src="../images/ide/tipoudt.gif" width="16" height="16" align="absmiddle"> 
+        di nome <b>POINTAPI</b> che consiste di due dati semplici: x e y. Esso 
+        viene utilizzato da alcune funzioni <a href="../glossary/a.htm#API">API</a>.</p>
+      <p>Alla riga 8 &egrave; presente la dichiarazione della funzione API <i><b>GetCursorPos</b></i> 
+        vista nell'altro HowTo. Essa ritrova la posizione del cursore del mouse 
+        e richiede la struttura <b>POINTAPI</b>.</p>
+      <p>Le righe 9 e 10 contengono le dichiarazioni delle funzioni <i><b>GetDC</b></i> 
+        e <i><b>ReleaseDC</b></i>. La prima serve per ottenere il <a href="../glossary/d.htm#DC">DC</a> 
+        (<a href="../glossary/d.htm#DEVICECONTEXT">Device Context</a>) di una 
+        finestra, mentre la seconda serve per rilasciare (<a href="../glossary/d.htm#DEALLOCARE">deallocare</a>) 
+        un DC.</p>
+      <p>La riga 11 contiene la dichiarazione di una nuova funzione API: <i><b>StretchBlt</b></i>, 
+        letteralmente Stretch Bit Block Transfer. Essa permetter&agrave; di allargare 
+        e stringere un'immagine in base ai dati passati. Richiede un <a href="../glossary/h.htm#HANDLE">handle</a> 
+        DC, le coordinate di sorgente e destinazione ed il tipo di disegnamento 
+        da effettuare, valore preso dall'<a href="../glossary/e.htm#ENUMERAZIONE">enumerazione</a> 
+        <img src="../images/ide/enumeraz.gif" width="16" height="16" align="absmiddle"> 
+        <a href="../enum/047.htm">RasterOpConstants</a>.</p>
+      <p>Prima di vedere il codice vero e proprio abbiamo dichiarato una variabile 
+        di nome <b>ScreenDC</b> che verr&agrave; utilizzata per contenere l'handle 
+        del Device Context dello schermo.</p>
+      <ol class="codicevb" start="15">
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ScreenDC = GetDC(0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Fattore.AddItem &quot;50%&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Fattore.AddItem &quot;75%&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Fattore.AddItem &quot;100%&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Fattore.AddItem &quot;125%&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Fattore.AddItem &quot;150%&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Fattore.AddItem &quot;200%&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Fattore.AddItem &quot;250%&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Fattore.AddItem &quot;300%&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Fattore.ListIndex = 2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Immagine.ScaleMode = vbPixels</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Al caricamento del form verr&agrave; innanzitutto ritrovato l'hande DC 
+        dello schermo tramite funzione <i><b>GetDC</b></i> e salvato nella variabile 
+        <i>ScreenDC</i> (riga 16). La finestra 0 indicata da GetDC &egrave; lo 
+        schermo grafico. </p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alle righe 17-24 viene riempita la ComboBox <b>Fattore</b> con dei valori 
+        percentuali che saranno utilizzati per determinare il fattore di riproduzione. 
+        Riempita la ComboBox sar&agrave; selezionato automaticamente il terzo 
+        elemento (l'<a href="../glossary/a.htm#ARRAY">array</a> <i>List</i> ha 
+        base 0) ovvero il 100%.</p>
+      <p>Alla riga 26 viene invece impostato il fattore di conversione delle dimensioni 
+        in pixel poich&eacute; le nostre funzioni API utilizzeranno i pixel e 
+        non i twips.</p>
+      <ol class="codicevb" start="29">
+        <li>Private Sub Form_Unload(Cancel As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call ReleaseDC(0, ScreenDC)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Prima di chiudere il programma sar&agrave; necessario deallocare l'handle 
+        DC ScreenDC riservato precedentemente. Ci&ograve; viene fatto mediante 
+        utilizzo della funzione <i><b>ReleaseDC</b></i> passandole come numero 
+        di finestra lo schermo ovvero 0 e l'handle DC da rilasciare ovvero <i>ScreenDC</i>.</p>
+      <p>La funzione di estrazione dell'immagine dallo schermo &egrave; nella 
+        routine richiamata all'evento<img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"> 
+        Timer di <b>Tempo</b>. Ad intervalli regolari sar&agrave; richiamata la 
+        funzione di aggiornamento dell'immagine e sar&agrave; calcolata la grandezza 
+        dell'immagine in base al fattore di riproduzione selezionato nella <i>ComboBox</i>.</p>
+      <ol class="codicevb" start="33">
+        <li>Private Sub Tempo_Timer()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim COORD As POINTAPI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim DIMENSIONE As POINTAPI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call GetCursorPos(COORD)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DIMENSIONE.x = Immagine.ScaleWidth / Val(Fattore.Text) 
+          * 100</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DIMENSIONE.y = Immagine.ScaleHeight / Val(Fattore.Text) 
+          * 100</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Invertito.Value = vbChecked Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call StretchBlt(Immagine.hdc, 
+          0, 0, Immagine.ScaleWidth, Immagine.ScaleHeight, ScreenDC, COORD.x, 
+          COORD.y, DIMENSIONE.x, DIMENSIONE.y, vbNotSrcCopy)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call StretchBlt(Immagine.hdc, 
+          0, 0, Immagine.ScaleWidth, Immagine.ScaleHeight, ScreenDC, COORD.x, 
+          COORD.y, DIMENSIONE.x, DIMENSIONE.y, vbSrcCopy)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Alle righe 34 e 35 sono dichiarate due variabili di tipo <i><b>POINTAPI</b></i> 
+        e di nome <b>COORD</b>, <b>DIMENSIONE</b>; la prima servir&agrave; per 
+        ritrovare le coordinate del cursore del mouse (riga 36) mentre la seconda 
+        sar&agrave; utilizzata per calcolare la dimensione dell'area da inquadrare 
+        e mostrare nella <i>PictureBox</i> (righe 37 e 38).</p>
+      <p>Per calcolare la grandezza dell'area da inquadrare utilizzeremo una semplice 
+        formula di conversione: grandezza originale (quindi quella della PictureBox) 
+        diviso il fattore di conversione in percentuale. L'istruzione Val ignorer&agrave; 
+        il segno di percentuale e pertanto sar&agrave; necessario effettuare la 
+        moltiplicazione manualmente. La formula pertanto &egrave; data da <i><b>GrandezzaOriginale 
+        / Fattore * 100</b></i>.</p>
+      <p>Possiamo adesso richiamare la funzione API StretchBitBlt in base al valore 
+        della CheckBox <b>Invertito</b>. Se essa &egrave; selezionata l'immagine 
+        sar&agrave; in negativo altrimenti sar&agrave; normale.</p>
+      <p>Diamo uno sguardo pi&ugrave; approfondito alla chiamata alla funzione 
+        <i> <b> StretchBitBlt</b></i>: </p>
+      <ol class="codicevb" start="40">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call StretchBlt(Immagine.hdc, 
+          0, 0, Immagine.ScaleWidth, Immagine.ScaleHeight, ScreenDC, COORD.x, 
+          COORD.y, DIMENSIONE.x, DIMENSIONE.y, vbNotSrcCopy)</li>
+      </ol>
+      <p>La funzione <b><i>StretchBitBlt</i></b> richiede due serie di parametri:</p>
+      <ol>
+        <li>il primo di questi &egrave; il DC di destinazione in ovvero Immagine.hdc;</li>
+        <li>il secondo &egrave; la coordinata X del punto in cui iniziare il disegnamento. 
+          Nel nostro caso sar&agrave; 0, ovvero il lato sinistro di <b>Immagine</b>;</li>
+        <li>il terzo &egrave; la coordinata Y del punto in cui iniziare il disegnamento. 
+          Sar&agrave; 0 poich&eacute; vogliamo disegnare l'immagine nell'angolo 
+          superiore sinistro della PictureBox;</li>
+        <li>la larghezza dell'area in cui disegnare &egrave; indicata nel quarto 
+          parametro, specificato mediante la propriet&agrave; ScaleWidth di Immagine 
+          (ricordiamo che ScaleMode &egrave; impostato su vbPixels);</li>
+        <li>lo stesso discorso varr&agrave; per l'altezza dell'area in cui disegnare 
+          (propriet&agrave; ScaleHeight);</li>
+      </ol>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Definiti i parametri di destinazione dei dati immagine da trasferire 
+        sar&agrave; necessario specificare lo stesso genere di parametri per l'immagine 
+        sorgente:</p>
+      <ol class="codicevb" start="6">
+        <li>il DC di origine &egrave; indicato nella nostra variabile <b>ScreenDC</b>, 
+          ovvero il DC dello schermo;</li>
+        <li>la coordinata X del punto da cui selezionare l'immagine da ricopiare 
+          &egrave; indicato nella struttura <b>COORD</b>, indicante la posizione 
+          del cursore del mouse;</li>
+        <li>la coordinata Y dello stesso punto &egrave; indicata nella struttura 
+          <b>COORD</b>;</li>
+        <li>la larghezza dell'area da copiare nell'immagine di destinazione &egrave; 
+          indicata in <b>DIMENSIONE</b>;</li>
+        <li>anche l'altezza &egrave; indicata in <b>DIMENSIONE</b>;</li>
+      </ol>
+      <p>L'ultimo parametro &egrave; il tipo di disegnamento da effettuare. Le 
+        due chiamate differiscono soltanto per l'ultimo parametro: <i>vbNotSrcCopy</i> 
+        per i colori in negativo e <i>vbSrcCopy</i> per i colori normali; i due 
+        valori sono prelevati entrambi dall'enumerazione <a href="../enum/047.htm">RasterOpConstants</a> 
+        in base al valore della CheckBox <b>Invertito</b>.</p>
+      <p>La prova del programma &egrave; d'obbligo ma l'utilizzo semplicissimo. 
+        Basta scegliere il corretto fattore di riproduzione dalla <i>ComboBox</i> 
+        ed attivare o disattivare l'unica <i>CheckBox</i>.</p>
+      <table width="95%" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr> 
+          <td width="50%" align="center"><img src="../images/howto/howto036_02.jpg" width="226" height="234" alt="Figura 2"><br>
+            <b>Figura 2</b> </td>
+          <td width="50%" align="center"><img src="../images/howto/howto036_03.jpg" width="226" height="234" alt="Figura 3"><br>
+            <b>Figura 3</b> </td>
+        </tr>
+      </table>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Il codice &egrave; alquanto semplice; l'unica riga che pu&ograve; creare 
+        qualche perplessit&agrave; &egrave; quella riguardante la funzione <i><b>StretchBitBlt</b></i>. 
+        Basta studiare il significato dei parametri richiesti ed il suo utilizzo 
+        sar&agrave; immediatamente chiaro.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        17 Maggio 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

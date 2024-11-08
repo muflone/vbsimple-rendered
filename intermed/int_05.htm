@@ -1,0 +1,348 @@
+<html><!-- #BeginTemplate "/Templates/Corso Intermedio.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 5 del Corso Intermedio</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso Intermedio - Lezione <!-- #BeginEditable "LEZIONE" -->5<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/intermed.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="int_05.htm#STEP1">Possiamo cominciare</a>.</li>
+  <li><a href="int_05.htm#STEP2">L'istruzione Option Explicit</a>.</li>
+  <li><a href="int_05.htm#STEP3">La gestione dei files binari</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p><a name="STEP1"></a>Nella fase iniziale di questo progetto ci occuperemo 
+        soltanto dell'inserimento dei dati nel file di archivio e soltanto in 
+        seguito vedremo come leggerne i dati scritti in precedenza.<br>
+        Il file verr&agrave; aperto all'avvio dell'applicazione e chiuso all'uscita 
+        del programma. Questi due momenti sono infatti segnati da due eventi <img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle">specifici 
+        dell'<a href="../glossary/o.htm#OGGETTO">oggetto</a> Form:</p>
+      <ul>
+        <li><b><i>Load</i></b> indicher&agrave; l'operazione di caricamento del 
+          form ovvero il momento prima che il form relativo venga caricato.<br>
+          <br>
+        </li>
+        <li><b><i>Unload</i></b> indica invece l'operazione di scaricamento del 
+          form ovvero il momento prima della sua chiusura, subito dopo il tentativo 
+          di scaricamento (<i><b>QueryUnload</b></i>).</li>
+      </ul>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>In genere questi sono gli eventi pi&ugrave; idonei per regolare il comportamento 
+        del codice all'avvio e alla chiusura del form. Lo ricordiamo, in questo 
+        nostro progetto i due eventi sono utilizzati rispettivamente per aprire 
+        e per chiudere il file di dati che si trover&agrave; nella stessa cartella 
+        della nostra applicazione. Sar&agrave; quindi ovvio che il nostro file 
+        di dati rester&agrave; aperto fino a quando l'applicazione sar&agrave; 
+        aperta e non dovremo preoccuparci di aprirlo e chiuderlo ad ogni suo utilizzo.</p>
+      <p><a name="STEP2"></a>Nel terzo capitolo di questo corso abbiamo visto 
+        come definire la nostra base dati. Inseriamo all'interno di un nuovo modulo 
+        standard <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+        il codice visto in precedenza:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Public Type uDisco</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;intIndice As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;blnEliminato As Boolean</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;strTitoloBrano As String * 30</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;strAutore As String * 30</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;strTitoloCD As String * 20</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;intTraccia As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;intAnnoPubblicazione As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;strNote As String * 255</li>
+        <li>End Type</li>
+      </ol>
+      <p>Al fine di evitare un problema comunissimo, si raccomanda fortissimamente 
+        di <b>usare sempre</b> l'istruzione <i>Option Explicit</i>. Essa consente 
+        infatti di evitare involontari errori nella scrittura del codice, obbligando 
+        il programmatore a dichiarare ogni variabile prima di utilizzarla. Dove 
+        sta il vantaggio? Sembra piuttosto un limite fastidioso!</p>
+      <p>Supponiamo di scrivere un certo programma che effettua dei semplici calcoli 
+        geometrici dove Base = 5 e Altezza = 4:</p>
+      <p class="fixed">Area = Base * Altezza / 2<br>
+        Perimetro = Base * 2 + Alteza * 2</p>
+      <p>Mentre la prima delle due righe di codice produce il risultato corretto: 
+        Area = 10, la seconda delle due righe produce un risultato errato: Perimetro 
+        = 10.</p>
+      <p>Chi ha l'occhio pi&ugrave; attento si sar&agrave; accorto che la seconda 
+        riga presenta un errore: la variabile Altezza &egrave; scritta in maniera 
+        errata; manca infatti una Z ma il <a href="../glossary/c.htm#COMPILAZIONE">compilatore</a> 
+        non se ne accorge neanche? Non si presenta alcun errore? Il compilatore 
+        se ne accorge, eccome! La prova &egrave; data dal fatto che il risultato 
+        presentato per il perimetro &egrave; 10.</p>
+      <p>Il calcolo che viene infatti eseguito dal programma sar&agrave; <code><b>Perimetro 
+        = 5 * 2 + 0 * 2</b></code> perch&eacute; alla variabile <b>Alteza</b> 
+        non &egrave; mai stato assegnato un valore e pertanto assume il valore 
+        predefinito 0.</p>
+      <p>L'utilizzo di Option Explicit obbliga invece il programmatore a dichiarare 
+        ogni variabile e quindi elimina a priori la possibilit&agrave; di errori 
+        di scrittura involontari. Nel momento in cui avessimo provato a compilare 
+        il precedente codice si sarebbe generato un errore di <i>&quot;Variabile 
+        non definita&quot;</i>.</p>
+      <p>Questa deve essere la prima regola, la Golden Rule (regola d'oro) da 
+        applicare in ogni progetto, la prima riga da scrivere in ogni modulo ma 
+        c'&egrave; una soluzione semplice per evitare di doversene ricordare ogni 
+        volta. Tramite il menu <i><b>Strumenti</b></i> dell'IDE si accede al pannello 
+        delle <i><b>Opzioni</b></i> raffigurato nella sotto.</p>
+      <p align="center"><img src="../images/lezioni/int05_01.png" width="347" height="283" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <p>L'opzione da selezionare &egrave; <b>&quot;Dichiarazione di variabili 
+        obbligatoria&quot;</b>. Essa far&agrave; in modo che ogni nuovo modulo 
+        aggiunto al progetto contenga alla prima riga l'istruzione Option Explicit.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Torniamo al nostro progetto e al codice visto in precedenza: l'istruzione 
+        Type definisce il nuovo tipo di dati <img src="../images/ide/tipoudt.gif" width="16" height="16" align="absmiddle"> 
+        di nome <b>uDisco</b>. Ricordiamo che non &egrave; possibile definire 
+        tipi di dati pubblici all'interno di un form ma soltanto all'interno di 
+        un modulo standard.</p>
+      <p><a name="STEP3"></a>Gestire dei semplici files binari con record a lunghezza 
+        fissa &egrave; molto semplice. Visual Basic stesso infatti provvede alcune 
+        semplici istruzioni per l'apertura e successiva gestione di files binari. 
+        Avendo definito il record da utilizzare possiamo passare al resto del 
+        codice, da inserire <b>all'interno del form</b>:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private intFileDati As Integer</li>
+        <li>Private udtDiscoCorrente As uDisco</li>
+        <li></li>
+      </ol>
+      <p>Della riga 1 ne abbiamo gi&agrave; discusso, vero? <img src="../images/icons/smile.gif" width="15" height="15" border="0" align="absmiddle"><br>
+        Chi ha seguito il corso base dovrebbe aver notato la differenza di dichiarazione 
+        delle variabili. Non utilizzeremo pi&ugrave; l'istruzione <i>Dim</i> ma 
+        uno dei modificatori di accesso visti nella lezione precedente: <i>Private</i>.</p>
+      <p>Sebbene Dim e Private si equivalgano come significato, &egrave; preferibile 
+        dichiarare i dati a livello di modulo tramite Private o Public e dichiarare 
+        i dati a livello di routine tramite Dim.</p>
+      <p>Alla riga 3 &egrave; dichiarata una variabile a livello di modulo, cio&egrave; 
+        accessibile a tutte le routine del form, di nome <b>intFileDati</b>, che 
+        conterr&agrave; il numero del file di dati aperto all'avvio e chiuso alla 
+        fine del programma.</p>
+      <p>Alla riga 4 &egrave; dichiarata un'altra variabile, sempre a livello 
+        di modulo, di nome <b>udtDisco</b> e di tipo <i><b>uDisco</b></i> che 
+        servir&agrave; a contenere le informazioni su un singolo record. Verr&agrave; 
+        utilizzata per recuperare le informazioni dal file di dati e per scrivere 
+        nuove informazioni sul file. </p>
+      <ol class="codicevb" start="6">
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;intFileDati = FreeFile</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Open App.Path &amp; &quot;\BRANI.DAT&quot; 
+          For Random As intFileDati Len = Len(udtDiscoCorrente)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Alla luce di quanto detto in precedenza il file di dati verr&agrave; 
+        aperto all'avvio del progetto (evento <i><b>Load</b></i> del form principale) 
+        e verr&agrave; chiuso in corrispondenza alla chiusura (evento <i><b>Unload</b></i> 
+        dello stesso form).</p>
+      <p></p>
+      <p>Prima di richiedere l'apertura del file di dati &egrave; necessario recuperare 
+        un <b><i>numero di file</i></b> relativo all'applicazione. Esso servir&agrave; 
+        da riferimento al file aperto durante le operazioni di lettura e scrittura. 
+        Il numero di file sar&agrave; un numero compreso tra 1 e 255 se il file 
+        non dovr&agrave; essere accessibile ad altre applicazioni oppure compreso 
+        tra 256 e 511 se il file dovr&agrave; essere utilizzato anche da altre 
+        applicazioni. </p>
+      <p>Invece di assegnare arbitrariamente un numero ad ogni file da aprire 
+        si raccomanda di utilizzare la funzione <b>FreeFile</b> che recupera il 
+        primo numero di file disponibile come &egrave; stato fatto alla riga 7 
+        del nostro codice. Il numero di file da aprire sar&agrave; indicato quindi 
+        dalla variabile <b>intFileDati</b> e tutte le operazioni di apertura, 
+        lettura, scrittura e chiusura verranno effettuate su tale numero di file.</p>
+      <p>L'istruzione <i>Open</i> consente di aprire un file di dati in diverse 
+        modalit&agrave;, accennate nell'<a href="../howto/ht_003.htm">HowTo dedicato 
+        alla lettura del contenuto di un file</a>.<br>
+        Queste modalit&agrave; indicano il tipo di accesso ai dati: in lettura 
+        (<i>Input</i>), in scrittura (<i>Output</i>), in aggiunta (<i>Append</i>), 
+        modalit&agrave; binaria (<i>Binary</i>) oppure ad accesso casuale (<i>Random</i>).</p>
+      <p>Il file che verr&agrave; aperto si chiama <i><b>BRANI.DAT</b></i> ed 
+        &egrave; contenuto nella stessa cartella in cui si trova l'applicazione. 
+        Nella scrittura di un programma &egrave; fondamentale mantenere una certa 
+        generalizzazione: sono da metter al bando i riferimenti assoluti ai file 
+        quali &quot;C:\Windows\Desktop\Programma\Nomefile.txt&quot; quando il 
+        programma &egrave; contenuto nella cartella Programma del Desktop. Se 
+        il file si trova nella stessa cartella del programma oppure in una sua 
+        cartella &egrave; possibile utilizzare la propriet&agrave; <b>Path</b> 
+        dell'oggetto globale <b>App</b> per recuperare il percorso della cartella 
+        del programma.</p>
+      <p>Nel nostro esempio abbiamo indicato il file tramite <code><b><i>App.Path 
+        &amp; &quot;\BRANI.DAT&quot;</i></b></code> e questa &egrave; la soluzione 
+        ideale nella maggioranza dei casi. Si pu&ograve; generare un errore nel 
+        momento in cui il programma si trova sulla radice del disco (<a href="../glossary/f.htm#FISICO">fisico</a> 
+        o <a href="../glossary/l.htm#LOGICO">logico</a>). Vedremo solo in seguito 
+        come evitare problemi di questo genere.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Le modalit&agrave; di apertura del file determinano il comportamento 
+        delle istruzioni di lettura e scrittura. Rivediamo per un attimo l'istruzione 
+        di apertura:</p>
+      <ol class="codicevb" start="8">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Open App.Path &amp; &quot;\BRANI.DAT&quot; 
+          For Random As intFileDati Len = Len(udtDiscoCorrente)</li>
+      </ol>
+      <p>La modalit&agrave; di apertura &egrave; quella ad accesso casuale (<i>Random</i>), 
+        che consente operazione sia di lettura che di scrittura e spostamenti 
+        nel contenuto del file a record interi. Sar&agrave; infatti possibile 
+        leggere il record 12000 direttamente, senza doverli scorrere uno per uno 
+        o calcolare la posizione fisica del suo inizio.</p>
+      <p>Per effettuare operazioni di questo genere, per&ograve;, &egrave; necessario 
+        definire l'ampiezza del record. durante l'apertura del file. In seguito 
+        al numero di file da aprire (<b>intFileDati</b>) verr&agrave; specificata 
+        l'ampiezza del record a dimensione fissa. L'ampiezza &egrave; calcolata 
+        tramite la funzione <b>Len</b> applicata al record dichiarato in precedenza. 
+        Per specificare la dimensione del record da utilizzare &egrave; necessario 
+        indicare la dimensione in bytes nella forma <code><b>Len = Ampiezza</b></code>.</p>
+      <p>L'istruzione di apertura in questa forma assicura che gli spostamenti 
+        avvengano sul singolo record, concedendo un accesso casuale al file cui 
+        verr&agrave; fatto riferimento tramite il numero di file indicato dalla 
+        variabile <b>intFileDati</b>.</p>
+      <ol class="codicevb" start="11">
+        <li>Private Sub Form_Unload(Cancel As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Close intFileDati</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Aperto un file &egrave; fondamentale ricordarsi di chiuderlo al termine 
+        del suo utilizzo. Nel nostro caso il termine dell'utilizzo corrisponde 
+        alla chiusura del form principale. Utilizzeremo quindi l'evento <i><b>Unload</b></i> 
+        per chiudere il file aperto in precedenza.</p>
+      <p>L'istruzione <b>Close</b> seguita dal numero di file da chiudere effettua 
+        la chiusura del singolo file specificato, ma pu&ograve; anche omettere 
+        il numero del file da chiudere. Nel caso di omissione del numero di file 
+        saranno chiusi tutti i files aperti tramite l'istruzione <b>Open</b>. 
+        &Egrave; altres&igrave; possibile specificare pi&ugrave; numeri di file 
+        separandoli tra loro con una virgola.</p>
+      <p>Il progetto cos&igrave; come si presenta al momento definisce soltanto 
+        il record a lunghezza fissa e la modalit&agrave; di apertura del file. 
+        L'esecuzione del progetto non eseguir&agrave; nulla tranne l'apertura 
+        e la chiusura del file di dati.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->Vedremo nella prossima lezione come effettuare 
+      i primi accessi al file.<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI </a><br>
+        4 Aprile 2002<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+     </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="int_04.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna alla quarta lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="int_06.htm">Vai 
+      alla sesta lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

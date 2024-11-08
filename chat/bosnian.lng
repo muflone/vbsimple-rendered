@@ -1,0 +1,129 @@
+#
+#         This java file is a part of the
+#
+#          -  Plouf's Java IRC Client  -
+#
+#      Copyright (C) 2002 Philippe Detournay
+#
+#   This file is licensed under the GPL license
+#
+#        All contacts : theplouf@yahoo.com
+#
+#
+#  Syntax :
+#    Comments begin with the # character. This character must be the first character of the line.
+#    A data line has three parts : the data id, the data id description, the data string.
+#      - Data id : An hexadecimal figure identifying the string.
+#      - Data description : Begins by [ and ends by ]. The description is not parsed and
+#                           can be any string.
+#      - Data string : The string itself. Parameters are specified using the %i syntax.
+#
+#  Trailing spaces can be added using the \s escape character.
+#
+#  This file is provided to you by Ermin Sahinovic Shakall@arcor.de
+
+0001 [INTERPRETOR_NOT_ON_CHANNEL] Nije na kanalu
+0002 [INTERPRETOR_UNKNOWN_DCC] %1 : nepoznata dcc subkomanda
+0003 [INTERPRETOR_INSUFFICIENT_PARAMETERS] %1 : nedovoljno parametara
+0004 [INTERPRETOR_BAD_CONTEXT] %1 : nemogu performirati u trenutnom contextu
+0005 [INTERPRETOR_CANNOT_CTCP_IN_DCCCHAT] Nemogu poslati CTCP kodove preko DCC Chata
+0006 [INTERPRETOR_UNKNOWN_CONFIG] %1 : nepoznata config subkomanda
+0007 [INTERPRETOR_TIMESTAMP_ON] Timestamp ukljucen
+0008 [INTERPRETOR_TIMESTAMP_OFF] Timestamp iskljucen
+0009 [INTERPRETOR_SMILEYS_ON] Graficki Smajliji ukljuceni
+000a [INTERPRETOR_SMILEYS_OFF] Graficki Smajliji iskljuceni
+000b [INTERPRETOR_IGNORE_ON] Sada ignorisem %1
+000c [INTERPRETOR_IGNORE_OFF] Neignorisem %1 vise
+  
+0101 [DCC_WAITING_INCOMING] Cekam za ulaznu konekciju...
+0102 [DCC_UNABLE_TO_OPEN_CONNECTION] Nemogu da uspostavim konekciju : %1
+0103 [DCC_CONNECTION_ESTABLISHED] DCC Konekcija uspostavljena
+0104 [DCC_CONNECTION_CLOSED] Konekcija zatvorena
+0105 [DCC_ERROR] Greska : %1
+0106 [DCC_UNABLE_TO_SEND_TO] %1 : nemogu poslati %2
+0107 [DCC_BAD_CONTEXT] Nemogu izvrsiti naredbu iz trenutnog contexta
+0108 [DCC_NOT_CONNECTED] Nisi konektovan
+0109 [DCC_UNABLE_PASSIVE_MODE] Nemogu uspostaviti pasivni modus
+010a [CTCP_PING_REPLY] [%1 PING reply] : %2 sekunde
+010b [DCC_STREAM_CLOSED] Stream zatvoren
+      
+0201 [IDENT_FAILED_LAUNCH] Nemogu da pokrenem ident server : %1
+0202 [IDENT_REQUEST] Ident zatrazen od %1
+0203 [IDENT_ERROR] pronadjena greska
+0204 [IDENT_REPLIED] Vraceno %1
+0205 [IDENT_DEFAULT_USER] standardni korisnik
+0206 [IDENT_NO_USER] Nema korisnika za zahtjev
+0207 [IDENT_RUNNING_ON_PORT] Ident server pokrenut na posrtu %1
+0208 [IDENT_LEAVING] Ident server napusta : %1
+0209 [IDENT_NONE] nista
+020a [IDENT_UNKNOWN] nepoznato
+020b [IDENT_UNDEFINED] Nedefinisani rezultati
+      
+0301 [FILE_SAVEAS] Snimi fajl kao
+      
+0401 [ABOUT_ABOUT] O nama
+0402 [ABOUT_PROGRAMMING] Programirao
+0403 [ABOUT_DESIGN] Dizajnirao
+0404 [ABOUT_THANKS] Hvala
+0405 [ABOUT_SUPPORT] za pomoc, ideje i testiranje
+0406 [ABOUT_GPL] Ovaj Software je napravljen po GPL licenci
+      
+0501 [SERVER_UNABLE_TO_CONNECT] Nemogu se spojiti : %1
+0502 [SERVER_UNABLE_TO_CONNECT_STILL] Nemogu se spojiti na %1 : pokusajem spajanje na %2
+0503 [SERVER_DISCONNECTING] Odlazim sa %1
+0504 [SERVER_CONNECTING] Konektujem se...
+0505 [SERVER_NOT_CONNECTED] Nisi spojen
+0506 [SERVER_LOGIN] Logujem se...
+0507 [SERVER_DISCONNECTED] Diskonektovan sa %1
+0508 [SERVER_ERROR] Greska : %1
+      
+0601 [SOURCE_YOU_KICKED] Kikovan si sa %1 od %2
+0602 [SOURCE_STATUS] Status
+0603 [SOURCE_CHANLIST] Kanali za %1
+0604 [SOURCE_CHANLIST_RETREIVING] Trazim listu kanala...
+0605 [SOURCE_HAS_JOINED] %1 je usao u %2
+0606 [SOURCE_HAS_LEFT] %1 je otisao sa %2
+0607 [SOURCE_HAS_BEEN_KICKED_BY] %1 je kikovan od %2
+0608 [SOURCE_HAS_QUIT] %1 je otisao
+0609 [SOURCE_TOPIC_IS] Topik je %1
+060a [SOURCE_CHANGED_TOPIC] %1 je promjenuo topik u %2
+060b [SOURCE_CHANNEL_MODE] %1 je setirao modove kanala u %2
+060c [SOURCE_CHANNEL_MODE_IS] Modovi kanala su %1
+060d [SOURCE_USER_MODE] %1 je setirao modove %2 u %3
+060e [SOURCE_KNOWN_AS] %1 je sada kao %2
+060f [SOURCE_YOUR_MODE] Modovi promjenjeni u %1
+0610 [SOURCE_YOUR_NICK] Tvoj nick je sada %1
+0611 [SOURCE_INFO] Informacije
+      
+0701 [GUI_WHOIS] Ko je
+0702 [GUI_QUERY] Query
+0703 [GUI_KICK] Kick
+0704 [GUI_BAN] Ban
+0705 [GUI_KICKBAN] Kick + Ban
+0706 [GUI_OP] Op
+0707 [GUI_DEOP] DeOp
+0708 [GUI_VOICE] Voice
+0709 [GUI_DEVOICE] DeVoice
+070a [GUI_PING] Ping
+070b [GUI_VERSION] Verzija
+070c [GUI_TIME] Vrijeme
+070d [GUI_FINGER] Finger
+070e [GUI_RETREIVING_FILE] Primam fajl (%1 bajtova)
+070f [GUI_SENDING_FILE] Saljem fajl (%1 bajtova)
+0710 [GUI_TERMINATED] %1 prekinuto
+0711 [GUI_FAILED] %1 nepotpuno
+0712 [GUI_CLOSE] Zatvori
+0713 [GUI_DISCONNECT] Diskonektovan
+0714 [GUI_CHANNELS] Kanali
+0715 [GUI_HELP] Pomoc
+0716 [GUI_PRIVATE] privatno
+0717 [GUI_PUBLIC] javno
+0718 [GUI_CONNECT] Konektuj
+0719 [GUI_ABOUT] O nama
+071a [GUI_CHANGE_NICK] Mjenjaj nick u
+071b [GUI_COPY_WINDOW] Copy text
+		
+0801 [ASL_MALE] Musko, %1 godina imam, %2
+0802 [ASL_FEMALE] Zensko, %1 godina imam, %2
+
+ffff [ERROR_NOT_DEFINED] Nedefinisan String

@@ -1,0 +1,717 @@
+<html><!-- #BeginTemplate "/Templates/Articoli2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Schedulare task secondo pesi e cammini minimi</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Schedulare task secondo 
+    pesi e cammini minimi<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/news.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+  </div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p class="smallerrore">I metodi di scheduling, in congiunzione con le tipiche 
+        tecniche di ottimizzazione, possono risolvere efficientemente problemi 
+        complessi, ove l'attuazione di un solo metodo non sarebbe sufficiente.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/news/news03_01.gif" width="45" height="45" align="left">e 
+        tecniche di scheduling possono essere combinate con altre tecniche di 
+        ottimizzazione, al fine di risolvere complessi problemi che necessitano 
+        di una riformulazione e quindi di un'applicazione di pi&ugrave; metodi 
+        per pervenire alla soluzione.<br>
+        In generale, la rappresentazione logica della teoria dei grafi pu&ograve; 
+        essere ottimamente combinata con quella dello scheduling, ottenendo una 
+        semplificazione della trattazione del problema.<br>
+        Ad esempio, la tipica rappresentazione di un problema di schedulazione 
+        &egrave; quella della rappresentazione dei carichi con delle barre, in 
+        cui viene rappresentato il tempo processore a disposizione, o orizzonte 
+        di processamento, mentre le singole barre rappresentano di fatto i task 
+        da schedulare. Tali informazioni possono essere riportate all'interno 
+        di un apposito grafo nel quale i rami rappresentano i task, i pesi definiti 
+        sui singoli rami rappresentano il tempo di processamento di ogni task 
+        ed ogni singolo nodo rappresenta il cambio di sequenza da un task ad un 
+        altro. Quindi, la numerazione dei singoli nodi &egrave; pari alla numerazione 
+        dei singoli task. Si consideri allora la Fig.1, in cui devono essere processati 
+        6 task, con il vincolo di assenza di preemption; per tale vincolo i possibili 
+        cambi di sequenza possono essere 5. Le quantit&agrave; intere riportate 
+        sui singoli rami sono i singoli tempi di processamento dei task. In base 
+        a tale rappresentazione &egrave; possibile formulare una vasta tipologia 
+        di problemi.</p>
+      <p align="center"><img src="../images/news/news03_02.gif" width="235" height="173" alt="Figura 1"><br>
+        <b class="colorerosso">Fig.1: </b><b class="coloreazzurro">La tipica struttura 
+        a grafo orientato<br>
+        pesato: essa pu&ograve; rappresentare una sequenza di<br>
+        task ed i relativi cambi.</b></p>
+      <hr>
+      <p align="center" class="size3"><b class="colorerosso">MINIMIZZARE IL MAKESPAN</b></p>
+      <p align="left">I diversi algoritmi di schedulazione sono preposti alla 
+        determinazione di una o pi&ugrave; misura di performance, cio&eacute; 
+        minimizzare la massima lateness, o minimizzare i costi/tempi di set-up, 
+        o ancora minimizzare il makespan. Con il termine makespan si indica la 
+        massima lunghezza della schedula; in questo caso si desidera minimizzare 
+        la lunghezza totale della sequenza ammissibile di task, cio&egrave; si 
+        desidera ottenere una sequenza la cui lunghezza sia minima.<br>
+        Per ottenerer una simile misura di prestazione, si pu&ograve; utilizzare 
+        un algoritmo tipico della teoria dello scheduling oppure si pu&ograve; 
+        tentare di adattare alcune tipiche tecniche di scansione dei grafi per 
+        pervenire a tale misura. L'algoritmo che maggiormente pu&ograve; adattarsi 
+        al problema &egrave; quello del minimo albero ricoprente o minimo spanning 
+        tree.<br>
+        Sia dato un grafo orientato pesato, la cui definizione &egrave; la seguente:</p>
+      <p align="left"><i>&quot;Si definisce grafo pesato orientato una struttura 
+        G(N, A), con N insieme dei nodi e cardinalit&agrave; |&nbsp;N&nbsp;|, 
+        ed A insieme degli archi e cardinalit&agrave; |&nbsp;A&nbsp;|. L'insieme 
+        degli archi, A, &egrave; caratterizzato da un orientamento a nodo origine 
+        ad uno destinazione i,j&quot;.</i></p>
+      <p align="left">Quindi il problema del minimo spanning tree pu&ograve; essere 
+        cos&igrave; enunciato:</p>
+      <p align="left"><i>&quot;Sia dato un grafo orientato pesato G(N, A), con 
+        un insieme di interi senza segno definito sugli archi, allora l'obiettivo 
+        &egrave; quello di determinare una struttura che connetta tutti i nodi 
+        del grafo con archi di peso minimo&quot;.</i></p>
+      <p align="left">Un albero ricoprente di costo minimo &egrave; una struttura 
+        che un unico nodo origine, detto radice, ed una serie di ramificazioni; 
+        il cammino in esso individuabile &egrave; composto da tutti i nodi del 
+        grafo origine, ma in una sequenza tale per cui la somma dei pesi sui rami 
+        sia minima.<br>
+        Risulta chiaro, allora, che la determinazione di un minimo spanning tree 
+        induce alla determinazione del makespan minimo.<br>
+        Un tipico algoritmo per la determinazione dell'albero minimo ricoprente 
+        &egrave; quello di Kruskal; di seguito ne sono riportate le parti pi&ugrave; 
+        salienti:</p>
+      <table width="100%" border="1" cellspacing="1" cellpadding="0" bgcolor="#FFFF99">
+        <tr> 
+          <td>while (archi_trovati &lt; n-1 &amp;&amp; prossimo_arco &lt;= numero_archi)</td>
+        </tr>
+        <tr> 
+          <td>//si consideri il prossimo arco</td>
+        </tr>
+        <tr> 
+          <td>from = archi[prossimo_arco].end1;</td>
+        </tr>
+        <tr> 
+          <td>to = archi[prossimo_arco].end2;</td>
+        </tr>
+        <tr> 
+          <td><br>
+            //determina l'assenza di cicli</td>
+        </tr>
+        <tr> 
+          <td>group_from = group[from];</td>
+        </tr>
+        <tr> 
+          <td>group_to = group[to];</td>
+        </tr>
+        <tr> 
+          <td><br>
+            if(group_from != group_to)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+            non esistono cicli</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;lunghezza_totale = lunghezza_totale + archi[prossimo_arco].lunghezza;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;archi_trovati = archi_trovati+1;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;//aggiornamento del numero degli archi che entrano</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;//nella soluzione, e degli elementi che compongono l'albero</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;for(j = 1; j &lt;= n; j++) {</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if(group[j] = = group_to)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;group[j] = group_from;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;prossimo_arco = prossimo_arco + 1; }</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;esiste_albero = archi_trovati + 1;</td>
+        </tr>
+      </table>
+      <p align="left">Nell'algoritmo vengono considerate alcune strutture dati 
+        (vettori) per la conservazione dei nodi e dei pesi intermedi. L'utilizzazione 
+        congiunta di queste metodologie pu&ograve; essere di valido ausilio ad 
+        esempio per uscire da un labirinto.</p>
+      <hr>
+      <p align="center" class="size3"><b class="colorerosso">LABIRINTI E PROCESSORI</b></p>
+      <p align="left">Si consideri un tipico labirinto, all'interno del quale 
+        vengono predisposti degli oggetti, che possono essere dei job da assemblare 
+        al fine di ottenere un oggetto finito. Si &egrave; certi che l'insieme 
+        degli oggetti sia disposto lungo il percorso che unisce l'ingresso e l'uscita 
+        del labirinto, paragonabilmente ad una traccia per l'orientamento nel 
+        labirinto. Tali oggetti godono, inoltre, delle seguenti propriet&agrave;:</p>
+      <ul>
+        <li>sono di peso diverso;</li>
+        <li>sono dotati di una diversa fase di lavorazione e di un differente 
+          tempo di processamento;</li>
+        <li>non &egrave; assegnata una rigida sequenza di assemblaggio finale.</li>
+      </ul>
+      <p>Allora il problema pu&ograve; essere cos&igrave; formulato:<br>
+        un operatore deve assemblare un prodotto, le cui parti componenti sono 
+        i task, la cui struttura &egrave; stata precedentemente descritta, impiegando 
+        un tempo minimo. Si tratta cio&egrave; di determinare una sequenza di 
+        task che minimizzi il tempo di completamento.<br>
+        I task per&ograve; sono disposti all'interno di un labirinto, con coordinate 
+        che congiungono entrata ed uscita. Inoltre, l'operatore &egrave; dotato 
+        di un contenitore per la raccolta dei task la cui capienza non &egrave; 
+        sufficiente a trasportare tutti i task con un unico prelievo.<br>
+        Risulta quindi chiaro che la risoluzione ottima del problema si ottiene 
+        per combinazione di una serie di metodologie ed algoritmi noti, quali 
+        ad esempio i grafi, il Knapsack e gli algoritmi di scheduling.</p>
+      <p align="center"><img src="../images/news/news03_03.png" width="250" height="180" alt="Figura 2"><br>
+        <b class="colorerosso">Fig.2: </b><b class="coloreazzurro">Il labirinto 
+        &egrave; la struttura che meglio si<br>
+        presta alla modellizzazione a grafi. Il cammino in<br>
+        esso pu&ograve; essere evidenziato da una serie di<br>
+        marcature/task.</b></p>
+      <hr>
+      <p align="center" class="size3"><b class="colorerosso">LA RISOLUZIONE</b></p>
+      <p align="left">Dalla formulazione del problema, riportata nella precedente 
+        sezione, &egrave; chiaro che &egrave; indispensabile richiamare alcuni 
+        concetti fondamentali.<br>
+        Si consideri il labirinto riportato in Fig.2. Tale schema pu&ograve; essere 
+        rappresentato secondo una struttura a Grafo orientato. Passo fondamentale 
+        &egrave; quello dell'individuazione degli elementi all'interno di un labirinto. 
+        L'individuazione di tali elementi si pu&ograve; ottenere seguendo almeno 
+        due tecniche:</p>
+      <ol>
+        <li>determinazione del percorso;</li>
+        <li>individuazione degli elementi secondo una tecnica di backtacking.</li>
+      </ol>
+      <p>Se si sceglie il primo approccio, si dovr&agrave; utilizzare un metodo 
+        di ricerca del percorso: una tecnica simile &egrave; di seguito riportata:</p>
+      <table width="100%" border="1" cellspacing="1" cellpadding="0" bgcolor="#FFFF99">
+        <tr> 
+          <td>BOOL Cammino(const Grafo &amp;G, int v, int w, Lista &amp;Cammino)</td>
+        </tr>
+        <tr> 
+          <td>{</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;// utilizzare una struttura a pila per conservare 
+            i cammini intermedi</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Pila P;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;int u, x;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;array prec (G.n())</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for (u = 1; u &lt;= prec.n(); u++)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// inizializzazione 
+            dell'array di precedenti</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prec[u] = 0;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;P.InserisciPila(v);</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;prec[v] = v;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;BOOL Trovato = False;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;G.PrimoAdiac(v);</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;while (!P.PilaVuota() &amp;&amp; !Trovato)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;{</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x = P.CimaPila();</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u = G.CorrAdiac(x);</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (G.Nodo(u) 
+            &amp;&amp; (prec[u] != 0))</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u 
+            = G.succAdiac(u);</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!G.Nodo(u))</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P.FuoriPila();</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P.InserisciPila(u);</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G.SuccAdiac(x);</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G.PrimoAdiac(u);</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+            (u = = w)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trovato 
+            = True;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (Trovato)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cammino.InserisciInLista(w);</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u 
+            = w;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w 
+            = prec[w];</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return 
+            Trovato; </td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        </tr>
+        <tr> 
+          <td>}</td>
+        </tr>
+      </table>
+      <p>Come &egrave; possibile notare, la strategia &egrave; quella di determinare 
+        le coordinate di ogni singolo nodo del cammino all'interno del labirinto/grafo. 
+        Le singole coordinate vengono poi conservate all'interno di una lista 
+        che sar&agrave; disponibile per il prosieguo della procedura.<br>
+        All'interno della lista, non sono soltanto riportate le coordinate dei 
+        singoli pezzi ma anche i relativi pesi e le informazioni inerenti alla 
+        fase di lavorazione. Individuato il cammino all'interno del labirinto, 
+        si dovranno operare a questo punto, una serie di scelte inerenti le estrazioni 
+        da effettuare, cio&egrave;: da quale pezzo incominciare la successiva 
+        fase di lavorazione? In questo caso sar&agrave; opportuno operare una 
+        semplificazione del problema di partenza, ci&ograve; in quanto una sua 
+        trattazione rigida imporrebbe la costruzione di una serie di vincoli aggiuntivi, 
+        elevando ulteriormente il costo computazionale della soluzione. Tale necessit&agrave; 
+        &egrave; determinata dalle seguenti ragioni:</p>
+      <ul>
+        <li>La strategia di scelta dei pezzi dovrebbe essere effettuata in relazione 
+          alla sequenza ottima che minimizza il makespan, ai pesi degli oggetti, 
+          ai tempi di processamento.</li>
+      </ul>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p> La soluzione pi&ugrave; logica sembrerebbe quella di applicare subito 
+        e direttamente un tipico algoritmo della bisaccia o knapsack per poi impiegare, 
+        banalmente l'algoritmo della schedulazione. Questo modo di procedere sarebbe 
+        per&ograve; fuorviante, ci&ograve; in quanto l'applicazione a priori dell'algoritmo 
+        di Knapsack restituirebbe solo una sequenza di relazione ad alcuni parametri; 
+        probabilmente non sarebbe la sequenza che ottimizza la schedula.<br>
+        Allora la logica pi&ugrave; efficace &egrave; quella di utilizzare prima 
+        un algoritmo in modo fittizio che restituisca la sequenza di maespan. 
+        Utilizzando questo vincolo si potr&agrave; allora costruire il sacco, 
+        che non sar&agrave; quello ottimo, ma che sar&agrave; ammissibile per 
+        ottenere il risultato finale, ovvero la schedula ottima. Si immagini di 
+        voler processare gli n task su m macchine parallele, con vincolo di preemption, 
+        al fine di minimizzare il makespan. Quindi sia:<br>
+        <br>
+        <img src="../images/news/news03_04.gif" width="83" height="21"><br>
+        <br>
+        il massimo tempo di completamento (in questo caso pu&ograve; anche essere 
+        interpretato come l'istante in cui tutte le macchine hanno completato 
+        il proprio lavoro).<br>
+        Mediante il meccanismo dell'interruzione, ogni job pu&ograve; essere processato 
+        su pi&ugrave; macchine, purch&eacute; non simultaneamente, in altri termini, 
+        il job <i>i</i> potrebbe iniziare il suo processamento sulla macchina 
+        <i>i</i> per continuare, successivamente, sulla stessa macchina o su qualunque 
+        altra macchina, eventualmente con ulteriori interruzioni. Si consideri 
+        allora:<br>
+        <br>
+        <img src="../images/news/news03_05.gif" width="12" height="14"> = frazione 
+        di job <i>j</i> processata sulla macchina <i>i</i><br>
+        <br>
+        ed il seguente vincolo:<br>
+        <br>
+        <img src="../images/news/news03_06.gif" width="46" height="28"> <br>
+        <br>
+        Con tale definizione delle variabili, il tempo totale di lavoro della 
+        i-esima macchina si pu&ograve; esprimere nel seguente modo:<br>
+        <br>
+        <img src="../images/news/news03_07.gif" width="67" height="32"> <br>
+        <br>
+        il problema quindi pu&ograve; essere formulato come:<br>
+        <br>
+        <img src="../images/news/news03_08.gif" width="94" height="78"> <br>
+        <br>
+        Si noti che non &egrave; consentita la preemption, il problema potr&agrave; 
+        essere formulato in maniera analoga, ma bisogner&agrave; cambiare il vincolo 
+        sulla variabile decisionale: sar&agrave; quindi <img src="../images/news/news03_05.gif" width="12" height="14"> 
+        = <i>{0,1}</i>, con variabili binarie ed il vincolo <img src="../images/news/news03_06.gif" width="46" height="28" align="absmiddle"> 
+        esprimer&agrave; il fatto che ogni job pu&ograve; essere processato da 
+        una sola macchina. &Egrave; possibile dimostrare la seguente affermazione 
+        per il problema precedentemente formulato:</p>
+      <ul>
+        <li>Se esiste una soluzione ammissibile in corrispondenza della quale 
+          tutti i vincoli di diseguaglianza siano soddisfatti come uguaglianze; 
+          sia x^, allora tale soluzione sar&agrave; ottima (x^=x*).</li>
+      </ul>
+      <p>Infatti, rispetto a x^, tutte le macchine hanno lo stesso carico di lavoro 
+        e terminano nel medesimo istante <img src="../images/news/news03_13.gif" width="27" height="13">; 
+        se per assurdo la soluzione ottima fosse x*&lt;&gt;x^, con carico di lavoro 
+        sbilanciato sulle macchine, sarebbe sempre possibile ridurre il valore 
+        del makespan, ridistribuendo opportunamente tra le macchine parte dei 
+        jobs assegnati a quella pi&ugrave; carica. Ci&ograve; sarebbe per&ograve; 
+        in contraddizione con l'ottimalit&agrave; di x*.</p>
+      <p>La soluzione ottima del problema si ottiene sommando tra loro i vincoli 
+        sulle macchine e tenendo conto dei vincoli sui jobs, ottenendo cos&igrave; 
+        la seguente posizione:</p>
+      <p><img src="../images/news/news03_09.gif" width="138" height="32"></p>
+      <p>Il vettore delle variabili decisionali <i>x^</i> fornir&agrave; quindi 
+        la sequenza ottima per minimizzare il <img src="../images/news/news03_13.gif" width="27" height="13">.<br>
+        Trovato tale valore, sar&agrave; possibile passare alla determinazione 
+        del Knapsack. Il problema, per&ograve;, &egrave; che l'operatore non ha 
+        a disposizione un sacco di capienza sufficiente al trasporto di tutti 
+        gli oggetti in un unico viaggio, quindi l'azione sar&agrave; quella di 
+        entrare ogni volta nel labirinto con l'aiuto della lista delle coordinate. 
+        Il vettore delle sequenze di processamento, all'interno, non potr&agrave; 
+        prelevare gli oggetti cos&igrave; come gli vengono proposti, ma dovr&agrave; 
+        estrarli secondo una procedura Knapsack, tenendo conto che non potranno 
+        essere trasportati tutti gli oggetti in un unico viaggio. Il problema, 
+        come gi&agrave; pi&ugrave; volte evidenziato, pu&ograve; essere formulato 
+        nel seguente modo. Si hanno a disposizione n oggetti, ciascuno con valore 
+        <img src="../images/news/news03_14.gif" width="8" height="11"> e costo 
+        <img src="../images/news/news03_15.gif" width="9" height="12"> ; nella 
+        fattispecie, tali parametri possono essere rivisti come tempo di processamento 
+        e peso. In questo caso il problema pu&ograve; essere espresso come massimizzazione 
+        del valore, nel rispetto della sequenza makespan e minimizzazione del 
+        peso, visto che dovranno essere effettuati diversi viaggi. Se C &egrave; 
+        la disponibilit&agrave; massima del trasporto, si avr&agrave;:</p>
+      <p><img src="../images/news/news03_11.gif" width="87" height="30"></p>
+      <p><img src="../images/news/news03_12.gif" width="128" height="29"></p>
+      <p> quindi in corrispondenza di tutte le variabili che assumono valore 1; 
+        allora, il corrispondente oggetto entrer&agrave; nella soluzione e quindi 
+        nel sacco.</p>
+      <p align="center"><img src="../images/news/news03_10.png" width="254" height="135" alt="Figura 3"><br>
+        <b class="colorerosso">Fig.3:</b> <b class="coloreazzurro">L'intervallo 
+        <i>O - T</i> rappresenta l'orizzonte<br>
+        temporale in cui avviene il processamento<br>
+        dell'intera sequenza. Tale risorsa di tempo viene<br>
+        solitamente suddivisa tra i vari task.</b></p>
+      <p align="left">Per una fattiva implementazione del problema di Knapsack, 
+        si consideri una struttura di oggetti, con i campi che riportano le informazioni 
+        fondamentali quali l'indice, indispensabile per la sequenza, il peso, 
+        le coordinate, il tempo.<br>
+        Si avr&agrave;:</p>
+      <table width="100%" border="1" cellspacing="1" cellpadding="0" bgcolor="#FFFF99">
+        <tr> 
+          <td>Soluzione Knapsack (array oggetti, int C)</td>
+        </tr>
+        <tr> 
+          <td>{</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;int n = oggetti.n();</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;array Fk(C + 1);</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for (int j = 1; j &lt;= C + 1; j++)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fk[j] = 0;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;matrix xk(C + 1, n);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 
+            allocare una matrice di booleani</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for (j = 1; j &lt;= C + 1; j++)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 1; 
+            i &lt;= n; i++)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xk[j][i] 
+            = FALSO;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;for (int k = 1; k &lt;= n - 1; k++)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int j = C + 
+            1; j &gt; oggetti[i].c; j--)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+            (Fk[j - oggetti[k].c] + oggetti[k].v &gt; Fk[j])</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fk[j] 
+            = Fk[j - oggetti[k].c + oggetti[k].v;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for 
+            (int i = 1; i &lt;= k - 1; i++)</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xk[j][i] 
+            = xk[j - oggetti[k].c][i];</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xk[j][k] 
+            = TRUE;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;// calcola la soluzione</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;Soluzione S;</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;if (oggetti[n].c &lt;= c &amp;&amp; Fk[C 
+            + 1 - oggetti[n].c + oggetti[n].v &gt; Fk[C + 1])</td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;// scegli gli elementi soluzione che non 
+            violano </td>
+        </tr>
+        <tr> 
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;// il vincolo di capacit&agrave;</td>
+        </tr>
+        <tr> 
+          <td>}</td>
+        </tr>
+      </table>
+      <p align="left">Perci&ograve; mediante l'applicazione di tale algoritmo, 
+        sar&agrave; possibile determinare, di volta in volta, gli oggetti che 
+        devono essere prelevati dal labirinto e posti in fase di processamento. 
+        L'azione dinamica si pu&ograve; espletare nel seguente modo:</p>
+      <ul>
+        <li>determinare il cammino e la lista di oggetti;</li>
+        <li>implementare il makespan e determinare la sequenza di schedulazione;</li>
+        <li>entrare nel labirinto e con la procedura di knapsack riempire il sacco, 
+          uscire ed avviare il processamento; mentre ci&ograve; avviene, rientrare 
+          nel labirinto e prelevare un altro sottoinsieme di oggetti fintantoch&egrave; 
+          tutti gli oggetti non sono stati rimossi dal labirinto stesso.</li>
+      </ul>
+      <p>Un'ulteriore complicazione pu&ograve; essere data dall'inserimento nel 
+        vincolo di rispetto della sequenza, e che negli intervalli di tempo in 
+        cui l'operatore sta asportando gli oggetti dal labirinto, almeno un processamento 
+        sia in atto; cio&egrave; l'insieme delle macchine non deve mai essere 
+        inoperoso. Chiaramente tale imposizione complica notevolmente la soluzione 
+        del problema.</p>
+      <hr>
+      <p align="center" class="size3"><b class="colorerosso">CONCLUSIONI</b></p>
+      <p>Le tecniche di ottimizzazione congiunte spesso vengono utilizzate per 
+        risolvere problemi complessi che non ricadono in una branca specifica 
+        dell'ottimizzazione.<br>
+        L'esempio riportato nelle precedenti sezioni pu&ograve; fattivamente prestarsi 
+        come implementazione di un gioco. La logica fondamentale &egrave; quella 
+        di riuscire a customizzare le diverse tecniche e a fonderle per ottenere 
+        la soluzione ottima di un particolare problema.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/notes2.gif" width="31" height="32" align="absmiddle"> 
+        NOTE:</p>
+      <p><b>Cammino minimo<br>
+        </b>La procedura cammino ha complessit&agrave; nell'ordine <img src="../images/news/news03_16.gif" width="35" height="12">. 
+        Tale complessit&agrave; &egrave; sostanzialmente determinata dalla scansione 
+        delle strrutture aggiuntive al fine di ottenere la migliore sequenza di 
+        visita degli elementi. Nel caso invece di determinazione di un cammino 
+        ottimale, la computazione della complessit&agrave;, sia essa spaziale 
+        che temporale, deve ovviamente variare, tenendo conto cio&egrave; dei 
+        vincoli del problema e della dimensione dell'input.</p>
+      <p><b>Complessit&agrave; di knapsack</b><br>
+        La complessit&agrave; spaziale dell'algoritmo di knapsack &egrave; in 
+        generale, dell'ordine di <img src="../images/news/news03_17.gif" width="42" height="12">, 
+        mentre quella temporale &egrave; nell'ordine di <img src="../images/news/news03_18.gif" width="51" height="12">, 
+        nei casi peggiore e medio, mentre sar&agrave; nell'ordine <img src="../images/news/news03_17.gif" width="42" height="12"> 
+        nel caso migliore; ci&ograve; in quanto si dovr&agrave; fare riferimento 
+        ai tre cicli di for innestati, con quello esterno che deve essere eseguito 
+        per n volte. Le complessit&agrave; espresse sono per&ograve; falsamente 
+        polinomiali. Infatti C fa parte dell'input e lo spazio richiesto per la 
+        sua memorizzazione &egrave;: <img src="../images/news/news03_19.gif" width="127" height="15" align="absmiddle">.</p>
+      <p><b>Assegnamento generalizzato</b><br>
+        Eliminando il vincolo di preemption dalla determinazione del makespan, 
+        si ottiene un tipico problema di assegnamento generalizzato, cos&igrave; 
+        detto perch&eacute; pi&ugrave; jobs possono essere assegnati ad una stessa 
+        macchina, come risulta dal primo gruppo di vincoli caratteristici della 
+        formulazione del problema, mancando la corrispondenza 1-1 come nel problema 
+        di assegnamento classico. Il problema di assegnamento generalizzato &egrave; 
+        un tipico problema NP-HARD.</p>
+      <p><b>L'albero ricoprente</b><br>
+        La complessit&agrave; dell'algoritmo per la determinazione del minimo 
+        albero ricoprente &egrave; dell'ordine di <img src="../images/news/news03_20.gif" width="64" height="16" align="absbottom">, 
+        ci&ograve; in quanto per ogni arco sono richieste n operazioni per aggiornare 
+        il gruppo di connessioni. Soo questa parte dell'algoritmo ha complessit&agrave; 
+        dell'ordine di <img src="../images/news/news03_21.gif" width="30" height="13" align="absmiddle">. 
+        Il ciclo innescato per tutti gli archi richiede O(E) operazioni. Pertanto 
+        la complessit&agrave; effettiva dipende sostanzialmente dalla densit&agrave; 
+        degli archi; quindi se esistono pochi archi <img src="../images/news/news03_22.gif" width="63" height="18" align="absmiddle">, 
+        l'aggiornamento del gruppo delle connessioni &egrave; il fattore predominante. 
+        Se invece il grafo &egrave; denso sar&agrave; il primo termine a dominare.</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --><!-- #EndEditable -->
+      <!-- #BeginEditable "CREDITS" --> 
+      <p align="right" class="credits2">Tratto da: <a href="http://www.gol.it/ioprogrammo" target="_blank">IoProgrammo 
+        - Marzo 1999</a><br>
+        16 Dicembre 2000</p>
+      <!-- #EndEditable --><!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli articoli</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

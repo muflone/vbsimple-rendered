@@ -1,0 +1,506 @@
+<html><!-- #BeginTemplate "/Templates/ClientServer.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Trasferimento di files tra Client e Server (prima parte)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Trasferimento di files tra 
+    Client e Server (prima&nbsp;parte)<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/cliserv.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+  </div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"> 
+        4<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Scambiare uno o pi&ugrave; files in un'applicazione Client / Server con 
+        un protocollo di nostra progettazione pu&ograve; essere relativamente 
+        semplice. Baster&agrave; infatti aprire il file in maniera binaria, leggerne 
+        il contenuto in pi&ugrave; volte e mandari i singoli pezzetti mediante 
+        il <a href="../glossary/m.htm#METODO">metodo</a> <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        <b><i>SendData</i></b> del controllo Winsock<img src="../images/controls/winsock.gif" width="25" height="25" align="absmiddle">.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il <a href="../glossary/p.htm#PROTOCOLLO">protocollo</a> <a href="../glossary/t.htm#TCPIP">TCP/IP</a> 
+        si occuper&agrave; di <a href="../news/news_04_3.htm#STEP1">verificare 
+        se il pacchetto &egrave; arrivato a destinazione</a> e comunicare la risposta 
+        all'altro capo della comunicazione.</p>
+      <p>Tuttavia in questa maniera la nostra applicazione non sapr&agrave; nulla 
+        sullo stato di avanzamento del trasferimento dei files; la parte client 
+        si occuper&agrave; di inviare il file e basta, mentre la parte server 
+        salver&agrave; il file senza mandare risposte esplicite al client.</p>
+      <p>In questo esempio vedremo invece come controllare l'avanzamento del trasferimento 
+        del file mediante l'invio di piccoli pacchetti di conferma. Questo genere 
+        di pacchetti di risposta sono detti <b><a href="../glossary/a.htm#ACK">ACK</a></b> 
+        (Acknowledgement - mettere a conoscenza).<br>
+        Sfruttando i pacchetti di ACK potremo sapere esattamente quando mandare 
+        i prossimi dati e cos&igrave; potremo monitorare l'avanzamento del trasferimento.</p>
+      <p>Il progetto si comporr&agrave; di due parti: una Client ed una Server. 
+        Il trasferimento di files di cui ci occuperemo andr&agrave; unicamente 
+        dal client verso il server, sar&ograve; ovvero un upload. Utilizzeremo 
+        un metodo di trasferimento molto simile al protocollo FTP. Il server, 
+        dopo aver accettato il trasferimento del file, aprir&agrave; un <a href="../glossary/s.htm#SOCKET">socket</a> 
+        passivo su una <a href="../glossary/p.htm#PORTATCP">porta</a> casuale 
+        e comunicher&agrave; il numero della porta aperta al Client. Tutti i dati 
+        che arriveranno sul socket passivo saranno salvati all'interno del file.</p>
+      <p>Prima di vedere l'interfaccia utente ed il codice definiamo un nostro 
+        <a href="../glossary/p.htm#PROTOCOLLO">protocollo</a>, un set di regole, 
+        per far comunicare queste due applicazioni.</p>
+      <p>Il Client potr&agrave; inviare soltanto due comandi:</p>
+      <ul>
+        <li><code>/FILE Nome Dimensione</code><br>
+          <i>Richiede il trasferimento di un file.</i> <br>
+          Dove <i><b>Nome</b></i> &egrave; il nome del file, senza percorso ma 
+          con estensione e <i><b>Dimensione</b></i> &egrave; la dimensione in 
+          bytes del file da inviare.<br>
+          <br>
+        </li>
+        <li><code>/FINE</code><br>
+          <i>Termina il trasferimento corrente.</i></li>
+      </ul>
+      <p>Il Server da parte sua avr&agrave; altri comandi unicamente di risposta:</p>
+      <ul>
+        <li><code>&nbsp;-ERR: NON ACCETTATO</code><br>
+          <i>Indicher&agrave; che il server ha rifiutato il file da trasferire.</i><br>
+          <br>
+        </li>
+        <li><code>&nbsp;+OK: PORTA NumeroPorta</code><br>
+          <i>Il server ha accettato il trasferimento del file ed ha aperto un 
+          socket passivo in ascolto per il trasferimendo dei dati.</i><br>
+          Dove <i><b>NumeroPorta</b></i> &egrave; il numero della porta messa 
+          in ascolto per il socket passivo di trasferimento. <br>
+          <br>
+        </li>
+        <li><code>&nbsp;+OK: RECV Dimensione</code><br>
+          <i>Il pacchetto ACK di risposta per il ricevimento dei dati.</i> <br>
+          Dove <b><i>Dimensione</i></b> &egrave; la dimensione in bytes dei dati 
+          finora ricevuti.<br>
+          <br>
+        </li>
+        <li><code>&nbsp;+OK: FINE</code><br>
+          <i>Indica la fine del trasferimento del file.</i></li>
+      </ul>
+      <p>Il procedimento da seguire &egrave; molto semplice: il server apre un 
+        socket in attesa su una porta specifica a cui il client si collegher&agrave;. 
+        Stabilita la connessione il client invia la richiesta di trasferimento 
+        di un file mediante il comando <code>&quot;/FILE nomefile x&quot;</code>. 
+        Il server potr&agrave; decidere se accettare il file o meno: in caso di 
+        non accettazione risponder&agrave; con il messaggio <code>&quot; -ERR: 
+        NON ACCETTATO&quot;</code>.<br>
+        Se il server accetta il file si occuper&agrave; di aprire un socket passivo 
+        su una porta specifica e comunicher&agrave; il numero della porta mediante 
+        la risposta <code>&quot; +OK: PORTA x&quot;</code>.<br>
+        Il client attender&agrave; tale risposta. Arrivata la risposta legger&agrave; 
+        il numero della porta aperta e si connetter&agrave; ad essa mediante un 
+        socket di trasferimento.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>A questo punto la connessione di trasferimento &egrave; stabilita: il 
+        client potr&agrave; leggere un primo pacchetto di dati dal file ed inviarlo 
+        mediante il nuovo socket aperto collegato al socket passivo sul server.</p>
+      <p>Inviato il primo pacchetto il client rimarr&agrave; in attesa del pacchetto 
+        di ACK di risposta. Il server, al ricevimento dei dati sul socket passivo, 
+        li memorizzer&agrave; nel file di destinazione ed invier&agrave; il pacchetto 
+        di ACK <code>&quot; +OK: RECV x&quot;</code> con il numero di bytes ricevuti.<br>
+        All'arrivo dell'ACK il client legger&agrave; un altro pacchetto di dati 
+        dal file e ripeter&agrave; l'operazione fino alla conclusione del file.</p>
+      <p>Il server, al ricevimento dell'ultimo pacchetto non dovr&agrave; rispondere 
+        con una risposta di ACK ma in un altro modo, per non far richiedere dati 
+        oltre la fine del file. Il pacchetto che invier&agrave; sar&agrave; <code>&quot; 
+        +OK: FINE&quot;</code> per indicare la fine del trasferimento e chiuder&agrave; 
+        il socket passivo. Il client al ricevimento del pacchetto di fine chiuder&agrave; 
+        il file ed il socket aperti.</p>
+      <p>Se il client vuole interrompere l'invio del file gli baster&agrave; mandare 
+        il messaggio <code>/FINE</code> al cui ricevimento il server associer&agrave; 
+        la chiusura del file e del socket passivo.</p>
+      <p>Cominciamo a vedere il Client, la parte pi&ugrave; semplice del progetto:</p>
+      <p><img src="../images/cliserv/cliserv004_01.jpg" width="248" height="74" align="right" alt="Figura 1">Il 
+        form si compone di pochi e semplici controlli: due <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>Connetti</b> ed <b>Invia</b>, due <i>TextBox</i><img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>IndirizzoIP</b> e <b>NomeFile</b> e due controlli <i>Winsock</i><img src="../images/controls/winsock.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>Socket</b> e <b>SocketInvio</b>.</p>
+      <p>Il funzionamento sfiora il ridicolo per la sua semplicit&agrave;: l'utente 
+        inserir&agrave; l'indirizzo IP del server e premer&agrave; il tasto Connetti 
+        per stabilire la connessione. Fatto questo inserir&agrave; il nome di 
+        un file nella casella NomeFile e premer&agrave; il pulsante Invia per 
+        richiedere il trasferimento al server. L'utente ha finito e non dovr&agrave; 
+        fare altro che attendere la fine del trasferimento.</p>
+      <p>Il codice non si presenta molto complesso:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li>Private Declare Function getsockopt Lib &quot;wsock32.dll&quot; (ByVal 
+          s As Long, ByVal Level As Long, ByVal optname As Long, optval As Any, 
+          optlen As Long) As Long</li>
+        <li>Private Const SO_SNDBUF = &amp;H1001</li>
+        <li>Private Const SOL_SOCKET = &amp;HFFFF&</li>
+        <li></li>
+        <li>Private FILEHANDLE As Integer</li>
+        <li>Private DIMENSIONEPACCHETTO As Long</li>
+        <li></li>
+      </ol>
+      <p>Al fine di evitare alcuni problemi legati all'invio di una quantit&agrave; 
+        di dati superiore a quella trasferibile in un singolo pacchetto con un 
+        socket TCP/IP, abbiamo dichiarato la funzione <a href="../glossary/a.htm#API">API</a> 
+        <i><b>getsockopt</b></i>, che utilizzeremo pi&ugrave; avanti in combinazione 
+        con le due <a href="../glossary/c.htm#COSTANTE">costanti</a> <img src="../images/ide/costante.gif" width="16" height="16" align="absmiddle"> 
+        API <b>SO_SNDBUF</b> e <b>SOL_SOCKET</b> allo scopo di ottenere la massima 
+        quantit&agrave; di dati in bytes trasferibili in un singolo pacchetto.</p>
+      <p>Alla riga 6 abbiamo definito una variabile chiamata <b>FILEHANDLE</b> 
+        che utilizzeremo per memorizzare l'<a href="../glossary/h.htm#HANDLE">handle</a> 
+        del file aperto da trasferire.<br>
+        Alla riga 7 definiamo la variabile <b>DIMENSIONEPACCHETTO</b> che conterr&agrave; 
+        il numero di bytes da trasferire per ogni pacchetto.</p>
+      <ol class="codicevb" start="9">
+        <li>Private Sub Connetti_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Socket.State &lt;&gt; sckClosed Then Socket.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Socket.LocalPort = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Socket.Connect IndirizzoIP.Text, 1500</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Nel momento in cui l'utente clicca sul pulsante Connetti dovr&agrave; 
+        essere avviata la connessione con il server in attesa. Prima di fare questo, 
+        per&ograve;, &egrave; necessario terminare un'eventuale precedente connessione 
+        (riga 10) e, molto importante, scegliere un'altra porta da utilizzare 
+        per collegarsi, poich&eacute; la precedente connessione avrebbe potuto 
+        lasciare la porta utilizzata nello stato WAIT_STATE (vedi <a href="clser_00.htm#STEP4">informazioni 
+        sugli stati di NETSTAT</a>), impostando la porta locale a 0 (riga 11). 
+        Solo allora potr&agrave; essere avviata la connessione con il server, 
+        il cui indirizzo &egrave; specificato nella TextBox <b>IndirizzoIP</b> 
+        sulla porta 1500.</p>
+      <ol class="codicevb" start="15">
+        <li>Private Sub Form_Unload(Cancel As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If SocketInvio.State &lt;&gt; sckClosed Then 
+          SocketInvio.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Socket.State &lt;&gt; sckClosed Then Socket.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Socket.LocalPort = 0</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Al momento della chiusura del form verranno chiusi tutti i socket aperti.</p>
+      <ol class="codicevb" start="21">
+        <li>Private Sub Invia_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim POSIZIONE As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Socket.State &lt;&gt; sckConnected Then 
+          Exit Sub</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Dir(NomeFile.Text) = &quot;&quot; Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Il file 
+          non esiste!&quot;, vbCritical + vbOKOnly</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POSIZIONE = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While InStr(POSIZIONE 
+          + 1, NomeFile.Text, &quot;\&quot;) &gt; 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POSIZIONE 
+          = InStr(POSIZIONE + 1, NomeFile.Text, &quot;\&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wend</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Socket.SendData &quot;/FILE 
+          &quot; &amp; Mid(NomeFile.Text, POSIZIONE + 1) &amp; &quot; &quot; &amp; 
+          FileLen(NomeFile.Text)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p><img src="../images/cliserv/cliserv004_02.jpg" width="120" height="95" align="right" alt="Figura 2">Il 
+        click sopra il pulsante Invia effettuer&agrave; l'invio della richiesta 
+        di trasferimento del file, ma prima di farlo &egrave; necessario controllare 
+        che la connessione con il server sia attiva (riga 23) e che il file specificato 
+        nella casella di testo <b>NomeFile</b> esista effettivamente (riga 24). 
+        Se esso non dovesse esistere sar&agrave; mostrato un messaggio di errore 
+        (riga 25). Per una spiegazione del metodo di verifica dell'esistenza di 
+        un file consultare l'<a href="../howto/ht_011.htm">HowTo dedicato</a>.</p>
+      <p>Soltanto quando abbiamo la certezza che il file da inviare esista effettueremo 
+        la richiesta di trasferimento. La richiesta &egrave; una stringa formata 
+        da <code>&quot;/FILE Nomefile Dimensione&quot;</code>. Quello che invieremo 
+        nella richiesta di trasferimento sar&agrave; il semplice nome del file, 
+        senza alcun percorso fisico della cartella. Sar&agrave; pertanto necessario 
+        estrarre il nome del file dalla locazione specificata nella casella di 
+        testo <b>NomeFile</b>. Per fare questo utilizzeremo una variabile di nome 
+        <b>POSIZIONE</b>. Essa definir&agrave; la posizione finale dei dati da 
+        eliminare dal percorso del file. Per fare ci&ograve; utilizzeremo un semplice 
+        ciclo <i>While</i> con l'utilizzo dell'istruzione <i>Instr</i> (righe 
+        27-30). Se si utilizza Visual Basic 6 sar&agrave; possibile utilizzare 
+        l'istruzione <i>InstrRev</i> per semplificare enormemente il problema.</p>
+      <p>Trovato il punto della stringa in cui inizia il nome del file vero e 
+        proprio, sar&agrave; mandata la richiesta di trasferimento; la dimensione 
+        del file da inviare sar&agrave; ritrovata mediante l'utilizzo della funzione 
+        <i>FileLen</i> (riga 31).</p>
+      <p>Se il server risponder&agrave; positivamente alla richiesta di trasferimento, 
+        sar&agrave; mandato un messaggio specifico che vedremo fra poco da cui 
+        il nostro client recuperer&agrave; il numero di porta del socket passivo 
+        a cui connettersi mediante il socket <b>SocketInvio</b>.</p>
+      <ol class="codicevb" start="35">
+        <li>Private Sub SocketInvio_Connect()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim DATI(511) As Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FILEHANDLE = FreeFile</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Open NomeFile.Text For Binary As FILEHANDLE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Get FILEHANDLE, , DATI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SocketInvio.SendData DATI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call getsockopt(SocketInvio.SocketHandle, 
+          SOL_SOCKET, SO_SNDBUF, DIMENSIONEPACCHETTO, Len(DIMENSIONEPACCHETTO))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If DIMENSIONEPACCHETTO = 0 Then DIMENSIONEPACCHETTO 
+          = 8192</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Al momento della connessione tra <b>SocketInvio</b> ed il socket passivo 
+        del server viene aperto il file da trasferire in modalit&agrave; binaria 
+        (riga 38), viene letto un primo pacchetto di dati della grandezza di 512 
+        bytes al solo scopo di avviare il trasferimento vero e proprio che sar&agrave; 
+        gestito da una procedura successiva. Il buffer letto sar&agrave; poi inviato 
+        mediante <b>SocketInvio</b> (righe 39 e 40).</p>
+      <p>Alla riga 41 abbiamo utilizzato la funzione API <i><b>getsockopt</b></i> 
+        per ritrovare la dimensione massima in bytes per ogni singolo pacchetto, 
+        senza che questo venga spezzettato in due o pi&ugrave; parti, con effetti 
+        distruttivi. La dimensione massima per pacchetto trasferibile verr&agrave; 
+        salvata nella variabile <b>DIMENSIONEPACCHETTO</b> (riga 41).<br>
+        Se l'operazione non &egrave; andata a buon termine la varibiale <b>DIMENSIONEPACCHETTO</b> 
+        conterr&agrave; il valore 0; in tal caso specificheremo la dimensione 
+        di default, ovvero 8192 bytes.</p>
+      <ol class="codicevb" start="45">
+        <li>Private Sub SocketInvio_Close()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Close FILEHANDLE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If SocketInvio.State &lt;&gt; sckClosed Then 
+          SocketInvio.Close</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Alla chiusura della connessione tra SocketInvio ed il socket passivo 
+        sul server, verranno chiusi l'<a href="../glossary/h.htm#HANDLE">handle</a> 
+        del file ed il socket di trasferimento (righe 46 e 47).</p>
+      <p>Quella che segue &egrave; il cuore del programma. Il socket utilizzato 
+        per la connessione iniziale servir&agrave; per ricevere le risposte dal 
+        server. Le risposte che esso dovr&agrave; verificare saranno 3: l'accettazione 
+        del file da parte del server, l'ACK di trasferimento ed il termine del 
+        trasferimento del file. La procedura che gestir&agrave; queste funzioni 
+        sar&agrave; ovviamente quella legata all'evento<img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><i>DataArrival</i> 
+        sul primo socket. </p>
+      <ol class="codicevb" start="50">
+        <li>Private Sub Socket_DataArrival(ByVal bytesTotal As Long)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim DATI() As Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call Socket.GetData(DATI)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DATI = StrConv(DATI, vbUnicode)</li>
+      </ol>
+      <p>I dati arrivati saranno estratti mediante il metodo GetData e successivamente 
+        convertiti in <a href="../glossary/u.htm#UNICODE">Unicode</a> per essere 
+        utilizzati validamente come stringhe da analizzare.</p>
+      <ol class="codicevb" start="54">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Left(DATI, 11) = &quot; +OK: PORTA&quot; 
+          Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If SocketInvio.State 
+          &lt;&gt; sckClosed Then SocketInvio.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SocketInvio.LocalPort 
+          = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SocketInvio.Connect 
+          Socket.RemoteHostIP, Mid(DATI, 12)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+      </ol>
+      <p>Se i primi 11 caratteri dei dati riportati sono la stringa <code>&quot; 
+        +OK: PORTA&quot;</code>, ci&ograve; significher&agrave; che il server 
+        ha accettato il trasferimento del file, ha aperto una porta specifica 
+        per il socket passivo ed ha inviato il numero della porta aperta. L'operazione 
+        che dovremo svolgere sar&agrave; quella di chiudere ogni eventuale socket 
+        di trasferimento aperto precedente (riga 55), impostare una porta locale 
+        automatica (riga 56) e collegare <b>SocketInvio</b> con lo stesso server 
+        a cui &egrave; collegato il primo socket, ma sulla porta specificata nella 
+        stringa ricevuta (riga 57)</p>
+      <ol class="codicevb" start="59">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If (Left(DATI, 10) = &quot; +OK: RECV&quot;) 
+          Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If FILEHANDLE &lt;&gt; 
+          0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATI 
+          = Space(DIMENSIONEPACCHETTO / 2)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get 
+          FILEHANDLE, , DATI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SocketInvio.SendData 
+          DATI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+      </ol>
+      <p>Se i primi 10 caratteri della risposta ricevuta corrispondono alla stringa 
+        <code>&quot; +OK: RECV&quot;</code>, avremo ricevuto l'ACK di trasferimento. 
+        Sar&agrave; necessario inviare un nuovo pacchetto di dati al server collegato.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alla riga 60 abbiamo voluto aggiungere un controllo che non dovrebbe 
+        essere necessario ma pu&ograve; essere utile in quei casi in cui la linea 
+        &egrave; molto lenta oppure i pacchetti per qualche motivazione vengono 
+        spezzettati. La lettura e l'invio di dati del file sar&agrave; effettuata 
+        soltanto se l'handle del file aperto &egrave; diverso da 0.</p>
+      <p>Alla riga 61 viene <a href="../glossary/a.htm#ALLOCARE">allocato</a> 
+        un <a href="../glossary/b.htm#BUFFER">buffer</a> di dimensione in bytes 
+        specificata dalla variabile <b>DIMENSIONEPACCHETTO</b>. L'allocazione 
+        dei dati viene effettuata mediante l'utilizzo della funzione Space; ma 
+        poich&eacute; la funzione crea una stringa e tutte le stringhe in Visual 
+        Basic sono codificato secondo lo standard UNICODE a doppio byte, la lunghezza 
+        della stringa da creare sar&agrave; dimezzata.</p>
+      <p>Alle righe 62 e 63 viene effettuata la lettura dei dati dal file aperto 
+        e l'invio degli stessi mediante <b>SocketInvio</b>.</p>
+      <ol class="codicevb" start="66">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If (Left(DATI, 10) = &quot; +OK: FINE&quot;) 
+          Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Close FILEHANDLE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SocketInvio.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Trasferimento 
+          completato!&quot;, vbInformation + vbOKOnly</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+      </ol>
+      <p>L'ultima risposta da verificare riguarda la chiusura della connessione 
+        dal lato server per completata ricezione del file aspettato. Se quindi 
+        la stringa ricevuta &egrave; <code>&quot; +OK: FINE&quot;</code> saranno 
+        chusi l'handle del file ed il socket di trasferimento <b>SocketInvio</b>.<br>
+        Sar&agrave; mostrato anche un messaggio informativo del completamento 
+        del trasferimento.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Il nostro client termina qui. I comandi sono pochi e semplici ed il programma 
+        non si occupa di controllare eventuali errori di connessione o di altro 
+        genere. Esso presuppone che tutte le operazioni siano svolte in maniera 
+        corretta.</p>
+      <p>Inoltre la dimensione per pacchetto di dati da inviare sar&agrave; controllata 
+        soltanto sul client, ma non verr&agrave; controllata la dimensione di 
+        ricezione del server.</p>
+      <p align="center"><a href="clser_04_2.htm">Segue parte 2 &gt;&gt;</a></p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        2 Giugno 2001<br>
+        Corretto il 25 Gennaio 2004<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice Client/Server</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

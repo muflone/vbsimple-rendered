@@ -1,0 +1,390 @@
+<html><!-- #BeginTemplate "/Templates/Articoli.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Autorun e suo funzionamento</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Autorun e suo funzionamento<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/news.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+  </div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p>Al fine di semplificare all'utente finale l'utilizzo di un CD contenente 
+        un determinato progetto si utilizza sempre pi&ugrave; spesso inserire 
+        un <b><i>Autorun</i></b> (detto anche <i>Autoplay</i>) che avvii un programma 
+        di presentazione semplice da utilizzare.</p>
+      <p>In situazioni normali l'Autorun scatta in maniera automatica all'inserimento 
+        del CD nel lettore ma in talune situazioni esso potrebbe essere stato 
+        disabilitato, ad esempio da alcuni programmi di masterizzazione di CD. 
+        &Egrave; anche possibile evitare volontariamente l'esecuzione dell'Autorun 
+        semplicemente tenendo premuto il tasto SHIFT all'inserimento del CD.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Vedremo in questo articolo come programmare un Autorun e regolare le 
+        impostazioni del computer per usufruire del supporto di Autorun.</p>
+      <p>Sebbene l'utilizzo di un Autorun si riveli utile quasi soltanto con l'utilizzo 
+        di un CD, e quindi si rende necessario un masterizzatore di CD, &egrave; 
+        possibile utilizzare l'Autorun anche con floppy disk ed unit&agrave; di 
+        rete. Prima di vedere come abilitare il supporto per l'Autorun su un'unit&agrave; 
+        specifica ci occuperemo di crearne uno nuovo dall'inizio.</p>
+      <p>I requisiti affinch&eacute; un Autorun venga eseguito in maniera automatica 
+        sono due:</p>
+      <ol>
+        <li>Il file di impostazioni <code>AUTORUN.INF</code></li>
+        <li>Il programma da eseguire in maniera automatica</li>
+      </ol>
+      <p>&Egrave; anche opzionalmente possibile avere un'icona per il supporto 
+        in questione ed aggiungere una o pi&ugrave; voci al menu contestuale, 
+        quello che appare cliccando con il tasto destro sull'icona del disco.</p>
+      <p>Nel 90% dei casi l'autorun si compone del file di impostazioni, del programma 
+        da eseguire e di un'icona. Il primo autorun che produrremo sar&agrave; 
+        costituito da queste tre caratteristiche.</p>
+      <hr>
+      <p>Il programma da eseguire in maniera automatica dovr&agrave; essere totalmente 
+        autonomo e pertanto non dovrebbe richiedere installazione sull'hard disk 
+        per essere eseguito. Questo non vuol dire che il programma presente sul 
+        CD non debba essere installato prima di essere eseguito ma piuttosto non 
+        deve essere installato il programma che sar&agrave; mostrato in maniera 
+        automatica. Per semplificare il problema chiameremo questo programma <b>launcher</b> 
+        in quanto esso si occuper&agrave; soltanto di lanciare un determinato 
+        processo quale l'installazione del prodotto nel disco oppure una presentazione 
+        grafica per l'utente.</p>
+      <p>&Egrave; fortemente sconsigliata la scrittura del launcher in Visual 
+        Basic in quanto esso prima di essere eseguito dovrebbe essere installato 
+        e richiede la presenza di numerosi file di <a href="../glossary/l.htm#LIBRERIA">libreria</a> 
+        che sul computer in cui viene provato il progetto potrebbero non essere 
+        presenti. Si raccomanda pertanto l'utilizzo di un launcher scritto in 
+        linguaggio C e senza dipendenze esterne. In ogni caso il launcher <b class="sottolineato">deve 
+        obbligatoriamente essere un file eseguibile</b> quindi con <a 
+        href="../glossary/e.htm#ESTENSIONEFILES">estensione</a> EXE, COM o BAT. 
+        Non sono pertanto ammessi files con estensione HTML, TXT, PPT o altro... 
+        Vedremo tuttavia pi&ugrave; avanti come evitare questa limitazione.</p>
+      <p>Il file di impostazioni <code>AUTORUN.INF</code> &egrave; un semplice 
+        file di testo posizionato sulla radice del disco che si vuol rendere autoeseguibile 
+        e contiene le righe di definizione del processo di Autorun. Nel nostro 
+        esempio si compone di 3 sole righe:</p>
+      <ol class="codicevb" start="1">
+        <li>[AUTORUN]</li>
+        <li>ICON=icona.ico</li>
+        <li>OPEN=avvia.exe &quot;Presentazione del CD....&quot;</li>
+      </ol>
+      <p>Sulla prima riga nulla da dire; essa &egrave; soltanto l'intestazione 
+        dell'autorun e deve essere in tal modo.<br>
+        La seconda riga definisce l'icona che rappresenter&agrave; l'unit&agrave;: 
+        il percorso &egrave; relativo alla radice. Nel nostro esempio il file 
+        icona.ico si trova nella stessa cartella del file autorun.inf. Se l'icona 
+        si trovasse in una sottocartella della stessa unit&agrave; basterebbe 
+        immettere il <b>riferimento relativo</b> ad esempio <code>setup/prod.ico</code>. 
+        &Egrave; comunque possibile, ma fortemente sconsigliato, immettere il 
+        percorso assoluto dell'icona, anche se essa fosse contenuta in un'unit&agrave; 
+        differente. </p>
+      <p>Il file di icona potr&agrave; essere un'immagine BMP, un'icona ICO di 
+        Windows oppure un file eseguibile EXE o DLL. Windows &egrave; in grado 
+        di estrarre le icone in maniera autonoma. Se la libreria (EXE o DLL) contiene 
+        pi&ugrave; di un'icona sar&agrave; possibile specificare l'icona fornendo 
+        il suo indice all'interno della libreria separandolo dal nome con uno 
+        spazio.</p>
+      <p>La terza ed ultima riga indica il <i>launcher</i> da eseguire. Nel nostro 
+        esempio il launcher si chiama <code>AVVIA.EXE</code> e non fa altro che 
+        mostrare all'utente un messaggio. Tutto quello che segue saranno i parametri 
+        che verranno forniti all'applicazione launcher. Anche il percorso del 
+        launcher &egrave; relativo alla cartella in cui si trova il file <code>AUTORUN.INF</code>.</p>
+      <p>Nel momento in cui l'unit&agrave; in cui si trova l'autorun viene attivata 
+        (inserendo il CD nel lettore oppure connettendo l'unit&agrave; di rete) 
+        o l'utente clicca due volte sulla sua icona viene eseguito il programma 
+        launcher. </p>
+      <p>&Egrave; altres&igrave; possibile aggiungere ulteriori voci nel menu 
+        contestuale dell'unit&agrave; inserendo alcune voci nel file di impostazioni 
+        <code>AUTORUN.INF</code>. Estendiamo il file creato in precedenza aggiungendo 
+        due nuove voci al menu contestuale: </p>
+      <ol class="codicevb" start="1">
+        <li>[AUTORUN]</li>
+        <li>ICON=icona.ico</li>
+        <li>OPEN=avvia.exe &quot;Presentazione del CD....&quot;</li>
+        <li></li>
+        <li>SHELL\LEGGIMI=Visualizza &amp;Informazioni</li>
+        <li>SHELL\LEGGIMI\COMMAND=wstart.exe leggimi.htm</li>
+        <li></li>
+        <li>SHELL\EXPLORE=S&amp;foglia il contenuto</li>
+        <li>SHELL\EXPLORE\COMMAND=wstart.exe .\</li>
+        <li></li>
+        <li>SHELL=OPEN</li>
+      </ol>
+      <p>Le voci da aggiungere ai menu contestuali sono dette verbi (in inglese 
+        verb), non solo in ambito di autorun ma nell'intera architettura di Windows 
+        e nel <a href="../glossary/r.htm#REGISTRO">registro</a>.</p>
+      <p><img src="../images/news/news08_01.gif" width="183" height="231" align="right" alt="Figura 1">Abbiamo 
+        inizialmente aggiunto un nuovo verbo di nome <b>LEGGIMI</b>. Ad esso corrispondono 
+        due informazioni: la descrizione (riga 5) che sar&agrave; mostrata nel 
+        menu contestuale ed il comando (riga 6) che verr&agrave; eseguito al click 
+        sulla voce del menu contestuale.</p>
+      <p>Il primo verbo che &egrave; stato aggiunto, oltre la voce <b>AutoPlay</b> 
+        corrispondente all'applicazione launcher, &egrave; LEGGIMI ma all'utente 
+        sar&agrave; mostato il messaggio <code>Visualizza <b class="sottolineato">I</b>nformazioni</code>. 
+        Possiamo notare l'aggiunta di un segno &amp; prima della lettera I. Esso 
+        far&agrave; si che tale lettera diventi una scorciatoia. L'utente infatti 
+        potr&agrave; cliccare via mouse sulla voce oppure premere la lettera I 
+        per richiamare il comando <code>WSTART.EXE LEGGIMI.HTM</code>.</p>
+      <p>WSTART &egrave; un semplice <a href="../glossary/w.htm#WRAPPER">wrapper</a>, 
+        un collegamento, alla funzione <a href="../glossary/a.htm#API">API</a> 
+        <i>ShellExecute</i> trattata in un'<a href="../activity/act_01.htm">altra 
+        sezione di questo sito</a>. Esso in sostanza richiama la funzione Apri 
+        per il dato passato tramite riga di comando; corrisponde pi&ugrave; o 
+        meno al doppio click sopra una qualunque icona. Tramite questo trucchetto 
+        &egrave; infatti possibile richiamare all'interno dell'Autorun un file 
+        non direttamente eseguibile quale la pagina LEGGIMI.HTM.</p>
+      <p><img src="../images/notes2.gif" width="31" height="32" align="left">Nota: 
+        Avremmo potuto utilizzare come launcher lo stesso Explorer.exe che si 
+        occupa di gestire le estensioni di Windows nella maniera corretta.</p>
+      <p>Alle righe 8 e 9 abbiamo aggiunto un secondo verbo che consente di visionare 
+        il contenuto della cartella in cui si trova il file <code>AUTORUN.INF</code>, 
+        semplicemente richiamando il solito wrapper <code>WSTART.EXE</code> e 
+        passandogli come argomento la cartella stessa (&nbsp;<code>./</code>&nbsp;). 
+        Il secondo verbo prende il nome di <b>EXPLORE</b> ma mostrer&agrave; all'utente 
+        la descrizione <code>S<b class="sottolineato">f</b>oglia il contenuto</code>. 
+        La lettera F funger&agrave; da scorciatoia.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il verbo predefinito che sar&agrave; eseguito in maniera automatica all'attivazione 
+        dell'unit&agrave; o al doppio click sull'icona &egrave; <b>OPEN</b>, corrispondente 
+        alla voce <i>AutoPlay</i> nel menu contestuale. &Egrave; anche possibile 
+        modificare il verbo predefinito utilizzando l'istruzione <code>SHELL</code> 
+        (riga 11). Avremmo pertanto potuto scrivere <code>SHELL=LEGGIMI</code> 
+        per far s&igrave; che il verbo predefinito all'attivazione dell'unit&agrave; 
+        sia <i>Visualizza Informazioni</i>, anzich&eacute; <i>AutoPlay</i>.</p>
+      <hr>
+      <p>La funzionalit&agrave; di Autorun nei sistemi Windows 95/98/2000 &egrave; 
+        normalmente abilitata soltanto sulle unit&agrave; CD e (mai documentato 
+        da Microsoft) sulle unit&agrave; virtuali associate ovvero quelle unit&agrave; 
+        logiche create tramite il comando <b>SUBST</b>. Su Windows ME invece le 
+        unit&agrave; associate non funzioneranno come unit&agrave; per l'Autorun.</p>
+      <p>Per testare il funzionamento di un Autorun non &egrave; strettamente 
+        necessario possedere un masterizzatore ed effettuare la scrittura sopra 
+        un CD. Sono infatti possibili due soluzioni: la prima riguarda la creazione 
+        di un'unit&agrave; virtuale e la seconda consiste nell'abilitare l'autorun 
+        su un altra unit&agrave; disco quale un disco floppy o l'hard disk stesso.</p>
+      <p>Come gi&agrave; detto, per poter creare un'unit&agrave; virtuale associata 
+        &egrave; necessario utilizzare il comando SUBST, non presente in tutte 
+        le versioni di Windows. Se esso &egrave; presente nel sistema e se non 
+        utilizziamo Windows ME sar&agrave; possibile utilizzare questa soluzione.</p>
+      <p>Il suo utilizzo &egrave; alquanto semplice; &egrave; necessario fornire 
+        due soli argomenti: la lettera dell'unit&agrave; virtuale da creare ed 
+        il percorso della cartella che corrisponder&agrave; alla radice dell'unit&agrave; 
+        virtuale.<br>
+        La soluzione da noi adottattata si compone di tre semplici passi:</p>
+      <ol>
+        <li>Aprire un Prompt di MS-DOS <img src="../images/icons/somsdos.gif" width="26" height="31" align="absbottom"></li>
+        <li>Spostarti nella cartella che corrisponder&agrave; alla radice dell'unit&agrave; 
+          virtuale </li>
+        <li>Digitare il comando <code>SUBST L: .</code></li>
+      </ol>
+      <p>Invece di L: potrebbe essere utilizzata un'altra lettera di unit&agrave; 
+        ma si raccomanda la verifica che essa non esista gi&agrave;. Un caso pratico 
+        potrebbe essere quello mostrato nella figura 2.</p>
+      <p align="center"><img src="../images/news/news08_02.png" width="492" height="309" alt="Figura 2"><br>
+        <b>Figura 2</b></p>
+      <p><img src="../images/news/news08_03.png" width="120" height="80" align="right" alt="Figura 3">Se 
+        l'operazione &egrave; stata eseguita in maniera corretta ed il sistema 
+        lo prevede l'Autorun scatter&agrave; in maniera automatica. In altri casi 
+        potrebbe essere necessario cliccare due volte sull'unit&agrave; appena 
+        creata da Risorse del Computer.</p>
+      <p>Selezionando la voce <i><b>Visualizza Informazioni</b></i> sar&agrave; 
+        aperta la pagina web di esempio tramite il programma predefinito. La voce 
+        <b>Sfoglia il contenuto</b> mostrer&agrave; il contenuto dell'unit&agrave; 
+        in cui &egrave; contenuto l'Autorun.</p>
+      <p>Nell'esempio di quest'articolo &egrave; fornito anche un file BAT per 
+        creare e ricreare l'unit&agrave; virtuale L: associata alla cartella in 
+        cui viene eseguito il file BAT. Esso servir&agrave; naturalmente soltanto 
+        per effettuare dei test prima dell'effettiva masterizzazione del CD finale.</p>
+      <p><img src="../images/news/news08_04.gif" width="135" height="107" align="right" alt="Figura 4">Se 
+        l'unit&agrave; virtuale non dovesse funzionare &egrave; possibile provare 
+        ad alterare <b>provvisoriamente</b> un valore di sistema e permettere 
+        al computer l'utilizzo di altre unit&agrave; quale il floppy disk, l'hard 
+        disk o le unit&agrave; di rete. Si raccomanda di ripristinare il valore 
+        originale al termine della fase di test. Tale valore &egrave; contenuto 
+        nel registro di Windows alla chiave indicata dalla figura a fianco. Il 
+        valore &egrave; di tipo binario, prende il nome di <i><b>NoDriveTypeAutoRun</b></i> 
+        e si compone di 4 bytes di cui &egrave; fondamentale soltanto il primo.</p>
+      <p>In situazioni normali tale valore &egrave; <code>95 00 00 00</code>. 
+        Il valore 95 esadecimale deve essere scomposto in 8 cifre binarie ottenendo 
+        cos&igrave; <code>1 0 0 1 0 1 0 1</code>. Analizziamo pi&ugrave; a fondo 
+        il significato dei vari bit assegnando ad ognuno delle costanti:</p>
+      <table width="95%" border="0" cellspacing="2" cellpadding="2" align="center">
+        <tr> 
+          <td width="18%" align="center">Posizione</td>
+          <td width="38%" align="center">Costante</td>
+          <td width="44%" align="center">Significato</td>
+        </tr>
+        <tr> 
+          <td width="18%" align="center">0</td>
+          <td width="38%" align="left">DRIVE_UNKNOWN</td>
+          <td width="44%" align="left">Unit&agrave; Sconosciute</td>
+        </tr>
+        <tr> 
+          <td width="18%" align="center">1</td>
+          <td width="38%" align="left">DRIVE_NO_ROOT_DIR</td>
+          <td width="44%" align="left">La radice non esiste</td>
+        </tr>
+        <tr> 
+          <td width="18%" align="center">2</td>
+          <td width="38%" align="left">DRIVE_REMOVABLE</td>
+          <td width="44%" align="left">Dischi rimovibili (floppy e ZIP)</td>
+        </tr>
+        <tr> 
+          <td width="18%" align="center">3</td>
+          <td width="38%" align="left">DRIVE_FIXED</td>
+          <td width="44%" align="left">Dischi fissi (hard disk)</td>
+        </tr>
+        <tr> 
+          <td width="18%" align="center">4</td>
+          <td width="38%" align="left">DRIVE_REMOTE</td>
+          <td width="44%" align="left">Unit&agrave; remote di rete</td>
+        </tr>
+        <tr> 
+          <td width="18%" align="center">5</td>
+          <td width="38%" align="left">DRIVE_CDROM</td>
+          <td width="44%" align="left">CD-ROM e masterizzatori</td>
+        </tr>
+        <tr> 
+          <td width="18%" align="center">6</td>
+          <td width="38%" align="left">DRIVE_RAMDISK</td>
+          <td width="44%" align="left">RAM Disk</td>
+        </tr>
+        <tr> 
+          <td width="18%" align="center">7</td>
+          <td width="38%" align="left">Reserved</td>
+          <td width="44%" align="left">Riservato per usi futuri</td>
+        </tr>
+      </table>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il bit in posizione 7 ovvero l'ultimo &egrave; riservato per usi futuri 
+        e deve comunque essere impostato su 1. Il valore di default 95 corrisponde 
+        alla disabilitazione dell'Autorun nelle unit&agrave; di tipo sconosciuto, 
+        le unit&agrave; rimovibili e quelle di rete.</p>
+      <p>Per permettere l'utilizzo dell'Autorun sulle unit&agrave; floppy sar&agrave; 
+        necessario azzerare il bit nella posizione 2 utilizzando un'operazione 
+        di AND come segue: <code>VALORE AND (NOT 2^2)</code> ovvero impostando 
+        il primo byte del valore del registro su 91.</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>&Egrave; stato riscontrato che in alcuni sistemi alla modifica di tali 
+        valori del registro non corrisponde all'attivazione/disattivazione delle 
+        unit&agrave; specificate. In tal caso si raccomanda il riavvio di Windows 
+        dopo la modifica.</p>
+      <!-- #EndEditable -->
+      <!-- #BeginEditable "CREDITS" --> 
+      <p align="right" class="credits2"><a href="../vbmail.htm?id=1">Fibia FBI</a><br>
+        14 Marzo 2002</p>
+      <!-- #EndEditable --><!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli articoli</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

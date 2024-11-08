@@ -1,0 +1,738 @@
+<html><!-- #BeginTemplate "/Templates/Articoli2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Calcolo del Codice Fiscale</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Calcolo del Codice Fiscale<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/news.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+  </div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Il codice fiscale di una persona fisica è il codice alfanumerico che 
+        distingue in modo univoco le persone iscritte nei registri dell'Anagrafe 
+        Tributaria, cioè nel registro in cui sono conservati tutti i dati utili 
+        per il funzionamento del sistema tributario; è composto da 16 caratteri 
+        di cui i primi 15 rilevati dai dati anagrafici della persona (nome, cognome, 
+        sesso, data e luogo di nascita) mentre il 16° è il carattere di controllo.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>I primi sei caratteri (partendo da sinistra) del codice fiscale indicano 
+        il cognome (dal 1° al 3° carattere) ed il nome (dal 4° al 6° carattere), 
+        i successivi 5 caratteri (dal settimo all'undicesimo) rappresentano la 
+        data di nascita della persona nel formato anno-mese-giorno, i successivi 
+        quattro caratteri, dal dodicesimo al quindicesimo indicano il luogo di 
+        nascita della persona, mentre l'ultimo carattere, il sedicesimo, è un 
+        carattere di controllo.</p>
+      <hr>
+      <p>Per l'estrazione dei caratteri dal <b>cognome</b> e dal <b>nome</b> occorre 
+        tener presente alcune regole:</p>
+      <ul>
+        <li>I cognomi, indipendentemente dalla loro composizione, devono essere 
+          considerati come in un'unica successione di caratteri senza le eventuali 
+          interruzioni (es.: Dell'Anno => DELLANNO; Di Biagio => DIBIAGIO) e per 
+          l'estrazione dei caratteri si procede nel seguente modo: 
+          <ul>
+            <li>nel caso in cui il cognome contenga tre o più consonanti devono 
+              essere estratti, nell'ordine, la prima, la seconda e la terza consonante;</li>
+            <li> nel caso in cui il cognome contenga solo sue consonanti devono 
+              essere estratti, nell'ordine, la prima e la seconda consonante e 
+              la prima vocale;</li>
+            <li> nel caso in cui il cognome contenga una sola consonante e due 
+              vocali devono essere estratti, nell'ordina, la consonante e la prima 
+              e seconda vocale;</li>
+            <li> nel caso in cui il cognome contenga una consonante ed una vocale, 
+              oppure solo due vocali, devono essere estratti, nell'ordine, i caratteri 
+              e come terzo carattere va impostata la lettera X.<br>
+              <br>
+            </li>
+          </ul>
+        </li>
+        <li>I nomi, indipendentemente dalla loro composizione, devono essere considerati 
+          come in un'unica successione di caratteri senza le eventuali interruzioni 
+          (es.: Gian Maria => GIANMARIA) e per l'estrazione si procede nel seguente 
+          modo: 
+          <ul>
+            <li> nel caso in cui il nome contenga quattro o più consonanti devono 
+              essere estratti, nell'ordine, la prima, la terza e la quarta consonante;</li>
+            <li> nel caso in cui il nome contenga solo tre consonanti devono essere 
+              estratti, nell'ordine, la prima, la seconda e la terza consonante;</li>
+            <li>nel caso in cui il nome contenga solo due consonanti devono essere 
+              estratti, nell'ordine, la prima e la seconda consonante e la prima 
+              vocale;</li>
+            <li>nel caso in cui il cognome contenga una sola consonante e due 
+              vocali devono essere estratti, nell'ordine, la consonante e la prima 
+              e seconda vocale;</li>
+            <li>nel caso in cui il cognome contenga una consonante ed una vocale, 
+              oppure solo due vocali, devono essere estratti, nell'ordine, i caratteri 
+              così come vengono e come terzo carattere va impostata la lettera 
+              X.</li>
+          </ul>
+        </li>
+      </ul>
+      <p align="center">Esempio: 
+      <table width="40%" border="1" cellspacing="0" cellpadding="2" align="center">
+        <tr> 
+          <td rowspan="2" nowrap>&nbsp;</td>
+          <td colspan="8" align="center"><b>Caratteri</b></td>
+        </tr>
+        <tr> 
+          <td width="8%" align="center"><b>1</b></td>
+          <td width="8%" align="center"><b>2</b></td>
+          <td width="8%" align="center"><b>3</b></td>
+          <td width="8%" align="center"><b>4</b></td>
+          <td width="8%" align="center"><b>5</b></td>
+          <td width="8%" align="center"><b>6</b></td>
+          <td width="8%" align="center"><b>7</b></td>
+          <td width="8%" align="center"><b>8</b></td>
+        </tr>
+        <tr> 
+          <td width="36%" nowrap>Cognome:</td>
+          <td width="8%" align="center"><b>F</b></td>
+          <td width="8%" align="center"><b>A</b></td>
+          <td width="8%" align="center"><b>N</b></td>
+          <td width="8%" align="center"><b>T</b></td>
+          <td width="8%" align="center"><b>O</b></td>
+          <td width="8%" align="center"><b>Z</b></td>
+          <td width="8%" align="center"><b>Z</b></td>
+          <td width="8%" align="center"><b>I</b></td>
+        </tr>
+        <tr> 
+          <td width="36%" nowrap>Nome:</td>
+          <td width="8%" align="center"><b>U</b></td>
+          <td width="8%" align="center"><b>G</b></td>
+          <td width="8%" align="center"><b>O</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+        </tr>
+        <tr> 
+          <td width="36%" nowrap>Sigla Cognome:</td>
+          <td width="8%" align="center"><b>F</b></td>
+          <td width="8%" align="center"><b>N</b></td>
+          <td width="8%" align="center"><b>T</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+        </tr>
+        <tr> 
+          <td width="36%" nowrap>Sigla Nome:</td>
+          <td width="8%" align="center"><b>G</b></td>
+          <td width="8%" align="center"><b>U</b></td>
+          <td width="8%" align="center"><b>O</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+        </tr>
+        <tr> 
+          <td width="36%" nowrap>Stringa:</td>
+          <td width="8%" align="center"><b>F</b></td>
+          <td width="8%" align="center"><b>N</b></td>
+          <td width="8%" align="center"><b>T</b></td>
+          <td width="8%" align="center"><b>G</b></td>
+          <td width="8%" align="center"><b>U</b></td>
+          <td width="8%" align="center"><b>O</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+          <td width="8%" align="center"><b>&nbsp;</b></td>
+        </tr>
+      </table>
+      <p>I successivi 5 caratteri (dal settimo all'undicesimo) rappresentano la 
+        <b>data di nascita</b> della persona nel formato anno-mese-giorno e per 
+        la composizione della stringa occorre tener presente le seguenti regole:</p>
+      <ul>
+        <li>per l'anno devono essere indicate solo le ultime sue cifre (es. 1966 
+          => 66) e corrispondono al settimo ed all'ottavo carattere del codice;</li>
+        <li>per il mese, invece di indicare il numero corrispondete allo stesso 
+          (es. 01 => Gennaio), si deve indicare il carattere corrispondete, così 
+          come rilevato nella seguente tabella, e corrisponde al nono carattere 
+          del codice:<br>
+          <br>
+          <table width="50%" border="1" cellspacing="0" cellpadding="4" align="center">
+            <tr> 
+              <td width="28%">Gennaio</td>
+              <td width="5%" align="center"><b>A</b></td>
+              <td width="28%">Maggio</td>
+              <td width="5%" align="center"><b>E</b></td>
+              <td width="29%">Settembre</td>
+              <td width="5%" align="center"><b>P</b></td>
+            </tr>
+            <tr> 
+              <td width="28%">Febbraio</td>
+              <td width="5%" align="center"><b>B</b></td>
+              <td width="28%">Giugno</td>
+              <td width="5%" align="center"><b>H</b></td>
+              <td width="29%">Ottobre</td>
+              <td width="5%" align="center"><b>R</b></td>
+            </tr>
+            <tr> 
+              <td width="28%">Marzo</td>
+              <td width="5%" align="center"><b>C</b></td>
+              <td width="28%">Luglio</td>
+              <td width="5%" align="center"><b>L</b></td>
+              <td width="29%">Novembre</td>
+              <td width="5%" align="center"><b>S</b></td>
+            </tr>
+            <tr> 
+              <td width="28%">Aprile</td>
+              <td width="5%" align="center"><b>D</b></td>
+              <td width="28%">Agosto</td>
+              <td width="5%" align="center"><b>M</b></td>
+              <td width="29%">Dicembre</td>
+              <td width="5%" align="center"><b>T</b></td>
+            </tr>
+          </table>
+        </li>
+        <li>per il giorno devono essere indicati due caratteri, anteponendo lo 
+          zero qualora il giorno di nascita sia costituita da una unità (es. 1 
+          => 01). Nel caso di persone di sesso femminile il giorno deve essere 
+          aumentato di 40 unità (es. 1 => 41).</li>
+      </ul>
+      <p align="center">Esempio:</p>
+      <table width="54%" border="1" cellspacing="0" cellpadding="3" align="center">
+        <tr> 
+          <td rowspan="3" width="26%" nowrap align="center">Data di nascita</td>
+          <td width="26%" nowrap align="center">Giorno</td>
+          <td nowrap width="26%" align="center">20</td>
+          <td nowrap width="22%" align="center"><b>20</b></td>
+        </tr>
+        <tr> 
+          <td width="26%" nowrap align="center">Mese</td>
+          <td nowrap width="26%" align="center">Dicembre</td>
+          <td nowrap width="22%" align="center"><b>T</b></td>
+        </tr>
+        <tr> 
+          <td width="26%" nowrap align="center">Anno</td>
+          <td nowrap width="26%" align="center">1969</td>
+          <td nowrap width="22%" align="center"><b>69</b></td>
+        </tr>
+        <tr> 
+          <td colspan="3" nowrap align="center">Stringa</td>
+          <td nowrap width="22%" align="center"><b>69T20</b></td>
+        </tr>
+      </table>
+      <p>I successivi quattro caratteri, dal dodicesimo al quindicesimo indicano 
+        il <b>luogo di nascita</b> della persone e corrispondono al codice del 
+        Comune rilevato all'elenco dei comuni di Italia.</p>
+      <p>L'ultimo carattere, il sedicesimo, è il <b>carattere di controllo</b> 
+        e corrisponde al valore del resto della divisione della somma delle sommatorie 
+        dei valori dei caratteri pari con la sommatoria dei caratteri dispari 
+        per 26.</p>
+      <p align="center">Carattere di controllo = Resto((C1+C3+C5+C7+C9+C11+C13+C15)+(C2+C4+C6+C8+C10+C12+C14)/26)</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il resto dell'operazione sopra descritta rappresenta il carattere di 
+        controllo. I valori dei singoli caratteri vengono rilevati dalla seguente 
+        tabella:</p>
+      <table width="80%" border="1" cellspacing="0" cellpadding="2" align="center">
+        <tr> 
+          <td colspan="2" align="center">Carattere</td>
+          <td align="center" width="4%">A</td>
+          <td align="center" width="4%">B</td>
+          <td align="center" width="4%">C</td>
+          <td align="center" width="4%">D</td>
+          <td align="center" width="4%">E</td>
+          <td align="center" width="4%">F</td>
+          <td align="center" width="4%">G</td>
+          <td align="center" width="4%">H</td>
+          <td align="center" width="4%">I</td>
+          <td align="center" width="4%">J</td>
+          <td align="center" width="4%">K</td>
+          <td align="center" width="4%">L</td>
+          <td align="center" width="4%">M</td>
+          <td align="center" width="4%">N</td>
+          <td align="center" width="4%">O</td>
+          <td align="center" width="4%">P</td>
+          <td align="center" width="4%">Q</td>
+          <td align="center" width="4%">R</td>
+        </tr>
+        <tr> 
+          <td rowspan="2" align="center">Posizione</td>
+          <td width="14%" align="right">Pari</td>
+          <td align="center" width="4%"><b>0</b></td>
+          <td align="center" width="4%"><b>1</b></td>
+          <td align="center" width="4%"><b>2</b></td>
+          <td align="center" width="4%"><b>3</b></td>
+          <td align="center" width="4%"><b>4</b></td>
+          <td align="center" width="4%"><b>5</b></td>
+          <td align="center" width="4%"><b>6</b></td>
+          <td align="center" width="4%"><b>7</b></td>
+          <td align="center" width="4%"><b>8</b></td>
+          <td align="center" width="4%"><b>9</b></td>
+          <td align="center" width="4%"><b>10</b></td>
+          <td align="center" width="4%"><b>11</b></td>
+          <td align="center" width="4%"><b>12</b></td>
+          <td align="center" width="4%"><b>13</b></td>
+          <td align="center" width="4%"><b>14</b></td>
+          <td align="center" width="4%"><b>15</b></td>
+          <td align="center" width="4%"><b>16</b></td>
+          <td align="center" width="4%"><b>17</b></td>
+        </tr>
+        <tr> 
+          <td width="14%" align="right">Dispari</td>
+          <td align="center" width="4%"><b>1</b></td>
+          <td align="center" width="4%"><b>0</b></td>
+          <td align="center" width="4%"><b>5</b></td>
+          <td align="center" width="4%"><b>7</b></td>
+          <td align="center" width="4%"><b>9</b></td>
+          <td align="center" width="4%"><b>13</b></td>
+          <td align="center" width="4%"><b>15</b></td>
+          <td align="center" width="4%"><b>17</b></td>
+          <td align="center" width="4%"><b>19</b></td>
+          <td align="center" width="4%"><b>21</b></td>
+          <td align="center" width="4%"><b>2</b></td>
+          <td align="center" width="4%"><b>4</b></td>
+          <td align="center" width="4%"><b>18</b></td>
+          <td align="center" width="4%"><b>20</b></td>
+          <td align="center" width="4%"><b>11</b></td>
+          <td align="center" width="4%"><b>3</b></td>
+          <td align="center" width="4%"><b>6</b></td>
+          <td align="center" width="4%"><b>8</b></td>
+        </tr>
+        <tr> 
+          <td colspan="2" align="center">Carattere</td>
+          <td align="center" width="4%">S</td>
+          <td align="center" width="4%">T</td>
+          <td align="center" width="4%">U</td>
+          <td align="center" width="4%">V</td>
+          <td align="center" width="4%">W</td>
+          <td align="center" width="4%">X</td>
+          <td align="center" width="4%">Y</td>
+          <td align="center" width="4%">Z</td>
+          <td align="center" width="4%">1</td>
+          <td align="center" width="4%">2</td>
+          <td align="center" width="4%">3</td>
+          <td align="center" width="4%">4</td>
+          <td align="center" width="4%">5</td>
+          <td align="center" width="4%">6</td>
+          <td align="center" width="4%">7</td>
+          <td align="center" width="4%">8</td>
+          <td align="center" width="4%">9</td>
+          <td align="center" width="4%">0</td>
+        </tr>
+        <tr> 
+          <td rowspan="2" align="center">Posizione</td>
+          <td width="14%" align="right">Pari</td>
+          <td align="center" width="4%"><b>18</b></td>
+          <td align="center" width="4%"><b>19</b></td>
+          <td align="center" width="4%"><b>20</b></td>
+          <td align="center" width="4%"><b>21</b></td>
+          <td align="center" width="4%"><b>22</b></td>
+          <td align="center" width="4%"><b>23</b></td>
+          <td align="center" width="4%"><b>24</b></td>
+          <td align="center" width="4%"><b>25</b></td>
+          <td align="center" width="4%"><b>1</b></td>
+          <td align="center" width="4%"><b>2</b></td>
+          <td align="center" width="4%"><b>3</b></td>
+          <td align="center" width="4%"><b>4</b></td>
+          <td align="center" width="4%"><b>5</b></td>
+          <td align="center" width="4%"><b>6</b></td>
+          <td align="center" width="4%"><b>7</b></td>
+          <td align="center" width="4%"><b>8</b></td>
+          <td align="center" width="4%"><b>9</b></td>
+          <td align="center" width="4%"><b>0</b></td>
+        </tr>
+        <tr> 
+          <td width="14%" align="right">Dispari</td>
+          <td align="center" width="4%"><b>12</b></td>
+          <td align="center" width="4%"><b>14</b></td>
+          <td align="center" width="4%"><b>16</b></td>
+          <td align="center" width="4%"><b>10</b></td>
+          <td align="center" width="4%"><b>22</b></td>
+          <td align="center" width="4%"><b>25</b></td>
+          <td align="center" width="4%"><b>24</b></td>
+          <td align="center" width="4%"><b>23</b></td>
+          <td align="center" width="4%"><b>0</b></td>
+          <td align="center" width="4%"><b>5</b></td>
+          <td align="center" width="4%"><b>7</b></td>
+          <td align="center" width="4%"><b>9</b></td>
+          <td align="center" width="4%"><b>13</b></td>
+          <td align="center" width="4%"><b>15</b></td>
+          <td align="center" width="4%"><b>17</b></td>
+          <td align="center" width="4%"><b>19</b></td>
+          <td align="center" width="4%"><b>21</b></td>
+          <td align="center" width="4%"><b>1</b></td>
+        </tr>
+      </table>
+      <p>Il carattere di controllo è rilevato dalla seguente tabella:</p>
+      <table width="70%" border="1" cellspacing="0" cellpadding="2" align="center">
+        <tr> 
+          <td rowspan="4" align="center" width="15%">Resto</td>
+          <td width="20%" align="right">Valore</td>
+          <td align="center" width="5%">0</td>
+          <td align="center" width="5%">1</td>
+          <td align="center" width="5%">2</td>
+          <td align="center" width="5%">3</td>
+          <td align="center" width="5%">4</td>
+          <td align="center" width="5%">5</td>
+          <td align="center" width="5%">6</td>
+          <td align="center" width="5%">7</td>
+          <td align="center" width="5%">8</td>
+          <td align="center" width="5%">9</td>
+          <td align="center" width="5%">10</td>
+          <td align="center" width="5%">11</td>
+          <td align="center" width="5%">12</td>
+        </tr>
+        <tr> 
+          <td width="20%" align="right">Carattere</td>
+          <td align="center" width="5%"><b>A</b></td>
+          <td align="center" width="5%"><b>B</b></td>
+          <td align="center" width="5%"><b>C</b></td>
+          <td align="center" width="5%"><b>D</b></td>
+          <td align="center" width="5%"><b>E</b></td>
+          <td align="center" width="5%"><b>F</b></td>
+          <td align="center" width="5%"><b>G</b></td>
+          <td align="center" width="5%"><b>H</b></td>
+          <td align="center" width="5%"><b>I</b></td>
+          <td align="center" width="5%"><b>J</b></td>
+          <td align="center" width="5%"><b>K</b></td>
+          <td align="center" width="5%"><b>L</b></td>
+          <td align="center" width="5%"><b>M</b></td>
+        </tr>
+        <tr> 
+          <td width="20%" align="right">Valore</td>
+          <td align="center" width="5%">13</td>
+          <td align="center" width="5%">14</td>
+          <td align="center" width="5%">15</td>
+          <td align="center" width="5%">16</td>
+          <td align="center" width="5%">17</td>
+          <td align="center" width="5%">18</td>
+          <td align="center" width="5%">19</td>
+          <td align="center" width="5%">20</td>
+          <td align="center" width="5%">21</td>
+          <td align="center" width="5%">22</td>
+          <td align="center" width="5%">23</td>
+          <td align="center" width="5%">24</td>
+          <td align="center" width="5%">25</td>
+        </tr>
+        <tr> 
+          <td width="20%" align="right">Carattere</td>
+          <td align="center" width="5%"><b>N</b></td>
+          <td align="center" width="5%"><b>O</b></td>
+          <td align="center" width="5%"><b>P</b></td>
+          <td align="center" width="5%"><b>Q</b></td>
+          <td align="center" width="5%"><b>R</b></td>
+          <td align="center" width="5%"><b>S</b></td>
+          <td align="center" width="5%"><b>T</b></td>
+          <td align="center" width="5%"><b>U</b></td>
+          <td align="center" width="5%"><b>V</b></td>
+          <td align="center" width="5%"><b>W</b></td>
+          <td align="center" width="5%"><b>X</b></td>
+          <td align="center" width="5%"><b>Y</b></td>
+          <td align="center" width="5%"><b>Z</b></td>
+        </tr>
+      </table>
+      <hr>
+      <p>Calcoliamo ora il Codice Fiscale del Signor FANTOZZI Ugo, sesso Maschile, 
+        nato a Roma il 20/12/1966:</p>
+      <ol>
+        <li> Estrazione dei caratteri del cognome:<br>
+          Il cognome "FANTOZZI" è composto da più di tre consonanti, per cui estrarremmo 
+          la prima, la seconda e la terza consonante: <b>FNT</b><br>
+          <br>
+        </li>
+        <li>Estrazione dei caratteri del nome:<br>
+          Il nome "UGO" è composto da una consonante e due vocali, per cui estrarremmo 
+          l'unica consonante presente e le vocali nell'ordine di come vengono: 
+          <b>GUO</b><br>
+          <br>
+        </li>
+        <li>Data di nascita:<br>
+          I primi due caratteri indicano l'anno (66), il terzo il mese così come 
+          indicato nella tabella (T) e gli ultimi due il giorno (20) : <b>66T20</b><br>
+          <br>
+        </li>
+        <li>Luogo di nascita:<br>
+          Il codice del comune di nascita (Roma) rilevato dalla tabella è <b>H501</b><br>
+          <br>
+        </li>
+        <li>Carattere di controllo:<br>
+          la stringa fino ad ora ottenuta è la seguente: FNTGUO66T20H501. Ora, 
+          per ricavare il carattere di controllo occorre, per prima cosa, sommare 
+          il valore della sommatoria dei caratteri pari con il valore della sommatoria 
+          dei caratteri dispari:</li>
+      </ol>
+      <table width="50%" border="1" cellspacing="0" cellpadding="2" align="center">
+        <tr> 
+          <td rowspan="2" align="center">Posizione</td>
+          <td rowspan="2" align="center">Carattere</td>
+          <td colspan="2" align="center">Valore Carattere</td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">Dispari</td>
+          <td align="center" width="25%">Pari</td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">1</td>
+          <td align="center" width="25%">F</td>
+          <td align="center" width="25%"><b>13</b></td>
+          <td align="center" width="25%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">2</td>
+          <td align="center" width="25%">N</td>
+          <td align="center" width="25%">&nbsp;</td>
+          <td align="center" width="25%"><b>13</b></td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">3</td>
+          <td align="center" width="25%">T</td>
+          <td align="center" width="25%"><b>14</b></td>
+          <td align="center" width="25%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">4</td>
+          <td align="center" width="25%">G</td>
+          <td align="center" width="25%">&nbsp;</td>
+          <td align="center" width="25%"><b>6</b></td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">5</td>
+          <td align="center" width="25%">U</td>
+          <td align="center" width="25%"><b>16</b></td>
+          <td align="center" width="25%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">6</td>
+          <td align="center" width="25%">O</td>
+          <td align="center" width="25%">&nbsp;</td>
+          <td align="center" width="25%"><b>14</b></td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">7</td>
+          <td align="center" width="25%">6</td>
+          <td align="center" width="25%"><b>15</b></td>
+          <td align="center" width="25%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">8</td>
+          <td align="center" width="25%">6</td>
+          <td align="center" width="25%">&nbsp;</td>
+          <td align="center" width="25%"><b>6</b></td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">9</td>
+          <td align="center" width="25%">T</td>
+          <td align="center" width="25%"><b>14</b></td>
+          <td align="center" width="25%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">10</td>
+          <td align="center" width="25%">2</td>
+          <td align="center" width="25%">&nbsp;</td>
+          <td align="center" width="25%"><b>2</b></td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">11</td>
+          <td align="center" width="25%">0</td>
+          <td align="center" width="25%"><b>1</b></td>
+          <td align="center" width="25%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">12</td>
+          <td align="center" width="25%">H</td>
+          <td align="center" width="25%">&nbsp;</td>
+          <td align="center" width="25%"><b>7</b></td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">13</td>
+          <td align="center" width="25%">5</td>
+          <td align="center" width="25%"><b>13</b></td>
+          <td align="center" width="25%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">14</td>
+          <td align="center" width="25%">0</td>
+          <td align="center" width="25%">&nbsp;</td>
+          <td align="center" width="25%"><b>0</b></td>
+        </tr>
+        <tr> 
+          <td align="center" width="25%">15</td>
+          <td align="center" width="25%">1</td>
+          <td align="center" width="25%"><b>0</b></td>
+          <td align="center" width="25%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center" colspan="2">Sommatoria colonne</td>
+          <td align="center" width="25%"><b>86</b></td>
+          <td align="center" width="25%"><b>48</b></td>
+        </tr>
+        <tr> 
+          <td align="right" colspan="3">Totale (Dispari + Pari)</td>
+          <td align="center"><b>134</b></td>
+        </tr>
+      </table>
+      <p>Il resto della divisione fra 134 e 26 (134/26) è uguale a 4 che corrisponde 
+        alla lettera E. Pertanto, il Codice Fiscale sarà il seguente:</p>
+      <p align="center"><img src="../images/news/news14_01.png" width="420" height="265" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <p>Nel caso in cui la stringa alfanumerica relativa ai primi 15 caratteri 
+        sia uguale per più soggetti diversi, vengono sostituiti uno o più caratteri 
+        numerici i caratteri riportati nella seguente tabella:</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <table width="70%" border="1" cellspacing="0" cellpadding="2" align="center">
+        <tr> 
+          <td width="20%" nowrap>Valore Numerico</td>
+          <td width="8%" align="center">0</td>
+          <td width="8%" align="center">1</td>
+          <td width="8%" align="center">2</td>
+          <td width="8%" align="center">3</td>
+          <td width="8%" align="center">4</td>
+          <td width="8%" align="center">5</td>
+          <td width="8%" align="center">6</td>
+          <td width="8%" align="center">7</td>
+          <td width="8%" align="center">8</td>
+          <td width="8%" align="center">9</td>
+        </tr>
+        <tr> 
+          <td width="20%" nowrap>Carattere</td>
+          <td width="8%" align="center"><b>L</b></td>
+          <td width="8%" align="center"><b>M</b></td>
+          <td width="8%" align="center"><b>N</b></td>
+          <td width="8%" align="center"><b>P</b></td>
+          <td width="8%" align="center"><b>Q</b></td>
+          <td width="8%" align="center"><b>R</b></td>
+          <td width="8%" align="center"><b>S</b></td>
+          <td width="8%" align="center"><b>T</b></td>
+          <td width="8%" align="center"><b>U</b></td>
+          <td width="8%" align="center"><b>V</b></td>
+        </tr>
+      </table>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Il metodo per il calcolo del Codice Fiscale appenda descritto non è valido 
+        nei casi in cui due o più persone siano omonime e siano nate nella stessa 
+        città e nello stesso giorno. Anche se sembra impossibile ciò può capitare 
+        ed in questo caso vengono apportate delle modifiche ai valori delle tabelle 
+        indicate con dei valori in possesso solo ed esclusivamente dell'Anagrafe 
+        Tributaria ed ai quali posso accedere solo i funzionari dell'anagrafe 
+        stessa.</p>
+      <p>Bench&eacute; abbia profuso tutta l'attenzione possibile nella redazione 
+        del presente testo, l'autore declina ogni responsabilità di qualunque 
+        natura e/o genere che dovesse derivare dall'inesattezza di quanto riportato 
+        nel presente, nel database e nel programma. Il presente documento ed il 
+        relativo programma è liberamente distribuibile sia per uso personale che 
+        per uso commerciale.</p>
+      <!-- #EndEditable -->
+      <!-- #BeginEditable "CREDITS" --> 
+      <p align="right" class="credits2"><a href="../vbmail.htm?id=15">VBEnry</a><br>
+        26 Febbraio 2001<br>
+        Pubblicato il 25 Gennaio 2004</p>
+      <!-- #EndEditable --><!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli articoli</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

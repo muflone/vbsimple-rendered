@@ -1,0 +1,131 @@
+#
+#         This java file is a part of the
+#
+#          -  Plouf's Java IRC Client  -
+#
+#      Copyright (C) 2002 Philippe Detournay
+#
+#   This file is licensed under the GPL license
+#
+#        All contacts : theplouf@yahoo.com
+#        
+#       German translation : Ermin Sahinovic 
+#                  Shakall@arcor.de
+#
+#  Syntax :
+#    Comments begin with the # character. This character must be the first character of the line.
+#    A data line has three parts : the data id, the data id description, the data string.
+#      - Data id : An hexadecimal figure identifying the string.
+#      - Data description : Begins by [ and ends by ]. The description is not parsed and
+#                           can be any string.
+#      - Data string : The string itself. Parameters are specified using the %i syntax.
+#
+#  Trailing spaces can be added using the \s escape character.
+#
+#  This file is provided to you by Ermin Sahinovic Shakall@arcor.de
+
+0001 [INTERPRETOR_NOT_ON_CHANNEL] Nicht am kanal
+0002 [INTERPRETOR_UNKNOWN_DCC] %1 : unbekanter dcc subbefehl
+0003 [INTERPRETOR_INSUFFICIENT_PARAMETERS] %1 : ungenügend parameter
+0004 [INTERPRETOR_BAD_CONTEXT] %1 : kann nicht performieren im jetzigem context
+0005 [INTERPRETOR_CANNOT_CTCP_IN_DCCCHAT] Kan keine CTCP codes über DCC Chata senden
+0006 [INTERPRETOR_UNKNOWN_CONFIG] %1 : unbekantes config subbefehl
+0007 [INTERPRETOR_TIMESTAMP_ON] Timestamp eingeschaltet
+0008 [INTERPRETOR_TIMESTAMP_OFF] Timestamp ausgeschaltet
+0009 [INTERPRETOR_SMILEYS_ON] Grafische Smajlis eingeschaltet
+000a [INTERPRETOR_SMILEYS_OFF] Grafische Smajlis ausgeschaltet
+000b [INTERPRETOR_IGNORE_ON] Ignorieren %1
+000c [INTERPRETOR_IGNORE_OFF] Ignorieren für %1 beendet
+  
+0101 [DCC_WAITING_INCOMING] Warte für eingehende verbindung...
+0102 [DCC_UNABLE_TO_OPEN_CONNECTION] Kan die verbindung nicht öfnen : %1
+0103 [DCC_CONNECTION_ESTABLISHED] DCC Verbindung erfolgreich
+0104 [DCC_CONNECTION_CLOSED] Verbindung geschlossen
+0105 [DCC_ERROR] Fehler : %1
+0106 [DCC_UNABLE_TO_SEND_TO] %1 : kann nicht zum %2 senden
+0107 [DCC_BAD_CONTEXT] Kann den befehl im jetzigem context nicht aufüren
+0108 [DCC_NOT_CONNECTED] Nicht verbunden
+0109 [DCC_UNABLE_PASSIVE_MODE] Kann den pasiven mode nicht initializieren
+010a [CTCP_PING_REPLY] [%1 PING reply] : %2 sekunden
+010b [DCC_STREAM_CLOSED] Stream geschlossen
+      
+0201 [IDENT_FAILED_LAUNCH] Kann den Ident Server nicht starten : %1
+0202 [IDENT_REQUEST] Ident verlangt von %1
+0203 [IDENT_ERROR] Fehler unterlaufen
+0204 [IDENT_REPLIED] Erwidert %1
+0205 [IDENT_DEFAULT_USER] Standard benutzer
+0206 [IDENT_NO_USER] Kein benutzer für anfrage
+0207 [IDENT_RUNNING_ON_PORT] Identifikation gestartet am %1
+0208 [IDENT_LEAVING] Ident server verläst : %1
+0209 [IDENT_NONE] keiner
+020a [IDENT_UNKNOWN] unbekant
+020b [IDENT_UNDEFINED] Undefinierbares resultat
+      
+0301 [FILE_SAVEAS] Speichern als
+      
+0401 [ABOUT_ABOUT] Über uns
+0402 [ABOUT_PROGRAMMING] Programmierung
+0403 [ABOUT_DESIGN] Design
+0404 [ABOUT_THANKS] Danke an
+0405 [ABOUT_SUPPORT] für support, ideen und tests
+0406 [ABOUT_GPL] Diese Software ist lizensiert unter der GPL license
+      
+0501 [SERVER_UNABLE_TO_CONNECT] Unfähig zu verbinden : %1
+0502 [SERVER_UNABLE_TO_CONNECT_STILL] Keine verbindung zum %1 : probiere verbinden an %2
+0503 [SERVER_DISCONNECTING] Getrent von %1
+0504 [SERVER_CONNECTING] Verbinde...
+0505 [SERVER_NOT_CONNECTED] Nicht verbunden
+0506 [SERVER_LOGIN] Logge rein...
+0507 [SERVER_DISCONNECTED] Getrent von %1
+0508 [SERVER_ERROR] Fehler : %1
+      
+0601 [SOURCE_YOU_KICKED] Du bist aus %1 gekickt von %2
+0602 [SOURCE_STATUS] Status
+0603 [SOURCE_CHANLIST] kanäle für %1
+0604 [SOURCE_CHANLIST_RETREIVING] Ersuche Kanäle...
+0605 [SOURCE_HAS_JOINED] %1 ist beigetreten %2
+0606 [SOURCE_HAS_LEFT] %1 hat verlasen %2
+0607 [SOURCE_HAS_BEEN_KICKED_BY] %1 ist gekickt von %2
+0608 [SOURCE_HAS_QUIT] %1 hat verlasn
+0609 [SOURCE_TOPIC_IS] Topic ist %1
+060a [SOURCE_CHANGED_TOPIC] %1 hat den topic in %2 geendert
+060b [SOURCE_CHANNEL_MODE] %1 setzte kanal modes im %2
+060c [SOURCE_CHANNEL_MODE_IS] Kanal modes sind %1
+060d [SOURCE_USER_MODE] %1 setzte modes %2 im %3
+060e [SOURCE_KNOWN_AS] %1 ist jetzt als %2
+060f [SOURCE_YOUR_MODE] Mode geendert zu %1
+0610 [SOURCE_YOUR_NICK] Dein nick ist jetzt %1
+0611 [SOURCE_INFO] Informationen
+      
+0701 [GUI_WHOIS] Wer ist
+0702 [GUI_QUERY] Query
+0703 [GUI_KICK] Kick
+0704 [GUI_BAN] Ban
+0705 [GUI_KICKBAN] Kick + Ban
+0706 [GUI_OP] Op
+0707 [GUI_DEOP] DeOp
+0708 [GUI_VOICE] Voice
+0709 [GUI_DEVOICE] DeVoice
+070a [GUI_PING] Ping
+070b [GUI_VERSION] Version
+070c [GUI_TIME] Zeit
+070d [GUI_FINGER] Finger
+070e [GUI_RETREIVING_FILE] Empfange files (%1 bytes)
+070f [GUI_SENDING_FILE] Sende files (%1 bytes)
+0710 [GUI_TERMINATED] %1 abgebrochen
+0711 [GUI_FAILED] %1 nicht vollständig
+0712 [GUI_CLOSE] Schliesen
+0713 [GUI_DISCONNECT] Trenne
+0714 [GUI_CHANNELS] Kanäle
+0715 [GUI_HELP] Hilfe
+0716 [GUI_PRIVATE] privat
+0717 [GUI_PUBLIC] öffendlich
+0718 [GUI_CONNECT] Verbinde
+0719 [GUI_ABOUT] Über
+071a [GUI_CHANGE_NICK] Ändere nick in
+071b [GUI_COPY_WINDOW] Copy text
+		
+0801 [ASL_MALE] Mänlich, %1 jahre alt, %2
+0802 [ASL_FEMALE] Weiblich, %1 jahre alt, %2
+
+ffff [ERROR_NOT_DEFINED] Unbekanter string

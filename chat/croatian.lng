@@ -1,0 +1,129 @@
+#
+#         This java file is a part of the
+#
+#          -  Plouf's Java IRC Client  -
+#
+#      Copyright (C) 2002 Philippe Detournay
+#
+#   This file is licensed under the GPL license
+#
+#        All contacts : theplouf@yahoo.com
+#
+#
+#  Syntax :
+#    Comments begin with the # character. This character must be the first character of the line.
+#    A data line has three parts : the data id, the data id description, the data string.
+#      - Data id : An hexadecimal figure identifying the string.
+#      - Data description : Begins by [ and ends by ]. The description is not parsed and
+#                           can be any string.
+#      - Data string : The string itself. Parameters are specified using the %i syntax.
+#
+#  Trailing spaces can be added using the \s escape character.
+#
+#  This file is provided to you by Hrvoje Hladnik (hrgan@gamebox.net), Zagreb, Croatia
+
+0001 [INTERPRETOR_NOT_ON_CHANNEL] Niste u kanalu
+0002 [INTERPRETOR_UNKNOWN_DCC] %1 : nepoznata DCC podnaredba
+0003 [INTERPRETOR_INSUFFICIENT_PARAMETERS] %1 : nedovoljno parametara
+0004 [INTERPRETOR_BAD_CONTEXT] %1 : ne mogu izvrsiti u zadanom kontekstu
+0005 [INTERPRETOR_CANNOT_CTCP_IN_DCCCHAT] Ne mogu poslati CTCP kodove preko DCC chata
+0006 [INTERPRETOR_UNKNOWN_CONFIG] %1 : nepoznata konfiguracijska podnaredba
+0007 [INTERPRETOR_TIMESTAMP_ON] Ukljuceno prikazivanje vremena
+0008 [INTERPRETOR_TIMESTAMP_OFF] Iskljuceno prikazivanje vremena
+0009 [INTERPRETOR_SMILEYS_ON] Graficki smjeskici ukljuceni
+000a [INTERPRETOR_SMILEYS_OFF] Graficki smjeskici iskljuceni
+000b [INTERPRETOR_IGNORE_ON] Ukljuèeno ignoriranje za nadimak %1
+000c [INTERPRETOR_IGNORE_OFF] Iskljuèeno ignoriranje za nadimak %1
+  
+0101 [DCC_WAITING_INCOMING] Cekam dolaznu DCC vezu ...
+0102 [DCC_UNABLE_TO_OPEN_CONNECTION] Ne mogu uspostaviti DCC vezu : %1
+0103 [DCC_CONNECTION_ESTABLISHED] Uspostavljena je DCC veza
+0104 [DCC_CONNECTION_CLOSED] Prekinuta je DCC veza
+0105 [DCC_ERROR] Greska : %1
+0106 [DCC_UNABLE_TO_SEND_TO] %1 : ne mogu poslati nadimku %2
+0107 [DCC_BAD_CONTEXT] Ne mogu izvrsiti naredbu u zadanom kontekstu
+0108 [DCC_NOT_CONNECTED] Niste u DCC vezi
+0109 [DCC_UNABLE_PASSIVE_MODE] Ne mogu uspostaviti pasivni modalitet
+010a [CTCP_PING_REPLY] [%1 PING odgovor] : %2 sekunde
+010b [DCC_STREAM_CLOSED] Zatvorena je DCC veza
+      
+0201 [IDENT_FAILED_LAUNCH] Ne mogu pokrenuti Ident posluzitelja : %1
+0202 [IDENT_REQUEST] Ident zahtjev zatrazen od %1
+0203 [IDENT_ERROR] Ident greška
+0204 [IDENT_REPLIED] Ident zahtjev je vratio %1
+0205 [IDENT_DEFAULT_USER] Standardni korisnik
+0206 [IDENT_NO_USER] Nema korisnika za zahtjev
+0207 [IDENT_RUNNING_ON_PORT] Ident posluzitelj pokrenut na portu %1
+0208 [IDENT_LEAVING] Ident posluzitelj napusta : %1
+0209 [IDENT_NONE] Nista
+020a [IDENT_UNKNOWN] Nepoznato
+020b [IDENT_UNDEFINED] Nedefinirani rezultati
+      
+0301 [FILE_SAVEAS] Pohrani datoteku kao
+      
+0401 [ABOUT_ABOUT] O programu
+0402 [ABOUT_PROGRAMMING] Programirao
+0403 [ABOUT_DESIGN] Dizajnirao
+0404 [ABOUT_THANKS] Zahvale
+0405 [ABOUT_SUPPORT] za pomoc, ideje i testiranje!
+0406 [ABOUT_GPL] Ova web aplikacija je razvijena po GPL licenci.
+      
+0501 [SERVER_UNABLE_TO_CONNECT] Ne mogu se povezati : %1
+0502 [SERVER_UNABLE_TO_CONNECT_STILL] Ne mogu se povezati sa %1 : provjeravam spajanje sa %2
+0503 [SERVER_DISCONNECTING] Prekidam vezu sa posluziteljem %1
+0504 [SERVER_CONNECTING] Povezujem se...
+0505 [SERVER_NOT_CONNECTED] Niste povezani sa posluziteljem
+0506 [SERVER_LOGIN] Registriram se...
+0507 [SERVER_DISCONNECTED] Prekinuta veza sa posluziteljem %1
+0508 [SERVER_ERROR] Greska : %1
+      
+0601 [SOURCE_YOU_KICKED] %2 Vas je izbacio iz kanala %1
+0602 [SOURCE_STATUS] Status
+0603 [SOURCE_CHANLIST] Kanali na posluzitelju %1
+0604 [SOURCE_CHANLIST_RETREIVING] Zatrazen popis kanala...
+0605 [SOURCE_HAS_JOINED] %1 je usao u kanal %2
+0606 [SOURCE_HAS_LEFT] %1 je otisao iz kanala %2
+0607 [SOURCE_HAS_BEEN_KICKED_BY] %1 je izbacen od %2
+0608 [SOURCE_HAS_QUIT] %1 je otisao
+0609 [SOURCE_TOPIC_IS] Tema razgovora je %1
+060a [SOURCE_CHANGED_TOPIC] %1 je promjenio temu razgovora u %2
+060b [SOURCE_CHANNEL_MODE] %1 je postavio modalitete kanala u %2
+060c [SOURCE_CHANNEL_MODE_IS] Modaliteti kanala su %1
+060d [SOURCE_USER_MODE] %1 je promjenio modalitete %2 u %3
+060e [SOURCE_KNOWN_AS] %1 je promjenio nadimak u %2
+060f [SOURCE_YOUR_MODE] Modaliteti promjenjeni u %1
+0610 [SOURCE_YOUR_NICK] Tvoj nadimak je sada %1
+0611 [SOURCE_INFO] Informacije
+      
+0701 [GUI_WHOIS] Tko je
+0702 [GUI_QUERY] Upit
+0703 [GUI_KICK] Izbaci
+0704 [GUI_BAN] Zabrani ulaz
+0705 [GUI_KICKBAN] Izbaci i zabrani ulaz
+0706 [GUI_OP] Op
+0707 [GUI_DEOP] DeOp
+0708 [GUI_VOICE] Voice
+0709 [GUI_DEVOICE] DeVoice
+070a [GUI_PING] Ping
+070b [GUI_VERSION] Inacica
+070c [GUI_TIME] Vrijeme
+070d [GUI_FINGER] Finger
+070e [GUI_RETREIVING_FILE] Primam datoteku (%1 byte-ova)
+070f [GUI_SENDING_FILE] Saljem datoteku (%1 byte-ova)
+0710 [GUI_TERMINATED] %1 prekinut
+0711 [GUI_FAILED] %1 nepotpun
+0712 [GUI_CLOSE] Zatvori
+0713 [GUI_DISCONNECT] Prekini vezu
+0714 [GUI_CHANNELS] Svi kanali
+0715 [GUI_HELP] Pomoc
+0716 [GUI_PRIVATE] PRIVATNI
+0717 [GUI_PUBLIC] JAVNI
+0718 [GUI_CONNECT] Ostvari vezu
+0719 [GUI_ABOUT] O nama
+071a [GUI_CHANGE_NICK] Promjeni nadimak u
+071b [GUI_COPY_WINDOW] Kopiraj tekst
+		
+0801 [ASL_MALE] Musko, imam %1 godina, %2
+0802 [ASL_FEMALE] Zensko, imam %1 godina, %2
+
+ffff [ERROR_NOT_DEFINED] Neodreðena greska

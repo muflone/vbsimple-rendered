@@ -1,0 +1,489 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Inserire un pulsante sulla barra del titolo</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Inserire un pulsante sulla 
+    barra del titolo<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"> 
+        4<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Avete mai pensato di inserire un pulsante sulla barra del titolo di un 
+        form?<br>
+        Alcuni programmi gi&agrave; lo fanno, ma sono soltanto tre o quattro. 
+        Come realizzare tutto ci&ograve;?</p>
+      <p>Il problema in questione &egrave; risolvibile solamente con un'operazione 
+        di <a href="../glossary/s.htm#SUBCLASSING">subclassing</a> di un semplice 
+        <i>CommandButton</i>. Infatti &egrave; impossibile spostare un pulsante 
+        sulla barra del titolo tramite le normali istruzioni di Visual Basic e, 
+        anche se riuscissimo a farlo, non esiste un evento del form che rilevi 
+        il suo spostamento.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Pertanto, tramite una funzione di <i><a href="../glossary/h.htm#HOOKING">hooking</a></i>, 
+        rintracceremo i <a href="../glossary/m.htm#MESSAGGIO">messaggi</a> diretti 
+        alla finestra del pulsante e in tal modo potremo eseguire operazioni particolari 
+        legate all'invio di messaggi non legati ad eventi dell'oggetto subclassato.</p>
+      <p><b class="smallerrore">Attenzione!</b><br>
+        Si raccomanda di non interrompere l'esecuzione del programma tramite le 
+        funzioni di Visual Basic o attraverso l'istruzione END prima di aver disinstallato 
+        la <i>Window Procedure</i> ed aver ripristinato lo stato normale delle 
+        finestre. Interrompere l'esecuzione del programma mantenendo la <i>Window 
+        Procedure</i> causer&agrave; un errore del programma ed i rischi connessi 
+        potrebbero essere imprevedibili.</p>
+      <p>In questo progetto avremo bisogno di due forms<img src="../images/controls/form.gif" width="25" height="25" align="absmiddle">e 
+        di un <a href="../glossary/m.htm#MODULO">modulo</a> <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+        standard per le dichiarazioni <a href="../glossary/a.htm#API">API</a>.</p>
+      <p>Cominciamo disegnando l'interfaccia grafica: il primo form si chiamer&agrave; 
+        <b>frmMain</b> e sar&agrave; quello che conterr&agrave; il pulsante che 
+        prender&agrave; posto sulla barra del titolo.</p>
+      <p><img src="../images/howto/howto022_01.jpg" width="256" height="65" align="right" alt="Figura 1">Il 
+        form conterr&agrave; una <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">descrittiva 
+        senza alcuna funzionalit&agrave; e due <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        cui il primo si chiamer&agrave; cmdTest ed avr&agrave; queste propriet&agrave;:</p>
+      <ul>
+        <li><i>Font:</i> Ms Sans Serif 8 in Grassetto</li>
+        <li><i>Caption:</i> &quot;?&quot;</li>
+        <li><i>Height:</i> 195</li>
+        <li><i>Width:</i> 255</li>
+      </ul>
+      <p> Il secondo pulsante si chiamer&agrave; <b>Command1</b> e conterr&agrave; 
+        il testo <i> <b>&quot;Altro form&quot;</b></i>. Servir&agrave; a caricare 
+        il secondo form e dimostrare il comportamento del primo pulsante in presenza 
+        di altri forms.</p>
+      <p>Disegniamo rapidamente anche l'altro form, di nome <b>Form1</b>. Esso 
+        conterr&agrave; soltanto un <i>CommandButton</i> di nome <b>Command1</b>, 
+        con la <i>Caption</i> impostata a <i><b>&quot;Chiudi&quot;</b></i>. Questo 
+        secondo form non far&agrave; nulla; il suo utilizzo serve soltanto per 
+        disattivare il primo form.</p>
+      <hr>
+      <p>Passiamo al codice. Dentro il modulo <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+        standard scriviamo:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Public Declare Function GetWindowRect Lib &quot;user32&quot; (ByVal 
+          hwnd As Long, lpRect As Rect) As Long</li>
+        <li>Public Declare Function GetParent Lib &quot;user32&quot; (ByVal hwnd 
+          As Long) As Long</li>
+        <li>Public Declare Function SetParent Lib &quot;user32&quot; (ByVal hWndChild 
+          As Long, ByVal hWndNewParent As Long) As Long</li>
+        <li>Public Declare Function SetWindowPos Lib &quot;user32&quot; (ByVal 
+          hwnd As Long, ByVal hWndInsertAfter As Long, ByVal x As Long, ByVal 
+          y As Long, ByVal cx As Long, ByVal cy As Long, ByVal wFlags As Long) 
+          As Long</li>
+        <li>Public Declare Function SetWindowsHookEx Lib &quot;user32&quot; Alias 
+          &quot;SetWindowsHookExA&quot; (ByVal idHook&, ByVal lpfn&, ByVal hmod&, 
+          ByVal dwThreadId&) As Long</li>
+        <li>Public Declare Function UnhookWindowsHookEx Lib &quot;user32&quot; 
+          (ByVal hHook&) As Long</li>
+        <li>Public Declare Function SetWindowLong Lib &quot;user32&quot; Alias 
+          &quot;SetWindowLongA&quot; (ByVal hwnd As Long, ByVal nIndex As Long, 
+          ByVal dwNewLong As Long) As Long</li>
+      </ol>
+      <p>Fino a qui abbiamo le varie dichiarazioni API:<br>
+        la funzione <i>GetWindowRect</i> serve per ottenere le coordinate assolute 
+        del form sullo schermo;<br>
+        la funzione <i>GetParent</i> restituisce l'<a href="../glossary/h.htm#HANDLE">handle</a> 
+        della finestra genitore di una finestra specifica;<br>
+        la funzione <i>SetParent</i> invece permette di cambiare la finestra genitore 
+        di una certa finestra;<br>
+        la funzione <i>SetWindowPos</i> permette di cambiare la posizione di una 
+        finestra;<br>
+        le due funzioni <i>SetWindowsHookEx</i> e <i>UnhookWindowsHookEx</i> permettono 
+        di agganciare e sganciare una funzione e creare cos&igrave; una <i>Window 
+        Procedure</i>;<br>
+        infine, l'ultima funzione, SetWindowLong, serve per eseguire molteplici 
+        funzioni: nel nostro caso la utilizzeremo per cambiare lo stile della 
+        finestra del pulsante da spostare. Infatti questa finestra verr&agrave; 
+        cambiata di famiglia; dallo stato di child del form diventer&agrave; una 
+        finestra del tutto autonoma, allo stesso livello del form. La funzione 
+        <i>SetWindowLong</i> servir&agrave; per nascondere la finestra del pulsante 
+        dalla barra delle applicazioni.</p>
+      <ol class="codicevb" start="10">
+        <li>Public Type Rect</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Left As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Top As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Right As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Bottom As Long</li>
+        <li>End Type</li>
+        <li></li>
+      </ol>
+      <p>Il tipo Rect viene richiesto dalla funzione <i>GetWindowRect</i> per 
+        ottenere le coordinate assolute della finesta.</p>
+      <ol class="codicevb" start="17">
+        <li>Public Type CWPSTRUCT</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lParam As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wParam As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Message As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hwnd As Long</li>
+        <li>End Type</li>
+        <li></li>
+      </ol>
+      <p>Il tipo CWPSTRUCT - CallWindowProcedureStruct - viene utilizzato dalla 
+        nostra Window Procedure per contenere i parametri passati dalla Window 
+        Procedure originale.</p>
+      <ol class="codicevb" start="23">
+        <li>Public Const WM_MOVE = &amp;H3</li>
+        <li>Public Const WM_NCPAINT = &amp;H85</li>
+        <li>Public Const WM_COMMAND = &amp;H111</li>
+        <li>Public Const SWP_FRAMECHANGED = &amp;H20</li>
+        <li>Public Const WH_CALLWNDPROC = 4</li>
+        <li>Public Const WS_EX_TOOLWINDOW = &amp;H80</li>
+        <li>Public Const GWL_EXSTYLE = -20</li>
+        <li></li>
+        <li>Public oldproc As Long</li>
+        <li>Public cmdButtonHwnd As Long</li>
+        <li></li>
+      </ol>
+      <p>Seguono alcune <a href="../glossary/c.htm#COSTANTE">costanti</a> <img src="../images/ide/costante.gif" width="16" height="16" border="0" align="absmiddle"> 
+        per definire i comportamenti da effettuare tramite le funzioni <a href="../glossary/a.htm#API">API</a> 
+        viste poco prima. Le costanti alle righe 23, 24 e 25 sono i tre <a href="../glossary/m.htm#MESSAGGIO">messaggi</a> 
+        che intercetteremo tramite la <i>Window Procedure</i> e in base ad essi 
+        svogeremo determinate operazioni.</p>
+      <p>La variabile <b>oldproc</b> (riga 31) contiene il puntatore alla locazione 
+        della Window Procedure originale. La variabile verr&agrave; utilizzata 
+        per ripristinare lo stato normale delle al termine del programma.</p>
+      <p>La variabile <b>cmdButtonHwnd</b> contiene l'<a href="../glossary/h.htm#HANDLE">handle</a> 
+        del pulsante e verr&agrave; utilizzata da alcune funzioni API per decidere 
+        la posizione che la finestra del pulsante deve assumere.</p>
+      <ol class="codicevb" start="34">
+        <li>Public Function CallWndProc(ByVal nCode As Long, ByVal wParam As Long, 
+          Inf As CWPSTRUCT) As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim FormRect As Rect</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Select Case Inf.Message</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case WM_COMMAND</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          Inf.lParam = cmdButtonHwnd Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frmMain.cmdTest.Visible 
+          = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox 
+          &quot;Per ulteriori info su questo esempio: sirri@morenosoft.com&quot;, 
+          vbInformation, frmMain.Caption</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;frmMain.cmdTest.Visible 
+          = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End 
+          If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case WM_NCPAINT, WM_MOVE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call 
+          GetWindowRect(frmMain.hwnd, FormRect)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call 
+          SetWindowPos(cmdButtonHwnd, 0, FormRect.Right - 75, FormRect.Top + 6, 
+          17, 14, SWP_FRAMECHANGED)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End Select</li>
+        <li>End Function</li>
+      </ol>
+      <p>Alla riga 34 inizia la nostra <i>Window Procedure</i>, di nome <b>CallWndProc</b>. 
+        Essa dovr&agrave; processare tre messaggi: WM_COMMAND, WM_NCPAINT e WM_MOVE. 
+      </p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Cos&igrave;, alla riga 36, abbiamo la scelta del messaggio passato. Se 
+        esso &egrave; WM_COMMAND, ovvero la pressione del pulsante (riga 38), 
+        esso verr&agrave; prima nascosto (riga 39), sar&agrave; mostrata una finestra 
+        con un messaggio (riga 40) e poi sar&agrave; nuovamente reso visibile 
+        (riga 41).</p>
+      <p>Se il messaggio passato alla Window Procedure &egrave; WM_NCPAINT (ridisegna 
+        la finestra) oppure WM_MOVE (finestra spostata), verranno estratte le 
+        coordinate assolute del form <b>frmMain</b> tramite la funzione <i>GetWindowRect</i> 
+        (riga 44) e poi verr&agrave; spostato il pulsante il cui handle &egrave; 
+        <b>cmdButtonHwnd</b> (ovvero il pulsante <b>cmdTest</b>) tramite la funzione 
+        <i>SetWindowPos</i>. Viene effettuato qualche calcolo per determinare 
+        la posizione che il pulsante dovr&agrave; assumere sulla barra del titolo 
+        (riga 45).</p>
+      <p>Tutti gli altri messaggi inviati alla finestra del form saranno ignorati.</p>
+      <hr>
+      <p>Torniamo al form principale (<b>frmMain</b>) e scriviamo queste righe 
+        di codice:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;cmdButtonHwnd = cmdTest.hwnd</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;oldproc = SetWindowsHookEx(WH_CALLWNDPROC, 
+          AddressOf CallWndProc, 0, App.ThreadID)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call SetWindowLong(cmdButtonHwnd, GWL_EXSTYLE, 
+          WS_EX_TOOLWINDOW)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call SetParent(cmdButtonHwnd, GetParent(frmMain.hwnd))</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>L'hooking della finestra viene effettuato in occasione del caricamento 
+        del Form, all'interno dell'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle">Load.</p>
+      <p>Alla riga 4 viene salvato l'handle del pulsante <b>cmdTest</b>, per riutilizzarlo 
+        in seguito all'interno del modulo.</p>
+      <p>Alla riga 5 viene installata la nuova Window Procedure. La funzione <i>SetWindowsHookEx</i> 
+        richiede fra l'altro, un puntatore alla funzione Window Procedure. Esso 
+        viene fornito tramite l'operatore AddressOf. La costante WH_CALLWNDPROC 
+        indica che la nostra Window Procedure ricever&agrave; i messaggi <b>prima</b> 
+        che il sistema li invii alla Window Procedure originale.<br>
+        L'indirizzo della Window Procedure originale viene comunque salvato nella 
+        variabile <b>oldproc</b> come valore di ritorno della funzione. Esso servir&agrave; 
+        per ripristinare lo stato normale delle finestre al termine dell'esecuzione 
+        del programma.</p>
+      <p>La riga 6 cambia lo stile della finestra del pulsante, trasformandola 
+        in una finestra invisibile nella barra delle applicazioni, perch&eacute; 
+        alla prossima riga la finestra del pulsante diventer&agrave; un'applicazione 
+        vera e propria, non sottomessa ai limiti imposti dal form.</p>
+      <p>Alla riga 7 viene cambiata la finestra genitore del pulsante cmdTest, 
+        e viene impostata come finestra genitore la finestra contenente il form, 
+        ovvero il Program Manager stesso, il programma che gestisce le finestre 
+        di tutti gli altri programmi.</p>
+      <p>Ecco perch&eacute; abbiamo dovuto cambiare lo stile della finestra alla 
+        riga 6. Se non l'avessimo fatto avremmo visto l'icona del pulsante ? sulla 
+        barra delle applicazioni.</p>
+      <ol class="codicevb" start="10">
+        <li>Private Sub Form_Unload(Cancel As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call UnhookWindowsHookEx(oldproc)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call SetParent(cmdButtonHwnd, frmMain.hwnd)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Alla chiusura del form, nell'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle">Unload, 
+        abbiamo lo sganciamento (<i>unhooking</i>) della Window Procedure, tramite 
+        la chiamata della funzione <i>UnhookWindowsHookEx</i> con il parametro 
+        della Window Procedure originale.</p>
+      <p>Viene anche ripristinata la finestra genitore del pulsante, reimpostandogli 
+        come genitore il form frmMain.</p>
+      <ol class="codicevb" start="15">
+        <li>Private Sub cmdTest_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Questo evento non verr&agrave; 
+          eseguito mai!&quot;</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Abbiamo voluto aggiungere questa piccola routine per dimostrare che la 
+        finestra del pulsantino <b>cmdTest</b> diviene un programma del tutto 
+        separato. Infatti al click sopra il pulsante non viene generato pi&ugrave; 
+        l'evento Click, gestito dalla nostra applicazione.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>L'esecuzione di questo evento non avverr&agrave; mai.</p>
+      <ol class="codicevb" start="19">
+        <li>Private Sub Command1_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;cmdTest.Visible = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Load Form1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Form1.Show</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Alla riga 19 abbiamo gestito l'evento Click del pulsante Command1. Esso 
+        inizialmente nasconder&agrave; il pulsante sulla barra del titolo (riga 
+        20), caricher&agrave; e mostrer&agrave; il secondo form, di nome Form1. 
+        Questa funzione serve soltanto a dimostrare il funzionamento del pulsante 
+        sulla barra del titolo in presenza di pi&ugrave; forms nella stessa applicazione.</p>
+      <ol class="codicevb" start="25">
+        <li>Private Sub Form_Activate()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;cmdTest.Visible = True</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Nel momento in cui la finestra principale viene attivata, torna visibile 
+        il pulsante cmdTest.</p>
+      <ol class="codicevb" start="29">
+        <li>Private Sub Form_Deactivate()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;cmdTest.Visible = False</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>E nel momento in cui la finestra perde lo stato attivo, il pulsante viene 
+        nascosto.</p>
+      <p>Questo viene effettuato perch&eacute; la gestione grezza dei messaggi 
+        fa s&igrave; che il nostro pulsante sia in primo piano pure quando la 
+        finestra che sembra contenerlo (in effetti esso &egrave; diventato finestra 
+        autonoma) passa in secondo piano.</p>
+      <hr>
+      <p>Prima di provare il programma scriviamo queste semplici righe di codice 
+        per il secondo form di nome Form1.</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub Command1_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Unload Me</li>
+        <li>End Sub</li>
+      </ol>
+      <p>La sua unica funzione &egrave; quella di chiudere il form nel momento 
+        in cui l'utente clicca sul pulsante <b>Command1</b>.</p>
+      <hr>
+      <p>Possiamo adesso provare il programma.</p>
+      <p><img src="../images/howto/howto022_02.jpg" width="256" height="65" align="right" alt="Figura 2">All'esecuzione 
+        il pulsantino ? si sposter&agrave; alle stesse coordinate dei pulsanti 
+        di chiusura e ridimensionamento del form.</p>
+      <p>In realt&agrave; sappiamo che &egrave; un trucchetto ottico e la situazione 
+        non sta proprio cos&igrave;.</p>
+      <p align="center"><img src="../images/howto/howto022_03.jpg" width="278" height="112" alt="Figura 3"><br>
+        <b>Figura 3</b></p>
+      <p>Il click sopra il pulsantino fa apparire una finestra con un messaggio.<br>
+        Come effetto collaterale, per&ograve;, vediamo che il pulsante ? &egrave; 
+        sparito dalla barra del titolo del form su cui sembrava posizionato.</p>
+      <p><img src="../images/howto/howto022_04.jpg" width="155" height="81" alt="Figura 4" align="right">La 
+        stessa cosa accade quando l'utente clicca il pulsante <i><b>&quot;Altro 
+        form&quot;</b></i> che mostra il secondo form.</p>
+      <p>Quando il secondo form &egrave; in primo piano (e il primo form &egrave; 
+        disattivo) il pulsante sulla barra del titolo del primo sparisce.</p>
+      <p><img src="../images/howto/howto022_05.jpg" width="155" height="81" align="right" alt="Figura 5">Baster&agrave; 
+        riattivare la finestra del primo form, anche senza chiudere il secondo 
+        form, per vedere ritornare presente il pulsante sulla barra del titolo.</p>
+      <p>Sappiamo che &egrave; uno strano giochetto, ma &egrave; stato reso necessario 
+        per evitare spiacevoli comportamenti del pulsante.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Questo genere di operazioni potr&agrave; sembrare molto carino, anche 
+        se un po' complesso, ma nasconde decine di insidie.</p>
+      <p>In ogni caso non fermare mai l'esecuzione del programma tramite la voce 
+        Interrompi dell'<a href="../glossary/i.htm#IDE">IDE</a> di Visual Basic, 
+        oppure attraverso l'istruzione END. Ci&ograve; lascerebbe l'hook in memoria 
+        e la Window Procedure non verrebbe rimessa al suo posto.<br>
+        Questo generer&agrave; subito un errore che chiude inesorabilmente l'editor 
+        di Visual Basic e pu&ograve; anche trascinarsi dietro un blocco del sistema.</p>
+      <p>In definitiva le operazioni di subclassing devono essere adoperate il 
+        meno possibile e prima di provare i progetti che le utilizzano salvare 
+        tutti i lavori. Particolare cura deve essere data pure alle operazioni 
+        di chiusura del programma, in modo da sganciare tutti gli hook eseguiti 
+        all'avvio del programma.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=5">Moreno 
+        Sirri</a><br>
+        22 Gennaio 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

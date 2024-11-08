@@ -1,0 +1,130 @@
+#
+#         This java file is a part of the
+#
+#          -  Plouf's Java IRC Client  -
+#
+#      Copyright (C) 2002 Philippe Detournay
+#
+#   This file is licensed under the GPL license
+#
+#        All contacts : theplouf@yahoo.com
+#
+#
+#  Syntax :
+#    Comments begin with the # character. This character must be the first character of the line.
+#    A data line has three parts : the data id, the data id description, the data string.
+#      - Data id : An hexadecimal figure identifying the string.
+#      - Data description : Begins by [ and ends by ]. The description is not parsed and
+#                           can be any string.
+#      - Data string : The string itself. Parameters are specified using the %i syntax.
+#
+#  Trailing spaces can be added using the \s escape character.
+#
+#  This file is provided to you by Mohd Nawawi nawawi@tracenetwork.com.my
+
+0001 [INTERPRETOR_NOT_ON_CHANNEL] Tiada didalam channel
+0002 [INTERPRETOR_UNKNOWN_DCC] %1 : dcc subcommand yang tidak diketahui
+0003 [INTERPRETOR_INSUFFICIENT_PARAMETERS] %1 : Parameter tidak cukup
+0004 [INTERPRETOR_BAD_CONTEXT] %1 : Tidak mampu mempersembahkan di dalam konteks semasa
+0005 [INTERPRETOR_CANNOT_CTCP_IN_DCCCHAT] Tidak dapat menghantar CTCP kod melalui Sembang DCC
+0006 [INTERPRETOR_UNKNOWN_CONFIG] %1 : config subcommand yang tidak diketahui
+0007 [INTERPRETOR_TIMESTAMP_ON] Timestamp aktif
+0008 [INTERPRETOR_TIMESTAMP_OFF] Timestamp tidak aktif
+0009 [INTERPRETOR_SMILEYS_ON] Teks ikon senyum aktif
+000a [INTERPRETOR_SMILEYS_OFF] Teks ikon senyum tidak aktif
+000b [INTERPRETOR_IGNORE_ON] Now ignoring %1
+000c [INTERPRETOR_IGNORE_OFF] Not ignoring %1 anymore
+  
+0101 [DCC_WAITING_INCOMING] Menunggu sambungan masuk...
+0102 [DCC_UNABLE_TO_OPEN_CONNECTION] Tidak mampu membuka sambungan : %1
+0103 [DCC_CONNECTION_ESTABLISHED] Sambungan DCC stabil
+0104 [DCC_CONNECTION_CLOSED] Sambungan ditutup
+0105 [DCC_ERROR] Ralat : %1
+0106 [DCC_UNABLE_TO_SEND_TO] %1 : Tidak dapat menghantar kepada %2
+0107 [DCC_BAD_CONTEXT] Tidak mampu melaksanakan perintah daripada konteks semasa
+0108 [DCC_NOT_CONNECTED] Tidak menghubungkan
+0109 [DCC_UNABLE_PASSIVE_MODE] Tidak mampu memulakan cara pasif
+010a [CTCP_PING_REPLY] [%1 Balasan PING] : %2 saat
+010b [DCC_STREAM_CLOSED] Arus DCC ditutup
+      
+0201 [IDENT_FAILED_LAUNCH] Memulakan pelayan Ident gagal : %1
+0202 [IDENT_REQUEST] Permintaan Ident daripada %1
+0203 [IDENT_ERROR] Ralat terjadi
+0204 [IDENT_REPLIED] Membalas %1
+0205 [IDENT_DEFAULT_USER] Pengguna tetap
+0206 [IDENT_NO_USER] Bukan tiada pengguna untuk permintaan
+0207 [IDENT_RUNNING_ON_PORT] Pelayan Ident yang beroperasi diport %1
+0208 [IDENT_LEAVING] Pelayan Ident ditutup : %1
+0209 [IDENT_NONE] Tiada
+020a [IDENT_UNKNOWN] Tidak diketahui
+020b [IDENT_UNDEFINED] Keputusan tidak diketahui
+      
+0301 [FILE_SAVEAS] Simpan fail sebagai
+      
+0401 [ABOUT_ABOUT] Perihal
+0402 [ABOUT_PROGRAMMING] Pengaturcaraan
+0403 [ABOUT_DESIGN] Rekabentuk
+0404 [ABOUT_THANKS] Terima kasih kepada
+0405 [ABOUT_SUPPORT] untuk bantuan, idea dan cubaan
+0406 [ABOUT_GPL] Program ini dibawah label lesen GPL
+      
+0501 [SERVER_UNABLE_TO_CONNECT] Tidak dapat dihubungkan : %1
+0502 [SERVER_UNABLE_TO_CONNECT_STILL] Tidak dapat menghubungkan %1 : Pada masa ini cuba menghubungkan kepada %2
+0503 [SERVER_DISCONNECTING] Terputus daripada %1
+0504 [SERVER_CONNECTING] Menghubungkan...
+0505 [SERVER_NOT_CONNECTED] Tidak duhubungkan
+0506 [SERVER_LOGIN] Akses masuk...
+0507 [SERVER_DISCONNECTED] Terputus laluan daripada %1
+0508 [SERVER_ERROR] Ralat : %1
+      
+0601 [SOURCE_YOU_KICKED] Anda telah ditendang keluar dari %1 oleh %2
+0602 [SOURCE_STATUS] Status
+0603 [SOURCE_CHANLIST] Saluran untuk %1
+0604 [SOURCE_CHANLIST_RETREIVING] Mendapatkan semula saluran...
+0605 [SOURCE_HAS_JOINED] %1 telah memasuki %2
+0606 [SOURCE_HAS_LEFT] %1 telah keluar %2
+0607 [SOURCE_HAS_BEEN_KICKED_BY] %1 telah ditendang oleh %2
+0608 [SOURCE_HAS_QUIT] %1 telah tutup
+0609 [SOURCE_TOPIC_IS] Topik adalah %1
+060a [SOURCE_CHANGED_TOPIC] %1 menukar topik kepada %2
+060b [SOURCE_CHANNEL_MODE] %1 set saluran konfigurasi kepada %2
+060c [SOURCE_CHANNEL_MODE_IS] Saluran konfigurasi adalah %1
+060d [SOURCE_USER_MODE] %1 set konfigurasi %2 pada %3
+060e [SOURCE_KNOWN_AS] %1 sekarang adalah sebagai %2
+060f [SOURCE_YOUR_MODE] Konfigurasi bertukar kepada %1
+0610 [SOURCE_YOUR_NICK] Nama sandaran anda sekarang ialah %1
+0611 [SOURCE_INFO] Info
+      
+0701 [GUI_WHOIS] Whois
+0702 [GUI_QUERY] Query
+0703 [GUI_KICK] Kick
+0704 [GUI_BAN] Ban
+0705 [GUI_KICKBAN] Kick + Ban
+0706 [GUI_OP] Op
+0707 [GUI_DEOP] DeOp
+0708 [GUI_VOICE] Voice
+0709 [GUI_DEVOICE] DeVoice
+070a [GUI_PING] Ping
+070b [GUI_VERSION] Version
+070c [GUI_TIME] Time
+070d [GUI_FINGER] Finger
+070e [GUI_RETREIVING_FILE] Menerima fail (%1 bytes)
+070f [GUI_SENDING_FILE] Menghantar fail (%1 bytes)
+0710 [GUI_TERMINATED] %1 ditamatkan
+0711 [GUI_FAILED] %1 telah gagal
+0712 [GUI_CLOSE] Tutup
+0713 [GUI_DISCONNECT] Diputuskan
+0714 [GUI_CHANNELS] Saluran
+0715 [GUI_HELP] Bantuan
+0716 [GUI_PRIVATE] privasi
+0717 [GUI_PUBLIC] awam
+0718 [GUI_CONNECT] Hubung
+0719 [GUI_ABOUT] Perihal
+071a [GUI_CHANGE_NICK] Menukar nama samaran kepada
+071b [GUI_COPY_WINDOW] Salinan teks
+
+0801 [ASL_MALE] lelaki, %1 tahun, %2
+0802 [ASL_FEMALE] perempuan, %1 tahun, %2
+
+ffff [ERROR_NOT_DEFINED] Rangkaian tidak definasi
+

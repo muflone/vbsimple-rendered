@@ -1,0 +1,425 @@
+<html><!-- #BeginTemplate "/Templates/Corso Base2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 15 del Corso Base</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso base - Lezione <!-- #BeginEditable "LEZIONE" -->15<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/base.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="bas_15.htm#STEP1">Alla scoperta dei menu di Visual Basic (quarta 
+    parte)</a>.</li>
+  <li><a href="bas_15.htm#STEP2">Menu Debug</a>.</li>
+  <li><a href="bas_15.htm#STEP3">Menu Esegui</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><a name="STEP1"></a>Il Corso Base si conclude con la visione di tutti 
+        i menu dell'<a href="../glossary/i.htm#IDE">IDE</a> di Visual Basic. Alcune 
+        voci sono semplicissime da comprendere e presenti in quasi tutti i programmi 
+        per Windows, ma alcune sono realmente complesse e talvolta ostiche da 
+        utilizzare.<br>
+        Nelle lezioni 12-17 vedremo uno per uno tutti i menu ed approfondiremo 
+        le loro opzioni.</p>
+      <hr>
+      <p align="center" class="size3"><a name="STEP2"></a>Menu Debug <map name="MapDebug"><area shape="rect" coords="2,19,232,38" href="#DEBUGOPT1" alt="Esegui istruzione" title="Esegui istruzione"> 
+          <area shape="rect" coords="2,37,232,56" href="#DEBUGOPT2" alt="Esegui istruzione/routine" title="Esegui istruzione/routine"> 
+          <area shape="rect" coords="2,55,232,74" href="#DEBUGOPT3" alt="Esci da istruzione/routine" title="Esci da istruzione/routine"> 
+          <area shape="rect" coords="2,73,232,92" href="#DEBUGOPT4" alt="Esegui fino al cursore" title="Esegui fino al cursore"> 
+          <area shape="rect" coords="2,98,232,117" href="#DEBUGOPT5" alt="Aggiungi espressione di controllo..." title="Aggiungi espressione di controllo..."> 
+          <area shape="rect" coords="2,116,232,135" href="#DEBUGOPT6" alt="Modifica espressione di controllo..." title="Modifica espressione di controllo..."> 
+          <area shape="rect" coords="2,134,232,153" href="#DEBUGOPT7" alt="Controllo immediato..." title="Controllo immediato..."> 
+          <area shape="rect" coords="2,158,232,177" href="#DEBUGOPT8" alt="Imposta/rimuovi punto di interruzione" title="Imposta/rimuovi punto di interruzione"> 
+          <area shape="rect" coords="2,176,232,195" href="#DEBUGOPT9" alt="Rimuovi punti di interruzione" title="Rimuovi punti di interruzione"> 
+          <area shape="rect" coords="2,200,232,219" href="#DEBUGOPT10" alt="Imposta istruzione successiva" title="Imposta istruzione successiva"> 
+          <area shape="rect" coords="2,218,232,237" href="#DEBUGOPT11" alt="Mostra istruzione successiva" title="Mostra istruzione successiva"> 
+        </map></p>
+      <p><img src="../images/lezioni/bas15_01.jpg" width="234" height="240" align="right" alt="Figura 1" usemap="#MapDebug" border="0">Il 
+        termine <a href="../glossary/d.htm#DEBUG">Debug</a> indica la procedura 
+        di rimozione dei <a href="../glossary/b.htm#BUG">bug</a>, errori, nel 
+        sorgente di un programma.</p>
+      <p>Questo menu, appunto, contiene alcuni comandi dedicati al controllo dell'esecuzione 
+        del progetto sviluppato. Sar&agrave; possibile seguire riga per riga il 
+        comportamento del codice, forzare dei salti, inserire dei blocchi e fissare 
+        delle viste su determinati dati.</p>
+      <p>Per avviare il progetto in modalit&agrave; debug baster&agrave; utilizzare 
+        la prima voce al posto del normale esecuzione. Per passare dalla modalit&agrave; 
+        debug alla normale esecuzione premere il pulsante <b>Avvia</b><img src="../images/ide/avvia.gif" width="16" height="16" align="absmiddle">(F5), 
+        mentre per ritornare dalla normale esecuzione alla fase di debug utilizzare 
+        il pulsante <b>Interrompi</b><img src="../images/ide/interrom.gif" width="16" height="16" align="absmiddle">(CTRL+INTERR); 
+        entrambe le opzioni si trovano sia nel <a href="bas_15.htm#STEP3">menu 
+        Esegui</a> sia nella <a href="bas_02.htm">barra degli strumenti</a>.</p>
+      <ol>
+        <li><a name="DEBUGOPT1"></a><img src="../images/ide/esegistr.gif" width="16" height="16" align="absmiddle"> 
+          <b>Esegui istruzione</b><br>
+          Avanza il punto di esecuzione di un'istruzione semplice. Se la prossima 
+          istruzione contiene la chiamata ad una funzione o Sub, il punto di esecuzione 
+          si porter&agrave; all'interno della funzione e si fermer&agrave; sulla 
+          prima istruzione all'interno della funzione.<br>
+          <br>
+        </li>
+        <li><a name="DEBUGOPT2"></a><img src="../images/ide/esegrout.gif" width="16" height="16" align="absmiddle"> 
+          <b>Esegui istruzione/routine</b><br>
+          Avanza il punto di esecuzione di un'istruzione all'interno del modulo 
+          in cui ci si trova. Se la prossima istruzione contiene la chiamata ad 
+          una funzione, il codice all'interno della funzione sar&agrave; eseguito 
+          ed il cursore sar&agrave; posizionato sulla riga immediatamenta successiva 
+          a quella appena eseguita. Viene utilizzato in alternativa all'<i>Esegui 
+          istruzione</i> per seguire il comportamento del codice senza preoccuparsi 
+          del funzionamento delle varie funzioni presenti.<br>
+          <br>
+        </li>
+        <li><a name="DEBUGOPT3"></a> <img src="../images/ide/escirout.gif" width="16" height="16" align="absmiddle"> 
+          <b>Esci da istruzione/routine</b><br>
+          Esegue tutto il codice che si trova all'interno della routine corrente, 
+          riportando il cursore di esecuzione alla routine che si trova in posizione 
+          immediatamente superiore nello <a href="bas_13.htm#VISUALIZZAOPT9">stack 
+          delle chiamate</a> e che ha chiamato la routine corrente.<br>
+          <br>
+          Utile per seguire il funzionamento del codice, senza preoccuparsi di 
+          cosa viene svolto all'interno della funzione in cui l'esecuzione si 
+          trova al momento.<br>
+          Viene utilizzato anche quando, per sbaglio, si &egrave; utilizzato il 
+          comando <i>Esegui Istruzione</i>, anzich&eacute; <i>Esegui istruzione/routine</i>, 
+          per riportare l'esecuzione al punto in cui si trovava prima di richiamare 
+          la routine.<br>
+          <br>
+        </li>
+        <li><a name="DEBUGOPT4"></a><img src="../images/ide/esegcurs.gif" width="16" height="16" align="absmiddle"> 
+          <b>Esegui fino al cursore</b><br>
+          Esegue tutto il codice compreso tra il punto di esecuzione attuale fino 
+          al punto in cui si trova il cursore. Molto utile per eseguire porzioni 
+          di codice (specialmente nei cicli) e proseguire il controllo di debug 
+          dal punto in cui si trova il cursore.<br>
+          <br>
+        </li>
+        <li><a name="DEBUGOPT5"></a><img src="../images/ide/aggwatch.gif" width="16" height="16" align="absmiddle"> 
+          <b>Aggiungi espressione di controllo</b><br>
+          Permette di aggiungere un'espressione di controllo, meglio conosciuta 
+          come watch. Uno strumento potentissimo per investigare i dati in fase 
+          di debug. I watch saranno visti nella <a href="bas_13.htm#VISUALIZZAOPT8">finestra 
+          Controlla</a> in struttura gerarchica. La loro efficacia si rivela nell'investigazione 
+          di variabili <a href="../glossary/o.htm#OGGETTO">oggetto</a>; infatti 
+          saranno mostrate tutte i nomi delle <a href="../glossary/p.htm#PROPRIETA">propriet&agrave;</a> 
+          <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+          ed i loro valori al momento del controllo.<br>
+          <br>
+          <img src="../images/lezioni/bas15_02.jpg" width="307" height="222" align="right" alt="Figura 2">Cliccando 
+          sulla voce ci apparir&agrave; la finestra di dialogo che richiede i 
+          parametri per il watch da aggiungere.<br>
+          <br>
+          Nella casella <b>Espressione</b> andr&agrave; inserito il nome della 
+          variabile o dell'oggetto da controllare. Sar&agrave; possibile anche 
+          inserire operazioni pi&ugrave; complesse.<br>
+          <br>
+          Alla voce <b>Contesto</b> troviamo le voci Routine, Modulo e Progetto 
+          (in sola lettura). Sar&agrave; possibile infatti aggiungere un watch 
+          di una variabile relativa ad una certa funzione di un certo modulo. 
+          Se la variabile &egrave; dichiarata nell'area dichiarazioni del form 
+          potr&agrave; essere utilizzata la voce <i>(tutte le routine)</i>.<br>
+          Altres&igrave; se la variabile &egrave; dichiarata pubblica all'interno 
+          di un modulo potr&agrave; essere utilizzata la voce <i>(tutti i moduli)</i>. 
+          Se la variabile non sar&agrave; accessibile nella routine e nel modulo 
+          scelto, il suo valore non sar&agrave; mostrato.<br>
+          <br>
+          In fondo alla finestra di dialogo abbiamo il tipo di espressione di 
+          controllo:<br>
+          <ul type="disc">
+            <li><b><i>Espressione di controllo</i></b><br>
+              Definisce un watch normale che sar&agrave; utilizzabile esclusivamente 
+              durante la fase di debug.</li>
+            <li><b><i>Interrompi se il valore &egrave; vero</i></b><br>
+              Definisce un watch che interromper&agrave; automaticamente l'esecuzione 
+              del programma nel momento in cui l'espressione indicata restituisce 
+              il valore Vero.</li>
+            <li><b><i>Interrompi se il valore cambia</i></b><br>
+              Definisce un watch che interromper&agrave; automaticamente l'esecuzione 
+              del programma nel momento in cui il valore dell'espressione cambia. 
+            </li>
+          </ul>
+          <br>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+          Il tipo di watch pi&ugrave; comune &egrave; il primo, ma ogni tanto 
+          pu&ograve; essere utile utilizzare gli altri due, per verificare il 
+          punto in cui certi dati vengono modificati. In tal caso baster&agrave; 
+          riprendere l'esecuzione del programma mediante il pulsante Avvia e lasciar 
+          fare al watch che effettuer&agrave; l'interruzione nella situazione 
+          richiesta.<br>
+          <br>
+          Riprendendo l'esempio visto l'ultima volta nella <a href="bas_10.htm">Lezione 
+          10</a>, aggiungiamo un watch normale relativo alla variabile complessa 
+          MioClick. Essa era stata dichiarata in cima al codice del form e pertanto 
+          sar&agrave; visibile in tutte le funzioni del form. Sceglieremo per 
+          cui <i><b>(tutte le routine)</b></i> alla voce Routine e <b><i>Form1</i></b> 
+          alla voce Modulo.<br>
+          Aggiunto il watch eseguiamo il progetto, clicchiamo un paio di volte 
+          il pulsante Aggiorna e poi interrompiamo l'esecuzione del programma.<br>
+          <p align="center"><img src="../images/lezioni/bas15_03.jpg" width="470" height="124" alt="Figura 3"><br>
+            <b>Figura 3</b></p>
+          La variabile MioClick &egrave; di tipo di dati <img src="../images/ide/tipoudt.gif" width="16" height="16" align="absmiddle"> 
+          complesso, definito da noi con il nome di <b>ClickConData</b>. Aprendo 
+          il tipo di dati viene mostrata tutta la sua gerarchia, con i suoi <a href="../glossary/m.htm#MEMBRO">membri</a>. 
+          Appaiono al suo interno i membri <b>NumeroClick</b> con il valore di 
+          9, <b>PenultimoClick</b> con la sua data ed <b>UltimoClick</b> con la 
+          sua data. Se il membro non &egrave; di sola lettura, sar&agrave; possibile 
+          anche alterarne i valori semplicemente cliccando sul valore del membro.<br>
+          <br>
+          Le espressioni di controllo dell'IDE di Visual Basic sono uno strumento 
+          molto potente e spesso chiariscono dubbi sulle strutture dati complesse. 
+          Ho conosciuto decine di programmatori che avevano problemi per loro 
+          irrisolvibili perch&eacute; non sapevano usare i watch. Dove il sistema 
+          <a href="../glossary/i.htm#INTELLISENSE">Intellisense</a> si ferma, 
+          il watch pu&ograve; andare oltre.<br>
+          <br>
+        </li>
+        <li><a name="DEBUGOPT6"></a><img src="../images/ide/modwatch.gif" width="16" height="16" align="absmiddle"> 
+          <b>Modifica espressione di controllo</b><br>
+          Consente di modificare i criteri con i quali si &egrave; aggiunta un'espressione 
+          di controllo. Permette quindi di modificare l'espressione, la routine, 
+          il modulo oppure il tipo di un watch.<br>
+          <br>
+        </li>
+        <li><a name="DEBUGOPT7"></a><img src="../images/ide/immwatch.gif" width="16" height="16" align="absmiddle"> 
+          <b>Controllo immediato</b><br>
+          Il watch rapido. Consente di valutare immediatamente un'espressione 
+          e decidere se aggiungere o meno un watch per essa.<br>
+          <br>
+          <img src="../images/lezioni/bas15_04.jpg" width="330" height="126" align="right" alt="Figura 4">Premendo 
+          il pulsante aggiungi, sar&agrave; inserito un watch con l'espressione 
+          selezionata.<br>
+          <br>
+          Se viene utilizzato durante la fase di progettazione riporta il valore 
+          <i>&lt;fuori contesto&gt;</i>. Trova migliore efficacia se utilizzato 
+          durante la fase di esecuzione interrotta e provvede una via pi&ugrave; 
+          rapida dell'inserimento normale di watch. Aggiunto il watch rapido, 
+          se i criteri forniti automaticamente non fossero soddisfacenti, sar&agrave; 
+          possibile modificarli tramite la voce <b>Modifica espressione di controllo</b> 
+          vista subito prima.<br>
+          <br>
+        </li>
+        <li><a name="DEBUGOPT8"></a><img src="../images/ide/agginter.gif" width="16" height="16" align="absmiddle"> 
+          <b>Imposta/rimuovi punto di interruzione</b><br>
+          I punti di interruzione sono un'ottima soluzione per verificare la normale 
+          esecuzione di un codice ed interromperlo soltanto quando viene eseguita 
+          una determinata riga di codice. Quando il codice tenta di eseguire quella 
+          riga, l'esecuzione del programma sar&agrave; interrotta per permettere 
+          il debug da quel punto. Sar&agrave; possibile riprendere l'esecuzione 
+          mediante la voce Avvia. Se la riga include gi&agrave; un'interruzione, 
+          questo comanda rimuover&agrave; l'interruzione precedente.<br>
+          <br>
+        </li>
+        <li><a name="DEBUGOPT9"></a><img src="../images/ide/riminter.gif" width="16" height="16" align="absmiddle"> 
+          <b>Rimuovi punti di interruzione</b><br>
+          Elimina tutti i punti di interruzione nel codice.<br>
+          <br>
+        </li>
+        <li><a name="DEBUGOPT10"></a><img src="../images/ide/impistrs.gif" width="16" height="16" align="absmiddle"> 
+          <b>Imposta istruzione successiva</b><br>
+          Un comando un po' anomalo che consente di spostare il punto di esecuzione 
+          da una riga ad un'altra. Utile soltanto in determinate situazioni, per 
+          <b class="sottolineato">evitare temporaneamente</b> di eseguire una 
+          sezione di codice. Sposta il punto di esecuzione attuale alla riga di 
+          codice sulla quale si trova il cursore. Lo spostamento pu&ograve; essere 
+          effettuato esclusivamente all'interno della stessa routine.<br>
+          <br>
+        </li>
+        <li><a name="DEBUGOPT11"></a><img src="../images/ide/mosistrs.gif" width="16" height="16" align="absmiddle"> 
+          <b>Mostra istruzione successiva</b><br>
+          Un comando solitamente inutile, che consente di riportare il cursore 
+          alla riga in cui il codice &egrave; interrotto. Se il progetto contiene 
+          molti moduli pu&ograve; essere una via rapida per ritrovare il punto 
+          di esecuzione corrente, senza doverlo cercare in tutti i moduli.</li>
+      </ol>
+      <p>&Egrave; importante ricordare che tutti i punti di interruzione ed i 
+        watch non saranno salvati all'interno del progetto. Pertanto saranno cancellati 
+        alla chiusura dell'IDE.</p>
+      <hr>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p align="center" class="size3"><a name="STEP3"></a>Menu Esegui <map name="MapEsegui"><area shape="rect" coords="3,20,209,39" href="#ESEGUIOPT1" alt="Avvia" title="Avvia"> 
+          <area shape="rect" coords="3,38,209,57" href="#ESEGUIOPT2" alt="Avvia con compilazione completa" title="Avvia con compilazione completa"> 
+          <area shape="rect" coords="3,56,209,75" href="#ESEGUIOPT3" alt="Interrompi" title="Interrompi"> 
+          <area shape="rect" coords="3,74,209,93" href="#ESEGUIOPT4" alt="Fine" title="Fine"> 
+          <area shape="rect" coords="3,92,209,109" href="#ESEGUIOPT5" alt="Riavvia" title="Riavvia"> 
+        </map></p>
+      <p><img src="../images/lezioni/bas15_05.jpg" width="211" height="110" align="right" alt="Figura 5" usemap="#MapEsegui" border="0">Il 
+        menu Esegui contiene pochi comandi per avviare, interrompere o terminare 
+        l'esecuzione di un progetto.</p>
+      <ol>
+        <li><a name="ESEGUIOPT1"></a><img src="../images/ide/avvia.gif" width="16" height="16" align="absmiddle"> 
+          <b>Avvia</b><br>
+          Avvia l'esecuzione del programma in maniera normale.<br>
+          <br>
+        </li>
+        <li><a name="ESEGUIOPT2"></a><b>Avvia con compilazione completa</b><br>
+          Prima di avviare il programma effettua una compilazione di controllo. 
+          Se esistono errori di compilazione il progetto non sar&agrave; eseguito. 
+          Se il codice &egrave; <b>formalmente</b> corretto il progetto sar&agrave; 
+          eseguito.<br>
+          Si consiglia di utilizzare questo comando invece del precedente per 
+          rivelare gli errori che esistono prima di eseguire il programma.<br>
+          <br>
+        </li>
+        <li><a name="ESEGUIOPT3"></a><img src="../images/ide/interrom.gif" width="16" height="16" align="absmiddle"> 
+          <b>Interrompi</b><br>
+          Interrompe l'esecuzione del progetto in esecuzione, passando dalla modalit&agrave; 
+          di esecuzione alla modalit&agrave; di debug, permettendo l'utilizzo 
+          dei comandi visti nel menu precedente.<br>
+          <br>
+        </li>
+        <li><a name="ESEGUIOPT4"></a><img src="../images/ide/fine.gif" width="16" height="16" align="absmiddle"> 
+          <b>Fine</b><br>
+          Una soluzione rapida per terminare l'esecuzione di un progetto. Corrisponde 
+          all'utilizzo dell'istruzione di codice <b>End</b>. Se ne <b class="sottolineato">sconsiglia 
+          fortemente</b> l'uso, poich&eacute; il programma non sar&agrave; chiuso 
+          in maniera corretta, ma sar&agrave; forzatamente bloccato, senza eseguire 
+          i codici di uscita di tutti i moduli. Saranno lasciate risorse <a href="../glossary/a.htm#ALLOCARE">allocate</a> 
+          bloccate e files aperti, generando una situazione potenzialmente instabile.<br>
+          Utilizzare questo comando soltanto in casi di blocco effettivo del progetto, 
+          in cui risulta impossibile chiudere il programma, in modo da poter rimettere 
+          mani al codice e fissare tali problemi. &Egrave; importante ricordare 
+          che un programma, una volta compilato, non viene eseguito all'interno 
+          dell'IDE. Pertanto, se esiste una situazione di blocco del genere, l'utente 
+          non avr&agrave; a disposizione il comando Fine per terminare il programma.<br>
+          <br>
+        </li>
+        <li><a name="ESEGUIOPT5"></a><b>Riavvia</b><br>
+          Altro comando da evitare. Consente di eseguire in una sola operazione 
+          il comando Fine ed Avvia, terminando il progetto in esecuzione e riavviandolo 
+          dall'inizio.<br>
+          <br>
+        </li>
+      </ol>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->Tra i due menu analizzati indubbiamente 
+      il primo &egrave; pi&ugrave; difficoltoso, ma contiene tanti comandi utili 
+      per rintracciare gli errori presenti nel progetto.<br>
+      <i>&quot;Una volta che si &egrave; ottenuta la prima versione funzionante 
+      di un programma, occorrer&agrave; ancora moltissimo tempo perch&eacute; 
+      questa versione sia resa affidabile.&quot;<br>
+      </i>(tratto da Cant&ugrave; e Tendon - Borland C++ versioni 4 e 4.5 - 1994 
+      Apogeo)<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        17 Giugno 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="bas_14.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna alla quattordicesima lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="bas_16.htm">Vai 
+      alla sedicesima lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

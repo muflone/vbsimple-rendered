@@ -1,0 +1,487 @@
+<html><!-- #BeginTemplate "/Templates/Corso Intermedio2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 1 del Corso Intermedio</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso Intermedio - Lezione <!-- #BeginEditable "LEZIONE" -->1<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/intermed.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="int_01.htm#STEP1">Prima di cominciare...</a>.</li>
+  <li><a href="int_01.htm#STEP2">L'analisi di un progetto</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p><a name="STEP1"></a>Il corso intermedio si apre con un po' di sana teoria. 
+        Gli argomenti trattati in questa lezione sono validi sempre e indipendentemente 
+        dal linguaggio di sviluppo utilizzato.</p>
+      <p>Imparare a memoria la sintassi di un linguaggio &egrave; perfettamente 
+        inutile se non si conosce e comprende esattamente il problema da affrontare. 
+        Quello che si intende insegnare &egrave; la mentalit&agrave; del programmatore/analista, 
+        lo spirito con cui si deve affrontare un problema, <b>prima ancora di 
+        decidere se Visual Basic &egrave; il linguaggio pi&ugrave; idoneo</b>.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Un giorno qualcuno disse <i>&quot;Analisti si nasce, programmatori si 
+        diventa&quot;</i>.<br>
+        Nei progetti di piccole dimensioni le due figure sono svolte dalla medesima 
+        persona ma nessuno dei due ruoli pu&ograve; essere scartato nello sviluppo 
+        di un progetto.</p>
+      <p>Un <b>analista</b> si occupa di studiare il problema in questione scomponendolo 
+        in piccoli problemi semplici e di trovare le soluzioni migliori per risolverli. 
+        Al contrario, un <b>programmatore</b> si dovr&agrave; occupare soltanto 
+        di tradurre, nel linguaggio deciso per la risoluzione del problema, le 
+        decisioni prese dall'analista, scegliendo i mezzi pi&ugrave; idonei per 
+        svolgere questo lavoro. Si tratta comunque di uno stretto rapporto di 
+        collaborazione.</p>
+      <p><i><b>Analisti si nasce per il senso di osservazione e per il rapporto 
+        verso l'ambiente esterno.</b></i><br>
+        Il senso di osservazione porta alla scoperta di ci&ograve; che sta dietro 
+        le cose, alla loro scomposizione in elementi semplici, come un arancio 
+        in spicchi, uno spicchio in polpa e succo ma senza dimenticare la presenza 
+        di eventuali noccioli. Soltanto cos&igrave; potr&agrave; essere affrontato 
+        qualsiasi problema indipendentemente dalla sua grandezza, dei mezzi a 
+        disposizione per la sua risoluzione e dei costi che essa ne comporter&agrave;.</p>
+      <p><i><b>Programmatori si diventa in funzione delle necessit&agrave;.</b></i><br>
+        Lo studio di un linguaggio, infatti, richiede un tempo davvero breve (variabile 
+        da persona a persona) se accompagnato da uno studio del problema. Il cambio 
+        di linguaggio di sviluppo non dovrebbe spaventare affatto: quello che 
+        &egrave; necessario &egrave; imparare la nuova sintassi, acquisendo i 
+        pregi ed i limiti del linguaggio stesso.</p>
+      <p>Il bravo analista si limiter&agrave; alla costruzione di un modello generico, 
+        indipendente dal linguaggio che il programmatore vorr&agrave; utilizzare 
+        senza entrare nel merito delle decisioni che lo sviluppatore vorr&agrave; 
+        prendere.</p>
+      <p>Il bravo programmatore, invece, si manterr&agrave; scrupolosamente alle 
+        decisioni prese dall'analista. In caso di difficolt&agrave; nello sviluppo 
+        sar&agrave; opportuno discutere con l'analista e trovare una soluzione 
+        alternativa, evitando assolutamente di prendersi la briga di modificare 
+        le decisioni dell'analista a sua insaputa. Questo infatti potrebbe pregiudicare 
+        lo sviluppo futuro del prodotto in esame.</p>
+      <p>Nei frequentissimi casi in cui la figura dell'analista coincide con quella 
+        dello sviluppatore viene adottata una tecnica di sviluppo del tutto simile 
+        all'addobbo di un <i><b>albero di Natale</b></i>. Viene costruito uno 
+        scheletro di base (l'albero) e poi arricchito con i particolari che svolgeranno 
+        l'elaborazione vera e propria (le decorazioni dell'albero).</p>
+      <p>Questo genere di tecnica, per&ograve;, &egrave; soggetta a grossi ed 
+        a volte insormontabili rischi. Una decisione presa inizialmente, infatti, 
+        pu&ograve; condurre ad un vicolo cieco ovvero all'impossibilit&agrave; 
+        di continuare il proprio lavoro a meno di tornare indietro e modificare 
+        le decisioni iniziali e quindi il programma finora scritto.</p>
+      <p>Una soluzione pratica per evitare problemi di questo genere consiste 
+        nella scomposizione del codice in pi&ugrave; parti, ognuna delle quali 
+        <b>completamente indipendente</b> dal resto del programma. Questo &egrave; 
+        infatti uno dei punti di forza della <a href="../base/bas_03.htm">programmazione 
+        ad oggetti</a> che trova il suo cardine principale nell'<i>Information 
+        hiding</i>, ovvero l'atto del nascondere alle parti del codice che accedono 
+        ad una <a href="../glossary/c.htm#CLASSE">classe</a> <img src="../images/ide/classe.gif" width="16" height="16" align="absmiddle"> 
+        quei dati fondamentali per il corretto funzionamento della stessa. Ci&ograve; 
+        far&agrave; si che una modifica strutturale o di svolgimento del ruolo 
+        della classe non influenzer&agrave; il comportamento del resto del programma, 
+        esterno alla classe. La classe infatti si limiter&agrave; a svolgere una 
+        determinata funzione, in maniera del tutto ignorata dal resto del programma.</p>
+      <p><a name="STEP2"></a>Prendiamo in esame di analisi un caso abbastanza 
+        semplice ovvero lo sviluppo di un software che archivi i brani dei CD 
+        musicali. Il programma fondamentalmente richiede all'utente l'inserimento 
+        di certi dati che saranno poi archiviati da qualche parte per poi restituirli 
+        al momento della consultazione.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Le possibilit&agrave; di sviluppo sono infinite. Quale sar&agrave; la 
+        soluzione migliore?<br>
+        L'analisi si fonda sul alcune domande semplicissime:</p>
+      <ul type="disc">
+        <li><b>Qual'&egrave; il problema?</b> 
+          <ul type="circle">
+            <li><i>Possiedo molti CD ed a volte trovare un brano specifico tra 
+              i tanti &egrave; difficile e comporta una perdita di tempo.</i></li>
+            <li><i>Possiedo delle compilation di autori vari ed il rintracciamento 
+              di un autore rende difficoltosa e lunga la ricerca.<br>
+              </i><br>
+            </li>
+          </ul>
+        </li>
+        <li><b>Come intendo risolverlo?</b> 
+          <ul type="circle">
+            <li><i>Sviluppando un software che archivi i titoli e gli autori di 
+              ogni brano dei CD.</i></li>
+            <li><i>Il medesimo software permetter&agrave; le ricerche sia per 
+              autore che per brano.</i></li>
+            <li><i>Consentir&agrave; anche la consultazione casuale, ovvero la 
+              vista dell'elenco dei vari brani; mi accade ogni tanto di voler 
+              ascoltare qualche brano ma non so quale scegliere.<br>
+              </i><br>
+            </li>
+          </ul>
+        </li>
+        <li><b>Esistono altre soluzioni, anche peggiori?</b> 
+          <ul type="circle">
+            <li><i>Avevo pensato di scrivere i titoli dei brani di ogni CD in 
+              un documento di testo ed utilizzare un documento per ogni CD.</i></li>
+            <li><i>Scannerizzare tutte le copertine dei CD.<br>
+              </i><br>
+            </li>
+          </ul>
+        </li>
+        <li><b>Perch&eacute; ho scelto questa soluzione? </b> 
+          <ul type="circle">
+            <li><i>Perch&eacute; tutte le altre soluzioni (ovviamente) comportavano 
+              difficolt&agrave; e difetti. </i> 
+              <ul type="disc">
+                <li><b>Le difficolt&agrave; sono legate ai miei limiti oppure 
+                  sono intrinseche alla soluzione stessa? </b> 
+                  <ul type="circle">
+                    <li><i>Sono legate al tipo di soluzione e quindi non permetterebbero 
+                      la risoluzione del mio problema.<br>
+                      </i><br>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><b>Che costi (in termine di risorse e lavoro) questa soluzione mi 
+          comporta? </b> 
+          <ul type="circle">
+            <li><i>Ho gi&agrave; qualche conoscenza del linguaggio e penso di 
+              potermela cavare in un certo tot di tempo e ci&ograve; mi sta bene.</i></li>
+            <li><i>Non ho idea per&ograve; per organizzare le operazioni di consultazione 
+              dei brani.</i></li>
+            <ul type="disc">
+              <li><b>Ho provato a leggere la guida in linea fornita con VB? </b> 
+                <ul type="circle">
+                  <li><i>Non l'ho installata. </i> 
+                    <ul type="disc">
+                      <li><b>Lo far&ograve; <span class="smallerrore"><span class="sottolineato">immediatamente</span></span>.</b></li>
+                    </ul>
+                  </li>
+                  <li><i>No.</i> 
+                    <ul type="disc">
+                      <li><b>Lo far&ograve; <span class="smallerrore"><span class="sottolineato">immediatamente</span></span>.</b></li>
+                    </ul>
+                  </li>
+                  <li><i>Si, ma non contiene nulla di idoneo al mio problema. 
+                    </i> 
+                    <ul type="disc">
+                      <li><b>Ho dato uno sguardo agli esempi presenti sui CD di 
+                        Visual Basic? </b> 
+                        <ul type="circle">
+                          <li><i>Wow! Non sapevo ci fossero esempi di VB nei CD!<br>
+                            </i></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><b>Ho provato a cercare soluzioni sul Web? </b> 
+                <ul type="circle">
+                  <li><i>Si, ma non ho trovato nulla. </i></li>
+                  <li><i>Ho trovato alcune cose ma non sono idonee al mio caso.</i></li>
+                </ul>
+              </li>
+              <li><b>Sono alla conoscenza di alcuni siti Web che trattano VB? 
+                </b> 
+                <ul type="circle">
+                  <li><i>No. </i> 
+                    <ul type="disc">
+                      <li><b>Allora che sto leggendo giusto ora? <img src="../images/icons/smile%20wink.gif" width="15" height="15" border="0" align="absmiddle"></b> 
+                        <ul type="circle">
+                          <li><i>Prover&ograve; a guardare prima in questo sito 
+                            e poi ai siti riportati nella <a href="../links.htm">sezione 
+                            Links</a>.</i></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><i>Si ma non ho trovato nulla al loro interno.</i> 
+                    <ul type="disc">
+                      <li><b>Forse sar&agrave; meglio utilizzare un motore di 
+                        ricerca. </b> 
+                        <ul type="circle">
+                          <li><i>Prover&ograve; con <a href="http://www.google.com" target="_blank">http://www.google.com</a> 
+                            oppure con <a href="http://www.yahoo.it" target="_blank">http://www.yahoo.it</a></i></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><b>Esistono altre risorse oltre il Web?</b> 
+                <ul type="circle">
+                  <li><i>Si! Esistono newsgroup, chat e mailing list.</i> 
+                    <ul type="disc">
+                      <li><b>Prima di chiedere legger&ograve; i messaggi vecchi.</b></li>
+                      <li><b>Esiste un sito Web legato al newsgroup o alla mailing 
+                        list? </b> 
+                        <ul type="circle">
+                          <li>Si.<br>
+                            Utilizzer&ograve; il motore di ricerca del sito del 
+                            newsgroup o della mailing list.</li>
+                        </ul>
+                      </li>
+                      <li><b>Esiste una sezione FAQ (Frequently Asked Questions)? 
+                        </b> 
+                        <ul type="circle">
+                          <li>Si e la consulter&ograve;!<br>
+                            Quasi sempre si trova la soluzione.</li>
+                        </ul>
+                      </li>
+                      <li><b>Chieder&ograve; aiuto al newsgroup o alla mailing 
+                        list!<br>
+                        <br>
+                        </b></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </ul>
+        </li>
+        <li><b>Esistono componenti esterni riutilizzabili?</b> 
+          <ul type="circle">
+            <li><i>Ho trovato una soluzione utilizzando un <a href="../glossary/o.htm#OCX">OCX</a> 
+              sviluppato da terzi. </i> 
+              <ul type="disc">
+                <li><b>&Egrave; gratuito? Posso utilizzarlo nel mio progetto? 
+                  </b> 
+                  <ul type="circle">
+                    <li><i>No! Lo compro perch&eacute; &egrave; molto utile.</i></li>
+                    <li><i>Si.</i></li>
+                  </ul>
+                </li>
+                <li><b>Sono disposto ad appesantire il mio progetto includendo 
+                  un componente di terze parti? </b> 
+                  <ul type="circle">
+                    <li><i>No.<br>
+                      Potrei provare a farne a meno.</i></li>
+                  </ul>
+                </li>
+                <li><b>Che rischi/problemi mi comporta utlizzare tale componente 
+                  esterno? </b> 
+                  <ul type="circle">
+                    <li><i>Pagarlo.</i></li>
+                    <li><i>Dovr&ograve; sacrificare alcune caratteristiche del 
+                      mio programma perch&eacute; incompatibili con l'utilizzo 
+                      di questo componente esterno.</i></li>
+                    <li><i>Mi tocca distribuirlo assieme al resto del progetto 
+                      e quindi <a href="../info/info_02.htm">registrarlo</a>.<br>
+                      Il pacchetto di installazione potrebbe crescere di dimensioni 
+                      e richiedere altri componenti.</i></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><i>Ho trovato un <a href="../glossary/c.htm#CONTROLLO">controllo 
+              utente</a> <img src="../images/ide/ctlutent.gif" width="16" height="16" align="absmiddle"> 
+              non compilato o del codice sorgente gratuito.</i><br>
+              <i><br>
+              </i></li>
+          </ul>
+        </li>
+        <li><b>A quale target &egrave; rivolto il mio programma? </b> 
+          <ul type="circle">
+            <li><i>A me e ai miei amici.</i></li>
+            <li><i>A tutti quanti lo desiderino. </i> 
+              <ul type="disc">
+                <li><b>Sar&agrave; necessario scrivere un minimo di documentazione 
+                  per utilizzarlo.</b></li>
+              </ul>
+            </li>
+            <li><i>A tutto il mondo. </i> 
+              <ul type="disc">
+                <li><b>Sar&agrave; necessario scrivere la documentazione del programma.</b></li>
+                <li><b>Sar&agrave; necessario anche un file di risorse o un meccanismo 
+                  di traduzione del testo all'interno del progetto. </b> 
+                  <ul type="circle">
+                    <li><i>Sar&agrave; meglio utilizzare un file di risorse meglio 
+                      ancora se una DLL separata.<br>
+                      </i><br>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><b>Il progetto sar&agrave; distribuito con codice sorgente allegato? 
+          </b> 
+          <ul type="circle">
+            <li><i>Si. </i> 
+              <ul type="disc">
+                <li><b>Sar&agrave; necessario indentare bene il codice scritto.</b></li>
+                <li><b>Dovr&ograve; commentarlo per bene e seguire delle regole 
+                  di base nella scrittura del codice e nella denominazione di 
+                  variabili e degli oggetti.</b><br>
+                  <br>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><b>Il programma sar&agrave; eseguito da un solo utente contemporaneamente?</b> 
+          <ul type="circle">
+            <li><i>No. Sar&agrave; eseguito anche in un ambiente multiutenza (<a href="../glossary/l.htm#LAN">LAN</a> 
+              o Internet).</i> 
+              <ul type="disc">
+                <li><b>Sar&agrave; pertanto obbligatorio utilizzare un sistema 
+                  di archiviazione multiutente.</b></li>
+                <li><b>Quanti brani pu&ograve; arrivare a contenere l'archivio? 
+                  </b> 
+                  <ul type="circle">
+                    <li><i>Meno di 1.000.</i></li>
+                    <li><i>Tra 1.000 e 30.0000.</i></li>
+                    <li><i>Un numero difficile da stimare. </i> 
+                      <ul type="disc">
+                        <li><b>Perch&eacute;? </b> 
+                          <ul type="circle">
+                            <li><i>Perch&eacute; la LAN conta molti computer e 
+                              molti utenti.</i></li>
+                            <li><i>Perch&eacute; l'archivio sar&agrave; reso pubblico 
+                              e verr&agrave; utilizzato tramite Internet da tutti 
+                              gli utenti del programma.</i></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->
+      <p>L'analisi potrebbe proseguire per molti punti ancora ed &egrave; esattamente 
+        ci&ograve; che avviene in progetti di grosse dimensioni e con tante persone 
+        legate al progetto.</p>
+      <p>Poich&eacute; la stragrande maggioranza degli utenti di questo corso 
+        sviluppa in privato ci limiteremo ad un progetto di piccole dimensioni 
+        con un archivio locale monoutente.<br>
+        Affronteremo questo progettino nelle prossime lezioni.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        21 Dicembre 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'introduzione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="int_02.htm">Vai 
+      alla seconda lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

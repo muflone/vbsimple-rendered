@@ -1,0 +1,527 @@
+<html><!-- #BeginTemplate "/Templates/ClientServer.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Trasferimento di files tra Client e Server (seconda parte)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Trasferimento di files tra 
+    Client e Server (seconda&nbsp;parte) <!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/cliserv.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+  </div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"> 
+        4<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+<p align="center"><a href="clser_04.htm">&lt;&lt; Continua dalla parte 1</a></p>
+      <p>Visto il client nella parte precedente, rimane da vedere il server, leggermente 
+        pi&ugrave; complesso del precedente.</p>
+      <p>Il secondo progetto si compone di un solo form che far&agrave; uso del 
+        controllo <a href="../userctls/usrctl_03.htm">FBI Shape Progress Bar</a><img src="../images/controls/fbi%20shape%20progress%20bar.gif" width="25" height="25" align="absmiddle">trattato 
+        nella sezione <a href="../userctls/index.htm">Controlli utente</a> da 
+        aggiungere al progetto.<br>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+        <img src="../images/cliserv/cliserv004_03.jpg" width="198" height="175" align="right">Sulla 
+        superficie del form avremo una <i>ListBox</i> <img src="../images/controls/listbox.gif" width="25" height="25" align="absmiddle">di 
+        nome Stati, nella quale saranno inserite alcune informazioni sulla connessione 
+        e sul trasferimento dei dati.</p>
+      <p>Sono presenti anche due controlli <i>Winsock</i><img src="../images/controls/winsock.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>Socket</b> e <b>Passivo</b>, due Label<img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">indicative 
+        di nome <b>StatoLabel</b> ed <b>Avanzamento</b>. Entrambe avranno la propriet&agrave; 
+        <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        <i>Autosize</i> impostata a True, ma la prima avr&agrave; anche la propriet&agrave; 
+        <i>Wordwrap</i> impostata a True, mentre la seconda avr&agrave; la propriet&agrave; 
+        <i>Alignment</i> impostata a 2-Center.<br>
+        Completiamo il nostro form con un'<a href="../glossary/i.htm#ISTANZA">istanza</a> 
+        della <i>FBI Shape Progress Bar</i><img src="../images/controls/fbi%20shape%20progress%20bar.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>AvanzamentoProgress</b> con la propriet&agrave; <i>Align</i> impostata 
+        a 2-vbAlignBottom, <i>Alignment</i> impostata a 2-vbCenter e la propriet&agrave; 
+        <i>Decimali</i> impostata su 2.</p>
+      <p>Il server non potr&agrave; fornire alcun comando, eccetto che rispondere 
+        SI o NO alla richiesta di trasferimento del file per accettarlo o rifiutarlo.<br>
+        Vediamo passo dopo passo il nostro codice:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private FILEHANDLE As Integer</li>
+        <li>Private DIMENSIONEFILE As Long</li>
+        <li>Private FILEDASALVARE As String</li>
+        <li></li>
+      </ol>
+      <p>Abbiamo dichiarato 3 variabili che verranno utilizzate pi&ugrave; volte 
+        all'interno del programma: <b>FILEHANDLE</b> &egrave; l'handle del file 
+        aperto per il trasferimento; <b>DIMENSIONEFILE</b> &egrave; la dimensione 
+        in bytes aspettata; infine <b>FILEDASALVARE</b> &egrave; il nome del file 
+        da salvare compreso del percorso della cartella.</p>
+      <ol class="codicevb" start="7">
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;StatoLabel.Caption = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;Avanzamento.Caption = &quot;0 bytes ricevuti su 0&quot;</li>
+        <li>&nbsp;&nbsp;Socket.LocalPort = 1500</li>
+        <li>&nbsp;&nbsp;Socket.Listen</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>All'avvio del programma viene aperta la porta 1500 in ascolto per la 
+        connessione sul controllo <b>Socket</b> (righe 10 e 11).</p>
+      <ol class="codicevb" start="14">
+        <li>Private Sub Form_Unload(Cancel As Integer)</li>
+        <li>&nbsp;&nbsp;If Socket.State &lt;&gt; sckClosed Then Socket.Close</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Cos&igrave; alla chiusura del form viene chiusa anche la connessione 
+        aperta con <b>Socket</b>.</p>
+      <ol class="codicevb" start="18">
+        <li>Private Sub Socket_ConnectionRequest(ByVal requestID As Long)</li>
+        <li>&nbsp;&nbsp;Socket.Close</li>
+        <li>&nbsp;&nbsp;Socket.Accept requestID</li>
+        <li>&nbsp;&nbsp;Stati.AddItem &quot;Accettata connessione.&quot;</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Nel momento in cui <b>Socket</b> riceve una richiesta di connessione, 
+        esso termina di ascoltare ed accetta la chiamata, senza preoccuparsi di 
+        chi sia.</p>
+      <ol class="codicevb" start="24">
+        <li>Private Sub Socket_Close()</li>
+        <li>&nbsp;&nbsp;If Passivo.State &lt;&gt; sckClosed Then Passivo.Close</li>
+        <li>&nbsp;&nbsp;If Socket.State &lt;&gt; sckClosed Then Socket.Close</li>
+        <li>&nbsp;&nbsp;Stati.AddItem &quot;Connessione chiusa.&quot;</li>
+        <li>&nbsp;&nbsp;Socket.Listen</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Nel momento in cui la connessione viene chiusa (dal lato client), vengono 
+        chiusi tutti i socket aperti e <b>Socket</b> viene posto nuovamente in 
+        attesa di chiamata.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>L'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><i>DataArrival</i> 
+        sul primo socket servir&agrave; per accettare il trasferimento del file 
+        oppure annullarlo una volta avviato. Ricordiamo che il server accetta 
+        solo due comandi: <code>&quot;/FILE NomeFile Dimensione&quot;</code> e 
+        <code>&quot;/FINE&quot;</code>.</p>
+      <ol class="codicevb" start="31">
+        <li>Private Sub Socket_DataArrival(ByVal bytesTotal As Long)</li>
+        <li>&nbsp;&nbsp;Dim DATI() As Byte</li>
+        <li>&nbsp;&nbsp;Dim NOMEFILE As String</li>
+        <li>&nbsp;&nbsp;Dim DIMENSIONE As Long</li>
+        <li>&nbsp;&nbsp;Dim POSIZIONE As Integer</li>
+        <li>&nbsp;&nbsp;Dim TEMPSTR As String</li>
+        <li></li>
+      </ol>
+      <p>Saranno utilizzate una serie di variabili: la <a href="../glossary/m.htm#MATRICE">matrice</a> 
+        di <a href="../glossary/b.htm#BYTE">bytes</a> <b>DATI</b> servir&agrave; 
+        per contenere i dati ricevuti dal client; <b>NOMEFILE</b> verr&agrave; 
+        utilizzata per contenere il nome del file in arrivo, <b>POSIZIONE</b> 
+        verr&agrave; utilizzata per effettuare l'estrazione dei parametri dai 
+        dati ricevuti dal client, <b>DIMENSIONE</b> sar&agrave; invece la dimensione 
+        in bytes del file in arrivo e <b>TEMPSTR</b> sar&agrave; utilizzata per 
+        manipolare le stringhe.</p>
+      <ol class="codicevb" start="38">
+        <li>&nbsp;&nbsp;Call Socket.GetData(DATI)</li>
+        <li>&nbsp;&nbsp;DATI = StrConv(DATI, vbUnicode)</li>
+        <li>&nbsp;&nbsp;Select Case Left(UCase(DATI), 5)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case &quot;/FILE&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEMPSTR = Mid(DATI, 7)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POSIZIONE = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While InStr(POSIZIONE + 1, TEMPSTR, 
+          &quot; &quot;) &gt; 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POSIZIONE = InStr(POSIZIONE 
+          + 1, TEMPSTR, &quot; &quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wend</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOMEFILE = Left(TEMPSTR, POSIZIONE 
+          - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DIMENSIONE = CLng(Mid(TEMPSTR, 
+          POSIZIONE + 1))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEMPSTR = &quot;È in arrivo un 
+          file di nome &quot; &amp; NOMEFILE &amp; &quot; di &quot; &amp; CStr(DIMENSIONE) 
+          &amp; &quot; bytes.&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEMPSTR = TEMPSTR &amp; vbNewLine</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEMPSTR = TEMPSTR &amp; &quot;Desideri 
+          accettarlo?&quot;</li>
+      </ol>
+      <p>Alla riga 38 vengono letti i dati in arrivo su <b>Socket</b> e subito 
+        successivamente vengono convertiti in <a href="../glossary/u.htm#UNICODE">Unicode</a>, 
+        allo scopo di utilizzarli come stringhe.<br>
+        Ottenuta la stringa inviata dal client, sar&agrave; necessario verificare 
+        se essa &egrave; uno dei due comandi accettati (righe 40, 41 e 80).</p>
+      <p>Se la stringa ricevuta inizia per <code>&quot;/FILE&quot;</code>, sar&agrave; 
+        necessario estrarre da essa il nome del file e la dimensione; l'inizio 
+        di tali informazioni &egrave; alla posizione 7 della stringa.</p>
+      <p>Alle righe 43-46 viene estratta la posizione dell'ultimo spazio separatore, 
+        al fine di rintracciare il punto dove termina il nome del file ed inizia 
+        la dimensione. Tale posizione sar&agrave; salvata nella variabile <b>POSIZIONE</b>.</p>
+      <p>Solo allora (righe 47 e 48) sar&agrave; possibile estrarre il nome del 
+        file (salvato in <b>NOMEFILE</b>) e la sua dimensione (memorizzata in 
+        <b>DIMENSIONE</b>).</p>
+      <p>Alle righe 49-51 viene formata la stringa <b>TEMPSTR</b> che verr&agrave; 
+        utilizzata per mostrare un avviso all'utente. Essa conterr&agrave; anche 
+        il nome del file in arrivo e la sua dimensione.</p>
+      <ol class="codicevb" start="52">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If MsgBox(TEMPSTR, vbYesNo + vbQuestion) 
+          = vbYes Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FILEDASALVARE = App.Path 
+          &amp; &quot;\RICEVUTI\&quot; &amp; NOMEFILE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Dir(FILEDASALVARE) 
+          &lt;&gt; &quot;&quot; Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEMPSTR 
+          = &quot;Il file &quot; &amp; NOMEFILE &amp; &quot; esiste gi&agrave;.&quot; 
+          &amp; vbNewLine</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEMPSTR 
+          = TEMPSTR &amp; &quot;Desideri sovrascriverlo?&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If MsgBox(TEMPSTR, 
+          vbYesNo + vbQuestion) = vbYes Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kill 
+          FILEDASALVARE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Socket.SendData 
+          &quot; -ERR: NONACCETTATO&quot; &amp; vbNewLine</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stati.AddItem 
+          &quot;File &quot; &amp; NOMEFILE &amp; &quot; rifiutato.&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exit 
+          Sub</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+      </ol>
+      <p><img src="../images/cliserv/cliserv004_04.jpg" width="271" height="95" align="right" alt="Figura 4">Tale 
+        avviso sar&agrave; mostrato all'utente. Se alla richiesta di trasferimento 
+        l'utente rispnder&agrave; <i><b>NO</b></i>, sar&agrave; inviato al client 
+        il messaggio <code>&quot; -ERR: NONACCETTATO&quot;</code> e la procedura 
+        terminer&agrave; (righe 59-63).</p>
+      <p>Se l'utente invece risponder&agrave; <i><b>SI</b></i>, verr&agrave; generato 
+        il percorso completo del file da salvare, composto dal percorso della 
+        cartella in cui il programma server si trova, dalla cartella <i><b>RICEVUTI</b></i> 
+        e dal nome del file in arrivo. Il percorso completo sar&agrave; memorizzato 
+        nella variabile <b>FILEDASALVARE</b>.</p>
+      <p><img src="../images/cliserv/cliserv004_05.jpg" width="174" height="95" align="right" alt="Figura 5">Prima 
+        di procedere alla scrittura del file, sar&agrave; necessario verificare 
+        se il file esiste (le varie soluzioni possibili sono <a href="../howto/ht_011.htm">spiegate 
+        in un HowTo</a>). Se esso esiste, sar&agrave; mostrato un avviso di sovrascrittura 
+        all'utente (righe 55-57). Se l'utente richieder&agrave; la sovrascrittura, 
+        il file originale sar&agrave; cancellato prima di ricevere il file nuovo 
+        (righe 57-58).</p>
+      <p>In caso contrario il file originale sar&agrave; lasciato l&igrave; e 
+        verr&agrave; ritornato al server il messaggi di non accettazione del file. 
+        In altre situazioni potrebbe essere comodo specificare un nuovo nome di 
+        file in cui salvare il file in arrivo.</p>
+      <ol class="codicevb" start="65">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DIMENSIONEFILE = DIMENSIONE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Passivo.State &lt;&gt; 
+          sckClosed Then Passivo.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passivo.LocalPort 
+          = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passivo.Listen</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Socket.SendData &quot; 
+          +OK: PORTA &quot; &amp; Passivo.LocalPort &amp; vbNewLine</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stati.AddItem &quot;Accettazione 
+          del file &quot; &amp; NOMEFILE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stati.AddItem &quot;Ascolto 
+          sulla porta &quot; &amp; Passivo.LocalPort</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StatoLabel.Caption 
+          = &quot;Ricezione del file &quot; &amp; NOMEFILE &amp; &quot; di &quot; 
+          &amp; DIMENSIONE &amp; &quot; bytes.&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Avanzamento.Caption 
+          = &quot;0 bytes ricevuti su &quot; &amp; DIMENSIONE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AvanzamentoProgress.Value 
+          = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AvanzamentoProgress.Max 
+          = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Socket.SendData &quot; 
+          -ERR: NONACCETTATO&quot; &amp; vbNewLine</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stati.AddItem &quot;File 
+          &quot; &amp; NOMEFILE &amp; &quot; rifiutato.&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+      </ol>
+      <p>Alla riga 65 viene impostata la variabile globale <b>DIMENSIONEFILE</b>, 
+        che verr&agrave; utilizzata dal resto del programma, uguale a <b>DIMENSIONE</b>.</p>
+      <p>Sar&agrave; necessario aprire un socket passivo in ascolto su una porta 
+        casuale e comunicare il numero di tale porta al client, nella forma <code>&quot; 
+        +OK: PORTA Numero&quot;</code> (righe 66-69).<br>
+        Saranno anche azzerati tutti i controlli grafici per monitorare l'avanzamento 
+        del traferimento.</p>
+      <p>Se, invece, l'utete ha risposto NO alla richiesta di trasferimento, sar&agrave; 
+        inviata al client la risposta <code>&quot;&nbsp;ERR: NONACCETATO&quot;</code>.</p>
+      <ol class="codicevb" start="80">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Case &quot;/FINE&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Passivo.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Close FILEHANDLE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FILEDASALVARE = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stati.AddItem &quot;Ricezione 
+          del file completata.&quot;</li>
+        <li>&nbsp;&nbsp;End Select</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>In caso che il client volesse terminare il trasferimento a met&agrave;, 
+        invier&agrave; il comando &quot;/FINE&quot; (non implementato in questo 
+        esempio) al cui ricevimento il server si occuper&agrave; di chiudere il 
+        socket passivo e l'handle del file in scrittura.</p>
+      <ol class="codicevb" start="88">
+        <li>Private Sub Passivo_ConnectionRequest(ByVal requestID As Long)</li>
+        <li>&nbsp;&nbsp;FILEHANDLE = FreeFile</li>
+        <li>&nbsp;&nbsp;Open FILEDASALVARE For Binary As FILEHANDLE</li>
+        <li>&nbsp;&nbsp;Passivo.Close</li>
+        <li>&nbsp;&nbsp;Passivo.Accept requestID</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Nel momento in cui il client richiede il collegamento con il socket passivo, 
+        viene aperto il file <b>FILEDASALVARE</b> in modalit&agrave; binaria e 
+        viene accettata la richiesta di collegamento.</p>
+      <ol class="codicevb" start="95">
+        <li>Private Sub Passivo_Close()</li>
+        <li>&nbsp;&nbsp;Close FILEHANDLE</li>
+        <li>&nbsp;&nbsp;FILEDASALVARE = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;Stati.AddItem &quot;Ricezione del file completata.&quot;</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Analogamente nel momento della disconnessione viene chiuso il file aperto.</p>
+      <p>Tutti i dati che arriveranno al socket passivo saranno scritti all'interno 
+        del file di output.</p>
+      <ol class="codicevb" start="101">
+        <li>Private Sub Passivo_DataArrival(ByVal bytesTotal As Long)</li>
+        <li>&nbsp;&nbsp;Dim DATI() As Byte</li>
+        <li>&nbsp;&nbsp;Call Passivo.GetData(DATI)</li>
+        <li>&nbsp;&nbsp;If UBound(DATI) + LOF(FILEHANDLE) + 1 &gt;= DIMENSIONEFILE 
+          Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ReDim Preserve DATI(DIMENSIONEFILE - LOF(FILEHANDLE) 
+          - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Put FILEHANDLE, , DATI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Stati.AddItem &quot;Salvato chunk di &quot; 
+          &amp; UBound(DATI) + 1 &amp; &quot; bytes.&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Avanzamento.Caption = LOF(FILEHANDLE) &amp; 
+          &quot; bytes ricevuti su &quot; &amp; DIMENSIONEFILE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;AvanzamentoProgress.Max = DIMENSIONEFILE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;AvanzamentoProgress.Value = LOF(FILEHANDLE)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Socket.SendData &quot; +OK: FINE&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DoEvents</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Passivo.Close</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Close FILEHANDLE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FILEDASALVARE = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Stati.AddItem &quot;Ricezione del file completata.&quot;</li>
+      </ol>
+      <p>L'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><i>DataArrival</i> 
+        indica l'arrivo di dati al socket <b>Passivo</b>. Abbiamo detto che tali 
+        dati andranno scritti all'interno del file. Ma &egrave; necessario effettuare 
+        un controllo d'obbligo, ovvero che la somma dei dati ricevuti sia maggiore 
+        o uguale della dimensione aspettata (<b>DIMENSIONEFILE</b>). In tal caso 
+        sar&agrave; necessario eliminare i dati inutili che sono stati inviati 
+        mediante l'utilizzo dell'istruzione <i>Redim</i>, avendo cura di specificare 
+        la parola chiave <i><b>Preserve</b></i> per non distruggere il resto dei 
+        dati (riga 105).<br>
+        Solo allora sar&agrave; possibile completare la scrittura dei dati nel 
+        file, inviare la risposta di fine del trasferimento &quot; +OK: FINE&quot; 
+        e chiudere socket passivo e file.</p>
+      <ol class="codicevb" start="117">
+        <li>&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Put FILEHANDLE, , DATI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Stati.AddItem &quot;Salvato chunk di &quot; 
+          &amp; UBound(DATI) + 1 &amp; &quot; bytes.&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Avanzamento.Caption = LOF(FILEHANDLE) &amp; 
+          &quot; bytes ricevuti su &quot; &amp; DIMENSIONEFILE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;AvanzamentoProgress.Max = DIMENSIONEFILE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;AvanzamentoProgress.Value = LOF(FILEHANDLE)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Socket.SendData &quot; +OK: RECV &quot; &amp; 
+          LOF(FILEHANDLE)</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Se invece la somma dei dati inviati non corrisponde alla fine del file, 
+        l'intero pacchetto sar&agrave; salvato nel file (riga 118), la barra di 
+        avanzamento sar&agrave; aggiornata (righe 121 e 122) e verr&agrave; rimandato 
+        indietro l'<a href="../glossary/a.htm#ACK">ACK</a> <code>&quot; +OK: RECV 
+        Dimensione&quot;</code> del totale dei dati finora ricevuti.</p>
+      <ol class="codicevb" start="127">
+        <li>Private Sub Stati_DblClick()</li>
+        <li>&nbsp;&nbsp;Stati.Clear</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol><p>Un'ultima funzioncina prima di vedere il funzionamento del programma 
+        &egrave; legata al doppio click sopra la LisBox <b>Stati</b>. L'intera 
+        lista sar&agrave; cancellata. Pu&ograve; essere utile quando essa diviene 
+        troppo piena o per verificare l'andamento del trasferimento senza riavviare 
+        il programma.</p>
+      <hr>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Avviare sia il client che il server su uno o due computer collegati. 
+        Inserire nel client l'indirizzo <a href="../glossary/i.htm#IP">IP</a> 
+        del computer in cui viene eseguito il server e premere il pulsante <i><b>Connetti</b></i>. 
+        Se il server viene eseguito nella stesso computer del client, specificare 
+        come IP l'indirizzo di <a href="../glossary/l.htm#LOOPBACK">loopback</a> 
+        <b>127.0.0.1</b>.<br>
+        Specificare un file da trasferire e premere il pulsante <i> <b>Invia</b></i>.<br>
+        Se il file non esiste sar&agrave; mostrato un messaggio di errore. Specificare 
+        quindi un nome di file valido e premere il pulsante Invia.</p>
+      <p><img src="../images/cliserv/cliserv004_04.jpg" width="271" height="95" align="right" alt="Figura 6">Il 
+        server ricever&agrave; la richiesta di trasferimento. Premendo il pulsante 
+        Si alla richiesta di trasferimento il programma client potr&agrave; avviare 
+        il trasferimento.</p>
+      <p>Man mano che il trasferimento procede saranno mostrate le informazioni 
+        di avanzamento nella ListBox del server e nella sua barra di avanzamento</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="50%" align="center"><img src="../images/cliserv/cliserv004_06.jpg" width="198" height="175" alt="Figura 7"><br>
+            <b>Figura 7</b></td>
+          <td width="50%" align="center"><img src="../images/cliserv/cliserv004_07.jpg" width="198" height="175" alt="Figura 8"><br>
+            <b>Figura 8</b></td>
+        </tr>
+      </table>
+      <p><img src="../images/cliserv/cliserv004_08.jpg" width="158" height="95" align="right" alt="Figura 9">Il 
+        termine del trasferimento sar&agrave; notificato anche sul programma client 
+        con una finestra di messaggio apposita.</p>
+      <p>&nbsp;</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Il nostro programma &egrave; terminato.<br>
+        Il protocollo di comunicazione utilizzato &egrave; molto simile all'FTP.<br>
+        L'interfaccia utente &egrave; molto semplice e non effettua controlli 
+        severi sulla correttezza dei dati inseriti. Naturalmente questo esempio 
+        non pretende di essere un completo programma di trasferimento dati ma 
+        soltanto uno spunto quasi completo per comprendere il funzionamento.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        2 Giugno 2001<br>
+        Corretto il 25 Gennaio 2004<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice Client/Server</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

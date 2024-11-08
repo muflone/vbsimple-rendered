@@ -1,0 +1,390 @@
+<html><!-- #BeginTemplate "/Templates/Corso Base.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 6 del Corso Base</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso base - Lezione <!-- #BeginEditable "LEZIONE" -->6<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/base.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="bas_06.htm#STEP1">Estendiamo il nostro progetto</a>.</li>
+  <li><a href="bas_06.htm#STEP2">Definizione di nuovi tipi di dati</a>.</li>
+  <li><a href="bas_06.htm#STEP3">Le costanti</a>.</li>
+  <li><a href="bas_06.htm#STEP4">L'indentatura</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><a name="STEP1"></a>Abbiamo visto nella lezione precedente come dichiarare 
+        una variabile semplice e sfruttarla per effettuare i nostri calcoli.</p>
+      <p>Riapriamo il nostro Progetto1 e portiamoci nella finestra del codice 
+        <img src="../images/ide/codice.gif" width="16" height="16" align="absmiddle"> 
+        e rivediamo il codice che abbiamo visto la volta precedente.</p>
+      <ol class="codicevb" start="1">
+        <li>Dim Numero1 As Integer</li>
+        <li></li>
+        <li>Private Sub Form_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Numero1 = Numero1 + 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Label1.Caption = Numero1</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Abbiamo nel nostro codice due aree separate: l'area delle dichiarazioni 
+        e l'area della routine legata all'evento Click dell'oggetto Form.</p>
+      <p>Continuando l'esempio nostro, facciamo in modo che ad ogni click sul 
+        form, venga mostrato il numero dei click complessivi e l'orario dell'ultimo 
+        e del penultimo click.</p>
+      <p>Tornamo per un attimo al nostro form. Apriamo il menu Visualizza, diamo 
+        un click sulla voce Oggetto <img src="../images/ide/oggetto.gif" width="16" height="16" align="absmiddle"> 
+        e torneremo alla finestra di progettazione.<br>
+        Abbiamo gi&agrave; una Label, di nome Label1. Clicchiamo una volta sopra 
+        d'essa e verr&agrave; evidenziata; una volta fatto, apriamo il menu Modifica 
+        e clicchiamo sulla voce Elimina. Cos&igrave; facendo la elimineremo definitivamente 
+        ed avremo il form completamente libero. </p>
+      <p><img src="../images/lezioni/bas06_01.png" width="230" height="118" align="right" alt="Figura 1">Ora 
+        inseriamo un paio di Labels nel modo visto nelle lezioni precedenti e 
+        disponiamole nella maniera visibile qui a lato.</p>
+      <p>Per ogni Label impostiamo la propriet&agrave; <b>Autosize</b> a True, 
+        in modo che venga calcolata automaticamente la dimensione necessaria per 
+        il testo che andremo a scrivere dentro. &Egrave; necessario specificare 
+        il valore della propriet&agrave; Autosize per tutte le label, una per 
+        una; non basta farne una sola.</p>
+      <p>Ora impostiamo il testo contenuto in ogni Label.<br>
+        Ricordiamo che per impostare il testo di una Label bisogna innanzitutto 
+        scegliere la Label da modificare cliccandoci sopra una volta e poi modificare 
+        il contenuto della propriet&agrave; Caption dalla finestra delle propriet&agrave;. 
+        Se questi concetti non sono ben chiari, date una ripassata alla <a href="bas_04.htm">lezione 
+        4</a> e poi ritornate qui.</p>
+      <p></p>
+      <p>La Label1 conterr&agrave; il testo <b>L'utente ha cliccato sul form<br>
+        </b>La Label2 conterr&agrave; il testo <b>X<br>
+        </b>La Label3 conterr&agrave; la parola <b>volte<br>
+        </b>La Label4 conterr&agrave;: <b>L'ultimo click &egrave; stato:<br>
+        </b>La Label5 conterr&agrave;: <b>Mai<br>
+        </b>La Label6 conterr&agrave;: <b>Il penultimo click &egrave; stato:<br>
+        </b>Ed infine la Label7 conterr&agrave; il testo: <b>Mai</b></p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/lezioni/bas06_02.png" width="230" height="118" alt="Figura 2" align="right">Se 
+        avrete fatto correttamente, il form dovrebbe essere uguale a quello mostrato 
+        nella figura qui a fianco.</p>
+      <p>Com'&egrave; facilmente intuibile nella Label2 verr&agrave; inserito 
+        il numero di click effettuati sul form, nella Label5 verr&agrave; inserito 
+        l'orario dell'ultimo click e la Label7 conterr&agrave; l'orario del penultimo 
+        click.</p>
+      <p></p>
+      <p><a name="STEP2"></a>Ora possiamo ritornare al codice del nostro form.<br>
+        Immaginiamo che le variabili di tipo elementare siano atomi e proviamo 
+        a collegarle tra loro per formare una molecola. Infatti in Visual Basic 
+        &egrave; possibile creare nuovi tipi di dati complessi unendo tra loro 
+        pi&ugrave; variabili elementari di diverso genere.</p>
+      <p></p>
+      <p>Modifichiamo il codice fino ad ottenere il seguente:</p>
+      <ol class="codicevb" start="1">
+        <li>Private Type ClickConData</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;NumeroClick As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;UltimoClick As Date</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;PenultimoClick As Date</li>
+        <li>End Type</li>
+        <li></li>
+        <li>Dim MioClick As ClickConData</li>
+        <li></li>
+        <li>Private Sub Form_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MioClick.NumeroClick = MioClick.NumeroClick 
+          + 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MioClick.PenultimoClick = MioClick.UltimoClick</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MioClick.UltimoClick = Now</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Label2.Caption = MioClick.NumeroClick</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Label5.Caption = MioClick.UltimoClick</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Label7.Caption = MioClick.PenultimoClick</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Analizziamo con calma i tre segmenti del codice:</p>
+      <ol class="codicevb" start="1">
+        <li>Private Type ClickConData</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;NumeroClick As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;UltimoClick As Date</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;PenultimoClick As Date</li>
+        <li>End Type</li>
+      </ol>
+      <p>La prima riga definisce un nuovo tipo di nome <b>ClickConData</b>.<br>
+        La seconda riga definisce il membro NumeroClick, del tipo elementare Integer.<br>
+        La terza riga definisce il membro UltimoClick, del tipo elementare Date.<br>
+        La quarta riga definisce il membro PenultimoClick, del tipo elementare 
+        Date.<br>
+        La quinta riga termina la definizione del tipo ClickConData.</p>
+      <p>&Egrave; fondamentale ricordare che ogni nuovo tipo deve avere un nome 
+        univoco, unico, in modo da evitare confusioni.</p>
+      <p>Quello appena fatto &egrave; un modello per variabili, un nuovo tipo 
+        di dati, un <i>tipo di dati definito dall'utente</i> <img src="../images/ide/tipoudt.gif" width="16" height="16" align="absmiddle">. 
+        &Egrave; un macrotipo, formato da 3 sottotipi elementari.</p>
+      <p>Continuiamo la nostra analisi del codice:</p>
+      <ol class="codicevb" start="7">
+        <li>Dim MioClick As ClickConData</li>
+      </ol>
+      <p>Quest'unica riga dichiara una variabile di nome <b>MioClick</b> del nuovo 
+        tipo ClickConData. Questa variabile conterr&agrave; i dati del nostro 
+        programma, cio&egrave; il numero di click totali, la data dell'ultimo 
+        click e la data del penultimo click.</p>
+      <p>Vediamo ora le ultime righe del nostro codice:</p>
+      <ol class="codicevb" start="9">
+        <li>Private Sub Form_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MioClick.NumeroClick = MioClick.NumeroClick 
+          + 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MioClick.PenultimoClick = MioClick.UltimoClick</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MioClick.UltimoClick = Now</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Label2.Caption = MioClick.NumeroClick</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Label5.Caption = MioClick.UltimoClick</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Label7.Caption = MioClick.PenultimoClick</li>
+        <li>End Sub</li>
+      </ol>
+      <p>La prima e l'ottava riga non necessitano di spiegazione; le abbiamo viste 
+        in una lezione precedente.</p>
+      <p>La seconda riga introduce qualche novit&agrave;: MioClick.NumeroClick 
+        identifica il membro NumeroClick della variabile MioClick. Per accedere 
+        ad un membro di una variabile di tipo utente &egrave; necessario scrivere 
+        il nome della variabile, farlo seguire da un punto ed accodargli il nome 
+        del membro a cui ci si riferisce. Infatti in Visual Basic le variabili 
+        di tipo complesso sono trattate come fossero degli oggetti.</p>
+      <p>Per cui la seconda riga dice al programma di prendere il valore di MioClick.NumeroClick, 
+        inizialmente 0, aggiungere 1 e memorizzare il risultato in MioClick.NumeroClick.</p>
+      <p>La terza riga &egrave; analoga alla precedente. Essa dice di prendere 
+        il valore del membro UltimoClick della variabile MioClick e scriverlo 
+        nel membro PenultimoClick della stessa.</p>
+      <p>La quarta riga dice semplicemente di leggere la data e l'ora attuale 
+        (istruzione <b><i>Now</i></b>) e memorizzarla nel membro UltimoClick della 
+        variabile MioClick.</p>
+      <p>Infatti <b>prima</b> di eseguire la quarta riga, il valore di MioClick.UltimoClick 
+        &egrave; la data del penultimo click, poich&eacute; essa ancora non &egrave; 
+        stata aggiornata. Sar&agrave; la quarta riga che l'aggiorner&agrave;. 
+        Per questo motivo prendiamo il valore di MioClick.UltimoClick e lo mettiamo 
+        in MioClick.PenultimoClick <b>prima</b> dell'esecuzione della quarta riga.</p>
+      <p>La quinta, la sesta e la settima riga scrivono dentro le Label i valori 
+        dei singoli membri della variabile MioClick.</p>
+      <hr>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/lezioni/bas06_03.jpg" width="230" height="118" align="right" alt="Figura 3">Eseguiamo 
+        il nostro programma e vediamo che succede. Non appena clicchiamo una prima 
+        volta sul form vedremo che sar&agrave; mostrato l'orario completo del 
+        click sul form.<br>
+        Invece alla voce del penultimo click risulta 0.00.00 perch&eacute; non 
+        c'&egrave; stato il penultimo click. Come gi&agrave; detto tutte le variabili 
+        al loro primo utilizzo hanno valore 0. </p>
+      <p><img src="../images/lezioni/bas06_04.jpg" width="230" height="118" align="right" alt="Figura 4">Proviamo 
+        ora a cliccare una seconda volta sul form e vediamo il risultato.<br>
+        Innanzitutto viene incrementato il numero di click progressivi da 1 a 
+        2.<br>
+        Inoltre l'orario dell'ultimo click va a finire dentro lo spazio dedicato 
+        all'orario del penultimo click e viene aggiornata l'area dell'ultimo click 
+        con l'ora corrente.</p>
+      <p>&Egrave; consigliabile far ricorso a definizione di nuovi tipi quando 
+        &egrave; necessario utilizzare dei dati costantemente collegati tra loro, 
+        piuttosto che utilizzare pi&ugrave; variabili semplici separate. Se dovesse 
+        esserci la necessit&agrave; di definire un'altra copia di quel genere 
+        non &egrave; necessario definire tante variabili separate. Sar&agrave; 
+        necessaria soltanto una nuova variabile del tipo complesso.</p>
+      <p><a name="STEP3"></a>Passiamo ora al concetto delle costanti.<br>
+        Detto in breve le <a href="../glossary/c.htm#COSTANTE">costanti</a> <img src="../images/ide/costante.gif" width="16" height="16" border="0" align="absmiddle"> 
+        sono variabili il cui valore viene definito in <a
+        href="../glossary/f.htm#FASEDIPROGETTAZIONE">fase di progettazione</a> 
+        ed alle quali non si pu&ograve; cambiare valore in <a href="../glossary/f.htm#FASEDIESECUZIONE">fase 
+        di esecuzione</a>.</p>
+      <p> Supponiamo di avere dentro un grande programma 100 forms diversi e sulla 
+        barra del titolo di ognuno vogliamo che appaia il nome del programma. 
+        Dobbiamo aprire i form uno per uno ed andare a scrivere dentro la propriet&agrave; 
+        Caption di ogni form, la riga &quot;<i>Il mio programma - Prima edizione</i>&quot;.</p>
+      <p>Fin qui &egrave; ok. &Egrave; necessario farlo.<br>
+        Per&ograve; pensiamo al futuro... Dopo un certo periodo di tempo il nostro 
+        programma, che miglioreremo di giorno in giorno, passer&agrave; da <i>Prima 
+        Edizione</i> a <i>Seconda Edizione</i>.<br>
+        Sar&agrave; necessario aprire nuovamente tutti i forms e cambiare tutte 
+        le caption di prima... e se uscisse in seguito la terza edizione? Tutto 
+        da capo....</p>
+      <p>Pensiamo pure ad un'altra cosa... Dentro il nostro programma vogliamo 
+        calcolare pi&ugrave; volte l'area di un cerchio e vogliamo farlo nel modo 
+        pi&ugrave; preciso possibile. Dobbiamo quindi memorizzare il valore del 
+        PI greco. In ogni punto del codice dove si rende necessario utilizzare 
+        questo valore dobbiamo scrivere il numero 3.141592......</p>
+      <p>Ci sono molti svantaggi in questo: il principale &egrave; che possiamo 
+        facilmente sbagliare una cifra e far commettere al computer errori nel 
+        calcolo e rischiamo di perdere ore intere prima di rintracciare l'errore.</p>
+      <p>Se invece definiamo una costante e le forniamo il valore del PI greco 
+        sar&agrave; molto pi&ugrave; difficile sbagliare, ci baster&agrave; scriverlo 
+        una volta sola corretto, poich&eacute; tutte le volte che avremo bisogno 
+        d'esso scriveremo il nome della costante al posto del valore.</p>
+      <p>Ecco in pratica quanto detto. Torniamo alla finestra del codice e scriviamo 
+        questa riga:</p>
+      <blockquote> 
+        <p>Private Const PIGreco As Double = 3.14159265358979</p>
+      </blockquote>
+      <p>Questa infatti dichiara una costante di nome <b>PIGreco</b> di tipo Double 
+        e le assegna il valore. Cos&igrave; ogni volta che dovremo scrivere 3.141592...... 
+        sar&agrave; molto pi&ugrave; agevole e pi&ugrave; comprensibile scrivere 
+        PIGreco al suo posto.</p>
+      <p>Dentro la routine Form_Click aggiungiamo la riga:</p>
+      <blockquote> 
+        <p>Me.Caption = PIGreco</p>
+      </blockquote>
+      <p>Questa, infatti scrive il valore del PI greco sulla barra del titolo 
+        del form.<br>
+        L'utilizzo delle constanti non velocizza n&eacute; rallenta in alcun modo 
+        l'esecuzione di un programma, ma lo rende sicuramente pi&ugrave; comprensibile 
+        ad una seconda rilettura o modifica.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->
+      <p><a name="STEP4"></a>Vi sarete sicuramente chiesti perch&eacute; in queste 
+        lezioni alcune righe del codice iniziano un po' pi&ugrave; avanti delle 
+        altre righe.</p>
+      <p>Beh, &egrave; soltanto una manovra chiamata <b><i>Indentatura</i></b>, 
+        un'italianizzazione del termine inglese <i>Indent</i>, cio&egrave; rientranza 
+        del margine. Il suo unico scopo &egrave; rendere il codice pi&ugrave; 
+        leggibile. Per esempio:</p>
+      <ol class="codicevb" start="1">
+        <li>Private Sub Form_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Label1.Caption = &quot;Qualcosa&quot;</li>
+        <li>End Sub</li>
+      </ol>
+      <p>&Egrave; pi&ugrave; leggibile di:</p>
+      <ol class="codicevb" start="1">
+        <li>Private Sub Form_Click()</li>
+        <li>Label1.Caption = &quot;Qualcosa&quot;</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Infatti, se l'indentatura &egrave; fatta correttamente si capisce facilmente 
+        dove inizia e dove finisce la routine Form_Click. Tutto quello che &egrave; 
+        indentato &egrave; una parte di quella routine o di quel ciclo. Se il 
+        testo non fosse indentato, chi rivede il codice sar&agrave; costretto 
+        a leggersi le righe una per una alla ricerca dell'istruzione <code>End 
+        Sub</code>.<br>
+        Non esiste un numero di caratteri preciso per il rientro di indentatura; 
+        alcuni utilizzano due spazi, altri ne utilizzano quattro, mentre altri 
+        ancora utilizzano rientrare il testo con le tabulazioni. Noi nei nostri 
+        corsi utilizzeremo un'indentatura di 4 caratteri.</p>
+      <p>L'indentatura si utilizza in tutti i linguaggi; per il computer non cambia 
+        nulla, ma per il programmatore o per un revisore del codice cambia molto. 
+        &Egrave; fondamentale imparare ad utilizzarla quanto prima possibile.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        28 Ottobre 2000<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="bas_05.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna alla quinta lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="bas_07.htm">Vai 
+      alla settima lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,330 @@
+<html><!-- #BeginTemplate "/Templates/Corso Intermedio.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 8 del Corso Intermedio</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso Intermedio - Lezione <!-- #BeginEditable "LEZIONE" -->8<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/intermed.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="int_08.htm#STEP1">Le propriet&agrave; di base del controllo ListBox 
+    (ListIndex, List, ListCount)</a>.</li>
+  <li><a href="int_08.htm#STEP2">Lettura casuale da un file binario</a>.</li>
+  <li><a href="int_08.htm#STEP3">Eliminazione di un brano</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p><a name="STEP1"></a><img src="../images/lezioni/int07_01.png" width="347" height="200" align="right" alt="Figura 1">Il 
+        nostro piccolo progetto inizia a prendere forma: nella <a href="int_06.htm">lezione&nbsp;6</a> 
+        abbiamo visto come inserire i dati nel nostro archivio, mentre nella <a href="int_07.htm">lezione&nbsp;7</a> 
+        abbiamo recuperato gli stessi dati all'avvio del programma. Ci occuperemo 
+        stavolta di leggere i dettagli di un singolo brano, nel momento in cui 
+        questo viene selezionato dall'elenco di sinistra.</p>
+      <p>Diviene perci&ograve; importante imparare ad utilizzare il controllo 
+        <i> <b>ListBox</b></i>. Si suppone naturalmente che vi sia almeno un brano 
+        nell'archivio. Esiste una propriet&agrave; di nome <i><b>ListIndex</b></i> 
+        che determina quale sia l'elemento attualmene selezionato ed il suo valore 
+        &egrave; a <b>base 0</b>; ci&ograve; significa che il primo elemento &egrave; 
+        indicato dal valore 0, il secondo dal valore 1 e cos&igrave; via. Invece 
+        nel momento in cui nessun elemento dell'elenco risulta selezionato, il 
+        valore di tale propriet&agrave; &egrave; <b>-1</b>.<br>
+        La propriet&agrave; funziona sia in lettura (recupero dell'elemento selezionato) 
+        che in scrittura (selezione di un elemento) e pu&ograve; essere utilizzata 
+        come segue:</p>
+      <p class="codicevb2">MsgBox &quot;L'elemento correntemente selezionato &egrave;: 
+        &quot; &amp; lstBrani.ListIndex<br>
+        lstBrani.ListIndex = 1<br>
+      </p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Ma la propriet&agrave; <i>ListIndex</i> restituisce soltanto l'indice 
+        dell'elemento selezionato e non riporta il contenuto di tale elemento. 
+        Sapremo infatti solo la sua posizione all'interno dell'elenco ma non ne 
+        conosceremo il contenuto. Possiamo quindi ovviare a questo inghippo semplicemente 
+        utilizzando la propriet&agrave; <i><b>List</b></i>. Si tratta di una propriet&agrave; 
+        indicizzata ovvero richiede la specifica dell'indice dell'elemento di 
+        cui restituire il contenuto. Prendendo per esempio la figura accanto il 
+        contenuto dell'elemento con indice 0 &egrave; <i>&quot;Another day in 
+        Paradise&quot;</i>, ed il contenuto dell'elemento 1 &egrave; <i>&quot;With 
+        or without you&quot;</i>. Il suo utilizzo &egrave; davvero molto semplice:</p>
+      <p class="codicevb2">MsgBox &quot;Il primo brano &egrave;: &quot; &amp; 
+        lstBrani.List(0)<br>
+        MsgBox &quot;Il secondo brano &egrave;: &quot; &amp; lstBrani.List(1)</p>
+      <p>Anche questa propriet&agrave; &egrave; utilizzabile in operazioni di 
+        lettura e di scrittura; ci&ograve; significa che &egrave; possibile variare 
+        il contenuto di un elemento anche dopo il suo inserimento con una sintassi 
+        del genere:</p>
+      <p class="codicevb2">lstBrani.List(0) = &quot;Nuovo contenuto dell'elemento 
+        0&quot;</p>
+      <p>La combinazione delle due propriet&agrave; qui presentate ci consente 
+        di recuperare o modificare il contenuto dell'elemento selezionato:</p>
+      <p class="codicevb2">MsgBox &quot;L'elemento selezionato &egrave;: &quot; 
+        &amp; lstBrani.List(lstBrani.ListIndex)</p>
+      <p><!-- #BeginLibraryItem "/Library/Notes2.lbi" --><img src="../images/notes2.gif" width="31" height="32" align="left"><!-- #EndLibraryItem -->&Egrave; 
+        fondamentale ricordare che la propriet&agrave; List richiede l'indice 
+        dell'elemento da recuperare e che la propriet&agrave; ListIndex pu&ograve; 
+        anche riportare valore -1, ad indicare che nessun elemento dell'elenco 
+        &egrave; selezionato. In tal caso l'operazione di lettura mediante List 
+        produce un errore. Non &egrave; infatti possibile leggere il contenuto 
+        dell'elemento il cui indice &egrave;&nbsp;-1. Prima di utilizzare la propriet&agrave; 
+        <i>List</i> assicurarsi quindi che la propriet&agrave; ListIndex abbia 
+        un valore differente da -1:</p>
+      <p class="codicevb2">If lstBrani.ListIndex &lt;&gt; -1 Then<br>
+        &nbsp;&nbsp;MsgBox &quot;L'elemento selezionato &egrave;: &quot; &amp; 
+        lstBrani.List(lstBrani.ListIndex)<br>
+        Else<br>
+        &nbsp;&nbsp;MsgBox &quot;Nessun elemento selezionato&quot;<br>
+        End If</p>
+      <p>Un'altra propriet&agrave; del controllo ListBox utilizzata frequentemente 
+        &egrave; <i><b>ListCount</b></i> che restituisce il numero di elementi 
+        contenuti nel controllo; nel nostro esempio restituirebbe il valore 2. 
+        Viene utilizzata frequentemente nei cicli che eseguono operazioni sui 
+        valori dell'elenco:</p>
+      <p class="codicevb2">For intConta = 0 To lstBrani.ListCount - 1<br>
+        &nbsp;&nbsp;If lstBrani.List(intConta) = strTestoDaRicercare Then ... 
+        <br>
+        Next intConta</p>
+      <p>La precedente rappresenta una grezza forma di ricerca che scorre tutti 
+        gli elementi dell'elenco per trovare quello indicato dalla variabile <b>strTestoDaRicercare</b>. 
+        Il ciclo &egrave; effettuato partendo dal valore 0 (la base della propriet&agrave; 
+        <i>List</i>) fino al numero indicato dalla propriet&agrave; ListCount 
+        - 1. Questo perch&eacute; <i>ListCount</i> restituisce il numero di elementi 
+        e non l'indice dell'ultimo elemento. Dati infatti 2 elementi, la propriet&agrave; 
+        ListCount restituisce valore 2, mentre l'ultimo elemento &egrave; indicato 
+        dall'indice 1.</p>
+      <p>Nelle lezioni precedenti abbiamo utilizzato le propriet&agrave; <i>NewIndex</i> 
+        per recuperare l'indice di un nuovo elemento dopo l'operazione di inserimento 
+        e <i>ItemData</i> per assegnare un valore numerico ad ogni riga dell'elenco.</p>
+      <p>Riassumiamo quindi in breve le principali propriet&agrave; sin qui presentate:</p>
+      <ul>
+        <li><b>ListIndex</b><br>
+          Restituisce e imposta l'indice dell'elemento selezionato.</li>
+        <li><b>NewIndex</b><br>
+          Restituisce l'indice dell'elemento dopo un'operazione di inserimento 
+          mediante <b>AddItem</b>.</li>
+        <li><b>ListCount</b><br>
+          Restituisce il numero di elementi contenuti nell'elenco.</li>
+        <li><b>List</b><br>
+          Restituisce ed imposta il contenuto di ciascun elemento dell'elenco. 
+          Richiede la specifica dell'indice dell'elemento.</li>
+        <li><b>ItemData</b><br>
+          Restituisce ed imposta un valore numerico a ciascun elemento. Richiede 
+          la specifica dell'indice dell'elemento.</li>
+      </ul>
+      <hr>
+      <p><a name="STEP2"></a>Con questi concetti possiamo quindi affontare l'operazione 
+        di recupero di un singolo brano scelto dall'elenco a sinistra. In occasione 
+        dell'evento<img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"> 
+        <i>Click</i> sul controllo ListBox sar&agrave; possibile effettuare la 
+        lettura dal file del brano selezionato. Abbiamo detto nella lezione precedente 
+        che l'istruzione Get accetta tre argomenti di cui il secondo specifica 
+        il record da leggere. Questa operazione &egrave; detta lettura casuale 
+        da un file poich&eacute; la posizione di lettura non si presenta sequenziale 
+        n&eacute; segue alcuno schema fisso. In ogni momento la lettura pu&ograve; 
+        riferirsi ad una posizione differente all'interno del file.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <ol class="codicevb">
+        <li>Private Sub lstBrani_Click()</li>
+        <li>&nbsp;&nbsp;If lstBrani.ListIndex &gt;= 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Get #intFileDati, lstBrani.ItemData(lstBrani.ListIndex), 
+          udtDiscoCorrente</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;With udtDiscoCorrente</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtTitoloBrano.Text = Trim$(.strTitoloBrano)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtAutoreBrano.Text = Trim$(.strAutore)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtTitoloCD.Text = Trim$(.strTitoloCD)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtNumeroTraccia.Text = CStr(.intTraccia)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtAnnoPubblicazione.Text = CStr(.intAnnoPubblicazione)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;txtNote.Text = Trim$(.strNote)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Alla riga 2 effettuiamo quel controllo d'obbligo che vi sia almeno un 
+        elemento dell'elenco selezionato; appurato questo provvederemo ad effettuare 
+        un'operazione di lettura casuale, mirando al record specificato nella 
+        propriet&agrave; <i>ItemData</i> dell'elemento selezionato. Abbiamo accennato 
+        nella lezione precedente la scelta di utilizzare questo tipo di valore, 
+        che diverr&agrave; fondamentale a seguito di una cancellazione o riordinamento 
+        degli elementi. Il record letto dal file sar&agrave; contenuto nella variabile 
+        <b>udtDiscoCorrente</b> i cui dati saranno in seguito riportati nelle 
+        singole caselle di testo (righe 5-10).</p>
+      <hr>
+      <p><a name="STEP3"></a>Prima di occuparci dell'operazione di modifica di 
+        un brano gi&agrave; inserito vedremo come eliminare il brano selezionato. 
+        L'operazione di cancellazione in realt&agrave; semplicemente celer&agrave; 
+        il record segnato come eliminato ma non sar&agrave; fisicamente rimosso 
+        dall'archivio. La ragione di questa scelta &egrave; molto semplice: ad 
+        ogni operazione di cancellazione si renderebbe necessario redisporre tutti 
+        i brani successivi a quello eliminato e si tratta invece di uno sforzo 
+        eccessivo. L'operazione di cancellazione segner&agrave; il campo <i>blnEliminato</i> 
+        con il valore <i><b>False</b></i>:</p>
+      <ol class="codicevb" start="15">
+        <li>Private Sub cmdEliminaBrano_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If lstBrani.ListIndex >= 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If MsgBox(&quot;Sei 
+          sicuro di voler eliminare il brano&quot; _</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp; 
+          vbNewLine &amp; Trim$(udtDiscoCorrente.strTitoloBrano) _</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp; 
+          &quot;?&quot;, vbCritical Or vbYesNo Or vbDefaultButton2, _</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Elimina 
+          brano&quot;) = vbYes Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;udtDiscoCorrente.blnEliminato 
+          = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Put 
+          #intFileDati, udtDiscoCorrente.intIndice, udtDiscoCorrente</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstBrani.RemoveItem 
+          lstBrani.ListIndex</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/lezioni/int08_01.png" width="194" height="95" align="right" alt="Figura 2">Alla 
+        riga 16 &egrave; effettuato il consueto controllo sulla riga selezionata; 
+        se almeno un elemento &egrave; stato selezionato sar&agrave; presentata 
+        un messaggio di avviso dell'operazione di eliminazione. Se l'utente dovesse 
+        rispondere <i><b>S&igrave;</b></i> (<i>vbYes</i>) all'avviso presentato, 
+        il campo <b>blnEliminato</b> del record corrente, precaricato mediante 
+        l'evento Click sull'elenco, come visto nel codice precedente, sar&agrave; 
+        segnato con il valore <i><b>True</b></i>. All'avvio del programma, infatti, 
+        i record segnati come eliminati non saranno presentati nell'elenco dei 
+        brani. Sar&agrave; rimossa anche la riga dall'elenco dei brani (riga 23).</p>
+      <p>Affinch&eacute; l'evento Click sul pulsante <b>cmdElimina</b> scatti 
+        &egrave; ovviamente necessario che il pulsante stesso sia abilitato; rimuoveremo 
+        quindi la riga <span class="codicevb">cmdEliminaBrano.Enabled = False</span> 
+        dal Form_Load perch&eacute; al momento non esiste una piena gestione dello 
+        stato dei pulsanti.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->Abbiamo fin qui presentato le operazioni 
+      pi&ugrave; semplici: inserimento, elencazione ed eliminazione di un brano 
+      dall'archivio. Resta quindi da implementare l'operazione di modifica che 
+      si rivela un po' pi&ugrave; complessa delle precedenti. Nella prossima lezione 
+      introdurremo la gestione dello stato dei pulsanti.<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI </a><br>
+        19 Ottobre 2003<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+     </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="int_07.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna alla settima lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="int_09.htm">Vai 
+      alla nona lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

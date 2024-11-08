@@ -1,0 +1,313 @@
+<html><!-- #BeginTemplate "/Templates/Database2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Il linguaggio SQL (Funzioni di aggregazione)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Il linguaggio SQL<br>
+    Funzioni di aggregazione<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/database.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Il termine <b>funzione di aggregazione</b> indica quelle funzioni che 
+        elaborano un insieme di righe ma restituiscono sempre un risultato; esempi 
+        di queste funzioni sono quelle che effettuano la somma dei valori di un 
+        campo, il conteggio di righe di un certo tipo, il valore massimo presente 
+        nelle righe recuperate. Il loro risultato &egrave; sempre uno, indipendentemente 
+        dal numero di righe prese in esame. Un'eccezione a questa regola &egrave; 
+        dettata dall'uso della <a href="db_08_08.htm">clausola GROUP BY</a>, che 
+        vedremo in seguito per effettuare delle spaccature ed elaborare l'aggregazione 
+        sui singoli gruppi.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Sebbene ciascun database possegga le proprie funzioni di aggregazione, 
+        ve ne sono alcune cos&igrave; comuni da poter essere considerate ormai 
+        uno standard, ed una deficienza per un database che non le supporta. Osserviamo 
+        la sintassi generale:</p>
+      <p class="codicevb2">&lt;funzione&gt; (&lt;predicato&gt; &lt;campo&gt; )</p>
+      <p>Esse si applicano all'istruzione SELECT e possono apparire nell'elenco 
+        dei campi da mostrare (&egrave; cos&igrave; nella maggior parte dei casi) 
+        oppure nelle clausole <a href="db_08_03.htm">ORDER BY</a> ed <a href="db_08_08.htm">HAVING</a> 
+        che vedremo in seguito. Essendo inoltre funzioni e non campi, non possiedono 
+        un nome di campo reale, quindi solitamente i risultati vengono rinominati 
+        con l'<b>operatore AS</b> trattato nelle lezioni precedenti. Prima di 
+        vedere le funzioni pi&ugrave; comuni in esame presentiamo un esempio generale:</p>
+      <p class="codicevb2">SELECT &lt;funzione&gt; (&lt;campo&gt;) AS &lt;nome&gt; 
+        FROM &lt;tabella&gt;<br>
+        WHERE &lt;criteri&gt;</p>
+      <p>Questa istruzione effettuerebbe il calcolo della funzione, applicata 
+        sul campo indicato, per la tabella specificata e per le righe incluse 
+        nei criteri; il risultato della funzione sarebbe infine presentato in 
+        un campo con il nuovo nome indicato a seguito dell'operatore AS.</p>
+      <p>La definizione precedente a quest'ultima includeva anche un predicato, 
+        posto immediatamente prima del campo per cui effettuare il calcolo. Tale 
+        predicato pu&ograve; essere:</p>
+      <p> 
+      <ul>
+        <li>ALL (Valore predefinito se omesso)<br>
+          Indica di prendere tutte le righe in esame estratte dalla condizione 
+          WHERE<br>
+          <br>
+        </li>
+        <li>DISTINCT<br>
+          Indica di escludere le righe con valori del campo specificato ripetuti 
+          e quindi prender&agrave; in esame sempre e soltanto una riga.</li>
+      </ul>
+      <p></p>
+      <hr class="hrseparator">
+      <p>Esistono cinque funzioni standard di aggregazione, dall'uso molto semplice 
+        e, come gi&agrave; detto, presenti in quasi tutti i database.</p>
+      <p>La prima di queste funzioni &egrave; sicuramente <b>COUNT</b>, che effettua 
+        il conteggio delle righe estratte e subito vediamo un esempio molto elementare:</p>
+      <p class="codicevb2">SELECT COUNT(nome) AS conteggio FROM dipendenti</p>
+      <p>Restituisce il <b>numero di righe</b> con valori non <a href="../glossary/n.htm#NULL">Null</a> 
+        nella colonna nome presenti all'interno dell'intera tabella dipendenti 
+        senza applicare altre esclusioni. La funzione operer&agrave; sul campo 
+        nome e quindi conter&agrave; quanti nomi sono presenti all'interno della 
+        tabella dipendenti; i valori Null saranno esclusi. Otterremmo lo stesso 
+        risultato con la seguente istruzione:</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p class="codicevb2">SELECT COUNT(ALL nome) AS conteggio FROM dipendenti</p>
+      <p>Ci&ograve; in quanto il predicato ALL &egrave; il predefinito nel caso 
+        venisse omesso. Otterremmo invece un risultato differente con questa istruzione:</p>
+      <p class="codicevb2">SELECT COUNT(DISTINCT nome) AS conteggio FROM dipendenti</p>
+      <p>Questa restituir&agrave; il <b>numero di nomi differenti</b> all'interno 
+        della tabella dipendenti, escludendo infatti quelle righe con il valore 
+        nel campo nome ripetuto. Come nel caso precedente <b>sono escluse le righe 
+        con valore Null</b> nel campo nome.</p>
+      <p>Per includere invece tutte le righe, senza escludere n&eacute; quelle 
+        con valore Null n&eacute; quelle duplicate &egrave; possibile specificare 
+        il simbolo * al posto del nome del campo ed omettere il predicato ALL 
+        o DISTINCT.</p>
+      <p class="codicevb2">SELECT COUNT(*) AS conteggio FROM dipendenti</p>
+      <p>Questa istruzione semplicemente restituisce il numero di righe presenti 
+        all'interno della tabella dipendenti. Se avessimo specificato uno dei 
+        due predicati, l'istruzione avrebbe riportato un errore. Se si utilizza 
+        il simbolo * i predicati non sono necessari; viceversa utilizzando il 
+        nome di una colonna pu&ograve; essere utilizzato uno dei due predicati; 
+        in assenza di specifica sar&agrave; utilizzato il predicato ALL.</p>
+      <p>Prima di procedere oltre vediamo altri due esempi:</p>
+      <p class="codicevb2">SELECT COUNT(nome) AS conteggio FROM dipendenti<br>
+        WHERE ruolo='Direttore'</p>
+      <p>Restituir&agrave; il conteggio dei direttori presenti nell'elenco dei 
+        dipendenti; saranno escluse quelle righe in cui il campo nome contiene 
+        valore Null, oltre che naturalmente tutte quelle che non corrispondono 
+        al ruolo di direttore.</p>
+      <p>Inoltre le funzioni di aggregazione, come tutti gli altri valori d'altronde, 
+        possono essere affiancate da altre funzioni di aggregazione:</p>
+      <p class="codicevb2">SELECT COUNT(*) AS totale, COUNT(nome) AS nomi, COUNT(DISTINCT 
+        nome) AS nomi_unici<br>
+        FROM dipendenti WHERE ruolo='Direttore'</p>
+      <p>Restituir&agrave; una riga composta da tre campi:</p>
+      <ol>
+        <li><b>totale</b> conterr&agrave; il numero complessivo di righe della 
+          tabella dipendenti in cui il ruolo sia Direttore;</li>
+        <li><b>nomi</b> conterr&agrave; il numero di nomi dei dipendenti, escludendo 
+          i valori Null e quelli che non corrispondono a Direttore;</li>
+        <li><b>nomi_unici</b> conterr&agrave; invece il numero di nomi univoci, 
+          contanto solo una volta quelli duplicati, escludendo quelli (anzi quella, 
+          vista l'esclusione dei duplicati) con valori Null e ruolo non corrispondente 
+          a Direttore.</li>
+      </ol>
+      <hr class="codicevb2">
+      <p>Un'altra funzione di aggregazione molto comune &egrave; <b>SUM</b> che, 
+        come dice il nome, riporta la somma dei valori presi in esame; come per 
+        tutte le altre funzioni di aggregazione il procedimento &egrave; sempre 
+        lo stesso, utilizzando il nome di un campo e un predicato ALL o DISTINCT. 
+        A differenza della precedente funzione, questa e le successive non <b>consentono 
+        di specificare l'asterisco</b> per indicare tutti i valori del criterio 
+        e pertanto i valori Null sono sempre esclusi. Vediamo qualche esempio 
+        di funzionamento:</p>
+      <p class="codicevb2">SELECT SUM(stipendio) AS somma FROM dipendenti<br>
+        WHERE ruolo='Impiegati'</p>
+      <p>Riporter&agrave; la somma dei dati presenti nella colonna stipendio della 
+        tabella dipendenti in cui il ruolo corrisponde a Impiegati. Sono esclusi 
+        tutti i valori Null.</p>
+      <p>Questa funzione lavorer&agrave; soltanto su valori numerici interi o 
+        decimali e restituir&agrave; errore in caso di dati di tipo carattere.</p>
+      <hr class="codicevb2">
+      <p>Molto similare alla precedente &egrave; la funzione <b>AVG</b>, utilizzata 
+        per calcolare il valore medio di un campo; opera soltanto su valori numerici 
+        ed il suo funzionamento &egrave; molto semplice:</p>
+      <p class="codicevb2">SELECT AVG(stipendio) AS media FROM dipendenti<br>
+        WHERE ruolo='Impiegati'</p>
+      <p>Restituir&agrave; lo stipendio medio di tutti gli impiegati presenti 
+        nella tabella dipendenti. Non avendo specificato il predicato sar&agrave; 
+        assunto il valore predefinito ALL che include tutte le righe nel calcolo. 
+        Specificando invece il predicato DISTINCT otterremo un calcolo differente:</p>
+      <p class="codicevb2">SELECT AVG(DISTINCT stipendio) AS media FROM dipendenti<br>
+        WHERE ruolo='Impiegati'</p>
+      <p>Sar&agrave; infatti riportato il valore dello stipendio medio per mansione 
+        degli impiegati; cercher&ograve; di essere pi&ugrave; chiaro: se la tabella 
+        dipendenti contenesse 10 impiegati pagati 1000 e 3 impiegati pagati 3000 
+        il valore restituito sar&agrave; calcolato come media tra 1000 e 3000, 
+        riportando quindi il valore di 2000. Se non avessimo specificato il predicato 
+        DISTINCT il calcolo avrebbe restituito il valore 1000*10 + 3000*3 risultando 
+        quindi il valore di 1461.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>&Egrave; importante capire questa differenza perch&eacute; potrebbe produrre 
+        risultati inaspettati.</p>
+      <hr class="codicevb2">
+      <p>Restano le ultime due funzioni di aggregazione: <b>MIN</b> e <b>MAX</b> 
+        che, come dicono i loro nomi, restituiscono rispettivamente il valore 
+        minimo ed il valore massimo dell'insieme richiesto. Queste due funzioni 
+        lavorano bene sia su campi numerici che su campi di tipo carattere.</p>
+      <p class="codicevb2">SELECT MIN(nome) AS primo, MAX(nome) AS ultimo FROM 
+        dipendenti</p>
+      <p>Restituir&agrave; il primo e l'ultimo alfabeticamente dei dipendenti, 
+        cio&egrave; quello in cui il campo nome apparir&agrave; in prima posizione 
+        e quello che sar&agrave; in ultima se le righe venissero ordinate.</p>
+      <p>Come per le altre funzioni &egrave; possibile specificare il predicato 
+        ALL o DISTINCT ma in entrambi i casi di queste due funzioni il loro effetto 
+        &egrave; inutile; l'inclusione o l'esclusione non comporta alcuna differenza; 
+        saranno sempre e comunque recuperati il primo e l'ultimo.</p>
+      <p class="codicevb2">SELECT MIN(stipendio) AS povero, MAX(stipendio) AS 
+        ricco FROM dipendenti</p>
+      <p>Naturalmente &egrave; possibile effettuare la stessa interrogazione anche 
+        su dati numerici e, nel nostro esempio, recuperare lo stipendio minimo 
+        e lo stipendio massimo di tutti i dipendenti.</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --><!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        15 Marzo 2004<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice della sezione Database</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

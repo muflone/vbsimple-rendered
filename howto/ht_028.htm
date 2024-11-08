@@ -1,0 +1,252 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Controllare la combinazione CTRL+ALT+CANC</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Controllare la combinazione 
+    CTRL+ALT+CANC<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --> 
+        1<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>In alcuni programmi che svolgono operazioni critiche in cui &egrave; 
+        fondamentale non interrompere l'esecuzione, pu&ograve; essere necessario 
+        disabilitare la combinazione di tasti CTRL+ALT+CANC e riabilitarla in 
+        seguito.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Quest'operazione &egrave; semplicissima in Visual Basic e viene effettuata 
+        mediante l'utilizzo di una funzione <a href="../glossary/a.htm#API">API</a> 
+        gi&agrave; vista in un <a href="ht_021.htm">altro HowTo</a>. La funzione 
+        API da sfruttare &egrave; la <i>SystemParametersInfo</i> che comanda alcune 
+        funzioni interne del sistema.</p>
+      <p><img src="../images/howto/howto028_01.jpg" width="194" height="46" align="right" alt="Figura 1">Passiamo 
+        subito allo sviluppo del progetto, e inseriamo sopra un form una <i>CheckBox</i><img src="../images/controls/checkbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>ControllaCheck</b> con il testo <i><b>&quot;Disabilita la finestra 
+        di CTRL+ALT+CANC&quot;</b></i>. Il click e l'attivazione/disattivazione 
+        della CheckBox determina la possibilit&agrave; di sfruttare la combinazione 
+        di tasti per terminare un programma.</p>
+      <p>Il codice di questo progetto si compone di pochissime righe:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Declare Function SystemParametersInfo Lib &quot;USER32&quot; 
+          Alias &quot;SystemParametersInfoA&quot; (ByVal uAction As Long, ByVal 
+          uParam As Long, ByVal lpvParam As Any, ByVal fuWinIni As Long) As Long</li>
+        <li>Private Const SPIF_SENDCHANGE = &amp;H2</li>
+        <li></li>
+        <li>Private Sub ControllaCheck_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SystemParametersInfo 97, ControllaCheck.Value 
+          = vbChecked, ByVal 0&amp;, SPIF_SENDCHANGE</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Abbiamo infatti dichiarato solamente una funzione ed una <a href="../glossary/c.htm#COSTANTE">costante</a> 
+        <img src="../images/ide/costante.gif" width="16" height="16" align="absmiddle"> 
+        API e richiamata la funzione all'interno dell'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle">Click 
+        sulla <i>CheckBox</i> <b>ControllaCheck</b>.</p>
+      <p>Alla riga 3 abbiamo la dichiarazione della funzione <i>SystemParametersInfo</i> 
+        che permette di modificare alcuni valori di sistema.<br>
+        La funzione richiede una serie di valori per specificare il tipo di operazione 
+        da effettuare e un ultimo valore per specificare il modo in cui tali modifiche 
+        saranno notificate agli altri programmi.</p>
+      <p>Alla riga 4 abbiamo una costante API di nome <b>SPIF_SENDCHANGE</b> che 
+        verr&agrave; utilizzata dalla funzione SystemParametersInfo per specificare 
+        il tipo di notifica dei cambiamenti. Essa, appunto, indica una modifica 
+        semplice che non va ad alterare alcun file di sistema.</p>
+      <p>Nel momento in cui l'utente seleziona o deseleziona la CheckBox scatta 
+        il suo evento Click. Per cui, all'interno della routine collegata all'evento, 
+        inseriremo la chiamata alla funzione API che modifica il valore di sistema.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La funzione <i>SystemParametersInfo</i> richiede un primo parametro numerico 
+        (<i>uAction</i>) che indica il tipo di operazione da effettuare: il valore 
+        che controlla la combinazione di tasti CTRL+ALT+CANC &egrave; il numero 
+        97 e non ha una costante API corrispondente.<br>
+        Il secondo parametro richiesto dalla funzione indica il valore da assegnare 
+        (<i>uParam</i>) all'operazione scelta e nel nostro caso indicher&agrave; 
+        se attivare o disattivare la combinazione di tasti. Il terzo parametro 
+        indica delle informazioni aggiuntive da inviare al sistema (<i>lpvParam</i>) 
+        ma non sar&agrave; utilizzato in questa operazione.<br>
+        L'ultimo parametro richiesto dalla funzione API determina la notifica 
+        delle modifiche da inviare agli altri programmi (<i>fuWinIni</i>). Abbiamo 
+        dichiarato una costante apposita per quest'operazione: <i><b>SPIF_SENDCHANGE</b></i>.</p>
+      <p>Riassumendo, alla funzione saranno passati i valori 97 (uAction), l'espressione 
+        booleana ControllaCheck = True (<i>uParam</i>), il valore ByVal 0&amp; 
+        (<i>lpvParam</i>) poich&eacute; questo parametro non sar&agrave; necessario 
+        in quest'operazione ed infine la costante di notifica <b>SPIF_SENDCHANGE</b> 
+        (<i>fuWinIni</i>).</p>
+      <p>Possiamo adesso eseguire il progetto.<br>
+        Nel momento in cui la CheckBox &egrave; disattivata, la pressione dei 
+        tasti CTRL+ALT+CANC richiamer&agrave; la finestra <i><b>Termina applicazione</b></i> 
+        di Windows.</p>
+      <p align="center"><img src="../images/howto/howto028_02.png" width="318" height="226" alt="Figura 2"><br>
+        <b>Figura 2</b></p>
+      <p>Se invece la CheckBox &egrave; selezionata, ogni pressione della combinazione 
+        dei tre tasti sar&agrave; inutile, e non sar&agrave; possibile richiamare 
+        la finestra <i><b>Termina applicazione</b></i> in nessun modo.<br>
+        <br>
+      </p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Naturalmente si consiglia di non abusare di questa funzione poich&eacute; 
+        a volte la finestra <i><b>Termina applicazione</b></i> &egrave; l'unica 
+        soluzione per liberare il computer da un programma bloccato. &Egrave; 
+        inoltre fondamentale ricordarsi di sbloccare la combinazione di tasti 
+        alla chiusura del programma. Infatti quest'operazione non sar&agrave; 
+        effettuata automaticamente all'uscita del programma che la comanda.</p>
+      <p><img src="../images/notes.gif" width="56" height="57" align="left"><b class="colorerosso">Nota 
+        bene!</b> <br>
+        Abbiamo ricevuto decine di segnalazioni che questo codice non funziona 
+        nei sistemi <i>Windows NT/2000/XP</i>. Si tratta di un comportamento normalissimo 
+        perch&eacute; tali sistemi sono nati come sistemi operativi Server e non 
+        per la utenza domestica. In un sistema server la possibilit&agrave; che 
+        un'applicazione di alto livello blocchi o alteri il comportamento di una 
+        macchina &egrave; assolutamente intollerabile. In poche parole &egrave; 
+        il sistema operativo a comandare, a differenza dei sistemi <i>Windows 
+        9x/ME</i>.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        19 Febbraio 2001<br>
+        Nota del 24 Dicembre 2002<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

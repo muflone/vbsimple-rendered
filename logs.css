@@ -1,0 +1,13 @@
+ul {
+  position : relative;
+  left : -2%;
+  max-width : 50%;
+  list-style-type: none;
+; font-family: "Courier New", Courier, mono; font-size: 9pt
+}
+.log0 {  color: #CC00CC; background-color: #FFFFFF; }
+.log1 {  color: #CC3300; background-color: #F0F0F0; }
+.log2 {  color: #660066; background-color: #E0FFFF; }
+.log3 {  color: #005000; background-color: #FFFFE0; }
+.log4 {  color: #660000; background-color: #ECECFF; }
+.log5 {  color: #3333CC; background-color: #DCFFDC; }

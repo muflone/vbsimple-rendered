@@ -1,0 +1,223 @@
+<html><!-- #BeginTemplate "/Templates/Corso Base2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 3 del Corso Base</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso base - Lezione <!-- #BeginEditable "LEZIONE" -->3<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/base.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="bas_03.htm#STEP1">Introduzione alla programmazione ad oggetti</a>.</li>
+  <li><a href="bas_03.htm#STEP2">Le classi e le istanze</a>.</li>
+  <li><a href="bas_03.htm#STEP3">Gli eventi</a>.</li>
+  <li><a href="bas_03.htm#STEP4">I moduli</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><a name="STEP1"></a>Il concetto di <a href="../glossary/p.htm#PROGRAMMAZIONEADOGGETTI">programmazione 
+        ad oggetti</a> risale ai primi anni '80. &Egrave; una tecnica alternativa 
+        alla normale programmazione modulare.</p>
+      <p>La programmazione ad oggetti si fonda sul concetto di <a href="../glossary/c.htm#CLASSE">classe</a> 
+        <img src="../images/ide/classe.gif" width="16" height="16" align="absmiddle">, 
+        un modello di dati che pu&ograve; essere sfruttato per generare tanti 
+        esempi di strutture dati. Per esempio esiste una classe animale a cui 
+        appartengono tutti gli animali del pianeta. La classe animale serve per 
+        identificare e <i>costruire</i> tutti gli animali.</p>
+      <p><a name="STEP2"></a>La classe &egrave; la base della programmazione ad 
+        oggetti. Una classe &egrave; una struttura che al suo interno contiene 
+        degli elementi detti <a href="../glossary/m.htm#MEMBRO">membri</a>. Questi 
+        possono essere semplici dati o funzioni interne.</p>
+      <p>Trasformiamo tutta questa teoria in esempi pratici? Ok.<br>
+        Una classe &egrave; un esempio di dati che deve essere usato per generare 
+        degli elementi di questa natura. Una classe <b>motocicletta</b> &egrave; 
+        un modello per tutte le motociclette. Dentro la classe motocicletta abbiamo 
+        dei parametri detti <a href="../glossary/p.htm#PROPRIETA">propriet&agrave;</a> 
+        <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle">. 
+        Ogni motocicletta ha un suo colore, una velocit&agrave; massima, un tipo 
+        di sedile, ecc...</p>
+      <p>Ma ogni tipo di motocicletta &egrave; diverso da un'altra. La classe 
+        motocicletta &egrave; la base su cui si basano tutte le motociclette. 
+        I singoli esemplari di motocicletta sono delle copie del modello base. 
+        In programmazione il modello si chiama classe, mentre i singoli esemplari 
+        si chiamano <a href="../glossary/o.htm#OGGETTO">oggetti</a> e sono <a href="../glossary/i.htm#ISTANZA">istanze</a> 
+        della classe. Le caratteristiche di un oggetto (di una singola moto) non 
+        influenzano minimamente le caratteristiche degli altri oggetti. Il colore 
+        di una moto rossa non ha nulla a che vedere con il colore di una moto 
+        verde. La caratteristica del colore &egrave; in programmazione una propriet&agrave; 
+        della classe. Ogni oggetto avr&agrave; le sue propriet&agrave;, indipendenti 
+        dagli altri oggetti.</p>
+      <p>Ma ogni motocicletta ha anche delle funzioni comuni a tutte le motociclette: 
+        l'atto dell'accelerare, del frenare, del fermarsi, ecc... Il corrispondente 
+        di questi atti in programmazione si chiama funzioni, e specificatamente 
+        nella programmazione ad oggetti si chiama <a href="../glossary/m.htm#METODO">metodo</a> 
+        <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle">. 
+        Come le propriet&agrave; anche i metodi sono indipendenti dagli altri 
+        esemplari di oggetto. Sarebbe assurdo se, quando una motocicletta frena, 
+        tutte le motociclette del mondo frenassero.</p>
+      <p>Sia le propriet&agrave; che i metodi di una classe sono i membri contenuti 
+        in tale classe.<br>
+        Per accedere da Visual Basic ad una propriet&agrave; o ad un metodo &egrave; 
+        necessario fornire il nome dell'oggetto a cui ci si riferisce seguito 
+        da un punto e dal nome del membro (propriet&agrave; o metodo). Tuttavia 
+        alcune propriet&agrave; o metodi non possono essere richiamati direttamente, 
+        ma bisogna seguire delle scelte implementative obbligatorie. Per esempio 
+        non esiste un modo di passare dalla velocit&agrave; 50 Km/h a 150 Km/h 
+        senza usare l'acceleratore. Non esiste un modo di modificare la velocit&agrave; 
+        direttamente, ma ci sar&agrave; un metodo che si occuper&agrave; di fare 
+        le operazioni giuste per accelerare. La velocit&agrave; pu&ograve; essere 
+        considerata una propriet&agrave; di <b>sola lettura</b>, poich&eacute; 
+        sar&agrave; possibile leggerne il valore sul cruscotto, ma non sar&agrave; 
+        possibile modificarla direttamente. In programmazione esistono anche propriet&agrave; 
+        di <b>sola scrittura</b> e propriet&agrave; leggibili e scrivibili.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><a name="STEP3"></a>Visual Basic, cos&igrave; come altri linguaggi, usa 
+        collegare delle decisioni all'intervenire di certe situazioni. Per esempio 
+        alcuni modelli di moto al momento dell'accensione delle luci direzionali 
+        fanno un suono per avvertire di questo stato. Ma questo non avviene non 
+        per tutte le moto. Come fare a gestire queste situazioni?<br>
+        In programmazione allo scatenarsi di certe situazioni (come l'accensione 
+        delle luci direzionali) viene eseguito un <a href="../glossary/e.htm#EVENTO">evento</a> 
+        <img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle">. 
+        Poi i singoli oggetti reagiscono in maniera differente ad ogni evento. 
+        Il programmatore pu&ograve; e deve sfruttare gli eventi provenienti dall'oggetto 
+        per operare di conseguenza. Nell'esempio precedente all'atto dell'accensione 
+        delle luci viene lanciato un evento di nome LuciAccese. Il produttore 
+        della moto pu&ograve; decidere se una moto deve fare qualcosa in particolare 
+        nella situazioni di luci accese. Nel nostro caso faremo produrre al cruscotto 
+        un suono di avvertimento.</p>
+      <p>Le classi possono essere anche essere usate come modello per crearne 
+        altre, pi&ugrave; specifiche o in parte diverse, al fine di sviluppare 
+        oggetti di genere diverso. Questa operazione di replica di classi &egrave; 
+        detta <a href="../glossary/s.htm#SUBCLASSING">subclassing</a>.</p>
+      <p><a name="STEP4"></a>Un concetto abbastanza diverso dalla classe &egrave; 
+        il <a href="../glossary/m.htm#MODULO">modulo</a> <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle">. 
+        Quest'ultimo pu&ograve; contenere valori e funzioni libere, che possono 
+        essere sfruttate da chiunque e non soltanto da un oggetto. Un esempio 
+        pratico si pu&ograve; fare con i semafori, i quali funzionano sempre e 
+        comunque, in presenza di traffico, sia in assenza di movimento. Il semaforo 
+        funziona sempre ed in ogni caso e chiunque pu&ograve; guardare il suo 
+        stato, sia i motociclisti, sia gli automobilisti, sia i passanti.</p>
+      <p>I dati presenti in un modulo sono tipicamente globali, cio&egrave; accessibili 
+        a qualunque parte del programma, sebbene sia possibile restringere questo 
+        campo a determinate parti del programma.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->Affrontati questi argomenti, propedeutici 
+      per una buona comprensione dei meccanismi di Visual Basic, possiamo affrontare 
+      serenamente e con divertimento la pratica delle nozioni finora imparate.<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        24 Ottobre 2000<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="bas_02.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna alla seconda lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="bas_04.htm">Vai 
+      alla quarta lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

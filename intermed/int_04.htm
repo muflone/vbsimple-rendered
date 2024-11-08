@@ -1,0 +1,317 @@
+<html><!-- #BeginTemplate "/Templates/Corso Intermedio2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 4 del Corso Intermedio</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso Intermedio - Lezione <!-- #BeginEditable "LEZIONE" -->4<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/intermed.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="int_04.htm#STEP1">L'interfaccia utente di base</a>.</li>
+  <li><a href="int_04.htm#STEP2">La generalizzazione del codice</a>.</li>
+  <li><a href="int_04.htm#STEP3">Le funzioni Len e LenB</a>.</li>
+  <li><a href="int_04.htm#STEP4">Le stringhe a lungezza fissa</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p><a name="STEP1"></a>In questa lezione finalmente procederemo con l'implementazione 
+        vera e propria del progetto discusso nelle lezioni precedenti. Cominceremo 
+        naturalmente dal posizionare i controlli sulla superficie del form definendo 
+        l'interfaccia utente.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/lezioni/int02_07.png" width="347" height="200" align="right" alt="Figura 1">Rivediamo 
+        nella figura a fianco il nostro form come dovr&agrave; apparire. </p>
+      <p>La sezione sinistra conterr&agrave; una <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>lblFiltraBrani</b> e la corrispondente <i>ComboBox</i><img src="../images/controls/combobox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>cboFiltraBrani</b>.</p>
+      <p>Seguono in maniera del tutto similare la <i>Label</i> di nome <b>lblFiltraAutori</b> 
+        e la <i>ComboBox</i> di nome <b>cboFiltraAutori</b> ed infine la coppia 
+        <b>lblFiltraCD</b> e <b>cboFiltraCD</b>. Tutte le ComboBox avranno la 
+        propriet&agrave; <i>Style</i> impostata a <i><b>0 - Dropdown Combo</b></i> 
+        in modo da consentire all'utente la digitazione di dati o la ricerca dall'elenco.</p>
+      <p>Possiamo notare sin da subito che abbiamo iniziato ad usare le <a href="../info/info_16.htm">convenzioni 
+        di denominazione</a> dei controlli (e pi&ugrave; avanti nelle variabili) 
+        al fine di semplificare la scrittura e soprattutto la successiva rilettura 
+        del codice del progetto. &Egrave; infatti assolutamente normale a distanza 
+        di giorni o settimane dimenticare il corretto funzionamento del progetto. 
+        Le convenzioni di denominazione ci aiuteranno in questa ricomprensione.</p>
+      <p>Sotto il terno di <i>Label</i> e <i>ComboBox</i> avremo una <i>ListBox</i> 
+        <img src="../images/controls/listbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>lstBrani</b> che conterr&agrave; l'elenco dei brani recuperati 
+        dall'archivio dati.</p>
+      <p>La sezione a destra conterr&agrave; invece una serie di coppie <i>Label</i> 
+        - <i>TextBox</i> all'interno di un <i>Frame</i> <img src="../images/controls/frame.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>fraInformazioni</b>. Tali coppie hanno i nomi di <b>lblTitoloBrano</b> 
+        e <b>txtTitoloBrano</b>, <b>lblAutoreBrano</b> e <b>txtAutoreBrano</b>, 
+        <b>lblTitoloCD</b> e <b>txtTitoloCD</b>, <b>lblNumeroTraccia</b> e <b>txtNumeroTraccia</b>, 
+        <b>lblAnnoPubblicazione</b> e <b>txtAnnoPubblicazione</b>. L'ultima coppia 
+        si chiama <b>lblNote</b> e <b>txtNote</b>; la differenza dalle precedenti 
+        coppie sta nel fatto che la TextBox ha la propriet&agrave; <i>MultiLine</i> 
+        impostata su <i><b>True</b></i> per permettere l'inserimento di pi&ugrave; 
+        righe di testo nella stessa. Questa propriet&agrave; non &egrave; modificabile 
+        durante la <a href="../glossary/f.htm#FASEDIESECUZIONE">fase di esecuzione</a>.</p>
+      <p><img src="../images/lezioni/int04_01.png" width="347" height="200" align="right" alt="Figura 2">In 
+        fondo alla superficie del form sono presenti tre <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>cmdAggiungiBrano</b>, <b>cmdEliminaBrano</b> e <b>cmdModificaBrano</b>.</p>
+      <p>Viene illustrata a solo scopo dimostrativo la superficie del form con 
+        tutti i nomi dei controlli per semplificarne le posizioni.</p>
+      <p><a name="STEP2"></a>Al fine di prevenire errori durante l'esecuzione 
+        del programma limiteremo l'inserimento dei dati in base alla lunghezza 
+        di ogni membro del record. In altre parole abbiamo definito la lunghezza 
+        fissa del campo <b>Autore del brano</b> a 30 caratteri. Limiteremo quindi 
+        l'inserimento nella corrispondente casella di testo a 30 caratteri. Tale 
+        limite potr&agrave; essere impostato sia durante la <a href="../glossary/f.htm#FASEDIPROGETTAZIONE">fase 
+        di progettazione</a> che durante <a href="../glossary/f.htm#FASEDIESECUZIONE">la 
+        fase di esecuzione</a>.</p>
+      <p>Una buona regola durante la scrittura di un programma &egrave; quella 
+        di <b>generalizzare il funzionamento del codice</b>. In ragione di quanto 
+        detto al paragrafo precedente dovremmo applicare delle limitazioni nell'inserimento 
+        dei dati. Abbiamo la possibilit&agrave; di farlo sia durante la progettazione 
+        che durante l'esecuzione.</p>
+      <p>Abbiamo preferito farlo durante la fase di esecuzione per un banale motivo. 
+        Se volessimo modificare l'ampiezza dei campi del record della base dati 
+        non dovremmo occuparci di rintracciare quei controlli la cui corrispondente 
+        dimensione viene alterata.</p>
+      <p>In maniera analoga non disabiliteremo alcun controllo durante la fase 
+        di progettazione. Sar&agrave; pi&ugrave; agevole e flessibile farlo durante 
+        la fase di esecuzione in funzione delle diverse situazioni. Un'altra buona 
+        regola &egrave; quella di impostare durante la prima fase soltanto quelle 
+        propriet&agrave; non modificabili durante la fase di esecuzione.</p>
+      <p><a name="STEP3"></a>Effettueremo la limitazione nell'inserimento dei 
+        caratteri in base all'ampiezza definita nel campo del record, valutazione 
+        che effettueremo mediante l'uso della funzione <i><b>Len</b></i>, una 
+        delle pi&ugrave; utili e flessibili funzioni presenti in Visual Basic.</p>
+      <p>Essa &egrave; in grado di restituire l'esatta ampiezza di una stringa 
+        o di un dato di altro genere. Nel caso venisse utilizzata con una stringa 
+        essa riporter&agrave; il numero di caratteri di cui si compone la stringa; 
+        per tutti gli altri dati (variabili e costanti) di tipo standard o UDT 
+        riporta il numero di <a href="../glossary/b.htm#BYTE">bytes</a> <a href="../glossary/a.htm#ALLOCARE">allocati</a> 
+        per quel dato, almeno in linea teorica generale perch&eacute; per certi 
+        dati lo spazio di allocazione &egrave; maggiore di quello dichiarato; 
+        vedi anche le <a href="../info/info_04.htm">Informazioni aggiuntive sui 
+        tipi di dati</a>.</p>
+      <p>Il suo funzionamento &egrave; semplice quanto banale: baster&agrave; 
+        passare come unico argomento una stringa, una variabile o una costante 
+        di altro genere e se ne ricever&agrave; in ritorno il numero di caratteri 
+        (per una stringa) o il numero di bytes (per tutti gli altri tipi di dato).</p>
+      <p>La sua utilit&agrave; si rivela in tutti quei casi in cui si ritiene 
+        utile valutare la lunghezza di una stringa (ad esempio per verificare 
+        che essa non superi un certo numero di caratteri) oppure per conoscere 
+        l'ampiezza di un record, come nel nostro caso.</p>
+      <p>Un parente molto stretto della funzione <i><b>Len</b></i> &egrave; la 
+        funzione <i><b>LenB</b></i> la cui B aggiuntiva indica bytes. La funzione 
+        LenB restituisce sempre il numero di bytes occupati da una stringa, una 
+        variabile o una costante. Si differenzia dalla precedente nel caso che 
+        l'argomento passato sia una stringa; essa infatti non restituisce il numero 
+        di caratteri, ma il numero di bytes occupati da tale stringa (sempre in 
+        linea generale per&ograve;).</p>
+      <p>Poich&eacute; Visual Basic memorizza le stringhe sempre nel formato <a href="../glossary/u.htm#UNICODE">Unicode</a> 
+        (in opposizione al formato <a href="../glossary/a.htm#ANSI">ANSI</a>) 
+        con il quale ogni carattere &egrave; costituito da 2 bytes, &egrave; chiaro 
+        che mentre la prima funzione restituisce il <b>numero di caratteri</b> 
+        presenti nella stringa, la seconda restituisce il doppio di questo numero, 
+        ovvero il <b>numero di bytes</b> occupati dalla stessa stringa.</p>
+      <p>&Egrave; importante capire quando usare la prima e quando sfruttare la 
+        seconda funzione. In nove casi su 10 la prima funzione svolge il lavoro 
+        per cui &egrave; stata invocata. Infatti, sia che si tratti di stringhe 
+        che di altro genere di dati, quasi sempre non ci importa sapere quanta 
+        memoria &egrave; stata allocata a quella variabile, ma soltanto quanti 
+        caratteri &egrave; lunga la stringa o quanti caratteri dobbiamo riservare 
+        per salvare il contenuto di una variabile in un record.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Abbiamo accennato al fatto che Visual Basic memorizza le stringhe in 
+        formato Unicode piuttosto che in ANSI. Ebbene questo &egrave; vero in 
+        parte o per lo meno nelle viscere del sistema operativo. Nel momento in 
+        cui utilizziamo, leggiamo o modifichiamo una determinata stringa, la conversione 
+        bytes-&gt;caratteri avviene automaticamente ed in maniera del tutto invisibile 
+        come se stessimo lavorando con il formato ANSI.</p>
+      <p>Facciamo un esempio pratico: data la stringa &quot;ABCDE&quot; di 5 caratteri, 
+        sappiamo che in memoria lo spazio occupato da essa &egrave; il doppio 
+        del numero dei caratteri ovvero 10 bytes. Beh saperlo non ci cambia per 
+        nulla la vita. <img src="../images/icons/smile%20wink.gif" width="15" height="15" border="0" align="absmiddle"></p>
+      <p>Infatti tutte le operazioni su tale stringa avverranno nella maniera 
+        classica: il salvataggio della stessa su un file, la lettura e la modifica 
+        influenzano soltanto i caratteri della stringa. Se provassimo a scrivere 
+        tale stringa su un file di testo verrebbero scritto soltanto 5 caratteri 
+        ovvero 5 bytes. Idem si dica nel momento in cui leggessimo la stringa 
+        da un file di testo; sarebbero letti soltanto 5 bytes.<br>
+        &Egrave; soltanto una questione interna alla memoria e a Visual Basic 
+        che il programmatore pu&ograve; tranquillamente ignorare.</p>
+      <p>Diverso &egrave; il caso quando una stringa Visual Basic deve interagire 
+        con funzioni scritte in altri linguaggi. In tal caso la <i>conversione</i> 
+        non avviene in maniera automatica ma sar&agrave; compito dell'utente fornire 
+        la stringa nel formato richiesto.<br>
+        La funzione <i><b>LenB</b></i>, in genere davvero poco utilizzata si rivela 
+        un'arma decisiva durante le valutazioni di questo genere, ma si tratta 
+        di esempi fuori dal comune e soprattutto fuori dal Visual Basic puro.</p>
+      <p>Tornando al nostro progetto, utilizzeremo la funzione <i><b>Len</b></i> 
+        per richiedere, durante la fase di esecuzione, il numero di caratteri 
+        di ogni stringa del record definito in precedenza al fine di limitare 
+        all'utente l'inserimento di un numero di caratteri superiore.</p>
+      <p><a name="STEP4"></a>Abbiamo detto in precedenza che la mancata limitazione 
+        nell'inserimento di caratteri potrebbe generare degli errori. In realt&agrave; 
+        non &egrave; esattamente cos&igrave;, o meglio dire, lo sarebbe in una 
+        situazione differente dalla nostra.</p>
+      <p>Abbiamo infatti definito ed utilizzeremo un record a larghezza fissa 
+        in cui abbiamo specificato il numero di caratteri di ogni stringa al suo 
+        interno. Se, ad esempio assegnassimo al campo <b>strTitoloCD</b> una stringa 
+        lunga 500 caratteri non si genererebbe alcun errore ed il programma proseguirebbe 
+        in maniera del tutto normale.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>L'aver, infatti, definito una stringa a lunghezza fissa fa s&igrave; 
+        che essa non possa contenere un numero di caratteri inferiore o superiore. 
+        Gli eventuali caratteri in eccedenza sarebbero rimossi e non presi in 
+        considerazione.</p>
+      <p>In maniera del tutto analoga, se assegnassimo al campo <b>strTitoloCD</b> 
+        una stringa vuota ovvero una stringa di 0 caratteri, la lungezza della 
+        stringa contenuta in tale campo rimarrebbe comunque quella definita nell'UDT 
+        cio&egrave; 20 caratteri. Gli eventuali caratteri mancanti sarebbero autoticamente 
+        riempiti con spazi alla fine della stringa.</p>
+      <p>Tale genere di dato &egrave; detto infatti <i><b>stringa a lunghezza 
+        fissa</b></i> poich&eacute;, indipendentemente dal contenuto assegnato 
+        alla stringa, la sua lunghezza rimane comunque costante eliminando le 
+        parti in eccedenza o riempiendo le mancanze fino al raggiungimento della 
+        dimensione specificata durante la fase di progettazione.<br>
+        Risulter&agrave; adesso ancora pi&ugrave; chiaro il significato del termine 
+        record a dimensione fissa.</p>
+      <p>La decisione di limitare l'utente nell'inserimento di dati nelle caselle 
+        di testo non &egrave; pertanto legata a problemi di natura tecnica (ma 
+        potrebbe comunque esserlo in caso di una cattiva implementazione del codice) 
+        ma soltanto ad un fattore prettamente umano. Riteniamo inutile e spiacevole 
+        <i><b>ingannare</b></i> l'utente dandogli la possibilit&agrave; di inserire 
+        qualunque testo ma poi troncargli i dati da lui inseriti in funzione delle 
+        decisioni del programmatore.</p>
+      <p>La limitazione nell'inserimento, allora, sar&agrave; una risposta automatica 
+        al tentativo dell'utente di immettere di un numero di caratteri superiori 
+        a quello definito dal programmatore. Gli sar&agrave; semplicemente impedito 
+        e lui stesso si convincer&agrave; ad abbreviare le informazioni.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->Inizieremo nella prossima lezione lo 
+      studio del codice per l'implementazione di base del progetto analizzato 
+      fino ad ora per archiviare i brani dei CD.<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        6 Febbraio 2002<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="int_03.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna alla terza lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="int_05.htm">Vai 
+      alla quinta lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

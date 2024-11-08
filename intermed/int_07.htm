@@ -1,0 +1,347 @@
+<html><!-- #BeginTemplate "/Templates/Corso Intermedio.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 7 del Corso Intermedio</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso Intermedio - Lezione <!-- #BeginEditable "LEZIONE" -->7<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/intermed.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="int_07.htm#STEP1">L'istruzione Get per la lettura di dati da file</a>.</li>
+  <li><a href="int_07.htm#STEP2">Le funzioni Space e String</a>.</li>
+  <li><a href="int_07.htm#STEP3">Effettuare il ciclo di lettura</a>.</li>
+  <li><a href="int_07.htm#STEP4">La funzione EOF</a>.</li>
+  <li><a href="int_07.htm#STEP5">Inserimento di righe in un controllo ListBox</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p><a name="STEP1"></a>Fino alla lezione precedente ci siamo preoccupati 
+        di scrivere i dati dei brani caricati, all'interno del file di dati mediante 
+        l'istruzione <b>Put</b>. L'operazione si completa con l'istruzione dedicata 
+        alla lettura di dati da un file binario: <b>Get</b>. Il suo funzionamento 
+        &egrave; pressocch&eacute; uguale a quello dell'istruzione Put la cui 
+        sintassi &egrave; qui descritta:</p>
+      <p class="codicevb2">Get [#]<b>&lt;numerofile&gt;</b>, [<b>&lt;posizione&gt;</b>], 
+        <b>&lt;buffer&gt;</b></p>
+      <p>Il primo dei tre argomenti &egrave; il numero del file gi&agrave; aperto 
+        mediante istruzione Open e pu&ograve; - ma non necessariamente - essere 
+        preceduto dal simbolo #; l'argomento &egrave; comunque obbligatorio e 
+        determina il file da cui verranno letti i dati. Il secondo argomento &egrave; 
+        opzionale e indica la posizione da cui leggere i dati, espressa in numero 
+        del record all'interno del file ad accesso Random, oppure in numero di 
+        bytes per files ad accesso Binary. Se il secondo argomento non viene specificato, 
+        sar&agrave; letto il record successivo a quello dell'ultima operazione 
+        di lettura dal file.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il terzo argomento &egrave; obbligatorio e rappresenta il <a href="../glossary/b.htm#BUFFER"><b>buffer</b></a> 
+        in cui saranno memorizzati i dati provenienti dal file. Tale area dovr&agrave; 
+        essere precedentemente preparata, in quanto la quantit&agrave; di dati 
+        letti dal file dipender&agrave; dall'ampiezza della suddetta variabile. 
+        Ci&ograve; significa che per effettuare la lettura dovr&agrave; essere 
+        utilizzata una variabile dello stesso tipo contenuto nel file. Ad esempio 
+        se durante la scrittura dei dati &egrave; stata utilizzata una variabile 
+        di tipo <i>Integer</i>, per effettuare una corretta lettura dovr&agrave; 
+        essere utilizzata una variabile dello stesso tipo.</p>
+      <p>Particolare cura deve essere dedicata nella lettura di stringhe da un 
+        file ad accesso Random o Binary. Come detto, la variabile che ospiter&agrave; 
+        i dati letti dal file dovr&agrave; essere dello stesso tipo scritto all'interno 
+        del file; a ci&ograve; si aggiunge la necessit&agrave; di specificare, 
+        prima della lettura, l'ampiezza della stringa da leggere.</p>
+      <p>Le <i>stringhe a lunghezza fissa</i>, come spiegato nella <a href="int_04.htm#STEP4">lezione 
+        4</a>, mantengono comunque l'ampiezza specificata durante la progettazione, 
+        indipendentemente dai dati in esse contenuti, riempiendo con spazi a destra 
+        o troncando la stringa ove necessario. Ci&ograve; comporta una scrittura 
+        ed una lettura sempre uguale dal file poich&eacute; la dimensione del 
+        buffer &egrave; comunque costante.</p>
+      <p><a name="STEP2"></a>Utilizzando invece <i>stringhe a lunghezza variabile</i>, 
+        ovvero stringhe senza una lunghezza dichiarata &egrave; richiesta l'allocazione 
+        del buffer prima dell'operazione di lettura; ci&ograve; pu&ograve; essere 
+        fatto semplicemente assegnando alla variabile buffer una stringa lunga 
+        tanti caratteri quanti sono i bytes da leggere dal file; ad esempio assegnando 
+        la stringa &quot;abc&quot; ad una variabile buffer utilizzata dall'istruzione 
+        Get determina il risultato dell'operazione di lettura; saranno infatti 
+        letti 3 bytes dal file o anche meno nel caso ci trovassimo alla fine del 
+        file, mentre la parte eccedente del buffer sar&agrave; riempita con caratteri 
+        dal valore <a href="../glossary/a.htm#ASCII">ASCII</a> 0.</p>
+      <p>Per preparare le variabili da utilizzare quali buffer di lettura di files 
+        binari due funzioni si rivelano due ottimi alleati per semplicit&agrave; 
+        d'uso: si tratta delle funzioni <b>Space</b> e <b>String</b>. Entrambe 
+        restituiscono in uscita una stringa composta da tanti caratteri quanti 
+        ne sono specificati nel primo argomento; la definizione delle due funzioni 
+        &egrave; mostrata di seguito:</p>
+      <p class="codicevb2">Function <b>Space</b>(Number As Long)<br>
+        Function <b>String</b>(Number As Long, Character) </p>
+      <p>La prima delle due funzioni, <b>Space</b>, richiede un solo argomento: 
+        il numero di caratteri che comporranno la stringa restituita. Essa sar&agrave; 
+        infatti costituita di tanti spazi quanti specificati nel richiamo della 
+        funzione. Nessun altro carattere sar&agrave; presente nella stringa restituita.</p>
+      <p>La seconda funzione, <b>String</b>, da non confondere con il tipo di 
+        dati, richiede invece due argomenti: il primo specifica il numero di caratteri 
+        che comporranno la stringa mentre il secondo specifica il carattere di 
+        cui sar&agrave; costituita la stringa; tale argomento pu&ograve; essere 
+        un numero, corrispondente al codice ASCII del carattere da replicare altrimenti 
+        pu&ograve; essere una stringa il cui primo carattere verr&agrave; replicato 
+        tante volte. Entrambe le chiamate alla funzione sono valide e restituiscono 
+        tutte il medesimo risultato:</p>
+      <p class="codicevb2">MsgBox String(10, 65)<br>
+        MsgBox String(10, Asc(&quot;A&quot;))<br>
+        MsgBox String(10, &quot;A&quot;)</p>
+      <p>Aggiungiamo anche la precisazione che di entrambe le funzioni esistono 
+        due versioni: la prima &egrave; quella appena accennata, che restituisce 
+        in uscita un valore <a href="../news/news_11.htm">Variant</a> di sottotipo 
+        String, quindi un tipo di dati con un'ampia occupazione; la seconda versione 
+        delle funzioni &egrave; quella che restituisce valori String senza utilizzare 
+        Variant e le funzioni prendono il nome di <b>Space$ </b>e <b>String$</b>.</p>
+      <hr>
+      <p><a name="STEP3"></a>Tornando al nostro progetto, ci occuperemo di rileggere 
+        i dati salvati nella lezione precedente avendo utilizzato l'istruzione 
+        Put. L'operazione utilizzer&agrave; semplicemente l'istruzione Get vista 
+        in precedenza. Sar&agrave; specificato come buffer di lettura lo stesso 
+        record a dimensione fissa utilizzato per la scrittura; nell'esempio precedente 
+        era dato dalla variabile <b>udtDiscoCorrente</b>. Pertanto, subito dopo 
+        aver effettuato l'apertura del file utilizzeremo una riga simile alla 
+        seguente:</p>
+      <p class="codicevb2">Get #intFileDati, , udtDiscoCorrente</p>
+      <p>Cos&igrave; facendo leggeremo un record dal file aperto e identificato 
+        dal numero <b>intFileDati</b> e lo inseriremo nella variabile <b>udtDiscoCorrente</b>.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Quest'operazione tuttavia la lettura di un singolo record dall'archivio. 
+        Il problema rimanente &egrave; quello di determinare quante righe &egrave; 
+        necessario leggere dal file e quindi ripetere l'istruzione tante volte. 
+        Potremmo sfruttare la funzione LOF (Length Of File) trattata nella lezione 
+        precedente e stabilire un ciclo For..Next per il numero di elementi contenuti 
+        nel file dato dalla sempilce divisione della lunghezza del file per la 
+        lunghezza della singola riga:</p>
+      <p class="codicevb2">Elementi = LOF(intFileDati) / Len(udtDiscoCorrente)</p>
+      <p>Quest'operazione tuttavia richiede l'uso di due variabili: la prima che 
+        contenga il numero di elementi presenti nel file e la seconda da utilizzare 
+        come contatore nel ciclo di lettura, come segue:</p>
+      <p class="codicevb2">Elementi = LOF(intFileDati) / Len(udtDiscoCorrente)<br>
+        For intLoop = 1 To Elementi<br>
+        &nbsp;&nbsp;Get #intFileDati, , udtDiscoCorrente<br>
+        &nbsp;&nbsp;... <br>
+        Next intLoop</p>
+      <p></p>
+      <hr>
+      <p><a name="STEP4"></a>Un'aiuto efficace pu&ograve; fornircelo la funzione 
+        <i>EOF</i> (End Of File), la quale restituir&agrave; un valore booleano 
+        ad indicare che il punto di lettura sia arrivato alla fine del file, oltre 
+        la quale non resta nulla da leggere. La sintassi della funzione &egrave; 
+        molto semplice:</p>
+      <p class="codicevb2">Function EOF(FileNumber As Integer) As Boolean</p>
+      <p><b>FileNumber</b> naturalmente indica il numero del file gi&agrave; aperto 
+        con l'istruzione Open. Potremmo quindi sostituire il ciclo precedente 
+        con questo, ben pi&ugrave; semplice:</p>
+      <p class="codicevb2"> Get #intFileDati, , udtDiscoCorrente<br>
+        Do While Not EOF(intFileDati)<br>
+        &nbsp;&nbsp;... <br>
+        &nbsp;&nbsp;Get #intFileDati, , udtDiscoCorrente<br>
+        Loop</p>
+      <p>Non sar&agrave; necessario predeterminare il numero di record presenti 
+        nel file e non sar&agrave; altres&igrave; necessario stabilire un contatore 
+        per tutti gli elementi del file. Il ciclo infatti &egrave; preceduto da 
+        una prima lettura dal file, in seguito alla quale inizia il ciclo vero 
+        e proprio che durer&agrave; fintanto che il punto di lettura non raggiunger&agrave; 
+        la fine del file. Naturalmente all'interno del ciclo dovr&agrave; essere 
+        presente un'ennesima istruzione di lettura.</p>
+      <p>Raggiunta l'ultima riga, un'ennesima istruzione di lettura recuperer&agrave; 
+        un record vuoto e sposter&agrave; il puntatore di lettura alla fine del 
+        file, cosicch&eacute; la funzione <i>EOF</i> restituir&agrave; valore 
+        True ed il ciclo si interromper&agrave;.</p>
+      <hr>
+      <p><a name="STEP5"></a>In entrambi gli esempi tra una lettura e l'altra 
+        sono indicate con i puntini (...) le istruzioni che caricheranno il brano 
+        recuperato nell'elenco dei brani. L'operazione di inserimento di una riga 
+        in un controllo <b>ListBox</b> solitamente si compone di una sola riga 
+        che richiama il metodo <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        <i><b>AddItem</b></i> dell'elenco:</p>
+      <p class="codicevb2">Lista.AddItem(Item As String, [Index])</p>
+      <p><i>Item</i> specifica il testo da inserire nell'elenco ed &egrave; l'unico 
+        argomento obbligatorio; <i>Index</i> invece specifica la posizione nella 
+        quale l'elemento sar&agrave; inserito: il valore 0 specifica il primo 
+        elemento, 1 il secondo e cos&igrave; via... Se l'argomento Index non viene 
+        specificato, l'elemento viene aggiunto in coda alla lista. &Egrave; quindi 
+        possibile recuperare l'indice che l'ultimo elemento inserito ha assunto, 
+        semplicemente leggendo la propriet&agrave; <i><b>NewIndex</b></i> del 
+        controllo.</p>
+      <p>Inoltre, ad ogni elemento nella lista &egrave; possibile associare un 
+        numero non univoco per pura comodit&agrave; del programmatore. Nessuna 
+        funzione utiilzzer&agrave; tale numero ed ogni elemento nella lista assumer&agrave; 
+        valore 0. La propriet&agrave; che specifca tale numero &egrave; <i><b>ItemData</b></i> 
+        e richiede l'indice dell'elemento di cui recuperare o assegnare il numero. 
+        Un'operazione di inserimento pu&ograve; essere la seguente:</p>
+      <p class="codicevb2">Lista.AddItem &quot;ciao&quot;<br>
+        Lista.ItemData(Lista.NewIndex) = 10</p>
+      <p>Quest'operazione inserisce l'elemento <b>&quot;ciao&quot;</b> in fondo 
+        alla lista ed assegna allo stesso un valore numerico di <b>10</b>.</p>
+      <hr>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Vediamo quindi il codice completo del cico di lettura aggiornato con 
+        gli ultimi concetti trattati, evidenziati dal colore blu:</p>
+      <ol class="codicevb">
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;With udtDiscoCorrente</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtTitoloBrano.MaxLength = Len(.strTitoloBrano)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtAutoreBrano.MaxLength = Len(.strAutore)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtTitoloCD.MaxLength = Len(.strTitoloCD)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtNote.MaxLength = Len(.strNote)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtNumeroTraccia.MaxLength = 2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtAnnoPubblicazione.MaxLength = 4</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;cmdEliminaBrano.Enabled = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;cmdModificaBrano.Enabled = False</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;intFileDati = FreeFile</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Open App.Path & "\BRANI.DAT" For Random As 
+          intFileDati Len = Len(udtDiscoCorrente)</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;Get #intFileDati, , udtDiscoCorrente</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;Do While Not EOF(intFileDati)</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If .blnEliminato 
+          = False Then</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstBrani.AddItem 
+          .strTitoloBrano</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstBrani.ItemData(lstBrani.NewIndex) 
+          = .intIndice</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get #intFileDati, 
+          , udtDiscoCorrente</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;Loop</li>
+        <li>&nbsp;&nbsp;End With</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Il valore <i>ItemData</i> che assegneremo a ciascun brano recuperato 
+        dal file corrisponde all'indice del brano, anch'esso recuperato dal file. 
+        Inizialmente potr&agrave; sembrare inutile ma la sua utilit&agrave; si 
+        potr&agrave; notare quando l'elenco verr&agrave; modificato, ad esempio 
+        per ordinarlo per titolo, anzich&eacute; per indice.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->Il codice fin qui trattato si limita 
+      ad inserire una riga nell'elenco dei brani ed a ricaricare l'elenco all'avvio 
+      del programma. Vedremo nella prossima lezione come effettuare una lettura 
+      in maniera casuale, ovvero una lettura mirata ad un elemento specifico, 
+      recuperato dall'elenco gi&agrave; caricato.<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI </a><br>
+        16 Settembre 2003<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+     </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="int_06.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna alla sesta lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="int_08.htm">Vai 
+      all'ottava lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

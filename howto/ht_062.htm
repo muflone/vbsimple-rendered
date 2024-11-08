@@ -1,0 +1,396 @@
+<html>
+<!-- #BeginTemplate "/Templates/HowTo.dwt" --> 
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Avviare un programma esterno ed attenderne la chiusura</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr> 
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home 
+        Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> 
+        <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Avviare un programma esterno 
+    ed attenderne la chiusura<!-- #EndEditable --> <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script>
+      <!-- #BeginEditable "CORPO" --> 
+      <p>Abbiamo gi&agrave; visto <a href="../activity/act_12.htm">in un altro 
+        articolo</a> come avviare un programma esterno utilizzando la funzione 
+        <b>Shell</b>; tuttavia quella soluzione in molti casi non si rivela la 
+        scelta migliore; infatti la funzione Shell avvia il programma e immediatamente 
+        ritorna al progetto VB in modo da continuare l'esecuzione in maniera sincrona 
+        al processo esterno in esecuzione.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>In molti casi invece &egrave; necessario avviare un processo esterno ed 
+        attendere finch&eacute; questo non sia terminato; per far ci&ograve; la 
+        funzione Shell si rivela del tutto inutile ed &egrave; necessario procedere 
+        in un'altra maniera. Vedremo in questo articolo come sviluppare la cosiddetta 
+        Shell sospensiva che, per comodit&agrave;, racchiuderemo all'interno di 
+        un unico modulo<!-- #BeginLibraryItem "/Library/Modulo.lbi" --> <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+<!-- #EndLibraryItem -->standard.</p>
+      <p>Inizieremo proprio da questo modulo e dal codice vero e proprio e solo 
+        dopo passeremo alla dimostrazione del funzionamento:</p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Type STARTUPINFO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;cb As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpReserved As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpDesktop As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpTitle As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;dwX As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;dwY As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;dwXSize As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;dwYSize As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;dwXCountChars As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;dwYCountChars As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;dwFillAttribute As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;dwFlags As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wShowWindow As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;cbReserved2 As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpReserved2 As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hStdInput As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hStdOutput As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hStdError As Long</li>
+        <li>End Type</li>
+        <li></li>
+      </ol>
+      <p>La struttura <i><b>STARTUPINFO</b></i> verr&agrave; utilizzata per specificare 
+        le opzioni sul processo esterno da avviare; per ragioni di completezza 
+        riportiamo la descrizione di tutti i campi poich&eacute; possono rendersi 
+        utili in situazioni differenti da quella riportata: <i><b>cb</b></i> indicher&agrave; 
+        la lunghezza in bytes della struttura e rappresenta un valore obbligatorio; 
+        <i> <b>lpReserved</b></i> indica un valore riservato e deve essere 0; 
+        <i> <b>lpDesktop</b></i> in un ambiente multidesktop indicher&agrave; 
+        il nome del desktop sul quale visualizzare la nuova applicazione; <i><b>lpTitle</b></i> 
+        (valido solo per le applicazioni console) specifica il titolo mostrato 
+        sulla finestra della console; <i><b>dwX</b></i> e <i><b>dwY</b></i> indicano 
+        la coordinata della nuova finestra da mostrare; <b><i>dwXSize</i></b> 
+        e <i><b>dwYSize</b></i> indicheranno la larghezza e l'altezza della finestra 
+        da visualizzare; <i><b>dwXCountChars</b></i> e <i><b>dwYCountChars</b></i> 
+        (validi solo per le applicazioni console) specificheranno il numero di 
+        caratteri per riga e per colonna nella nuova finestra console; <i><b>dwFillAttribute</b></i> 
+        (valido solo per le applicazioni console) consente di specificare la combinazione 
+        di colori di testo e di sfondo; <i><b>dwFlags</b></i> comanda l'uso degli 
+        altri campi e pu&ograve; contenere una combinazione qualsiasi dei valori 
+        riportati di seguito; <i><b>wShowWindow</b></i> consente la specifica 
+        della modalit&agrave; di visualizzazione della nuova finestra (corrisponde 
+        ai valori dell'enumerazione <!-- #BeginLibraryItem "/Library/Enumerazione.lbi" --><img src="../images/ide/enumeraz.gif" width="16" height="16" align="absmiddle">&nbsp;<!-- #EndLibraryItem -->&nbsp;<i>VbAppWinStyle</i>); 
+        <i> <b>cbReserved2</b></i> e <i><b>lpReserved2</b></i> rappresentano valori 
+        riservati e non andrebbero specificati; infine <i><b>hStdInput</b></i>, 
+        <i> <b>hStdOutput</b></i> e <i><b>hStdError</b></i> consentono di specificare 
+        i 3 <a href="../glossary/h.htm#HANDLE">handle</a> per lo <i>Standard Input</i>, 
+        <i>Standard Output</i> e <i>Standard Error</i>.</p>
+      <p>Il valore del campo dwFlags pu&ograve; combinare una o pi&ugrave; delle 
+        seguenti costanti:</p>
+      <ul>
+        <li><span class="fixed">STARTF_USESHOWWINDOW (&amp;H1)</span><br>
+          Specifica l'uso del valore nel campo wShowWindow;</li>
+        <li><span class="fixed">STARTF_USESIZE (&amp;H2)</span><br>
+          Specifica l'uso dei campi dwXSize e dwYSize;</li>
+        <li><span class="fixed">STARTF_USEPOSITION (&amp;H4)</span><br>
+          Specifica l'uso dei campi dwX e dwY;</li>
+        <li><span class="fixed">STARTF_USECOUNTCHARS (&amp;H8)</span><br>
+          Specifica l'uso dei campi dwXCountChars e dwYCountChars;</li>
+        <li><span class="fixed">STARTF_USEFILLATTRIBUTE (&amp;H10)</span><br>
+          Specifica l'uso del campo dwFillAttribute;</li>
+        <li><span class="fixed">STARTF_RUNFULLSCREEN (&amp;H20)</span><br>
+          Specifica l'avvio dell'applicazione console a pieno schermo;</li>
+        <li><span class="fixed">STARTF_FORCEONFEEDBACK (&amp;H40)</span><br>
+          Attiva forzatamente il cursore di attesa durante l'avvio dell'applicazione;</li>
+        <li><span class="fixed">STARTF_FORCEOFFFEEDBACK (&amp;H80)</span><br>
+          Disattiva forzatamente il cursore di attesa durante l'avvio;</li>
+        <li><span class="fixed">STARTF_USESTDHANDLES (&amp;H100)</span><br>
+          Specifica l'uso dei campi hStdInput, hStdOutput e hStdError.</li>
+      </ul>
+      <p><!-- #BeginLibraryItem "/Library/Notes1.lbi" --><img src="../images/notes.gif" width="56" height="57" align="left"><!-- #EndLibraryItem -->Pi&ugrave; 
+        di una documentazione riporta un'erronea rappresentazione del campo lpReserved2 
+        all'interno della struttura STARTUPINFO; l'errore nasce da una cattiva 
+        traduzione della definizione C della struttura stessa che riporta <span class="fixed">LPBYTE 
+        lpReserved2</span> (LPBYTE indica Long Pointer Byte cio&egrave; un puntatore 
+        ad un array di bytes e quindi un normale puntatore a 32 bit) e che &egrave; 
+        stato a volte riportato come <span class="fixed">lpReserved2 As Byte</span>. 
+        Al di l&agrave; del fatto che funzioni comunque, a causa dell'allineamento 
+        ai 32 bit effettuato da Visual Basic, la struttura riportata in questo 
+        articolo &egrave; tuttavia quella corretta.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <ol start="24" class="codicevb">
+        <li>Private Type PROCESS_INFORMATION</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hProcess As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hThread As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;dwProcessId As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;dwThreadId As Long</li>
+        <li>End Type</li>
+        <li></li>
+        <li>Private Declare Function CreateProcess Lib &quot;kernel32&quot; Alias 
+          &quot;CreateProcessA&quot; (ByVal lpApplicationName As Long, ByVal lpCommandLine 
+          As String, ByVal lpProcessAttributes As Long, ByVal lpThreadAttributes 
+          As Long, ByVal bInheritHandles As Long, ByVal dwCreationFlags As Long, 
+          ByVal lpEnvironment As Long, ByVal lpCurrentDirectory As String, lpStartupInfo 
+          As STARTUPINFO, lpProcessInformation As PROCESS_INFORMATION) As Long</li>
+        <li>Private Declare Function WaitForSingleObject Lib &quot;kernel32&quot; 
+          (ByVal hHandle As Long, ByVal dwMilliseconds As Long) As Long</li>
+        <li>Private Declare Function CloseHandle Lib &quot;kernel32&quot; (ByVal 
+          hObject As Long) As Long</li>
+        <li></li>
+        <li>Public Const WAIT_TIMEOUT As Long = 258&amp;</li>
+        <li>Private Const WAIT_FAILED As Long = &amp;HFFFFFFFF</li>
+        <li>Private Const NORMAL_PRIORITY_CLASS = &amp;H20&amp;</li>
+        <li></li>
+      </ol>
+      <p>La struttura <i><b>PROCESS_INFORMATION</b></i> &egrave; utilizzata solo 
+        per contenere gli <a href="../glossary/h.htm#HANDLE">handle</a> e i numeri 
+        identificativi del <a href="../info/info_14.htm">processo e del thread</a> 
+        eseguiti; seguono le dichiarazioni delle tre funzioni utilizzate in seguito: 
+        <b>CreateProcess</b> si occuper&agrave; della reale apertura del processo 
+        esterno e richiede fra l'altro la specifica della cartella da cui avviare 
+        l'applicazione e della priorit&agrave; da assegnare al nuovo processo. 
+        <b>WaitForSingleObject</b> &egrave; una funzione generica utilizzata solitamente 
+        per altri scopi ed in questo caso sfruttata per forzare l'attesa fintanto 
+        che il processo esterno non venga chiuso oppure per il periodo di tempo 
+        indicato. <b>CloseHandle</b> infine serve solamente per chiudere un handle 
+        aperto.</p>
+      <p>La costante <i><b>WAIT_TIMEOUT</b></i> corrisponde al valore di ritorno 
+        di WaitForSingleObject in caso di supero del limite di tempo di attesa 
+        massimo; <i><b>WAIT_FAILED</b></i> corrisponde invece alla situazione 
+        di errore durante l'attesa; la costante <i><b>NORMAL_PRIORITY_CLASS</b></i> 
+        rappresenta la priorit&agrave; normale e verr&agrave; indicata nella chiamata 
+        alla funzione <i>CreateProcess</i>. Sono state omesse per brevit&agrave; 
+        le dichiarazioni delle costanti STARTF indicate in precedenza.</p>
+      <ol start="39" class="codicevb">
+        <li>Public Function ShellSospensiva(ByVal CommandLine As String, ByVal 
+          Directory As String, ByVal WindowStyle As VbAppWinStyle, ByVal WaitTime 
+          As Long) As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim proc As PROCESS_INFORMATION</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim Start As STARTUPINFO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;With Start</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.dwFlags = STARTF_USESHOWWINDOW</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.wShowWindow = WindowStyle</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.cb = Len(Start)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call CreateProcess(0, CommandLine, 0, 0, 0, 
+          NORMAL_PRIORITY_CLASS, 0, Directory, Start, proc)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If proc.hProcess &lt;&gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShellSospensiva = 
+          WaitForSingleObject(proc.hProcess, WaitTime)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call CloseHandle(proc.hProcess)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShellSospensiva = 
+          WAIT_FAILED </li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+      </ol>
+      <p>L'intera funzione <b>ShellSospensiva</b> si compone di poche e semplici 
+        righe e richiede la specifica del processo da eseguire, della cartella 
+        da cui avviarlo, dello stile della finestra da visualizzare e del tempo 
+        massimo per l'attesa in millisecondi; &egrave; possibile specificare un 
+        tempo di attesa infinito semplicemente fornendo il valore -1 (corrispondente 
+        al valore della costante <i> <b>INFINITE</b></i> &amp;HFFFFFFFF).</p>
+      <p>Inizializzata la variabile Start con la specifica della modalit&agrave; 
+        di visualizzazione e lunghezza della struttura (righe 42-46) potremo procedere 
+        al richiamo del processo esterno indicato dal parametro CommandLine eseguito 
+        a partire dal percorso specificato nel parametro Directory; la priorit&agrave; 
+        &egrave; quella normale. L'avvio del processo assegner&agrave; un valore 
+        ai campi della variabile proc; la funzione <i>WaitForSingleObject</i> 
+        attender&agrave; la variazione (<b>signaling</b>) dello stato dell'handle 
+        <i>hProcess</i> per il periodo di tempo indicato dal parametro WaitTime. 
+        Il valore di ritorno della funzione corrisponde a 0 in caso di signaling 
+        regolare, altrimenti <i>WAIT_TIMEOUT</i> in caso di supero del tempo massimo 
+        o altri valori in caso di errore; pertanto la funzione ShellSospensiva 
+        restituir&agrave; il valore di ritorno di <i>WaitForSingleObject</i> e 
+        soltanto lo 0 indicher&agrave; l'assenza di errori ed il completamento 
+        regolare.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Superata questa attesa (per signaling o per timeout) sar&agrave; necessario 
+        chiudere l'handle mediante <i>CloseHandle</i> del processo avviato (riga 
+        50). In caso di impossibilit&agrave; ad avviare il processo esterno sar&agrave; 
+        restituito il valore di ritorno corrispondente all'errore durante l'attesa 
+        <i> <b>WAIT_FAILED</b></i>. </p>
+      <hr>
+      <p><img src="../images/howto/howto062_1.png" width="355" height="69" align="right" alt="Figura 1">La 
+        dimostrazione del funzionamento di questa semplice funzione &egrave; quasi 
+        banale: sull'unico form sono posizionate due etichette, due caselle di 
+        testo di nome <b>txtProcesso</b> e <b>txtAttesa</b> ed un unico pulsante 
+        di nome <b>cmdAvvia</b>.</p>
+      <p>Alla pressione del pulsante Avvia sar&agrave; eseguito il seguente codice:</p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub cmdAvvia_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Select Case ShellSospensiva(txtProcesso.Text, 
+          CurDir$, vbNormalFocus, CLng(txtAttesa.Text))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 0: MsgBox &quot;Esecuzione 
+          completata con esito positivo&quot;, vbInformation</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case WAIT_TIMEOUT: 
+          MsgBox &quot;Supero del tempo massimo di attesa&quot;, vbExclamation</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case Else: MsgBox 
+          &quot;Si &egrave; verificato un errore&quot;, vbCritical</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End Select</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Semplicemente chiamando la funzione ShellSospensiva e fornendo il percorso 
+        del processo da eseguire (<b>txtProcesso</b>), la cartella da cui avviare 
+        (in questo esempio stiamo usando la cartella corrente), lo stile della 
+        finestra (normale e attiva) ed il tempo di attesa in millisecondi (<b>txtAttesa</b>) 
+        sar&agrave; possibile recuperare il valore di ritorno per stabilire l'accaduto: 
+        il valore 0 indica l'assenza di errore e la normale apertura e chiusura 
+        del processo entro il tempo massimo; il valore corrispondente alla costante 
+        <i> <b>WAIT_TIMEOUT</b></i> indica l'avvio dell'applicazione ma il superamento 
+        del tempo massimo di attesa; qualsiasi altro valore indica una situazione 
+        di errore. Per ciascuno di questi valori sar&agrave; mostrato un avviso 
+        differente:</p>
+      <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr>
+          <td width="33%" align="center" valign="top"><img src="../images/howto/howto062_2.png" width="216" height="95" alt="Figura 2"><br>
+            <b>Figura 2</b></td>
+          <td align="center" valign="top" width="34%"><img src="../images/howto/howto062_3.png" width="198" height="95" alt="Figura 3"><br>
+            <b>Figura 3</b></td>
+          <td width="33%" align="center" valign="top"><img src="../images/howto/howto062_4.png" width="150" height="95" alt="Figura 4"><br>
+            <b>Figura 4</b></td>
+        </tr>
+      </table>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>L'utilizzo di questa funzione semplifica notevolmente i problemi legati 
+        alla sincronizzazione di processi esterni poich&eacute; essendo in grado 
+        di determinare l'attesa o il superamento di questo tempo &egrave; possibile 
+        effettuare le scelte opportune.</p>
+      <!-- #EndEditable --> 
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        24 Aprile 2004<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem --> </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr> 
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+<hr width="80%">
+<table width="100%">
+  <tr> 
+    <td width="100%" align="center"> 
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""--> </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate -->
+</html>

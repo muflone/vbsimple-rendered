@@ -1,0 +1,441 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Utilizzare un file di risorse per progetti multilingua</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Utilizzare un file di risorse 
+    per progetti multilingua<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <ul>
+        <li><a href="ht_016.htm#STEP1">Creare i files di risorse</a>.</li>
+        <li><a href="ht_016.htm#STEP2">Compilare i files di risorse</a>.</li>
+        <li><a href="ht_016.htm#STEP3">Utilizzo dei files di risorse</a>.</li>
+        <li><a href="ht_016.htm#STEP4">Seconda versione del progetto</a>.</li>
+      </ul>
+      <p align="right" class="size3"></p>
+      <p><a name="STEP1"></a>Avete mai pensato di scrivere un programma multilingua?<br>
+        Ovvero un programma in due o pi&ugrave; versioni: una per la lingua italiana 
+        ed un'altra per la lingua inglese? Il tutto, ovviamente, senza dover riscrivere 
+        tutte le Caption ed i testi presenti all'interno del progetto originale. 
+        Ebbene, per realizzare un'operazione del genere &egrave; fondamentale 
+        (e pi&ugrave; semplice) utilizzare un <a href="../glossary/f.htm#FILEDIRISORSE">file 
+        di risorse</a> <img src="../images/ide/risorse.gif" width="16" height="16" align="absmiddle"> 
+        differente per ogni versione.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Un file di risorse &egrave; un un file di testo, con <a href="../glossary/e.htm#ESTENSIONIVB">estensione 
+        RC</a> che deve essere compilato e trasformato in un file <a href="../glossary/b.htm#BINARIO">binario</a> 
+        con estensione RES. La compilazione viene effettuata mediante un piccolo 
+        compilatore di risorse, fornito assieme a Visual Basic 5.</p>
+      <p>Prima di cominciare un progetto vero e proprio &egrave; necessario possedere 
+        due piccole immagini che utilizzeremo in questo progetto. Le due immagini 
+        sono le seguenti:</p>
+      <p align="center"><a href="../dativari/ht_016dat.zip"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0">PULS1.BMP<br>
+        <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0">PULS2.BMP</a> 
+      </p>
+      <p>Baster&agrave; scaricarle (premere il tasto destro del mouse sopra i 
+        due collegamenti e scegliere la voce <i>&quot;Salva Oggetto con nome&quot;</i>) 
+        ed inserirle nella stessa cartella del nostro progetto, avendo cura di 
+        mantenere i nomi originali.</p>
+      <p> Sicuri di possedere le due immagini sopra prepariamo due semplici file 
+        di risorse, uno in lingua italiana ed uno in lingua inglese.</p>
+      <p>Apriamo una finestra di Blocco Note e scriviamoci dentro queste righe:</p>
+      <ol class="codicevb" start="1">
+        <li>#define STRTITOLOPROGRAMMA&nbsp;&nbsp;1001</li>
+        <li>#define STRPULSANTE1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1002</li>
+        <li>#define STRPULSANTE2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1003</li>
+        <li>#define IMGPULSANTE1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2001</li>
+        <li>#define IMGPULSANTE2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2002</li>
+        <li></li>
+        <li>STRINGTABLE</li>
+        <li>BEGIN</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;STRTITOLOPROGRAMMA,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Utilizzo 
+          di un file di risorse&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;STRPULSANTE1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Primo 
+          pulsante&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;STRPULSANTE2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Secondo 
+          pulsante&quot;</li>
+        <li>END</li>
+        <li></li>
+        <li>IMG_PULSANTE1 BITMAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;PULS1.BMP&quot;</li>
+        <li>IMG_PULSANTE2 BITMAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;PULS2.BMP&quot;</li>
+      </ol>
+      <p>Il contenuto di questo file si riassume in pochi semplici concetti: alle 
+        prime cinque righe vengono dichiarati cinque nomi simbolici ai numeri 
+        1001, 1002, 1003, 2001 e 2002.</p>
+      <p>Alla riga 7 inizia una sezione di stinghe, definite alle righe 9, 10 
+        e 11. Ogni costante simbolica rappresenta il proprio numero ed ai tre 
+        numeri viene associata una stringa. </p>
+      <p>Alle ultime due righe vengono definite due immagini, PULS1.BMP e PULS2.BMP. 
+        Anch'esse sono legate al loro nome simbolico indicante i numeri 2001 e 
+        2002.</p>
+      <p>Per una migliore comprensione di questi concetti si rimanda alle <a href="../info/info_10.htm">informazioni 
+        aggiuntive sui file di risorse</a>.</p>
+      <p>Scritte le informazioni salviamo il documento utilizzando il comando 
+        <i>&quot;Salva con nome&quot;</i> del menu <b>File</b> del Blocco Note, 
+        come mostrato nella figura 1.</p>
+      <p align="center"><img src="../images/howto/howto016_01.png" width="454" height="243" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <p>Fatto questo, apparir&agrave; la finestra di dialogo per la scelta del 
+        nome di file da assegnare al documento. Inserire nella casella apposita, 
+        il nome <b>RIS_ITA</b>, come visibile nella figura 2.</p>
+      <p align="center"><img src="../images/howto/howto016_02.jpg" width="342" height="213" alt="Figura 2"><br>
+        <b>Figura 2</b></p>
+      <p>Eseguiamo un'operazione simile per il file di risorse in lingua inglese.<br>
+        Apriamo un'altra finestra di Blocco Note e digitiamo il codice seguente:</p>
+      <ol class="codicevb" start="1">
+        <li>#define STRTITOLOPROGRAMMA&nbsp;&nbsp;1001</li>
+        <li>#define STRPULSANTE1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1002</li>
+        <li>#define STRPULSANTE2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1003</li>
+        <li>#define IMGPULSANTE1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2001</li>
+        <li>#define IMGPULSANTE2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2002</li>
+        <li></li>
+        <li>STRINGTABLE</li>
+        <li>BEGIN</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;STRTITOLOPROGRAMMA,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;How 
+          to use a resource file&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;STRPULSANTE1,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;First 
+          Button&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;STRPULSANTE2,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Second 
+          Button&quot;</li>
+        <li>END</li>
+        <li></li>
+        <li>IMG_PULSANTE1 BITMAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;PULS1.BMP&quot;</li>
+        <li>IMG_PULSANTE2 BITMAP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;PULS2.BMP&quot;</li>
+      </ol>
+      <p>Questo codice differisce dal precedente solo per il contenuto delle righe 
+        9, 10 e 11.<br>
+        Salviamo questo documento come <b>RIS_ING</b>.</p>
+      <p>Al termine di queste due operazioni dovremmo avere all'interno della 
+        nostra cartella 4 files:</p>
+      <ul>
+        <li><b>PULS1.BMP</b></li>
+        <li><b>PULS2.BMP</b></li>
+        <li><b>RIS_ITA.TXT</b></li>
+        <li><b>RIS_ING.TXT</b></li>
+      </ul>
+      <hr>
+      <p><a name="STEP2"></a>Generati i due files di risorse &egrave; necessario 
+        <a href="../glossary/c.htm#COMPILAZIONE">compilarli</a> con il compilatore 
+        apposito fornito con Visual Basic. Prima di effettuare questa operazione 
+        &egrave; necessario ridenominare i due files di risorse con la loro estensione 
+        corretta: RC.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Per far questo apriamo un Prompt di MS-DOS, posizioniamoci nella cartella 
+        del nostro progetto (nel nostro caso C:\Windows\Desktop\HowTo016) e ridenominiamo 
+        i due files utilizzando il comando REN come mostrato nella figura 3.</p>
+      <p align="center"><img src="../images/howto/howto016_03.png" width="492" height="309" alt="Figura 3"><br>
+        <b>Figura 3</b></p>
+      <p>I comandi che abbiamo eseguito sono:</p>
+      <ul>
+        <li><code><b>CD C:\WINDOWS\DESKTOP\HOWTO016</b></code><br>
+          Per posizionarci sulla cartella del progetto</li>
+        <li><code><b>DIR</b></code><br>
+          Per dare uno sguardo al contenuto della cartella</li>
+        <li><code><b>REN RIS_ITA.TXT *.RC</b></code><br>
+          Ridenominare il file RIS_ITA.TXT in RIS_ITA.RC</li>
+        <li><code><b>REN RIS_ING.TXT *.RC</b></code><br>
+          Ridenominare il file RIS_ING.TXT in RIS_ING.RC</li>
+      </ul>
+      <p>Da questo momento in poi la nostra cartella conterr&agrave; questi files:</p>
+      <ul>
+        <li><b>PULS1.BMP</b></li>
+        <li><b>PULS2.BMP</b></li>
+        <li><b>RIS_ITA.RC</b></li>
+        <li><b>RIS_ING.RC</b></li>
+      </ul>
+      <p>Solo adesso possiamo provvedere alla compilazione dei due file di risorse 
+        RC.<br>
+        Prima di effettuarla, per&ograve;, dobbiamo conoscere la posizione della 
+        cartella ove risiede Visual Basic: nel nostro esempio &egrave; <b>&quot;C:\Programmi\DevStudio\Visual 
+        Basic 5&quot;</b>.<br>
+        Trovata la cartella, sempre nella stessa finestra DOS, scriviamo un paio 
+        di comandi:</p>
+      <ul>
+        <li><code><b>CD &quot;C:\PROGRAMMI\DEVSTUDIO\VISUAL BASIC 5&quot;</b></code><br>
+          Per posizionarci nella cartella di Visual Basic</li>
+        <li><code><b>CD WIZARDS</b></code><br>
+          Per entrare nella cartella WIZARDS</li>
+        <li><code><b>CD RESOURCE</b></code><br>
+          Per entrare nella cartella RESOURCE</li>
+        <li><code><b>RC /R C:\WINDOWS\DESKTOP\HOWTO016\RIS_ITA.RC</b></code><br>
+          Compilare il file RIS_ITA.RC</li>
+        <li><code><b>RC /R C:\WINDOWS\DESKTOP\HOWTO016\RIS_ITA.RC</b></code><br>
+          Compilare il file RIS_ING.RC</li>
+      </ul>
+      <p>Al termine dell'operazione il contenuto della finestra DOS dovrebbe essere 
+        simile a quello mostrato nella figura 4.</p>
+      <p align="center"><img src="../images/howto/howto016_04.png" width="492" height="309" alt="Figura 4"><br>
+        <b>Figura 4</b></p>
+      <p>A seguito del comando di compilazione non dovrebbe comparire alcun messaggio.<br>
+        La presenza di qualche messaggio indica la presenza di errori nel codice 
+        del file di risorse o la mancanza delle immagini PULS1.BMP o PULS2.BMP.</p>
+      <p>Per avere la completa sicurezza che la compilazione &egrave; andata a 
+        buon fine dovremmo avere all'interno della cartella del progetto i seguenti 
+        files:</p>
+      <ul>
+        <li><b>PULS1.BMP</b></li>
+        <li><b>PULS2.BMP</b></li>
+        <li><b>RIS_ITA.RC</b></li>
+        <li><b>RIS_ING.RC</b></li>
+        <li><b>RIS_ITA.RES</b></li>
+        <li><b>RIS_ING.RES</b></li>
+      </ul>
+      <hr>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><a name="STEP3"></a>Adesso che abbiamo creato e compilato i due files 
+        di risorse .RES <img src="../images/ide/risorse.gif" width="16" height="16" align="absmiddle"> 
+        &egrave; necessario creare i due progetti per sfruttare tali files.</p>
+      <p><img src="../images/howto/howto016_05.jpg" width="214" height="78" align="right" alt="Figura 5">Creato 
+        un nuovo progetto, inseriamo sopra un form due <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>Pulsante1</b> e <b>Pulsante2</b>. Impostiamo per essi la propriet&agrave; 
+        <i>Style</i> a 1-Graphical. Questa propriet&agrave; comunica al <a href="../glossary/c.htm#COMPILAZIONE">compilatore</a> 
+        che il pulsante ospiter&agrave; sopra d'esso un'immagine grafica.</p>
+      <p>Prima di scrivere il codice che gestisce le risorse inseriamo un riferimento 
+        al primo file di risorse, quelle italiane (<b>RIS_ITA.RES</b>).<br>
+        Selezioniamo dal menu <b>Progetto</b> la voce <i>Inserisci file</i> ed 
+        apparir&agrave; la finestra di dialogo per la selezione del file da inserire, 
+        che vediamo nella figura 6. Baster&agrave; selezionare il file di risorse 
+        voluto e premere il pulsante <b>Apri</b>.</p>
+      <p align="center"><img src="../images/howto/howto016_06.jpg" width="341" height="252" alt="Figura 6"> 
+        <br>
+        <b>Figura 6</b></p>
+      <p><img src="../images/howto/howto016_07.png" width="205" height="98" align="right" alt="Figura 7">Fatto 
+        questo, apparir&agrave; nella finestra di gestione dei progetti <img src="../images/ide/progetti.gif" width="16" height="16" align="absmiddle"> 
+        il riferimento al file di risorse <img src="../images/ide/risorse.gif" width="16" height="16" align="absmiddle"> 
+        nella categoria <i>Documenti correlati</i>.</p>
+      <p>&Egrave; importante ricordare che non &egrave; possibile inserire pi&ugrave; 
+        di un file di risorse per ogni progetto. Pertanto, per utilizzare le risorse 
+        in lingua inglese bisogner&agrave; creare un nuovo processo che conterr&agrave; 
+        il riferimento al file di risorse in lingua inglese.</p>
+      <p>Una volta inserito il riferimento al file di risorse, possiamo dedicarci 
+        alle poche righe di codice di questo progetto. Innanzitutto, per comodit&agrave;, 
+        dichiariamo delle <a href="../glossary/c.htm#COSTANTE">costanti</a> <img src="../images/ide/costante.gif" width="16" height="16" border="0" align="absmiddle"> 
+        corrispondenti a quelle specificate nel file di risorse:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Const STRTITOLOPROGRAMMA = 1001</li>
+        <li>Private Const STRPULSANTE1 = 1002</li>
+        <li>Private Const STRPULSANTE2 = 1003</li>
+        <li>Private Const IMG_PULSANTE1 = 2001</li>
+        <li>Private Const IMG_PULSANTE2 = 2002</li>
+        <li></li>
+      </ol>
+      <p>Le costanti alle righe 3-7 sono le medesime di quelle dichiarate nel 
+        file di risorse. &Egrave; una scelta implementativa molto comoda. Infatti, 
+        ad ogni risorsa &egrave; associato un numero, ma a livello di codice &egrave; 
+        pi&ugrave; facile e pi&ugrave; chiaro stabilire dei termini letterali 
+        indicanti il numero univoco della risorsa.</p>
+      <ol class="codicevb" start="9">
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Caption = LoadResString(STRTITOLOPROGRAMMA)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Pulsante1.Caption = LoadResString(STRPULSANTE1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Pulsante2.Caption = LoadResString(STRPULSANTE2)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set Pulsante1.Picture = LoadResPicture(IMG_PULSANTE1, 
+          vbResBitmap)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set Pulsante2.Picture = LoadResPicture(IMG_PULSANTE2, 
+          vbResBitmap)</li>
+        <li>End Sub</li>
+      </ol>
+      <p>E questo &egrave; il codice del programma. L'abbiamo inserito nell'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><i>Load</i> 
+        del form, cosicch&eacute; i valori vengano subito caricati dal file di 
+        risorse.</p>
+      <p>Alla riga 10 impostiamo la <i>Caption</i> del form: il suo valore &egrave; 
+        caricato dal file di risorse mediante l'istruzione <i><b>LoadResString</b></i> 
+        ed &egrave; identificato dal numero 1001 (riga 3).</p>
+      <p>Alle righe 11 e 12 effettuiamo un'operazione simile: impostiamo le <i>Caption</i> 
+        dei due pulsanti caricando i valori con numero 1002 e 1003 (righe 4 e 
+        5) dal file di risorse.</p>
+      <p>Alle righe 13 e 14, invece, carichiamo due immagini dal file di risorse 
+        mediante <b><i>LoadResPicture</i></b> ed impostiamo la propriet&agrave; 
+        <i>Picture</i> dei due pulsanti con tali immagini.</p>
+      <p>A differenza dell'istruzione <i>LoadResString</i>, la <i>LoadResPicture</i> 
+        richiede due parametri: il primo indica il numero della risorsa, mentre 
+        il secondo indica il tipo di immagine da caricare. Tale valore deve essere 
+        uno di quelli specificati nell'<a href="../glossary/e.htm#ENUMERAZIONE">enumerazione</a> 
+        <a href="../enum/030.htm"><b><i>LoadResConstants</i></b></a>: <b>vbResBitmap</b> 
+        per le immagini bitmap, <b>vbResIcon</b> per le icone e <b>vbResCursor</b> 
+        per i cursori del mouse.</p>
+      <p>Oltre alle due citate istruzioni per caricare risorse da un file, ne 
+        esiste una terza: <i>LoadResData</i> viene infatti utilizzata per caricare 
+        dati generici, non ben definiti, da un file di risorse, ad esempio suoni, 
+        video, etc...</p>
+      <p><img src="../images/howto/howto016_08.jpg" width="214" height="78" align="right" alt="Figura 8">Possiamo 
+        adesso provare il programma.<br>
+        In fase di esecuzione troviamo cambiate le <i>Caption</i> del form e dei 
+        due pulsanti e le immagini sopra i pulsanti.</p>
+      <hr>
+      <p><a name="STEP4"></a>Ma i nostri sforzi sarebbero stati vani se il risultato 
+        si limitasse a questo. E infatti non &egrave; cos&igrave;. Passiamo alla 
+        creazione dello stesso progetto in lingua inglese?</p>
+      <p>Possedendo gi&agrave; il file di risorse .RES compilato ci baster&agrave; 
+        creare un nuovo progetto e, sfruttanto la funzione <i>Inserisci file</i> 
+        del menu <b>Progetto</b>, inserire prima un riferimento al Form1 e poi 
+        al file di risorse in lingua inglese.</p>
+      <p><img src="../images/howto/howto016_09.jpg" width="214" height="78" align="right" alt="Figura 9">Fatto 
+        questo, baster&agrave; eseguire il progetto per ritrovarsi il testo gi&agrave; 
+        tradotto - nel nostro caso qundi le tre <i>Caption</i> - senza dover apportare 
+        nessuna modifica al codice.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>L'utilizzo dei files di risorse semplifica enormemente la revisione di 
+        un progetto per effettuare traduzioni o cambiamenti linguistici o grafici. 
+        Infatti il codice non viene minimamente influenzato: baster&agrave; fare 
+        riferimento al nuovo file di risorse e <a href="../glossary/c.htm#COMPILAZIONE">ricompilare</a> 
+        il progetto per avere una nuova versione del programma.</p>
+      <p>La stessa <a href="../glossary/m.htm#MICROSOFT">Microsoft</a>, per i 
+        suoi progetti multilingua, sfrutta i files di risorse ed inserisce tutte 
+        le risorse in un file di <a href="../glossary/l.htm#LIBRERIA">libreria</a>. 
+        Per cambiare lingua ad un programma baster&agrave; sostituire la DLL contenente 
+        le risorse, et voil&agrave;, il gioco &egrave; fatto.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        6 Gennaio 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

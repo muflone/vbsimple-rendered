@@ -1,0 +1,515 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Ottenere informazioni su un'unità disco FAT12/16</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Ottenere informazioni su 
+    un'unit&agrave; disco FAT12/16<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"> 
+        4<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Uno dei pi&ugrave; pesanti limiti di Visual Basic &egrave; quello di 
+        non permettere un accesso diretto alle unit&agrave; disco ad esempio per 
+        recuperare lo spazio libero in un disco floppy. Per queste finalit&agrave; 
+        ci viene incontro l'<a href="../glossary/a.htm#API">API</a> ma la sua 
+        gestione &egrave; abbastanza complessa.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Questo articolo si focalizza sul recupero delle informazioni generali 
+        su un'uint&agrave; disco FAT12 o FAT16, quali i dischi floppy o le vecchie 
+        partizioni MS-DOS. <b>Non funziona correttamente</b> con unit&agrave; 
+        FAT32, NTFS o CD; per questi sistemi sar&agrave; utilizzata una seconda 
+        soluzione, leggermente pi&ugrave; lenta di quella presentata in quest'articolo.</p>
+      <hr>
+      <p>Il codice non &egrave; molto semplice pertanto sar&agrave; spezzato in 
+        due forms ed un modulo di classe; cominceremo proprio da quest'ultimo:</p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private m_VolumeLabel As String</li>
+        <li>Private m_SerialNumber As Long</li>
+        <li>Private m_SectorsPerCluster As Long</li>
+        <li>Private m_BytesPerSector As Long</li>
+        <li>Private m_TotalClusters As Long</li>
+        <li>Private m_FreeClusters As Long</li>
+        <li>Private m_FileSystem As String</li>
+        <li>Private m_SelectedDrive As Long</li>
+        <li></li>
+      </ol>
+      <p>I membri privati dichiarati alle righe 3-10 saranno restituiti dalle 
+        propriet&agrave; pubbliche della <a href="../glossary/c.htm#CLASSE">classe</a> 
+        e non saranno inizialmente affrontate.</p>
+      <ol start="12" class="codicevb">
+        <li>Private Declare Function GetDiskFreeSpace Lib &quot;kernel32&quot; 
+          Alias &quot;GetDiskFreeSpaceA&quot; (ByVal lpRootPathName As String, 
+          lpSectorsPerCluster As Long, lpBytesPerSector As Long, lpNumberOfFreeClusters 
+          As Long, lpTotalNumberOfClusters As Long) As Long</li>
+        <li>Private Declare Function GetVolumeInformation Lib &quot;kernel32&quot; 
+          Alias &quot;GetVolumeInformationA&quot; (ByVal lpRootPathName As String, 
+          ByVal lpVolumeNameBuffer As String, ByVal nVolumeNameSize As Long, lpVolumeSerialNumber 
+          As Long, lpMaximumComponentLength As Long, lpFileSystemFlags As Long, 
+          ByVal lpFileSystemNameBuffer As String, ByVal nFileSystemNameSize As 
+          Long) As Long</li>
+      </ol>
+      <p>La funzione <i>GetDiskFreeSpace</i>, nonostante il nome, non restituisce 
+        lo spazio disponibile del disco ma riporta una serie di informazioni utili 
+        quali il numero di settori totali, il numero di <a href="../glossary/b.htm#BYTE">bytes</a> 
+        per settore, il numero di cluster totali e liberi. I suddetti dati saranno 
+        naturalmente memorizzati nelle variabili membro viste in precedenza.</p>
+      <p>La funzione <i>GetVolumeInformation</i> recupera altre informazioni non 
+        restituite dalla funzione precedente, quale l'etichetta, il numero di 
+        serie ed il tipo di <a href="../glossary/f.htm#FILESYSTEM">file system</a> 
+        del volume. </p>
+      <ol start="13" class="codicevb">
+        <li>Private Declare Function CreateFile Lib &quot;kernel32&quot; Alias 
+          &quot;CreateFileA&quot; (ByVal lpFileName As String, ByVal dwDesiredAccess 
+          As Long, ByVal dwShareMode As Long, ByVal lpSecurityAttributes As Long, 
+          ByVal dwCreationDisposition As Long, ByVal dwFlagsAndAttributes As Long, 
+          ByVal hTemplateFile As Long) As Long</li>
+        <li>Private Declare Function CloseHandle Lib &quot;kernel32&quot; (ByVal 
+          hObject As Long) As Long</li>
+        <li>Private Declare Function DeviceIoControl Lib &quot;kernel32&quot; 
+          (ByVal hDevice As Long, ByVal dwIoControlCode As Long, ByRef lpInBuffer 
+          As Any, ByVal nInBufferSize As Long, ByRef lpOutBuffer As Any, ByVal 
+          nOutBufferSize As Long, ByRef lpBytesReturned As Long, ByVal lpOverlapped 
+          As Long) As Long</li>
+        <li></li>
+      </ol>
+      <p>La funzione <i>CreateFile</i> dichiarata alla riga 13 &egrave; in realt&agrave; 
+        una delle funzioni pi&ugrave; complesse del sistema operativo e, nonostante 
+        il nome, non serve unicamente a creare un nuovo file, ma, fra l'altro, 
+        &egrave; in grado di restituire un <a href="../glossary/h.htm#HANDLE">handle</a> 
+        ad un file oppure ad un driver di periferica virtuale per svolgere funzioni 
+        di accesso diretto all'hardware. Necessita non solo del <i>'file'</i> 
+        da aprire ma richiede anche una serie di valori di accesso, per richiedere 
+        ad esempio la lettura o la scrittura.</p>
+      <p>La funzione <i>CloseHandle</i>, trattata in <a href="ht_032.htm">un altro 
+        HowTo</a>, molto semplicemente chiude un handle aperto da un'altra funzione 
+        quale la <i>CreateFile</i>.</p>
+      <p>L'ultima funzione, <i>DeviceIoControl</i>, consente di effettuare operazioni 
+        di input ed output sopra un handle; in questo esempio servir&agrave; per 
+        leggere dati da un settore dell'unit&agrave; disco specificando la costante 
+        <i> <b>VWIN32_DIOC_DOS_INT25</b></i> dichiarata successivamente.</p>
+      <ol start="17" class="codicevb">
+        <li>Private Const GENERIC_READ = &amp;H80000000</li>
+        <li>Private Const FILE_SHARE_READ = &amp;H1&amp;</li>
+        <li>Private Const FILE_SHARE_WRITE = &amp;H2&amp;</li>
+        <li>Private Const OPEN_EXISTING = &amp;H3&amp;</li>
+        <li>Private Const INVALID_HANDLE_VALUE = -1&amp;</li>
+        <li>Private Const VWIN32_DIOC_DOS_INT25 = 2&amp;</li>
+        <li></li>
+      </ol>
+      <p>Le <a href="../glossary/c.htm#COSTANTE">costanti</a> <img src="../images/ide/costante.gif" width="16" height="16" align="absmiddle"> 
+        API dichiarate alle righe 17-22 saranno utilizzate dalle precedenti funzioni 
+        API. Le prime 5 costanti saranno utilizzate dalla funzione <i>CreateFile</i>, 
+        mentre la costante <i><b>VWIN32_DIOC_DOS_INT25</b></i> sar&agrave; utilizzata 
+        dalla funzione <i>DeviceIoControl</i> per leggere uno o pi&ugrave; settori 
+        dall'unit&agrave; disco.</p>
+      <ol start="24" class="codicevb">
+        <li>Private Type DIOC_REGISTER</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;reg_EBX As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;reg_EDX As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;reg_ECX As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;reg_EAX As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;reg_EDI As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;reg_ESI As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;reg_Flags As Long</li>
+        <li>End Type</li>
+        <li></li>
+      </ol>
+      <p>La struttura <b>DIOC_REGISTER</b> simula il gruppo di <a href="../glossary/r.htm#REGISTRICPU">registri 
+        di un processore Intel x86</a> e verr&agrave; utilizzata dalla funzione 
+        API <i>DeviceIoControl</i> per inviare i dati in input sulla richiesta 
+        e riceverne in uscita i valori di ritorno.</p>
+      <ol start="34" class="codicevb">
+        <li>Public Property Let Drive(ByVal newDrive As String)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_SelectedDrive = Asc(UCase(newDrive)) - Asc(&quot;A&quot;)</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get Drive() As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Drive = Chr$(m_SelectedDrive + Asc(&quot;A&quot;)) 
+          &amp; &quot;:&quot;</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>Di tutte le propriet&agrave; della classe, <b>Drive</b> &egrave; l'unica 
+        con possibilit&agrave; di modifica: consente infatti di cambiare l'unit&agrave; 
+        disco da cui estarre le informazioni. Poich&eacute; la funzione <i>DeviceIoControl</i> 
+        utilizza un valore numerico per l'unit&agrave; disco &egrave; necessario 
+        che il percorso dell'unit&agrave; fornito alla propriet&agrave; venga 
+        trasformato in indice numerico. Cos&igrave; l'unit&agrave; A: diventa 
+        0, l'unit&agrave; C: diventa 2...</p>
+      <ol start="42" class="codicevb">
+        <li>Public Property Get BytesPerCluster() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;BytesPerCluster = m_BytesPerSector * m_SectorsPerCluster</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get BytesPerSector() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;BytesPerSector = m_BytesPerSector</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get Clusters() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Clusters = m_TotalClusters</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get DiskFreeSize() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DiskFreeSize = m_FreeClusters * m_SectorsPerCluster 
+          * m_BytesPerSector</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get DiskOccupiedSize() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DiskOccupiedSize = (m_TotalClusters - m_FreeClusters) 
+          * m_SectorsPerCluster * m_BytesPerSector</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get DiskSize() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DiskSize = m_TotalClusters * m_SectorsPerCluster 
+          * m_BytesPerSector</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get FileSystem() As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FileSystem = m_FileSystem</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get FreeClusters() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FreeClusters = m_FreeClusters</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get Sectors() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Sectors = m_TotalClusters * m_SectorsPerCluster</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get SectorsPerCluster() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SectorsPerCluster = m_SectorsPerCluster</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get SerialNumber() As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SerialNumber = Right$(String$(8, Asc(&quot;0&quot;)) 
+          &amp; Hex(m_SerialNumber), 8)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SerialNumber = Left$(SerialNumber, 4) &amp; 
+          &quot;-&quot; &amp; Mid$(SerialNumber, 5)</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get VolumeName() As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;VolumeName = m_VolumeLabel</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Tutte le altre propriet&agrave;, in sola lettura, non fanno altro che 
+        restituire i dati membro della classe, in maniera semplice o effettuando 
+        delle banali operazioni di conversione, come ad esempio la trasformazione 
+        del numero di serie (propriet&agrave; <b>SerialNumber</b>) da valore numerico 
+        decimale a valore esadecimale. Le altre conversioni sono semplici moltiplicazioni 
+        quale il numero di cluster totali per il numero di settori per cluster, 
+        al fine di ottenere il numero totale di settori dell'unit&agrave; disco.</p>
+      <ol start="91" class="codicevb">
+        <li>Public Sub TakeSnapshot(Optional ByVal strDrive As String = &quot;&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim lngSysFlags As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Len(strDrive) = 0 Then strDrive = Chr$(m_SelectedDrive 
+          + Asc(&quot;A&quot;))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_FileSystem = String$(255, 0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_VolumeLabel = String$(255, 0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_BytesPerSector = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_FreeClusters = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_SectorsPerCluster = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_SerialNumber = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_TotalClusters = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call GetDiskFreeSpace(strDrive &amp; &quot;:\&quot;, 
+          m_SectorsPerCluster, m_BytesPerSector, m_FreeClusters, m_TotalClusters)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call GetVolumeInformation(strDrive &amp; &quot;:\&quot;, 
+          m_VolumeLabel, 255, m_SerialNumber, ByVal 0&amp;, lngSysFlags, m_FileSystem, 
+          255)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_VolumeLabel = Left$(m_VolumeLabel, InStr(1, 
+          m_VolumeLabel, Chr$(0)) - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;m_FileSystem = Left$(m_FileSystem, InStr(1, 
+          m_FileSystem, Chr$(0)) - 1)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Il metodo <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        <b>TakeSnapshot</b> di fatto effettua una fotografia della situazione 
+        dell'unit&agrave; disco, recuperando i valori non variabili quali il numero 
+        di settori o di cluster e quelli variabili quale lo spazio libero ed occupato 
+        dell'unit&agrave; scelta. Il metodo deve essere richiamato prima della 
+        lettura delle propriet&agrave; della classe poich&eacute; i loro valori 
+        dipendono dall'ultima istantanea scattata e non sono aggiornati automaticamente 
+        con il cambiamento dei dati dell'unit&agrave;.</p>
+      <p>Le righe 94-100 reinizializzano i valori membro della classe, mentre 
+        le righe 101 e 102 mediante <i>GetDiskFreeSpace</i> e <i>GetVolumeInformation</i>, 
+        recuperano nuovamente questi valori dall'unit&agrave; disco scelta.</p>
+      <ol start="107" class="codicevb">
+        <li>Public Function ReadSector(ByVal lngSector As Long) As Variant</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim hDrive As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim nRead As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim bytBuffer() As Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim inReg As DIOC_REGISTER</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim outReg As DIOC_REGISTER</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hDrive = CreateFile(&quot;\\.\VWIN32&quot;, 
+          GENERIC_READ, FILE_SHARE_READ Or FILE_SHARE_WRITE, 0&amp;, OPEN_EXISTING, 
+          0&amp;, 0&amp;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If hDrive = INVALID_HANDLE_VALUE Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Errore 
+          nell'apertura del vwin32 vxd&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TakeSnapshot</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If m_BytesPerSector 
+          &gt; 0 Then ReDim bytBuffer(m_BytesPerSector - 1) As Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inReg.reg_EAX = m_SelectedDrive</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inReg.reg_ECX = 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inReg.reg_EBX = VarPtr(bytBuffer(0))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inReg.reg_EDX = lngSector</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call DeviceIoControl(hDrive, 
+          VWIN32_DIOC_DOS_INT25, inReg, Len(inReg), outReg, Len(outReg), nRead, 
+          0&amp;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CloseHandle hDrive</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ReadSector = bytBuffer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Function</li>
+      </ol>
+      <p>L'ultima funzione della classe &egrave; anche la pi&ugrave; complessa 
+        dell'interno modulo: <b>ReadSector</b> legge un settore dall'unit&agrave; 
+        disco scelta e per far questo &egrave; innanzitutto necessario richiedere 
+        un handle al driver di periferica virtuale <i><b>VWIN32</b></i>, in Windows 
+        9x, responsabile delle comunicazioni a basso livello con le unit&agrave; 
+        disco. Ottenuto tale handle tramite <i>CreateFile</i> (riga 113), sar&agrave; 
+        quindi necessario invocare l'interrupt DOS 25 (riga 123), specificando 
+        nel registro <i><b>EAX</b></i> il drive scelto, nel registro <i><b>ECX</b></i> 
+        il numero di settori da leggere (sempre 1), nel registro <i><b>EBX</b></i> 
+        il <a href="../glossary/p.htm#PUNTATORE">puntatore</a> all'area dati gi&agrave; 
+        <a href="../glossary/a.htm#ALLOCARE">allocata</a> per contenere i dati 
+        ed infine nel registro <i><b>EDX</b></i> il settore iniziale da cui leggere 
+        i dati.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Ottenuti questi dati non dovremo dimenticarci di chiudere l'handle aperto 
+        in precedenza (riga 124).</p>
+      <p>La funzione restituisce un oggetto Variant per permettere anche agli 
+        utenti di VB5 di usufruire di questo codice, poich&eacute; la versione 
+        5 di Visual Basic non supporta la restituzione di matrici.</p>
+      <hr>
+      <p>La dimostrazione d'uso della classe &egrave; molto semplice: un unico 
+        form conterr&agrave; un controllo <i>DriveListBox</i> per la scelta dell'unit&agrave; 
+        disco da cui recuperare le informazioni ed una serie di <i>Label</i> poste 
+        all'interno di una matrice di controlli, che andranno a mostrare i dati 
+        recuperati dalla classe.</p>
+      <p align="center"><img src="../images/howto/howto050_01.png" width="341" height="157" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <p>Alla desta della casella di scelta dell'unit&agrave; &egrave; presente 
+        anche una <i>CheckBox</i> dalla funzione un po' particolare che vedremo 
+        in seguito.</p>
+      <p>Non sar&agrave; trattato il codice del form riga per riga perch&eacute; 
+        richiederebbe troppo spazio, del tutto superfluo, vista la semplicit&agrave; 
+        generale. In linea generale all'avvio del form viene <a href="../glossary/i.htm#ISTANZA">istanziata</a> 
+        una variabile della classe <b><i>clsFBIDiskInfoFat16</i></b> appena sviluppata 
+        ed in occasione del cambio dell'unit&agrave; disco nella <i>DriveListBox</i>, 
+        viene richiamato il metodo <b>TakeSnapshot</b> dell'istanza e sono mostrate 
+        una per una le sue propriet&agrave; mediante le varie <i>Label</i>.</p>
+      <p>All'avvio del form principale viene anche caricato un secondo Form: <i><b>frmDumpedData</b></i>, 
+        utilizzato per mostrare i dati binari del settore del disco scelto. La 
+        sua utilit&agrave; &egrave; mostrata nell'evento <img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"> 
+        Click del controllo <b>chkShowSector</b>; infatti in base al suo valore 
+        sar&agrave; mostrato o nascosto il secondo form con i dati estratti. Nel 
+        momento in cui il form &egrave; mostrato viene richiamato anche un metodo 
+        pubblico di nome <b>RefreshData</b> del form stesso. </p>
+      <p><img src="../images/howto/howto050_02.png" width="251" height="96" align="left" alt="Figura 2">Il 
+        form <i><b>frmDumpedData</b></i> si compone di una semplice <i>TextBox</i> 
+        multiriga e di una barra di scorrimento orizzontale al cui cambio del 
+        valore corrisponde la lettura di un settore dell'unit&agrave; disco scelta 
+        mediante il richiamo al gi&agrave; accennato metodo <b>RefreshData</b>.</p>
+      <p>Il metodo <b>RefreshData</b> di fatto legge un settore dell'unit&agrave; 
+        disco mediante il metodo <b>ReadSector</b> dell'istanza <i><b>DiskInformation</b></i> 
+        dichiarata nel primo form. Tali dati saranno quindi in seguito formattati 
+        in maniera da rappresentarli all'interno della TextBox, sia in esadecimale 
+        che sotto forma di codici binari.</p>
+      <hr>
+      <p><img src="../images/howto/howto050_03.png" width="341" height="157" align="right" alt="Figura 3">Il 
+        funzionamento del progetto &egrave; molto semplice: lanciato il form principale 
+        baster&agrave; scegliere un'unit&agrave; disco con <a href="../glossary/f.htm#FILESYSTEM">file 
+        system</a> FAT12 o FAT16 (le uniche realmente supportate da questo codice) 
+        per recuperarne delle informazioni affidabili.</p>
+      <p>Ad esempio nella figura a fianco &egrave; stata scelta l'unit&agrave; 
+        disco E: della capacit&agrave; di 2 GB, con circa 630 MB di spazio libero. 
+        Sono naturalmente mostrate anche tutte le altre informazioni sulla struttura 
+        della partizione. &Egrave; importante tenere sott'occhio il valore specificato 
+        come <i><b>File System</b></i> poich&eacute; tail valori possono essere 
+        falsati con unit&agrave; disco FAT32, NTFS o altro formato.</p>
+      <p>Selezionando la casella di controllo in alto sar&agrave; mostrato il 
+        contenuto di un settore per volta dell'unit&agrave; disco scelta.</p>
+      <p align="center"><img src="../images/howto/howto050_04.png" width="458" height="178" alt="Figura 4"><br>
+        <b>Figura 4</b></p>
+      <p>La Figura 4 ad esempio mostra il settore 0, ovvero il primo, dell'unit&agrave; 
+        disco scelta in precedenza. Mediante la barra di scorrimento in basso 
+        &egrave; naturalmente possibile scegliere un altro settore.</p>
+      <p>Purtroppo a causa di un limite intrinseco del controllo <i>HScrollBar</i> 
+        non &egrave; possibile assegnare un valore superiore a 32767 e quindi 
+        la lettura &egrave; limitata a solo questi valori. Limite che naturalmente 
+        pu&ograve; essere superato via codice richiamando il metodo <b>ReadSector</b> 
+        con il numero del settore da leggere.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Il codice mostrato &egrave; sicuramente complesso e soggetto a parecchie 
+        trappole visto che il passaggio di un semplice valore sbagliato alla funzione 
+        <i>DeviceIoControl</i> &egrave; da solo sufficiente a generare un errore 
+        irreversibile (<a href="../glossary/b.htm#BSOD">BSOD</a>) nel sistema 
+        che obbliga a riavviare il computer.</p>
+      <p>Si raccomanda pertanto di non abusare di queste funzioni, molto delicate, 
+        e non apportare modifiche se non strettamente necessario e con piena coscienza 
+        di ci&ograve; che si sta facendo. Come gi&agrave; detto il passaggio di 
+        un solo valore errato pu&ograve; provocare danni lievi quali il riavvio 
+        della macchina oppure la scrittura di dati in aree di sistema fino al 
+        completo blocco della macchina.</p>
+      <p>Un limite molto pesante del suddetto codice &egrave; quello di recuperare 
+        informazioni esclusivamente da partizioni FAT12 e FAT16. Sono quindi esclusi 
+        tutti gli altri File System e le informazioni recuperati intorno a questi 
+        altri sistemi possono risultare errate. L'altro grosso limite riguarda 
+        il sistema operativo utilizzato per eseguire il codice: questo codice 
+        infatti non funziona nei sistemi Windows NT ma soltanto nella famiglia 
+        Windows 9x.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        6 Novembre 2002<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

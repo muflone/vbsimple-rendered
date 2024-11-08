@@ -1,0 +1,271 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Conversione di secondi in ore e minuti</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Conversione di secondi in 
+    ore e minuti<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --> 
+        1<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Quest'articolo &egrave; volto a spiegare il processo di conversione di 
+        un certo numero di secondi nel corrispondente numero di ore e minuti. 
+        L'operazione in s&eacute; &egrave; molto semplice e richiede l'utilizzo 
+        di poche e semplici operazioni aritmetiche.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Essendo un minuto formato da 60 secondi &egrave; semplicissimo risalire 
+        al numero di minuti corrispondenti ad un certo numero di secondi; si tratta 
+        in fondo di effettuare una divisione del numero di secondi per 60 e l'eventuale 
+        resto &egrave; il numero di secondi rimanenti.<br>
+        In maniera analoga pu&ograve; essere calcolato il numero di ore. Vediamo 
+        subito l'interfaccia utente utilizzata per questo progetto:</p>
+      <p><img src="../images/howto/howto041_01.png" width="181" height="87" align="right" alt="Figura 1">Il 
+        form si compone di pochi e semplici controlli: la fila superiore contiene 
+        una <i>Label</i> di nome <b>lblSecondi</b> e la corrispondente casella 
+        di testo di nome <b>txtSecondi</b> per permettere all'utente l'inserimento 
+        del numero di secondi. Al fine di evitare possibili errori abbiamo limitato 
+        il numero di caratteri nella casella di testo impostando la proprier&agrave; 
+        <i>MaxLength</i> a 8 caratteri.</p>
+      <p>Nella fila centrale abbiamo 4 <i>Label</i> i cui nomi sono, partendo 
+        da sinistra: <b>lblFila1Minuti1</b> e la corrispondente <b>lblFila1Minuti2</b>, 
+        <b>lblFila1Secondi1</b> e la corrispondente <b>lblFila1Secondi2</b>.</p>
+      <p>L'ultima fila contiene invece 6 Label: <b>lblFila2Ore1</b> e la corrispondente 
+        <b>lblFila2Ore2</b>, <b>lblFila2Minuti1</b> e la corrispondente <b>lblFila2Minuti2</b> 
+        ed infine <b>lblFila2Secondi1</b> con la corrispondente <b>lblFila2Secondi2</b>.</p>
+      <p>Tutte le caselle di testo hanno la propriet&agrave; <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        <i>AutoSize</i> impostata a <i><b>True</b></i> per permettere l'autoridimensionamento 
+        in funzione del testo in esse inserito. Il codice si compone di una sola 
+        routine, legata all'<a href="../glossary/e.htm#EVENTO">evento</a><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><i><b>Change</b></i> 
+        della <i>TextBox</i> <b>txtSecondi</b>:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub txtSecondi_Change()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim Ore As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim Minuti As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim Secondi As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim Secondi2 As Long</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Secondi2 = CLng(Val(txtSecondi.Text))</li>
+      </ol>
+      <p>La prima operazione da effettuare &egrave; ovviamente il recupero del 
+        numero di secondi dalla <i>TextBox</i> <b>txtSecondi</b>. L'operazione 
+        &egrave; effettuata alla riga 9 ed utilizza un trucchetto molto semplice 
+        ed efficace; infatti se l'utente immettese nella casella di testo qualche 
+        simbolo non numerico quale una lettera in altre situazioni si verificherebbe 
+        un errore.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La funzione <i>Val</i>, cos&igrave; come la funzione <i>CLng</i> (e <i>CInt</i>, 
+        <i>CDbl</i>, etc....) consente di trasformare una stringa in un numero. 
+        A differenza di tutte le altre funzioni di conversione per&ograve;, non 
+        &egrave; suscettibile ad errori in caso che l'input non sia un numero 
+        ben formato. Ad esempio l'espressione <code>Val(&quot;123aaa&quot;)</code> 
+        restituisce il risultato 123 senza generare errori; tutte le altre funzioni 
+        di conversione in questi casi producono un errore. La funzione Val per&ograve; 
+        ci restituisce un <a href="../info/info_04.htm">numero di tipo Double</a>; 
+        sfrutteremo pertanto la funzione <i>CLng</i> per convertire tale numero 
+        in un numero Long valido ovvero eliminando l'eventuale virgola decimale 
+        e le successive cifre. Il numero di secondi viene memorizzato nella variabile 
+        <b>Secondi2</b>.</p>
+      <ol class="codicevb" start="10">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Ore = Secondi2 \ 3600</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Minuti = (Secondi2 - Ore * 3600) \ 60</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Secondi = Secondi2 Mod 60</li>
+      </ol>
+      <p>Possiamo adesso procedere alla conversione dei secondi in ore e minuti. 
+        L'operazione pi&ugrave; semplice &egrave; effettuata alla riga 10; la 
+        divisione intera del numero di secondi per 3600 (60*60) restituisce il 
+        numero delle ore. Il resto di quest'operazione sono i rimanenti minuti 
+        e secondi.</p>
+      <p><img src="../images/howto/howto041_02.png" width="181" height="87" align="right" alt="Figura 2">In 
+        effetti alla riga 11 recuperiamo il numero di minuti semplicemente detraendo 
+        dal numero di secondi totali il numero di secondi corrispondenti alle 
+        ore intere. Ad esempio se l'utente avesse immesso il numero 27575, il 
+        risultato della riga 10 sarebbe stato 7.<br>
+        Per recuperare il numero di minuti dobbiamo detrarre dal numero di secondi 
+        totali (27575) il numero di secondi corrispondenti alle 7 ore intere ovvero 
+        25200 (7*60*60).</p>
+      <p>La differenza di tale operazione (2375) indica il numero di minuti e 
+        secondi. Per recuperare il numero di minuti baster&agrave; semplicemente 
+        dividere tale valore per 60; nel nostro esempio il risultato &egrave; 
+        39 minuti.</p>
+      <p>Infine il numero di secondi &egrave; dato dal resto di tale divisione, 
+        calcolato tramite il modulo per 60; nel nostro esempio 2375-2340 (39*60) 
+        produce il risultato 35.</p>
+      <ol class="codicevb" start="13">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lblFila1Secondi2.Caption = CStr(Secondi)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lblFila2Secondi2.Caption = CStr(Secondi)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lblFila1Minuti2.Caption = CStr(Minuti + Ore 
+          * 60)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lblFila2Minuti2.Caption = CStr(Minuti)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lblFila2Ore2.Caption = CStr(Ore)</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Possiamo infine procedere ad aggiornare le varie Label presenti sul form. 
+        Il numero di secondi &egrave; uguale per entrambe le file (righe 13 e 
+        14).</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il numero di minuti sulla prima fila non deve essere scomposto in ore 
+        e minuti e pertanto potrebbe anche essere superiore a 60. Alla riga 15 
+        viene recuperato questo valore semplicemente moltiplicando il numero delle 
+        ore per 60 minuti e sommando questo valore al numero reale dei minuti. 
+        Nel nostro esempio 7*60=420 + 39 = 459 minuti.<br>
+        Per quanto riguarda la seconda fila (riga 16) il numero di minuti non 
+        necessit&agrave; di alcuna operazione, &egrave; quanto ritrovato nella 
+        variabile <b>Minuti</b>.</p>
+      <p>Il numero di ore &egrave; presente soltanto sulla seconda fila (riga 
+        17) ed &egrave; contenuto nella variabile <b>Ore</b>.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Il problema si presenta molto semplice e richiede soltanto alcune operazioni 
+        aritmetiche. In maniera del tutto simile pu&ograve; essere calcolato anche 
+        il numero di giorni, mesi ed anni.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        2 Marzo 2002<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

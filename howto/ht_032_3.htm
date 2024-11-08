@@ -1,0 +1,326 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Aprire e chiudere un programma eseguibile (terza parte)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Aprire e chiudere un programma 
+    eseguibile<br>
+    (terza parte)<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level5.gif" width="17" height="18" align="absmiddle"> 
+        5<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+<p align="center"><a href="ht_032_2.htm">&lt;&lt; Continua dalla parte 2</a></p>
+      <p>Studiate le funzioni generiche possiamo vedere la loro applicazione sul 
+        codice relativo all'interfaccia </p>
+      <ol class="codicevb" start="132">
+        <li>Private Sub PulsanteApri_Click()</li>
+        <li>&nbsp;&nbsp;Call CloseAllHandle</li>
+        <li>&nbsp;&nbsp;If ApriApp(NomeProgramma.Text) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;LabelStato.Caption = &quot;Applicazione aperta&quot;</li>
+        <li>&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;LabelStato.Caption = &quot;Fallita apertura 
+          dell'applicazione&quot;</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il click sopra il pulsante Apri richiede l'apertura di un nuovo processo.<br>
+        Prima di fare questo per&ograve; richiamiamo la funzione <b>CloseAllHandle</b> 
+        per chiudere tutti gli handle lasciati eventualmente aperti da un precedente 
+        utilizzo della funzione di apertura di un processo.</p>
+      <p>Alla riga 134 viene avviato il processo passando alla funzione <b>ApriApp</b> 
+        il percorso presente nella casella di testo <i><b>NomeProgramma</b></i>.<br>
+        In base al risultato della funzione, modifica il contenuto della <i>Caption</i> 
+        di <b>LabelStato</b>, segnalando un'avvenuta apertura oppure un errore 
+        di apertura (righe 134-137).</p>
+      <ol class="codicevb" start="141">
+        <li>Private Sub PulsanteChiudi_Click()</li>
+        <li>&nbsp;&nbsp;Dim Esito As VbMsgBoxResult</li>
+        <li>&nbsp;&nbsp;LabelStato.Caption = &quot;Applicazione in chiusura, attendere&quot;</li>
+        <li>&nbsp;&nbsp;If ChiudiApp(False) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;LabelStato.Caption = &quot;Applicazione chiusa&quot;</li>
+      </ol>
+      <p>Il click sopra il pulsante Chiudi deve ovviamente produrre la chiusura 
+        del processo lanciato medianta l'altro pulsante.</p>
+      <p>Alla riga 142 dichiariamo una variabile di nome <b>Esito</b> e di tipo 
+        <i>VbMsgBoxResult</i>. Tale tipo &egrave; un'enumerazione <img width="16" height="16" src="../images/ide/enumeraz.gif" align="absmiddle"> 
+        dei valori che pu&ograve; assumere una MsgBox. Essa servir&agrave; per 
+        chiedere all'utente l'eventuale terminazione del processo.</p>
+      <p>Alla riga 144 viene effettata la chiusura dell'applicazione in maniera 
+        semplice, richiamando la funzione <b>ChiudiApp</b> con il parametro di 
+        terminazione impostato a False. Se il risultato dell'operazione di chiusura 
+        &egrave; True, l'applicazione &egrave; stata chiusa e verr&agrave; descritta 
+        la chiusura nella Label <b>LabelStato</b> (riga 145).</p>
+      <ol class="codicevb" start="146">
+        <li>&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Esito = MsgBox(&quot;L'applicazione non si 
+          chiude terminarla?&quot;, vbYesNo)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Esito = vbYes Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If ChiudiApp(True) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LabelStato.Caption 
+          = &quot;Applicazione terminata&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LabelStato.Caption 
+          = &quot;Terminazione applicazione fallita&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LabelStato.Caption = &quot;Applicazione 
+          non chiusa&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Se invece l'operazione di chiusura semplice non &egrave; andata a buon 
+        fine, la funzione <b>ChiudiApp</b> restituir&agrave; il valore False. 
+        Sar&agrave; pertanto necessario chiedere all'utente se terminare il processo 
+        in maniera forzata.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alla riga 147 viene mostrata una finestra con la richiesta di terminazione. 
+        Il risultato della richiesta sar&agrave; memorizzato nella variabile <b>Esito</b>. 
+        Se l'utente avr&agrave; risposto SI (riga 149) sar&agrave; effettuata 
+        la chiamta alla funzione <b>ChiudiApp</b> con il parametro di terminazione 
+        impostato a True (riga 149). In base al risultato di tale chiamata sar&agrave; 
+        mostrata una Label differente.</p>
+      <p>Se invece, l'utente avesse risposto NO alla richiesta di terminazione 
+        (riga 154-155), essa non sarebbe avvenuta ed il processo sarebbe stato 
+        lasciato aperto. Anche il tal caso sarebbe stata mostrata una Label adeguata.</p>
+      <p>Prima di vedere l'applicazione di questo codice vediamo una cosina semplice 
+        semplice:</p>
+      <ol class="codicevb" start="160">
+        <li>Private Sub Form_Unload(Cancel As Integer)</li>
+        <li>&nbsp;&nbsp;Call CloseAllHandle</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Supponiamo di aver lanciato un processo esterno mediante il nostro programma 
+        e, lasciando il processo avviato, chiudiamo il nostro programma. &Egrave; 
+        buona regola ricordarsi di liberare gli handle mediante richiamo alla 
+        funzione <b>CloseAllHandle</b>.<br>
+        Possiamo adesso passare alla prova del nostro programma.</p>
+      <p><img src="../images/howto/howto032_02.jpg" width="226" height="97" align="right" alt="Figura 2">Lanciamolo 
+        ed avviamo il richiamo del programma <i><b>Calc.exe</b></i> ovvero la 
+        calcolatrice di Windows. Se essa &egrave; stata effettivamente installata 
+        nel computer la vedremo in primo piano e la LabelStato mostrer&agrave; 
+        il testo &quot;Applicazione aperta&quot;. Se provassimo a chiuderla, essa 
+        si chiuder&agrave; in maniera del tutto immediata, poich&eacute; non ci 
+        sono possibilit&agrave; di blocco, come finestre aperte o richieste di 
+        salvataggio.</p>
+      <p>Proviamo invece a lanciare un altro programma, come il Blocco Note di 
+        Windows. Il nome del file &egrave; <b>Notepad.exe</b>. Lanciato questo 
+        scriviamo qualcosa e proviamo a chiudere il programma mediante il pulsante 
+        <b>Chiudi</b> del nostro progetto.</p>
+      <p><img src="../images/howto/howto032_03.jpg" width="232" height="101" align="right" alt="Figura 3">Sar&agrave; 
+        richiesto di salvare il testo digitato. Rispondendo <i><b>Si</b></i> il 
+        testo verr&agrave; salvato ed il programma si chiuder&agrave; regolarmente. 
+        Se si risponder&agrave; <i><b>No</b></i> il testo non verr&agrave; salvato 
+        ed il programma si chiuder&agrave; regolarmente.<br>
+        Rispondendo, invece, <i><b>Annulla</b></i> la chiusura del programma sar&agrave; 
+        annullata, ma niente verr&agrave; comunicato al nostro progetto. Esso 
+        attender&agrave; qualche secondo dopo la risposta e se il processo continuer&agrave; 
+        ad essere eseguito, sar&agrave; mostrata una richiesta di terminazione.</p>
+      <p><img src="../images/howto/howto032_04.jpg" width="172" height="80" align="right" alt="Figura 4">Se 
+        l'utente risponder&agrave; <b>NO</b> alla richiesta di terminazione il 
+        programma rimarr&agrave; aperto. Se invece risponder&agrave; <b>SI</b> 
+        sar&agrave; ritentata la chiusura semplice e se neanche in questo caso 
+        il processo si chiuder&agrave; (perch&eacute; l'utente continua a rispondere 
+        Annulla oppure il programa &egrave; bloccato) verr&agrave; terminato senza 
+        ulteriori richieste. Tutti i dati non salvati saranno persi.</p>
+      <p><img src="../images/howto/howto032_05.jpg" width="226" height="97" align="right" alt="Figura 5">L'utente 
+        verr&agrave; anche informato che il processo &egrave; stato terminato 
+        (non chiuso regolarmente) mediante la solita visione della <b>LabelStato</b>.</p>
+      <p>Prima di chiudere il discorso, vediamo cosa succede se avviamo il processo 
+        del <i>WordPad</i> di Windows: il nome del file &egrave; <b>Write.exe</b>. 
+        Digitiamolo e premiamo il pulsante Apri programma. Esso verr&agrave; aperto. 
+        Proviamo a chiuderlo mediante il nostro progetto. Vedremo che la <b>LabelStato</b> 
+        ci avvertir&agrave; della chiusura, ma la finestra continuer&agrave; ad 
+        esistere.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Questo perch&eacute; il programma <i>WordPad</i> si compone di due parti. 
+        Infatti il vero processo che mostra la finestra non &egrave; il Write.exe. 
+        Esso &egrave; soltanto un launcher (un progetto del genere &egrave; presente 
+        nella sezione <a href="../activity/act_12.htm">Richieste dei lettori</a>) 
+        ed &egrave; stato mantenuto esclusivamente per compatibilit&agrave; dei 
+        programmi con le versioni di Windows precedenti al Windows 95. Infatti 
+        nelle versioni precedenti a Windows 95 il WordPad si chiamava Write.exe 
+        ed era contenuto nella cartella di Windows. Da Windows 95 in poi, il vero 
+        processo si chiama <b>Wordpad.exe</b> e si trova nella cartella Accessori 
+        all'interno della cartella Programmi. Il launcher &egrave; soltanto un 
+        processo che avvia un altro processo.</p>
+      <p>Quindi il nostro programma, quando tenter&agrave; la chiusura del processo 
+        aperto si accorger&agrave; che esso &egrave; gi&agrave; chiuso, ma non 
+        sapr&agrave; mai che quello ha avviato un altro processo e non chiuder&agrave; 
+        pertanto la finestra aperta.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Il codice proposto &egrave; parecchio lungo ed in alcuni punti complesso. 
+        Per tali motivi &egrave; stato scomposto in varie funzioni al fine di 
+        semplificarne la lettura.<br>
+        Tuttavia, anche lo scopo da ottenere &egrave; molto complesso. Non potevamo 
+        usare la funzione <i>Shell</i> di Visual Basic vista in una <a href="../activity/act_12.htm">Richiesta 
+        dei lettori</a>, perch&eacute; essa ci restituisce solo un dato in ritorno, 
+        ma per il nostro scopo ne servivano ben altri.</p>
+      <p>Inoltre, il dato restituito della funzione <i>Shell</i> &egrave; il <b>PID</b> 
+        (Process IDentifier) del programma aperto. In Windows i PID vengono riutilizzati 
+        non appena sono nuovamente disponibili.</p>
+      <p>Ad esempio se lanciassimo la Calcolatrice di Windows la funzione <i>Shell</i> 
+        ci ritorner&agrave; il PID 129. Chiudiamo la Calcolatrice e subito dopo 
+        apriamo il Blocco Note, la funzione Shell ci ritorna nuovamente il PID 
+        129, perch&eacute; esso &egrave; stato rilasciato e Windows, ricercando 
+        un PID libero ha trovato il 129 disponibile.</p>
+      <p>Per il nostro scopo servono altri dati che identifichino in maniera pi&ugrave; 
+        precisa possibile la Window principale del processo, madre di tutti i 
+        controlli (anch'essi Window) a disposizione dell'utente. Infatti, la chiusura 
+        di una Window errata provoca, oltre la non corretta chiusura del programma, 
+        malfunzionamenti o il blocco del sistema.</p>
+      <p>Per ogni commento, discussione, critica sul programma o soluzione per 
+        i suoi limiti presenti scrivete a bepi@adria.it o bepii@libero.it.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=3">Giuseppe 
+        Della Bianca</a><br>
+        23 Aprile 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,266 @@
+<html><!-- #BeginTemplate "/Templates/Richieste.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Ricercare un elemento in una ListBox</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Ricercare un elemento in 
+    una ListBox<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/activity.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Richiesta di: <!-- #BeginEditable "RICHIEDENTE" -->Gnappo<!-- #EndEditable --> 
+        - <!-- #BeginEditable "DATARICHIESTA" -->12 Giugno 2002<!-- #EndEditable --><br>
+        Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5 </p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" -->
+      <p><i>Ho un ListBox con molte righe, e dovrei cercare tra tutte queste righe 
+        una stringa particolare...<br>
+        Come posso fare evitando di dover fare un loop e controllare queste righe 
+        una per una?</i></p>
+      <hr>
+      <p>La soluzione al problema &egrave; alquanto semplice e richiede l'invio 
+        di un semplice <a href="../glossary/m.htm#MESSAGGIO">messaggio</a> API 
+        alla ListBox da cui ricercare i dati. Mediante un primo messaggio &egrave; 
+        possibile ricercare il testo esatto richiesto, mentre con un altro messaggio 
+        &egrave; anche possibile ricercare la prima occorrenza che inizia con 
+        il testo specificato.</p>
+      <p><img src="../images/activity/att24_01.png" width="182" height="165" align="right">Abbiamo 
+        un semplicissimo form contenente fondamentalmente una <i>ListBox</i> di 
+        nome <b>lstElenco</b> contenente i dati, una <i>TextBox</i> di nome <b>txtCerca</b> 
+        in cui inserire il testo da ricercare, un <i>CommandButton</i> di nome 
+        <b>cmdCerca</b> per effettuare la ricerca esatta ed una <i>CheckBox</i> 
+        di nome <b>chkCercaAuto</b> per determinare se cercare automaticamente 
+        il testo che inizia con la stringa specificata.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Prima di poter vedere il corretto funzionamento &egrave; necessario dichiarare 
+        la funzione e le costanti <a href="../glossary/a.htm#API">API</a>:</p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Declare Function SendMessage Lib &quot;user32&quot; Alias 
+          &quot;SendMessageA&quot; (ByVal hwnd As Long, ByVal wMsg As Long, ByVal 
+          wParam As Integer, ByVal lParam As Any) As Long</li>
+        <li></li>
+        <li>Private Const LB_FINDSTRING = &amp;H18F</li>
+        <li>Private Const LB_FINDSTRINGEXACT = &amp;H1A2</li>
+        <li></li>
+      </ol>
+      <p>La funzione <i>SendMessage</i> dichiarata alla riga 3 &egrave; utilizzata 
+        in parecchi articoli per inviare un messaggio ad una <a href="../glossary/f.htm#FINESTRA">finestra</a> 
+        di cui si conosce l'<a href="../glossary/h.htm#HANDLE">handle</a>. I messaggi 
+        da inviare saranno specificati alle due righe successive: <i><b>LB_FINDSTRING</b></i> 
+        recupera l'indice dell'elemento della ListBox il cui testo iniziare per 
+        il valore specificato; analogamente <i><b>LB_FINDSTRINGEXACT</b></i> restituisce 
+        l'indice dell'elemento della ListBox il cui testo corrisponde esattamente 
+        al testo ricercato.</p>
+      <p><img src="../images/notes2.gif" width="31" height="32" align="absmiddle"> 
+        <b>La ricerca non fa differenza tra maiuscole e minuscole!</b></p>
+      <ol start="8" class="codicevb">
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim intLen As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim intConta As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim strElemento As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Randomize</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For intConta = 1 To 20000</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strElemento = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For intLen = 1 To 
+          CInt(Rnd * 15) + 3</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strElemento 
+          = strElemento &amp; Chr$(Rnd * 25 + 65)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next intLen</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstElenco.AddItem 
+          strElemento</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next intConta</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Al caricamento del form la ListBox viene popolata con 20000 stringhe 
+        generate casualmente sia in contenuto che in lunghezza mediante due cicli 
+        For alle righe 13-19.</p>
+      <ol start="22" class="codicevb">
+        <li>Private Sub cmdCercaEsatto_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lstElenco.ListIndex = SendMessage(lstElenco.hwnd, 
+          LB_FINDSTRINGEXACT, -1, ByVal CStr(txtCerca.Text))</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Il click sopra il pulsante <b>cmdCercaEsatto</b> richiamer&agrave; la 
+        funzione <i>SendMessage</i> con il messaggio <i><b>LB_FINDSTRINGEXACT</b></i> 
+        per ricercare la stringa specificata; l'argomento <b>wParam</b> della 
+        funzione assumer&agrave; la posizione dalla quale iniziare la ricerca. 
+        Il valore -1 specifica di iniziare la ricerca dall'inizio. L'argomento 
+        <b>lParam</b> ricever&agrave; invece il <a href="../glossary/p.htm#PUNTATORE">puntatore</a> 
+        della stringa da ricercare.</p>
+      <p>Il valore restituito dalla funzione identifica l'elemento della ListBox 
+        contenente il testo desiderato.</p>
+      <ol start="26" class="codicevb">
+        <li>Private Sub txtCerca_Change()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If chkCercaAuto.Value = vbChecked Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstElenco.ListIndex 
+          = SendMessage(lstElenco.hwnd, LB_FINDSTRING, -1, ByVal CStr(txtCerca.Text))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+      </ol>
+      <p>In maniera analoga alla routine precedente abbiamo deciso che in base 
+        al valore della CheckBox <b>chkCercaAuto</b> (righe 27-29) durante la 
+        digitazione verr&agrave; automaticamente ricercato il primo elemento somigliante 
+        alla stringa specificata. La ricerca &egrave; fatta come la precedente, 
+        ad eccezione del messaggio utilizzato che sar&agrave; invece <i><b>LB_FINDSTRING</b></i>.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/activity/att24_02.png" width="182" height="165" align="right" alt="Figura 2">La 
+        dimostrazione del progetto &egrave; davvero molto semplice: all'avvio 
+        del form la <i>ListBox</i> &egrave; popolata con 20000 elementi casuali; 
+        baster&agrave; digitare qualcosa nella casella di testo in basso e premere 
+        il pulsante <i> <b>Cerca</b></i> per recuperare la riga corrispondente 
+        esattamente al testo specificato.</p>
+      <p>Selezionando invece la <i>CheckBox</i> in basso, la ricerca dell'elemento 
+        sar&agrave; effettuata durante la digitazione del testo da ricercare.</p>
+      <p>Come gi&agrave; detto, per&ograve;, la ricerca non fa distinzione tra 
+        maiuscole e minuscole, per cui non pu&ograve; sempre essere utilizzata 
+        come soluzione definitiva ad una ricerca dati.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Un progetto molto semplice la cui soluzione richiede giusto poche righe 
+        di codice per guadagnare tanta velocit&agrave; nella ricerca degli elementi 
+        necessari. Nessun particolare rischio &egrave; rilevato dall'uso di questa 
+        soluzione.</p>
+      <p><img src="../images/notes.gif" width="56" height="57" align="left">La 
+        stessa soluzione pu&ograve; essere utilizzata per ricercare un elemento 
+        da un controllo <i>ComboBox</i>; baster&agrave; utilizzare le corrispondenti 
+        <a href="../glossary/c.htm#COSTANTE">costanti</a> API <i><b>CB_FINDSTRING</b></i> 
+        e <i><b>CB_FINDSTRINGEXACT</b></i>.</p>
+      <!-- #EndEditable --><!-- #BeginEditable "CREDITS" --> 
+      <p align="right" class="credits2"><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        4 Novembre 2002</p>
+      <!-- #EndEditable --><!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'introduzione delle Richieste dei lettori</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

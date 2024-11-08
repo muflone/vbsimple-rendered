@@ -1,0 +1,578 @@
+<html><!-- #BeginTemplate "/Templates/ClientServer.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Upload e Download via FTP con Inet</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Upload e Download via FTP 
+    con Inet<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/cliserv.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+  </div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>In questo esempio vedremo come <a href="../glossary/u.htm#UPLOAD">uploadare</a> 
+        o <a href="../glossary/d.htm#DOWNLOAD">downloadare</a> un file su un server 
+        <a href="../glossary/r.htm#REMOTO">remoto</a> tramite FTP. L'esempio sfrutter&agrave; 
+        il controllo Inet; pertanto dall'elenco componenti (CTRL+T) del menu Progetto 
+        selezioneremo il controllo <b>Microsoft Internet Transfer Control</b>, 
+        detto anche Inet <img src="../images/controls/inet.gif" width="25" height="25" align="absmiddle">Control 
+        .</p>
+      <hr>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Se vogliamo uploadare un file sul nostro sito per poterlo mettere on 
+        line o per renderlo disponibile a terzi, oppure vogliamo scaricare un 
+        file da uno spazio FTP pubblico o del quale conosciamo la password, abbiamo 
+        due possibilit&agrave;.</p>
+      <p>Se siamo degli smanettoni e ci piacciono le finestre testuali in stile 
+        <b>xterm</b> (un terminale testuale), apriamo il <i>prompt di MS-DOS</i><img src="../images/icons/somsdos.gif" width="26" height="31" align="absmiddle">e 
+        cominciamo a digitare i comandi del protocollo FTP.</p>
+      <p>Se invece non abbiamo dimestichezza con comandi strani che non conosciamo 
+        e vogliamo comodamente premere due o tre pulsanti per completare la nostra 
+        operazione, usiamo il nostro client FTP preferito (io personalmente uso 
+        sia il prompt del DOS che il programma WS_FTP).<br>
+        Il client per&ograve; far&agrave; esattamente ci&ograve; che noi faremo 
+        in maniera testuale…</p>
+      <p>Cerchiamo di capire quindi cosa sta dietro la negoziazione di una sessione 
+        FTP. Tutti gli ISP (<i>Internet Service Provider</i>) dovrebbero dare 
+        uno spazio seppur esiguo. Se non siete a conoscenza di un host con servizio 
+        FTP potreste provare ad implementare uno scanner che tenti delle connessioni 
+        con utente <b>anonymous</b> seguendo il <a href="clser_02.htm">tutorial 
+        sulla programmazione del Winsock</a> gi&agrave; pubblicato dal sottoscritto 
+        ;)</p>
+      <p>Apriamo quindi il prompt DOS e digitiamo &quot;<i><b>ftp &lt;nome-server&gt;</b></i>&quot;<br>
+        Come messaggio di benvenuto otterremo qualcosa del genere:<br>
+        <br>
+        <i>Connesso a chili.iol.it<br>
+        220 chili.iol.it FTP server (Version wu-2.4-IOL(117) Thu Dec 18 18:48:39 
+        MET 1997) ready.</i></p>
+      <p><i> </i>Dobbiamo quindi specificare l'utente e la password che intendiamo 
+        utilizzare.<br>
+        Se il server consente un accesso anonimo possiamo semplicemente usare 
+        <b>&quot;anonymous&quot;</b> come UserID e il nostro indirizzo e-mail 
+        come password.</p>
+      <p><i>Utente (chili.iol.it(none)): <b>icarus</b><br>
+        331 Password required for icarus.<br>
+        Password: <b>nonveladico</b><br>
+        230- &nbsp;&nbsp;19110322 bytes disponibili su 31457280.<br>
+        230 User icarus logged in.</i></p>
+      <p>Ok, siamo loggati e adesso smazziamoci i comandi…ah gi&agrave;, ma non 
+        li conosciamo...<br>
+        Come faccio a fare un client FTP in VB se non conosco neanche i comandi 
+        fondamentali?! Che tristezza, che sconforto…<br>
+        Meglio che continuo a sfondarmi di Quake3 e Diablo2.</p>
+      <p>Niente paura! Prima di cominciare a parlare del codice facciamo una piccola 
+        digressione riguardo al protocollo FTP :)</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il tutorial si allungher&agrave; un pochino, ma &egrave; necessario per 
+        andare avanti.<br>
+        Chiediamo quindi aiuto proprio al <a href="../glossary/d.htm#DAEMON">demone</a> 
+        FTP che ci ha risposto, digitando proprio la parola <b>&quot;help&quot;</b>.</p>
+      <p><b>Help</b><br>
+        I comandi possono essere abbreviati.<br>
+        I comandi sono:<br>
+        <i><b>! delete literal prompt send<br>
+        ? debug ls put status<br>
+        etc. etc.</b></i></p>
+      <p>Possiamo addirittura sapere nello specifico cosa fa un comando digitando<br>
+        <i>&lt;help nome-comando&gt;</i>.</p>
+      <p><b>help mput</b><br>
+        mput&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;invia gruppi di file</p>
+      <p> Dopo aver negoziato la sessione col demone e aver immesso userID e password, 
+        se volessimo sapere quanto spazio abbiamo a disposizione e quali file 
+        sono gi&agrave; presenti basterebbe digitare il comando <b>dir</b> uguale 
+        a quello del DOS.</p>
+      <p>Dobbiamo poi decidere il modo in cui uploadare il nostro file. Se il 
+        nostro &egrave; un file di testo sceglieremo il modo <i>&quot;ascii&quot;</i>, 
+        ma se &egrave; un Mp3 da mettere sul nostro sito dobbiamo scegliere il 
+        modo <i>&quot;binary&quot;</i>. I comandi per la scelta della modalit&agrave; 
+        sono rispettivamente <b>ascii</b> e <b>binary</b>. Digitiamo quindi il 
+        nome del modo che ci serve ed avremo la conferma dal demone.</p>
+      <p>Un comando utile per quando dobbiamo trasferire pi&ugrave; files &egrave; 
+        <b>prompt</b>, che evita di farci ripetere sempre la domanda se siamo 
+        sicuri di voler caricare il file. Se i file sono 10 possiamo anche rispondere 
+        sempre di si, ma se i file sono 100 possiamo anche andare a prenderci 
+        un caff&egrave; ed evitare di stare dietro all'upload continuando a rispondere 
+        &quot;yes&quot;. Quindi digitando <b>prompt</b> otteniamo in risposta 
+        l'attivazione o la disattivazione della domanda di conferma. Lo stato 
+        che ci interessa raggiungere &egrave; <b>&quot;prompt off&quot;</b>.</p>
+      <p>Supponiamo che il file icarus.vbp che vogliamo uploadare si trovi nella 
+        directory <i><b>c:\miei_files\vb</b></i>. Dobbiamo quindi cambiare la 
+        directory di lavoro <a href="../glossary/l.htm#LOCALE">locale</a>.<br>
+        Per questo ci viene in aiuto il comando <b>lcd</b> che significa appunto 
+        'local change directory'.</p>
+      <p>Se dovessimo invece cambiare directory all'interno dello spazio FTP useremmo 
+        il comando <b>cd</b> uguale al comando DOS.</p>
+      <p>Dopo tutti questi preparativi, noiosi ma necessari, possiamo passare 
+        alla vera fase di upload. Il comando di upload vero e proprio non &egrave; 
+        unico ma ne esistono due. Uno per uploadare una serie di file (ad esempio 
+        *.vbp) elencati utilizzando le wildcard e/o separandoli da spazio e uno 
+        per uploadare un file unico. I comandi sono rispettivamente <b>mput</b> 
+        e <b>put</b>.</p>
+      <p>Per quanto riguarda il download esistono comandi analoghi che, come possiamo 
+        comprendere spulciando l'elenco fornitoci con <b>help</b>, saranno <b>mget</b> 
+        e <b>get</b>.</p>
+      <p>&Egrave; possibile compiere anche altre operazioni come il cambio del 
+        nome, ma non elencheremo tutti i comandi uno per uno in questo tutorial. 
+        Basta affidarsi sempre all'help in linea.</p>
+      <hr>
+      <p>Cominciamo quindi con il codice vero e proprio.</p>
+      <p><img src="../images/cliserv/cliserv003_01.jpg" width="214" height="215" align="right" alt="Figura 1">Per 
+        il design del nostro client utilizzeremo un paio di pulsanti in basso 
+        per connetterci, disconnetterci ed uscire dal programma, i cui loro rispettivi 
+        nomi saranno <b>cmdConnect</b>, <b>cmdDisconnect</b> e <b>cmdExit</b>.</p>
+      <p>Avremo anche una serie di pulsanti per tre funzioni elementari: <b>cmdUpload</b>, 
+        <b>cmdDownload</b> e <b>cmdChangeDir</b>.</p>
+      <p>Al centro abbiamo una Listbox <img src="../images/controls/listbox.gif" width="25" height="25" align="absmiddle">chiamata 
+        <b>ListOut</b> per elencare i files remoti. </p>
+      <p>L'ideale da fare sarebbe usare due ListBox per selezionare i files e 
+        magari uploadarli e downloadarli con un doppio click, oppure con una funzione 
+        di <i>drag'n'drop</i>, ma direi che sono argomenti che esulano dal target 
+        di questo tutorial e aggiungerebbero solo confusione all'argomento che 
+        vogliamo trattare, cio&egrave; l'uso del controllo <img src="../images/controls/inet.gif" width="25" height="25" align="absmiddle"> 
+        <i><b>Internet Transfer Control</b></i>.</p>
+      <p>Proprio questo sar&agrave; la prima cosa da piazzare all'interno del 
+        form e gli daremo il nome Inet1; nella finestra dell propriet&agrave; 
+        specificheremo il valore <b>icFTP</b> nella propriet&agrave; <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        <i>Protocol</i> e <b><i>21</i></b> nella propriet&agrave; <i>RemotePort</i>. 
+        Le altre propriet&agrave; le imposteremo da codice.</p>
+      <p>Un ultimo controllo da inserire &egrave; un Timer<img src="../images/controls/timer.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>Timer1</b> che utilizzeremo per ritardare l'esecuzione di un comando. 
+        Impostiamo per esso le propriet&agrave; <i>Interval</i> a <b>1000</b> 
+        e la <i>Enabled</i> a <b>False</b>.</p>
+      <hr>
+      <p>Mi pareva carino creare una dialog a parte per effettuare il login e 
+        cos&igrave; ho fatto.</p>
+      <p><img src="../images/cliserv/cliserv003_02.jpg" width="166" height="118" align="right" alt="Figura 2">Aggiungiamo 
+        quindi un form ed inseriamo in esso tre <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">, 
+        tre <i>TextBox</i> <img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle"> 
+        denominate <b>txtHost</b>, <b>txtUserID</b> e <b>txtPassword</b> e due 
+        CommandButton<img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">denominati 
+        <b>OKButton</b> e <b>CancelButton</b>.</p>
+      <p>La prima textbox servir&agrave; per immettere l'indirizzo dell'host a 
+        cui collegarci. Per inciso sarebbe la parte che viene dopo ftp://.</p>
+      <p>La seconda e la terza textbox serviranno per specificare UserID e Password. 
+        Se l'accesso al server non &egrave; anonimo occorrerebbe settare un carattere 
+        (di solito '*') per lo shadowing della password.<br>
+        Pertanto impostiamo a <i>&quot;*&quot;</i> la propriet&agrave; PasswordChar 
+        della TextBox <b>txtPassword</b>.</p>
+      <p>Il contenuto di queste tre textbox verr&agrave; poi concatenato per formare 
+        qualcosa che assomiglia a <b><i>ftp://UserID:Password@serverFtp.com</i></b> 
+        ovvero un URL di accesso ad un sito FTP, comprendente UserID, Password 
+        e nome del server.</p>
+      <p>Se proviamo a digitare tale URL nel nostro browser dovremmo riuscire 
+        a navigare in modo grafico il nostro spazio FTP. </p>
+      <hr>
+      <p>A questo punto ci si chiederebbe anche perch&eacute; dobbiamo piagarci 
+        le dita sulla tastiera per battere codice per fare un client sgrauso e 
+        poco affidabile.<br>
+        Questo tutorial &egrave; solo un esempio, <i>un pretesto</i> per imparare 
+        qualcosa dal quale poi tireremo fuori quello che vorremo a seconda della 
+        nostra creativit&agrave; e del nostro ingegno.<br>
+        E' utile imparare il maggior numero di cose e mettersele in tasca. Quando 
+        poi si dovr&agrave; risolvere un problema avremo a disposizione un carnet 
+        di nozioni e l'unica cosa da fare sar&agrave; scegliere la soluzione migliore. 
+        Imparare queste cose senza uno scopo preciso &egrave; comunque utile. 
+        Non tanto imparare per il gusto di imparare, ma per quello che un mio 
+        amico e mentore (Master SppMember) mi ha insegnato col nome di <b>Serendipity</b>.</p>
+      <p>In breve...<br>
+        Pu&ograve; capitare che trapanandosi il cervello per risolvere un problema 
+        si trovi la soluzione o ancora meglio l'ispirazione per qualcosa che con 
+        il problema originale non ha nulla a che fare. Il caso, che porta alla 
+        scoperta o all'illuminazione, &egrave; la Serendipity. L'ingegno dell'uomo 
+        che sfoga la sua creativit&agrave; in qualcosa, non si sa cosa, ma tutto 
+        il sapere che si ha in testa prima o poi sfocer&agrave; in qualcosa.</p>
+      <hr>
+      <p>Utilizziamo quindi i tre valori che abbiamo inserito nelle textbox andando 
+        a vedere il primo e pi&ugrave; importante metodo <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        del controllo Inet.</p>
+      <p><b>Execute</b><br>
+        La sintassi &egrave; la seguente:</p>
+      <p><i>object.Execute url, operation, data, requestheader</i></p>
+      <p>Se come url passiamo l'indirizzo del server FTP e usiamo il metodo Execute 
+        solo per connetterci allora gli altri parametri per adesso non serviranno.</p>
+      <hr>
+      <p>Cominciamo a vedere il codice della semplice dialog per effettuare il 
+        login: </p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub CancelButton_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Hide</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub OKButton_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim URLACCESSO As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;On Error GoTo ERRORE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;URLACCESSO = &quot;ftp://&quot; &amp; txtUserID.Text 
+          &amp; &quot;:&quot; &amp; txtPassword.Text &amp; &quot;@&quot; &amp; 
+          txtHost.Text</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Ftp.ID = &quot;DIR&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Ftp.Inet1.Execute URLACCESSO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Hide</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Exit Sub</li>
+        <li>ERRORE:</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;ERRORE: &quot; &amp; Err.Description, 
+          vbCritical + vbOKOnly</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Il click sul pulsante Annulla nasconder&agrave; il form in questione, 
+        restituendo il controllo al form principale che ha richiamato questo.</p>
+      <p>Il click sopra il pulsante OK dovr&agrave; tentare la connessione all'host 
+        specificato.<br>
+        Alla riga 9 abbiamo una semplice istruzione di gestione degli errori.<br>
+        Alla riga 10 viene costruito l'URL di accesso al server concatenando i 
+        valori delle Textbox con le apposite stringhe (':' , '@').</p>
+      <p>Siamo nelle righe di codice della dialog e il controllo Inet che andiamo 
+        a utilizzare si trova nel form principale. Quindi per utilizzarlo dovremo 
+        effettuare il corretto riferimento al form principale, partendo dal nome 
+        del form per arrivare al nome del controllo.</p>
+      <p>Alla riga 11 viene impostata la variabile <b>ID</b> a <i>&quot;DIR&quot;</i> 
+        e dopo vedremo perch&eacute;.<br>
+        Alla riga 12 viene effettuata la connessione al server mediante l'utilizzo 
+        dell'URL appena formato. Fatto questo nasconderemo la dialog di connessione 
+        che ormai non ci serve pi&ugrave; e usciamo dalla funzione. </p>
+      <p>Se il collegamento avesse generato un errore sarebbe stato mostrata una 
+        finestra esplicativa dell'errore (riga 16).</p>
+      <hr>
+      <p>Passiamo quindi al codice del form principale.</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li>Public ID As String</li>
+        <li></li>
+        <li>Private Sub cmdConnect_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Load login</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;login.Show vbModal</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Unload login</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub cmdDisconnect_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Inet1.Execute &quot;&quot;, &quot;CLOSE&quot;</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub cmdExit_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Unload Me</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Alla riga 2 abbiamo dichiarato una variabile pubblica (cio&egrave; accessibile 
+        da ogni punto del codice) di nome <b>ID</b>. Essa verr&agrave; utilizzata 
+        per identificare i comandi da eseguire. In particolare verr&agrave; utilizzata 
+        per mostrare il contenuto della cartella remota ogni qual volta viene 
+        cambiata la cartella corrente oppure alla fine di un upload.</p>
+      <p>Il codice compreso tra le righe 4-8 caricano, mostrano e scaricano la 
+        finestra <b>dialog</b> per effettuare il login al server remoto. Questo 
+        sar&agrave; eseguito alla pressione del pulsante <b>Connect</b>.</p>
+      <p>Il click sopra il pulsante <b>Disconnect</b> dovr&agrave; disconnettere 
+        il client dal server e questo viene effettuato mediante l'invio del comando 
+        <b>&quot;CLOSE&quot;</b> (riga 11).</p>
+      <p>Il click sopra il pulsante <b>Exit</b> provocher&agrave; lo scaricamento 
+        del form corrente e quindi la chiusura del programma (riga 15).</p>
+      <ol class="codicevb" start="18">
+        <li>Private Sub Inet1_StateChanged(ByVal State As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim POSINVIO As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim RITORNO As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If (ID = &quot;DIR&quot;) And (State = icResponseCompleted) 
+          Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RITORNO = Inet1.GetChunk(1024, 
+          icString)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POSINVIO = InStr(1, 
+          RITORNO, vbNewLine)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;While POSINVIO &gt; 
+          0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          Left(RITORNO, POSINVIO - 1) &lt;&gt; &quot;&quot; Then ListOut.AddItem 
+          Left(RITORNO, POSINVIO - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RITORNO 
+          = Mid(RITORNO, POSINVIO + 2)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;POSINVIO 
+          = InStr(1, RITORNO, vbNewLine)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wend</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ID = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Ecco l'evento<img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><b>StateChanged</b> 
+        del controllo Inet.<br>
+        Come dice il nome stesso riguarda il cambiamento nello stato della connessione. 
+        Viene fornito un valore State che indica un numero dell'<a href="../glossary/e.htm#ENUMERAZIONE">enumerazione</a> 
+        <img src="../images/ide/enumeraz.gif" width="16" height="16" align="absmiddle"> 
+        <b>StateConstants</b>.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Il valore che utilizzeremo &egrave; l'<i><b>icResponseCompleted</b></i> 
+        ovvero il completamento dell'operazione. Pertanto, alla riga 12, viene 
+        controllato se il valore della variabile ID &egrave; &quot;DIR&quot; e 
+        lo stato &egrave; icResponseCompleted. Ci&ograve; significher&agrave; 
+        che il codice seguente sar&agrave; eseguito soltanto al completamento 
+        dell'operazione quando ID &egrave; uguale a &quot;DIR&quot;. Pi&ugrave; 
+        precisamente il codice sar&agrave; eseguito ogni volta che vogliamo aggiornare 
+        il contenuto della <b>ListOut</b>. </p>
+      <p>Alla riga 22 leggiamo i dati dal controllo Inet1 mediante l'utilizzo 
+        del metodo GetChunk. Tali dati saranno memorizzati nella variabile <b>RITORNO</b> 
+        e conterranno l'elenco dei files e delle cartelle nella directory di lavoro 
+        remota. Ogni file o cartella &egrave; separato dall'altro da un INVIO 
+        (<a href="../glossary/c.htm#COSTANTE">costante</a><img src="../images/ide/costante.gif" width="16" height="16" align="absmiddle">vbNewLine).<br>
+        Pertanto, prima di presentare i dati all'utente, sar&agrave; necessario 
+        estrarre i singoli nomi dalla variabile <b>RITORNO</b>. Per effettuare 
+        quest'operazione sar&agrave; utilizzato il ciclo alle righe 23-28 che 
+        ricercher&agrave; le posizioni di vbNewLine ed inserir&agrave; ogni voce 
+        nella ListBox <b>ListOut</b>.</p>
+      <p>Effettuata quest'operazione verr&agrave; azzerato il valore di ID, che 
+        verr&agrave; reimpostato ogni volta che si desidera elencare il contenuto 
+        della cartella remota.</p>
+      <ol class="codicevb" start="33">
+        <li>Private Sub Timer1_Timer()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ID = &quot;DIR&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Inet1.Execute &quot;&quot;, &quot;DIR&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Timer1.Enabled = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ListOut.Clear</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ListOut.AddItem &quot;./&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ListOut.AddItem &quot;../&quot;</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Il Timer <img src="../images/controls/timer.gif" width="25" height="25" align="absmiddle">che 
+        abbiamo inserito sul form serve esclusivamente per elencare i files all'interno 
+        della cartella remota. Abbiamo dovuto inserirlo poich&eacute; se vogliamo 
+        elencare il contenuto della cartella subito immediatamente dopo essere 
+        entrati nella cartella, viene generato un errore. Il socket ha bisogno 
+        di una certa quantit&agrave; di tempo prima di poter richiedere dati riguardo 
+        la cartella corrente. Non potremo cambiare cartella e al contempo elencarne 
+        il contenuto. Dovremo necessariamente attendere qualche decimo di secondo 
+        e poi richiamare il comando <b>DIR</b> di elencazione. Ecco il motivo 
+        di questo Timer.</p>
+      <p>Alla riga 34 impostiamo la variabile <b>ID</b> a DIR, per il motivo gi&agrave; 
+        visto alla riga 21. Fatto questo richiediamo il comando <i><b>&quot;DIR&quot;</b></i> 
+        mediante il solito metodo <b>Execute</b>, disattiviamo il timer, ripuliamo 
+        la ListOut (riga 37) ed aggiungiamo i due collegamenti simbolici &quot;.&quot; 
+        e &quot;..&quot; per permettere il ritorno alla cartella precedente (righe 
+        38 e 39).</p>
+      <ol class="codicevb" start="42">
+        <li>Private Sub cmdDownload_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;On Error GoTo ERRORE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Inet1.Execute &quot;&quot;, &quot;GET &quot; 
+          &amp; ListOut.Text &amp; &quot; &quot; &amp; ListOut.Text</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Exit Sub</li>
+        <li>ERRORE:</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;ERRORE: &quot; &amp; Err.Description, 
+          vbCritical + vbOKOnly</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Il click sopra il pulsante Download scaricher&agrave; il file selezionato 
+        nella ListBox.<br>
+        Alla riga 43 abbiamo un'istruzione di gestione degli errori. Subito dopo 
+        verr&agrave; eseguito il metodo Execute passandogli come valore il comando 
+        GET seguito dal nome del file da scaricare ed il nome da assegnare al 
+        file scaricato. Il nome in questione saranno estratti dalla propriet&agrave; 
+        Text della ListOut. Eseguita l'operazione si uscir&agrave; dalla funzione.</p>
+      <p>Alla riga 47 c'&egrave; la funzione che mostra una finestra di errore 
+        ogni qual volta si verifica un errore all'interno di questa Sub.</p>
+      <ol class="codicevb" start="50">
+        <li>Private Sub cmdUpload_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;On Error GoTo ERRORE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Inet1.Execute &quot;&quot;, &quot;PUT ./ftp.frm 
+          ftp.frm&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Timer1.Enabled = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Exit Sub</li>
+        <li>ERRORE:</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;ERRORE: &quot; &amp; Err.Description, 
+          vbCritical + vbOKOnly</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Il click sopra il pulsante Upload invier&agrave; il file FTP.FRM all'host 
+        remoto. Naturalmente in un vero client FTP il nome del file verrebbe scelto 
+        nel computer locale, ma questo esempio vuole soprattutto spiegare il meccanismo 
+        di collegamento tra i due computer, e non vuole essere un completo client 
+        FTP.</p>
+      <p>Alla riga 52 viene eseguito il metodo <b>Execute</b> fornendogli come 
+        comando <i><b>PUT</b></i> seguito dal nome del file locale e il nome che 
+        il file deve assumere nel computer remoto.</p>
+      <p>In seguito a questo viene attivato il Timer1 che provveder&agrave; autonomamente 
+        a richiedere l'elencazione della cartella remota dopo circa un secondo 
+        dall'attivazione. Questo per richiedere l'aggiornamento dell'elenco <b>ListOut</b>.</p>
+      <ol class="codicevb" start="59">
+        <li>Private Sub cmdChangeDir_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;On Error Resume Next</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Inet1.Execute &quot;&quot;, &quot;CD &quot; 
+          &amp; ListOut.Text</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Timer1.Enabled = True</li>
+        <li>End Sub</li>
+      </ol>
+      <p>L'ultimo comando che vedremo sar&agrave; quello che permetter&agrave; 
+        il cambio di cartella di lavoro remota. Al click sopra il pulsante <b>ChangeDir</b> 
+        verr&agrave; inviato il comando <i><b>CD</b></i> seguito dal nome della 
+        cartella, letto dalla <b>ListOut</b>.</p>
+      <p>In seguito all'invio del comando viene attivato il Timer1 che, dopo un 
+        secondo, rielencher&agrave; il contenuto della nuova cartella remota.</p>
+      <hr>
+      <p>Possiamo passare all'esecuzione del programma. Lanciamolo, premiamo il 
+        pulsante Connect, inseriamo il nome dell'host a cui collegarci, lo UserID 
+        e la Password e premiamo il pulsante OK. Se i dati inseriti saranno corretti, 
+        dovremmo vedere il contenuto della cartella remota.</p>
+      <p>Una volta connessi, sar&agrave; possibile navigare tra le cartelle, cliccando 
+        sul nome della cartella e premendo il pulsante ChangeDir, potremo Uploadare 
+        il file FTP.FRM sul server remoto e downloadare sul nostro computer il 
+        file selezionato.</p>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="50%" align="center"><img src="../images/cliserv/cliserv003_03.jpg" width="166" height="118" alt="Figura 3"><br>
+            <b>Figura 3</b></td>
+          <td width="50%" align="center"><img src="../images/cliserv/cliserv003_04.jpg" width="214" height="215" alt="Figura 4"><br>
+            <b>Figura 4</b></td>
+        </tr>
+      </table>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Conoscendo il protocollo FTP possiamo associare a diversi pulsanti un 
+        metodo Execute con l'argomento appropriato, per <a href="../glossary/u.htm#UPLOAD">uploadare</a>, 
+        <a href="../glossary/d.htm#DOWNLOAD">downloadare</a>, rinominare, cancellare 
+        tutti i file che vogliamo sul nostro spazio FTP.</p>
+      <p>Le cose che si possono fare con questo controllo sono molteplici e sta 
+        alla fantasia del programmatore svilupparle.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=14">Alberto 
+        Alagna</a><br>
+        17 Marzo 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice Client/Server</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

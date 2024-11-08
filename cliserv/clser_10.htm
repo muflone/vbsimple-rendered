@@ -1,0 +1,491 @@
+<html><!-- #BeginTemplate "/Templates/ClientServer.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Recuperare informazioni di rete tramite WSA</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Recuperare informazioni 
+    di rete tramite WSA<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/cliserv.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+  </div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>In questo articolo vedremo come recuperare certe informazioni di rete 
+        sfruttando la classe <i>clsFBISocket</i> trattata <a href="clser_09.htm">nell'articolo 
+        precedente</a>. Pi&ugrave; precisamente recuperemo il nome, i numeri IP 
+        sulla macchina macchina locale ed aggiungeremo alcune funzioni di conversione 
+        da IP a host e viceversa. Il progetto includer&agrave; la gi&agrave; citata 
+        classe, pi&ugrave; una classe di nome <b>clsFBISocketInfo</b> che svilupperemo 
+        in questa sede e di cui vediamo subito la sezione dichiarazioni:</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Const SOCKET_ERROR As Long = -1</li>
+        <li>Private Const AF_INET As Long = 2</li>
+        <li></li>
+        <li>Private Type HOSTENT</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hName As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hAliases As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hAddrType As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hLen As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hAddrList As Long</li>
+        <li>End Type</li>
+        <li></li>
+      </ol>
+      <p>In queste poche righe si concentra tutta la complessit&agrave; dell'intero 
+        articolo e solo una corretta comprensione della struttura <i>HOSTENT</i> 
+        limiter&agrave; gli insuccessi ed i probabili errori. Per utilizzarla 
+        &egrave; necessario avere chiara il concetto di <a href="../glossary/p.htm#PUNTATORE">puntatore</a> 
+        ad una stringa; si tratta dell'indirizzo di memoria in cui si trova un 
+        determinato dato; <a href="../news/news_10.htm">nel caso di stringhe il 
+        puntatore</a> indica l'indirizzo in cui si trova il primo carattere della 
+        stringa (<a href="../news/news_10.htm">LPSTR</a>).</p>
+      <p>Il membro della struttura <b>hName</b> &egrave; un semplice puntatore 
+        al nome dell'host, cio&egrave; conterr&agrave; l'indirizzo in cui si trova 
+        la stringa del nome dell'host. Diverso &egrave; il caso dei membri <b>hAliases</b> 
+        (che non utilizzeremo in questo articolo) e <b>hAddrList</b>. Questi rappresentano 
+        un <a href="../glossary/a.htm#ARRAY">array</a> di puntatori a stringa, 
+        cio&egrave; una sequenza di puntatori a stringa; ma poich&eacute; anche 
+        le matrici sono puntatori dove l'indirizzo di ogni elemento corrisponde 
+        a <span class="fixed">indirizzo + (indice - 1) * 4</span>. Il numero 4 
+        rappresenta 32 bit, cio&egrave; la lunghezza in bytes di un dato Long.</p>
+      <p>Data questa semplice operazione risulta chiaro che all'indirizzo corrisponde 
+        il primo elemento, all'indirizzo+4 il secondo, a +8 il terzo e cos&igrave; 
+        via. L'ultimo degli elementi sar&agrave; quello seguito da un elemento 
+        il cui puntatore &egrave; 0. Utilizzeremo il membro <b>hAddList</b> che 
+        conterr&agrave; tutti gli indirizzi disponibili per l'host richiesto.</p>
+      <ol start="14" class="codicevb">
+        <li>Private Declare Sub CopyMemory Lib "KERNEL32" Alias "RtlMoveMemory" 
+          (pDst As Any, pSrc As Any, ByVal ByteLen As Long)</li>
+        <li>Private Declare Function lstrlenA Lib "KERNEL32" (ByVal Ptr As Any) 
+          As Long</li>
+        <li>Private Declare Function lstrcpy Lib "KERNEL32" Alias "lstrcpyA" (ByVal 
+          lpString As String, ByVal lPtr As Long) As Long</li>
+        <li>Private Declare Function gethostname Lib "WSOCK32" (ByVal szHost As 
+          String, ByVal dwHostLen As Long) As Long</li>
+        <li>Private Declare Function gethostbyname Lib "WSOCK32" (ByVal szHost 
+          As String) As Long</li>
+        <li>Private Declare Function gethostbyaddr Lib "WSOCK32" (haddr As Long, 
+          ByVal hnlen As Long, ByVal addrtype As Long) As Long</li>
+        <li></li>
+      </ol>
+      <p>Seguono le dichiarazioni delle funzioni esterne; <i>CopyMemory</i> gi&agrave; 
+        vista in tanti altri articoli &egrave; utilizzata per copiare una serie 
+        di bytes da un indirizzo ad un altro; <i>lstrlenA</i> e <i>lstrcpy</i> 
+        sono utilizzate per recuperare la lunghezza ed il contenuto di una stringa 
+        dato il suo puntatore; <i>gethostname</i> recuperer&agrave; il nome dell'host 
+        locale, mentre <i>gethostbyname</i> e <i>gethostbyaddr</i> restituiscono 
+        un puntatore ad una struttura di tipo <b>HOSTENT</b>.</p>
+      <ol start="21" class="codicevb">
+        <li>Private WithEvents fbiSocket As clsFBISocket</li>
+        <li>Private Host As HOSTENT</li>
+        <li>Private lpHost As Long</li>
+        <li></li>
+        <li>Public Event Error(ByVal ErrorCode As Long, ByVal Description As String, 
+          ByRef Cancel As Boolean)</li>
+        <li></li>
+      </ol>
+      <p>La variabile <b>fbiSocket</b> rappresenter&agrave; l'istanza della classe 
+        <i>clsFBISocket</i>, che inizializza e mantiene attivo il sistema WSA 
+        per il processo; <b>HOST</b> &egrave; una variabile del tipo <i>HOSTENT</i> 
+        gi&agrave; visto in precedenza ed utilizzata da parecchie funzioni, mentre 
+        <b>lpHost</b> rappresenta il suo puntatore. Queste ultime due variabili 
+        sono utilizzate da quasi tutte le funzioni della classe.</p>
+      <p>&Egrave; stato anche aggiunto un evento<!-- #BeginLibraryItem "/Library/Evento.lbi" --><img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle">&nbsp;<!-- #EndLibraryItem --><b>Error</b>, 
+        identico a quello della classe <i>clsFBISocket</i>; in tale maniera gli 
+        errori generati dall'oggetto <b>fbiSocket</b> saranno inviati direttamente 
+        all'evento Error di questa classe e baster&agrave; quindi gestire un solo 
+        evento per gli errori generati da entrambe le classi.</p>
+      <ol start="27" class="codicevb">
+        <li>Private Sub Class_Initialize()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set fbiSocket = New clsFBISocket</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub Class_Terminate()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set fbiSocket = Nothing</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub fbiSocket_Error(ByVal ErrorCode As Long, ByVal Description 
+          As String, Cancel As Boolean)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;RaiseEvent Error(ErrorCode, Description, Cancel)</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Public Property Get Socket() As clsFBISocket</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set Socket = fbiSocket</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>Naturalmente l'oggetto fbiSocket sar&agrave; creato contestualmente alla 
+        creazione dell'istanza della classe corrente e distrutto alla sua distruzione. 
+        Come gi&agrave; detto, tutti gil errori generati dall'oggetto fbiSocket 
+        saranno a loro volta inviati all'applicazione che utilizza questa classe. 
+        Sar&agrave; possibile accedere dall'esterno della classe al membro fbiSocket 
+        utilizzando la propriet&agrave; pubblica <b>Socket</b>.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Qui inizia il codice vero e proprio della classe, che &egrave; stato 
+        spezzettato in numerose tante funzioni per semplificarne l'uso e per evitare 
+        le ripetizioni di codice:</p>
+      <ol start="43" class="codicevb">
+        <li>Public Function LongToIP(ByVal Host As Long) As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;LongToIP = CStr(Host And &amp;HFF) &amp; &quot;.&quot; 
+          &amp; _</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CStr(Host \ &amp;H100 
+          And &amp;HFF) &amp; &quot;.&quot; &amp; _</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CStr(Host \ &amp;H10000 
+          And &amp;HFF) &amp; &quot;.&quot; &amp; _</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CStr(Host \ &amp;H1000000 
+          And &amp;HFF)</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>La prima funzione &egrave; <b>LongToIP</b> che converte un indirizzo 
+        IP in forma decimale nella forma puntata decimale (a.b.c.d); un <i><b>indirizzo 
+        decimale</b></i> sostanzialmente si compone di un valore a 32 bit che 
+        pu&ograve; essere rappresentato in maniera esadecimale con DDCCBBAA e 
+        pu&ograve; essere quindi scomposto nella maniera puntata con delle <a href="../howto/ht_038.htm">semplici 
+        operazioni aritmetiche</a> estraendo di volta in volta un byte. Avremmo 
+        anche potuto convertire l'intero numero in esadecimale ed estrarre i singoli 
+        bytes utilizzando la funzione Mid ma sarebbe stato solo un'inutile spreco 
+        di tempi di elaborazione ed ottenendo gli stessi risultati.</p>
+      <ol start="50" class="codicevb">
+        <li>Public Property Get LocalHost() As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;LocalHost = Space$(256)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If gethostname(LocalHost, Len(LocalHost)) 
+          = SOCKET_ERROR Then _</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call fbiSocket.HandleError(11, 
+          &quot;Impossibile recuperare l'host locale&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;LocalHost = Left$(LocalHost, InStr(1, LocalHost, 
+          vbNullChar) - 1)</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>La propriet&agrave; <b>LocalHost</b> restituir&agrave; il nome dell'host 
+        locale che, nella quasi totalit&agrave; dei casi, corrisponde al nome 
+        di rete del PC in uso. Il suo funzionamento &egrave; basato totalmente 
+        sulla funzione <i>gethostname</i> che effettua proprio questo scopo. Tutto 
+        il resto del codice &egrave; la preparazione del buffer sui cui la funzione 
+        lavorer&agrave; e l'estrazione del nome corretto al termine dell'elaborazione.</p>
+      <ol start="57" class="codicevb">
+        <li>Public Function IPToHost(ByVal IP As String) As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpHost = gethostbyaddr(HostToLong(IP, 0), 
+          4, AF_INET)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If lpHost &lt;&gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyMemory Host, ByVal 
+          lpHost, Len(Host)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IPToHost = Space$(lstrlenA(ByVal 
+          Host.hName))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call lstrcpy(ByVal 
+          IPToHost, ByVal Host.hName)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>La funzione <b>IPToHost</b> recupera il nome dell'host corrispondente 
+        all'indirizzo IP specificato. La funzione, dopo aver convertito l'indirizzo 
+        IP punteggiato nel corrispondente decimale, richiama la funzione <i>gethostbyaddr</i> 
+        che richiede fra l'altro il tipo di indirizzo fornito, nel nostro caso 
+        <i> <b>AF_INET</b></i> che indica un indirizzo Internet/Ethernet, e restituisce 
+        un puntatore ad una struttura di tipo HOSTENT.</p>
+      <p>Ottenuto il puntatore sar&agrave; possibile recuperare i dati dalla struttura 
+        e copiarli nella variabile <b>Host</b>; da quest'ultima estrarremo il 
+        nome dell'host, contenuto all'interno del campo hName ed indicato sotto 
+        forma di puntatore.</p>
+      <ol start="66" class="codicevb">
+        <li>Public Property Get IPCount(ByVal HostName) As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpHost = gethostbyname(HostName)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If lpHost &lt;&gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyMemory Host, ByVal 
+          lpHost, Len(Host)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IPCount = -1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IPCount 
+          = IPCount + 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyMemory 
+          lpHost, ByVal Host.hAddrList + 4 * IPCount, 4</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loop Until lpHost 
+          = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>La propriet&agrave; <b>IPCount</b> restituisce il numero di indirizzi 
+        IP rilevati per l'host specificato; recuperate le informazioni sull'host 
+        mediante <i>gethostbyname</i> e, copiati i dati dal puntatore alla variabile 
+        <b>Host</b>, seguir&agrave; un controllo basato unicamente su un ciclo 
+        che verifica il valore di ogni elemento contenuto nell'array <b><i>hAddrList</i></b> 
+        (lo abbiamo gi&agrave; citato in cima all'articolo). Infatti l'ultimo 
+        elemento &egrave; quello seguito da un puntatore nullo.</p>
+      <ol start="78" class="codicevb">
+        <li>Public Function HostToLong(ByVal HostName As String, ByVal Index As 
+          Long) As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Index &gt;= IPCount(HostName) Then Exit 
+          Function</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpHost = gethostbyname(HostName)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If lpHost &lt;&gt; 0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyMemory Host, ByVal 
+          lpHost, Len(Host)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CopyMemory lpHost, 
+          ByVal Host.hAddrList + Index * 4, 4</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If lpHost <> 0 Then 
+          CopyMemory lpHost, ByVal lpHost, 4</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HostToLong = lpHost</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>Questa funzione recupera un indirizzo IP decimale dell'host indicato. 
+        L'argomento <i>Index</i> consente di specificare quale indirizzo IP restituire; 
+        naturalmente il valore di Index non pu&ograve; essere superiore al numero 
+        di IP rilevati dalla propriet&agrave; <b>IPCount</b>; inoltre poich&egrave; 
+        l'argomento Index &egrave; a base 0, ma il valore restituito da IPCount 
+        inizia da 1 &egrave; necessario che <i>Index</i> sia minore del valore 
+        restituito (riga 79).</p>
+      <p>Sar&agrave; quindi possibile recuperare il puntatore all'host tramite 
+        <i>gethostbyname</i>, ricopiare i dati all'interno di <b>Host</b> e quindi 
+        recuperare il puntatore all'indirizzo da noi richiesto semplicemente applicando 
+        il calcolo accennato all'inizio di questo articolo (<span class="fixed">indirizzo 
+        + (indice - 1) * 4</span>). Recuperato l'indirizzo in cui si trova il 
+        puntatore del nostro indirizzo sar&agrave; possibile estrarre da questo 
+        il vero indirizzo. Lo ricordiamo, <i><b>hAddrList</b></i> conterr&agrave; 
+        un array di puntatori che indicano ciascuno la posizione in cui si trova 
+        l'indirizzo IP decimale.</p>
+      <ol start="89" class="codicevb">
+        <li>Public Function HostToIP(ByVal HostName As String, ByVal Index As 
+          Integer) As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Index &gt;= IPCount(HostName) Then Exit 
+          Function</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;HostToIP = LongToIP(HostToLong(HostName, Index))</li>
+        <li>End Function</li>
+      </ol>
+      <p>L'ultima funzione della classe utilizza la funzione <b>HostToLong</b> 
+        e converte questo valore in forma punteggiata, utilizzando <b>LongToIP</b>. 
+        Quest'ultima funzione &egrave; stata aggiunta solo per comodit&agrave;, 
+        sebbene avremmo potuto chiamare le due funzioni (<i>HostToLong</i> e <i>LongToIP</i>) 
+        direttamente.</p>
+      <hr>
+      <p><img src="../images/cliserv/cliserv010_01.png" width="186" height="156" align="right" alt="Figura 1">Per 
+        testare il funzionamento di questa classe &egrave; stato preparato un 
+        semplicissimo form contenente alcuni controlli Label, una ListBox, due 
+        TextBox e quattro pulsanti. Tralasciamo i nomi dei controlli perch&eacute; 
+        risulteranno subito chiari e passiamo al brevissimo codice:</p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private socket As clsFBISocketInfo</li>
+        <li></li>
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim intLoop As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim strLocalHost As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set socket = New clsFBISocketInfo</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;With socket</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strLocalHost = .LocalHost</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lblServerLocaleVal.Caption 
+          = strLocalHost</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For intLoop = 0 To 
+          .IPCount(strLocalHost) - 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lbIPLocali.AddItem 
+          .HostToIP(strLocalHost, intLoop)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next intLoop</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub Form_Unload(Cancel As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set socket = Nothing</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>All'avvio del form &egrave; creato l'oggetto <b>socket</b> di tipo <i>clsFBISocketInfo</i> 
+        visto in precedenza; alla riga 10 &egrave; recuperato il nome dell'host 
+        locale mediante propriet&agrave; <b>LocalHost</b> e quindi seguir&agrave; 
+        un ciclo per tutti gli indirizzi IP rilevati con <b>IPCount</b> e <b>HostIP</b>. 
+        Ogni indirizzo recuperato &egrave; inserito all'interno della ListBox 
+        <i> <b>lbIPLocali</b></i>. Naturalmente alla chiusura del form sar&agrave; 
+        scaricato l'oggetto socket con tutto ci&ograve; che comporta, cio&egrave; 
+        la deallocazione della classe base <i>clsFBISocket</i> e quindi il rilascio 
+        di tutte le risorse occupate.</p>
+      <ol start="22" class="codicevb">
+        <li>Private Sub lstIPLocali_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtIndirizzo.Text = lbIPLocali.Text</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub cmdHostToIP_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtRisultato.Text = socket.HostToIP(txtIndirizzo.Text, 
+          0)</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub cmdHostToLong_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtRisultato.Text = socket.HostToLong(txtIndirizzo.Text, 
+          0)</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub cmdIPToHost_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtRisultato.Text = socket.IPToHost(txtIndirizzo.Text)</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub cmdLongToIP_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtRisultato.Text = socket.LongToIP(Val(txtIndirizzo.Text))</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Alla scelta di un indirizzo dall'elenco, questo sar&agrave; riportato 
+        all'interno della casella di testo txtIndirizzo; quindi premendo uno dei 
+        quattro pulsanti sar&agrave; richiamata la rispettiva funzione: <b>HostToIP</b> 
+        per recuperare il primo IP dell'host specificato in txtIndirizzo; <b>HostToLong</b> 
+        per recuperare l'indirizzo IP decimale dell'host indicato; <b>IPToHost</b> 
+        per effettuare la ricerca inversa, dall'IP punteggiato al nome dell'host; 
+        infine <b>LongToIP</b> per recuperare l'IP punteggiato partendo da un 
+        IP decimale.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Il codice mostrato presenta una certa difficolt&agrave; d'approccio iniziale, 
+        ma una volta afferrati i concetti relativi ai puntatori il tutto si riduce 
+        a poche e semplici letture di questi valori. Questa classe sar&agrave; 
+        la base su cui verranno costruiti altri codici trattati in questa sezione.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        27 Marzo 2004<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice Client/Server</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Fibia FBI (Team 18) -->
+<rss version="0.91">
+  <channel>
+    <title>VBSimple</title>
+    <link>http://www.vbsimple.net/</link>
+    <description>Il Visual Basic spiegato in una maniera nuova ed unica.</description>
+    <language>IT-it</language>
+    <item>
+      <title>Realizzare un orologio </title>
+      <link>http://www.vbsimple.net/howto/ht_063.htm?nof</link>
+      <description>La realizzazione di un orologio analogico a lancette.</description>
+      <pubDate>Mon, 30 Aug 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Il linguaggio SQL - L'istruzione CREATE TABLE</title>
+      <link>http://www.vbsimple.net/database/db_08_11.htm?nof</link>
+      <description>Il linguaggio SQL - L'istruzione CREATE TABLE</description>
+      <pubDate>Mon, 30 Aug 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Il linguaggio SQL - L'operatore UNION</title>
+      <link>http://www.vbsimple.net/database/db_08_10.htm?nof</link>
+      <description>Il linguaggio SQL - L'operatore UNION</description>
+      <pubDate>Mon, 30 Aug 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Avviare un programma esterno ed attenderne la chiusura</title>
+      <link>http://www.vbsimple.net/howto/ht_062.htm?nof</link>
+      <description>Eseguire un processo esterno in maniera sincrona, attendendo la chiusura del nuovo processo richiamato.</description>
+      <pubDate>Mon, 30 Aug 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Avviare l'applicazione predefinita per un documento</title>
+      <link>http://www.vbsimple.net/howto/ht_061.htm?nof</link>
+      <description>Aprire il gestore predefinito di un documento.</description>
+      <pubDate>Mon, 30 Aug 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Il linguaggio SQL - L'operatore JOIN</title>
+      <link>http://www.vbsimple.net/database/db_08_09.htm?nof</link>
+      <description>Il linguaggio SQL - L'operatore JOIN</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Scorrere orizzontalmente una ListBox </title>
+      <link>http://www.vbsimple.net/howto/ht_060.htm?nof</link>
+      <description>Abilitare la barra di scorrimento orizzontale nelle ListBox quando il testo non risulta visibile nell'area del controllo.</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Effettuare un Ping tramite WSA e ICMP.DLL</title>
+      <link>http://www.vbsimple.net/cliserv/clser_11.htm?nof</link>
+      <description>Effettuare un PING (ICMP ECHO) utilizzando WSA e la libreria ICMP.DLL.</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Recuperare informazioni di rete tramite WSA </title>
+      <link>http://www.vbsimple.net/cliserv/clser_10.htm?nof</link>
+      <description>Implementazione della classe clsFBISocketInfo per il recupero di informazioni di rete mediante WSA.</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Introduzione alle funzioni WSA </title>
+      <link>http://www.vbsimple.net/cliserv/clser_09.htm?nof</link>
+      <description>Implementazione della classe clsFBISocket per l'accesso alle funzioni Winsock API.</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Il linguaggio SQL - Le clausole GROUP BY e HAVING</title>
+      <link>http://www.vbsimple.net/database/db_08_08.htm?nof</link>
+      <description>Il linguaggio SQL - Le clausole GROUP BY e HAVING</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Il linguaggio SQL - Funzioni di aggregazione</title>
+      <link>http://www.vbsimple.net/database/db_08_07.htm?nof</link>
+      <description>Il linguaggio SQL - Funzioni di aggregazione</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Il linguaggio SQL - L'istruzione UPDATE</title>
+      <link>http://www.vbsimple.net/database/db_08_06.htm?nof</link>
+      <description>Il linguaggio SQL - L'istruzione UPDATE</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Il linguaggio SQL - L'istruzione DELETE</title>
+      <link>http://www.vbsimple.net/database/db_08_05.htm?nof</link>
+      <description>Il linguaggio SQL - L'istruzione DELETE</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Il linguaggio SQL - L'istruzione INSERT INTO</title>
+      <link>http://www.vbsimple.net/database/db_08_04.htm?nof</link>
+      <description>Il linguaggio SQL - L'istruzione INSERT INTO</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Il linguaggio SQL - La clausola ORDER BY</title>
+      <link>http://www.vbsimple.net/database/db_08_03.htm?nof</link>
+      <description>Il linguaggio SQL - La clausola ORDER BY</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Il linguaggio SQL - La clausola WHERE</title>
+      <link>http://www.vbsimple.net/database/db_08_02.htm?nof</link>
+      <description>Il linguaggio SQL - La clausola WHERE</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Il linguaggio SQL - L'istruzione SELECT</title>
+      <link>http://www.vbsimple.net/database/db_08_01.htm?nof</link>
+      <description>Il linguaggio SQL - L'istruzione SELECT</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Il linguaggio SQL</title>
+      <link>http://www.vbsimple.net/database/db_08.htm?nof</link>
+      <description>Un piccolo vademecum sul linguaggio SQL.</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Configurazione di un DSN ODBC</title>
+      <link>http://www.vbsimple.net/database/db_07.htm?nof</link>
+      <description>Configurazione di un DSN ODBC per connessioni a database.</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>File Manifest nelle risorse</title>
+      <link>http://www.vbsimple.net/howto/ht_059.htm?nof</link>
+      <description>Inserire il file .manifest necessario per la visualizzazione dello stile visuale di Windows XP all'interno di un file di risorse.</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Risolvere le richieste di Windows Installer</title>
+      <link>http://www.vbsimple.net/news/news_15.htm?nof</link>
+      <description>Sviluppo di un programma che elimini i riferimenti di registro non validi causati da installazioni errate di Windows Installer.</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Applicare lo stile visuale di Windows XP</title>
+      <link>http://www.vbsimple.net/howto/ht_058.htm?nof</link>
+      <description>Come applicare il nuovo stile visuale di Windows XP ai progetti sviluppati in Visual Basic.</description>
+      <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Corso Intermedio - Lezione 11</title>
+      <link>http://www.vbsimple.net/intermed/int_11.htm?nof</link>
+      <description>La lezione 11 tratta l'uso di menu a scomparsa, l'assegnazione dei loro comandi ed il richiamo come menu popup.</description>
+      <pubDate>Mon, 16 Feb 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Weird Things - Sincrono o asincrono?</title>
+      <link>http://www.vbsimple.fbi/weird/wrd_08.htm?nof</link>
+      <description>Una funzione sincrona ma non totalmente.</description>
+      <pubDate>Mon, 16 Feb 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Articoli - Calcolo del Codice Fiscale</title>
+      <link>http://www.vbsimple.net/news/news_14.htm?nof</link>
+      <description>Come calcolare il Codice Fiscale, passo dopo passo.</description>
+      <pubDate>Mon, 16 Feb 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Articoli - Watch e Object Browser</title>
+      <link>http://www.vbsimple.net/news/news_13.htm?nof</link>
+      <description>Utilizzare i Watch e l'Object Browser per analizzare un oggetto WebBrowser.</description>
+      <pubDate>Mon, 16 Feb 2004 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Corso Intermedio - Lezione 10</title>
+      <link>http://www.vbsimple.net/intermed/int_10.htm?nof</link>
+      <description>Nella lezione 10 del Corso Intermedio ci occuperemo della verifica dell'Input e della Gestione degli errori.</description>
+      <pubDate>Wed, 31 Dec 2003 08:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Weird Things - Variant Variabili</title>
+      <link>http://www.vbsimple.net/weird/wrd_07.htm?nof</link>
+      <description>Uno strano comportamento di ADO può provocare qualche malfunzionamento a causa della variazione del tipo di dati.</description>
+      <pubDate>Wed, 31 Dec 2003 08:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,435 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Utilizzare il registro di Windows (prima parte)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Utilizzare il registro di 
+    Windows<br>
+    (prima parte)<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level5.gif" width="17" height="18" align="absmiddle"> 
+        5<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p><b>Premessa:</b><br>
+        Il codice trattato in questo articolo &egrave; stato riscritto per renderlo 
+        pi&ugrave; intuitivo possibile e per utilizzarlo all'interno di un modulo 
+        di classe, aumentando e semplificando quindi la sua riusabilit&agrave;. 
+        &Egrave; stato studiato intorno a <i>Windows 95/98/ME</i> e solo in seguito 
+        adattato per consentire un utilizzo in <i>Windows NT/2000/XP</i>.</p>
+      <p>Il giudizio di complessit&agrave; massimo non deve spaventare perch&eacute; 
+        in gran parte dovuto alla lunghezza e completezza del modulo di classe 
+        sviluppato ed in parte alla necessaria <i>poca dettagliatezza</i> che 
+        altrimenti avrebbe portato via molto pi&ugrave; spazio del dovuto.</p>
+      <hr>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Un problema comunissimo per tantissimi programmi &egrave; il salvataggio 
+        ed il caricamento delle opzioni del programma sviluppato. Non &egrave; 
+        molto sensato, infatti, obbligare ogni volta l'utente a regolarsi i parametri 
+        del programma secondo le sue necessit&agrave;; &egrave; molto pi&ugrave; 
+        agevole far s&igrave; che all'uscita del programma tali parametri ed impostazioni 
+        vengano salvate da qualche parte e riprese al successivo ricaricamento 
+        del programma.</p>
+      <p>Esistono due soluzioni fondamentali per il salvataggio ed il ripristino 
+        delle impostazioni: la prima consiste nell'utilizzare i classici ed antiquati 
+        files di impostazioni con <a href="../glossary/e.htm#ESTENSIONEFILES">estensione</a> 
+        <b>INI</b>, mentre la seconda sfrutta il <a href="../glossary/r.htm#REGISTRO">registro 
+        di Windows</a> (chiamato talvolta semplicemente <i>Registry</i>), un particolare 
+        file di Windows contenente molte impostazioni di quasi tutti i moderni 
+        programmi per Windows.</p>
+      <p>All'interno del registro sono contenute tantissime informazioni e talvolta 
+        &egrave; necessario accedervi per recuperare tali informazioni in mancanza 
+        di una funzione <a href="../glossary/a.htm#API">API</a> che li ricavi 
+        direttamente. Si raccomanda quindi la manipolazione del registry soltanto 
+        come ultima possibilit&agrave; per il recupero dei dati, preferendo quindi, 
+        l'utilizzo delle funzioni API specializzate.</p>
+      <p>In questo lungo tutorial svilupperemo una classe <img src="../images/ide/classe.gif" width="16" height="16" align="absmiddle"> 
+        per la lettura, la modifica, l'aggiunta e l'eliminazione di chiavi e valori 
+        del registro. Sono state aggiunte in seguito due funzioni per l'esportazione 
+        e l'importazione di parti del registro su file compatibili con <i>Regedit</i>. 
+        Si suppone una minima conoscenza della struttura del Registry.<br>
+        Tralasciamo le spiegazioni e vediamo subito il codice denso di API:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li>Option Base 0</li>
+        <li></li>
+        <li>Private Const STANDARD_RIGHTS_ALL As Long = &amp;H1F0000</li>
+        <li>Private Const STANDARD_RIGHTS_READ As Long = &amp;H20000</li>
+        <li>Private Const STANDARD_RIGHTS_WRITE As Long = &amp;H20000</li>
+        <li>Private Const SYNCHRONIZE As Long = &amp;H100000</li>
+        <li>Private Const KEY_QUERY_VALUE As Long = &amp;H1</li>
+        <li>Private Const KEY_SET_VALUE As Long = &amp;H2</li>
+        <li>Private Const KEY_CREATE_SUB_KEY As Long = &amp;H4</li>
+        <li>Private Const KEY_ENUMERATE_SUB_KEYS As Long = &amp;H8</li>
+        <li>Private Const KEY_NOTIFY As Long = &amp;H10</li>
+        <li>Private Const KEY_CREATE_LINK As Long = &amp;H20</li>
+        <li></li>
+        <li>Private Const REG_OPTION_NON_VOLATILE As Long = 0</li>
+        <li></li>
+      </ol>
+      <p>Si apre il sipario con la presentazione di una serie di <a href="../glossary/c.htm#COSTANTE">costanti</a> 
+        <img src="../images/ide/costante.gif" width="16" height="16" align="absmiddle"> 
+        API utilizzate pi&ugrave; avanti: sono suddivise in due tipologie: quelle 
+        relative alla sicurezza e quella indicativa del tipo di dati da trattare 
+        ovvero <b>non volatili</b>, i normali dati del registro opposti a quelli 
+        volatili la cui esistenza si spegne al riavvio del computer. Vedremo le 
+        altre costanti nelle <a href="../glossary/e.htm#ENUMERAZIONE">enumerazioni</a> 
+        <img src="../images/ide/enumeraz.gif" width="16" height="16" align="absmiddle"> 
+        successive.</p>
+      <ol class="codicevb" start="17">
+        <li>Private Declare Function RegOpenKeyEx Lib &quot;advapi32.dll&quot; 
+          Alias &quot;RegOpenKeyExA&quot; (ByVal hKey As Long, ByVal lpSubKey 
+          As String, ByVal ulOptions As Long, ByVal samDesired As Long, phkResult 
+          As Long) As Long</li>
+        <li>Private Declare Function RegCreateKeyEx Lib &quot;advapi32.dll&quot; 
+          Alias &quot;RegCreateKeyExA&quot; (ByVal hKey As Long, ByVal lpSubKey 
+          As String, ByVal Reserved As Long, ByVal lpClass As String, ByVal dwOptions 
+          As Long, ByVal samDesired As Long, ByVal lpSecurityAttributes As Long, 
+          phkResult As Long, lpdwDisposition As Long) As Long</li>
+        <li>Private Declare Function RegCloseKey Lib &quot;advapi32.dll&quot; 
+          (ByVal hKey As Long) As Long</li>
+        <li>Private Declare Function RegFlushKey Lib &quot;advapi32.dll&quot; 
+          (ByVal hKey As Long) As Long</li>
+        <li>Private Declare Function RegDeleteKey Lib &quot;advapi32.dll&quot; 
+          Alias &quot;RegDeleteKeyA&quot; (ByVal hKey As Long, ByVal lpSubKey 
+          As String) As Long</li>
+        <li>Private Declare Function RegEnumKeyEx Lib &quot;advapi32.dll&quot; 
+          Alias &quot;RegEnumKeyExA&quot; (ByVal hKey As Long, ByVal dwIndex As 
+          Long, ByVal lpName As String, lpcbName As Long, lpReserved As Long, 
+          ByVal lpClass As String, lpcbClass As Long, ByVal lpftLastWriteTime 
+          As Long) As Long</li>
+        <li>Private Declare Function RegQueryInfoKey Lib &quot;advapi32.dll&quot; 
+          Alias &quot;RegQueryInfoKeyA&quot; (ByVal hKey As Long, ByVal lpClass 
+          As String, lpcbClass As Long, lpReserved As Long, lpcSubKeys As Long, 
+          lpcbMaxSubKeyLen As Long, lpcbMaxClassLen As Long, lpcValues As Long, 
+          lpcbMaxValueNameLen As Long, lpcbMaxValueLen As Long, lpcbSecurityDescriptor 
+          As Long, lpftLastWriteTime As Long) As Long</li>
+      </ol>
+      <p>Segue un primo elenco di dichiarazioni di funzioni API relative alle 
+        chiavi del registro. Non potendoci soffermare su ognuna accenneremo soltanto 
+        qualcosa sul loro funzionamento generale:</p>
+      <ul>
+        <li><b>RegOpenKeyEx</b><br>
+          Effettua l'apertura di una chiave o di una sua sottochiave.<br>
+          <br>
+        </li>
+        <li><b>RegCreateKeyEx</b><br>
+          Crea ed apre una nuova sottochiave della chiave indicata.<br>
+          <br>
+        </li>
+        <li><b>RegCloseKey</b><br>
+          Chiude una chiave precedentemente aperta liberando l'<a href="../glossary/h.htm#HANDLE">handle</a> 
+          assegnato.<br>
+          <br>
+        </li>
+        <li><b>RegFlushKey</b><br>
+          Aggiorna i dati di una chiave e forzando il sistema operativo a scrivere 
+          tutte le modifiche non ancora scritte sul disco.<br>
+          <br>
+        </li>
+        <li><b>RegDeleteKey</b><br>
+          Elimina una chiave e tutte le sue sottochiavi ed i relativi valori.<br>
+          <br>
+        </li>
+        <li><b>RegEnumKeyEx</b><br>
+          Recupera i nomi di una o pi&ugrave; sottochiavi della chiave indicata.<br>
+          <br>
+        </li>
+        <li><b>RegQueryInfoKey</b><br>
+          Ricava informazioni su una determinata chiave come il numero di sottochiavi 
+          o di valori presenti.</li>
+      </ul>
+      <ol class="codicevb" start="24">
+        <li>Private Declare Function RegQueryValueEx Lib &quot;advapi32.dll&quot; 
+          Alias &quot;RegQueryValueExA&quot; (ByVal hKey As Long, ByVal lpValueName 
+          As String, ByVal lpReserved As Long, lpType As Long, lpData As Any, 
+          lpcbData As Long) As Long</li>
+        <li>Private Declare Function RegSetValueEx Lib &quot;advapi32.dll&quot; 
+          Alias &quot;RegSetValueExA&quot; (ByVal hKey As Long, ByVal lpValueName 
+          As String, ByVal Reserved As Long, ByVal dwType As Long, lpData As Any, 
+          ByVal cbData As Long) As Long</li>
+        <li>Private Declare Function RegEnumValue Lib &quot;advapi32.dll&quot; 
+          Alias &quot;RegEnumValueA&quot; (ByVal hKey As Long, ByVal dwIndex As 
+          Long, ByVal lpValueName As String, lpcbValueName As Long, ByVal lpReserved 
+          As Long, lpType As Long, lpData As Byte, lpcbData As Long) As Long</li>
+        <li>Private Declare Function RegDeleteValue Lib &quot;advapi32.dll&quot; 
+          Alias &quot;RegDeleteValueA&quot; (ByVal hKey As Long, ByVal lpValueName 
+          As String) As Long</li>
+        <li></li>
+      </ol>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Dopo le funzioni relative alle chiavi segue l'elenco delle funzioni relative 
+        ai valori contenuti nelle chiavi stesse:</p>
+      <ul>
+        <li><b>RegQueryValueEx</b><br>
+          Interroga un valore di cui si conosce il nome ottenendo in risposta 
+          il suo contenuto ed il suo tipo di dati.<br>
+          <br>
+        </li>
+        <li><b>RegSetValueEx</b><br>
+          Modifica il contenuto di un valore esistente e crea un nuovo valore 
+          nel caso che esso non dovesse esistere, con il tipo di dati specificato.<br>
+          <br>
+        </li>
+        <li><b>RegEnumValue</b><br>
+          Interroga una chiave aperta per richiedere il nome di un valore in essa 
+          contenuti e contestualmente consente di recuperare anche il loro contenuto 
+          ed il tipo di dati.<br>
+          <br>
+        </li>
+        <li><b>RegDeleteValue</b><br>
+          Effettua semplicemente l'eliminazione del valore specificato. Se il 
+          valore da eliminare &egrave; quello predefinito della chiave ne sar&agrave; 
+          cancellato soltanto il suo contenuto.</li>
+      </ul>
+      <p>Si sottolinea il fatto che tutte le funzioni che utilizzano stringhe 
+        si riferiscono alla versione <a href="../glossary/a.htm#ANSI">ANSI</a> 
+        piuttosto che alla versione <a href="../glossary/u.htm#UNICODE">Unicode</a> 
+        come indicato dalla A finale al nome della funzione dopo la parola chiave 
+        &quot;Alias&quot;; la versione Unicode avrebbe il suffisso W.</p>
+      <p>Pertanto ogni qual volta viene passata una stringa sotto forma di <a href="../glossary/a.htm#ARRAY">array</a> 
+        di bytes &egrave; necessario fare la conversione di formato tramite la 
+        funzione <i>StrConv</i>.</p>
+      <p>Seguono le <a href="../glossary/e.htm#ENUMERAZIONE">enumerazioni</a> 
+        scritte per semplificare l'utilizzo delle varie costanti API e poter pertanto 
+        usufruire del sistema <a href="../glossary/i.htm#INTELLISENSE">Intellisense</a>.</p>
+      <ol class="codicevb" start="29">
+        <li>Public Enum ChiaviPrincipali</li>
+        <li>&nbsp;&nbsp;CHIAVE_APERTA = 0</li>
+        <li>&nbsp;&nbsp;HKEY_CLASSES_ROOT = &amp;H80000000</li>
+        <li>&nbsp;&nbsp;HKEY_CURRENT_CONFIG = &amp;H80000005</li>
+        <li>&nbsp;&nbsp;HKEY_CURRENT_USER = &amp;H80000001</li>
+        <li>&nbsp;&nbsp;HKEY_DYN_DATA = &amp;H80000006</li>
+        <li>&nbsp;&nbsp;HKEY_LOCAL_MACHINE = &amp;H80000002</li>
+        <li>&nbsp;&nbsp;HKEY_PERF_ROOT = HKEY_LOCAL_MACHINE</li>
+        <li>&nbsp;&nbsp;HKEY_PERFORMANCE_DATA = &amp;H80000004</li>
+        <li>&nbsp;&nbsp;HKEY_USERS = &amp;H80000003</li>
+        <li>End Enum</li>
+        <li></li>
+      </ol>
+      <p>L'enumerazione <i><b>ChiaviPrincipali</b></i> verr&agrave; utilizzata 
+        da molte funzioni della classe per determinare quale chiave utilizzare: 
+        quella aperta dalla nostra <a href="../glossary/i.htm#ISTANZA">istanza</a> 
+        (riga 30) oppure una delle chiavi di sistema (righe 31-38) sempre aperte. 
+        In funzione della struttura della classe il programma potr&agrave; anche 
+        fornire una chiave arbitraria, ovvero un handle ad una chiave gi&agrave; 
+        aperta.</p>
+      <ol class="codicevb" start="41">
+        <li>Public Enum ChiaviSecurity</li>
+        <li>&nbsp;&nbsp;KEY_UNKNOWN = 0</li>
+        <li>&nbsp;&nbsp;KEY_READ = ((STANDARD_RIGHTS_READ Or KEY_QUERY_VALUE Or 
+          KEY_ENUMERATE_SUB_KEYS Or KEY_NOTIFY) And (Not SYNCHRONIZE))</li>
+        <li>&nbsp;&nbsp;KEY_WRITE = ((STANDARD_RIGHTS_WRITE Or KEY_SET_VALUE Or 
+          KEY_CREATE_SUB_KEY) And (Not SYNCHRONIZE))</li>
+        <li>&nbsp;&nbsp;KEY_ALL_ACCESS = ((STANDARD_RIGHTS_ALL Or KEY_QUERY_VALUE 
+          Or KEY_SET_VALUE Or KEY_CREATE_SUB_KEY Or KEY_ENUMERATE_SUB_KEYS Or 
+          KEY_NOTIFY Or KEY_CREATE_LINK) And (Not SYNCHRONIZE))</li>
+        <li>End Enum</li>
+        <li></li>
+      </ol>
+      <p>L'enumerazione <i><b>ChiaviSecurity</b></i> trova il suo vero significato 
+        in Windows NT/2000/XP ed indica 4 permessi standard: da sconosciuto ad 
+        accesso massimo. </p>
+      <ol class="codicevb" start="48">
+        <li>Public Enum TipoValoriRegistro</li>
+        <li>&nbsp;&nbsp;REG_NONE = 0</li>
+        <li>&nbsp;&nbsp;REG_SZ = 1</li>
+        <li>&nbsp;&nbsp;REG_EXPAND_SZ = 2</li>
+        <li>&nbsp;&nbsp;REG_BINARY = 3</li>
+        <li>&nbsp;&nbsp;REG_DWORD = 4</li>
+        <li>&nbsp;&nbsp;REG_DWORD_LITTLE_ENDIAN = 4</li>
+        <li>&nbsp;&nbsp;REG_DWORD_BIG_ENDIAN = 5</li>
+        <li>&nbsp;&nbsp;REG_LINK = 6</li>
+        <li>&nbsp;&nbsp;REG_MULTI_SZ = 7</li>
+        <li>&nbsp;&nbsp;REG_RESOURCE_LIST = 8</li>
+        <li>End Enum</li>
+        <li></li>
+      </ol>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>L'ultima enumerazione &egrave; <i><b>TipoValoriRegistro</b></i> e rappresenta 
+        tutti i possibili tipi di dati presenti nel registro. Nel 90% dei casi 
+        si utilizzano i tipi stringa (<b>REG_SZ</b>), binario (<b>REG_BINARY</b>) 
+        e valore Double Word, un numero intero a 32 bit e senza segno (<b>REG_DWORD</b>). 
+        Sono questi infatti i tipi di dati che &egrave; possibile inserire nel 
+        Registry utilizzando il programma Regedit. Questa classe non implementa 
+        i tipi di dati <b>REG_LINK</b>, <b>REG_RESOURCE_LIST</b> e <b>REG_DWORD_BIG_ENDIAN</b>. 
+      </p>
+      <ol class="codicevb" start="61">
+        <li>Private lngKeyValue As Long</li>
+        <li>Private lngKeySecurity As Long</li>
+        <li></li>
+      </ol>
+      <p>Gli unici due membri privati interni sono due valori di tipo Long: il 
+        primo identifica l'<a href="../glossary/h.htm#HANDLE">handle </a>alla 
+        chiave aperta (vedi l'enumerazione <i><b>ChiaviPrincipali</b></i>) e verr&agrave; 
+        utilizzato per la maggior parte delle operazioni. L'altro valore rappresenta 
+        invece un indice di sicurezza come indicato dall'enumerazione <b><i>ChiaviSecurity</i></b>.</p>
+      <ol class="codicevb" start="64">
+        <li>Private Sub Class_Initialize()</li>
+        <li>&nbsp;&nbsp;lngKeyValue = 0</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub Class_Terminate()</li>
+        <li>&nbsp;&nbsp;Call RegCloseKey(lngKeyValue)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Giusto per sicurezza, all'istanza della classe la variabile <b>lngKeyValue</b> 
+        viene posta uguale a 0 per indicare che nessuna chiave &egrave; stata 
+        ancora aperta. Alla <a href="../glossary/d.htm#DEALLOCARE">deallocazione</a> 
+        dell'istanza viene comunque effettuata la chiusura della chiave <b>lngKeyValue</b>. 
+        &Egrave; importante ricordarsi di chiudere le chiavi quando esse non sono 
+        pi&ugrave; necessarie e, come vedremo in seguito, non chiudere mai le 
+        chiavi delle quali non &egrave; stata effettuata la diretta apertura.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p align="center"><a href="ht_044_2.htm">Segue parte 2 &gt;&gt;</a></p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        1 Aprile 2002<br>
+        Corretto il 20 Settembre 2002<br>
+        Rivisitato il 24 Maggio 2003<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

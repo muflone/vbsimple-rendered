@@ -1,0 +1,591 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Richiamo di funzioni mediante puntatore</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Richiamo di funzioni mediante 
+    puntatore<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Sviluppando un programma di medie dimensioni potrebbe rendersi necessario 
+        dover scegliere se eseguire una prima o una seconda funzione. In genere 
+        queste scelte sono effettuate con un semplice If..Then.</p>
+      <p>Se tuttavia stiamo scrivendo un codice ampio oppure sviluppando un componente 
+        in grado di utilizzare funzioni esterne poste in una <a href="../glossary/d.htm#DLL">DLL</a> 
+        separata si rende impossibile la scelta tramite una selezione. In questo 
+        genere di situazioni si utilizzano i <a href="../glossary/p.htm#PUNTATORE">puntatori</a> 
+        a funzione.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Un puntatore a funzione &egrave; un normalissimo numero Long a 32 bit 
+        che fa riferimento ad una funzione in memoria. Il valore di tale numero 
+        corrisponde all'<a href="../glossary/i.htm#INDIRIZZO">indirizzo</a> della 
+        funzione stessa. In questo articolo svilupperemo una classe di nome <b>clsFunPtr</b> 
+        in grado di eseguire funzioni a partire da un puntatore alla stessa.</p>
+      <p>Saranno prodotti due differenti metodi <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        per l'assegnazione ed il recupero del puntatore alla funzione da eseguire. 
+        La prima di queste due soluzioni sfrutta un operatore di VB5: <b><i>AddressOf</i></b>; 
+        la seconda soluzione, utilizzando l'API, carica in memoria una libreria 
+        esterna e recupera il puntatore alla funzione della libreria tramite <i>GetProcAddress</i>.</p>
+      <p> Prima di approfondire la prima soluzione &egrave; fondamentale comprendere 
+        il funzionamento e le limitazioni nell'uso dell'operatore <i><b>AddressOf</b></i>. 
+        Si tratta di un operatore unario e non di una funzione; non pu&ograve; 
+        pertanto essere richiamato utilizzando le parentesi che delimitano gli 
+        argomenti nelle funzioni. La limitazione principale invece riguarda il 
+        recupero di Sub e Funzioni esclusivamente pubbliche e poste all'interno 
+        di un modulo <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+        standard. Questo significa che non &egrave; possibile utilizzare AddressOf 
+        con funzioni private o metodi di classe <img src="../images/ide/classe.gif" width="16" height="16" align="absmiddle"> 
+        i quali comprendono funzioni e Sub all'interno di form, moduli di classe, 
+        controlli utente <img src="../images/ide/ctlutent.gif" width="16" height="16" align="absmiddle"> 
+        e documenti <a href="../glossary/a.htm#ACTIVEX">ActiveX</a> <img src="../images/ide/docutent.gif" width="16" height="16" align="absmiddle"> 
+        in quanto tutti considerati delle classi a tutti gli effetti. Un'altra 
+        limitazione, ma facilmente superabile, riguarda l'assegnazione del valore 
+        restituito esclusivamente a funzioni. Questo comporta che non sar&agrave; 
+        possibile assegnare ad una variabile o scrivere all'interno di una propriet&agrave; 
+        l'indirizzo della funzione puntata. Il valore di AddressOf potr&agrave; 
+        essere assegnato esclusivamente ad argomenti di funzione.</p>
+      <p>In ogni caso non &egrave; possibile eseguire una funzione di cui si conosce 
+        l'indirizzo in memoria a meno di usare certe funzioni <a href="../glossary/a.htm#API">API</a>. 
+        L'operazione di esecuzione della funzione prende il nome di <a href="../glossary/c.htm#CALLBACK">Callback</a>. 
+        La forma pi&ugrave; comune per l'esecuzione di una funzione di Callback 
+        consiste nell'utilizzo della funzione API <b>CallWindowProc</b>.</p>
+      <p> Presa coscienza di queste limitazioni possiamo iniziare lo sviluppo 
+        della classe clsFunPtr che si presenta con le dichiarazioni dei valori 
+        membro e delle funzioni API:</p>
+      <ol class="codicevb">
+        <li class="codicevb" start="1">Option Explicit</li>
+        <li></li>
+        <li>Private lngPtrFunzione As Long</li>
+        <li>Private lngLibreria As Long</li>
+        <li></li>
+        <li>Private Declare Function CallWindowProc0 Lib &quot;user32&quot; Alias 
+          &quot;CallWindowProcA&quot; (ByVal lpPrevWndFunc As Long) As Long</li>
+        <li>Private Declare Function CallWindowProc1 Lib &quot;user32&quot; Alias 
+          &quot;CallWindowProcA&quot; (ByVal lpPrevWndFunc As Long, ByVal hWnd 
+          As Long) As Long</li>
+        <li>Private Declare Function CallWindowProc2 Lib &quot;user32&quot; Alias 
+          &quot;CallWindowProcA&quot; (ByVal lpPrevWndFunc As Long, ByVal hWnd 
+          As Long, ByVal Msg As Long) As Long</li>
+        <li>Private Declare Function CallWindowProc3 Lib &quot;user32&quot; Alias 
+          &quot;CallWindowProcA&quot; (ByVal lpPrevWndFunc As Long, ByVal hWnd 
+          As Long, ByVal Msg As Long, ByVal wParam As Long) As Long</li>
+        <li>Private Declare Function CallWindowProc4 Lib &quot;user32&quot; Alias 
+          &quot;CallWindowProcA&quot; (ByVal lpPrevWndFunc As Long, ByVal hWnd 
+          As Long, ByVal Msg As Long, ByVal wParam As Long, ByVal lParam As Long) 
+          As Long</li>
+      </ol>
+      <p>Le due variabili alle righe 3 e 4 sono utilizzate rispettivamente per 
+        contenere il puntatore alla funzione da eseguire e l'<a href="../glossary/h.htm#HANDLE">handle</a> 
+        alla <a href="../glossary/l.htm#LIBRERIA">libreria</a> esterna caricata 
+        in memoria.</p>
+      <p>La funzione <i>CallWindowProc</i> dichiarata alle righe 6-10 con cinque 
+        differenti <a href="../glossary/a.htm#ALIAS">Alias</a> consente di richiamare 
+        la funzione di Callback dato un puntatore e specificando gli eventuali 
+        argomenti a 32 bit per l'esecuzione. Naturalmente la prima di queste funzioni 
+        non richiede alcun argomento, mentre la quinta funzione ne richiede ben 
+        quattro. &Egrave; stato necessario creare 5 differenti alias per dar modo 
+        di eseguire funzioni che accettino fino a quattro parametri in <a href="../glossary/i.htm#INPUT">input</a>.</p>
+      <ol class="codicevb" start="11">
+        <li>Private Declare Function LoadLibrary Lib &quot;kernel32&quot; Alias 
+          &quot;LoadLibraryA&quot; (ByVal lpLibFileName As String) As Long</li>
+        <li>Private Declare Function GetProcAddress Lib &quot;kernel32&quot; (ByVal 
+          hModule As Long, ByVal lpProcName As String) As Long</li>
+        <li>Private Declare Function FreeLibrary Lib &quot;kernel32&quot; (ByVal 
+          hLibModule As Long) As Long</li>
+        <li></li>
+      </ol>
+      <p>La funzione <i>LoadLibrary</i> consente di caricare in memoria una libreria 
+        esterna il cui nome &egrave; specificato con argomento <i><b>lpLibFileName</b></i>. 
+        Alla riga 12 invece &egrave; dichiarata la funzione <i>GetProcAddress</i> 
+        per il recupero di un puntatore a funzione di una libreria esterna. L'ultima 
+        funzione API &egrave; <i>FreeLibrary</i> che, come dice il nome, scarica 
+        la libreria caricata con <i>LoadLibrary</i> e ne libera la memoria.</p>
+      <p>&Egrave; possibile assegnare alla classe il puntatore alla funzione di 
+        Callback in tre differenti maniere:</p>
+      <ul>
+        <li>Attraverso la propriet&agrave; <b>Funzione</b><br>
+        </li>
+        <li>Richiamando la Sub <b>AssegnaFunzione</b></li>
+        <li>Richiamando la funzione <b>FunzioneEsterna</b></li>
+      </ul>
+      <p>Prima di vedere in dettaglio le tre modalit&agrave; ricordiamoci di una 
+        particolare limitazione accennata qualche riga addietro: non &egrave; 
+        possibile assegnare il valore restituito da AddressOf ad una variabile 
+        oppure ad una propriet&agrave;. Sembrerebbe quindi impossibile poter assegnare 
+        alla propriet&agrave; <b>Funzione</b> il puntatore. Ci viene in aiuto 
+        una semplicissima funzione <a href="../glossary/w.htm#WRAPPER">wrapper</a> 
+        di nome <b>FunPtr2LngPtr</b> che, in una maniera davvero semplice riceve 
+        come argomento di funzione il valore riportato da AddressOf e lo restituisce 
+        in uscita come valore di ritorno. Questo ci consente di assegnare alla 
+        propriet&agrave; <i><b>Funzione</b></i> non direttamente il risultato 
+        di AddressOf ma il risultato del richiamo di una funzione che come tale 
+        accetta l'uso di AddresOf. La nostra brevissima <b>FunPtr2LngPtr</b> si 
+        compone di una sola riga:</p>
+      <ol class="codicevb" start="15">
+        <li>Public Function FunPtr2LngPtr(ByVal FunPtr As Long) As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FunPtr2LngPtr = FunPtr</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>La funzione di fatto riceve il valore <i><b>FunPtr</b></i> e lo restituisce 
+        in uscita. Sembrerebbe inutile ma ci consente di evitare quella sciocca 
+        limitazione di VB. Possiamo allora procedere con la visione della propriet&agrave; 
+        <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        <b>Funzione</b>, altrettanto banale:</p>
+      <ol class="codicevb" start="19">
+        <li>Public Property Get Funzione() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Funzione = lngPtrFunzione</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Let Funzione(ByVal newFunzione As Long)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lngPtrFunzione = newFunzione</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>La propriet&agrave; di fatto assegna alla variabile <a href="../glossary/m.htm#MEMBRO">membro</a> 
+        <b><i>lngPtrFunzione</i> </b>il valore che riceve.</p>
+      <ol class="codicevb" start="27">
+        <li>Public Sub AssegnaFunzione(ByVal PtrFunzione As Long)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lngPtrFunzione = PtrFunzione</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La Sub <b>AssegnaFunzione</b> effettua la medesima operazione dell'assegnazione 
+        alla propriet&agrave; <b>Funzione</b>. Sfruttando questa routine &egrave; 
+        per&ograve; possibile evitare l'uso della funzione wrapper vista in precedenza 
+        ed assegnare il valore riportato da AddressOf direttamente alla variabile 
+        membro.</p>
+      <ol class="codicevb" start="31">
+        <li>Public Function FunzioneEsterna(ByVal strLibreria As String, ByVal 
+          strFunzione As String) As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If lngLibreria &lt;&gt; 0 Then FreeLibrary 
+          lngLibreria</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lngLibreria = LoadLibrary(strLibreria)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If lngLibreria &lt;&gt; 0 Then lngPtrFunzione 
+          = GetProcAddress(lngLibreria, strFunzione)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FunzioneEsterna = lngPtrFunzione</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>L'ultima funzione di assegnazione del puntatore a funzione &egrave; <b>FunzioneEsterna</b>. 
+        A differenza delle altre due non utilizza e non vuole un puntatore a funzione. 
+        Essa infatti richiede il passaggio di due stringhe <i><b>strLibreria</b></i> 
+        e <i><b>strFunzione</b></i> per la specifica della libreria esterna da 
+        caricare e della funzione di cui recuperare il puntatore.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La funzione si apre con un controllo d'obbligo: se la variabile <i><b>lngLibreria</b></i> 
+        contiene un valore diverso da zero sar&agrave; segno che &egrave; stata 
+        caricata una libreria esterna in precedenza e pertanto dovr&agrave; essere 
+        scaricata dalla memoria tramite <i>FreeLibrary</i> (riga 32).</p>
+      <p>Fatto questo sar&agrave; possibile caricare la nuova libreria (riga 33) 
+        ed assegnare l'<a href="../glossary/h.htm#HANDLE">handle</a> del modulo 
+        caricato alla variabile <i><b>lngLibreria</b></i>. Nel caso che la libreria 
+        esterna non possa essere caricata o non fosse presente, la funzione <i>LoadLibrary</i> 
+        restituir&agrave; valore 0. Se quindi il valore di <i><b>lngLibreria</b></i> 
+        &egrave; differente da zero allora la libreria esterna potr&agrave; essere 
+        interrogata per consentire il recupero del puntatore alla funzione esterna 
+        tramite <i>GetProcAddress</i> (riga 34). Il valore restituito sar&agrave; 
+        quindi assegnato alla variabile membro <i><b>lngPtrFunzione</b></i>. Il 
+        valore di ritorno della funzione sar&agrave; lo stesso puntatore recuperato.</p>
+      <p>Non ci resta che l'ultima routine della classe: quella di esecuzione 
+        della funzione di cui &egrave; stato recuperato il puntatore. La funzione 
+        prende il nome di <b>Esegui</b>:</p>
+      <ol class="codicevb" start="38">
+        <li>Public Function Esegui(ByVal intArgomenti As Integer, Optional ByVal 
+          lngArg1 As Long = &amp;H0&amp;, Optional ByVal lngArg2 As Long = &amp;H0&amp;, 
+          Optional ByVal lngArg3 As Long = &amp;H0&amp;, Optional ByVal lngArg4 
+          As Long = &amp;H0&amp;) As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Select Case intArgomenti</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 0: Esegui = CallWindowProc0(lngPtrFunzione)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 1: Esegui = CallWindowProc1(lngPtrFunzione, 
+          lngArg1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 2: Esegui = CallWindowProc2(lngPtrFunzione, 
+          lngArg1, lngArg2)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 3: Esegui = CallWindowProc3(lngPtrFunzione, 
+          lngArg1, lngArg2, lngArg3)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case Else: Esegui 
+          = CallWindowProc4(lngPtrFunzione, lngArg1, lngArg2, lngArg3, lngArg4)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End Select</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>Il primo argomento obbligatorio specifica quanti parametri dovranno essere 
+        forniti alla funzione da richiamare. In base al valore di <i><b>intArgomenti</b></i> 
+        sar&agrave; richiamato l'<a href="../glossary/a.htm#ALIAS">alias</a> alla 
+        funzione <i>CallWindowProc</i> corrispondente. I quattro argomenti opzionali 
+        sono tutti interi a 32 bit ed assumono il valore predefinito di 0 nel 
+        caso che non venissero forniti.</p>
+      <p>La routine andr&agrave; a richiamare la funzione <a href="../glossary/a.htm#API">API</a> 
+        <i>CallWindowProc</i> che si occuper&agrave; di eseguire la chiamata della 
+        funzione indicata da <i><b>lngPtrFunzione</b></i>.</p>
+      <p><b class="smallerrore">Attenzione!</b><br>
+        Un uso scorretto della funzione <i>CallWindowProc</i> con il richiamo 
+        di routine esterne, nella maggioranza dei casi genera un errore irreversibile 
+        che termina il programma.<br>
+        L'errore pi&ugrave; comune &egrave; quello di fornire alla funzione uno 
+        o pi&ugrave; valori errati.<br>
+        Un altro errore molto comune &egrave; dato dall'errato numero di argomenti 
+        passati alla funzione. In tal caso la funzione API verr&agrave; comunque 
+        eseguita ma al ritorno al programma chiamante sar&agrave; generato un 
+        errore di <b>Convenzione di chiamata non valida</b>.</p>
+      <p>Prima di testare il funzionamento della classe definiamo un controllo 
+        d'obbligo: al termine dell'uso di un'istanza, se &egrave; stata caricata 
+        una libreria esterna, essa andr&agrave; scaricata tramite FreeLibrary:</p>
+      <ol start="48" class="codicevb">
+        <li>Private Sub Class_Terminate()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If lngLibreria &lt;&gt; 0 Then FreeLibrary 
+          lngLibreria</li>
+        <li>End Sub</li>
+      </ol>
+      <hr>
+      <p>Passiamo alla dimostrazione del funzionamento della classe <b>clsFunPtr</b>: 
+        ci servir&agrave; un form un modulo standard per contenere le funzioni 
+        pubbliche da puntare tramite <i>AddressOf</i>. Il modulo conterr&agrave; 
+        due sole funzioni a scopo dimostrativo di nome <b>Funzione1</b> e <b>Funzione2</b>:</p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Public Function Funzione1() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Funzione1 = MsgBox(&quot;Esecuzione di Funzione1&quot; 
+          &amp; vbNewLine &amp; &quot;Sono le ore &quot; &amp; Time$, vbOKOnly)</li>
+        <li>End Function</li>
+        <li></li>
+        <li>Public Function Funzione2() As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Funzione2 = MsgBox(&quot;Esecuzione di Funzione2&quot; 
+          &amp; vbNewLine &amp; &quot;Scegli SI o NO&quot;, vbYesNo + vbInformation, 
+          &quot;AddressOf&quot;)</li>
+        <li>End Function</li>
+      </ol>
+      <p>Entrambe le funzioni mostrano una semplicissima finestra con un messaggio. 
+        Soltanto la seconda consente di eseguire una scelta tra i due pulsanti 
+        Si o No.</p>
+      <p>Il form conterr&agrave; invece un'unica routine posta a gestione dell'evento<img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle">Activate 
+        del Form:</p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub Form_Activate()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim FunPtr1 As clsFunPtr</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim str1 As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim str2 As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim lngStr1 As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim lngStr2 As Long</li>
+        <li></li>
+      </ol>
+      <p>Le 5 variabili dichiarate rappresentano rispettivamente un'istanza della 
+        classe clsFunPtr, due stringhe a scopo dimostrativo utilizzate pi&ugrave; 
+        avanti ed i relativi due puntatori alle stringhe stesse, da fornire alla 
+        funzione API <i>ShellAboutA</i>.</p>
+      <ol start="10" class="codicevb">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.AutoRedraw = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set FunPtr1 = New clsFunPtr</li>
+      </ol>
+      <p>Alla riga 10 viene impostata la propriet&agrave; AutoRedraw del form 
+        a True per consentire la corretta visualizzazione dei messaggi stampati 
+        sulla sua superficie. Alla riga 11 &egrave; istanziata una copia della 
+        classe appena sviluppata.</p>
+      <ol start="12" class="codicevb">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FunPtr1.Funzione = FunPtr1.FunPtr2LngPtr(AddressOf 
+          Funzione1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Print FunPtr1.Esegui(0)</li>
+        <li> </li>
+      </ol>
+      <p><img src="../images/howto/howto048_01.png" width="117" height="90" align="right" alt="Figura 1">La 
+        prima funzione da richiamare &egrave; la <b>Funzione1</b> del modulo standard. 
+        Il riferimento &egrave; fatto usando la propriet&agrave; Funzione dell'istanza, 
+        accompagnata dal richiamo del <a href="../glossary/w.htm#WRAPPER">wrapper</a> 
+        <b>FunPtr2LngPtr</b> per l'assegnazione del valore restituito da <i>AddressOf</i>. 
+        Alla riga 13 &egrave; quindi eseguito il richiamo della funzione puntata. 
+        Poich&eacute; la funzione non richiede parametri aggiuntivi, sar&agrave; 
+        specificato il valore 0 come argomento per il metodo <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        <b>Esegui</b>.</p>
+      <p>Il risultato della chiamata alla funzione mostrer&agrave; una finestra 
+        di avviso con il nome della funzione e l'orario attuale.</p>
+      <ol start="15" class="codicevb">
+        <li> &nbsp;&nbsp;&nbsp;&nbsp;FunPtr1.AssegnaFunzione AddressOf Funzione2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Print FunPtr1.Esegui(0)</li>
+        <li> </li>
+      </ol>
+      <p><img src="../images/howto/howto048_02.png" width="155" height="95" align="right" alt="Figura 2">La 
+        seconda funzione verr&agrave; richiamata tramite l'uso del metodo <b>AssegnaFunzione</b>; 
+        in questo caso poich&eacute; il metodo &egrave; una routine non sar&agrave; 
+        necessario richiamare la funzione wrapper ma potremo passare l'indirizzo 
+        della funzione semplicemente utilizzando <i>AddressOf</i>. Anche questa 
+        seconda funzione non richiede parametri aggiuntivi e sar&agrave; quindi 
+        specificato il valore 0 ad indicare che non sono necessari argomenti ulteriori.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La <b>Funzione2</b> richiamata mostrer&agrave; una finestra di messaggio 
+        con la possibilit&agrave; di scelta del valore Si o No, corrispondenti 
+        ai valori <i><b>vbYes</b></i> e <i><b>vbNo</b></i> dell'<a href="../glossary/e.htm#ENUMERAZIONE">enumerazione</a> 
+        <i>VbMsgBoxResult</i>. In base al pulsante scelto sar&agrave; ritornato 
+        un valore e stampato sulla superficie del form, che vedremo al termine 
+        dell'articolo.</p>
+      <ol start="19" class="codicevb">
+        <li> &nbsp;&nbsp;&nbsp;&nbsp;str1 = StrConv(&quot;Puntatori a funzione#VB 
+          Simple&quot;, vbFromUnicode)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;str2 = StrConv(&quot;http://www.vbsimple.net&quot;, 
+          vbFromUnicode)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lngStr1 = StrPtr(str1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lngStr2 = StrPtr(str2)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call FunPtr1.FunzioneEsterna(&quot;SHELL32.DLL&quot;, 
+          &quot;ShellAboutA&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Print FunPtr1.Esegui(4, Me.hWnd, lngStr1, 
+          lngStr2)</li>
+        <li></li>
+      </ol>
+      <p>La terza funzione richiamata &egrave; leggermente pi&ugrave; complessa 
+        delle altre: innanzitutto si tratta di una funzione esterna di nome <i>ShellAboutA</i> 
+        contenuta nella libreria <i>Shell32</i>. Richiede il passaggio di 4 argomenti:</p>
+      <ul>
+        <li>l'handle della finestra da cui &egrave; richiamata</li>
+        <li>un puntatore ad una stringa in memoria da visualizzare nella parte 
+          superiore</li>
+        <li>un puntatore ad una stringa in memoria da visualizzare nella parte 
+          centrale</li>
+        <li>un valore 0 non trattto in questa sede</li>
+      </ul>
+      <p>Alla riga 19 &egrave; costruita la prima stringa <b>str1</b>, che si 
+        compone di due parti (secondo le convenzioni della funzione ShellAboutA. 
+        La parte alla sinistra del simbolo # apparir&agrave; sulla barra del titolo 
+        della finestra di dialogo, mentre la parte alla destra apparir&agrave; 
+        nella parte superiore della finestra. La stringa alla riga 20, di nome 
+        <b>str2</b>, &egrave; il semplice indirizzo internet di VBSimple. Poich&eacute; 
+        entrambe le stringhe dovranno essere maneggiate tramite puntatore e la 
+        funzione <i>ShellAboutA</i> si aspetta il formato di testo <a href="../glossary/a.htm#ANSI">ANSI</a>, 
+        sar&agrave; necessario convertire le due stringhe in questo formato tramite 
+        la funzione di VB <b>StrConv</b>.</p>
+      <p>Alle righe 21 e 22 saranno recuperati i puntatori alle due stringhe tramite 
+        la funzione <b>StrPtr</b> e memorizzati nelle variabili <b>lngStr1</b> 
+        e <b>lngStr2</b>. Causa alcune particolari limitazioni di VB &egrave; 
+        stato necessario utilizzare le variabili di appoggio <b>str1</b> ed <b>str2</b>, 
+        altrimenti il contenuto delle stringhe sarebbe stato invalidato subito 
+        dopo il loro uso.</p>
+      <p>Finalmente alla riga 23 &egrave; recuperato il puntatore alla funzione 
+        tramite l'uso del metodo <b>FunzioneEsterna</b>, semplicemente specificando 
+        la libreria ed il nome della funzione da puntare. Cos&igrave; alla riga 
+        24 detta funzione potr&agrave; essere richiamata nel solito modo; i parametri 
+        richiesti sono 4 e corrispondono all'handle del form, al puntatore lngStr1, 
+        al puntatore lngStr2 ed un valore assunto di 0, non specificato perch&eacute; 
+        automaticamente fatto dalla nostra funzione <b>Esegui</b>.</p>
+      <p><img src="../images/howto/howto048_03.png" width="330" height="226" align="right" alt="Figura 3">Il 
+        risultato dell'operazione produce la finestra di dialogo mostrata a fianco.</p>
+      <p>Sulla barra del titolo &egrave; riportato <i><b>&quot;Puntatori a funzione&quot;</b></i>, 
+        seguito dal logo di Windows, con il corrispondente copyright. Accanto 
+        a questo &egrave; riportato il nome del programma (nel nostro caso <i><b>&quot;VB&nbsp;Simple&quot;</b></i>).</p>
+      <p>Qualche riga pi&ugrave; gi&ugrave; troviamo l'indirizzo internet di VBSimple, 
+        preceduto e seguito da alcune notizie di copyright, licenza e risorse 
+        disponibili.</p>
+      <ol start="26" class="codicevb">
+        <li> &nbsp;&nbsp;&nbsp;&nbsp;Call FunPtr1.FunzioneEsterna(&quot;KERNEL32.DLL&quot;, 
+          &quot;GetCurrentProcessId&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Print FunPtr1.Esegui(0)</li>
+        <li></li>
+      </ol>
+      <p>Un altro esempio dell'uso del metodo <b>FunzioneEsterna</b> &egrave; 
+        dato dalla riga 26: verr&agrave; richiamata la funzione <i>GetCurrentProcessId</i> 
+        dalla libreria <i>Kernel32</i>, che restituisce in uscita l'identificativo 
+        del <a href="../glossary/p.htm#PROCESSO">processo</a> in esecuzione. Poich&eacute; 
+        la funzione non richiede parametri aggiuntivi sar&agrave; richiamato il 
+        metodo <b>Esegui</b> con il valore 0.</p>
+      <ol start="29" class="codicevb">
+        <li> &nbsp;&nbsp;&nbsp;&nbsp;Call FunPtr1.FunzioneEsterna(&quot;USER32.DLL&quot;, 
+          &quot;ShowCursor&quot;)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Print FunPtr1.Esegui(1, 0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Il cursore &egrave; nascosto&quot; 
+          &amp; vbNewLine &amp; &quot;Enter per continuare&quot;, vbInformation</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Print FunPtr1.Esegui(1, 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;MsgBox &quot;Il cursore &egrave; riapparso&quot;, 
+          vbInformation</li>
+      </ol>
+      <p><img src="../images/howto/howto048_04.png" width="138" height="95" align="right" alt="Figura 4">L'ultima 
+        funzione esterna richiamata &egrave; <i>ShowCursor</i> nella libreria 
+        <i>User32</i>. La funzione richiede un parametro unico che indica se il 
+        cursore dovr&agrave; essere nascosto o mostrato. La stessa funzione &egrave; 
+        pertanto richiamata una prima volta con il parametro 0 ad indicare che 
+        il cursore dovr&agrave; essere celato, in seguito a cui sar&agrave; visualizzato 
+        un avviso informativo (righe 30 e 31).</p>
+      <p>Poich&eacute; il puntatore del mouse verr&agrave; nascosto, risulter&agrave; 
+        difficile premere il pulsante OK per proseguire. Baster&agrave; pertanto 
+        premere il tasto Enter per far svanire la finestra di avviso e continuare 
+        l'esecuzione del programma.</p>
+      <p><img src="../images/howto/howto048_05.png" width="138" height="95" align="right" alt="Figura 5">La 
+        stessa funzione, senza che sia necessario puntarla nuovamente tramite 
+        l'uso del metodo <b>FunzioneEsterna</b>, sar&agrave; eseguita una seconda 
+        volta, ma stavolta con il parametro 1 ad indicare che il cursore dovr&agrave; 
+        essere nuovamente mostrato.</p>
+      <p>Anche questa volta sar&agrave; mostrato un avviso informativo della ricomparsa 
+        del cursore precedentemente nascosto.</p>
+      <hr>
+      <p><img src="../images/howto/howto048_06.png" width="135" height="93" align="right" alt="Figura 6">Tutti 
+        i valori restituiti dalle chiamate alle funzioni via puntatore saranno 
+        mostrati sulla superficie del form, a puro scopo dimostrativo:</p>
+      <ul>
+        <li>La prima riga mostra il valore 1 corrispondente a <i><b>vbOk</b></i> 
+          nella finestra di avviso della <b>Funzione1</b></li>
+        <li>La seconda riga mostra il valore 6 o 7 corrispondente alle costanti 
+          <i> <b>vbYes</b></i> e <i><b>vbNo</b></i> nella finestra di avviso della 
+          <b>Funzione2</b></li>
+        <li>La terza riga indicher&agrave; il risultato del richiamo della finestra 
+          di dialogo <i>ShellAboutA</i>. Un valore di 0 indicher&agrave; la fallit&agrave; 
+          visualizzazione mentre il valore 1 indicher&agrave; che l'operazione 
+          &egrave; riuscita con successo.</li>
+        <li>Il valore della quarta riga riporter&agrave; l'identificativo del 
+          processo in corso</li>
+        <li>Gli ultimi due valori sono i risultati della funzione <i>ShowCursor</i>.</li>
+      </ul>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>La classe sviluppata si presenta molto semplice e riutilizzabile in qualcunque 
+        progetto con estrema semplicit&agrave;. L'unico punto debole riguarda 
+        l'uso scorretto della funzione <i>CallWindowProc</i> fornendo valori errati 
+        per un funzione esterna. In tal caso &egrave; assolutamente normale aspettarsi 
+        un crash del programma, fino addirittura al blocco del sistema operativo 
+        (<a href="../glossary/b.htm#BSOD">BSOD</a>).</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        7 Agosto 2002<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

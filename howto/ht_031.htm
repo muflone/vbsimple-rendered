@@ -1,0 +1,409 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Estrarre i singoli bytes da un dato di tipo multibyte</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Estrarre i singoli bytes 
+    da un dato di tipo multibyte<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>In Visual Basic, come in altri linguaggi, esistono determinati <a href="../info/info_04.htm">tipi 
+        di dati</a> semplici che, mettendo assieme pi&ugrave; bytes, formano un 
+        unico valore quale ad esempio i numeri Integer o i Long.<br>
+        Il tipo di dati pi&ugrave; semplice &egrave; il byte ed ogni variabile 
+        o costante di tale tipologia occupa sempre e soltanto un byte, ovvero 
+        un carattere o che si dica, una singola cella di memoria.<br>
+        Poich&eacute; un <a href="../glossary/b.htm#BYTE">byte</a> si compone 
+        di 8 <a href="../glossary/b.htm#BIT">bit</a>, il massimo numero che tale 
+        unit&agrave; pu&ograve; contenere equivale a 2^8, quindi 255 (poich&eacute; 
+        &egrave; necessario includere anche il numero 0).</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Tutti gli altri tipi di dati si compongono di due o pi&ugrave; bytes 
+        concatenati tra loro. Cos&igrave;, ad esempio il tipo Integer (che permette 
+        il conteggio fino a 2^16, ovvero da -32.768 a +32.767) si compone di due 
+        bytes, uniti tra loro in una singola entit&agrave;.<br>
+        Alla stessa maniera i dati di tipo Long sono formati da 4 bytes, ovvero 
+        32 bit, e permettono la memorizzazione di numeri compresi tra -2.147.483.648 
+        e +2.147.483.647 (2^32).</p>
+      <p>In alcuni casi di programmazione a basso livello come ad esempio la manipolazione 
+        di immagini, pu&ograve; essere necessario estrarre i singoli bytes di 
+        cui si compone un dato di tipo multibyte, ovvero composto da pi&ugrave; 
+        bytes.</p>
+      <p>I bytes di un valore sono consecutivi tra loro, cos&igrave; dato l'<a href="../glossary/i.htm#INDIRIZZO">indirizzo</a> 
+        inziale di un dato di un certo tipo, i bytes di cui si compone sono consecutivi 
+        tra loro. Tuttavia, nelle architetture <b>Intel x86</b> i dati non sono 
+        memorizzati in maniera continua (<a href="../glossary/b.htm#BIGENDIAN"><b>Big-Endian</b></a>) 
+        ma l'ordine dei bytes &egrave; invertito; cos&igrave; il primo byte di 
+        un tipo multibyte si trova all'ultima posizione. Questo processo di memorizzazione 
+        invertita &egrave; detto <a href="../glossary/l.htm#LITTLEENDIAN"><b>Little-Endian</b></a>.<br>
+        Per ulteriori informazioni su questo tipo di memorizzazione vedi le <a href="../info/info_13.htm">informazioni 
+        aggiuntive</a>.</p>
+      <p>Per effettuare tale separazione di bytes o unione in un tipo multibyte 
+        &egrave; necessario sfruttare la funzione <a href="../glossary/a.htm#API">API</a> 
+        <i><b>CopyMemory</b></i>, in realt&agrave; alias di un'altra funzione: 
+        <i><b>RtlMoveMemory</b></i>.<br>
+        Mediante tale funzione leggeremo i dati dall'indirizzo iniziale del valore 
+        multibyte e li scriveremo da un'altra parte.<br>
+        Questo esempio effettua sia la lettura dei bytes contenuti in un dato 
+        multibyte sia la costruzione di un numero multibyte partendo da un <a href="../glossary/a.htm#ARRAY">array</a> 
+        di bytes.</p>
+      <p><img src="../images/howto/howto031_01.jpg" width="242" height="94" align="right" alt="Figura 1">Il 
+        nostro semplice form si compone di pochi controlli: innanzitutto sulla 
+        prima riga abbiamo una <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">di 
+        <b>LongHEXLabel</b> con la propriet&agrave; <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle"> 
+        <i>Caption</i> impostata a <i><b>&quot;Numero Long Esadecimale&quot;</b></i>. 
+        A fianco d'essa abbiamo la corrispondente <i>TextBox</i> <img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>LongHEX</b>, con la propriet&agrave; <i>MaxLength</i> impostata 
+        ad 8 (permettendo quindi l'inserimento fino a 8 cifre <a href="../glossary/e.htm#ESADECIMALE">esadecimali</a>). 
+        Segue a questa un'altra <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>LongDECLabel</b>, con la propriet&agrave; <i>AutoSize</i> impostata 
+        a True, che verr&agrave; utilizzata per mostrare il risultato decimale 
+        del numero esadecimale inserito.</p>
+      <p>La seconda riga di controlli contiene un'altra <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>HEXArrayLabel</b> con il solo scopo descrittivo. Segue a questa 
+        una matrice di 4 <i>TextBox</i> <img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>HEXArray</b> con propriet&agrave; <i>Index</i> da 0 a 3, tutte 
+        con propriet&agrave; <i>MaxLength</i> impostata a 2.</p>
+      <p>Completiamo il form con due <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>PulsanteLongBytes</b> e <b>PulsanteBytesLong</b> e <i>Caption</i> 
+        impostate a <i><b>&quot;Long -&gt; Bytes&quot;</b></i> e <b><i>&quot;Bytes 
+        -&gt; Long&quot;</i></b>.</p>
+      <p>Il funzionamento del form &egrave; semplice. L'utente immette un numero 
+        esadecimale nella casella di testo pi&ugrave; grande, preme il pulsante 
+        <i><b>&quot;Long -&gt; Bytes&quot;</b></i> ed ottiene i singoli bytes 
+        del numero inserito, ovviamente per&ograve; in ordine inverso per i motivi 
+        accennati in precedenza.<br>
+        Altres&igrave; l'utente potr&agrave; immettere 4 numeri esadecimali nelle 
+        4 caselle di testo pi&ugrave; piccole, premere il pulsante <i><b>&quot;Bytes 
+        -&gt; Long&quot;</b></i> ed ottenere cos&igrave; un corrispondente numero 
+        multibyte. Il tipo multibyte utilizzato sar&agrave; il Long che contiene 
+        al suo interno 4 bytes.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Definiamo subito il codice delle due funzioni di conversione:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li>Private Declare Sub CopyMemory Lib &quot;KERNEL32&quot; Alias &quot;RtlMoveMemory&quot; 
+          (ByRef Destination As Any, ByRef Source As Any, ByVal numbytes As Long)</li>
+        <li>Private CARATTERIHEX As String</li>
+        <li></li>
+      </ol>
+      <p>Alla riga 2 abbiamo innanzitutto definito la funzione API <b>CopyMemory</b>, 
+        alias della vera funzione, <b>RtlMoveMemory</b>. Essa richiede tre parametri: 
+        due d'essi sono <a href="../glossary/p.htm#PUNTATORE">puntatori</a> mentre 
+        il terzo &egrave; un numero semplice. Il primo parametro (<i>Destination</i>) 
+        &egrave; il puntatore all'indirizzo di memoria di destinazione, in cui 
+        verranno scritti i dati; il secondo parametro (<i>Source</i>) &egrave; 
+        un puntatore all'area di memoria da cui leggere i dati; il terzo parametro 
+        (<i>numbytes</i>) definisce il numero di bytes da copiare dall'indirizzo 
+        Source all'indirizzo Destination.</p>
+      <p>Alla riga 3 abbiamo definito una variabile di nome <b>CARATTERIHEX</b> 
+        che utilizzeremo pi&ugrave; avanti per controllare che i dati immessi 
+        dall'utente siano effettivamente validi come numero esadecimale.</p>
+      <ol class="codicevb" start="5">
+        <li>Public Sub LongToBytes(ByRef TheArray() As Byte, ByRef TheLong As 
+          Long)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call CopyMemory(TheArray(LBound(TheArray)), 
+          TheLong, 4)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La prima funzione che vedremo &egrave; la <i><b>LongToBytes</b></i> che, 
+        estrae i singoli bytes dal numero Long e li scrive in un <a href="../glossary/a.htm#ARRAY">array</a> 
+        di bytes.<br>
+        La funzione &egrave; semplicissima: in chiamata riceve due puntatori e 
+        li passa entrambi alla funzione API CopyMemory. Ad essi aggiunge il terzo 
+        parametro (4) per definire l'ampiezza del dato trattato, 4 bytes.</p>
+      <p>Possiamo notare una strana scrittura: <b><code>TheArray(LBound(TheArray))</code></b><br>
+        Ci&ograve; serve per determinare quale sia il primo effettivo elemento 
+        dell'array di nome TheArray.<br>
+        In situazioni normali il primo elemento &egrave; 0, ma in casi particolari 
+        (mediante l'utilizzo dell'istruzione <i>Option Base 1</i>) tale limite 
+        pu&ograve; essere modificato. Cos&igrave; facendo la funzione automaticamente 
+        calcoler&agrave; l'indice del primo elemento della <a href="../glossary/m.htm#MATRICE">matrice</a>.</p>
+      <p>Tale matrice sar&agrave; il contenitore per i 4 bytes letti a partire 
+        dall'indirizzo del puntatore <b>TheLong</b>.</p>
+      <ol class="codicevb" start="9">
+        <li>Public Function BytesToLong(ByRef TheArray() As Byte) As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim TempLong As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call CopyMemory(TempLong, TheArray(LBound(TheArray)), 
+          4)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;BytesToLong = TempLong</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>La seconda funzione effettuer&agrave; l'operazione inversa della prima, 
+        ovvero legger&agrave; i dati da un array di bytes ed otterr&agrave; con 
+        essi un numero Long che riporter&agrave; come risultato della funzione.</p>
+      <p>La chiamata alla funzione CopyMemory &egrave; quasi identica alla precedente. 
+        Ci&ograve; che cambia &egrave; l'ordine dei parametri; infatti questa 
+        volta la destinazione sar&agrave; una variabile temporanea di nome <b>TempLong</b> 
+        e l'origine sar&agrave; la matrice di bytes passata alla funzione.<br>
+        Tale chiamata legger&agrave; i dati della matrice e li scriver&agrave; 
+        nella variabile TempLong. La funzione si chiude riportando in uscita il 
+        numero TempLong (riga 12).</p>
+      <p>Seguono quattro routines dedicate esclusivamente al controllo dei dati 
+        inseriti dall'utente. Ci&ograve; per evitare di passare alle funzioni 
+        API devi valori errati.</p>
+      <ol class="codicevb" start="15">
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;CARATTERIHEX = &quot;0123456789ABCDEF&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;CARATTERIHEX = CARATTERIHEX &amp; Chr(vbKeyBack)</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Durante il caricamento del form inizializziamo la variabile <b>CARATTERIHEX</b> 
+        con i sedici simboli del <a href="../info/info_03.htm">sistema numerico 
+        esadecimale</a>. Ad essa aggiungiamo il simbolo ASCII del tasto <i>BackSpace</i>. 
+        Infatti la variabile <b>CARATTERIHEX</b> servir&agrave; per controllare 
+        se l'input inserito dall'utente &egrave; valido. Se non avessimo inserito 
+        il simbolo del <i>BackSpace</i> l'utente non avrebbe potuto cancellare 
+        i numeri precedenti se non utilizzando il tasto <i>Canc</i>.</p>
+      <p>Sarebbe stato pi&ugrave; conveniente dichiarare la variabile CARATTERIHEX 
+        come <a href="../glossary/c.htm#COSTANTE">costante</a> <img src="../images/ide/costante.gif" width="16" height="16" align="absmiddle">ma 
+        non &egrave; stato possibile a causa della funzione <i>Chr</i> da concatenare.</p>
+      <ol class="codicevb" start="20">
+        <li>Private Sub LongHEX_Change()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;LongDECLabel.Caption = CLng(Format(&quot;&amp;H0&quot; 
+          &amp; LongHEX.Text))</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Al cambiamento del contenuto della casella di testo <b>LongHEX</b> il 
+        valore nella Label <b>LongDECLabel</b> viene aggiornato calcolando il 
+        valore decimale del numero esadecimale inserito.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La funzione di conversione da esadecimale &egrave; la notissima <i>Format</i> 
+        con l'appoggio della stringa <i><b>&quot;&amp;H0&quot;</b></i> che assicura 
+        che il numero non sia nullo e richiede la conversione da esadecimale.</p>
+      <ol class="codicevb" start="24">
+        <li>Private Sub HEXArray_KeyPress(Index As Integer, KeyAscii As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;KeyAscii = Asc(UCase(Chr(KeyAscii)))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If InStr(1, CARATTERIHEX, Chr(KeyAscii)) = 
+          0 Then KeyAscii = 0</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub LongHEX_KeyPress(KeyAscii As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;KeyAscii = Asc(UCase(Chr(KeyAscii)))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If InStr(1, CARATTERIHEX, Chr(KeyAscii)) = 
+          0 Then KeyAscii = 0</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Alla pressione di un tasto nelle varie caselle di testo deve essere controllato 
+        se il tasto premuto &egrave; effettivamente una cifra del sistema esadecimale.</p>
+      <p>Pertanto, alle righe 25 e 30 viene portata l'eventuale lettera in maiuscolo 
+        (non &egrave; obbligatorio ma migliora l'estetica del programma) ed in 
+        seguito viene controllato se tale valore compare all'interno della stringa 
+        <b>CARATTERIHEX</b> che conterr&agrave; tutti i simboli esadecimali. Se 
+        il simbolo compare, l'istruzione <i>Instr</i> restituir&agrave; la posizione 
+        in cui tale carattere compare, quindi un numero maggiore di 0.<br>
+        Nel caso che il simbolo non venga trovato all'interno della stringa l'istruzione 
+        <i>Instr</i> restituir&agrave; il valore 0. In questo caso (simbolo non 
+        trovato, quindi non valido) il tasto premuto sar&agrave; invalidato impostando 
+        il parametro <i><b>KeyAscii</b></i> a 0.</p>
+      <p>Segue il codice dei due pulsanti di estrazione ed unione.</p>
+      <ol class="codicevb" start="34">
+        <li>Private Sub PulsanteLongBytes_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim NUMERI(3) As Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;LongToBytes NUMERI, CLng(Format(&quot;&amp;H0&quot; 
+          &amp; LongHEX.Text))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;HEXArray(0).Text = Hex(NUMERI(0))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;HEXArray(1).Text = Hex(NUMERI(1))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;HEXArray(2).Text = Hex(NUMERI(2))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;HEXArray(3).Text = Hex(NUMERI(3))</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La pressione del pulsante <b>PulsanteLongBytes</b> richiede l'estrazione 
+        dei singoli bytes contenuti nel numero specificato nella casella di testo 
+        <i>LongHEX</i>.</p>
+      <p>Pertanto dichiariamo una nuova matrice di tipo Byte (riga 35), richiamiamo 
+        la funzione <i><b>LongToBytes</b></i> che si occuper&agrave; di riempirla, 
+        passandole come parametri la matrice ed il numero, convertito a Long decimale, 
+        contenuto nella casella <b>LongHEX</b> (riga 36).</p>
+      <p>Fatto questo potremo andare a leggere i valori dalla matrice e scriverli 
+        nella matrice di caselle di testo (righe 37-40).</p>
+      <ol class="codicevb" start="43">
+        <li>Private Sub PulsanteBytesLong_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim NUMERI(3) As Byte</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;NUMERI(0) = CByte(Format(&quot;&amp;H0&quot; 
+          &amp; HEXArray(0).Text))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;NUMERI(1) = CByte(Format(&quot;&amp;H0&quot; 
+          &amp; HEXArray(1).Text))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;NUMERI(2) = CByte(Format(&quot;&amp;H0&quot; 
+          &amp; HEXArray(2).Text))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;NUMERI(3) = CByte(Format(&quot;&amp;H0&quot; 
+          &amp; HEXArray(3).Text))</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;LongHEX.Text = Hex(BytesToLong(NUMERI))</li>
+        <li>End Sub</li>
+      </ol>
+      <p>L'operazione inversa &egrave; gestita dal click sul pulsante <b>PulsanteBytesLong</b>.<br>
+        Come prima dichiariamo una nuova matrice di Bytes e la riempiamo con i 
+        valori, convertiti in decimale delle 4 caselle di testo (righe 44-48).<br>
+        Riempita la matrice potremo richiamare la funzione <i><b>BytesToLong</b></i> 
+        passandole la semplice matrice. In uscita la funzione ci riporter&agrave; 
+        il numero Long generato. Passeremo tale numero, convertito in esadecimale 
+        mediante la funzione <i>Hex</i>, all'interno della casella <b>LongHEX</b>.</p>
+      <p><img src="../images/howto/howto031_02.jpg" width="242" height="94" align="right" alt="Figura 2">Il 
+        nostro esempio &egrave; completo. Il progetto legger&agrave; i dati dalle 
+        caselle di testo e li convertir&agrave; da un formato all'altro.</p>
+      <p>L'esecuzione del progetto mostrer&agrave; molto chiaramente la strana 
+        struttura <a href="../glossary/l.htm#LITTLEENDIAN">Little-Endian</a> dei 
+        dati nelle macchine <b>Intel x86</b>.<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Naturalmente esistevano tantissime altre soluzioni per effettuare quest'operazione 
+        ma questa &egrave; quella pi&ugrave; veloce e flessibile ai possibili 
+        cambiamenti.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        Tratto dalla <a href="http://support.microsoft.com/support/kb/articles/Q171/6/52.ASP" target="_blank">MS 
+        Knowledge Base ID Q171652</a><br>
+        28 Marzo 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

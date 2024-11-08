@@ -1,0 +1,425 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Elencare i files di una cartella secondo un criterio (prima parte)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Elencare i files di una 
+    cartella secondo un criterio<br>
+    (prima&nbsp;parte)<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <ul>
+        <li><a href="ht_014.htm#STEP1">Prima versione (senza l'utilizzo dell'API</a>)</li>
+        <li><a href="ht_014_2.htm">Seconda versione (con l'utilizzo dell'API</a>) 
+          <img src="../images/api.gif" width="34" height="24" align="absmiddle"> 
+        </li>
+      </ul>
+      <p>Questa volta vedremo come elencare i files di una cartella e delle sue 
+        sottocartelle, rispondenti ad un determinato criterio quali i <a href="../glossary/c.htm#CARATTERIJOLLY">caratteri 
+        jolly</a> (<a href="../glossary/w.htm#WILDCARDS">wildcards</a>). </p>
+      <hr>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p align="center" class="size3"><a name="STEP1"></a>Prima versione (senza 
+        l'utilizzo dell'API)</p>
+      <p>Il metodo risolutivo di questa funzione si basa su una prima raccolta 
+        delle sottocartelle contenute nel percorso selezionato, ed in seguito 
+        a questo viene effettuata la raccolta dei files all'interno d'esse. La 
+        funzione cos&igrave; non &egrave; ottimizzata, ma &egrave; un buon compromesso 
+        tra prestazioni e semplicit&agrave;.</p>
+      <p>Prima di vedere la funzione di elencazione dei files, progettiamo una 
+        semplice interfaccia grafica per mettere in atto la ricerca.</p>
+      <p><img src="../images/howto/howto014_01.jpg" width="264" height="311" align="right" alt="Figura 1">Inseriamo 
+        sopra il nostro form alcuni controlli:</p>
+      <ol>
+        <li>Una <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">di 
+          nome <b>Tempo</b>, che indicher&agrave; il tempo di processamento della 
+          funzione. Non &egrave; obbligatoria, ma pu&ograve; essere utile per 
+          monitorare l'effettiva ottimizzazione della funzione.</li>
+        <li>Una <i>Label<img src="../images/controls/label.gif" width="25" height="25" align="absmiddle"></i>di 
+          nome <b>Conteggio</b>, che conterr&agrave; il numero di files trovati.</li>
+        <li>Una <i>ListBox</i><img src="../images/controls/listbox.gif" width="25" height="25" align="absmiddle">di 
+          nome <b>ListaFiles</b>, che conterr&agrave; l'elenco dei files trovati.</li>
+        <li>Una <i>Label<img src="../images/controls/label.gif" width="25" height="25" align="absmiddle"></i>di 
+          nome <b>CercaLabel</b>, contenente il testo <b><i>&quot;Cerca nella 
+          cartella&quot;</i></b>. Essa servir&agrave; soltanto a spiegare la funzione 
+          della casella di testo sottostante.</li>
+        <li>Una <i>TextBox</i><img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle">di 
+          nome <b>CercaText</b> che l'utente utilizzer&agrave; per specificare 
+          il percorso da cui elencare i files.</li>
+        <li>Una <i>Label</i><i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle"></i>di 
+          nome <b>TipoLabel</b> contenente il testo <b><i>&quot;Tipo File&quot;</i></b> 
+          che spiegher&agrave; la funzione della casella sottostante.</li>
+        <li>Una <i>TextBox</i><img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle">di 
+          nome <b>TipoText</b> che conterr&agrave; il criterio utilizzato per 
+          l'elencazione dei nomi dei files.</li>
+        <li>Una <i>CheckBox</i><img src="../images/controls/checkbox.gif" width="25" height="25" align="absmiddle">di 
+          nome <b>SottoCartelle</b> utile a includere/escludere le sottocartelle 
+          nell'elencazione dei files.</li>
+        <li>Un <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+          nome <b>Elenca</b> contenente il testo <b><i>&quot;Elenca Files&quot;</i></b>. 
+          Naturalmente il click sopra d'esso effettuer&agrave; la scansione delle 
+          cartelle e l'elencazione dei files.</li>
+      </ol>
+      <p>Prima di vedere la funzione di scansione dichiariamo due semplici <a href="../glossary/c.htm#COSTANTE">costanti</a> 
+        <img src="../images/ide/costante.gif" width="16" height="16" border="0" align="absmiddle"> 
+        entrambe di tipo Integer, che verranno utilizzate in seguito.</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li>Private Const TrovaTutto As Integer = vbHidden + vbSystem + vbDirectory</li>
+        <li>Private Const TrovaFiles As Integer = vbHidden + vbSystem</li>
+      </ol>
+      <p>La prima costante &egrave; <b>TrovaTutto</b> ed il suo valore &egrave; 
+        dato dalla somma dei valori <i>vbHidden, vbSystem</i> e <i>vbDirectory</i>. 
+        Il suo utilizzo avviene con la chiamata dell'istruzione <i>Dir</i>. Infatti 
+        tale istruzione richiede, opzionalmente, il tipo di dato da ricercare. 
+        Passando tale valore all'istruzione Dir vengono estratti sia files che 
+        directory (cartelle). Purtroppo tale impostazione &egrave; d'obbligo in 
+        quanto la semplice specificazione di vbDirectory quale tipo di elemento 
+        da ricercare, riporterebbe <b class="sottolineato">soltanto</b> le directory 
+        non nascoste e non di sistema, mentre salterebbe totalmente le cartelle 
+        nascoste e di sistema.</p>
+      <p>La seconda costante, molto simile alla prima, &egrave; <b>TrovaFiles</b>. 
+        Il suo utilizzo &egrave; analogo a quello della precedente costante, ma 
+        la somma dei valori di cui si compone la costante, fa s&igrave; che l'istruzione 
+        Dir, con tali valori, estragga <b class="sottolineato">soltanto</b> i 
+        files ed eviti completamente le cartelle.</p>
+      <p>La prima costante verr&agrave; utilizzata per estrarre le cartelle dal 
+        percorso di partenza, mentre la seconda verr&agrave; sfruttata per elencare 
+        i files all'interno d'esse.</p>
+      <p>Vediamo quindi la nostra funzione di scansione: il suo nome sar&agrave; 
+        <b>ElencaFiles</b> e la sua dichiarazione &egrave; la seguente:</p>
+      Private Sub ElencaFiles(PercSorg As String, TipoFile As String, InSottoDir 
+      As Boolean) 
+      <p>La funzione in realt&agrave; &egrave; una Sub, per cui non ritorna alcun 
+        valore in uscita; vedi a tal proposito le <a href="../info/info_05.htm">informazioni 
+        aggiuntive sulla funzioni</a>.</p>
+      <p>Richiede tre parametri: <b>PercSorg</b>, una stringa indicante il percorso 
+        della cartella da cui iniziare la scansione, <b>TipoFile</b>, stringa 
+        per specificare un filtro, un criterio, in base a <a href="../glossary/c.htm#CARATTERIJOLLY">caratteri 
+        jolly</a> e <b>InSottoDir</b> di tipo booleano, che indica se la scansione 
+        debba ricercare i files contenuti anche nelle sottocartelle della cartella 
+        specificata con PercSorg.</p>
+      <ol class="codicevb" start="5">
+        <li>Private Sub ElencaFiles(PercSorg As String, TipoFile As String, InSottoDir 
+          As Boolean)</li>
+        <li>&nbsp;&nbsp;Dim ListaDir As New Collection</li>
+        <li>&nbsp;&nbsp;Dim PercAtt As String</li>
+        <li>&nbsp;&nbsp;Dim NomeFile As String</li>
+        <li>&nbsp;&nbsp;Dim FileAtt As String</li>
+        <li>&nbsp;&nbsp;Dim DirNum As Integer</li>
+      </ol>
+      <p>All'interno della funzione abbiamo dichiarato - ed istanziato mediante 
+        la parola <i>New</i> - una Collection di nome <b>ListaDir</b>. Essa verr&agrave; 
+        utilizzata per contenere i nomi di tutte le cartelle che dovranno essere 
+        analizzate.</p>
+      <p>Abbiamo dichiarato anche una serie di variabili: <b>PercAtt</b>, stringa 
+        che conterr&agrave; il percorso della cartella al momento analizzata, 
+        estratta dalla Collection <b>ListaDir</b>; <b>NomeFile</b> invece servir&agrave; 
+        come variabile di appoggio per l'elencazione dei files e delle cartelle 
+        tramite il comando Dir; <b>FileAtt</b> &egrave; una stringa che viene 
+        utilizzata per ricostruire il nome completo di un file o di una cartella, 
+        mettendo assieme il contenuto di <b>PercAtt</b> e <b>NomeFile</b>. L'ultima 
+        variabile &egrave; <b>DirNum</b> e servir&agrave; da indice per estrarre 
+        gli elementi dalla Collection.</p>
+      <ol class="codicevb" start="12">
+        <li>&nbsp;&nbsp;ListaFiles.Clear</li>
+        <li>&nbsp;&nbsp;If Right(PercSorg, 1) &lt;&gt; &quot;\&quot; Then PercSorg 
+          = PercSorg &amp; &quot;\&quot;</li>
+        <li>&nbsp;&nbsp;If Dir(PercSorg, TrovaTutto) &lt;&gt; &quot;&quot; Then 
+          ListaDir.Add PercSorg</li>
+      </ol>
+      <p>All'inizio della funzione (riga 12) viene azzerato il contenuto della 
+        <i>ListBox</i> di nome <b>ListaFiles</b>, per permettere il reinserimento 
+        degli elementi.</p>
+      <p>Alla riga 13 viene controllato se la stringa <b>PercSorg</b> termina 
+        con un &quot;\&quot;; in caso contrario, la stessa istruzione provvede 
+        ad aggiungerlo alla fine della stringa.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La riga 14 effettua un primo controllo: se la cartella di partenza non 
+        &egrave; vuota, ovvero non contiene n&eacute; files n&eacute; sottocartelle, 
+        viene aggiunta all'elenco delle cartelle da analizzare in seguito.</p>
+      <p>Per effettuare la raccolta delle cartelle viene utilizzata la Collection 
+        <b>ListaDir</b> e la variabile <b>DirNum</b> che effettua da indice. Il 
+        meccanismo funziona cos&igrave;: viene estratto il primo elemento dalla 
+        Collection, che &egrave; stato inserito tramite la riga 14. Per tale cartella, 
+        vengono ricercate tutte le sottocartelle in essa. Ogni sottocartella trovata 
+        viene inserita in coda alla Collection. Al termine della scansione di 
+        una cartella, viene incrementato il valore dell'indice <b>DirNum</b>, 
+        ed il ciclo ricomincia. In tal modo verr&agrave; effettuata la medesima 
+        operazione per la seconda cartella trovata e per tutte le seguenti, fino 
+        a trovare tutte le sottocartelle ed inserirle una per una all'interno 
+        della Collection <b>ListaDir</b>.</p>
+      <ol class="codicevb" start="15">
+        <li>&nbsp;&nbsp;If InSottoDir Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;DirNum = 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Do Until DirNum &gt; ListaDir.Count</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PercAtt = ListaDir.Item(DirNum)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NomeFile = Dir(PercAtt, TrovaTutto)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Do Until NomeFile = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Left(NomeFile, 
+          1) &lt;&gt; &quot;.&quot; Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FileAtt 
+          = PercAtt &amp; NomeFile</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If (GetAttr(FileAtt) 
+          And vbDirectory) Then ListaDir.Add FileAtt &amp; &quot;\&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NomeFile = Dir</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Loop</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DirNum = DirNum + 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Loop</li>
+        <li>&nbsp;&nbsp;End If</li>
+      </ol>
+      <p>Alla riga 15 inizia un pezzo di codice che termina alla riga 29. Se il 
+        parametro <b>InSottoDir</b> &egrave; True e, quindi, &egrave; richiesta 
+        l'analisi delle sottocartelle, viene eseguito tale pezzo di codice che 
+        effettua la raccolta di tutte le cartelle contenute all'interno della 
+        cartella di partenza.</p>
+      <p>Alla riga 16 viene inizializzata la variabile indice <b>DirNum</b> a 
+        1 e alla riga 17 inizia un ciclo che durer&agrave; fino a quando il valore 
+        dell'indice non sar&agrave; maggiore del numero di elementi contenuti 
+        in <b>ListaDir</b>.</p>
+      <p>All'interno del ciclo, alla riga 17, viene estratto l'elemento della 
+        Collection puntato dall'indice e viene memorizzato nella variabile <b>PercAtt</b>. 
+        Per tale elemento estratto verranno eseguite le righe dalla 19 alla 26, 
+        che elencano le cartelle contenute all'interno della cartella contenuta 
+        in <b>PercAtt</b>.</p>
+      <p>Alla riga 19 viene ricercato il primo elemento contenuto nella cartella 
+        in analisi. Il nome del primo elemento ricercato viene memorizzato all'interno 
+        della variabile <b>NomeFile</b>.</p>
+      <p>Alla riga 20 viene verificato, se l'elemento estratto dalla cartella 
+        esista - ovvero il suo nome sia diverso da &quot;&quot;. Assicurati di 
+        questo, viene effettuato un ulteriore controllo: se il primo carattere 
+        dell'elemento estratto &egrave; un punto, l'elemento viene scartato. Ci&ograve; 
+        serve per evitare di elencare le cartelle . e .. che servono soltanto 
+        come dispositivi di ritorno.</p>
+      <p>Alla riga 22 viene costruita la stringa <b>FileAtt</b> concatenando le 
+        stringhe <b>PercAtt</b> e <b>NomeFile</b>. In seguito a questo viene controllato 
+        se l'elemento in questione sia una cartella, tramite un'<a href="../info/info_08.htm">estrazione 
+        bit a bit</a>. In caso positivo, la cartella viene aggiunta all'elenco 
+        delle cartelle <b>ListaDir</b>. </p>
+      <p>Alla riga 25 viene ricercato il prossimo elemento all'interno della cartella 
+        <b>PercAtt</b> e viene rieseguito il ciclo dalla riga 20, fino a quando 
+        non ci sono altri elementi all'interno della cartella.</p>
+      <p>La prima estrazione ha riportato tutte le sottocartelle contenute all'interno 
+        del primo elemento della Collection. Alla riga 27 viene incrementato il 
+        valore dell'indice <b>DirNum</b> ed il programma ritorna alla riga 17. 
+        Viene estratto un ulteriore elemento dalla Collection, vengono elencate 
+        tutte le cartelle all'interno d'esso, ed il ciclo continua fino a quando 
+        non sono state trovate tutte le cartelle, ovvero fino a quando il valore 
+        dell'indice non &egrave; maggiore del numero di elementi della Collection.</p>
+      <ol class="codicevb" start="30">
+        <li>&nbsp;&nbsp;For DirNum = 1 To ListaDir.Count</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;PercAtt = ListaDir.Item(DirNum)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;NomeFile = Dir(PercAtt &amp; TipoFile, TrovaFiles)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Do Until NomeFile = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ListaFiles.AddItem NomeFile</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NomeFile = Dir</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Loop</li>
+        <li>&nbsp;&nbsp;Next DirNum</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Cos&igrave;, alla riga 30 viene reinizializzata la variabile indice <b>DirNum</b>, 
+        in modo da ricominciare l'estrazione dalla Collection. Stavolta per&ograve;, 
+        non saranno cercate le cartelle, ma soltanto i files all'interno delle 
+        singole cartelle contenute nella Collection. Alla riga 31 viene estratto 
+        periodicamente un elemento dalla Collection, tramite l'indice <b>DirNum</b>, 
+        e viene memorizzato nella variabile <b>PercAtt</b>.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Per tale cartella, viene ricercato il primo file - costante <b><i>TrovaFiles</i></b> 
+        - contenuto in essa purch&eacute; rispondente al criterio <b>TipoFile</b> 
+        (riga 32). Se tale file esiste, vengono eseguite le righe 34 e 35, altrimenti 
+        viene estratta un'altra cartella dalla Collection.</p>
+      <p>Alla riga 34 viene aggiunto il file trovato alla <i>ListBox</i><img src="../images/controls/listbox.gif" width="25" height="25" align="absmiddle"> 
+        <b>ListaFiles</b>. Solo allora verr&agrave; ricercato un altro file contenuto 
+        nella medesima cartella, fino ad elencare tutti i files dello stesso criterio 
+        per tale cartella.</p>
+      <p>Terminata una cartella si passer&agrave; alla successiva, contenuta nella 
+        Collection, fino ad elencare tutti i files del criterio specificato in 
+        tutte le cartelle trovate.</p>
+      <p>Per provare questa funzione scriviamo queste semplici istruzioni:</p>
+      <ol class="codicevb" start="40">
+        <li>Private Sub Elenca_Click()</li>
+        <li>&nbsp;&nbsp;Dim TempoInizio As Single</li>
+        <li>&nbsp;&nbsp;Dim TempoFine As Single</li>
+        <li>&nbsp;&nbsp;Elenca.MousePointer = vbHourglass</li>
+        <li>&nbsp;&nbsp;TempoInizio = Timer</li>
+        <li>&nbsp;&nbsp;ElencaFiles CercaText.Text, TipoText.Text, SottoCartelle.Value</li>
+        <li>&nbsp;&nbsp;TempoFine = Timer</li>
+        <li>&nbsp;&nbsp;Tempo.Caption = &quot;Tempo: &quot; &amp; TempoFine - 
+          TempoInizio</li>
+        <li>&nbsp;&nbsp;Conteggio.Caption = &quot;Conteggio: &quot; &amp; ListaFiles.ListCount</li>
+        <li>&nbsp;&nbsp;Elenca.MousePointer = vbNormal</li>
+        <li>End Sub</li>
+      </ol>
+      <p>La funzione &egrave; quella legata all'evento Click sul pulsante di nome 
+        <b>Elenca</b>. Sono state dichiarate 2 variabili di <a href="../info/info_04.htm">tipo 
+        Single</a>, di nome <b>TempoInizio</b> e <b>TempoFine</b>. Esse serviranno 
+        per monitorare la velocit&agrave; di esecuzione della funzione.</p>
+      <p>Alla riga 43, viene cambiato il puntatore del mouse in clessidra, poich&eacute; 
+        tale operazione potrebbe durare alcuni secondi.<br>
+        Alla riga 44 viene memorizzato l'orario corrente nella variabile <b>TempoInizio</b>, 
+        viene effettuata la chiamata alla funzione <b><i>ElencaFiles</i></b> e 
+        al termine viene, memorizzato l'orario corrente nella variabile <b>TempoFine</b>.</p>
+      <p>Alla riga 47 viene mostrato nella caption della Label <b>Tempo</b> il 
+        numero di secondi trascorsi per la scansione delle cartelle. Il valore 
+        &egrave; dato dalla sottrazione dell'orario iniziale dall'orario finale. 
+        Viene anche mostrato il numero di files trovati (riga 48).</p>
+      <p>Alla riga 49, invece, viene ripristinato il cursore del mouse normale.</p>
+      <p>Adesso possiamo provare la nostra funzione: il click sopra il pulsante 
+        elenca mostra chiaramente i nomi dei files del tipo richiesto (nel nostro 
+        caso .exe) contenuti nella cartella specificata (\programmi) e nelle sue 
+        sottocartelle.</p>
+      <p align="center"><img src="../images/howto/howto014_02.jpg" width="264" height="311" alt="Figura 2"><br>
+        <b>Figura 2</b></p>
+      <p>&nbsp;</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p align="center"><a href="ht_014_2.htm">Segue parte 2 &gt;&gt;</a></p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a> e <a href="../vbmail.htm?id=3">Giuseppe Della Bianca</a><br>
+        27 Dicembre 2000<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

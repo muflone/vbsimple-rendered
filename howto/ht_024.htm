@@ -1,0 +1,321 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Visualizzare la finestra delle proprietà di un file</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Visualizzare la finestra 
+    delle propriet&agrave; di un file<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>All'interno di Windows tutti i files e le cartelle hanno una finestra 
+        delle propriet&agrave; dove vengono mostrati i dati dell'elemento scelto, 
+        quali la dimensione, il percorso all'interno del file system, il tipo 
+        di oggetto e, per alcuni tipi di files, finestre aggiuntive.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Normalmente per accedere alla finestra delle propriet&agrave; di un file 
+        baster&agrave; cliccare con il tasto destro del mouse sul file e scegliere 
+        la voce <i><b>Propriet&agrave;</b></i>.<br>
+        Per effettuare la medesima cosa attraverso Visual Basic sar&agrave; necessario 
+        utilizzare la funzione <a href="../glossary/a.htm#API">API</a> <i>ShellExecuteEX</i> 
+        che permette di eseguire determinate operazioni della Shell di Windows.</p>
+      <p>Vedremo in questo semplice HowTo come richiamare la finestra delle propriet&agrave; 
+        di un file attraverso la suddetta funzione API.<br>
+        In questo progetto sar&agrave; necessario un form<img src="../images/controls/form.gif" width="25" height="25" align="absmiddle">ed 
+        un <a href="../glossary/m.htm#MODULO">modulo standard</a> <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+        in cui risiederanno le chiamate all'API.</p>
+      <p>Cominceremo proprio dal modulo standard:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Type SHELLEXECUTEINFO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;cbSize&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As 
+          Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;fMask&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As 
+          Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hwnd&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As 
+          Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpVerb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As 
+          String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpFile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As 
+          String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpParameters&nbsp;As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpDirectory&nbsp;&nbsp;As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;nShow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As 
+          Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hInstApp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpIDList&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpClass&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As 
+          String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hkeyClass&nbsp;&nbsp;&nbsp;&nbsp;As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;dwHotKey&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hIcon&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As 
+          Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hProcess&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As Long</li>
+        <li>End Type</li>
+        <li></li>
+        <li>Private Const SEE_MASK_INVOKEIDLIST = &amp;HC</li>
+        <li>Private Const SEE_MASK_NOCLOSEPROCESS = &amp;H40</li>
+        <li>Private Const SEE_MASK_FLAG_NO_UI = &amp;H400</li>
+        <li></li>
+        <li>Private Declare Function ShellExecuteEx Lib &quot;SHELL32.DLL&quot; 
+          (SEI As SHELLEXECUTEINFO) As Long</li>
+        <li></li>
+      </ol>
+      <p>Alla riga 3 abbiamo definito un nuovo tipo di dati di nome <b>SHELLEXECUTEINFO</b>. 
+        Tale struttura &egrave; richiesta dalla funzione API.</p>
+      <p>Alle righe 21-23 abbiamo dichiarato tre <a href="../glossary/c.htm#COSTANTE">costanti</a> 
+        <img src="../images/ide/costante.gif" width="16" height="16" border="0" align="absmiddle"> 
+        che utilizzeremo come parametri nella struttura SHELLEXECUTEINFO.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Infine, alla riga 25, abbiamo la dichiarazione della funzione <b><i>ShellExecuteEx</i></b>. 
+        Essa differisce dalla funzione <i>ShellExecute</i>, gi&agrave; vista in 
+        un <a href="ht_020.htm">altro HowTo</a> ed in una <a href="../activity/act_01.htm">richiesta 
+        dei lettori</a>, per il fatto che permette di specificare una serie di 
+        parametri aggiuntivi che l'altra funzione non permette.</p>
+      <ol class="codicevb" start="27">
+        <li>Public Function ShowPropertiesDlg(ByVal FileName As String, ByVal 
+          OwnerhWnd As Long) As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim SEI As SHELLEXECUTEINFO</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;With SEI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.cbSize = Len(SEI)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.fMask = SEE_MASK_NOCLOSEPROCESS 
+          Or SEE_MASK_INVOKEIDLIST Or SEE_MASK_FLAG_NO_UI</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.hWnd = OwnerhWnd</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.lpVerb = &quot;properties&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.lpFile = FileName</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.lpParameters = vbNullChar</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.lpDirectory = vbNullChar</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.nShow = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.hInstApp = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.lpIDList = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+      </ol>
+      <p>La nostra funzione si chiamer&agrave; <b>ShowPropertiesDlg</b> e richiede 
+        due parametri: il nome del file per il quale mostrare la finestra delle 
+        propriet&agrave; e l'<a href="../glossary/h.htm#HANDLE">handle</a> della 
+        finestra chiamante.</p>
+      <p>Alla riga 28 abbiamo dichiarato la variabile <b>SEI</b> di tipo <i>SHELLEXECUTEINFO</i>. 
+        Essa accoglier&agrave; tutti i parametri da passare alla funzione ShellExecuteEx.</p>
+      <p>Cos&igrave; nelle righe 29-40 definiamo tali parametri: <i><b>cbSize</b></i> 
+        indica la dimensione della struttura, calcolata tramite l'istruzione Len; 
+        <b> <i>fMask</i></b> definisce le modalit&agrave; di visualizzazione e 
+        richiamo della funzione ed inseriremo i tre valori dichiarati prima come 
+        costanti; <b><i>hWnd</i></b> ricever&agrave; l'handle passato alla funzione; 
+        <b> <i>lpVerb</i></b> richiede il nome dell'operazione da eseguire (<i>properties</i>); 
+        <b> <i>lpFile</i></b> indica il nome del file per il quale eseguire l'operazione 
+        <i>lpVerb</i>. Tutti gli altri dati della struttura non saranno utilizzati 
+        in questa funzione, pertanto li lasceremo in bianco, cio&egrave; impostati 
+        a 0.</p>
+      <ol class="codicevb" start="41">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If (ShellExecuteEx(SEI) = 0) Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowPropertiesDlg 
+          = 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Else</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ShowPropertiesDlg 
+          = SEI.hInstApp</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Function</li>
+      </ol>
+      <p>Finalmente alla riga 41 abbiamo la chiamata alla funzione <i>ShellExecuteEx</i> 
+        passandole come parametro la struttura <b>SEI</b>. Se la funzione ritorna 
+        valore 0, tale sar&agrave; anche il valore ritornato dalla nostra funzione 
+        <i>ShowPropertiesDlg</i>; se la funzione ritorna un valore diverso da 
+        0, sar&agrave; necessario leggere il contenuto del campo <b><i>hInstApp</i></b> 
+        della struttura SEI.</p>
+      <p>Terminata la scrittura del modulo standard <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+        possiamo passare alla progettazione del form che richiamer&agrave; la 
+        funzione appena vista.</p>
+      <p align="center"><img src="../images/howto/howto024_01.jpg" width="244" height="73" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <p>Il form si compone di tre semplici <a href="../glossary/c.htm#CONTROLLO">controlli</a>: 
+        una <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>Label1</b>, una <i>TextBox</i><img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>txtFileName</b> ed un <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>btnProperties</b>.</p>
+      <p>L'utilizzo dell'interfaccia &egrave; ovvio: baster&agrave; inserire il 
+        nome di un file nella casella di testo e premere il pulsante <i><b>&quot;Propriet&agrave; 
+        del file&quot;</b></i> per vedere apparire la finestra delle propriet&agrave; 
+        corrispondente. Prima di fare questo, &egrave; necessario scrivere il 
+        codice che controlla la pressione del pulsante <b>btnProperties</b>.</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Sub btnProperties_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim ret As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ret = ShowPropertiesDlg(txtFileName.Text, 
+          Me.hWnd)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If (ret &lt;= 32) Then MsgBox "Errore!", vbCritical, 
+          "Errore"</li>
+        <li>End Sub</li>
+      </ol>
+      <p>La routine che regola l'<a href="../glossary/e.htm#EVENTO">evento</a> 
+        Click del pulsante si compone di tre semplici righe.<br>
+        Alla riga 4 dichiariamo la variabile <b>ret</b> che ricever&agrave; il 
+        valore restituito dalla chiamata della funzione <i>ShowPropertiesDlg</i> 
+        con il testo della casella <b>txtFileName</b> e l'<a href="../glossary/h.htm#HANDLE">handle</a> 
+        della finestra (riga 5).</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Se il valore restituito dalla funzione &egrave; minore o uguale di 32, 
+        siamo in presenza di qualche errore, ad esempio il nome del file specificato 
+        non esiste. Se tale valore &egrave; minore o uguale di 32, verr&agrave; 
+        mostrata un messaggio di errore (riga 6).</p>
+      <p><img src="../images/howto/howto024_02.jpg" width="294" height="355" align="right" alt="Figura 2">Proviamo 
+        il nostro progetto.</p>
+      <p>Un click sopra il pulsante <i><b>&quot;Propriet&agrave; del file&quot;</b></i> 
+        mostrer&agrave; la finestra delle propriet&agrave; corrispondente.</p>
+      <p>Nel caso avessimo inserito un nome di file errato, sarebbe apparso invece 
+        il messaggio di errore.</p>
+      <p align="center"><img src="../images/howto/howto024_03.jpg" width="86" height="95" alt="Figura 3"> 
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>La separazione della funzione <i><b>ShowPropertiesDlg</b></i> in un modulo 
+        standard rende molto semplice il suo utilizzo all'interno di altri progetti.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=6">Roal 
+        Zanazzi</a><br>
+        2 Febbraio 2001<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

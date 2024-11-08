@@ -1,0 +1,274 @@
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Fibia FBI (Team 18) -->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:fb="http://localhost/">
+  <channel rdf:about="http://www.vbsimple.net/">
+    <title>VBSimple</title>
+    <link>http://www.vbsimple.net/</link>
+    <description>Il Visual Basic spiegato in una maniera nuova ed unica.</description>
+    <language>IT-it</language>
+    <items>
+      <rdf:Seq>
+        <rdf:li rdf:resource="http://www.vbsimple.net/howto/ht_063.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/database/db_08_11.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/database/db_08_10.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/howto/ht_062.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/howto/ht_061.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/database/db_08_09.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/howto/ht_060.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/cliserv/clser_11.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/cliserv/clser_10.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/cliserv/clser_09.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/database/db_08_08.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/database/db_08_07.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/database/db_08_06.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/database/db_08_05.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/database/db_08_04.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/database/db_08_03.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/database/db_08_02.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/database/db_08_01.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/database/db_08.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/database/db_07.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/howto/ht_059.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/news/news_15.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/howto/ht_058.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/intermed/int_11.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.fbi/weird/wrd_08.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/news/news_14.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/news/news_13.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/intermed/int_10.htm?nof"/>
+        <rdf:li rdf:resource="http://www.vbsimple.net/weird/wrd_07.htm?nof"/>
+      </rdf:Seq>
+    </items>
+  </channel>
+  <item rdf:about="http://www.vbsimple.net/howto/ht_063.htm?nof">
+    <title>Realizzare un orologio </title>
+    <link>http://www.vbsimple.net/howto/ht_063.htm?nof</link>
+    <description><![CDATA[La realizzazione di un orologio analogico a lancette.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Mon, 30 Aug 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-08-27T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/database/db_08_11.htm?nof">
+    <title>Il linguaggio SQL - L'istruzione CREATE TABLE</title>
+    <link>http://www.vbsimple.net/database/db_08_11.htm?nof</link>
+    <description><![CDATA[Il linguaggio SQL - L'istruzione CREATE TABLE]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Mon, 30 Aug 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-05-05T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/database/db_08_10.htm?nof">
+    <title>Il linguaggio SQL - L'operatore UNION</title>
+    <link>http://www.vbsimple.net/database/db_08_10.htm?nof</link>
+    <description><![CDATA[Il linguaggio SQL - L'operatore UNION]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Mon, 30 Aug 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-04-25T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/howto/ht_062.htm?nof">
+    <title>Avviare un programma esterno ed attenderne la chiusura</title>
+    <link>http://www.vbsimple.net/howto/ht_062.htm?nof</link>
+    <description><![CDATA[Eseguire un processo esterno in maniera sincrona, attendendo la chiusura del nuovo processo richiamato.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Mon, 30 Aug 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-04-24T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/howto/ht_061.htm?nof">
+    <title>Avviare l'applicazione predefinita per un documento</title>
+    <link>http://www.vbsimple.net/howto/ht_061.htm?nof</link>
+    <description><![CDATA[Aprire il gestore predefinito di un documento.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Mon, 30 Aug 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-04-24T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/database/db_08_09.htm?nof">
+    <title>Il linguaggio SQL - L'operatore JOIN</title>
+    <link>http://www.vbsimple.net/database/db_08_09.htm?nof</link>
+    <description><![CDATA[Il linguaggio SQL - L'operatore JOIN]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-30T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/howto/ht_060.htm?nof">
+    <title>Scorrere orizzontalmente una ListBox </title>
+    <link>http://www.vbsimple.net/howto/ht_060.htm?nof</link>
+    <description><![CDATA[Abilitare la barra di scorrimento orizzontale nelle ListBox quando il testo non risulta visibile nell'area del controllo.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-29T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/cliserv/clser_11.htm?nof">
+    <title>Effettuare un Ping tramite WSA e ICMP.DLL</title>
+    <link>http://www.vbsimple.net/cliserv/clser_11.htm?nof</link>
+    <description><![CDATA[Effettuare un PING (ICMP ECHO) utilizzando WSA e la libreria ICMP.DLL.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-28T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/cliserv/clser_10.htm?nof">
+    <title>Recuperare informazioni di rete tramite WSA </title>
+    <link>http://www.vbsimple.net/cliserv/clser_10.htm?nof</link>
+    <description><![CDATA[Implementazione della classe clsFBISocketInfo per il recupero di informazioni di rete mediante WSA.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-27T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/cliserv/clser_09.htm?nof">
+    <title>Introduzione alle funzioni WSA </title>
+    <link>http://www.vbsimple.net/cliserv/clser_09.htm?nof</link>
+    <description><![CDATA[Implementazione della classe clsFBISocket per l'accesso alle funzioni Winsock API.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-26T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/database/db_08_08.htm?nof">
+    <title>Il linguaggio SQL - Le clausole GROUP BY e HAVING</title>
+    <link>http://www.vbsimple.net/database/db_08_08.htm?nof</link>
+    <description><![CDATA[Il linguaggio SQL - Le clausole GROUP BY e HAVING]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-17T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/database/db_08_07.htm?nof">
+    <title>Il linguaggio SQL - Funzioni di aggregazione</title>
+    <link>http://www.vbsimple.net/database/db_08_07.htm?nof</link>
+    <description><![CDATA[Il linguaggio SQL - Funzioni di aggregazione]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-15T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/database/db_08_06.htm?nof">
+    <title>Il linguaggio SQL - L'istruzione UPDATE</title>
+    <link>http://www.vbsimple.net/database/db_08_06.htm?nof</link>
+    <description><![CDATA[Il linguaggio SQL - L'istruzione UPDATE]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-15T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/database/db_08_05.htm?nof">
+    <title>Il linguaggio SQL - L'istruzione DELETE</title>
+    <link>http://www.vbsimple.net/database/db_08_05.htm?nof</link>
+    <description><![CDATA[Il linguaggio SQL - L'istruzione DELETE]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-14T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/database/db_08_04.htm?nof">
+    <title>Il linguaggio SQL - L'istruzione INSERT INTO</title>
+    <link>http://www.vbsimple.net/database/db_08_04.htm?nof</link>
+    <description><![CDATA[Il linguaggio SQL - L'istruzione INSERT INTO]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-14T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/database/db_08_03.htm?nof">
+    <title>Il linguaggio SQL - La clausola ORDER BY</title>
+    <link>http://www.vbsimple.net/database/db_08_03.htm?nof</link>
+    <description><![CDATA[Il linguaggio SQL - La clausola ORDER BY]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-14T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/database/db_08_02.htm?nof">
+    <title>Il linguaggio SQL - La clausola WHERE</title>
+    <link>http://www.vbsimple.net/database/db_08_02.htm?nof</link>
+    <description><![CDATA[Il linguaggio SQL - La clausola WHERE]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-14T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/database/db_08_01.htm?nof">
+    <title>Il linguaggio SQL - L'istruzione SELECT</title>
+    <link>http://www.vbsimple.net/database/db_08_01.htm?nof</link>
+    <description><![CDATA[Il linguaggio SQL - L'istruzione SELECT]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-14T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/database/db_08.htm?nof">
+    <title>Il linguaggio SQL</title>
+    <link>http://www.vbsimple.net/database/db_08.htm?nof</link>
+    <description><![CDATA[Un piccolo vademecum sul linguaggio SQL.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-14T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/database/db_07.htm?nof">
+    <title>Configurazione di un DSN ODBC</title>
+    <link>http://www.vbsimple.net/database/db_07.htm?nof</link>
+    <description><![CDATA[Configurazione di un DSN ODBC per connessioni a database.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Sat, 13 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-13T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/howto/ht_059.htm?nof">
+    <title>File Manifest nelle risorse</title>
+    <link>http://www.vbsimple.net/howto/ht_059.htm?nof</link>
+    <description><![CDATA[Inserire il file .manifest necessario per la visualizzazione dello stile visuale di Windows XP all'interno di un file di risorse.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Mon, 1 Mar 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-03-01T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/news/news_15.htm?nof">
+    <title>Risolvere le richieste di Windows Installer</title>
+    <link>http://www.vbsimple.net/news/news_15.htm?nof</link>
+    <description><![CDATA[Sviluppo di un programma che elimini i riferimenti di registro non validi causati da installazioni errate di Windows Installer.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Sun, 29 Feb 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-02-29T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/howto/ht_058.htm?nof">
+    <title>Applicare lo stile visuale di Windows XP</title>
+    <link>http://www.vbsimple.net/howto/ht_058.htm?nof</link>
+    <description><![CDATA[Come applicare il nuovo stile visuale di Windows XP ai progetti sviluppati in Visual Basic.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Sat, 28 Feb 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-02-28T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/intermed/int_11.htm?nof">
+    <title>Corso Intermedio - Lezione 11</title>
+    <link>http://www.vbsimple.net/intermed/int_11.htm?nof</link>
+    <description><![CDATA[La lezione 11 tratta l'uso di menu a scomparsa, l'assegnazione dei loro comandi ed il richiamo come menu popup.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Mon, 16 Feb 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-02-15T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.fbi/weird/wrd_08.htm?nof">
+    <title>Weird Things - Sincrono o asincrono?</title>
+    <link>http://www.vbsimple.fbi/weird/wrd_08.htm?nof</link>
+    <description><![CDATA[Una funzione sincrona ma non totalmente.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Mon, 16 Feb 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-02-15T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/news/news_14.htm?nof">
+    <title>Articoli - Calcolo del Codice Fiscale</title>
+    <link>http://www.vbsimple.net/news/news_14.htm?nof</link>
+    <description><![CDATA[Come calcolare il Codice Fiscale, passo dopo passo.]]></description>
+    <dc:creator>VBEnry</dc:creator>
+    <pubDate>Mon, 16 Feb 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-01-25T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/news/news_13.htm?nof">
+    <title>Articoli - Watch e Object Browser</title>
+    <link>http://www.vbsimple.net/news/news_13.htm?nof</link>
+    <description><![CDATA[Utilizzare i Watch e l'Object Browser per analizzare un oggetto WebBrowser.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Mon, 16 Feb 2004 08:00:00 GMT</pubDate>
+    <fb:creationDate>2004-01-21T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/intermed/int_10.htm?nof">
+    <title>Corso Intermedio - Lezione 10</title>
+    <link>http://www.vbsimple.net/intermed/int_10.htm?nof</link>
+    <description><![CDATA[Nella lezione 10 del Corso Intermedio ci occuperemo della verifica dell'Input e della Gestione degli errori.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Dec 2003 08:00:00 GMT</pubDate>
+    <fb:creationDate>2003-12-31T08:00Z</fb:creationDate>
+  </item>
+  <item rdf:about="http://www.vbsimple.net/weird/wrd_07.htm?nof">
+    <title>Weird Things - Variant Variabili</title>
+    <link>http://www.vbsimple.net/weird/wrd_07.htm?nof</link>
+    <description><![CDATA[Uno strano comportamento di ADO può provocare qualche malfunzionamento a causa della variazione del tipo di dati.]]></description>
+    <dc:creator>Fibia FBI</dc:creator>
+    <pubDate>Wed, 31 Dec 2003 08:00:00 GMT</pubDate>
+    <fb:creationDate>2003-12-20T08:00Z</fb:creationDate>
+  </item>
+</rdf:RDF>

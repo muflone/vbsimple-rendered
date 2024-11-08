@@ -1,0 +1,367 @@
+<html><!-- #BeginTemplate "/Templates/Database2.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Il linguaggio SQL (l'istruzione CREATE TABLE)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Il linguaggio SQL<br>
+    L'istruzione CREATE TABLE<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/database.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"> 
+        3<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script>
+      <!-- #BeginEditable "CORPO" --> 
+      <p>La prima istruzione DDL &egrave; sicuramente relativa alla creazione 
+        delle tabelle: CREATE TABLE consente di creare una nuova tabella specificando 
+        uno o pi&ugrave; campi accompagnati dal rispettivo tipo di dato. Taluni 
+        database consentono anche di specificare la presenza di uno o pi&ugrave; 
+        indici o chiavi per la tabella da creare. La sintassi generale dell'istruzione 
+        &egrave; la seguente:</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p class="codicevb2">CREATE TABLE &lt;tabella&gt; (<br>
+        &nbsp;&nbsp;&lt;campo&gt; &lt;tipo&gt; [ NULL | NOT NULL ] [ &lt;chiave&gt; 
+        ] [ &lt;vincolo&gt; ],<br>
+        &nbsp;&nbsp;&lt;campo&gt; &lt;tipo&gt; [ NULL | NOT NULL ] [ &lt;chiave&gt; 
+        ] [ &lt;vincolo&gt; ],<br>
+        &nbsp;&nbsp;... <br>
+        )</p>
+      <p>Nella creazione di una tabella &egrave; necessario indicare per ciascun 
+        campo il nome ed il tipo che si intende assegnare; opzionalmente potranno 
+        essere indicati alcuni vincoli per ciascun campo. Il primo vincolo riguarda 
+        naturalmente il tipo di dato: un campo definito numericamente non potr&agrave; 
+        naturalmente contenere caratteri alfanumerici e cos&igrave; un campo data 
+        non potr&agrave; contenere altro che date; si tratta di un vincolo implicito 
+        e legato al tipo di campo stesso.</p>
+      <p>A questo primo vincolo &egrave; possibile assegnarne altri come quello 
+        che riguarda il valore <a href="../glossary/n.htm#NULL">NULL</a>. Sar&agrave; 
+        possibile ammettere o negare la presenza di tale valore utilizzando la 
+        clausola NULL oppure NOT NULL. Se fosse negata la possibilit&agrave; di 
+        inserire un valore NULL all'interno di un campo e venisse comunque effettuato 
+        l'inserimento di tale valore esplicitamente oppure durante un inserimento 
+        non venisse specificato un valore per il campo (ed in assenza di un valore 
+        di default venga assunto NULL), sar&agrave; generato un errore.</p>
+      <p><!-- #BeginLibraryItem "/Library/Notes1.lbi" --><img src="../images/notes.gif" width="56" height="57" align="left"><!-- #EndLibraryItem -->Non 
+        &egrave; stata inclusa una tabella con i nomi dei tipi di campo poich&eacute; 
+        essi dipendono dalla combinazione di database e driver per accedere allo 
+        stesso; sebbene esistano tipi di campi comuni come il numero intero, ciascun 
+        database utilizza la propria terminologia e ciascun driver per accedere 
+        ad un database utilizza un proprio dialetto. Sar&agrave; compito del driver 
+        stesso riconvertire la richiesta nel tipo di dato utilizzato internamente 
+        al database.<br>
+        Nella creazione di una tabella sar&agrave; necessario specificare almeno 
+        un campo ed il relativo tipo di dato; non &egrave; infatti possibile creare 
+        tabelle senza campi.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>A questi due vincoli si associa il concetto di chiave (quasi sempre unita 
+        alla definizione di un indice per essa); un solo campo della tabella pu&ograve; 
+        essere chiave primaria (Primary key), mentre pi&ugrave; campi possono 
+        essere chiavi esterne (Foreign key) di altre tabelle. Tuttavia molti campi 
+        rappresentano dati separati e non entreranno in nessuna delle due chiavi.</p>
+      <p>Alcuni database consentono di affiancare un ulteriore vincolo specifico 
+        formato solitamente dalla parola chiave CHECK o CONSTRAINT e da un'espressione 
+        che indica la condizione che ogni record deve soddisfare per poter essere 
+        ospitato all'interno della tabella.</p>
+      <p>Per una spiegazione dei concetti di tipo di campo, indice e chiave si 
+        rimanda all'<a href="db_01.htm">Introduzione ai Database</a>.</p>
+      <hr class="hrseparator">
+      <p>Questa lunga premessa sarebbe inutile se non fosse accompagnata da una 
+        serie di esempi esplicativi. Quelli che seguiranno sono basati su un <b>meta 
+        linguaggio</b> standard ma con molta probabilit&agrave; necessiteranno 
+        di piccoli accorgimenti per renderli funzionanti sui singoli database.</p>
+      <p class="codicevb2">CREATE TABLE dipendenti (<br>
+        &nbsp;&nbsp;id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INTEGER,<br>
+        &nbsp;&nbsp;nome&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CHAR(50),<br>
+        &nbsp;&nbsp;cognome&nbsp;&nbsp;&nbsp;&nbsp;CHAR(50),<br>
+        &nbsp;&nbsp;ruolo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CHAR(20),<br>
+        &nbsp;&nbsp;assunzione DATETIME<br>
+        )</p>
+      <p>Questo esempio specifica solamente i dati minimi necessari: il nome della 
+        tabella <b>dipendenti</b>, composta da 5 campi di cui solo il primo &egrave; 
+        numerico, i successivi 3 alfanumerici e l'ultimo di tipo data/ora. Il 
+        valore racchiuso tra parentesi rappresenta un parametro di creazione per 
+        il tipo di dati che lo precede. <i>CHAR(50)</i> indicher&agrave; al database 
+        che il campo sar&agrave; di tipo carattere e con una lunghezza (se massima 
+        oppure fissa dipende dal singolo database) di 50 caratteri. Il valore 
+        50 rappresenta naturalmente il parametro di creazione richiesto dal tipo 
+        di dato <i>CHAR</i>. Altri tipi di dati non richiedono tale parametro 
+        (vedi ad esempio <i>INTEGER</i> o <i>DATETIME</i>), mentre altri ne richiedono 
+        pi&ugrave; di uno (ad esempio <i>DECIMAL</i> richiederebbe due parametri, 
+        uno per la lunghezza ed uno per i decimali, denominata scala).</p>
+      <p>In questo esempio non sono stati specificati vincoli ed il database assumer&agrave; 
+        le opzioni predefinite; per qualche database questo significher&agrave; 
+        di proibire l'uso dei valori NULL mentre per qualche altro significher&agrave; 
+        che sar&agrave; possibile inserire valori NULL.</p>
+      <p class="codicevb2">CREATE TABLE dipendenti (<br>
+        &nbsp;&nbsp;id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INTEGER 
+        &nbsp;NOT NULL,<br>
+        &nbsp;&nbsp;nome&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CHAR(50) NOT 
+        NULL,<br>
+        &nbsp;&nbsp;cognome&nbsp;&nbsp;&nbsp;&nbsp;CHAR(50) NOT NULL,<br>
+        &nbsp;&nbsp;ruolo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CHAR(20) NULL,<br>
+        &nbsp;&nbsp;assunzione&nbsp;DATETIME NOT NULL<br>
+        )</p>
+      <p>Questo esempio analogo al precedente si differenzia soltanto per la specifica 
+        esplicita dei valori NULL; soltanto il campo <b>ruolo</b> potr&agrave; 
+        contenere valore NULL. Questo significa che durante un inserimento (vedi 
+        <a href="db_08_04.htm">Istruzione INSERT INTO</a>) dovr&agrave; essere 
+        fornito un valore esplicito per i campi <b>id</b>, <b>nome</b>, <b>cognome</b> 
+        e <b>assunzione</b>; sar&agrave; invece possibile evitare di specificare 
+        un valore per il campo <b>ruolo</b> che assumer&agrave; quindi il valore 
+        NULL ammesso.</p>
+      <hr class="hrseparator">
+      <p>Affrontiamo la problematica della specifica delle chiavi nella creazione 
+        di una tabella: come gi&agrave; detto le chiavi possono essere di tipo 
+        primario o di tipo esterno; le prime indicano valori che verranno referenziati 
+        in altre tabelle, le seconde referenziano invece campi di altre tabelle. 
+        Una chiave primaria implica nella quasi totalit&agrave; dei casi l'univocit&agrave; 
+        della riga all'interno dell'intera tabella; non sar&agrave; quindi possibile 
+        avere righe con quel determinato campo duplicato e altres&igrave; non 
+        sar&agrave; possibile inserire valore NULL in quel campo.</p>
+      <p>Per taluni database baster&agrave; specificare la parola chiave PRIMARY 
+        KEY (oppure soltanto PRIMARY) a fianco del tipo di dati del campo cui 
+        si riferisce, per gli altri database o per avere chiavi primarie multicampo, 
+        invece, &egrave; necessario indicare una clausola apposita per la creazione 
+        del vincolo della chiave primaria. Vediamo entrambi i casi:</p>
+      <p class="codicevb2">CREATE TABLE dipendenti (<br>
+        &nbsp;&nbsp;id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INTEGER 
+        &nbsp;NOT NULL PRIMARY KEY,<br>
+        &nbsp;&nbsp;nome&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CHAR(50) NOT 
+        NULL,<br>
+        &nbsp;&nbsp;cognome&nbsp;&nbsp;&nbsp;&nbsp;CHAR(50) NOT NULL,<br>
+        &nbsp;&nbsp;ruolo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CHAR(20) NULL,<br>
+        &nbsp;&nbsp;assunzione&nbsp;DATETIME NOT NULL<br>
+        )</p>
+      <p>Questa prima definizione eseguir&agrave; la creazione della tabella <b>dipendenti</b> 
+        ed assegner&agrave; la chiave primaria al campo <b>id</b>. Si tratta di 
+        una chiave primaria legata ad un solo campo; per determinate necessit&agrave; 
+        o situazioni &egrave; necessario operare come segue:</p>
+      <p class="codicevb2">CREATE TABLE &lt;tabella&gt; (<br>
+        &nbsp;&nbsp;&lt;campo&gt; &lt;tipo&gt; [ NULL | NOT NULL ],<br>
+        &nbsp;&nbsp;&lt;campo&gt; &lt;tipo&gt; [ NULL | NOT NULL ],<br>
+        &nbsp;&nbsp;... <br>
+        &nbsp;&nbsp;CONSTRAINT &lt;vincolo&gt; PRIMARY KEY (&lt;campi chiave&gt;)<br>
+        )</p>
+      <p>La seguente forma pu&ograve; cambiare da un database all'altro per cui 
+        si rimanda alla guida del singolo database; per certuni il nome del vincolo 
+        deve essere uguale al nome del campo che vincolano, per altri invece deve 
+        essere un nome univoco all'interno di tutto il database (quindi due tabelle 
+        non possono avere lo stesso nome del vincolo). Dato l'esempio precedente, 
+        questa nuova forma si espone con:</p>
+      <p class="codicevb2">CREATE TABLE dipendenti (<br>
+        &nbsp;&nbsp;id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INTEGER 
+        &nbsp;NOT NULL,<br>
+        &nbsp;&nbsp;nome&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CHAR(50) NOT 
+        NULL,<br>
+        &nbsp;&nbsp;cognome&nbsp;&nbsp;&nbsp;&nbsp;CHAR(50) NOT NULL,<br>
+        &nbsp;&nbsp;ruolo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CHAR(20) NULL,<br>
+        &nbsp;&nbsp;assunzione&nbsp;DATETIME NOT NULL,<br>
+        &nbsp;&nbsp;CONSTRAINT pk_dipendenti_id PRIMARY KEY (id)<br>
+        )</p>
+      <hr class="hrseparator">
+      <p>A completare l'utilizzo delle chiavi primarie vi &egrave; la creazione 
+        delle chiavi esterne (FOREIGN KEY) per una tabella che referenzia una 
+        chiave primaria di un'altra tabella. La sua forma &egrave;:</p>
+      <p class="codicevb2">CREATE TABLE &lt;tabella&gt; (<br>
+        &nbsp;&nbsp;&lt;campo&gt; &lt;tipo&gt; [ NULL | NOT NULL ],<br>
+        &nbsp;&nbsp;&lt;campo&gt; &lt;tipo&gt; [ NULL | NOT NULL ],<br>
+        &nbsp;&nbsp;... <br>
+        &nbsp;&nbsp;CONSTRAINT &lt;vincolo&gt; FOREIGN KEY (&lt;campi chiave&gt;)<br>
+        &nbsp;&nbsp;REFERENCES &lt;tabella 2&gt; (&lt;campi chiave 2&gt;)<br>
+        )</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Ricordiamo che l'utilit&agrave; di una chiave esterna &egrave; quella 
+        di poter effettuare una relazione di dipendenza tra i valori di una tabella 
+        ed un'altra. In tal modo non sar&agrave; infatti possibile inserire valori 
+        in una tabella dipendente senza che vi sia una corrispondenza con la tabella 
+        relazionata. Riprendendo l'esempio precedente della tabella <b>dipendenti</b> 
+        con chiave primaria sul campo <b>id</b>, &egrave; possibile stabilire 
+        una relazione di riferimento ad una nuova tabella di nome <b>paghe</b> 
+        come segue:</p>
+      <p class="codicevb2">CREATE TABLE paghe (<br>
+        &nbsp;&nbsp;numero&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INTEGER &nbsp;NOT NULL,<br>
+        &nbsp;&nbsp;stipendio&nbsp;&nbsp;NUMERIC(10,2) NOT NULL,<br>
+        &nbsp;&nbsp;CONSTRAINT fk_paghe_id FOREIGN KEY (numero)<br>
+        &nbsp;&nbsp;REFERENCES dipendenti (id)<br>
+        )</p>
+      <p>Il campo id della tabella <b>paghe</b> sar&agrave; legato al campo id 
+        della tabella <b>dipendenti</b>; i nomi dei campi referenziati sono stati 
+        volutamente differenziati per chiarire il funzionamento: la tabella referenziata 
+        (dipendenti) possiede una chiave primaria sul campo <b>id</b>, mentre 
+        la tabella dipendente (paghe) possiede una chiave esterna sul campo <b>numero</b> 
+        che punta al campo <b>id</b> della prima tabella.</p>
+      <p>In tal modo se dovesse essere tentato l'inserimento di una riga nella 
+        tabella paghe con il valore nel campo numero inesistente nel campo id 
+        della tabella dipendenti sar&agrave; generato un errore. Questo concetto 
+        di controlli incrociati tra campi di tabelle (ovvero tra le loro chiavi) 
+        &egrave; detto <b>integrit&agrave; referenziale</b>.</p>
+      <p>Affinch&eacute; sia possibile effettuare la relazione &egrave; necessario 
+        che la tabella referenziata contenga una chiave primaria oppure un <i>indice 
+        unico</i> su quel campo. La creazione di un indice unico &egrave; similare 
+        alla creazione di una chiave primaria, ma a differenza di questa &egrave; 
+        possibile avere pi&ugrave; di un indice unico. La sua definizione &egrave; 
+        la seguente:</p>
+      <p class="codicevb2">CREATE TABLE &lt;tabella&gt; (<br>
+        &nbsp;&nbsp;&lt;campo&gt; &lt;tipo&gt; [ NULL | NOT NULL ],<br>
+        &nbsp;&nbsp;&lt;campo&gt; &lt;tipo&gt; [ NULL | NOT NULL ],<br>
+        &nbsp;&nbsp;... <br>
+        &nbsp;&nbsp;CONSTRAINT &lt;vincolo&gt; UNIQUE (&lt;campi chiave&gt;)<br>
+        )</p>
+      <p>Il suo utilizzo &egrave; uguale a quello della chiave primaria e pertanto 
+        non saranno mostrati esempi del caso.</p>
+      <hr class="hrseparator">
+      <p>Citiamo solo per completezza la presenza di ulteriori clausole quali 
+        <b>DEFAULT</b> che consente di assegnare un valore predefinito ad un campo 
+        se questo non viene specificato durante l'operazione di inserimento. In 
+        assenza di tale specifica il campo assumer&agrave; valore NULL; <b>IDENTITY</b> 
+        identifica un campo con un valore contatore autoincrementato; CHECK consente 
+        invece di effettuare determinati controlli sui valori inseribili all'interno 
+        del campo controllato, ad esempio verificare che il valore del campo sia 
+        un valido indirizzo di posta elettronica.</p>
+      <p>Tali clausole sono specifiche per alcuni database e la loro sintassi 
+        varia totalmente da un database all'altro e pertanto non saranno affrontati 
+        in questa sede.</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --><!-- #EndEditable --> 
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        5 Maggio 2004<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar2.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice della sezione Database</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

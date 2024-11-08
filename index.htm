@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Visual Basic Simple</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!--
+(Please keep all copyright notices.)
+This frameset document includes the FolderTree script.
+Script found in: http://www.geocities.com/marcelino_martins/foldertree.html
+Author: Marcelino Alves Martins (http://www.mmartins.com) 
+-->
+
+<!-- Instructions:
+     -Make changes to the title and add other head tags above.
+     -Do not makes changes to the left frame.
+	 -You can change the name of the right-frame document
+      from "startPage.htm" to something else,
+	  but use the same name in the argument of the first
+	  gFld in the defineMyTree.js file.
+	 -Do not change the name of the frames ("treeframe"
+      and "basefrm") or else the links in the tree will
+	  not work.
+	 -Note: the script was not designed to work in a 
+      standalone page without frames. -->
+
+<script language="JavaScript">
+  // CARICATORE
+  var posparametri = document.location.href.indexOf('?');
+  var pagina = document.location.href.substring(posparametri + 1);
+  if(pagina.substring(pagina.length - 8).toUpperCase() == "/NAV.HTM")
+    pagina = "home.htm"
+
+  document.writeln('  <frameset cols="240,*" frameborder="0" framespacing="0" border="0">');
+  document.writeln('    <frameset rows="*,80">');
+  document.writeln('      <frame src="ftv21/index.htm" name="treeframe" scrolling="auto">');
+//  document.writeln('      <frame src="ftv21/folderTreeLeftFrame.htm" name="treeframe" scrolling="auto">');
+//  document.writeln('      <frame src="nav.htm" name="treeframe" scrolling="auto" noresize>');
+  document.writeln('      <frame src="submenu.htm" name="submenuframe" scrolling="no" noresize>');
+  document.writeln('    </frameset>');
+  if(posparametri <= 0)
+    document.writeln('  <frame src="home.htm" name="basefrm" noresize>');
+  else
+    document.writeln('  <frame src="' + pagina + '" name="basefrm" noresize>');
+  document.writeln('</frameset>');
+</script>
+</head>
+<noframes>
+  <body bgcolor="#FFFFFF">
+    <H1>Spiacente ma per la visualizzazione di questo sito &egrave; necessario un browser che utilizzi i frames e JavaScript.</h1>
+    <p align="center">Puoi provare ad utilizzare l'interfaccia senza Frames e JavaScript ma il risultato sar&agrave; davvero scarso :( <br>
+      <a href="home.htm">Interfaccia senza Frames</a></p>
+    <hr width="80%">
+<script language="JavaScript" src="funzioni.js"></script>
+<script language="Javascript">Banner();</script><!--#echo banner=""-->
+  </body>
+</noframes>
+</html>

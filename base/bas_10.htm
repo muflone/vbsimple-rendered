@@ -1,0 +1,338 @@
+<html><!-- #BeginTemplate "/Templates/Corso Base.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 10 del Corso Base</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso base - Lezione <!-- #BeginEditable "LEZIONE" -->10<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/base.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="bas_10.htm#STEP1">L'oggetto TextBox (casella di testo)</a>.</li>
+  <li><a href="bas_10.htm#STEP2">Sue propriet&agrave;</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><a name="STEP1"></a>Un <a href="../glossary/c.htm#CONTROLLO">controllo</a> 
+        fondamentale per comunicare con l'utente di un programma, sia in <a href="../glossary/i.htm#INPUT">input</a> 
+        che in <a href="../glossary/o.htm#OUTPUT">output</a> sono le <b><i><a href="../thunder/thnd_03.htm">TextBox</a></i></b> 
+        <a 
+        href="../thunder/thnd_03.htm"><img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle" border="0"></a>ovvero 
+        le caselle di testo. La loro funzione principale &egrave; quella di permettere 
+        all'utente l'immissione di un valore che verr&agrave; elaborato in <a href="../glossary/f.htm#FASEDIESECUZIONE">fase 
+        di esecuzione</a>.</p>
+      <p>Le caselle di testo, per loro natura, non posseggono alcuna formula di 
+        controllo del loro contenuto; ci&ograve; significa che non &egrave; possibile 
+        definire se una casella di testo debba <a href="../howto/ht_000.htm">ricevere 
+        soltanto numeri</a>, lettere, date o altri tipologie di dati. Ogni controllo 
+        di tal genere deve essere fatto da parte del programmatore mediante una 
+        funzione legata ad alcuni <a href="../glossary/e.htm#EVENTO">eventi</a> 
+        dell'<a href="../glossary/o.htm#OGGETTO">oggetto</a>.</p>
+      <p>Le TextBox possiedono tante <a href="../glossary/p.htm#PROPRIETA">propriet&agrave;</a> 
+        <img src="../images/ide/propr.gif" width="16" height="16" align="absmiddle">e 
+        solo pochi <a href="../glossary/m.htm#METODO">metodi</a> <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        e la maggior parte di questi ultimi riguarda funzionalit&agrave; avanzate 
+        quale il trascinamento. In questo corso saranno soltanto accennate le 
+        propriet&agrave; principali di questo controllo e saranno tralasciate 
+        tutte le altre che, tuttavia saranno approfondite nella <a href="../thunder/thnd_03.htm">sezione 
+        Thunder</a>.</p>
+      <p align="center"><img src="../images/lezioni/bas10_01.gif" width="225" height="19" alt="Figura 1"><br>
+        <b>Figura 1</b></p>
+      <p><a name="STEP2"></a>Se inseriamo sopra un form qualunque una <i>TextBox</i> 
+        <img 
+        src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle" border="0"> 
+        ci apparir&agrave; quasi del tutto identica a quella mostrata nella figura 
+        1, eccetto per il fatto che il testo contenuto in essa sar&agrave; differente. 
+        A differenza di tutti gli altri controlli che abbiamo visto nelle lezioni 
+        precedenti, il controllo <i>TextBox</i> non possiede una propriet&agrave; 
+        di nome <b>Caption</b> che determina il testo contenuto in esso. Per&ograve; 
+        la soluzione sta subito dietro l'angolo: una propriet&agrave; quasi del 
+        tutto analoga alla citata Caption &egrave; la propriet&agrave; <b>Text</b>. 
+        Essa determina il testo presente all'interno della casella di testo.</p>
+      <p>Come quasi tutti gli altri controlli Thunder anche questo possiede le 
+        propriet&agrave; <b>Enabled</b> che determina l'attivazione dell'oggetto, 
+        <b>Top</b>, <b>Left</b>, <b>Width</b> e <b>Height</b> che regolano posizione 
+        e grandezza dell'oggetto.</p>
+      <p>Tuttavia, esistono alcune propriet&agrave; che sono particolari per il 
+        controllo TextBox; tra queste diamo uno sguardo alle pi&ugrave; utili:</p>
+      <ul>
+        <li><b>HideSelection</b><br>
+          Nasconde la selezione quando l'oggetto perde lo stato attivo ovvero 
+          termina di essere l'oggetto attivo con il focus impostato.<br>
+          &nbsp;</li>
+        <li><b>Locked</b><br>
+          Determina se il testo sia immodificabile.<br>
+          Si differenzia dalla propriet&agrave; Enabled per il fatto che la <i>TextBox</i> 
+          pu&ograve; ricevere il <a href="../glossary/f.htm#FOCUS">focus</a> ed 
+          il cursore si pu&ograve; spostare attraverso il testo pur impedendone 
+          la modifica.<br>
+          &nbsp;</li>
+        <li><b>MaxLength</b><br>
+          Determina la lunghezza massima in caratteri del testo che la casella 
+          di testo pu&ograve; contenere al suo interno.<br>
+          &nbsp;</li>
+        <li><b>MultiLine</b><br>
+          Stabilisce se la casella di testo possa contenere pi&ugrave; righe di 
+          testo.<br>
+          Questa propriet&agrave; &egrave; impostabile soltanto in <a href="../glossary/f.htm#FASEDIPROGETTAZIONE">fase 
+          di progettazione</a>, mentre &egrave; in sola lettura in <a href="../glossary/f.htm#FASEDIESECUZIONE">fase 
+          di esecuzione</a>.<br>
+          &nbsp;</li>
+        <li><b>PasswordChar</b><br>
+          Questa propriet&agrave; di tipo String*1 (ovvero pu&ograve; ricevere 
+          come valore una stringa lunga al massimo 1 carattere) quando impostata, 
+          sostituisce <b class="sottolineato">solo visibilmente</b> tutti i caratteri 
+          del testo con il carattere specificato in essa.<br>
+          &Egrave; utile nei casi si voglia consentire l'inserimento di una password, 
+          che non sia visibile ad altre persone; ogni volta che l'utente preme 
+          un tasto ed inserisce un carattere nella TextBox esso viene rimpiazzato 
+          con il carattere impostato in questa propriet&agrave;.<br>
+          Tuttavia i cambiamenti detti operano solo esteticamente, mentre la propriet&agrave; 
+          <i>Text</i> conterr&agrave; il testo in maniera corretta, come &egrave; 
+          stato inserito dall'utente.<br>
+          &nbsp;</li>
+        <li><b>SelStart</b><br>
+          Imposta la posizione, a partire dal primo carattere, del cursore all'interno 
+          della casella di testo.<br>
+          &nbsp;</li>
+        <li><b>SelLength</b><br>
+          Valore numerico che indica la lunghezza, in caratteri, della selezione 
+          a partire dalla posizione indicata dalla propriet&agrave; <i>SelStart</i>. 
+          Se tale valore &egrave; 0, nessuna parte del testo sar&agrave; selezionata, 
+          mentre per ogni valore maggiore di 0, saranno selezionati tanti caratteri 
+          a partire da <i>SelStart</i>.<br>
+          La visibilit&agrave; della selezione &egrave; determinata comunque anche 
+          dalla propriet&agrave; <i>HideSelection</i>.</li>
+      </ul>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><img src="../images/lezioni/bas10_02.jpg" width="228" height="172" align="right" alt="Figura 2">Estendiamo 
+        il nostro semplice programmino inserendo qualche controllo aggiuntivo:</p>
+      <ol>
+        <li>Una <i>Label</i><img src="../images/controls/label.gif" width="25" height="25" align="absmiddle">di 
+          nome <b>Label8</b> contenente il testo <b><i>&quot;Seleziona Testo --&gt;&quot;</i></b>.<br>
+          &nbsp;</li>
+        <li>Un <i>CommandButton</i><img src="../images/controls/commandbutton.gif" width="25" height="25" align="absmiddle">di 
+          nome <b>PulsanteSeleziona</b> con testo <b><i>&quot;Seleziona&quot;</i></b> 
+          posizionato subito accanto alla Label8.<br>
+          &nbsp;</li>
+        <li>Una <i>TextBox</i> <img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle" border="0">di 
+          nome <b>TestoLocked</b> con le propriet&agrave; cos&igrave; impostate: 
+          <ul type="disc">
+            <li><i>Enabled</i>: <b>True</b></li>
+            <li><i>Text</i>: <b>Prova a modificare questo testo</b></li>
+            <li><i>Locked</i>: <b>True</b></li>
+            <li><i>HideSelection</i>: <b>False<br>
+              &nbsp;</b></li>
+          </ul>
+        </li>
+        <li>Un'<i>OptionButton<img src="../images/controls/optionbutton.gif" width="25" height="25" align="absmiddle"></i>di 
+          nome <b>OptionAltro</b> contenente il testo <b><i>Altro</i></b>, posizionato 
+          all'interno del <i>Frame</i> <b>FrameTitolo</b>.<br>
+          &nbsp;</li>
+        <li>Una <i>TextBox</i> <img src="../images/controls/textbox.gif" width="25" height="25" align="absmiddle" border="0">di 
+          nome <b>TestoTitolo</b>, con testo <b><i>(testo)</i></b> e propriet&agrave; 
+          <i>Enabled</i> <b>False</b>, posizionata anch'essa all'interno di <b>FrameTitolo</b>.</li>
+      </ol>
+      <p>Vediamo a cosa dovrebbero servire questi controlli aggiunti?<br>
+        Nel momento in cui l'utente cliccher&agrave; il pulsante <b><i>Seleziona</i></b> 
+        vedr&agrave; il testo della casella di testo sottostante in parte selezionato, 
+        sebbene il <a href="../glossary/f.htm#FOCUS">focus</a> non sia su quell'oggetto, 
+        ma sul pulsante premuto. Questo per dimostrare la funzione delle propriet&agrave; 
+        <i>SelText, SelLength e HideSelection</i>. </p>
+      <p>L'altra funzione far&agrave; in modo che lo stato di selezione del pulsante 
+        <b><i>Altro</i></b> attivi e disattivi la casella <b><i>(altro)</i></b>, 
+        rendendola accessibile o meno.<br>
+        Nel momento in cui la casella &egrave; accessibile, qualunque cosa l'utente 
+        scriva all'interno d'essa apparir&agrave; immediatamente sulla barra del 
+        titolo del form. Questo per dimostrare la funzione dell'evento <i>Change</i>.</p>
+      <p>Apriamo la finestra del codice ed aggiungiamo le seguenti righe:</p>
+      <ol class="codicevb" start="1">
+        <li>Private Sub PulsanteSeleziona_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TestoLocked.SelStart = 6</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TestoLocked.SelLength = 7</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub TestoTitolo_Change()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Caption = TestoTitolo.Text</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub OptionAltro_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TestoTitolo.Enabled = True</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Alla riga 1 definiamo la funzione che gestir&agrave; l'evento<img src="../images/ide/evento.gif" width="16" height="16" align="absmiddle"><i>Click</i> 
+        su <b>PulsanteSeleziona</b>.<br>
+        All'interno d'essa (riga 2) abbiamo un'istruzione che porta il cursore 
+        del testo alla posizione 6 ovvero al sesto carattere. La riga seguente 
+        (3) imposta la lunghezza della selezione a 7 caratteri. Ci&ograve; significa 
+        che avremo selezionato i caratteri che vanno dal 6 al 13, ovvero il testo 
+        <i> <b>&quot;a modif&quot;</b></i>.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Alla riga 6 definiamo l'evento <i>Change</i> per la casella <b>TestoTitolo</b> 
+        ed all'interno della funzione abbiamo una semplice funzione che scrive 
+        sulla barra del titolo del form il contenuto della propriet&agrave; <i>Text</i> 
+        dell'oggetto TestoTitolo.</p>
+      <p>La riga 10 invece regola il <i>Click</i> sopra il pulsante <b>OptionAltro</b>.<br>
+        L'esecuzione di questo evento imposta la propriet&agrave; <i>Enabled</i> 
+        della casella <b>TestoTitolo</b> a True, attivando di fatto la casella 
+        stessa. </p>
+      <p>Mentre, invece, andiamo a modificare le due funzioni <i>OptionOrario_Click</i> 
+        e <i>OptionPIGreco_Click</i> come segue:</p>
+      <ol class="codicevb" start="14">
+        <li>Private Sub OptionOrario_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TestoTitolo.Enabled = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Caption = Now</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub OptionPIGreco_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TestoTitolo.Enabled = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Me.Caption = PIGreco</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Nel momento in cui l'utente clicca sui pulsanti <b>OptionOrario</b> o 
+        <b>OptionPIGreco</b> la propriet&agrave; <i>Enabled</i> del controllo 
+        <b>TestoTitolo</b> sar&agrave; impostata su False (righe 15 e 20), disabilitando 
+        la casella di testo.</p>
+      <p>Quindi, nel momento in cui selezioniamo uno dei primi due pulsanti di 
+        opzione la casella di testo <b>TestoTitolo</b> sar&agrave; disattivata; 
+        quando clicchiamo il terzo pulsante essa sar&agrave; attivata.</p>
+      <p>Con la casella attivata l'utente potr&agrave; scrivere all'interno d'essa, 
+        ed ogni volta che viene digitato un carattere scatta l'evento <i>Change</i> 
+        e quindi le righe 6, 7 e 8 che cambiano il contenuto della <i>Caption</i> 
+        del form.</p>
+      <p>Proviamo il nostro progetto e vediamone in pratica gli effetti. Il suo 
+        utilizzo &egrave; molto semplice.</p>
+      <p align="center"><img src="../images/lezioni/bas10_03.jpg" width="228" height="172" alt="Figura 3"><br>
+        <b>Figura 3</b><br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->L'utilizzo delle caselle di testo si 
+      rende necessario quasi in ogni applicazione creata con Visual Basic poich&eacute; 
+      esse sono il mezzo pi&ugrave; semplice per permettere all'utente l'inserimento 
+      di dati all'interno di un programma.<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        29 Dicembre 2000<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="bas_09.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna alla nona lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="bas_11.htm">Vai 
+      all'undicesima lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

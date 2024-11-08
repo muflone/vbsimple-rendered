@@ -1,0 +1,498 @@
+<html><!-- #BeginTemplate "/Templates/Corso Intermedio.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Capitolo 11 del Corso Intermedio</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo">Corso Intermedio - Lezione <!-- #BeginEditable "LEZIONE" -->11<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/intermed.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<!-- #BeginEditable "ARGOMENTI" --> 
+<ul>
+  <li><a href="int_11.htm#STEP1">Creazione di Menu</a>.</li>
+  <li><a href="int_11.htm#STEP2">Assegnazione delle voci di menu</a>.</li>
+  <li><a href="int_11.htm#STEP3">Sincronizzazione dello stato dei pulsanti</a>.</li>
+  <li><a href="int_11.htm#STEP4">Richiamo di un menu Popup</a>.</li>
+</ul>
+<!-- #EndEditable -->
+<hr>
+
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"><script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p><a name="STEP1"></a>Vedremo in questa lezione come aggiungere alcuni 
+        menu a discesa. Sulla barra degli strumenti standard &egrave; presente 
+        l'icona <img src="../images/ide/editmenu.gif" width="16" height="16" align="absmiddle"> 
+        per il richiamo dell'<a href="../base/bas_16.htm#STRUMENTIOPT3">Editor 
+        dei menu</a> (la stessa opzione &egrave; richiamabile attraverso il menu 
+        <i>Strumenti</i>) che &egrave; gi&agrave; stato presentato nella <a href="../base/bas_16.htm">Lezione 
+        16 del Corso Base</a>.</p>
+      <p align="center"><img src="../images/lezioni/int11_01.png" width="293" height="293"><br>
+        <b>Figura 1</b></p>
+      <p>Aggiungeremo al nostro semplice programma alcuni menu per consentire 
+        un'utilizzo pi&ugrave; semplice ed aggiungere nuove caratteristiche non 
+        raggiungibili mediante i pulsanti sopra il form; a tal fine avviamo l'Editor 
+        dei menu ed inseriamo le seguenti voci di menu:</p>
+      <table width="90%" border="0" cellspacing="1" cellpadding="1" align="center">
+        <tr> 
+          <td nowrap width="25%" valign="top"><b>&amp;File</b></td>
+          <td nowrap valign="top" width="30%">mnuFile</td>
+          <td nowrap valign="top" width="10%">&nbsp;</td>
+          <td rowspan="5" nowrap width="35%" align="center" valign="top"><img src="../images/lezioni/int11_02.png" width="128" height="66" alt="Figura 2"><br>
+            <b>Figura 2 </b></td>
+        </tr>
+        <tr> 
+          <td nowrap width="25%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;&amp;Ricarica</td>
+          <td nowrap valign="top" width="30%">mnuFile_Ricarica</td>
+          <td nowrap valign="top" width="10%">CTRL+R</td>
+        </tr>
+        <tr> 
+          <td nowrap width="25%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;-</td>
+          <td nowrap valign="top" width="30%">mnuFile_Separatore</td>
+          <td nowrap valign="top" width="10%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td nowrap width="25%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;&amp;Esci</td>
+          <td nowrap width="30%" valign="top">mnuFile_Esci</td>
+          <td width="10%" nowrap valign="top">CTRL+Q</td>
+        </tr>
+        <tr> 
+          <td nowrap width="25%" valign="top">&nbsp;</td>
+          <td nowrap valign="top" width="30%">&nbsp;</td>
+          <td nowrap valign="top" width="10%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td nowrap valign="top" width="25%"><b>Bra&amp;no</b></td>
+          <td nowrap valign="top" width="30%">mnuBrano</td>
+          <td valign="top" nowrap width="10%">&nbsp;</td>
+          <td rowspan="9" nowrap width="35%" valign="top" align="center"><img src="../images/lezioni/int11_03.png" width="192" height="152" alt="Figura 3"><br>
+            <b>Figura 3</b></td>
+        </tr>
+        <tr> 
+          <td nowrap width="25%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;Vai al &amp;primo</td>
+          <td nowrap width="30%" valign="top">mnuBrano_Sposta(0)</td>
+          <td width="10%" nowrap valign="top">MAIUSC+F7</td>
+        </tr>
+        <tr> 
+          <td nowrap width="25%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;Vai al pre&amp;cedente</td>
+          <td nowrap width="30%" valign="top">mnuBrano_Sposta(1)</td>
+          <td width="10%" nowrap valign="top">F7</td>
+        </tr>
+        <tr> 
+          <td nowrap width="25%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;Vai al &amp;successivo</td>
+          <td nowrap width="30%" valign="top">mnuBrano_Sposta(2)</td>
+          <td width="10%" nowrap valign="top">F8</td>
+        </tr>
+        <tr> 
+          <td nowrap width="25%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;Vai all'&amp;ultimo</td>
+          <td nowrap width="30%" valign="top">mnuBrano_Sposta(3)</td>
+          <td width="10%" nowrap valign="top">MAIUSC+F8</td>
+        </tr>
+        <tr> 
+          <td nowrap width="25%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;-</td>
+          <td nowrap width="30%" valign="top">mnuBrano_Separatore</td>
+          <td width="10%" nowrap valign="top">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td nowrap width="25%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;&amp;Aggiungi</td>
+          <td nowrap width="30%" valign="top">mnuBrano_Cmd(0)</td>
+          <td width="10%" nowrap valign="top">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td nowrap width="25%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;&amp;Modifica</td>
+          <td nowrap width="30%" valign="top">mnuBrano_Cmd(1)</td>
+          <td width="10%" nowrap valign="top">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td nowrap width="25%" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;&amp;Elimina</td>
+          <td nowrap width="30%" valign="top">mnuBrano_Cmd(2)</td>
+          <td width="10%" nowrap valign="top">&nbsp;</td>
+        </tr>
+      </table>
+      <p><!-- #BeginLibraryItem "/Library/Notes1.lbi" --><img src="../images/notes.gif" width="56" height="57" align="left"><!-- #EndLibraryItem -->Il 
+        carattere <b>&amp;</b> nelle propriet&agrave; <i>Caption</i> identifica 
+        il tasto utilizzato come combinazione rapida di tasti. Ad esempio il menu 
+        con l'etichetta &amp;File consente all'utente di premere i tasti ALT+F 
+        e richiamare in automatico la voce del menu.<br>
+        Un'etichetta contenente soltanto il carattere <b>-</b> (trattino) come 
+        nel menu <i>mnuFile_Separatore</i> identifica un separatore, cio&egrave; 
+        una voce fissa di menu che non pu&ograve; essere selezionata.</p>
+      <hr>
+      <p><a name="STEP2"></a>Al momento ci limiteremo ad attivare le voci gi&agrave; 
+        implementate, cio&egrave; quelle del menu <i><b>Brano</b></i>, semplicemente 
+        richiamando le routine che gestiscono l'evento corrispondente, come segue:</p>
+      <ol start="1" class="codicevb">
+        <li class="codicevbc">Private Sub mnuBrano_Cmd_Click(Index As Integer)</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;Select Case Index</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          0: cmdAggiungiBrano.Value = True</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          1: cmdModificaBrano.Value = True</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          2: cmdEliminaBrano.Value = True</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;End Select</li>
+        <li class="codicevbc">End Sub</li>
+        <li class="codicevbc"></li>
+      </ol>
+      <p>Come <a href="../howto/ht_006.htm">spiegato in un HowTo</a> l'assegnazione 
+        del valore <i><b>True</b></i> alla propriet&agrave; <b>Value</b> di un 
+        CommandButton genera l'evento <i>Click</i> e cos&igrave; del codice assegnato. 
+        In tal modo potremo gestire con estrema semplicit&agrave; le azioni Aggiungi, 
+        Modifica ed Elimina di un brano.</p>
+      <ol start="9" class="codicevb">
+        <li class="codicevbc">Private Sub mnuBrano_Sposta_Click(Index As Integer)</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;With lstBrani</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Select 
+          Case Index</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          0: .ListIndex = 0</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          1: .ListIndex = .ListIndex - 1</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          2: .ListIndex = .ListIndex + 1</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          3: .ListIndex = .ListCount - 1</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End 
+          Select</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li class="codicevbc">End Sub</li>
+        <li class="codicevbc"></li>
+      </ol>
+      <p>La scelta del brano &egrave; fatta semplicemente modificando l'elemento 
+        selezionato nell'elenco. Il primo brano corrisponde all'indice 0, mentre 
+        l'ultimo brano corrisponde al numero di elementi -1. La modifica della 
+        propriet&agrave; <b>ListIndex</b> provoca anche l'esecuzione dell'evento 
+        <i>Click</i>.</p>
+      <p><a name="STEP3"></a>Questo codice tuttavia non &egrave; sicuro: non &egrave; 
+        effettuato alcun controllo sul valore della propriet&agrave; ListIndex 
+        prima di incrementarla o decrementarla ed in caso di supero del valore 
+        minimo o massimo si generer&agrave; un errore. Per tale ragione &egrave; 
+        opportuno sincronizzare lo stato dei pulsanti e delle voci di menu con 
+        la situazione corrente.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Non si tratta di un'operazione complessa ma piuttosto noiosa; ogni volta 
+        che un pulsante deve essere disabilitato &egrave; necessario disabilitare 
+        anche la corrispondente voce del menu. Per questa ragione sar&agrave; 
+        utilizzata una nuova tecnica per semplificare il problema: le propriet&agrave; 
+        personalizzate del form. Sar&agrave; infatti aggiunta una nuova propriet&agrave; 
+        al form per abilitare o disabilitare il controllo corrispondente.</p>
+      <p>Non volendo scrivere tre diverse propriet&agrave; con contenuti molto 
+        simili, si &egrave; preferito scrivere un'unica propriet&agrave; cui fornire 
+        un valore in entrata. In funzione del valore in entrata (corrispondente 
+        allo stato del pulsante da gestire) sar&agrave; assegnato un valore al 
+        pulsante corrispondente. Volendo semplificare ulteriormente il problema 
+        si &egrave; preferito aggiungere un'enumerazione <img src="../images/ide/enumeraz.gif" width="16" height="16" align="absmiddle"> 
+        e far riferimento a tali valori anzich&eacute; a degli incomprensibili 
+        Indice 0, 1 o qualcos'altro.</p>
+      <p>Dichiariamo pertanto in cima al codice del form, nella sezione dichiarazioni 
+        la seguente enumerazione:</p>
+      <ol start="1" class="codicevb">
+        <li class="codicevbc">Private Enum enumComandoPulsanti</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;ComandoAggiungiBrano = 0</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;ComandoModificaBrano = 1</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;ComandoEliminaBrano = 2</li>
+        <li class="codicevbc">End Enum</li>
+        <li class="codicevbc"></li>
+      </ol>
+      <p>Tali valori saranno passati alla propriet&agrave; StatoComandi dedicata 
+        allo scopo:</p>
+      <ol start="7" class="codicevb">
+        <li class="codicevbc">Private Property Let StatoComandi(ByVal Comando 
+          As enumComandoPulsanti, ByVal Stato As Boolean)</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;Select Case Comando</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          ComandoAggiungiBrano: cmdAggiungiBrano.Enabled = Stato</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          ComandoModificaBrano: cmdModificaBrano.Enabled = Stato</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case 
+          ComandoEliminaBrano: cmdEliminaBrano.Enabled = Stato</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;End Select</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;mnuBrano_Cmd(Comando).Enabled 
+          = Stato</li>
+        <li class="codicevbc">End Property</li>
+        <li class="codicevbc"></li>
+      </ol>
+      <p><!-- #BeginLibraryItem "/Library/Notes2.lbi" --><img src="../images/notes2.gif" width="31" height="32" align="left"><!-- #EndLibraryItem -->L'operazione 
+        effettuata alla riga 13 funziona perch&eacute; a differenza di altri linguaggi 
+        le enumerazioni sono anche semplici valori numerici che non richiedono 
+        conversioni di tipo e gli indici del nostro menu corrispondono ai valori 
+        dell'enumerazione. </p>
+      <p>Baster&agrave; assegnare un valore booleano a questa propriet&agrave; 
+        per aggiornare contemporaneamente la proprier&agrave; Enabled del menu 
+        e del pulsante corrispondente, quindi sostituendo l'assegnazione alla 
+        propriet&agrave; Enabled dei singoli pulsanti come segue:</p>
+      <ol start="16" class="codicevb">
+        <li>Private Sub cmdAggiungiBrano_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;... Codice trattato nelle lezioni precedenti 
+          ...</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtAnnoPubblicazione.Locked = Not blnModifica</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtNote.Locked = Not blnModifica</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;StatoComandi(ComandoEliminaBrano) 
+          = Not blnModifica</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;StatoComandi(ComandoModificaBrano) 
+          = Not blnModifica</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub cmdEliminaBrano_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;... Codice trattato nelle lezioni precedenti 
+          ...</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lstBrani.RemoveItem lstBrani.ListIndex</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;StatoComandi(ComandoEliminaBrano) 
+          = False</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;StatoComandi(ComandoModificaBrano) 
+          = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;... Codice trattato nelle lezioni precedenti 
+          ...</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub cmdModificaBrano_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;... Codice trattato nelle lezioni precedenti 
+          ...</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtNote.Locked = Not blnModifica</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;StatoComandi(ComandoEliminaBrano) 
+          = Not blnModifica</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;StatoComandi(ComandoAggiungiBrano) 
+          = Not blnModifica</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;... Codice trattato nelle lezioni precedenti 
+          ...</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;txtAnnoPubblicazione.MaxLength = 4</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;StatoComandi(ComandoModificaBrano) 
+          = False</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;StatoComandi(ComandoEliminaBrano) 
+          = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;blnModifica = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;... Codice trattato nelle lezioni precedenti 
+          ...</li>
+        <li class="codicevbc">End Sub</li>
+        <li></li>
+      </ol>
+      <p>Esistono numerose maniere per gestire situazioni come quella esposta 
+        e l'uso delle propriet&agrave; rappresenta la pi&ugrave; semplice e caratteristica. 
+        Per sincronizzare invece lo stato delle voci di menu utilizzate per spostarsi 
+        al brano scelto l'uso di una propriet&agrave; non &egrave; la maniera 
+        migliore. Si preferir&agrave; usare una subroutine dedicata ad aggiornare 
+        lo stato di tutti e quattro le voci di menu:</p>
+      <ol start="48" class="codicevb">
+        <li class="codicevbc">Private Sub AggiornaMenuSposta()</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;With lstBrani</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mnuBrano_Sposta(0).Enabled 
+          = .ListIndex &gt; 0</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mnuBrano_Sposta(1).Enabled 
+          = mnuBrano_Sposta(0).Enabled</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mnuBrano_Sposta(2).Enabled 
+          = .ListIndex &lt; .ListCount - 1</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mnuBrano_Sposta(3).Enabled 
+          = mnuBrano_Sposta(2).Enabled</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li class="codicevbc">End Sub</li>
+        <li class="codicevbc"></li>
+      </ol>
+      <p>La routine <b>AggiornaMenuSposta</b> aggiorna lo stato di tutte e quattro 
+        le voci del menu Brano e pertanto baster&agrave; inserire il suo richiamo 
+        all'interno della routine delegata alla gestione dell'evento Click dell'elenco 
+        lstBrani:</p>
+      <ol start="57" class="codicevb">
+        <li>Private Sub lstBrani_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;... Codice trattato nelle lezioni precedenti 
+          ...</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StatoComandi(ComandoEliminaBrano) 
+          = True</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StatoComandi(ComandoModificaBrano) 
+          = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;If lstBrani.Enabled Then 
+          AggiornaMenuSposta</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La stessa routine AggiornaMenuSposta sar&agrave; aggiunta subito dopo 
+        la fase di inserimento e di cancellazione di un brano in modo da avere 
+        situazioni coerenti.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Sorge per&ograve; una piccola complicazione ma abbastanza semplice da 
+        aggirare: nel momento in cui l'utente richiede l'inserimento di un nuovo 
+        brano o la modifica di uno preesistente sar&agrave; necessario bloccare 
+        anche l'opzione di scelta di un brano dal menu e anzich&eacute; duplicare 
+        il codice di disattivazione utilizzeremo un'altra propriet&agrave; del 
+        form:</p>
+      <ol start="66" class="codicevb">
+        <li class="codicevbc">Private Property Let StatoMenuSposta(ByVal Stato 
+          As Boolean)</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;lstBrani.Enabled = Stato</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;mnuBrano_Sposta(0).Enabled 
+          = Stato</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;mnuBrano_Sposta(1).Enabled 
+          = Stato</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;mnuBrano_Sposta(2).Enabled 
+          = Stato</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;mnuBrano_Sposta(3).Enabled 
+          = Stato</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;If Stato Then AggiornaMenuSposta</li>
+        <li class="codicevbc">End Property</li>
+        <li class="codicevbc"></li>
+      </ol>
+      <p>Baster&agrave; quindi sostituire tutte e due le occorrenze di <span class="codicevb">lstBrani.Enabled 
+        = blnModifica</span> con <span class="codicevb">StatoMenuSposta = Not 
+        blnModifica</span>.</p>
+      <hr>
+      <p><a name="STEP4"></a>L'uso delle scorciatoie nelle voci di menu consente 
+        un accesso pi&ugrave; rapido alle funzionalit&agrave; pi&ugrave; utilizzate. 
+        Ad esempio per passare dal brano corrente al precedente baster&agrave; 
+        premere il tasto F7, mentre per passare al successivo baster&agrave; F8.</p>
+      <p>Per rendere ancor pi&ugrave; moderno il comportamento della nostra applicazione 
+        potremmo richiamare il menu <b>Brano</b> al click con il tasto destro 
+        sopra la ListBox. Questo genere di menu a comparsa su richiesta dell'utente 
+        &egrave; detto Popup e pu&ograve; essere richiamato con semplicit&agrave;:</p>
+      <ol start="75" class="codicevb">
+        <li>Private Sub lstBrani_MouseDown(Button As Integer, Shift As Integer, 
+          X As Single, Y As Single)</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;If Button = vbLeftButton 
+          Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lstBrani_Click</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;ElseIf Button = vbRightButton 
+          Then</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PopupMenu 
+          mnuBrano</li>
+        <li class="codicevbc">&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>End Sub</li>
+      </ol>
+      <p><img src="../images/lezioni/int11_04.png" width="347" height="215" align="right">La 
+        funzione PopupMenu richiede la specifica del menu da far apparire; esso 
+        conterr&agrave; naturalmente tutte le voci interne. Utilizzata cos&igrave; 
+        la funzione mostra il menu come rappresentato nella figura a fianco.</p>
+      <p>Tuttavia la funzione PopupMenu consente di specificare anche le coordinate 
+        in cui il menu dovr&agrave; apparire e se una voce di menu dovr&agrave; 
+        apparire in grassetto. Ad esempio il codice</p>
+      <p class="codicevb2">PopupMenu mnuBrano, , , , mnuBrano_Sposta(2)</p>
+      <p>mostra il menu popup alle coordinate del puntatore del mouse ed evidenzia 
+        in grassetto la voce <i><b>Vai al successivo</b></i>.</p>
+      <p>Tale impostazione non ha alcun valore particolare a livello di programma 
+        ma risalta maggiormente all'occhio all'utente e solitamente indica l'azione 
+        predefinita con un eventuale doppio click sul controllo, ma il suo funzionamento 
+        deve essere previsto a programma.</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" -->Vedremo nella prossima lezione l'uso 
+      del menu File ed introdurremo le prime funzioni di ricerca e filtro.<!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI </a><br>
+        15 Febbraio 2004<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+     </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><!-- #BeginEditable "LEZIONEPREC" --><a href="int_10.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna alla decima lezione</a><!-- #EndEditable --></td>
+    <td align="right"><!-- #BeginEditable "LEZIONESUCC" --><a href="../missnext.htm">Vai 
+      alla dodicesima lezione <img src="../images/vbnext.jpg" width="49" height="32" align="absmiddle" border="0"></a><!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,418 @@
+<html><!-- #BeginTemplate "/Templates/Richieste.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Generare dei files in base ad un particolare tracciato (seconda parte)</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Generare dei files in base 
+    ad un particolare tracciato<br>
+    (seconda&nbsp;parte)<!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/activity.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Richiesta di: <!-- #BeginEditable "RICHIEDENTE" -->Roberto 
+        Corona<!-- #EndEditable --> 
+        - <!-- #BeginEditable "DATARICHIESTA" -->12 
+        Gennaio 2001<!-- #EndEditable --><br>
+        Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level3.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level4.gif" width="17" height="18" align="absmiddle"><img src="../images/icons/level5.gif" width="17" height="18" align="absmiddle"> 
+        5<!-- #EndEditable --> / 5 </p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p><i>Ho bisogno di scrivere un programmino che, dopo aver analizzato dei 
+        files contenenti dei particolari tracciati, estragga dei dati da un foglio 
+        di Excel e tramite questi generi dei files di testo con una particolare 
+        struttura determinata dal file del tracciato.</i></p>
+      <hr>
+      <p align="center"><a href="act_11.htm">&lt;&lt; Continua dalla parte 1</a></p>
+      <p>Per sviluppare questo progetto utilizzeremo il controllo <b>RichTextBox</b><img src="../images/controls/richtextbox.gif" width="25" height="25" align="absmiddle">e 
+        <b>DAO 3.5</b> per accedere al foglio di Excel. Pertanto &egrave; necessario 
+        selezionare il controllo <i><b>Microsoft Rich Textbox Control</b></i> 
+        dalla voce Componenti del menu <b>Progetto</b>. &Egrave; anche necessario 
+        inserire un riferimento a <i><b>Microsoft DAO 3.5 Object Library</b></i> 
+        tramite la voce Riferimenti del menu <b>Progetto</b>.</p>
+      <p>Il progetto si compone di due <a href="../glossary/f.htm#FORM">forms</a><img src="../images/controls/form.gif" width="25" height="25" align="absmiddle">ed 
+        un <a href="../glossary/m.htm#MODULO">modulo</a> <img src="../images/ide/modulo.gif" width="16" height="16" align="absmiddle"> 
+        standard. Quest'ultimo conterr&agrave; due variabili globali, un nuvo 
+        tipo di dati <img src="../images/ide/tipoudt.gif" width="16" height="16" align="absmiddle"> 
+        di nome <b>TIPOSEZIONE</b> ed alcune funzioni che utilizzeremo parecchie 
+        volte all'interno del nostro progetto.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Nei due form invece avremo gli strumenti minimi per definire la struttura 
+        del tracciato ed il form principale, molto semplice, per la scelta dei 
+        files da utilizzare.</p>
+      <p>Prima di addentrarci nei forms vediamo il contenuto del nostro modulo:</p>
+      <ol class="codicevb" start="1">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Public Type TIPOSEZIONE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;INIZIO As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FINE As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;CAMPO As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;RIGAFISSA As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;LUNGHEZZAFISSA As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ALLINEAMENTO As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FILLER As String * 1</li>
+        <li>End Type</li>
+        <li></li>
+        <li>Public FILEXLS As DAO.Database</li>
+        <li>Public FOGLIOXLS As DAO.Recordset</li>
+        <li></li>
+      </ol>
+      <p>Alla riga 3 definiamo il tipo di dati <img src="../images/ide/tipoudt.gif" width="16" height="16" align="absmiddle"> 
+        TIPOSEZIONE. In sostanza una sezione &egrave; un segmento del file tracciato 
+        con una posizione iniziale e una finale, associato ad un campo del foglio 
+        Excel e con dei dati aggiuntivi che stabiliscono se la sezione &egrave; 
+        fissa o si ripete per ogni record, se la lunghezza &egrave; fissa o regolata 
+        dall'ampiezza del campo associato. Nel caso sia fissa &egrave; necessario 
+        definire l'allineamento che i dati devono avere (sinistra o destra) ed 
+        il carattere di riempimento per raggiungere la lunghezza desiderata.</p>
+      <p>Cos&igrave; il tipo dati <b>TIPOSEZIONE</b> si compone di 7 campi:</p>
+      <ul>
+        <li><i><b>INIZIO</b></i><br>
+          Definisce la posizione iniziale della sezione all'interno del file tracciato</li>
+        <li><i><b>FINE</b></i><br>
+          Definisce la posizione finale della sezione</li>
+        <li><i><b>CAMPO</b></i><br>
+          Indica l'ordine del campo associato del foglio XLS</li>
+        <li><i><b>RIGAFISSA</b></i><br>
+          Indica in maniera numerica se la riga &egrave; fissa o si ripete per 
+          ogni riga del file XLS</li>
+        <li><i><b>LARGHEZZAFISSA</b></i><br>
+          Indica in maniera numerica se la larghezza della sezione &egrave; variabile, 
+          determinata dal campo, oppure &egrave;</li>
+        <li><i><b>ALLINEAMENTO</b></i><br>
+          Indica, nel caso di larghezza fissa della sezione, se i dati devono 
+          essere allineati a sinistra o a destra</li>
+        <li><i><b>FILLER</b></i><br>
+          Indica, in caso di larghezza fissa, quale carattere deve essere utilizzato 
+          per riempire gli spazi fino a raggiungere la larghezza della sezione</li>
+      </ul>
+      <p>Alle righe 13 e 14 abbiamo definito due variabili globali. La prima &egrave; 
+        <b>FILEXLS</b> ed indica il database Excel per i dati da estrarre. La 
+        seconda variabile &egrave; il <i>Recordset</i> <b>FOGLIOXLS</b> che conterr&agrave; 
+        i dati da estrarre dal database FILEXLS.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Seguono, nel modulo, un paio di funzioni che utilizzeremo pi&ugrave; 
+        avanti.</p>
+      <ol class="codicevb" start="16">
+        <li>Public Function FileEsiste(ByVal NOMEFILE As String) As Boolean</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;On Error GoTo ERRORE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim FILENR As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FileEsiste = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FILENR = FreeFile</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Open NOMEFILE For Input As FILENR</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Close FILENR</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FileEsiste = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Exit Function</li>
+        <li>ERRORE:</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FileEsiste = False</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>La funzione FileEsiste viene spiegata approfonditamente nell'<a href="../howto/ht_011.htm">HowTo 
+        dedicato alla verifica se un dato file esiste</a>.</p>
+      <ol class="codicevb" start="29">
+        <li>Public Function Sezione2Riga(ByRef SEZIONE As TIPOSEZIONE) As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Sezione2Riga = SEZIONE.INIZIO &amp; &quot;;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Sezione2Riga = Sezione2Riga &amp; SEZIONE.FINE 
+          &amp; &quot;;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Sezione2Riga = Sezione2Riga &amp; SEZIONE.CAMPO 
+          &amp; &quot;;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Sezione2Riga = Sezione2Riga &amp; SEZIONE.RIGAFISSA 
+          &amp; &quot;;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Sezione2Riga = Sezione2Riga &amp; SEZIONE.LUNGHEZZAFISSA 
+          &amp; &quot;;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Sezione2Riga = Sezione2Riga &amp; SEZIONE.FILLER 
+          &amp; &quot;;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Sezione2Riga = Sezione2Riga &amp; SEZIONE.ALLINEAMENTO</li>
+        <li>End Function</li>
+        <li></li>
+      </ol>
+      <p>La funzione <b>Sezione2Riga</b> serve per trasformare una sezione di 
+        tipo TIPOSEZIONE in una stringa. Questo perch&eacute; le singole sezioni 
+        saranno tenute all'interno di una <a href="../glossary/c.htm#COLLECTION"><i>Collection</i></a>; 
+        con Visual Basic 5, tuttavia, non &egrave; possibile inserire elementi 
+        di tipi definiti dall'utente all'interno di una Collection. A tale scopo, 
+        nel momento in cui inseriremo i dati nella Collection convertiremo la 
+        sezione in una stringa ed inseriremo quella.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La funzione <b>Sezione2Riga</b> unisce i singoli campi della sezione 
+        in una stringa separandoli temite un punto e virgola.</p>
+      <p>Segue un'altra funzione che effettua l'operazione inversa, cio&eacute; 
+        converte una stringa in una sezione di tipo TIPOSEZIONE.</p>
+      <ol class="codicevb" start="39">
+        <li>Public Sub Riga2Sezione(ByVal RIGA As String, ByRef SEZIONE As TIPOSEZIONE)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim TMPSEZIONE As String</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TMPSEZIONE = RIGA</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SEZIONE.INIZIO = Mid(TMPSEZIONE, 1, InStr(1, 
+          TMPSEZIONE, &quot;;&quot;) - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TMPSEZIONE = Mid(TMPSEZIONE, Len(CStr(SEZIONE.INIZIO)) 
+          + 2)</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SEZIONE.FINE = Mid(TMPSEZIONE, 1, InStr(1, 
+          TMPSEZIONE, &quot;;&quot;) - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TMPSEZIONE = Mid(TMPSEZIONE, Len(CStr(SEZIONE.FINE)) 
+          + 2)</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SEZIONE.CAMPO = Mid(TMPSEZIONE, 1, InStr(1, 
+          TMPSEZIONE, &quot;;&quot;) - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TMPSEZIONE = Mid(TMPSEZIONE, Len(CStr(SEZIONE.CAMPO)) 
+          + 2)</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SEZIONE.RIGAFISSA = Mid(TMPSEZIONE, 1, InStr(1, 
+          TMPSEZIONE, &quot;;&quot;) - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TMPSEZIONE = Mid(TMPSEZIONE, Len(CStr(SEZIONE.RIGAFISSA)) 
+          + 2)</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SEZIONE.LUNGHEZZAFISSA = Mid(TMPSEZIONE, 1, 
+          InStr(1, TMPSEZIONE, &quot;;&quot;) - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TMPSEZIONE = Mid(TMPSEZIONE, Len(CStr(SEZIONE.LUNGHEZZAFISSA)) 
+          + 2)</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SEZIONE.FILLER = Mid(TMPSEZIONE, 1, InStr(1, 
+          TMPSEZIONE, &quot;;&quot;) - 1)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TMPSEZIONE = Mid(TMPSEZIONE, Len(CStr(SEZIONE.FILLER)) 
+          + 2)</li>
+        <li></li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;SEZIONE.ALLINEAMENTO = TMPSEZIONE</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La funzione effettua la ricerca dei punto e virgola ed inserisce i dati 
+        all'interno della sezione <a href="../info/info_05.htm">passata per riferimento</a>.</p>
+      <p>L'ultima Sub del modulo &egrave; <b>OrdinaSezioni</b> e, come dice il 
+        nome stesso, effettua l'ordinamento delle sezioni in base al punto di 
+        inizio della sezione.<br>
+        Essa richiede come parametro la Collection contenente gli elementi da 
+        ordinare, sempre passata per riferimento, affinch&eacute; sia possibile 
+        scrivere gli elementi una volta ordinati.</p>
+      <p>Il metodo di ordinamento &egrave; il classico Bubble sort (ordinamento 
+        a bolle), approfondito nella sezione <a href="../info/info_12.htm">Informazioni 
+        aggiuntive</a>.</p>
+      <ol class="codicevb" start="64">
+        <li>Public Sub OrdinaSezioni(ByRef SEZIONI As Collection)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim ARRAYSEZIONI() As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim CONTA As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim CONTA2 As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim TMPSEZIONE As TIPOSEZIONE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim SUCCSEZIONE As TIPOSEZIONE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ReDim ARRAYSEZIONI(5)</li>
+      </ol>
+      <p>Alla riga 65 abbiamo dichiarato un'array (<a href="../glossary/m.htm#MATRICE">matrice</a>) 
+        di stringhe di nome <b>ARRAYSEZIONI</b> senza specificare la sua ampiezza. 
+        Questo perch&eacute; vogliamo utilizzare un dimensionamento dinamico effettuato 
+        in <a href="../glossary/f.htm#FASEDIESECUZIONE">fase di esecuzione</a>.</p>
+      <p>Infatti abbiamo il primo ridimensionamento alla riga 70 impostando la 
+        dimensione della matrice a 5.</p>
+      <p>Alle righe 68 e 69 abbiamo dichiarato due variabili di tipo <b>TIPOSEZIONE</b>. 
+        Esse saranno utilizzate per estrarre due valori dalla <i>Collection</i> 
+        e confrontarli per l'ordinamento.</p>
+      <ol class="codicevb" start="71">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For CONTA = 1 To SEZIONI.Count</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If UBound(ARRAYSEZIONI) 
+          &lt; CONTA Then ReDim Preserve ARRAYSEZIONI(UBound(ARRAYSEZIONI) + 5)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ARRAYSEZIONI(CONTA) 
+          = SEZIONI.Item(CONTA)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next CONTA</li>
+      </ol>
+      <p>Come prima operazione della Sub eseguiamo una copia dei dati della Collection 
+        SEZIONI nella matrice ARRAYSEZIONI.</p>
+      <p>Non conoscendo a priori la dimensione della Collection abbiamo voluto 
+        effettuare il ridimensionamento della matrice a 5 elementi per volta.</p>
+      <p>Infatti, quando la dimensione dell'array &egrave; minore dell'elemento 
+        in corso di estrazione, viene incrementata la dimensione dell'array di 
+        5 elementi, preservando il contenuto dell'array.</p>
+      <p>Esistono modi pi&ugrave; semplici ed efficienti per effettuare questa 
+        operazione, ma abbiamo voluto sfruttare l'occasione per mostrare il funzionamento 
+        del dimensionamento dinamico.</p>
+      <p>Alla riga 73 abbiamo l'inserimento dell'elemento dalla Collection alla 
+        matrice. </p>
+      <ol class="codicevb" start="75">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For CONTA = 1 To SEZIONI.Count - 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For CONTA2 = CONTA 
+          + 1 To SEZIONI.Count</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Riga2Sezione 
+          ARRAYSEZIONI(CONTA), TMPSEZIONE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Riga2Sezione 
+          ARRAYSEZIONI(CONTA2), SUCCSEZIONE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          TMPSEZIONE.INIZIO &gt; SUCCSEZIONE.INIZIO Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ARRAYSEZIONI(0) 
+          = ARRAYSEZIONI(CONTA2)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ARRAYSEZIONI(CONTA2) 
+          = ARRAYSEZIONI(CONTA)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ARRAYSEZIONI(CONTA) 
+          = ARRAYSEZIONI(0)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ARRAYSEZIONI(0) 
+          = &quot;&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End 
+          If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next CONTA2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next CONTA</li>
+      </ol>
+      <p>In questo ciclo abbiamo l'operazione di sorting (ordinamento) tramite 
+        Bubble sort. L'elemento 0 della matrice serve per effettuare lo scambio 
+        dei dati tra due celle dell'array.</p>
+      <ol class="codicevb" start="87">
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;CONTA2 = SEZIONI.Count</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;While SEZIONI.Count &gt; 0</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SEZIONI.Remove 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Wend</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For CONTA = 1 To CONTA2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SEZIONI.Add ARRAYSEZIONI(CONTA)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next CONTA</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Effettuato il sorting sar&agrave; necessario rimettere tutti i dati nella 
+        Collection in maniera ordinata. Per questo alla riga 87 salviamo la dimensione 
+        della Collection nella variabile CONTA2.</p>
+      <p>Avendo messo in salvo la dimensione originale, possiamo tranquillamente 
+        svuotare la Collection (righe 88-90) e poi riempirla nuovamente utilizzando 
+        la dimensione salvata precedentemente (righe 91-93).<br>
+        <br>
+      </p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p align="center"><a href="act_11_3.htm">Segue parte 3 &gt;&gt;</a></p>
+      <!-- #EndEditable --><!-- #BeginEditable "CREDITS" --> 
+      <p align="right" class="credits2"><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        27 Gennaio 2001</p>
+      <!-- #EndEditable --><!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'introduzione delle Richieste dei lettori</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

@@ -1,0 +1,436 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Applicare lo stile visuale di Windows XP</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Applicare lo stile visuale 
+    di Windows XP <!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --> 
+        1<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Con l'avanzamento degli anni, a cominciare dalla pubblicazione di Windows 
+        95 lo stile grafico delle varie edizioni di Windows &egrave; andato piano 
+        piano raffinandosi, aggiungendo inizialmente lo smussamento (<i>smoothing</i>) 
+        dei caratteri e poi le ombreggiature. Tuttavia fino a Windows 2000 lo 
+        stile grafico era rimasto molto similare a quello del vecchio parente 
+        Windows 95.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>L'arrivo di Windows XP ha introdotto la possibilit&agrave; per un tema 
+        (una combinazione di colori e stili) di variare anche gli attributi delle 
+        finestre, come l'altezza, la forma e i colori delle singole finestre. 
+        Ormai da alcuni anni le moderne applicazioni utilizzano il look moderno 
+        di XP e sarebbe davvero un peccato non poter usufruire di questa caratteristica 
+        anche in progetti scritti in Visual Basic.</p>
+      <table width="90%" border="0" cellspacing="2" cellpadding="0" align="center">
+        <tr> 
+          <td align="center" valign="top" width="50%"><img src="../images/howto/howto058_1.png" width="260" height="252" alt="Figura 1"><br>
+            <b>Figura 1</b></td>
+          <td align="center" valign="top" width="50%"><img src="../images/howto/howto058_2.png" width="260" height="260" alt="Figura 2"><br>
+            <b>Figura 2</b></td>
+        </tr>
+      </table>
+      <p>Le Figure 1 e 2 mostrano entrambe la Calcolatrice di Windows XP rispettivamente 
+        con il tema classico e con il tema di XP e le differenze sono parecchie: 
+        il colore di fondo &egrave; leggermente pi&ugrave; chiaro, la barra e 
+        i pulsanti sul titolo sono pi&ugrave; grandi e disegnati diversamente, 
+        la casella con il risultato nel tema XP non presenta il bordo incassato 
+        (bevel), i pulsanti hanno gli angoli arrotondati e tutta la finestra &egrave; 
+        circondata da un bordo blu. Ma le differenze non si limitano solo a questo 
+        e lo vedremo nel seguito di quest'articolo.</p>
+      <p>Prepareremo allo scopo un semplice progetto contenente quasi tutti i 
+        controlli <b>Thunder</b> (nativi di Visual Basic) e quasi tutti i controlli 
+        della libreria <b>Microsoft Windows Common Controls</b>. &Egrave; necessaria 
+        una premessa riguardante proprio questi ultimi controlli.</p>
+      <p>Fino a Visual Basic 5 con il compilatore erano distribuiti anche due 
+        librerie <a href="../glossary/a.htm#ACTIVEX">ActiveX</a> (<a href="../glossary/o.htm#OCX">OCX</a>) 
+        di nome <i>COMCTL32.OCX</i> e <i>COMCT232.OCX</i> (chiamate informalmente 
+        <b>Common Controls&nbsp;5</b>) contenenti all'interno tanti controlli 
+        standard di Windows presenti in quasi tutte le applicazioni moderne. Entrambe 
+        queste librerie si appoggiavano ad una terza libreria di sistema di nome 
+        <i>COMCTL32.DLL</i>. Il corretto funzionamento di un'applicazione che 
+        utilizzava uno di questi due OCX richiedeva la presenza della terza libreria 
+        aggiornata almeno alla versione 4.72. Questo spesso si traduceva nella 
+        necessit&agrave; di dover distribuire un'altra libreria nel pacchetto 
+        di installazione. A questi tre files potevano aggiungersene altri per 
+        le singole localizzazioni (traduzioni del testo in esse contenuto).</p>
+      <p>Con l'arrivo di Visual Basic 6 gli sviluppatori Microsoft hanno avuto 
+        la brillante idea <img src="../images/smiley/blackeye.gif" width="15" height="15" align="absmiddle"> 
+        di riscrivere i suddetti OCX da capo includendo dentro le librerie <i>MSCOMCTL.OCX</i> 
+        e <i>MSCOMCT2.OCX</i> (chiamate informalmente <b>Common Controls&nbsp;6</b>) 
+        il codice presente all'interno della libreria di sistema <i>COMCTL32.DLL</i>. 
+        Questo si traduceva nel vantaggio di non dover distribuire con il programma 
+        anche la terza libreria. Di contro naturalmente la dimensione delle due 
+        librerie &egrave; raddoppiata.</p>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>C'&egrave; da dire che con l'occasione gli sviluppatori hanno voluto 
+        migliorare alcuni controlli ed aggiungerne altri all'interno delle due 
+        librerie e questo, unito al vantaggio di non distribuire un file aggiuntivo 
+        nel pacchetto di installazione con il solo costo di un paio di centinaia 
+        di KB in pi&ugrave; ha convinto parecchie persone. Tuttavia il problema 
+        era dietro l'angolo e l'avvento di Windows XP l'ha subito rivelato. <img src="../images/smiley/dead.gif" width="15" height="15" align="absmiddle"></p>
+      <p>Il lavoro svolto dagli sviluppatori di Windows XP infatti si basava sull'aggiornamento 
+        delle librerie di sistema fra cui anche <i>COMCTL32.DLL</i> e richiedeva 
+        la presenza di un file di configurazione che richiedesse al sistema l'applicazione 
+        del nuovo stile grafico. Questo ha comportato la possibilit&agrave; di 
+        aggiornare con semplicit&agrave; anche le applicazioni gi&agrave; compilate 
+        che utilizzassero i Common Controls&nbsp;5, dovendo infatti aggiungere 
+        soltanto il file di configurazione esterno. Invece i programmi che utilizzano 
+        i Common Controls&nbsp;6 hanno continuato ad applicare il vecchio stile 
+        grafico, non dovendo infatti appoggiarsi alla <i>COMCTL32.DLL</i>.</p>
+      <hr>
+      <p><img src="../images/howto/howto058_3.png" width="253" height="273" align="right">Acclusi 
+        a questo articolo saranno presenti due progetti: il primo utilizzer&agrave; 
+        i Common Controls&nbsp;5 mentre il secondo utilizzer&agrave; i Common 
+        Controls&nbsp;6; le differenze saranno minime e si limiteranno all'inclusione 
+        dei controlli presenti nella libreria pi&ugrave; aggiornata. La barra 
+        del titolo mostrer&agrave; anche la versione dei controlli in uso.</p>
+      <p>Non saranno descritti i singoli componenti sul form perch&eacute; poco 
+        importante e comunque troppo lungo; per semplificare la comprensione sono 
+        stati lasciati i nomi originali dei controlli fuorch&egrave; per la <a href="../glossary/m.htm#MATRICE">matrice</a> 
+        di PictureBox <b>picGruppo</b> che conterr&agrave; al suo interno tutti 
+        gli altri controlli; &egrave; quindi proposto subito il codice del form 
+        uguali per i due progetti:</p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private Declare Function InitCommonControls Lib &quot;Comctl32.dll&quot; 
+          () As Long</li>
+        <li></li>
+        <li>Private Sub Form_Initialize()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Call InitCommonControls</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La funzione <b>InitCommonControls</b>, utilizzata durante l'avvio del 
+        programma (Initialize infatti &egrave; il primo evento che scatta durante 
+        l'avvio) provoca il caricamento in memoria della libreria <i>COMCTL32.DLL</i>. 
+        Sar&agrave; tale libreria ad occuparsi autonomamente dell'aggiornamento 
+        di tutti i controlli standard di VB e dei Common Controls&nbsp;5. Quest'operazione 
+        &egrave; necessaria anche quando il progetto utilizza le librerie <i>COMCTL32.OCX</i> 
+        o <i>COMCT232.DLL</i> e quindi indirettamente anche <i>COMCTL32.DLL</i>. 
+      </p>
+      <p>Basteranno infatti solo queste poche righe di codice per applicare lo 
+        stile visuale di Windows XP; tutto il resto del codice, molto semplice 
+        invero, si occuper&agrave; di utilizzare i numerosi controlli sul form.</p>
+      <ol start="9" class="codicevb">
+        <li>Private Sub Slider1_Scroll(Index As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ProgressBar1(Index).Value = Slider1(Index).Value</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub TabStrip1_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If TabStrip1.SelectedItem.Index &lt;&gt; 1 
+          Then picGruppo(0).Visible = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If TabStrip1.SelectedItem.Index &lt;&gt; 2 
+          Then picGruppo(1).Visible = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If TabStrip1.SelectedItem.Index &lt;&gt; 3 
+          Then picGruppo(2).Visible = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;picGruppo(TabStrip1.SelectedItem.Index - 1).Visible 
+          = True</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TabStrip1_Click</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ProgressBar1(0).Value = ProgressBar1(0).Max 
+          \ 2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ProgressBar1(1).Value = ProgressBar1(1).Max 
+          \ 2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;TreeView1.Nodes.Add TreeView1.Nodes.Add(, 
+          , , &quot;ciao&quot;), tvwChild, , &quot;miao&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ListView1(0).ListItems.Add , , &quot;ciao&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ListView1(0).ListItems.Add , , &quot;miao&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ListView1(1).ListItems.Add , , &quot;ciao&quot;</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;ListView1(1).ListItems.Add , , &quot;miao&quot;</li>
+        <li>End Sub</li>
+      </ol>
+      <p>Il codice funzionale non far&agrave; altro che legare le due ProgressBar<img src="../images/controls/progressbar.gif" width="25" height="25" align="absmiddle">al 
+        valore dei due Slider<img src="../images/controls/slider.gif" width="25" height="25" align="absmiddle">(righe 
+        9-11); in funzione della scheda scelta nella TabStrip<img src="../images/controls/tabstrip.gif" width="25" height="25" align="absmiddle">sar&agrave; 
+        mostrata la PictureBox <img src="../images/controls/picturebox.gif" width="25" height="25" align="absmiddle"> 
+        corrispondente e verranno nascoste le altre due all'interno della stessa 
+        matrice <b>picGruppo</b> (righe 13-18); infine al caricamento del form 
+        saranno inseriti alcuni valori nella TreeView<img src="../images/controls/treeview.gif" width="25" height="25" align="absmiddle">e 
+        nelle due ListView<img src="../images/controls/listview.gif" width="25" height="25" align="absmiddle">per 
+        vedere in funzione i suddetti controlli.</p>
+      <hr>
+      <p>Se provassimo questo progetto su Windows XP non otterremmo completamente 
+        il nuovo stile visuale; verr&agrave; infatti aggiornata soltanto la parte 
+        esterna alla <i>client area</i>, la superficie del form e cio&egrave; 
+        vedremmo aggiornata la barra del titolo ed i suoi pulsanti ed il bordino 
+        azzurro che circonda la finestra. Per funzionare correttamente manca ancora 
+        il file di configurazione dell'applicazione, il cosiddetto file <b>MANIFEST</b>. 
+        Si tratta di un semplice documento <a href="../glossary/x.htm#XML">XML</a> 
+        con uno schema ben preciso che dovr&agrave; esser posto nella stessa cartella 
+        del programma e con il nome del file eseguibile seguito dall'estensione 
+        .manifest.<br>
+        Nel nostro esempio, avremo infatti <i><b>Common Controls&nbsp;5.exe</b></i> 
+        ed il file di configurazione <i><b>Common Controls&nbsp;5.exe.manifest</b></i> 
+        contenente la richiesta di utilizzare la versione 6 della libreria COMCTL32.DLL 
+        se disponibile:</p>
+      <p class="codicevb2">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; 
+        standalone=&quot;yes&quot;?&gt;<br>
+        &lt;assembly xmlns=&quot;urn:schemas-microsoft-com:asm.v1&quot; manifestVersion=&quot;1.0&quot;&gt;<br>
+        &nbsp;&nbsp;&lt;assemblyIdentity<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;name=&quot;<b>Azienda.Prodotto</b>&quot;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;type=&quot;win32&quot;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;version=&quot;<b>1.0.0.0</b>&quot;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;processorArchitecture=&quot;X86&quot;<br>
+        &nbsp;&nbsp;/&gt;<br>
+        &nbsp;&nbsp;&lt;description&gt;<b>Descrizione dell'applicazione</b>&lt;/description&gt;<br>
+        &nbsp;&nbsp;&lt;dependency&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;dependentAssembly&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;assemblyIdentity<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name=&quot;Microsoft.Windows.Common-Controls&quot;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type=&quot;win32&quot;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version=&quot;6.0.0.0&quot;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;processorArchitecture=&quot;X86&quot;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;publicKeyToken=&quot;6595b64144ccf1df&quot;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;language=&quot;*&quot;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/dependentAssembly&gt;<br>
+        &nbsp;&nbsp;&lt;/dependency&gt;<br>
+        &lt;/assembly&gt;</p>
+      <p>Il testo in grassetto pu&ograve; essere modificato con i dati della nostra 
+        applicazione: Nome, Versione e Descrizione. Al giorno d'oggi non esiste 
+        alcun controllo di congruit&agrave; tra i dati dichiarati nel file manifest 
+        e quelli inseriti all'interno del programma eseguibile, ma in vista delle 
+        possibili modifiche alla tecnologia <i><b>side-by-side</b></i> su cui 
+        si basa questo sistema si raccomanda di fornire dati congruenti con quelli 
+        dell'applicazione.</p>
+      <p><!-- #BeginLibraryItem "/Library/Notes1.lbi" --><img src="../images/notes.gif" width="56" height="57" align="left"><!-- #EndLibraryItem --><b class="smallerrore">Importante!</b><br>
+        A differenza delle versioni 4 e 5 della libreria COMCTL32.DLL, <b class="sottolineato">la 
+        nuova versione 6 non &egrave; redistribuibile</b> assieme all'applicazione, 
+        pertanto &egrave; necessario escluderla dal pacchetto di installazione 
+        del programma, che dovr&agrave; affidarsi alla versione gi&agrave; installata 
+        nella macchina dell'utente finale. Windows XP contiene solitamente al 
+        suo interno sia la versione 5 che la versione 6 della suddetta libreria, 
+        quindi non dovrebbe essere un problema.</p>
+      <hr>
+      <p>Lanciamo l'esecuzione dei due progetti, il primo utilizzer&agrave; i 
+        Common Controls&nbsp;5 mentre il secondo i Common Controls&nbsp;6, entrambi 
+        su Windows XP e vediamone le differenze:</p>
+      <table width="100%" border="0" cellspacing="2" cellpadding="0" align="center">
+        <tr> 
+          <td align="center" width="50%" valign="top"><img src="../images/howto/howto058_4.png" width="252" height="276" alt="Figura 4"><br>
+            <b>Figura 4</b></td>
+          <td align="center" width="50%" valign="top"><img src="../images/howto/howto058_5.png" width="253" height="278" alt="Figura 5"><br>
+            <b>Figura 5</b></td>
+        </tr>
+      </table>
+      <p>Le Figure 4 e 5 mostrano la prima scheda dei due programmi ed in entrambe 
+        possiamo vedere lo stile visuale di XP in azione mettendo a confronto 
+        i lati positivi con quelli negativi:</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <table width="90%" border="0" cellspacing="2" cellpadding="0" align="center">
+        <tr> 
+          <td align="center" valign="top" width="50%" class="size3">Pro <img src="../images/smiley/big.gif" width="15" height="15" align="absmiddle"></td>
+          <td width="50%" align="center" valign="top" class="size3">Contro <img src="../images/smiley/sad.gif" width="15" height="15" align="absmiddle"></td>
+        </tr>
+        <tr> 
+          <td align="left" valign="top" width="50%"> 
+            <ul>
+              <li> Entrambe le caselle di testo presentano il bordino leggero 
+                e colorato;</li>
+              <li>I tre pulsanti (<i><b>Pulsante</b></i>, <i><b>Default=True</b></i> 
+                e <i> <b>Cancel=True</b></i>) presentano i bordi arrotondati;</li>
+              <li>I due frames hanno il bordo arrotondato;</li>
+              <li>Le due barre di scorrimento in alto a destra hanno un look pi&ugrave; 
+                accattivante e moderno;</li>
+              <li>Le prime 3 CheckBox ed i primi 3 OptionButton presentano il 
+                nuovo stile visuale;</li>
+              <li>Le 3 ListBox ed i controlli DriveListBox, DirListBox e FileListBox 
+                hanno un'estetica aggiornata, con il bordo pi&ugrave; snello e 
+                colorato e le barre di scorrimento differenti;</li>
+            </ul>
+          </td>
+          <td width="50%" align="left" valign="top"> 
+            <ul>
+              <li>Il quarto pulsante (<i><b>Style=1</b></i>) continua a mantenere 
+                il vecchio stile;</li>
+              <li>Il testo del secondo frame, contenuto all'interno del primo 
+                ha perso la formattazione originale e risulta visibile solo in 
+                parte;</li>
+              <li>La quarta CheckBox e il quarto OptionButton, entrambi con propriet&agrave; 
+                <i>Style=1</i> (Graphical) mantengono il vecchio stile grafico;</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="2" cellpadding="0" align="center">
+        <tr> 
+          <td align="center" width="50%" valign="top"><img src="../images/howto/howto058_6.png" width="253" height="278" alt="Figura 6"><br>
+            <b>Figura 6</b></td>
+          <td align="center" width="50%" valign="top"><img src="../images/howto/howto058_7.png" width="253" height="278" alt="Figura 7"><br>
+            <b>Figura 7</b></td>
+        </tr>
+        <tr> 
+          <td align="center" width="50%" valign="top"><img src="../images/howto/howto058_8.png" width="252" height="276" alt="Figura 8"><br>
+            <b>Figura 8</b></td>
+          <td align="center" width="50%" valign="top">
+            <p><img src="../images/howto/howto058_9.png" width="253" height="278" alt="Figura 9"><br>
+              <b>Figura 9</b></p>
+            </td>
+        </tr>
+      </table>
+      <p>Nulla da dire invece per l'aspetto dei Common Controls; la versione 5 
+        &egrave; perfettamente aggiornata (perch&eacute; basata su <i>COMCTL32.DLL</i>) 
+        mentre la versione 6 a destra continua a mantenere il vecchio stile grafico, 
+        avendo infatti i programmatori inserito il codice dentro le librerie ActiveX 
+        anzich&eacute; affidarsi alla <i>COMCTL32.DLL</i>.</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>Per quanto riguarda i controlli Thunder il nuovo stile &egrave; regolarmente 
+        applicato salvo che per quei controlli che presentano propriet&agrave; 
+        <i>Style=1 Graphical</i>; un bug grafico minore si verifica nel caso di 
+        frames annidati. Al di l&agrave; dei controlli aggiuntivi mostrati nella 
+        <b>Figura 9</b>, i Common Controls 6 perdono nettamente questo confronto 
+        ed andrebbero evitati perch&eacute; non in grado di aggiornare la loro 
+        estetica al nuovo stile di Windows XP.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --><a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        28 Febbraio 2004<br>
+        Un ringraziamento a <a href="http://www.gbcweb.com/" target="_blank">GbC|</a> 
+        per il suo barbatrucco<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>

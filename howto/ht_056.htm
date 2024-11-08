@@ -1,0 +1,562 @@
+<html><!-- #BeginTemplate "/Templates/HowTo.dwt" -->
+<head>
+<script language="JavaScript" src="../funzioni.js"></script>
+<script language="JavaScript" src="../scroller.js"></script>
+<!-- #BeginEditable "doctitle" --> 
+<title>Eseguire operazioni di Shell sui files</title>
+<!-- #EndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../stili.css" rel="stylesheet" type="text/css" title="stili">
+<link href="../codicevb.css" rel="stylesheet" type="text/css" title="codicevb">
+<link href="../colori.css" rel="stylesheet" type="text/css" title="colori">
+<meta name="description" content="Visual Basic Simple &egrave; l'unico sito in Italia che tratta la programmazione in Visual Basic in un'ottica mai vista prima d'ora. Tutti gli articoli sono spiegati passo dopo passo ed in una maniera davvero semplice per consentire a tutti di comprendere gli argomenti trattati.">
+<meta name="keywords" content="VB, Visual, Basic, Simple, programmazione, codici, esempi, manuali, studio, sviluppo, ActiveX, OCX, articoli, notizie, apprendere, QBasic, API, COM, database">
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td width="400" align="left" bgcolor="#FFFFFF"><img src="../images/vbslogo.jpg" width="400" height="80" border="0" alt="Visual Basic Simple"></td>
+    <td width="100%" align="right" bgcolor="#FFFFFF"> 
+      <div class="intestazioni"><a href="../home.htm">Home Page</a> <a href="../home.htm"><img src="../images/icons/dothome.gif" align="absmiddle" border="0" alt="Home Page" width="25" height="25"></a><br>
+        <a href="../history.htm">Novit&agrave;</a> <a href="../history.htm"><img src="../images/icons/dotinfo.gif" align="absmiddle" border="0" alt="Informazioni su VB Simple" width="25" height="25"></a><br>
+        <a href="../help.htm">Aiuto</a> <a href="../help.htm"><img src="../images/icons/dothelp.gif" align="absmiddle" border="0" alt="Hai bisogno d'aiuto?" width="25" height="25"></a></div>
+    </td>
+    <td width="160" align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 160x90, creato 02/02/09 */
+google_ad_slot = "8970907891";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+  </tr>
+</table>
+
+<div align="center"> 
+  <div class="titolo"><!-- #BeginEditable "TITOLO" -->Eseguire operazioni di Shell 
+    sui files<!-- #EndEditable --> 
+    <!-- #BeginEditable "API" --><img src="../images/api.gif" width="34" height="24" align="absmiddle"><!-- #EndEditable --></div>
+  <script language="Javascript">NomePagina();</script>
+  <table width="80%" border="1" cellspacing="1" cellpadding="3" bordercolorlight="#000000" bordercolordark="#000000" class="dontprint">
+    <tr class="size0"> 
+      <td align="center" width="25%"><a href="../ftv21/howto.htm" target="treeframe"><img src="../images/icons/search%20window.gif" width="16" height="16" border="0" alt="Sincronizza Indice"><br>
+        Sincronizza Indice</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+        Scarica il progetto</a></td>
+      <td align="center" width="25%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+        Testo dell'articolo</a></td>
+      <td align="center" width="25%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+        Stampa l'articolo</a></td>
+    </tr>
+  </table>
+</div>
+<table width="100%" border="0">
+  <tr> 
+    <td width="80%"> 
+      <table width="100%"><tr><td align="left" nowrap><style type="text/css">
+@import url(http://www.google.com/cse/api/branding.css);
+</style>
+<div class="cse-branding-right" style="background-color:#FFFFFF;color:#000000">
+  <div class="cse-branding-form">
+    <form action="http://www.google.it/cse" id="cse-search-box">
+      <div>
+        <input type="hidden" name="cx" value="partner-pub-8218922773694577:rv2o52-qh5a" />
+        <input type="hidden" name="ie" value="ISO-8859-1" />
+        <input type="text" name="q" size="20" />
+        <input type="submit" name="sa" value="Cerca" />
+      </div>
+    </form>
+  </div>
+  <div class="cse-branding-logo">
+    <img src="http://www.google.com/images/poweredby_transparent/poweredby_FFFFFF.gif" alt="Google" />
+  </div>
+  <div class="cse-branding-text">
+    Ricerca personalizzata
+  </div>
+</div></td><td align="right">
+      <p align="right" class="size3">Difficolt&agrave;: <img src="../images/icons/level1.gif" width="17" height="18" align="absmiddle"><!-- #BeginEditable "DIFFICOLTA" --><img src="../images/icons/level2.gif" width="17" height="18" align="absmiddle"> 
+        2<!-- #EndEditable --> / 5</p>
+</td></tr></table>
+      <script language="JavaScript">ShowArticlesScroller();</script><!-- #BeginEditable "CORPO" --> 
+      <p>Quasi tutti i moderni programmi affidano alle funzioni di Shell il compito 
+        delle operazioni di copia, spostamento ed eliminazione dei files. In tal 
+        modo infatti il programmatore si scarica di alcuni compiti di analisi, 
+        in particolare la reiterazione per le sottocartelle. L'utente invece si 
+        trova a contatto con un'interfaccia grafica conosciuta ed apprezzata. 
+        Vedremo in questo progetto come richiamare le funzioni della shell per 
+        queste operazioni.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo grafica */
+google_ad_slot = "0981518759";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>La classe <img src="../images/ide/classe.gif" width="16" height="16" align="absmiddle"> 
+        <i>clsFBIShellFileOperation</i> sviluppata in questo progetto consentir&agrave; 
+        di eseguire le operazioni pi&ugrave; comuni con estrema semplicit&agrave;:</p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li>Option Base 0</li>
+        <li></li>
+        <li>Public Enum SHOperations</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FO_MOVE = &H1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FO_COPY = &H2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FO_DELETE = &H3</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FO_RENAME = &H4</li>
+        <li>End Enum</li>
+        <li></li>
+      </ol>
+      <p>L'<a href="../glossary/e.htm#ENUMERAZIONE">enumerazione</a> <img src="../images/ide/enumeraz.gif" width="16" height="16" align="absmiddle"> 
+        <i><b>SHOperations</b></i> si compone di 4 costanti definite dall'<a href="../glossary/a.htm#API">API</a> 
+        che specificano il tipo di operazione da svolgere tra spostamento, copia, 
+        cancellazione e rinominazione. Sar&agrave; utilizzata pi&ugrave; avanti 
+        dalla struttura <b>SHFILEOPSTRUCT</b>.</p>
+      <ol start="11" class="codicevb">
+        <li>Public Enum SHOperationFlags</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_MULTIDESTFILES = &H1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_CONFIRMMOUSE = &H2</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_SILENT = &H4</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_RENAMEONCOLLISION = &H8</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_NOCONFIRMATION = &H10</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_WANTMAPPINGHANDLE = &H20</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_ALLOWUNDO = &H40</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_FILESONLY = &H80</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_SIMPLEPROGRESS = &H100</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_NOCONFIRMMKDIR = &H200</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_NOERRORUI = &H400</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_NOCOPYSECURITYATTRIBS = &H800</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_NORECURSION = &H1000</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_NO_CONNECTED_ELEMENTS = &H2000</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;FOF_WANTNUKEWARNING = &H4000</li>
+        <li>End Enum</li>
+        <li></li>
+      </ol>
+      <p>L'enumerazione <i><b>SHOperationFlags</b></i> consente di specificare 
+        uno o pi&ugrave; comportamenti aggiuntivi durante l'operazione di Shell. 
+        I loro nomi dovrebbero da soli essere chiari ma merita una piccola citazione 
+        il flag <b>FOF_ALLOWUNDO</b> (riga 18) che consente di annullare l'ultima 
+        operazione eseguita, mediante la voce <i><b>Annulla</b></i> del menu popup 
+        in una qualunque cartella. Funziona regolarmente per le operazioni di 
+        copia e spostamento, ma nel caso dell'operazione di cancellazione, differenzia 
+        lo spostamento nel cestino dall'eliminazione vera e propria; la specifica 
+        del flag <b>FOF_ALLOWUNDO</b> nell'operazione di cancellazione comporta 
+        quindi lo spostamento nel cestino dei files.</p>
+      <ol start="29" class="codicevb">
+        <li>Private Type SHFILEOPSTRUCT</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hwnd As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;wFunc As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;pFrom As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;pTo As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;fFlags As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;fAnyOperationsAborted As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;hNameMappings As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;lpszProgressTitle As String</li>
+        <li>End Type</li>
+        <li></li>
+      </ol>
+      <p>La struttura <i><b>SHFILEOPSTRUCT</b></i>, riportata in maniera errata 
+        dalla maggior parte delle documentazioni, &egrave; stata trattata in <a href="../weird/wrd_06.htm">un 
+        articolo della sezione Weird Things</a>, &egrave; stata corretta per consentire 
+        un corretto funzionamento della funzione in tutte le situazioni. Il campo 
+        <b>wFunc</b> della struttura specifica il tipo di operazione da eseguire 
+        e determina l'uso degli altri campi; ad esempio durante la copia di files 
+        il campo <b>pFrom</b> indicher&agrave; l'origine dei files da copiare, 
+        mentre <b>pTo</b> conterr&agrave; la destinazione per i files; nel caso 
+        invece della cancellazione, il campo <b>pTo</b> non dovr&agrave; essere 
+        specificato. I valori ammessi per il campo <b>wFunc</b> sono quelli contenuti 
+        nell'enumerazione <b><i>SHOperations</i></b>, mentre per il campo <b>fFlags</b> 
+        sar&agrave; necessario specificare uno o pi&ugrave; valori dell'enumerazione 
+        <i> <b>SHOperationFlags</b></i>.</p>
+      <ol start="40" class="codicevb">
+        <li>Private Declare Function SHFileOperation Lib "SHELL32.DLL" Alias "SHFileOperationA" 
+          (lpFileOp As SHFILEOPSTRUCT) As Long</li>
+        <li></li>
+        <li>Private udtOperation As SHFILEOPSTRUCT</li>
+        <li></li>
+      </ol>
+      <p>L'intero codice &egrave; basato sull'uso della funzione <i>SHFileOperation</i> 
+        che richiede la specifica di una variabile di tipo <i><b>SHFILEOPSTRUCT</b></i>, 
+        definito in precedenza; tale valore &egrave; dichiarato alla riga 42, 
+        col nome <b>udtOperation</b>.</p>
+      <ol start="44" class="codicevb">
+        <li>Private Sub Class_Initialize()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;udtOperation.fFlags = FOF_NOERRORUI</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Il valore predefinito per il campo fFlags sar&agrave; <i><b>FOF_NOERRORUI</b></i>, 
+        che specifica di non mostrare le videate di errore della Shell, ma lasciare 
+        il compito al programma.</p>
+      <ol start="48" class="codicevb">
+        <li>Public Property Get AllowUndo() As Boolean</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;AllowUndo = CBool(udtOperation.fFlags And 
+          FOF_ALLOWUNDO)</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Let AllowUndo(ByVal newValue As Boolean)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;With udtOperation</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.fFlags = IIf(newValue, 
+          .fFlags Or FOF_ALLOWUNDO, .fFlags And Not FOF_ALLOWUNDO)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li>End Property</li>
+        <li> </li>
+      </ol>
+      <p>La propriet&agrave; <b>AllowUndo</b> &egrave; utilizzata per recuperare 
+        ed assegnare con semplicit&agrave; il flag <i><b>FOF_ALLOWUNDO</b></i> 
+        accennato in precedenza e consentire l'annullamento dell'ultima operazione 
+        eseguita.</p>
+      <ol start="58" class="codicevb">
+        <li>Public Property Get Confirm() As Boolean</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Confirm = Not CBool(udtOperation.fFlags And 
+          FOF_NOCONFIRMATION)</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Let Confirm(ByVal newValue As Boolean)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;With udtOperation</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.fFlags = IIf(newValue, 
+          .fFlags And Not FOF_NOCONFIRMATION, .fFlags Or FOF_NOCONFIRMATION)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>La propriet&agrave; <b>Confirm</b> consente di richiedere conferma all'utente 
+        prima di eseguire certe operazioni di sovrascrittura o cancellazione. 
+        Si tratta in sostanza di recuperare o assegnare il valore del flag <i><b>FOF_NOCONFIRMATION</b></i>.</p>
+      <ol start="68" class="codicevb">
+        <li>Public Property Get Destination() As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Destination = udtOperation.pTo</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Let Destination(ByVal newValue As String)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;udtOperation.pTo = newValue</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get Flags() As SHOperationFlags</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Flags = udtOperation.fFlags</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Let Flags(ByVal newValue As SHOperationFlags)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;udtOperation.fFlags = newValue</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Get Source() As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Source = udtOperation.pFrom</li>
+        <li>End Property</li>
+        <li></li>
+        <li>Public Property Let Source(ByVal newValue As String)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;udtOperation.pFrom = newValue</li>
+        <li>End Property</li>
+        <li></li>
+      </ol>
+      <p>Le tre propriet&agrave; <b>Destination</b>, <b>Flags</b> e <b>Source</b> 
+        consentono di recuperare o assegnare rispettivamente la destinazione (<b>pTo</b>), 
+        i flags (<b>fFlags</b>) e l'origine (<b>pFrom</b>) della variabile <b>udtOperation</b> 
+        che verr&agrave; utilizzata per eseguire l'operazione di Shell.</p>
+      <ol start="92" class="codicevb">
+        <li>Public Function Esegui(ByVal Operation As SHOperations) As Long</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;udtOperation.wFunc = Operation</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Esegui = SHFileOperation(udtOperation)</li>
+        <li>End Function</li>
+      </ol>
+    <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* Contenuti 468x60 */
+google_ad_slot = "0785185013";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>L'unico metodo <img src="../images/ide/metodo.gif" width="16" height="16" align="absmiddle"> 
+        della classe <i>clsFBIShellFileOperation</i> &egrave; <b>Esegui</b> e 
+        richiede la specifica del tipo di operazione da eseguire, corrispondente 
+        ad un valore dell'enumerazione <i> <b>SHOperations</b></i>. Il valore 
+        sar&agrave; assegnato al membro <b>wFunc</b> della struttura <b>udtOperation</b> 
+        e quindi sar&agrave; richiamata la funzione <i>SHFileOperation</i> con 
+        la stessa struttura.</p>
+      <hr>
+      <p><img src="../images/howto/howto056_01.png" width="273" height="226" align="right" alt="Figura 1">Svilupperemo 
+        una semplice interfaccia per il nostro progetto, formata ad un controllo 
+        <i>DirListBox</i> <img src="../images/controls/dirlistbox.gif" width="25" height="25" align="absmiddle">di 
+        nome <b>dirOrigine</b> ed un controllo <i>FileListBox</i><img src="../images/controls/filelistbox.gif" width="25" height="25" align="absmiddle">collegato 
+        di nome <b>filOrigine</b>. In fondo a queste avremo tre pulsanti di nome 
+        <b>cmdCopia</b>, <b>cmdSelezionaTutto</b> e <b>cmdDeselezionaTutto</b>. 
+        Sul lato destro avremo invece un altro controllo <i>FileListBox</i> di 
+        nome <b>filTemp</b> che punter&agrave; sempre alla stessa cartella del 
+        programma; anche in fondo a questo esistono tre pulsanti di comando, di 
+        nome <b>cmdAggiorna</b>, <b>cmdCestina</b> e <b>cmdElimina</b>. Il controllo 
+        filOrigine avr&agrave; inoltre la propriet&agrave; <i>MultiSelect</i> 
+        impostata su <i><b>1 - Simple</b></i>.</p>
+      <p>Come gi&agrave; detto, i due controlli <b>dirOrigine</b> e <b>filOrigine</b> 
+        saranno collegati, per cui al cambio della cartella sul controllo superiore 
+        corrisponder&agrave; il cambio della cartella nel secondo. Vediamo il 
+        semplice codice che gestisce tutti gli eventi del form:</p>
+      <ol start="1" class="codicevb">
+        <li>Option Explicit</li>
+        <li></li>
+        <li>Private fbiShellOperation As clsFBIShellFileOperation</li>
+        <li></li>
+      </ol>
+      <p>Alla riga 3 &egrave; dichiarata un'<a href="../glossary/i.htm#ISTANZA">istanza</a> 
+        della classe <i>clsFBIShellFileOperation</i>, che verr&agrave; dichiarata 
+        in occasione del caricamento del form.</p>
+      <ol start="5" class="codicevb">
+        <li>Private Function LastBSlash(ByVal Path As String) As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;If Right$(Path, 1) <> "\" Then Path = Path 
+          & "\"</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;LastBSlash = Path</li>
+        <li>End Function</li>
+        <li></li>
+        <li>Private Sub Form_Load()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set fbiShellOperation = New clsFBIShellFileOperation</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;filTemp.Path = LastBSlash(App.Path) & "TEMP"</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub Form_Unload(Cancel As Integer)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Set fbiShellOperation = Nothing</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La funzione <b>LastBSlash</b>, trattata anche in altri articoli del sito, 
+        &egrave; utilizzata per assicurare che il percorso fornito termini con 
+        una barra rovesciata (&nbsp;\&nbsp;) e poterlo quindi concatenare ad un 
+        nome di file ed avere quindi la sicurezza che il percorso fornito sia 
+        valido. Prendiamo ad esempio il percorso C:\ da concatenare ad un nome 
+        di file quale &quot;file1.txt&quot;; nel caso del percorso &quot;C:\&quot; 
+        non sar&agrave; necessario aggiungere la barra rovesciata (&quot;C:\&quot; 
+        &amp; &quot;file1.txt&quot;), ma nel caso di un altro percorso quale &quot;C:\Cartella&quot;, 
+        la stessa sar&agrave; mancante e dovr&agrave; essere specificata prima 
+        del nome del file. La funzione <b>LastBSlash</b> restituisce sempre e 
+        comunque un percorso che termini con la barra rovesciata, da concatenare 
+        quindi al nome di un file.</p>
+      <p>La funzione sar&agrave; utilizzata alla riga 12, al caricamento del form, 
+        per inizializzare il controllo <b>filTemp</b> e farlo puntare alla cartella 
+        <i><b>TEMP</b></i> contenuta nella cartella del nostro programma; in occasione 
+        dell'operazione, sar&agrave; anche istanziata la variabile <b>fbiShellOperation</b>, 
+        che verr&agrave; quindi <a href="../glossary/d.htm#DEALLOCARE">deallocata</a> 
+        alla chiusura del form.</p>
+      <ol start="19" class="codicevb">
+        <li>Private Sub dirOrigine_Change()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;filOrigine.Path = dirOrigine.Path</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub cmdAggiorna_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;filTemp.Refresh</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Come gi&agrave; detto, al cambio della cartella nel controllo <b>dirOrigine</b> 
+        corrisponder&agrave; il cambio della cartella del controllo <b>filOrigine</b> 
+        e ci&ograve; &egrave; gestito alle righe 19-21.<br>
+        La pressione del pulsante cmdAggiorna invece causer&agrave; l'aggiornamento 
+        dell'altro elenco di files, di nome <b>filTemp</b>.</p>
+      <ol start="27" class="codicevb">
+        <li>Private Sub cmdSelezionaTutto_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim intLoop As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For intLoop = 0 To filOrigine.ListCount - 
+          1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filOrigine.Selected(intLoop) 
+          = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next intLoop</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub cmdDeselezionaTutto_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim intLoop As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;For intLoop = 0 To filOrigine.ListCount - 
+          1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filOrigine.Selected(intLoop) 
+          = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Next intLoop</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Le due routine legate al click dei pulsanti <b>cmdSelezionaTutto</b> 
+        e <b>cmdDeselezionaTutto</b> sono molto simili e comprendono un semplice 
+        ciclo per ogni elemento dell'elenco <b>filOrigine</b>. La prima routine 
+        assegner&agrave; lo stato di selezionato ad ogni elemento, mentre la seconda 
+        deselezioner&agrave; tale stato.</p>
+      <ol start="41" class="codicevb">
+        <li>Private Sub cmdCopia_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim intLoop As Integer</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;Dim strFiles As String</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;With filOrigine</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For intLoop = 0 To 
+          .ListCount - 1</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If 
+          .Selected(intLoop) Then strFiles = strFiles & LastBSlash(filOrigine.Path) 
+          & .List(intLoop) & vbNullChar</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Next intLoop</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If Len(strFiles) > 
+          0 Then</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;strFiles 
+          = strFiles & vbNullChar</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With 
+          fbiShellOperation</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Confirm 
+          = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.AllowUndo 
+          = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Source 
+          = strFiles</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Destination 
+          = filTemp.Path</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Call 
+          .Esegui(FO_COPY)</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End 
+          With</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmdAggiorna_Click</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;End If</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>La prima routine che utilizza l'istanza <b>fbiShellOperation</b> &egrave; 
+        quella legata all'operazione di copia selezionati nell'elenco <b>filOrigine</b>. 
+        Sar&agrave; pertanto lanciato un ciclo per tutti gli elementi dell'elenco 
+        (riga 46) ed il nome (completo di percorso) di ciascun file selezionato 
+        sar&agrave; concatenato alla variabile <b>strFiles</b>. I nomi saranno 
+        tra loro separati da un carattere NULL.</p>
+      <p align="center"><script type="text/javascript"><!--
+google_ad_client = "pub-8218922773694577";
+/* 468x60 solo testo */
+google_ad_slot = "6726967947";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p>
+      <p>Se almeno un file sar&agrave; stato accodato alla variabile strFiles, 
+        sar&agrave; quindi aggiunto un ulteriore carattere terminatore (riga 49) 
+        e quindi invocata la procedura di copia dei files selezionati. Saranno 
+        impostate le propriet&agrave; <b>Confirm</b> su True, <b>AllowUndo</b> 
+        su False, <b>Source</b> sull'elenco di files da copiare e <b>Destination</b> 
+        sul percorso della cartella temporanea (indicato dalla propriet&agrave; 
+        <i>Path</i> del controllo <b>filTemp</b>, inizializzato all'avvio del 
+        programma). Sar&agrave; quindi lanciata la procedura di copia mediante 
+        metodo <b>Esegui</b>.</p>
+      <p>Al termine dell'operazione sar&agrave; forzato l'aggiornamento dell'elenco 
+        <b>filTemp</b>, richiamando la routine <i><b>cmdAggiorna_Click</b></i>.</p>
+      <ol start="62" class="codicevb">
+        <li>Private Sub cmdCestina_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;fbiShellOperation.AllowUndo = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;EliminaFiles</li>
+        <li>End Sub</li>
+        <li></li>
+        <li>Private Sub cmdElimina_Click()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;fbiShellOperation.AllowUndo = False</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;EliminaFiles</li>
+        <li>End Sub</li>
+        <li></li>
+      </ol>
+      <p>Le due routine di eliminazione definitiva o provvisoria, si differenziano 
+        soltanto per l'assegnazione della propriet&agrave; <b>AllowUndo</b> dell'istanza 
+        <b>fbiShellOperation</b>. Entrambe affidano l'operazione alla routine 
+        <i>EliminaFiles</i> che vediamo qui di seguito:</p>
+      <ol start="72" class="codicevb">
+        <li>Private Sub EliminaFiles()</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;With fbiShellOperation</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Source = LastBSlash(filTemp.Path) 
+          & "*.*"</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Destination = ""</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Confirm = True</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.Esegui FO_DELETE</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;End With</li>
+        <li>&nbsp;&nbsp;&nbsp;&nbsp;cmdAggiorna_Click</li>
+        <li>End Sub</li>
+      </ol>
+      <p>La routine assegna come origine dei files da eliminare il percorso della 
+        cartella TEMP, concatenato con i <a href="../glossary/c.htm#CARATTERIJOLLY">caratteri 
+        jolly</a> <b>*.*</b>; la destinazione dovr&agrave; essere nulla, sar&agrave; 
+        attivata la conferma (riga 76) e lanciata quindi l'operazione alla riga 
+        successiva. Al termine dell'operazione sar&agrave; richiesto l'aggiornamento 
+        dell'elenco <b>filTemp</b> mediante richiamo della routine <i><b>cmdAggiorna_Click</b></i>.</p>
+      <hr>
+      <table width="20%" border="0" align="right" cellpadding="4">
+        <tr align="center"> 
+          <td><img src="../images/howto/howto056_02.png" width="314" height="130" alt="Figura 2"><br>
+            <b>Figura 2</b></td>
+        </tr>
+        <tr align="center"> 
+          <td><img src="../images/howto/howto056_03.png" width="335" height="106" alt="Figura 3"><br>
+            <b>Figura 3</b></td>
+        </tr>
+        <tr align="center"> 
+          <td><img src="../images/howto/howto056_04.png" width="335" height="106" alt="Figura 4"><br>
+            <b>Figura 4</b></td>
+        </tr>
+      </table>
+      <p>Durante le operazioni di copia, spostamento nel cestino ed eliminazione 
+        dei files saranno mostrate le finestre di dialogo standard in ambiente 
+        Windows, analoghe a quelle mostrate a fianco.</p>
+      <p>Resta tuttavia impossibile modificare il titolo mostrato sulla barra 
+        delle suddette finestre di dialogo ed il testo in esso contenuto.</p>
+      <p>Ad esempio durante l'operazione di spostamento nel cestino di uno o pi&ugrave; 
+        files sar&agrave; mostrato il testo <b><i>&quot;Spostare i file selezionati 
+        elementi nel Cestino?&quot;</i></b>, mentre nel caso di eliminazione diretta 
+        apparir&agrave; il testo <i><b>&quot;Eliminare tutti gli elementi presenti 
+        nel Cestino?&quot;</b></i>, entrambi per nulla chiari, anzi fuorvianti 
+        con le azioni da svolgere.</p>
+      <p>&nbsp;</p>
+      <!-- #EndEditable --></td>
+  </tr>
+</table>
+
+<table width="100%">
+  <tr> 
+    <td><!-- #BeginEditable "FINALE" --> 
+      <p>La classe <i>clsFBIShellFileOperation</i> consente una minima gestione 
+        delle operazioni sui files con estrema semplicit&agrave; e dovrebbe essere 
+        preferita alla copia manuale di uno o pi&ugrave; files, in modo da rendere 
+        l'ambiente in cui si opera quanto pi&ugrave; familiare possibile con il 
+        look dei vari Windows in cui il programma viene eseguito.</p>
+      <!-- #EndEditable -->
+      <p align="right" class="credits2"><!-- #BeginEditable "CREDITS" --> <a href="../vbmail.htm?id=1">Fibia 
+        FBI</a><br>
+        3 Giugno 2003<!-- #EndEditable --></p>
+      <!-- #BeginLibraryItem "/Library/Toolbar.lbi" -->
+      <table width="80%" border="1" cellspacing="1" cellpadding="3" align="center" bordercolor="#000000" class="dontprint">
+        <tr> 
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaZIP();"><img src="../images/icons/tool%20download.gif" width="16" height="18" border="0" alt="Scarica il progetto"><br>
+            <span class="size1">Scarica il progetto</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:ScaricaPDF();"><img src="../images/icons/tool%20pdf.gif" width="16" height="18" alt="Scarica il testo dell'articolo" border="0"><br>
+            <span class="size1">Scarica il testo dell'articolo</span></a></td>
+          <td align="center" valign="top" width="33%"><a href="javascript:Stampa();"><img src="../images/icons/tool%20print.gif" width="16" height="18" alt="Stampa l'articolo" border="0"><br>
+            <span class="size1">Stampa l'articolo</span></a></td>
+        </tr>
+      </table><!-- #EndLibraryItem -->
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td align="left"><a href="index.htm"><img src="../images/vbprev.jpg" width="49" height="32" align="absmiddle" border="0"> 
+      Torna all'indice degli HowTo</a></td>
+    <td align="right">&nbsp;</td>
+  </tr>
+</table>
+
+<hr width="80%">
+<table width="100%">
+  <tr>
+    <td width="100%" align="center">
+      <script language="Javascript">Banner();</script>
+      <!--#echo banner=""-->
+    </td>
+  </tr>
+</table>
+<script language="Javascript">FibiaWebStats();</script>
+</body>
+<!-- #EndTemplate --></html>
